@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701172445) do
+ActiveRecord::Schema.define(:version => 20130702080952) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2682,7 +2682,7 @@ ActiveRecord::Schema.define(:version => 20130701172445) do
 
   create_table "shop_purchases", :force => true do |t|
     t.string   "offer_type"
-    t.integer  "offer_id"
+    t.integer  "external_offer_id"
     t.datetime "redeemed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -2707,11 +2707,11 @@ ActiveRecord::Schema.define(:version => 20130701172445) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "bytro_offer_id"
+    t.integer  "external_offer_id"
   end
 
   create_table "shop_special_offers_transactions", :force => true do |t|
-    t.integer  "offer_id"
+    t.integer  "external_offer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "character_id"

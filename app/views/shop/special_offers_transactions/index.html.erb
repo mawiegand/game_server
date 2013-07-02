@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Character</th>
-    <th>Offer</th>
+    <th>External Offer ID</th>
     <th>State</th>
     <th></th>
     <th></th>
@@ -13,7 +13,7 @@
 <% @shop_special_offers_transactions.each do |shop_special_offers_transaction| %>
   <tr>
     <td><%= shop_special_offers_transaction.character_id %></td>
-    <td><%= shop_special_offers_transaction.offer_id %></td>
+    <td><%= shop_special_offers_transaction.external_offer_id %></td>
     <td><%= Shop::Transaction::STATES[shop_special_offers_transaction.state] %></td>
     <td><%= link_to 'Show', shop_special_offers_transaction %></td>
     <td><%= link_to 'Edit', edit_shop_special_offers_transaction_path(shop_special_offers_transaction) %></td>

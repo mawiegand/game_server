@@ -8,6 +8,6 @@ class Shop::Purchase < ActiveRecord::Base
   end
 
   def special_offer
-    Shop::SpecialOffer.find_by_bytro_offer_id(self.offer_id)
+    Shop::SpecialOffer.find_by_external_offer_id(self.external_offer_id)
   end
 end

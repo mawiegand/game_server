@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Offer type</th>
-    <th>Offer</th>
+    <th>External Offer ID</th>
     <th>Character</th>
     <th>Redeemed at</th>
     <th>Special Offer Transaction</th>
@@ -15,7 +15,7 @@
 <% @shop_purchases.each do |shop_purchase| %>
   <tr>
     <td><%= shop_purchase.offer_type %></td>
-    <td><%= shop_purchase.offer_id %></td>
+    <td><%= shop_purchase.external_offer_id %></td>
     <td><%= shop_purchase.character_id %></td>
     <td><%= shop_purchase.redeemed_at %></td>
     <td><%= shop_purchase.special_offers_transaction_id %></td>
