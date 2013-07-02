@@ -6,7 +6,7 @@ class Shop::SpecialOffer < ActiveRecord::Base
 
   def self.buyable_by_character(character)
     if character.show_special_offers?         # if character is in dialog time interval (after finished tutorial)
-      Shop::SpecialOffer.all.map do |offer|   # show offers, that the user didn't buy yet
+      Shop::SpecialOffer.all.select do |offer|   # show offers, that the user didn't buy yet
         character.purchases.where('external_offer_id = ? and redeemed_at is not null', offer.external_offer_id).empty?
       end
     else
