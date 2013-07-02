@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.12
+# Version: 0.3.13
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 12, 
+        :build => 13, 
       },
       
       :production_test_weights => {
@@ -156,7 +156,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [1, 3, ],
+          :successor_quests => [1, ],
 
           :rewards => {
             
@@ -513,11 +513,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_queue_1gathererlvl1',
+            :quest => 'quest_build_chiefcottagelvl3',
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [13, ],
 
           :rewards => {
             
@@ -1072,7 +1072,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [11, 127, ],
+          :successor_quests => [127, ],
 
           :rewards => {
             
@@ -1263,7 +1263,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_army_move',
+            :quest => 'quest_npc_battle',
 
           },
 
@@ -1356,7 +1356,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [13, ],
+          :successor_quests => [3, ],
 
           :rewards => {
             
@@ -1458,7 +1458,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl3',
+            :quest => 'quest_quest_button',
 
           },
 
@@ -12498,7 +12498,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [11, ],
 
           :rewards => {
             
@@ -12519,9 +12519,7 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :kill_test => {
-              :min_units => 1,
-            },
+            :battle_test => {},
 
           },          
 
