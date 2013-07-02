@@ -528,7 +528,7 @@ class Tutorial::Quest < ActiveRecord::Base
     if armies.nil?
       false
     else
-      armies.where(mode: Military::Army::MODE_FIGHTING).count > 0
+      armies.where(mode: Military::Army::MODE_FIGHTING).count > 0 || self.tutorial_state.owner.kills > 0
     end
   end
 
