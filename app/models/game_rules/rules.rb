@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.8.4
+# Version: 0.8.5
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -117,7 +117,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 8,
-                    :build => 4,
+                    :build => 5,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -5584,7 +5584,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "<p>A quiet seat, a cool beer and somewhat friendly company - what else could one wish for?</p>",
   
-            :de_DE => "<p>Ein ruhiger Sitz, ein kühles Bier und mehr oder weniger angenehme Gesellschaft - was könnte man sich mehr wünschen?</p>",
+            :de_DE => "<p>Ein ruhiger Sitz, ein kühles Bier in mehr oder weniger angenehmer Gesellschaft - was könnte man sich mehr wünschen?</p>",
                 
           },
           :description => {
@@ -6539,8 +6539,69 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Stonegatherers
-        {              #   Klopf auf Holz
+        {              #   Deposittest
           :id          => 1, 
+          :symbolic_id => :assignment_deposittest,
+          :level       => 1,
+          :advisor     => "chief",
+          :name        => {
+            
+            :en_US => "Deposittest",
+  
+            :de_DE => "Deposittest",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Wir werden mit Sicherheit einige Rohstoffe erbeuten!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
+  
+            :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Dies ist ein test</p>",
+  
+            :en_US => "<p>This is a test</p>",
+  
+          },
+
+          :unit_deposits => {
+            0 => '1',
+            0 => '1',
+            
+          },
+
+          :duration => 300,
+          
+
+          :rewards => {
+            
+          :unit_rewards => [
+            
+              {
+                :unit => :clubbers,
+                :amount => 25,
+              },
+
+          ],
+
+            :experience_reward => 50,
+
+          },          
+
+
+        },              #   END OF Deposittest
+        {              #   Klopf auf Holz
+          :id          => 2, 
           :symbolic_id => :assignment_wood,
           :level       => 2,
           :advisor     => "girl",
@@ -6595,7 +6656,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Klopf auf Holz
         {              #   Stonegatherers
-          :id          => 2, 
+          :id          => 3, 
           :symbolic_id => :assignment_fur,
           :level       => 3,
           :advisor     => "girl",
@@ -6650,7 +6711,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Stonegatherers
         {              #   Überfall
-          :id          => 3, 
+          :id          => 4, 
           :symbolic_id => :assignment_raid,
           :level       => 4,
           :advisor     => "warrior",
@@ -6720,7 +6781,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF Überfall
         {              #   Investition
-          :id          => 4, 
+          :id          => 5, 
           :symbolic_id => :assignment_investment,
           :level       => 6,
           :advisor     => "warrior",
