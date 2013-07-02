@@ -14,11 +14,15 @@ class Shop::SpecialOffersController < ApplicationController
       @shop_special_offers = Shop::SpecialOffer.all
     end
 
-    logger.debug "AAAAA " + include_root(@shop_special_offers, :special_offer).inspect
+    logger.debug "AAAAA1 " + include_root(@shop_special_offers, :special_offer).inspect
+
+    retval = render json: include_root(@shop_special_offers, :special_offer)
+
+    logger.debug "AAAAA2 " + retval.inspect
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: include_root(@shop_special_offers, :special_offer)  }
+      format.json { retval  }
     end
   end
 
