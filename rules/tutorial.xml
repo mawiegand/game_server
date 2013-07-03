@@ -583,7 +583,7 @@
                 <p>Use these golden frogs to finish the upgrade right now! Press 'Hurry!' in the building queue.</p>
             </Description>
             <Flavor locale="de_DE">Mit ein paar Kröten lässt sich so einiges bewirken.</Flavor>
-            <Flavor locale="en_US">With a few golfen frogs you can get quite a bit done.</Flavor>
+            <Flavor locale="en_US">With a few golden frogs you can get quite a bit done.</Flavor>
             <RewardText locale="de_DE">Erhöhe Deine Rohstoffproduktion durch den Bau neuer Jäger und Sammler.</RewardText>
             <RewardText locale="en_US">Boost your raw materials production by building a new Hunter Gatherer.</RewardText>
             <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
