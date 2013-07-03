@@ -122,7 +122,7 @@ staging:
 
   battle_xp_winner_bonus_factor:         3.0
 
-  special_offer_interval:         14 #days
+  special_offer_interval:         5 #days
   special_offer_dialog_max_count: 100
 
 production:

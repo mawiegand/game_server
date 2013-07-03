@@ -25,6 +25,11 @@ class Shop::SpecialOffersController < ApplicationController
   def show
     @shop_special_offer = Shop::SpecialOffer.find(params[:id])
 
+    if api_request? && character.purchases.where('external_offer_id = ? and redeemed_at is not null', @shop_special_offer.external_offer_id).empty?
+      render json: {}, status: :not_found
+    end
+
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @shop_special_offer }
