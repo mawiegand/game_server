@@ -276,7 +276,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   def show_special_offer_dialog
     #self.special_offer_displayed_at.nil? || special_offer_displayed_at.advance(:hours => GAME_SERVER_CONFIG['special_offer_dialog_interval']) < DateTime.now
-    self.special_offer_displayed_at.nil? || special_offer_displayed_at.advance(:minutes => 3) < DateTime.now
+    self.special_offer_displayed_at.nil? || special_offer_displayed_at.advance(:seconds => 20) < DateTime.now
   end
   
   def can_found_outpost?
