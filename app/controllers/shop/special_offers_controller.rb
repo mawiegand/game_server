@@ -24,9 +24,10 @@ class Shop::SpecialOffersController < ApplicationController
   # GET /shop/special_offers/1.json
   def show
     @shop_special_offer = Shop::SpecialOffer.find_by_id(params[:id])
+    raise NotFoundError.new('offer not found') if @shop_special_offer.nil?
 
-    if api_request? && current_character.purchases.where('external_offer_id = ? and redeemed_at is not null', @shop_special_offer.external_offer_id).empty?
-      raise NotFoundError.new('offer not found') if @shop_special_offer.nil?
+    if api_request? && !current_character.purchases.where('external_offer_id = ? and redeemed_at is not null', @shop_special_offer.external_offer_id).empty?
+      raise NotFoundError.new('offer not found')
     end
 
     respond_to do |format|
