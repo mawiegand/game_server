@@ -25,7 +25,7 @@ class Shop::SpecialOffersController < ApplicationController
   def show
     @shop_special_offer = Shop::SpecialOffer.find_by_id(params[:id])
 
-    if api_request? && character.purchases.where('external_offer_id = ? and redeemed_at is not null', @shop_special_offer.external_offer_id).empty?
+    if api_request? && current_character.purchases.where('external_offer_id = ? and redeemed_at is not null', @shop_special_offer.external_offer_id).empty?
       raise NotFoundError.new('offer not found') if @shop_special_offer.nil?
     end
 
