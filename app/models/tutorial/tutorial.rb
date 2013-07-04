@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.12
+# Version: 0.3.13
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 12, 
+        :build => 13, 
       },
       
       :production_test_weights => {
@@ -534,7 +534,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
-          :tutorial_end_quest => false,
+          :tutorial_end_quest => true,
           :priority          => 2,
           :blocking          => false,
 
@@ -585,11 +585,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_recruit_1clubbers',
+            :quest => 'quest_build_1campfirelvl1',
 
           },
 
-          :successor_quests => [7, ],
+          :successor_quests => [19, 20, ],
 
           :rewards => {
             
@@ -786,7 +786,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, ],
+          :successor_quests => [7, ],
 
           :rewards => {
             
@@ -874,7 +874,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_recruit_1clubbers',
 
           },
 
@@ -1660,7 +1660,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Mit ein paar Kröten lässt sich so einiges bewirken.",
   
-            :en_US => "With a few golfen frogs you can get quite a bit done.",
+            :en_US => "With a few golden frogs you can get quite a bit done.",
                 
           },
           :description => {
@@ -1949,7 +1949,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
-          :tutorial_end_quest => true,
+          :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
 
@@ -2003,7 +2003,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [19, 20, ],
+          :successor_quests => [4, ],
 
           :rewards => {
             
@@ -2144,7 +2144,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_profile',
 
           },
 
@@ -2227,7 +2227,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_profile',
 
           },
 
