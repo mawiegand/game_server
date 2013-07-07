@@ -128,7 +128,7 @@
 
         "Date, Monthly, Weekly, Daily\n" +        
 <% @backend_stats.each do |backend_stat| %>
-        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mtimenew / (backend_stat.mnu || 1)%>, <%= backend_stat.wtimenew / (backend_stat.wnu || 1) %>, <%= backend_stat.dtimenew / (backend_stat.dnu || 1) %>\n" +
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mtimenew / [(backend_stat.mnu || 1),1].max %>, <%= backend_stat.wtimenew / [(backend_stat.wnu || 1),1].max %>, <%= backend_stat.dtimenew / [(backend_stat.dnu || 1),1].max %>\n" +
 <%end%>         
         "",
         {
