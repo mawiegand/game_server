@@ -378,7 +378,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   def completed_tutorial_on_first_day?
     tutorial_state = self.tutorial_state
-    return fasle     if tutorial_state.nil?
+    return false     if tutorial_state.nil?
     displayed_at   = self.tutorial_state.displayed_tutorial_completion_notice_at
     return false     if displayed_at.nil?
     return displayed_at < self.created_at + 1.days
