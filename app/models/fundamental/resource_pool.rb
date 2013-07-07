@@ -84,7 +84,7 @@ class Fundamental::ResourcePool < ActiveRecord::Base
       base = GameRules::Rules.the_rules().resource_types[key][:symbolic_id].to_s()
       logger.debug "EVAL: #{value} , #{self[base+'_amount']}"
       present_amount = [[self[base+'_amount'] + self[base+'_production_rate'] * hours, self[base+'_capacity']].min, 0.0].max
-      sufficient = false if present_amount < value
+      sufficient = false if present_amount < value.to_f
     end
     return sufficient
   end
