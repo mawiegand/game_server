@@ -166,6 +166,12 @@ class Fundamental::Character < ActiveRecord::Base
   def self.update_all_conversions
     Fundamental::Character.all.each do |character|
       character.update_conversion_state
+      if !character.logged_in_on_second_day? && character.created_at > DateTime.now - 3.days && !self.last_request_at.nil?
+        start = self.created.beginning_of_day
+        if  self.last_request_at > start + 1.days && self.last_request_at < start + 2.days
+          self.logged_in_on_second_day = true
+        end
+      end
       character.save
     end
   end
@@ -361,6 +367,23 @@ class Fundamental::Character < ActiveRecord::Base
     
     character 
   end
+  
+  
+  def completed_tutorial?
+    tutorial_state = self.tutorial_state
+    return NO        if tutorial_state.nil?
+    displayed_at   = self.tutorial_state.displayed_tutorial_completion_notice_at
+    !displayed_at.nil?
+  end
+  
+  def completed_tutorial_on_first_day?
+    tutorial_state = self.tutorial_state
+    return NO        if tutorial_state.nil?
+    displayed_at   = self.tutorial_state.displayed_tutorial_completion_notice_at
+    return NO        if displayed_at.nil?
+    return displayed_at < self.created_at + 1.days
+  end
+  
   
   def change_name_transaction(name)
     raise InternalServerError.new("this name contains invalid characters") if name.include?('|')

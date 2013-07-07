@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130702080952) do
+ActiveRecord::Schema.define(:version => 20130707192554) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -209,58 +209,64 @@ ActiveRecord::Schema.define(:version => 20130702080952) do
     t.integer  "dlu"
     t.integer  "wlu"
     t.integer  "mlu"
-    t.decimal  "resource_stone_amount_sum",          :default => 0.0
-    t.decimal  "resource_stone_amount_max",          :default => 0.0
-    t.decimal  "resource_stone_production_rate_sum", :default => 0.0
-    t.decimal  "resource_stone_production_rate_max", :default => 0.0
-    t.decimal  "resource_wood_amount_sum",           :default => 0.0
-    t.decimal  "resource_wood_amount_max",           :default => 0.0
-    t.decimal  "resource_wood_production_rate_sum",  :default => 0.0
-    t.decimal  "resource_wood_production_rate_max",  :default => 0.0
-    t.decimal  "resource_fur_amount_sum",            :default => 0.0
-    t.decimal  "resource_fur_amount_max",            :default => 0.0
-    t.decimal  "resource_fur_production_rate_sum",   :default => 0.0
-    t.decimal  "resource_fur_production_rate_max",   :default => 0.0
-    t.decimal  "resource_cash_amount_sum",           :default => 0.0
-    t.decimal  "resource_cash_amount_max",           :default => 0.0
-    t.decimal  "resource_cash_production_rate_sum",  :default => 0.0
-    t.decimal  "resource_cash_production_rate_max",  :default => 0.0
-    t.integer  "month_num_registered",               :default => 0,   :null => false
-    t.integer  "month_num_logged_in_once",           :default => 0,   :null => false
-    t.integer  "month_num_logged_in_two_days",       :default => 0,   :null => false
-    t.integer  "month_num_active",                   :default => 0,   :null => false
-    t.integer  "month_num_long_term_active",         :default => 0,   :null => false
-    t.integer  "month_num_paying",                   :default => 0,   :null => false
-    t.integer  "day_num_registered",                 :default => 0,   :null => false
-    t.integer  "day_num_logged_in_once",             :default => 0,   :null => false
-    t.integer  "day_num_logged_in_two_days",         :default => 0,   :null => false
-    t.integer  "day_num_active",                     :default => 0,   :null => false
-    t.integer  "day_num_long_term_active",           :default => 0,   :null => false
-    t.integer  "day_num_paying",                     :default => 0,   :null => false
-    t.integer  "month_credits_spent",                :default => 0,   :null => false
-    t.integer  "day_credits_spent",                  :default => 0,   :null => false
-    t.integer  "dcs",                                :default => 0,   :null => false
-    t.integer  "mcs",                                :default => 0,   :null => false
-    t.integer  "wcs",                                :default => 0,   :null => false
-    t.decimal  "mgross",                             :default => 0.0, :null => false
-    t.decimal  "wgross",                             :default => 0.0, :null => false
-    t.decimal  "dgross",                             :default => 0.0, :null => false
-    t.decimal  "day_gross",                          :default => 0.0, :null => false
-    t.decimal  "month_gross",                        :default => 0.0, :null => false
-    t.integer  "day_finished_quests",                :default => 0,   :null => false
-    t.integer  "month_finished_quests",              :default => 0,   :null => false
-    t.integer  "month_num_ten_minutes",              :default => 0,   :null => false
-    t.integer  "day_num_ten_minutes",                :default => 0,   :null => false
-    t.integer  "dtimenew",                           :default => 0,   :null => false
-    t.integer  "wtimenew",                           :default => 0,   :null => false
-    t.integer  "mtimenew",                           :default => 0,   :null => false
-    t.integer  "month_inactive",                     :default => 0,   :null => false
-    t.integer  "day_inactive",                       :default => 0,   :null => false
-    t.integer  "total_logged_in_once",               :default => 0,   :null => false
-    t.integer  "total_ten_minutes",                  :default => 0,   :null => false
-    t.integer  "total_second_day",                   :default => 0,   :null => false
-    t.integer  "total_active",                       :default => 0,   :null => false
-    t.integer  "total_long_term_active",             :default => 0,   :null => false
+    t.decimal  "resource_stone_amount_sum",              :default => 0.0
+    t.decimal  "resource_stone_amount_max",              :default => 0.0
+    t.decimal  "resource_stone_production_rate_sum",     :default => 0.0
+    t.decimal  "resource_stone_production_rate_max",     :default => 0.0
+    t.decimal  "resource_wood_amount_sum",               :default => 0.0
+    t.decimal  "resource_wood_amount_max",               :default => 0.0
+    t.decimal  "resource_wood_production_rate_sum",      :default => 0.0
+    t.decimal  "resource_wood_production_rate_max",      :default => 0.0
+    t.decimal  "resource_fur_amount_sum",                :default => 0.0
+    t.decimal  "resource_fur_amount_max",                :default => 0.0
+    t.decimal  "resource_fur_production_rate_sum",       :default => 0.0
+    t.decimal  "resource_fur_production_rate_max",       :default => 0.0
+    t.decimal  "resource_cash_amount_sum",               :default => 0.0
+    t.decimal  "resource_cash_amount_max",               :default => 0.0
+    t.decimal  "resource_cash_production_rate_sum",      :default => 0.0
+    t.decimal  "resource_cash_production_rate_max",      :default => 0.0
+    t.integer  "month_num_registered",                   :default => 0,   :null => false
+    t.integer  "month_num_logged_in_once",               :default => 0,   :null => false
+    t.integer  "month_num_logged_in_two_days",           :default => 0,   :null => false
+    t.integer  "month_num_active",                       :default => 0,   :null => false
+    t.integer  "month_num_long_term_active",             :default => 0,   :null => false
+    t.integer  "month_num_paying",                       :default => 0,   :null => false
+    t.integer  "day_num_registered",                     :default => 0,   :null => false
+    t.integer  "day_num_logged_in_once",                 :default => 0,   :null => false
+    t.integer  "day_num_logged_in_two_days",             :default => 0,   :null => false
+    t.integer  "day_num_active",                         :default => 0,   :null => false
+    t.integer  "day_num_long_term_active",               :default => 0,   :null => false
+    t.integer  "day_num_paying",                         :default => 0,   :null => false
+    t.integer  "month_credits_spent",                    :default => 0,   :null => false
+    t.integer  "day_credits_spent",                      :default => 0,   :null => false
+    t.integer  "dcs",                                    :default => 0,   :null => false
+    t.integer  "mcs",                                    :default => 0,   :null => false
+    t.integer  "wcs",                                    :default => 0,   :null => false
+    t.decimal  "mgross",                                 :default => 0.0, :null => false
+    t.decimal  "wgross",                                 :default => 0.0, :null => false
+    t.decimal  "dgross",                                 :default => 0.0, :null => false
+    t.decimal  "day_gross",                              :default => 0.0, :null => false
+    t.decimal  "month_gross",                            :default => 0.0, :null => false
+    t.integer  "day_finished_quests",                    :default => 0,   :null => false
+    t.integer  "month_finished_quests",                  :default => 0,   :null => false
+    t.integer  "month_num_ten_minutes",                  :default => 0,   :null => false
+    t.integer  "day_num_ten_minutes",                    :default => 0,   :null => false
+    t.integer  "dtimenew",                               :default => 0,   :null => false
+    t.integer  "wtimenew",                               :default => 0,   :null => false
+    t.integer  "mtimenew",                               :default => 0,   :null => false
+    t.integer  "month_inactive",                         :default => 0,   :null => false
+    t.integer  "day_inactive",                           :default => 0,   :null => false
+    t.integer  "total_logged_in_once",                   :default => 0,   :null => false
+    t.integer  "total_ten_minutes",                      :default => 0,   :null => false
+    t.integer  "total_second_day",                       :default => 0,   :null => false
+    t.integer  "total_active",                           :default => 0,   :null => false
+    t.integer  "total_long_term_active",                 :default => 0,   :null => false
+    t.integer  "month_num_2nd_day",                      :default => 0,   :null => false
+    t.integer  "month_num_tutorial_completed",           :default => 0,   :null => false
+    t.integer  "month_num_tutorial_completed_first_day", :default => 0,   :null => false
+    t.integer  "day_num_2nd_day",                        :default => 0,   :null => false
+    t.integer  "day_num_tutorial_completed",             :default => 0,   :null => false
+    t.integer  "day_num_tutorial_completed_first_day",   :default => 0,   :null => false
   end
 
   create_table "backend_trade_log_entries", :force => true do |t|
@@ -1675,6 +1681,16 @@ ActiveRecord::Schema.define(:version => 20130702080952) do
     t.decimal  "speedup_effects",   :default => 0.0, :null => false
   end
 
+  create_table "effect_alliance_construction_effects", :force => true do |t|
+    t.datetime "finished_at"
+    t.integer  "type_id"
+    t.decimal  "bonus"
+    t.integer  "alliance_id"
+    t.integer  "origin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "effect_alliance_resource_effects", :force => true do |t|
     t.integer  "resource_id"
     t.integer  "type_id"
@@ -1683,6 +1699,16 @@ ActiveRecord::Schema.define(:version => 20130702080952) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "origin_id"
+  end
+
+  create_table "effect_construction_effects", :force => true do |t|
+    t.datetime "finished_at"
+    t.integer  "type_id"
+    t.decimal  "bonus"
+    t.integer  "character_id"
+    t.integer  "origin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "effect_resource_effects", :force => true do |t|
@@ -1865,11 +1891,13 @@ ActiveRecord::Schema.define(:version => 20130702080952) do
     t.datetime "insider_since"
     t.boolean  "first_round"
     t.datetime "tutorial_finished_at"
+    t.decimal  "construction_bonus_effect",                :default => 0.0,   :null => false
+    t.decimal  "construction_bonus_total",                 :default => 0.0,   :null => false
     t.integer  "assignment_level",                         :default => 0,     :null => false
-    t.datetime "moved_at"
-    t.integer  "old_base_location_id"
-    t.integer  "special_offer_dialog_count",               :default => 0
     t.datetime "premium_expiration_displayed_at"
+    t.integer  "special_offer_dialog_count",               :default => 0
+    t.datetime "special_offer_displayed_at"
+    t.boolean  "logged_in_on_second_day",                  :default => false, :null => false
   end
 
   create_table "fundamental_guilds", :force => true do |t|
@@ -2040,7 +2068,6 @@ ActiveRecord::Schema.define(:version => 20130702080952) do
     t.integer  "settlement_score",   :default => 0, :null => false
     t.string   "invitation_code"
     t.string   "avatar_string"
-    t.string   "moving_password"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
