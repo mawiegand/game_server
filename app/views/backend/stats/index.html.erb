@@ -15,6 +15,12 @@
   <div class="chart" id="gross_cohorts"></div>
   <div class="chart" id="quests_cohorts"></div>
 
+  <div class="chart" id="tutorial_completed"></div>
+  <div class="chart" id="tutorial_completed_daily"></div>
+
+  <div class="chart" id="second_day"></div>
+  <div class="chart" id="second_day_daily"></div>
+
   <div class="clear"></div>
 
 
@@ -58,6 +64,63 @@
   <div class="clear"></div>
 
   <script>
+  
+  
+    var second_day = new Dygraph(
+
+      document.getElementById("second_day"),
+
+      "Date, logged-in on day 2\n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,  <%= backend_stat.month_num_2nd_day / (1.0*[backend_stat.month_characters_total, 1].max) %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Sign-Ins on day 2 (monthly)',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
+    
+    var secondDayDaily = new Dygraph(
+
+      document.getElementById("second_day_daily"),
+
+      "Date, registered, logged-in once, 10 minutes, 2day retention, active, long term, paying \n"+
+  <% @backend_stats.each do |backend_stat| %>
+  "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,  <%= backend_stat.day_num_2nd_day / (1.0*[backend_stat.day_characters_total, 1].max) %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Sign-Ins on day 2 (daily)',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
       var creditsSpentAverage = new Dygraph(
 
