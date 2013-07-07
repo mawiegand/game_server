@@ -166,10 +166,10 @@ class Fundamental::Character < ActiveRecord::Base
   def self.update_all_conversions
     Fundamental::Character.all.each do |character|
       character.update_conversion_state
-      if !character.logged_in_on_second_day? && character.created_at > DateTime.now - 3.days && !self.last_request_at.nil?
-        start = self.created.beginning_of_day
-        if  self.last_request_at > start + 1.days && self.last_request_at < start + 2.days
-          self.logged_in_on_second_day = true
+      if !character.logged_in_on_second_day? && character.created_at > DateTime.now - 3.days && !character.last_request_at.nil?
+        start = character.created_at.beginning_of_day
+        if character.last_request_at > start + 1.days && character.last_request_at < start + 2.days
+          character.logged_in_on_second_day = true
         end
       end
       character.save
