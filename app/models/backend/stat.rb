@@ -18,7 +18,7 @@ class Backend::Stat < ActiveRecord::Base
       characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.months ])
       characters.each do |character|
         stat.month_num_2nd_day            += 1   if character.logged_in_on_second_day?
-        stat.month_num_tutorial_completed += 1   if character.tutorial_completed?
+        stat.month_num_tutorial_completed += 1   if character.completed_tutorial?
         stat.month_num_tutorial_completed_first_day += 1   if character.completed_tutorial_on_first_day?
         stat.month_num_registered         += 1   if character.max_conversion_state == "registered"
         stat.month_num_logged_in_once     += 1   if character.max_conversion_state == "logged_in_once"
@@ -37,7 +37,7 @@ class Backend::Stat < ActiveRecord::Base
       characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.days ])
       characters.each do |character|
         stat.day_num_2nd_day            += 1   if character.logged_in_on_second_day?
-        stat.day_num_tutorial_completed += 1   if character.tutorial_completed?
+        stat.day_num_tutorial_completed += 1   if character.completed_tutorial?
         stat.day_num_tutorial_completed_first_day += 1   if character.completed_tutorial_on_first_day?
         stat.day_num_registered         += 1   if character.max_conversion_state == "registered"
         stat.day_num_logged_in_once     += 1   if character.max_conversion_state == "logged_in_once"
