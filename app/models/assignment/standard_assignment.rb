@@ -105,7 +105,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   end
   
   def costs
-    costs = {) 
+    costs = {}
     
     (assignment_type[:costs] || {}).each do |resource_id, formula|
       # f = Util::Formula.parse_from_formula(formula)
