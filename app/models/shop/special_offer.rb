@@ -5,8 +5,10 @@ class Shop::SpecialOffer < ActiveRecord::Base
   end
 
   def self.buyable_by_character(character)
+    logger.debug "AAAAA #{character.tutorial_finished_at} #{character.show_special_offers?}"
     if character.show_special_offers?         # if character is in dialog time interval (after finished tutorial)
       buyable_offers = Shop::SpecialOffer.all.select do |offer|   # show offers, that the user didn't buy yet
+        logger.debug "AAAAA #{character.purchases.where('external_offer_id = ? and redeemed_at is not null', offer.external_offer_id).empty?}"
         character.purchases.where('external_offer_id = ? and redeemed_at is not null', offer.external_offer_id).empty?
       end
       buyable_offers.map { |offer| offer.attributes }

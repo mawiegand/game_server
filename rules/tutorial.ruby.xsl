@@ -355,6 +355,9 @@ end
               :min_units => <xsl:value-of select="KillTest/@min_units" />,
             },
 </xsl:if>
+<xsl:if test="BattleTest">
+            :battle_test => {},
+</xsl:if>
 <xsl:if test="ArmyExperienceTest">
             :army_experience_test => {
               :min_experience => <xsl:value-of select="ArmyExperienceTest/@min_experience" />,

@@ -54,7 +54,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string,     :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :playtime, :tutorial_finished_at, :assignment_level, :special_offer_dialog_count, :as => :owner
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :playtime, :tutorial_finished_at, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -274,10 +274,6 @@ class Fundamental::Character < ActiveRecord::Base
     !tutorial_finished_at.nil? && tutorial_finished_at.advance(:days => GAME_SERVER_CONFIG['special_offer_interval']) > DateTime.now
   end
 
-  def show_special_offer_dialog
-    self.special_offer_dialog_count < GAME_SERVER_CONFIG['special_offer_dialog_max_count']
-  end
-  
   def can_found_outpost?
     settlement_point_available?
   end
@@ -1257,7 +1253,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   def as_json(options={})
     options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
-    options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker', 'show_special_offer_dialog']
+    options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker']
     super(options)
   end
   

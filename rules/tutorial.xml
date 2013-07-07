@@ -4,7 +4,7 @@
 
     <General>
         <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-        <Version major="0" minor="3" build="12" />
+        <Version major="0" minor="3" build="13" />
         <Languages>
             <Language lang="en">English</Language>
             <Language lang="de">Deutsch</Language>
@@ -182,7 +182,7 @@
             <RewardText locale="en_US">Take a look at the quest overview regularly, then you won't lose track of them.  </RewardText>
             <RewardFlavor locale="de_DE">Klasse, jetzt hast Du alle Quests auf einen Blick. </RewardFlavor>
             <RewardFlavor locale="en_US">Great – now you can see all your quests at a glance.</RewardFlavor>
-            <Requirement quest="quest_queue_1gathererlvl1" />
+            <Requirement quest="quest_build_chiefcottagelvl3" />
             <Rewards>
                 <ExperienceReward>50</ExperienceReward>
             </Rewards>
@@ -437,7 +437,7 @@
             <RewardText locale="en_US">You can enter all your settlements and fortresses by selecting them and then clicking on 'Enter'.</RewardText>
             <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach, oder?</RewardFlavor>
             <RewardFlavor locale="en_US">You see? Pretty easy, wasn't it?!</RewardFlavor>
-            <Requirement quest="quest_army_move" />
+            <Requirement quest="quest_npc_battle" />
             <Rewards>
                 <ResourceReward resource="resource_cash">1</ResourceReward>
                 <ExperienceReward>150</ExperienceReward>
@@ -500,7 +500,7 @@
             <RewardText locale="en_US">If the order is taking too long for you, you can build more small huts and then upgrade.</RewardText>
             <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
             <RewardFlavor locale="en_US">Well done! Your workers are happy, and they build faster. </RewardFlavor>
-            <Requirement quest="quest_build_chiefcottagelvl3" />
+            <Requirement quest="quest_quest_button" />
             <Rewards>
                 <ResourceReward resource="resource_stone">120</ResourceReward>
                 <ResourceReward resource="resource_wood">100</ResourceReward>
@@ -3955,7 +3955,7 @@
           <ActionPointReward></ActionPointReward>
         </Rewards>
         <RewardTests>
-          <KillTest min_units="1" />
+          <BattleTest />
         </RewardTests>
         <UIMarker>mark_map</UIMarker>
         <UIMarker>mark_select_own_home_settlement</UIMarker>

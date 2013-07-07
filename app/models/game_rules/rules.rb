@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.8.10
+# Version: 0.8.11
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -117,7 +117,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 8,
-                    :build => 10,
+                    :build => 11,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -6539,314 +6539,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Stonegatherers
-        {              #   Deposittest
+        {              #   Knock on wood
           :id          => 1, 
-          :symbolic_id => :assignment_deposittest,
-          :level       => 1,
-          :advisor     => "chief",
-          :name        => {
-            
-            :en_US => "Deposittest",
-  
-            :de_DE => "Deposittest",
-                
-          },
-          :flavour     => {
-            
-            :de_DE => "Wir werden mit Sicherheit einige Rohstoffe erbeuten!",
-  
-            :en_US => "We will loot a bunch of resources for sure!",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
-  
-            :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
-                
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Dies ist ein test</p>",
-  
-            :en_US => "<p>This is a test</p>",
-  
-          },
-
-          :unit_deposits => {
-            0 => '1',
-            14 => '2',
-            1 => '3',
-            2 => '1',
-            8 => '1',
-            9 => '1',
-            10 => '1',
-            11 => '1',
-            3 => '1',
-            4 => '1',
-            5 => '1',
-            6 => '1',
-            7 => '1',
-            13 => '1',
-            
-          },
-
-          :duration => 300,
-          
-
-          :rewards => {
-            
-          :unit_rewards => [
-            
-              {
-                :unit => :unit_clubbers,
-                :amount => 25,
-              },
-
-          ],
-
-            :experience_reward => 50,
-
-          },          
-
-
-        },              #   END OF Deposittest
-        {              #   Deposittest2
-          :id          => 2, 
-          :symbolic_id => :assignment_deposittest2,
-          :level       => 1,
-          :advisor     => "chief",
-          :name        => {
-            
-            :en_US => "Deposittest2",
-  
-            :de_DE => "Deposittest2",
-                
-          },
-          :flavour     => {
-            
-            :de_DE => "Wir werden mit Sicherheit einige Rohstoffe erbeuten!",
-  
-            :en_US => "We will loot a bunch of resources for sure!",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
-  
-            :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
-                
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Dies ist ein test</p>",
-  
-            :en_US => "<p>This is a test</p>",
-  
-          },
-
-          :unit_deposits => {
-            14 => '1',
-            
-          },
-
-          :duration => 10,
-          
-
-          :rewards => {
-            
-          :unit_rewards => [
-            
-              {
-                :unit => :unit_clubbers,
-                :amount => 25,
-              },
-
-          ],
-
-            :experience_reward => 50,
-
-          },          
-
-
-        },              #   END OF Deposittest2
-        {              #   Resourcetest1
-          :id          => 3, 
-          :symbolic_id => :assignment_resource1,
-          :level       => 1,
-          :advisor     => "chief",
-          :name        => {
-            
-            :en_US => "Resourcetest1",
-  
-            :de_DE => "Resourcetest1",
-                
-          },
-          :flavour     => {
-            
-            :de_DE => "Wir werden mit Sicherheit einige Rohstoffe erbeuten!",
-  
-            :en_US => "We will loot a bunch of resources for sure!",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
-  
-            :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
-                
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Dies ist ein test</p>",
-  
-            :en_US => "<p>This is a test</p>",
-  
-          },
-
-          :costs      => {
-            0 => '10',
-            
-          },
-
-          :duration => 300,
-          
-
-          :rewards => {
-            
-          :unit_rewards => [
-            
-              {
-                :unit => :unit_clubbers,
-                :amount => 25,
-              },
-
-          ],
-
-            :experience_reward => 50,
-
-          },          
-
-
-        },              #   END OF Resourcetest1
-        {              #   Resourcetest2
-          :id          => 4, 
-          :symbolic_id => :assignment_resource2,
-          :level       => 1,
-          :advisor     => "chief",
-          :name        => {
-            
-            :en_US => "Resourcetest2",
-  
-            :de_DE => "Resourcetest2",
-                
-          },
-          :flavour     => {
-            
-            :de_DE => "Wir werden mit Sicherheit einige Rohstoffe erbeuten!",
-  
-            :en_US => "We will loot a bunch of resources for sure!",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
-  
-            :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
-                
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Dies ist ein test</p>",
-  
-            :en_US => "<p>This is a test</p>",
-  
-          },
-
-          :costs      => {
-            0 => '10',
-            1 => '10',
-            
-          },
-
-          :duration => 300,
-          
-
-          :rewards => {
-            
-            :experience_reward => 50,
-
-          },          
-
-
-        },              #   END OF Resourcetest2
-        {              #   Resourcetest3
-          :id          => 5, 
-          :symbolic_id => :assignment_resource3,
-          :level       => 1,
-          :advisor     => "chief",
-          :name        => {
-            
-            :en_US => "Resourcetest3",
-  
-            :de_DE => "Resourcetest3",
-                
-          },
-          :flavour     => {
-            
-            :de_DE => "Wir werden mit Sicherheit einige Rohstoffe erbeuten!",
-  
-            :en_US => "We will loot a bunch of resources for sure!",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
-  
-            :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
-                
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Dies ist ein test</p>",
-  
-            :en_US => "<p>This is a test</p>",
-  
-          },
-
-          :costs      => {
-            0 => '10',
-            1 => '10',
-            2 => '10',
-            
-          },
-
-          :duration => 300,
-          
-
-          :rewards => {
-            
-            :experience_reward => 50,
-
-          },          
-
-
-        },              #   END OF Resourcetest3
-        {              #   Klopf auf Holz
-          :id          => 6, 
           :symbolic_id => :assignment_wood,
           :level       => 2,
           :advisor     => "girl",
           :name        => {
             
-            :en_US => "Klopf auf Holz",
+            :en_US => "Knock on wood",
   
-            :de_DE => "Knock on wood",
+            :de_DE => "Klopf auf Holz",
                 
           },
           :flavour     => {
@@ -6891,17 +6593,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },          
 
 
-        },              #   END OF Klopf auf Holz
-        {              #   Stonegatherers
-          :id          => 7, 
+        },              #   END OF Knock on wood
+        {              #   Fluffy fur
+          :id          => 2, 
           :symbolic_id => :assignment_fur,
           :level       => 3,
           :advisor     => "girl",
           :name        => {
             
-            :en_US => "Stonegatherers",
+            :en_US => "Fluffy fur",
   
-            :de_DE => "Steinesammler",
+            :de_DE => "Flauschiges Fell",
                 
           },
           :flavour     => {
@@ -6946,17 +6648,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },          
 
 
-        },              #   END OF Stonegatherers
-        {              #   Überfall
-          :id          => 8, 
+        },              #   END OF Fluffy fur
+        {              #   Raid
+          :id          => 3, 
           :symbolic_id => :assignment_raid,
           :level       => 4,
           :advisor     => "warrior",
           :name        => {
             
-            :en_US => "Überfall",
+            :en_US => "Raid",
   
-            :de_DE => "Raid",
+            :de_DE => "Überfall",
                 
           },
           :flavour     => {
@@ -7016,17 +6718,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },          
 
 
-        },              #   END OF Überfall
-        {              #   Investition
-          :id          => 9, 
+        },              #   END OF Raid
+        {              #   Investment
+          :id          => 4, 
           :symbolic_id => :assignment_investment,
           :level       => 6,
           :advisor     => "warrior",
           :name        => {
             
-            :en_US => "Investition",
+            :en_US => "Investment",
   
-            :de_DE => "Investment",
+            :de_DE => "Investition",
                 
           },
           :flavour     => {
@@ -7088,7 +6790,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },          
 
 
-        },              #   END OF Investition
+        },              #   END OF Investment
       ],                # END OF ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################
