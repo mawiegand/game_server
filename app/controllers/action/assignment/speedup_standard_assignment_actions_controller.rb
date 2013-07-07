@@ -12,7 +12,7 @@ class Action::Assignment::SpeedupStandardAssignmentActionsController < Applicati
       raise BadRequestError.new('assignment not active')   if @assignment.ended_at.nil?
       raise BadRequestError.new('already hurried job')     if @assignment.hurried?
       
-      speedup_costs    = 1
+      speedup_costs    = 2
       speedup_resource = 3
       
       price = { speedup_resource => speedup_costs }
