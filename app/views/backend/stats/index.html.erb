@@ -64,9 +64,52 @@
   <div class="clear"></div>
 
   <script>
+
+
+    var tutorialCompletion = new Dygraph(
+
+      document.getElementById("tutorial_completed"),
+
+      "Date, completed, completed on 1st day\n"+
+  <% @backend_stats.each do |backend_stat| %>
+      "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,  <%= backend_stat.month_num_tutorial_completed / (1.0*[backend_stat.month_characters_total, 1].max) %>,  <%= backend_stat.month_num_tutorial_completed_first_day / (1.0*[backend_stat.month_characters_total, 1].max) %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Tutorial Completion (monthly)',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
+    
+    var tutorialCompletionDaily = new Dygraph(
+
+      document.getElementById("tutorial_completed_daily"),
+
+      "Date, completed, completed on 1st day \n"+
+  <% @backend_stats.each do |backend_stat| %>
+    "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,  <%= backend_stat.day_num_tutorial_completed / (1.0*[backend_stat.day_characters_total, 1].max) %>,  <%= backend_stat.day_num_tutorial_completed_first_day / (1.0*[backend_stat.day_characters_total, 1].max) %>\n"+
+  <%end%>
+      "",
+      {
+        legend: 'always',
+        title: 'Tutorial Completion (daily)',
+        fillGraph: true,
+        highlightSeriesOpts: {
+          strokeWidth: 3,
+          strokeBorderWidth: 1,
+          highlightCircleSize: 5,
+        },
+      }
+    );
   
   
-    var second_day = new Dygraph(
+    var secondDay = new Dygraph(
 
       document.getElementById("second_day"),
 
@@ -91,7 +134,7 @@
 
       document.getElementById("second_day_daily"),
 
-      "Date, registered, logged-in once, 10 minutes, 2day retention, active, long term, paying \n"+
+      "Date, logged-in on day 2\n"+
   <% @backend_stats.each do |backend_stat| %>
   "<%= backend_stat.created_at.strftime("%Y-%m-%d") %>,  <%= backend_stat.day_num_2nd_day / (1.0*[backend_stat.day_characters_total, 1].max) %>\n"+
   <%end%>
