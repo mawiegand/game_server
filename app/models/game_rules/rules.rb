@@ -168,6 +168,12 @@ class GameRules::Rules
 
       :construction_speedup => [  # ALL CONSTRUCTION SPEEDUPS
 
+        {               #   less than (1.0/60.0) hours
+          :resource_id => 3,
+          :amount      => 0,
+          :hours       => (1.0/60.0),
+        },              #   END OF (1.0/60.0) hours
+
         {               #   less than 1 hours
           :resource_id => 3,
           :amount      => 1,
