@@ -14,9 +14,12 @@ class Backend::Stat < ActiveRecord::Base
   
   def self.update_all_cohorts
     Backend::Stat.find(:all).each do |stat|
-      stat.month_num_registered = stat.month_num_logged_in_once = stat.month_num_ten_minutes = stat.month_num_logged_in_two_days = stat.month_num_long_term_active = stat.month_num_active = stat.month_num_paying = stat.month_credits_spent = stat.month_gross = stat.month_finished_quests = stat.month_inactive= 0
+      stat.month_num_registered = stat.month_num_2nd_day = stat.month_num_tutorial_completed = stat.month_num_tutorial_completed_first_day = stat.month_num_logged_in_once = stat.month_num_ten_minutes = stat.month_num_logged_in_two_days = stat.month_num_long_term_active = stat.month_num_active = stat.month_num_paying = stat.month_credits_spent = stat.month_gross = stat.month_finished_quests = stat.month_inactive= 0
       characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.months ])
       characters.each do |character|
+        stat.month_num_2nd_day            += 1   if character.logged_in_on_second_day?
+        stat.month_num_tutorial_completed += 1   if character.completed_tutorial?
+        stat.month_num_tutorial_completed_first_day += 1   if character.completed_tutorial_on_first_day?
         stat.month_num_registered         += 1   if character.max_conversion_state == "registered"
         stat.month_num_logged_in_once     += 1   if character.max_conversion_state == "logged_in_once"
         stat.month_num_ten_minutes        += 1   if character.max_conversion_state == "ten_minutes"
@@ -30,9 +33,12 @@ class Backend::Stat < ActiveRecord::Base
         stat.month_inactive               += 1   if character.last_login_at.nil? || character.last_login_at < Time.now - Backend::Stat.activity_period
       end
 
-      stat.day_num_registered = stat.day_num_logged_in_once = stat.day_num_ten_minutes = stat.day_num_logged_in_two_days = stat.day_num_long_term_active = stat.day_num_active = stat.day_num_paying = stat.day_credits_spent = stat.day_gross = stat.day_finished_quests = stat.day_inactive = 0
+      stat.day_num_registered = stat.day_num_2nd_day = stat.day_num_tutorial_completed = stat.day_num_tutorial_completed_first_day = stat.day_num_logged_in_once = stat.day_num_ten_minutes = stat.day_num_logged_in_two_days = stat.day_num_long_term_active = stat.day_num_active = stat.day_num_paying = stat.day_credits_spent = stat.day_gross = stat.day_finished_quests = stat.day_inactive = 0
       characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', stat.created_at, stat.created_at - 1.days ])
       characters.each do |character|
+        stat.day_num_2nd_day            += 1   if character.logged_in_on_second_day?
+        stat.day_num_tutorial_completed += 1   if character.completed_tutorial?
+        stat.day_num_tutorial_completed_first_day += 1   if character.completed_tutorial_on_first_day?
         stat.day_num_registered         += 1   if character.max_conversion_state == "registered"
         stat.day_num_logged_in_once     += 1   if character.max_conversion_state == "logged_in_once"
         stat.day_num_ten_minutes        += 1   if character.max_conversion_state == "ten_minutes"

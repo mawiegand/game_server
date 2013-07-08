@@ -8,8 +8,8 @@ module GameState
         resource_rewards.each do |resource_reward|
           raise BadRequestError.new('no resource_reward given') if resource_reward.nil?
 
-          amount = resource_reward[:amount]
-          raise BadRequestError.new('no amount given') if amount.nil?
+          raise BadRequestError.new('no amount given') if resource_reward[:amount].nil?
+          amount = (resource_reward[:amount] || 0).to_f
           raise BadRequestError.new('amount is negative') if amount < 0
 
           resource_symbolic_id = resource_reward[:resource]
@@ -38,8 +38,8 @@ module GameState
         unit_rewards.each do |unit_reward|
           raise BadRequestError.new('no unit_reward given') if unit_reward.nil?
 
-          amount = unit_reward[:amount]
-          raise BadRequestError.new('no amount given') if amount.nil?
+          raise BadRequestError.new('no amount given') if unit_reward[:amount].nil?
+          amount = (unit_reward[:amount] || 0).to_i
           raise BadRequestError.new('amount is negative') if amount < 0
 
           unit_db_field = unit_reward[:unit]

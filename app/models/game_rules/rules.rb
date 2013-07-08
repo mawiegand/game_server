@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.8.11
+# Version: 0.8.13
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -117,7 +117,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 8,
-                    :build => 11,
+                    :build => 13,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -6490,16 +6490,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
       :assignment_types => [  # ALL ASSIGMENT TYPES
 
-        {              #   Stonegatherers
+        {              #   Boulder Smashing
           :id          => 0, 
           :symbolic_id => :assignment_stone,
           :level       => 1,
           :advisor     => "girl",
           :name        => {
             
-            :en_US => "Stonegatherers",
+            :en_US => "Boulder Smashing",
   
-            :de_DE => "Steinesammler",
+            :de_DE => "Steine klopfen",
                 
           },
           :flavour     => {
@@ -6511,17 +6511,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Du könntest ihnen vielleicht helfen motivierter zu sein, immerhin motiviert nichts so sehr wie ein ordentlicher Schlag ins Gesicht und blau sind sie sowieso schon.</p>",
+            :de_DE => "<p>Vielleicht verlierst du die Wette, wie schnell deine Sammler steine kloppen können, aber am Ende bleibt für dich sowieso mehr übrig, als ihr Bier kosten wird.</p>",
   
-            :en_US => "<p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. Maybe you want to help them become a bit more motivated and you could use the workout anyways.</p>",
+            :en_US => "<p>Maybe you will lose your bet, how fast your gatherers can smash those boulders, but in the end you will get more out of their fast work then their beer will cost you anyways. </p>",
                 
           },
 
           :short_description => {
             
-            :de_DE => "<p>Mach deinen Sammlern Beine und lass sie ein paar Steine extra aufsammeln.</p>",
+            :de_DE => "<p>Mach deinen Sammlern Beine und lass sie ein paar Steine klopfen</p>",
   
-            :en_US => "<p>Have your gatherers pick up the slack and pick up a couple of extra stones.</p>",
+            :en_US => "<p>Have your gatherers pick up the slack and smash a couple of boulders</p>",
   
           },
 
@@ -6539,48 +6539,46 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-            :experience_reward => 5,
-
           },          
 
 
-        },              #   END OF Stonegatherers
-        {              #   Knock on wood
+        },              #   END OF Boulder Smashing
+        {              #   Wood Cutting
           :id          => 1, 
           :symbolic_id => :assignment_wood,
           :level       => 2,
           :advisor     => "girl",
           :name        => {
             
-            :en_US => "Knock on wood",
+            :en_US => "Wood Cutting",
   
-            :de_DE => "Klopf auf Holz",
+            :de_DE => "Bäume fällen",
                 
           },
           :flavour     => {
             
-            :de_DE => "Pass nur auf, dass du dir keinen Splitter einziehst.",
+            :de_DE => "Der Kampf einer Axt gegen einen Baum. Ich kann stundenlang zuschauen wie andere arbeiten.",
   
-            :en_US => "Take care not to get any splinters.",
+            :en_US => "Axe against tree, the age old battle. I could spend hours watching others work.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Nach dem darauf folgenden kurzen 'plausch', denn ihr über Motivation habt, verlassen sie die Taverne und wirken plötzlich ein Stück motivierter. Und blauer.</p>",
+            :de_DE => "<p>Der Wirt brauch eine neue Bank, also muss handangelegt werden. Da er nur halben Baum braucht wird sich niemand daran stören, wenn Du den Rest einstreichst.</p>",
   
-            :en_US => "<p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. After the ensuing short 'talk' regarding their motivation they leave, suddenly seeming a lot more motivated.</p>",
+            :en_US => "<p>The barkeeper needs a new bench. But seeing how he only needs half a tree noone is realy going to mind if you take the rest for yourself, will they?</p>",
                 
           },
 
           :short_description => {
             
-            :de_DE => "<p>Mach deinen Sammlern Beine und lass sie ein paar Steine extra aufsammeln.</p>",
+            :de_DE => "<p>Hilf aus und sacke etwas Holz nebenbei ein</p>",
   
-            :en_US => "<p>Have your gatherers pick up the slack and pick up a couple of extra stones.</p>",
+            :en_US => "<p>Help out and get some wood in the process</p>",
   
           },
 
-          :duration => 600,
+          :duration => 720,
           
 
           :rewards => {
@@ -6594,48 +6592,46 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-            :experience_reward => 5,
-
           },          
 
 
-        },              #   END OF Knock on wood
-        {              #   Fluffy fur
+        },              #   END OF Wood Cutting
+        {              #   Skinning
           :id          => 2, 
           :symbolic_id => :assignment_fur,
           :level       => 3,
           :advisor     => "girl",
           :name        => {
             
-            :en_US => "Fluffy fur",
+            :en_US => "Skinning",
   
-            :de_DE => "Flauschiges Fell",
+            :de_DE => "Tiere häuten",
                 
           },
           :flavour     => {
             
-            :de_DE => "Mit ein bisschen Motivation können diese Sammler ja ganz schön ackern.",
+            :de_DE => "Wenn ich nur dran denke, was für schöne Sachen wir aus den Fellen machen können. ",
   
-            :en_US => "Just a little bit of motivation and look at those gatherers go!",
+            :en_US => "Just think about all the nice things we can do with that fur.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Als Du die Taverne besuchst um ordentlich einen zu heben siehst Du ein paar Deiner Sammler die gerade Pause machen. Du lauschst ihrer Unterhaltung mit halbem Ohr und hörst wie sie angeben sie könnten hunderte von Steinen schleppen, tun es aber nicht. Nach dem darauf folgenden kurzen 'plausch', denn ihr über Motivation habt, verlassen sie die Taverne und wirken plötzlich ein Stück motivierter. Und blauer.</p>",
+            :de_DE => "<p>Du wolltest wirklich nur entspannen, und wurdest doch wieder für einen kleinen Auftrag rekrutiert. Der Gestank des Tierkadavers steigert nicht gerade Deine Stimmung</p>",
   
-            :en_US => "<p>When you enter the tavern to have a couple of drinks you see a few of your gatherers taking a break. You overhear them talking about how they could carry hundred's of stones but dont. After the ensuing short 'talk' regarding their motivation they leave, suddenly seeming a lot more motivated.</p>",
+            :en_US => "<p>All you wanted to do was relax with a drink, but then they just had to make you work. Atleast they are paying for your drinks and you are going to need lots of drinks to forget this skinning buisness</p>",
                 
           },
 
           :short_description => {
             
-            :de_DE => "<p>Mach deinen Sammlern Beine und lass sie ein paar Steine extra aufsammeln.</p>",
+            :de_DE => "<p>Manchmal muss man den dino bei der Haut packen</p>",
   
-            :en_US => "<p>Have your gatherers pick up the slack and pick up a couple of extra stones.</p>",
+            :en_US => "<p>Sometimes you gota grab the dino by the skin</p>",
   
           },
 
-          :duration => 600,
+          :duration => 480,
           
 
           :rewards => {
@@ -6649,44 +6645,102 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-            :experience_reward => 5,
-
           },          
 
 
-        },              #   END OF Fluffy fur
-        {              #   Raid
+        },              #   END OF Skinning
+        {              #   Barroom Brawl
           :id          => 3, 
-          :symbolic_id => :assignment_raid,
+          :symbolic_id => :assignment_barroombrawl,
           :level       => 4,
           :advisor     => "warrior",
           :name        => {
             
-            :en_US => "Raid",
+            :en_US => "Barroom Brawl",
   
-            :de_DE => "Überfall",
+            :de_DE => "Schlägerei",
                 
           },
           :flavour     => {
             
-            :de_DE => "Wir werden mit Sicherheit einige Rohstoffe erbeuten!",
+            :de_DE => "Ein kühles Bier und eine zünftige Tavernen Schlägerei. Das nenne ich Erholung!",
   
-            :en_US => "We will loot a bunch of resources for sure!",
+            :en_US => "A chilled beer and flying fists. Now thats what i call relaxation!",
                 
           },
           :description => {
             
-            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
+            :de_DE => "<p>Wenn verdiente Krieger zu Gast sind steigt die Schlägerei Rate enorm. Jungspunde wollen sich profilieren, denn so manch große Krieger Karriere begann in der Taverne. Aber irgendjemand muss die Rechnung bezahlen.</p>",
   
-            :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
+            :en_US => "<p>If a bunch of accomplished warriors meet at the tavern chances are there is going to be a brawl. But after all is done, and someone has paid for the furniture, you may just find reliable companions.</p>",
                 
           },
 
           :short_description => {
             
-            :de_DE => "<p>Nimm deine truppen und Überfalle die Neandertaler</p>",
+            :de_DE => "<p>Nach einer ordentlichen Schlägerei kann man gute Freunde finden</p>",
   
-            :en_US => "<p>Gather your troops and raid a neanderthal camp.</p>",
+            :en_US => "<p>After a nice brawl you sometimes find good friends</p>",
+  
+          },
+
+          :costs      => {
+            0 => '50',
+            1 => '50',
+            2 => '50',
+            
+          },
+
+          :duration => 2700,
+          
+
+          :rewards => {
+            
+          :unit_rewards => [
+            
+              {
+                :unit => :unit_warrior,
+                :amount => 3,
+              },
+
+          ],
+
+          },          
+
+
+        },              #   END OF Barroom Brawl
+        {              #   Raid
+          :id          => 4, 
+          :symbolic_id => :assignment_raid,
+          :level       => 5,
+          :advisor     => "warrior",
+          :name        => {
+            
+            :en_US => "Raid",
+  
+            :de_DE => "Plünderung",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Diese Neandertaler machen mich wütend. Wütend und durstig!",
+  
+            :en_US => "Those neanderthals make me angry. And thirsty!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die wilden Neandertaler dringen immer wieder in die Gebiete Deines Stammes vor. Um ihnene nun endlich einhalt zu gebieten wurde ein cleverer Plan gefasst. Man lockt ein paar Krieger in die Taverne. Nach ein paar runden fängt man an Fackeln und Mistgabeln zu verteilen. Schon löst sich das Problem wie von selbst. Und was man so plünder kann man auchnoch behalten.</p>",
+  
+            :en_US => "<p>Wild neanderthals are advancing more into our land every day. To stop this a clever plan is needed. You gather a bunch of thirsty warriors in the tavern. After a few rounds you start distributing torches and pitchforks. And finally the problem almost solves itself and you can even keep any loot they find.</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Vertreibe die Neandertaler und mach ein wenig Beute</p>",
+  
+            :en_US => "<p>Drive out the neanderthals and loot a little.</p>",
   
           },
 
@@ -6695,7 +6749,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
-          :duration => 3600,
+          :duration => 7200,
           
 
           :rewards => {
@@ -6719,44 +6773,108 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-            :experience_reward => 50,
-
           },          
 
 
         },              #   END OF Raid
-        {              #   Investment
-          :id          => 4, 
-          :symbolic_id => :assignment_investment,
-          :level       => 6,
-          :advisor     => "warrior",
+        {              #   The Great Hunt
+          :id          => 5, 
+          :symbolic_id => :assignment_hunt,
+          :level       => 7,
+          :advisor     => "girl",
           :name        => {
             
-            :en_US => "Investment",
+            :en_US => "The Great Hunt",
   
-            :de_DE => "Investition",
+            :de_DE => "Die große Jagd",
                 
           },
           :flavour     => {
             
-            :de_DE => "Wir werden mit Sicherheit einige Rohstoffe erbeuten!",
+            :de_DE => "So eine Jagd ist genau das Richtige um den Apetit anzuregen und Durst zu machen.",
   
-            :en_US => "We will loot a bunch of resources for sure!",
+            :en_US => "A hunt like this is just the thing to make you thirsty.",
                 
           },
           :description => {
             
-            :de_DE => "<p>In einer Ecke der Taverne siehst du eine Bande grimmiger gestalten Sitzen. Sie teilen dir mit, dass sie planen eine nahegelegene Neandertaler Siedlung zu Überfallen aber nicht genügend Truppen haben um den Angriff alleine durchzuführen. Sofort bietest du ihnen ein paar deiner Männer als Unterstützung an, für einen ordentlichen Anteil an der Beute versteht sich.</p>",
+            :de_DE => "<p>Es wird eine neue Trophäe gesucht, die man über die Bar hängen kann, und so wird zur großen Jagd aufgerufen. Da man fair sein will und nicht von fortgeschrittener Keulentechnologie gebrauch machen werden eine Menge Krieger zusammen getrommelt. Und wenn das Werk vollbracht ist und die Trophäe hängt gibts Freibier für alle!</p>",
   
-            :en_US => "<p>In a corner of the tavern you find a few sinister looking fellows. They tell you their plans to raid a nearby neandethal camp but they don't have enough troops to pull the attack of. You offer a couple of your men as support if you get a nice share of the loot.</p>",
+            :en_US => "<p>The barkeeper is looking for a new trophy to hang above his bar, so the call goes out for a great hunt. The hunters gather, but in order to give the wildlife a fair fight all of their advanced technologie is confiscated. But seeing how there is the promise of free drinks after the hunt is completed it shouldnt take too long anyhow.</p>",
                 
           },
 
           :short_description => {
             
-            :de_DE => "<p>Eine klevere Investition</p>",
+            :de_DE => "<p>Die große Jagd ist ein einzigartige Erfahrung</p>",
   
-            :en_US => "<p>Gather your troops and raid a neanderthal camp.</p>",
+            :en_US => "<p>The great hunt is quite the experience.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '600',
+            1 => '400',
+            
+          },
+
+          :unit_deposits => {
+            14 => '100',
+            
+          },
+
+          :duration => 21600,
+          
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+          ],
+
+            :experience_reward => 250,
+
+          },          
+
+
+        },              #   END OF The Great Hunt
+        {              #   Caravan
+          :id          => 6, 
+          :symbolic_id => :assignment_caravan,
+          :level       => 9,
+          :advisor     => "chief",
+          :name        => {
+            
+            :en_US => "Caravan",
+  
+            :de_DE => "Karavane",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Was man in fremden Ländern wohl alles hat um sich zu bereichern?",
+  
+            :en_US => "I wonder what they do in foreign countries to enrich themselves?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ein fliegender Händler sucht nach Investoren in seine nächste Handelsreise. Für ein paar Rohstoffe und eine Leibwache beteiligt er Dich an seinem Gewinn. Und viel wichtiger übernimmt er die Getränke Rechnung für heute.</p>",
+  
+            :en_US => "<p>A traveling merchant is looking for investors for his next journey. For a few resources and some people to guard them he will give you part of his earning. And much more importantly he will pick up your tab at the bar.</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Beschütze die Karavane und kehre reich zurück</p>",
+  
+            :en_US => "<p>Protect the caravan and become rich in the process</p>",
   
           },
 
@@ -6767,7 +6885,13 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
-          :duration => 28800,
+          :unit_deposits => {
+            0 => '100',
+            1 => '50',
+            
+          },
+
+          :duration => 86400,
           
 
           :rewards => {
@@ -6776,27 +6900,102 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
               {
                 :resource => :resource_stone,
-                :amount => 2500,
+                :amount => 6000,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 2500,
+                :amount => 6000,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 2500,
+                :amount => 6000,
               },
 
           ],
 
-            :experience_reward => 100,
+          },          
+
+
+        },              #   END OF Caravan
+        {              #   Expedition
+          :id          => 7, 
+          :symbolic_id => :assignment_expedition,
+          :level       => 10,
+          :advisor     => "chief",
+          :name        => {
+            
+            :en_US => "Expedition",
+  
+            :de_DE => "Expedition",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Welt ist ein Quadrat! Behaupten tut das zumindest einer der Betrunkenen an der Bar. Ald ihn dann jemand dezent darauf hinweis, dass doch jedes Kind weiß, dass die Welt ein Ei ist haut er kurzerhand eins auf die Theke um zu zeigen, dass das eigentlich auch innen Flach ist. Jetzt will er es aber beweisen und sucht Nach freiwilligen, die sich seiner Expedition anschließen sollen um die Ecken der Welt zu erforschen und ihre Reichtümer zu erbeuten. Und Reichtümer kann man doch immer gebrauchen.</p>",
+  
+            :en_US => "<p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Unternimm eine Expedition</p>",
+  
+            :en_US => "<p>Undertake an expedition</p>",
+  
+          },
+
+          :costs      => {
+            0 => '3000',
+            1 => '3000',
+            2 => '3000',
+            
+          },
+
+          :unit_deposits => {
+            1 => '250',
+            4 => '200',
+            8 => '100',
+            
+          },
+
+          :duration => 604800,
+          
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 36000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 36000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 36000,
+              },
+
+          ],
 
           },          
 
 
-        },              #   END OF Investment
+        },              #   END OF Expedition
       ],                # END OF ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################

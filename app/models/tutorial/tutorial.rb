@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.13
+# Version: 0.3.14
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 13, 
+        :build => 14, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 20,
+      :num_tutorial_quests => 18,
   
       :quests => [  # ALL QUESTS
 
@@ -349,15 +349,15 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Endlich fertig hm? Hat ja ewig gedauert. Wie Belohnung?",
+            :de_DE => "Endlich fertig, hm? Hat ja ewig gedauert. Wie Belohnung?",
   
             :en_US => "Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn't it enough that your settlement is bigger and you can build a new building?
-            ",
+      ",
                 
           },
           :reward_text => {
             
-            :de_DE => "Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese wenn Du Dich besser auskennst.",
+            :de_DE => "Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese, wenn Du Dich besser auskennst.",
   
             :en_US => "At the moment you should build your building at the small building slots.",
                 
@@ -420,39 +420,39 @@ class Tutorial::Tutorial
             :en => {
               :subject => 'Welcome to Wack-A-Doo',
               :body => "<h2>Welcome to round 3 of Wack-A-Doo's public Beta.</h2>
-                    <p>Our game 'Wack-A-doo' has already finished its first rounds of public Beta, but is still in development.<br/>
-                    As before we will be adding lots of new content and mechanics during this round of public Beta and try to improve your game experience. <br/>
-                    Prepare to be surprised!</p>
-                    <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
-                    <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
-                    <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree' target='_blank'>Unit Overview</a></p>
-                    <p>We invite you to register and help keep our Wiki up to date.</p>
-                    <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
-                    <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo at the Uga Agga Forum</a></p>
-                    <p>We hope you have lots of fun with Wack-A-Doo.</p>
-                    <p>The Wack-A-Doo Team</p>",
+          <p>Our game 'Wack-A-doo' has already finished its first rounds of public Beta, but is still in development.<br/>
+          As before we will be adding lots of new content and mechanics during this round of public Beta and try to improve your game experience. <br/>
+          Prepare to be surprised!</p>
+          <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
+          <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
+          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree' target='_blank'>Unit Overview</a></p>
+          <p>We invite you to register and help keep our Wiki up to date.</p>
+          <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
+          <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo at the Uga Agga Forum</a></p>
+          <p>We hope you have lots of fun with Wack-A-Doo.</p>
+          <p>The Wack-A-Doo Team</p>",
             },
 
             :de => {
               :subject => 'Willkommen bei Wack-A-Doo',
               :body => "<p>Herzlich willkommen in der 'Wack-A-Doo'-Community!<p/>
-                    <p>Wir empfehlen Dir, das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen.</p>
-                    <p>Für den Fall, dass Dir die Bedienung an einer Stelle unklar ist, werden die wichtigsten Spielmechanismen auf folgenden Seiten
-                    im Detail und mit Bildern erläutert:
-                    <ul>
-                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/game_mechanism' target='_blank'>Spielprinzip</a></li>
-                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='_blank'>Armee erstellen</a></li>
-                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='_blank'>Armee bewegen</a></li>
-                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='_blank'>Kampfablauf</a></li>
-                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='_blank'>Zweite Siedlung</a></li>
-                    <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
-                    </ul></p>
-                    <p>
-                    Du kannst Wack-A-Doo im Browser unter <a href='https://wack-a-doo.de' target='_blank'>https://wack-a-doo.de</a> und auf Deinem
-                    iPhone, iPad und iPod touch mit unserer App spielen. Eine Anleitung, wie Du Deinen Account portabel machst, findest Du hier:
-                    <a href='https://ios.wack-a-doo.com/de/encyclopedia/account' target='_blank'>Account portabel machen</a>.</p>
-                    <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
-                    <p>Das Wack-A-Doo Team</p>",
+          <p>Wir empfehlen Dir, das Tutorial und die folgenden Quests zu spielen, um die Grundlagen von Wack-A-Doo kennen zu lernen.</p>
+          <p>Für den Fall, dass Dir die Bedienung an einer Stelle unklar ist, werden die wichtigsten Spielmechanismen auf folgenden Seiten
+          im Detail und mit Bildern erläutert:
+          <ul>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/game_mechanism' target='_blank'>Spielprinzip</a></li>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='_blank'>Armee erstellen</a></li>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='_blank'>Armee bewegen</a></li>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='_blank'>Kampfablauf</a></li>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='_blank'>Zweite Siedlung</a></li>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
+          </ul></p>
+          <p>
+          Du kannst Wack-A-Doo im Browser unter <a href='https://wack-a-doo.de' target='_blank'>https://wack-a-doo.de</a> und auf Deinem
+          iPhone, iPad und iPod touch mit unserer App spielen. Eine Anleitung, wie Du Deinen Account portabel machst, findest Du hier:
+          <a href='https://ios.wack-a-doo.com/de/encyclopedia/account' target='_blank'>Account portabel machen</a>.</p>
+          <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
+          <p>Das Wack-A-Doo Team</p>",
             },
 
           },          
@@ -463,7 +463,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_quest_button,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -491,7 +491,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Finde den Questknopf beschriftet mit 'Quest'. Dort findest Du sowohl die aktuellen als auch bereits gelöste Quests, deren Belohnung Du noch nicht eingelöst hast.</p>",
+            :de_DE => "<p>Finde den Questknopf beschriftet mit 'Quest'. Dort findest Du sowohl die aktuellen als auch bereits gelösten Quests, deren Belohnungen Du noch nicht eingelöst hast.</p>",
   
             :en_US => "<p>Find the quest button labeled 'Quest'. That's where you'll also find your current and completed quests whose reward you haven't yet claimed.</p>",
                 
@@ -511,13 +511,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_chiefcottagelvl3',
-
-          },
-
-          :successor_quests => [13, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -542,7 +536,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
-          :tutorial_end_quest => false,
+          :tutorial_end_quest => true,
           :priority          => 2,
           :blocking          => false,
 
@@ -562,11 +556,11 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht wie Du heißt. Bitte sag mir Deinen Namen.
-            ",
+            :de_DE => "Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht, wie Du heißt. Bitte sag mir Deinen Namen.
+      ",
   
             :en_US => "We've gone through so much together already, but I still don't know who you are! What's your name?
-            ",
+      ",
                 
           },
           :description => {
@@ -578,7 +572,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Danke. Wir werden noch viel Spas miteinander haben.",
+            :de_DE => "Danke. Wir werden noch viel Spaß miteinander haben.",
   
             :en_US => "Thanks. I think we're going to have loads of fun together!",
                 
@@ -593,11 +587,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_recruit_1clubbers',
+            :quest => 'quest_build_1campfirelvl1',
 
           },
 
-          :successor_quests => [7, ],
+          :successor_quests => [19, 20, ],
 
           :rewards => {
             
@@ -651,11 +645,11 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Du kannst ein Ausbildungsgelände bauen machst es aber nicht? Bau sofort eins und ich gebe Dir etwas aus meiner Schatzkiste.
-            ",
+            :de_DE => "Du kannst ein Ausbildungsgelände bauen, machst es aber nicht? Bau sofort eins und ich gebe Dir etwas aus meiner Schatzkiste.
+      ",
   
             :en_US => "You can build a training grounds but you're not doing it? Build one now and I'll give you something from my treasure chest.
-            ",
+      ",
                 
           },
           :description => {
@@ -668,7 +662,7 @@ class Tutorial::Tutorial
           :reward_flavour => {
             
             :de_DE => "Fertig? Na endlich! Da, Deine Belohnung, mehr gibt's nicht. Verschwinde.
-            ",
+      ",
   
             :en_US => "Finished? About time, too. There's your reward – that's all there is. Push off.",
                 
@@ -678,7 +672,7 @@ class Tutorial::Tutorial
             :de_DE => "Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Nahkampfeinheiten.",
   
             :en_US => "The training grounds speeds up the recruiting time of melee fighters.
-            ",
+      ",
                 
           },
 
@@ -768,14 +762,14 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort den Krieger in der Rekrutierungsliste ganz unten aus und drücke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>",
+            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger  aus und drücke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>",
   
             :en_US => "<p>Go to the training grounds, select a warrior from the recruiting list at the bottom and start training. The recruited units land up in the settlement's garrison.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs erste stell ich Dir ein paar meiner Krieger zur Verfügung.",
+            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.",
   
             :en_US => "Everything's always difficult at first, you just have to stick with it. For now, I'll let you have some of my warriors.",
                 
@@ -794,7 +788,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [4, ],
+          :successor_quests => [7, ],
 
           :rewards => {
             
@@ -860,7 +854,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Finde und drücke den Kartenknopf.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal wo Du bist, oder wo Deine Armeen stehen.</p><p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>",
+            :de_DE => "<p>Finde und drücke den Kartenknopf.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal, wo Du bist, oder wo Deine Armeen stehen.</p><p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>",
   
             :en_US => "<p>Find and press the map button.</p><p>The button changes to the world map, focusing it on the region with your settlement, no matter where you are. If you want to go back to your settlement, select it and click on “Enter”.</p>",
                 
@@ -882,7 +876,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_recruit_1clubbers',
 
           },
 
@@ -947,7 +941,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll, sieht das aus. Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.",
+            :de_DE => "Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.",
   
             :en_US => "That looks great! At last I have enough space for all my shoe…er, things!",
                 
@@ -1046,7 +1040,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen zu von Spielern kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügender Kampfstärke erfolgen.</p>",
+            :de_DE => "<p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen von Spielern zu kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügend Kampfstärke erfolgen.</p>",
   
             :en_US => "<p>Select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>",
                 
@@ -1062,7 +1056,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Deine Armeen generieren alle 3 Stunden einen Aktionspunkt.",
   
-            :en_US => "Under your army you'll see the available action points. Every movement and every attack costs you an action point. Your armys regenerate one actionpoint in 3 hours.",
+            :en_US => "Below your army you'll see the available action points. Every movement and every attack costs you an action point. Your armys regenerate one actionpoint in 3 hours.",
                 
           },
 
@@ -1072,7 +1066,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [127, ],
+          :successor_quests => [11, ],
 
           :rewards => {
             
@@ -1109,6 +1103,38 @@ class Tutorial::Tutorial
 
           :uimarker => ['mark_map', 'mark_select_own_army', 'mark_move_own_army', ],
 
+          :message => {
+            
+            :en => {
+              :subject => 'Moving and battle',
+              :body => "
+          <p>The real action in Wack-A-Doo happens on the worldmap. Wack-A-Doo is a strategy game focusing on battling your enemies and conquering their lands. To that end you have to build up your settlement and recruit units.</p>
+          <p></p>
+          <p>There are two ways to gain additional settlements. You can found them yourselves by moving an army that includes a little chief to an empty field on the map and then hit then found button. Alternatively you can conqer your enemies camps with your armies. You can also conquer fortresses and take control of the area.</p>
+          <p></p>
+        ",
+            },
+
+            :de => {
+              :subject => 'Bewegen und Kämpfen',
+              :body => "
+          <p>Die richtige Action in Wack-A-Doo findet auf der Weltkarte statt. Wack-A-Doo ist ein Strategiespiel in dem der Aufbau der Siedlung der Rekrutierung von Einheiten und dem Aufstellen von Armeen dient.</p>
+          <p></p>
+          <p>Wichtige Hilfestellungen erhälst Du hier:</p>
+          <p>- Rekrutierung von Einheiten und Aufstellen von Armeen:<a href='https://ios.wack-a-doo.com/de/encyclopedia/create_army' target='blank'>Armee aufstellen</a></p>
+          <p>- Armee Bewegen:<a href='https://ios.wack-a-doo.com/de/encyclopedia/move_army' target='blank'>Armee bewegen</a></p>
+          <p>- Kämpfe:<a href='https://ios.wack-a-doo.com/de/encyclopedia/battle' target='blank'>Kämpfen</a></p>
+          <p></p>
+          <p>Weitere Siedlungen kannst Du auf zwei Arten erhalten.</p>
+          <p>Lagerstätten kannst Du mit Hilfe eines Kleinen Häuptlings gründen. Bestehenden Lagerstätten und Festungen kannst Du auch von anderen Spielern klauen.</p>
+          <p>Weitere Info's erhälst du hier:<a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='blank'>Zweite Siedlung</a></p>
+          <p></p>
+          <p>In Wack-A-Doo gibt es mit Nahkämpfern, Fernkämpfern und Berittenen Einheiten drei verschiedene Einheiten-Typen zur Verfügung. Zu Beginn stehen Dir nur Nahkämpfer zur Verfügung, doch im späteren Spielverlauf kannst Du auch Fernkämpfer und Berittene Einheiten rekrutieren.</p>
+        ",
+            },
+
+          },          
+
         },              #   END OF quest_army_move
         {               #   quest_build_2gathererlvl3
           :id                => 10,
@@ -1136,9 +1162,9 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Ich bin ganz begeistert wie sich Deine Jäger und Sammler bemühen Dir Rohstoffe zu bringen. Gewähre ihnen doch bitte weitere Ausbildung.",
+            :de_DE => "Ich bin ganz begeistert, wie sich Deine Jäger und Sammler bemühen, Dir Rohstoffe zu bringen. Gewähre ihnen doch bitte eine weitere Ausbildung.",
   
-            :en_US => "I'm really impressed by your Hunter Gatherers' efforts to bring you raw materials. Why not give them some more training.  ",
+            :en_US => "I'm really impressed by your Hunter Gatherers' efforts to bring you raw materials. Why not give them some more training?.  ",
                 
           },
           :description => {
@@ -1150,7 +1176,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Danke Halbgott, sehr vorausschauend Deine Rohstoffproduktion weiter zu erhöhen.",
+            :de_DE => "Danke, Halbgott. Sehr vorausschauend, Deine Rohstoffproduktion weiter zu erhöhen.",
   
             :en_US => "Thank you Demigod, that was great foresight on your part, raising your raw materials production. ",
                 
@@ -1241,7 +1267,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung an und drücke 'Betreten' um zurück in Deine Siedlung zu kommen.</p>",
+            :de_DE => "<p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung aus und drücke 'Betreten' um zurück in Deine Siedlung zu kommen.</p>",
   
             :en_US => "<p>Use the settlement button or press on your settlement and then press 'Enter' to get back to your settlement.</p>",
                 
@@ -1263,7 +1289,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_npc_battle',
+            :quest => 'quest_army_move',
 
           },
 
@@ -1356,7 +1382,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [3, ],
+          :successor_quests => [13, ],
 
           :rewards => {
             
@@ -1379,7 +1405,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 175,
+            :experience_reward => 225,
 
           },          
 
@@ -1429,7 +1455,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Diese kleinen Hütten sind wirklich nützlich. Mehr Einwohner bedeutet auch mehr helfende Hände.",
+            :de_DE => "Diese kleinen Hütten sind wirklich nützlich. Mehr Einwohner bedeuten auch mehr helfende Hände.",
   
             :en_US => "Did you know that you can give your workers two orders at the same time? They can only work on one but they keep the other one in mind. Why don't you try it out? The happier your workers, the faster they build.",
                 
@@ -1458,11 +1484,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_quest_button',
+            :quest => 'quest_build_chiefcottagelvl3',
 
           },
 
-          :successor_quests => [14, ],
+          :successor_quests => [16, ],
 
           :rewards => {
             
@@ -1485,7 +1511,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 100,
+            :experience_reward => 150,
 
           },          
 
@@ -1562,13 +1588,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_cottagelvl1',
-
-          },
-
-          :successor_quests => [16, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -1642,7 +1662,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Mit ein paar Kröten lässt sich so einiges bewirken.",
   
-            :en_US => "With a few golfen frogs you can get quite a bit done.",
+            :en_US => "With a few golden frogs you can get quite a bit done.",
                 
           },
           :description => {
@@ -1717,8 +1737,6 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_hurry_button', ],
-
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_queue_chiefcottagelvl4
           :id                => 16,
@@ -1760,14 +1778,14 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Jetzt muss es nurnoch fertig werden.",
+            :de_DE => "Jetzt muss es nur noch fertig werden.",
   
             :en_US => "Now it just has to be finished.",
                 
           },
           :reward_text => {
             
-            :de_DE => "Das ist ein größeres Projekt als wir bisher hatten und dauert eine Weile.",
+            :de_DE => "Das ist ein größeres Projekt, als wir es bisher hatten und dauert eine Weile.",
   
             :en_US => "This is a bigger project than the ones we had before and it takes some time to get done.",
                 
@@ -1775,7 +1793,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_improve_production_1',
+            :quest => 'quest_build_cottagelvl1',
 
           },
 
@@ -1852,14 +1870,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Um Einheiten zu bewegen müssen sie aus der Garnison in eine Armee verschoben werden.",
+            :de_DE => "Um Einheiten zu bewegen, müssen sie aus der Garnison in eine Armee verschoben werden.",
   
             :en_US => "You can't move units that are in the garrison. To move units, you have to relocate them from the garrison into an army.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Reinforce' Knopf.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee.Du kannst die Krieger in die Armee verschieben.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Reinforce' Knopf.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Du kannst die Krieger in die Armee bewegen.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
             :en_US => "<p>Go to the map and select your settlement. Press the 'Reinforce' button. The dialogue shows you the units in the garrison on the left, and on the right the warrior in the army.You can move the units into the army. Give your army a name and click on 'Create' to confirm.</p>",
                 
@@ -1873,9 +1891,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird und kann auch nur an ihrer Heimatsiedlung verstärkt werden.",
+            :de_DE => "Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. und  Sie kann auch nur an ihrer Heimatsiedlung verstärkt werden.",
   
-            :en_US => "Every army needs a command point in the settlement where they are commanded from. You can only reinforce your army at their home settlement.",
+            :en_US => "Every army needs a command point in the settlement where they are commanded from. You can only reinforce your army at theirits home settlement.",
                 
           },
 
@@ -1933,7 +1951,7 @@ class Tutorial::Tutorial
           :advisor           => :girl,
           :hide_start_dialog => false,
           :tutorial          => true,
-          :tutorial_end_quest => true,
+          :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
 
@@ -1956,14 +1974,14 @@ class Tutorial::Tutorial
             :de_DE => "An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?",
   
             :en_US => "Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don't you think?
-            ",
+      ",
                 
           },
           :description => {
             
-            :de_DE => "<p>Lagerfeuer werden benötigt Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>",
+            :de_DE => "<p>Lagerfeuer werden benötigt, um Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>",
   
-            :en_US => "<p>Campfires are needed to start or enter into alliances. And it's where little chieftains are recruited.</p>",
+            :en_US => "<p>Campfires are needed to start or enter alliances. And it's where little chieftains are recruited.</p>",
                 
           },          
           :reward_flavour => {
@@ -1987,7 +2005,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [19, 20, ],
+          :successor_quests => [4, ],
 
           :rewards => {
             
@@ -2033,6 +2051,45 @@ class Tutorial::Tutorial
 
           :uimarker => ['mark_home_settlement', 'mark_building_option', ],
 
+          :message => {
+            
+            :en => {
+              :subject => 'Alliances',
+              :body => "<p>Alliances play an important part in Wack-A-Doo.<p/>
+          <p>Look around and contact players and alliances near you. Surely you will find a nice place for you to join. In order to join an alliance you have to enter its tag and password in your campfire.</p>
+          <p/>
+          <p>The advantages of an alliance are:</p>
+          <p>- alliance chat</p>
+          <p>- increased movementspeed in your alliances territories</p>
+          <p>- defend your alliances fortresses together</p>
+          <p>- become involved in the alliance ranking</p>
+          <p>- ability to win the round</p>
+          <p/>
+          <p>You can also found your own alliance once you upgrade your campfire to level 2.</p>
+        ",
+            },
+
+            :de => {
+              :subject => 'Allianz',
+              :body => "<p>In Wack-A-Doo steht die Allianz als Zusammenschluss von Einzelspielern im Vordergrund<p/>
+          <p>Schaue Dich in Deiner Umgebung um und schreibe die Spieler in Deiner direkten Nachbarschaft an. Sicher findest Du einen netten Kontakt und kannst in einer Allianz unterkommen. Zum Beitreten in eine Allianz benötigst Du das Passwort Deiner Wunschallianz zur Eingabe im Lagerfeuer.</p>
+          <p/>
+          <p>Vorteile einer Allianz sind:</p>
+          <p>- Ein eigener Allianz-Chat</p>
+          <p>- Erhöhte Geschwindigkeit aller Bewegungen im Territorium der Allianz</p>
+          <p>- Gemeinsames Verteidigen der Festungen der Allianz</p>
+          <p>- Teilnahme am Allianz-Ranking</p>
+          <p>- Teilnahme an den Siegbedingungen zum Gewinn der Runde</p>
+          <p/>
+          <p>Du kannst auch eine eigene Allianz mit Lagerfeuer Level 2 gründen, aber der Beitritt in eine bestehende Allianz ist vorzuziehen.</p>
+          <ul>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/game_mechanism' target='_blank'>Spielprinzip</a></li>
+          <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
+          </ul>",
+            },
+
+          },          
+
         },              #   END OF quest_build_1campfirelvl1
         {               #   quest_alliance
           :id                => 19,
@@ -2060,7 +2117,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.",
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.",
   
             :en_US => "Fighting enemy armies with your own armies is nice. But it would be much better if you worked together, or if your friends helped you. You should be in an alliance –allies help each other.",
                 
@@ -2089,7 +2146,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_profile',
 
           },
 
@@ -2172,7 +2229,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1campfirelvl1',
+            :quest => 'quest_profile',
 
           },
 
@@ -2184,29 +2241,29 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 125,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 125,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 125,
+                :amount => 250,
               },
 
             ],
 
-            :experience_reward => 50,
+            :experience_reward => 75,
 
           },          
 
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 70,
+              :min_resources => 50,
             },
 
           },          
@@ -2252,7 +2309,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll wie weit Du schon gekommen bist. Weiter so!",
+            :de_DE => "Toll, wie weit Du schon gekommen bist. Weiter so!",
   
             :en_US => "Your progress so far is terrific! Keep it up!",
                 
@@ -3498,10 +3555,10 @@ class Tutorial::Tutorial
           :reward_text => {
             
             :de_DE => "<p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
-                <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
+        <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
   
             :en_US => "<p>The maxmimum level fpr the chieftain´s hut is level 20. Each level increeses the battle bonus.</p>
-                <p>At Level 12 you will recieve another command point for another army.</p>",
+        <p>At Level 12 you will recieve another command point for another army.</p>",
                 
           },
 
@@ -12439,93 +12496,6 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1barrackslvl10
-        {               #   quest_npc_battle
-          :id                => 127,
-          :symbolic_id       => :quest_npc_battle,
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-          :tutorial          => true,
-          :tutorial_end_quest => false,
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "First battle",
-  
-            :de_DE => "Der erste Kampf",
-                
-          },
-          :task => {
-            
-            :en_US => "Fight for the first time and defeat at least one unit!",
-  
-            :de_DE => "Kämpfe Deinen ersten Kampf und besiege mindestens eine Einheit!",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!",
-  
-            :en_US => "An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. ",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p><p>2. Wähle als Ziel die mit dem Pfeil gekennzeichneten Neandertaler aus.</p>",
-  
-            :en_US => "<p>1. Select your army and press 'attack'. </p><p>2. Select the marked neanderthals. </p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.",
-  
-            :en_US => "You cann that a fight? Atleast you beat a few enemies.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!",
-  
-            :en_US => "In Wack-A-Doo you can fight with as man armies as you want. ",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_army_move',
-
-          },
-
-          :successor_quests => [11, ],
-
-          :rewards => {
-            
-            :unit_rewards => [
-
-              {
-                :unit => :unit_clubbers,
-                :amount => 5,
-              },
-
-            ],
-
-            :experience_reward => 250,
-
-            :action_point_reward => true,
-
-          },          
-
-          :reward_tests => {
-            
-            :battle_test => {},
-
-          },          
-
-          :uimarker => ['mark_map', 'mark_select_own_home_settlement', 'mark_attack_button', 'mark_select_other_army', ],
-
-        },              #   END OF quest_npc_battle
       ],                # END OF QUESTS
 
     )
