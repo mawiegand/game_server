@@ -105,7 +105,14 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   end
   
   def costs
-    assignment_type[:costs] 
+    costs = {}
+    
+    (assignment_type[:costs] || {}).each do |resource_id, formula|
+      # f = Util::Formula.parse_from_formula(formula)
+      costs[resource_id] = formula.to_f # f.apply(self.level_after)
+    end
+    
+    costs
   end
   
   def unit_deposits
@@ -116,7 +123,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
     result     = {}
     deposit.each do | unit_id, amount |
       unit_type = unit_types[unit_id]
-      result[unit_type[:db_field]] = amount
+      result[unit_type[:db_field]] = amount.to_i
     end
     
     result
