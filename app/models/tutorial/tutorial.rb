@@ -12496,6 +12496,89 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_1barrackslvl10
+        {               #   quest_npc_battle
+          :id                => 127,
+          :symbolic_id       => :quest_npc_battle,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "First battle",
+  
+            :de_DE => "Der erste Kampf",
+                
+          },
+          :task => {
+            
+            :en_US => "Fight for the first time and defeat at least two units!",
+  
+            :de_DE => "Kämpfe Deinen ersten Kampf und besiege mindestens zwei Einheiten!",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!",
+  
+            :en_US => "An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p><p>2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>",
+  
+            :en_US => "<p>When you're ready, select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.",
+  
+            :en_US => "Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!",
+  
+            :en_US => "Under your army you'll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. ",
+                
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+            :action_point_reward => true,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 2,
+            },
+
+          },          
+
+          :uimarker => ['mark_map', 'mark_select_own_army', 'mark_select_other_army', 'mark_attack_button', ],
+
+        },              #   END OF quest_npc_battle
       ],                # END OF QUESTS
 
     )
