@@ -137,7 +137,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
     deposits = self.unit_deposits
     garrison_army = self.character.home_location.garrison_army
     return false  if garrison_army.nil?
-    deposits.nil? || garrison_army.reduce_units(deposits)   
+    deposits.nil? || (garrison_army.contains?(deposits) && garrison_army.reduce_units(deposits))   
   end
   
   def redeem_deposit
