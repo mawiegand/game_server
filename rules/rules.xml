@@ -93,6 +93,7 @@
       <StartResource id="resource_cash">0</StartResource>
     </CharacterCreation>
     <ConstructionSpeedup>
+      <SpeedupCost resource="resource_cash" amount="0"  hours="(1.0/60.0)" />
       <SpeedupCost resource="resource_cash" amount="1"  hours="1" />
       <SpeedupCost resource="resource_cash" amount="2"  hours="3" />
       <SpeedupCost resource="resource_cash" amount="4"  hours="7" />
