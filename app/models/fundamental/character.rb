@@ -922,6 +922,9 @@ class Fundamental::Character < ActiveRecord::Base
     production_bonus = recalc_construction_bonus_effect
     check_and_apply_construction_bonus_effect(production_bonus)
     
+    production_bonus = recalc_construction_bonus_effect
+    check_and_apply_construction_bonus_effect(production_bonus)
+    
     if self.changed?
       logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
       self.save
