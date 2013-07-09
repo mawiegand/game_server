@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.14
+# Version: 0.3.15
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 14, 
+        :build => 15, 
       },
       
       :production_test_weights => {
@@ -2193,9 +2193,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 70 resource points.",
+            :en_US => "Increase the resource production of one settlement to 50 resource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 70 Rohstoffpunkte.",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 50 Rohstoffpunkte.",
                 
           },
           :flavour => {

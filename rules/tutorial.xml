@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="14" />
+    <Version major="0" minor="3" build="15" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -770,8 +770,8 @@
     <Quest id="quest_resourcescore_0" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 70 resource points.</Task>
-      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 70 Rohstoffpunkte.</Task>
+      <Task>Increase the resource production of one settlement to 50 resource points.</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 50 Rohstoffpunkte.</Task>
       <Description locale="de_DE">
         <p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. </p>
       </Description>
