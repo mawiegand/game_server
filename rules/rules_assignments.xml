@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <AssignmentTypes>
-  <AssignmentType id="assignment_stone" advisor="girl" level="1">
+  <!--AssignmentType id="assignment_stone" advisor="girl" level="1">
     <Name>Boulder Smashing</Name>
     <Name lang="de_DE">Steine klopfen</Name>
     
@@ -119,8 +119,8 @@
   </AssignmentType>
   
   <AssignmentType id="assignment_raid" advisor="warrior" level="5">
-    <Name>Raid</Name>
-    <Name lang="de_DE">Plünderung</Name>
+    <Name>Drive out the Neanderthals</Name>
+    <Name lang="de_DE">Neandertaler vertreiben</Name>
     
     <Flavour lang="de_DE">Diese Neandertaler machen mich wütend. Wütend und durstig!</Flavour>
     <Flavour lang="en_US">Those neanderthals make me angry. And thirsty!</Flavour>
@@ -254,6 +254,6 @@
     </Rewards>
     
     <Duration>604800</Duration>
-  </AssignmentType>
+  </AssignmentType-->
 
 </AssignmentTypes>
