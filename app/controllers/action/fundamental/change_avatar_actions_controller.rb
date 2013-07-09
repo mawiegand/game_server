@@ -9,7 +9,7 @@ class Action::Fundamental::ChangeAvatarActionsController < ApplicationController
   def index
     raise BadRequestError.new('no current character') if current_character.nil?
     avatar = GameState::Avatars.new
-    new_avatar_string = avatar.create_random_avatar_string(current_character.gender == 'male')
+    new_avatar_string = avatar.create_random_avatar_string(current_character.gender.nil? || current_character.gender == 'male')
 
     respond_to do |format|
       format.json { render json: {'avatar_string' => new_avatar_string}, status: :ok }
