@@ -28,6 +28,7 @@ client
 /rules/*.o
 /rules/database_fields
 /rules/*.german.html
+/rules/*.english.html
 
 /config/thin_local.yml
 /nbproject/private/

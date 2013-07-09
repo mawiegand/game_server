@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <AssignmentTypes>
-  <!--AssignmentType id="assignment_stone" advisor="girl" level="1">
+  <!-- AssignmentType id="assignment_stone" advisor="girl" level="1">
     <Name>Boulder Smashing</Name>
     <Name lang="de_DE">Steine klopfen</Name>
     
@@ -254,5 +254,5 @@
     </Rewards>
     
     <Duration>604800</Duration>
-  </AssignmentType-->
+  </AssignmentType -->
  </AssignmentTypes>

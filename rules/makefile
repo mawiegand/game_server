@@ -12,6 +12,8 @@ all: rules_check tutorial_check
 	xsltproc --xinclude tutorial.fields.xsl tutorial.xml  >> database_fields
 	xsltproc --xinclude rules.german_texts.xsl rules.xml > rules.german.html
 	xsltproc --xinclude tutorial.german_texts.xsl tutorial.xml > tutorial.german.html
+	xsltproc --xinclude rules.english_texts.xsl rules.xml > rules.english.html
+	xsltproc --xinclude tutorial.english_texts.xsl tutorial.xml > tutorial.english.html
 	g++ rules_test.cpp  rules.cpp -o rules_test -Wall
 	../script/rules/check_formula.rb
 	@echo "#########################################################"
