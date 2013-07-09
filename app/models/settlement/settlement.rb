@@ -1276,7 +1276,7 @@ class Settlement::Settlement < ActiveRecord::Base
       if !self.changes[attribute].nil?
         change = self.changes[attribute]
         delta = change[1] - change[0]   # new - old value
-        self.owner.resource_pool[attribute] = self.owner.resource_pool[attribute] + delta
+        self.owner.resource_pool[attribute] = (self.owner.resource_pool[attribute] || 0.0) + delta
         return true
       else
         return false
