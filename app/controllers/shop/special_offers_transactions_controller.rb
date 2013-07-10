@@ -1,3 +1,5 @@
+require 'digest/md5'
+
 class Shop::SpecialOffersTransactionsController < ApplicationController
   layout 'shop'
 
@@ -46,20 +48,38 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
   # POST /shop/special_offers_transactions
   # POST /shop/special_offers_transactions.json
   def create
+
+    if request.request_parameters.nil? || request.request_parameters[:hash].nil?
+      render json: {:status => 'missing hash'}, status: :bad_request
+      return
+    end
+
+    #remove hash from post params
+    post_params = request.request_parameters
+    post_params.delete('hash')
+
+    logger.debug "HASH_BASE:   " + post_params.to_param
+    logger.debug "BASE HASHED: " + Digest::MD5.hexdigest(post_params.to_param)
+    logger.debug "HASH VALUE:  " + params[:hash]
+
+    #if Digest::MD5.hexdigest(post_params.to_param) != params[:hash]
+    #  render json: {:status => 'wrong hash'}, status: :forbidden
+    #  return
+    #end
+
     # create shop transaction
     @shop_special_offers_transaction = Shop::SpecialOffersTransaction.new
 
-    # TODO params is an escaped json string an thus, it cannot be parsed properly
-    logger.debug "-----> Parameters: " + params.inspect
-
     character = Fundamental::Character.find_by_identifier(params[:partnerUserID])
     if character.nil?
-      render json: {:error => 'character not found'}, status: :unprocessable_entity
+      render json: {:status => 'character not found'}, status: :not_found
+      return
     end
 
     special_offer = Shop::SpecialOffer.find_by_external_offer_id(params[:offerID])
     if special_offer.nil? # there is no special offer for this id, callback was sent based on a regular credit offer
-      render json: {:status => 'created'}, status: :created
+      render json: {:status => 'regular offer processed'}, status: :created
+      return
     end
 
     # fill transaction
@@ -70,6 +90,7 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
     # create shop_transaction event
     unless @shop_special_offers_transaction.save
       render json: @shop_special_offers_transaction.errors, status: :unprocessable_entity
+      return
     end
 
     @shop_purchase = Shop::Purchase.new
@@ -80,6 +101,7 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
     # create purchase object
     unless @shop_purchase.save
       render json: @shop_purchase.errors, status: :unprocessable_entity
+      return
     end
 
       # answer with 201
