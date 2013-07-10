@@ -59,7 +59,7 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
     post_params.delete('hash')
 
     logger.debug "HASH_BASE:   " + post_params.to_param
-    logger.debug "BASE HASHED: " + Digest::MD5.hexdigest(post_params.to_param)
+    logger.debug "BASE HASHED: " + Digest::SHA1.hexdigest(post_params.to_param)
     logger.debug "HASH VALUE:  " + params[:hash]
 
     #if Digest::MD5.hexdigest(post_params.to_param) != params[:hash]
