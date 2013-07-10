@@ -70,15 +70,15 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
     # create shop transaction
     @shop_special_offers_transaction = Shop::SpecialOffersTransaction.new
 
-    character = Fundamental::Character.find_by_identifier(params[:partnerUserID])
-    if character.nil?
-      render json: {:status => 'character not found'}, status: :not_found
-      return
-    end
-
     special_offer = Shop::SpecialOffer.find_by_external_offer_id(params[:offerID])
     if special_offer.nil? # there is no special offer for this id, callback was sent based on a regular credit offer
       render json: {:status => 'regular offer processed'}, status: :created
+      return
+    end
+
+    character = Fundamental::Character.find_by_identifier(params[:partnerUserID])
+    if character.nil?
+      render json: {:status => 'character not found'}, status: :not_found
       return
     end
 
