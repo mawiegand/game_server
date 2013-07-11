@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.15
+# Version: 0.3.16
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 15, 
+        :build => 16, 
       },
       
       :production_test_weights => {
@@ -156,7 +156,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [1, ],
+          :successor_quests => [1, 128, ],
 
           :rewards => {
             
@@ -12579,6 +12579,84 @@ class Tutorial::Tutorial
           :uimarker => ['mark_map', 'mark_select_own_army', 'mark_select_other_army', 'mark_attack_button', ],
 
         },              #   END OF quest_npc_battle
+        {               #   quest_assignment1
+          :id                => 128,
+          :symbolic_id       => :quest_assignment1,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "First Assignment",
+  
+            :de_DE => "Der erste Auftrag",
+                
+          },
+          :task => {
+            
+            :en_US => "Start your first Assignment",
+  
+            :de_DE => "Beginne deinen ersten Auftrag",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Placeholder",
+  
+            :en_US => "Placeholder ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Betritt die Taverne und beginne deinen ersten Auftrag. </p>",
+  
+            :en_US => "<p>Enter the tavern and start your first Assignment. </p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Placeholder",
+  
+            :en_US => "Placeholder",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Placeholder",
+  
+            :en_US => "Placeholder",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_queue_1gathererlvl1',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :experience_reward => 250,
+
+          },          
+
+          :reward_tests => {
+            
+            :custom_test => {
+              :id => 'test_start_assignment',
+            },
+
+          },          
+
+          :uimarker => ['mark_assignment_button', ],
+
+        },              #   END OF quest_assignment1
       ],                # END OF QUESTS
 
     )
