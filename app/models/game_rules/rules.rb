@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.8.18
+# Version: 0.9.2
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -33,7 +33,7 @@ class GameRules::Rules
   self.include_root_in_json = false
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
-    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :unit_categories, :building_categories,
+    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
@@ -63,6 +63,7 @@ class GameRules::Rules
       'science_types'               => science_types,  
       'assignment_types'            => assignment_types,  
       'special_assignment_types'    => special_assignment_types,
+      'special_assignments'         => special_assignments,
       'settlement_types'            => settlement_types,
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
@@ -117,8 +118,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 8,
-                    :build => 18,
+                    :minor => 9,
+                    :build => 2,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -163,6 +164,10 @@ class GameRules::Rules
       },
       :building_experience_formula => '2*LEVEL',
       :alliance_max_members => 13,
+      :special_assignments  => {
+        :idle_probability => 0.8,
+        :idle_time => 3600,
+      },
       :artifact_count => 5,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
