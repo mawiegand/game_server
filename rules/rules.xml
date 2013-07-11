@@ -147,7 +147,7 @@
         <AvatarLayer max="0"  optional="true">veilchens</AvatarLayer>
         <AvatarLayer max="3"  optional="true"  chars="2">tattoos</AvatarLayer>
       </AvatarConfig>
-   </AvatarConfigs>
+    </AvatarConfigs>
     <ChangeCharacterName free_changes="2" resource="resource_cash" amount="20" />
     <ChangeCharacterGender free_changes="2" resource="resource_cash" amount="20" />
     <ResourceExchange resource="resource_cash" amount="2" />
@@ -173,4 +173,5 @@
   <xi:include href="rules_character_mundane_ranks.xml" />
   <xi:include href="rules_character_sacred_ranks.xml" />
   <xi:include href="rules_assignments.xml" />
+  <xi:include href="rules_specialassignments.xml" />
 </Rules>

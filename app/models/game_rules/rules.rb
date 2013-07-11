@@ -33,7 +33,7 @@ class GameRules::Rules
   self.include_root_in_json = false
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
-    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :unit_categories, :building_categories,
+    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
@@ -62,7 +62,8 @@ class GameRules::Rules
       'building_types'              => building_types,
       'science_types'               => science_types,  
       'assignment_types'            => assignment_types,  
-      'settlement_types'            => settlement_types,  
+      'special_assignment_types'    => special_assignment_types,
+      'settlement_types'            => settlement_types,
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
@@ -6487,11 +6488,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
       ],                # END OF SETTLEMENT TYPES
 
 # ## ASSIGNMENT TYPES ##########################################################
-  
+
       :assignment_types => [  # ALL ASSIGMENT TYPES
 
         {              #   Boulder Smashing
-          :id          => 0, 
+          :id          => 0,
           :symbolic_id => :assignment_stone,
           :level       => 1,
           :advisor     => "girl",
@@ -6500,21 +6501,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "Boulder Smashing",
   
             :de_DE => "Steine klopfen",
-                
+  
           },
           :flavour     => {
             
             :de_DE => "Mit ein bisschen Motivation können diese Sammler ja ganz schön ackern.",
   
             :en_US => "Just a little bit of motivation and look at those gatherers go!",
-                
+  
           },
           :description => {
             
             :de_DE => "<p>Vielleicht verlierst du die Wette, wie schnell deine Sammler steine kloppen können, aber am Ende bleibt für dich sowieso mehr übrig, als ihr Bier kosten wird.</p>",
   
             :en_US => "<p>Maybe you will lose your bet, how fast your gatherers can smash those boulders, but in the end you will get more out of their fast work then their beer will cost you anyways. </p>",
-                
+  
           },
 
           :short_description => {
@@ -6526,7 +6527,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 600,
-          
+
 
           :rewards => {
             
@@ -6539,12 +6540,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-          },          
+          },
 
 
         },              #   END OF Boulder Smashing
         {              #   Wood Cutting
-          :id          => 1, 
+          :id          => 1,
           :symbolic_id => :assignment_wood,
           :level       => 2,
           :advisor     => "girl",
@@ -6553,21 +6554,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "Wood Cutting",
   
             :de_DE => "Bäume fällen",
-                
+  
           },
           :flavour     => {
             
             :de_DE => "Der Kampf einer Axt gegen einen Baum. Ich kann stundenlang zuschauen wie andere arbeiten.",
   
             :en_US => "Axe against tree, the age old battle. I could spend hours watching others work.",
-                
+  
           },
           :description => {
             
             :de_DE => "<p>Der Wirt brauch eine neue Bank, also muss handangelegt werden. Da er nur halben Baum braucht wird sich niemand daran stören, wenn Du den Rest einstreichst.</p>",
   
             :en_US => "<p>The barkeeper needs a new bench. But seeing how he only needs half a tree noone is realy going to mind if you take the rest for yourself, will they?</p>",
-                
+  
           },
 
           :short_description => {
@@ -6579,7 +6580,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 720,
-          
+
 
           :rewards => {
             
@@ -6592,12 +6593,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-          },          
+          },
 
 
         },              #   END OF Wood Cutting
         {              #   Skinning
-          :id          => 2, 
+          :id          => 2,
           :symbolic_id => :assignment_fur,
           :level       => 3,
           :advisor     => "girl",
@@ -6606,21 +6607,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "Skinning",
   
             :de_DE => "Tiere häuten",
-                
+  
           },
           :flavour     => {
             
             :de_DE => "Wenn ich nur dran denke, was für schöne Sachen wir aus den Fellen machen können. ",
   
             :en_US => "Just think about all the nice things we can do with that fur.",
-                
+  
           },
           :description => {
             
             :de_DE => "<p>Du wolltest wirklich nur entspannen, und wurdest doch wieder für einen kleinen Auftrag rekrutiert. Der Gestank des Tierkadavers steigert nicht gerade Deine Stimmung</p>",
   
             :en_US => "<p>All you wanted to do was relax with a drink, but then they just had to make you work. Atleast they are paying for your drinks and you are going to need lots of drinks to forget this skinning buisness</p>",
-                
+  
           },
 
           :short_description => {
@@ -6632,7 +6633,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 480,
-          
+
 
           :rewards => {
             
@@ -6645,12 +6646,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-          },          
+          },
 
 
         },              #   END OF Skinning
         {              #   Barroom Brawl
-          :id          => 3, 
+          :id          => 3,
           :symbolic_id => :assignment_barroombrawl,
           :level       => 4,
           :advisor     => "warrior",
@@ -6659,21 +6660,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "Barroom Brawl",
   
             :de_DE => "Schlägerei",
-                
+  
           },
           :flavour     => {
             
             :de_DE => "Ein kühles Bier und eine zünftige Tavernen Schlägerei. Das nenne ich Erholung!",
   
             :en_US => "A chilled beer and flying fists. Now thats what i call relaxation!",
-                
+  
           },
           :description => {
             
             :de_DE => "<p>Wenn verdiente Krieger zu Gast sind steigt die Schlägerei Rate enorm. Jungspunde wollen sich profilieren, denn so manch große Krieger Karriere begann in der Taverne. Aber irgendjemand muss die Rechnung bezahlen.</p>",
   
             :en_US => "<p>If a bunch of accomplished warriors meet at the tavern chances are there is going to be a brawl. But after all is done, and someone has paid for the furniture, you may just find reliable companions.</p>",
-                
+  
           },
 
           :short_description => {
@@ -6692,7 +6693,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 2700,
-          
+
 
           :rewards => {
             
@@ -6705,12 +6706,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-          },          
+          },
 
 
         },              #   END OF Barroom Brawl
         {              #   Drive out the Neanderthals
-          :id          => 4, 
+          :id          => 4,
           :symbolic_id => :assignment_raid,
           :level       => 5,
           :advisor     => "warrior",
@@ -6719,21 +6720,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "Drive out the Neanderthals",
   
             :de_DE => "Neandertaler vertreiben",
-                
+  
           },
           :flavour     => {
             
             :de_DE => "Diese Neandertaler machen mich wütend. Wütend und durstig!",
   
             :en_US => "Those neanderthals make me angry. And thirsty!",
-                
+  
           },
           :description => {
             
             :de_DE => "<p>Die wilden Neandertaler dringen immer wieder in die Gebiete Deines Stammes vor. Um ihnene nun endlich einhalt zu gebieten wurde ein cleverer Plan gefasst. Man lockt ein paar Krieger in die Taverne. Nach ein paar runden fängt man an Fackeln und Mistgabeln zu verteilen. Schon löst sich das Problem wie von selbst. Und was man so plünder kann man auchnoch behalten.</p>",
   
             :en_US => "<p>Wild neanderthals are advancing more into our land every day. To stop this a clever plan is needed. You gather a bunch of thirsty warriors in the tavern. After a few rounds you start distributing torches and pitchforks. And finally the problem almost solves itself and you can even keep any loot they find.</p>",
-                
+  
           },
 
           :short_description => {
@@ -6750,7 +6751,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 7200,
-          
+
 
           :rewards => {
             
@@ -6773,12 +6774,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-          },          
+          },
 
 
         },              #   END OF Drive out the Neanderthals
         {              #   The Great Hunt
-          :id          => 5, 
+          :id          => 5,
           :symbolic_id => :assignment_hunt,
           :level       => 7,
           :advisor     => "girl",
@@ -6787,21 +6788,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "The Great Hunt",
   
             :de_DE => "Die große Jagd",
-                
+  
           },
           :flavour     => {
             
             :de_DE => "So eine Jagd ist genau das Richtige um den Apetit anzuregen und Durst zu machen.",
   
             :en_US => "A hunt like this is just the thing to make you thirsty.",
-                
+  
           },
           :description => {
             
             :de_DE => "<p>Es wird eine neue Trophäe gesucht, die man über die Bar hängen kann, und so wird zur großen Jagd aufgerufen. Da man fair sein will und nicht von fortgeschrittener Keulentechnologie gebrauch machen werden eine Menge Krieger zusammen getrommelt. Und wenn das Werk vollbracht ist und die Trophäe hängt gibts Freibier für alle!</p>",
   
             :en_US => "<p>The barkeeper is looking for a new trophy to hang above his bar, so the call goes out for a great hunt. The hunters gather, but in order to give the wildlife a fair fight all of their advanced technologie is confiscated. But seeing how there is the promise of free drinks after the hunt is completed it shouldnt take too long anyhow.</p>",
-                
+  
           },
 
           :short_description => {
@@ -6824,7 +6825,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 21600,
-          
+
 
           :rewards => {
             
@@ -6839,12 +6840,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
             :experience_reward => 250,
 
-          },          
+          },
 
 
         },              #   END OF The Great Hunt
         {              #   Caravan
-          :id          => 6, 
+          :id          => 6,
           :symbolic_id => :assignment_caravan,
           :level       => 9,
           :advisor     => "chief",
@@ -6853,21 +6854,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "Caravan",
   
             :de_DE => "Karavane",
-                
+  
           },
           :flavour     => {
             
             :de_DE => "Was man in fremden Ländern wohl alles hat um sich zu bereichern?",
   
             :en_US => "I wonder what they do in foreign countries to enrich themselves?",
-                
+  
           },
           :description => {
             
             :de_DE => "<p>Ein fliegender Händler sucht nach Investoren in seine nächste Handelsreise. Für ein paar Rohstoffe und eine Leibwache beteiligt er Dich an seinem Gewinn. Und viel wichtiger übernimmt er die Getränke Rechnung für heute.</p>",
   
             :en_US => "<p>A traveling merchant is looking for investors for his next journey. For a few resources and some people to guard them he will give you part of his earning. And much more importantly he will pick up your tab at the bar.</p>",
-                
+  
           },
 
           :short_description => {
@@ -6892,7 +6893,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 86400,
-          
+
 
           :rewards => {
             
@@ -6915,12 +6916,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-          },          
+          },
 
 
         },              #   END OF Caravan
         {              #   Expedition
-          :id          => 7, 
+          :id          => 7,
           :symbolic_id => :assignment_expedition,
           :level       => 10,
           :advisor     => "chief",
@@ -6929,21 +6930,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "Expedition",
   
             :de_DE => "Expedition",
-                
+  
           },
           :flavour     => {
             
             :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
   
             :en_US => "We will loot a bunch of resources for sure!",
-                
+  
           },
           :description => {
             
             :de_DE => "<p>Die Welt ist ein Quadrat! Behaupten tut das zumindest einer der Betrunkenen an der Bar. Ald ihn dann jemand dezent darauf hinweis, dass doch jedes Kind weiß, dass die Welt ein Ei ist haut er kurzerhand eins auf die Theke um zu zeigen, dass das eigentlich auch innen Flach ist. Jetzt will er es aber beweisen und sucht Nach freiwilligen, die sich seiner Expedition anschließen sollen um die Ecken der Welt zu erforschen und ihre Reichtümer zu erbeuten. Und Reichtümer kann man doch immer gebrauchen.</p>",
   
             :en_US => "<p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>",
-                
+  
           },
 
           :short_description => {
@@ -6969,7 +6970,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 604800,
-          
+
 
           :rewards => {
             
@@ -6992,11 +6993,71 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-          },          
+          },
 
 
         },              #   END OF Expedition
       ],                # END OF ASSIGNMENT TYPES
+
+# ## SPECIAL ASSIGNMENT TYPES ##########################################################
+
+      :special_assignment_types => [  # ALL SPECIAL ASSIGMENT TYPES
+
+        {              #   Special Assignment Test
+          :id          => 0,
+          :symbolic_id => :special_assignment_tester1,
+          :level       => 10,
+          :advisor     => "chief",
+          :name        => {
+            
+            :en_US => "Special Assignment Test",
+  
+            :de_DE => "Special Assignment Test",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>",
+  
+            :en_US => "<p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Unternimm eine Expedition</p>",
+  
+            :en_US => "<p>Undertake an expedition</p>",
+  
+          },
+
+          :costs      => {
+            0 => '3*PRODUCTION',
+            1 => '3*PRODUCTION',
+            2 => '3*PRODUCTION',
+            
+          },
+
+          :unit_deposits => {
+            1 => '1*PRODUCTION',
+            4 => '1*PRODUCTION',
+            8 => '1*PRODUCTION',
+            
+          },
+
+          :duration => 604800,
+
+
+
+        },              #   END OF Special Assignment Test
+      ],                # END OF SPECIAL ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################
   

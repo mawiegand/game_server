@@ -281,6 +281,15 @@
 >
 
 
+<!ELEMENT SpecialAssignmentType (Name+, Flavour+, ShortDescription*, Description+, Cost*, UnitDeposit*, SpecialAssignmentRewards, Duration)>
+
+<!ATTLIST SpecialAssignmentType
+  id ID #REQUIRED
+  advisor CDATA "chef"
+  level CDATA #REQUIRED
+>
+
+
 <!ELEMENT Population (#PCDATA)>
 
 <!ELEMENT ConversionOption EMPTY>
@@ -406,6 +415,21 @@
 >
 
 <!ELEMENT ExperienceReward (#PCDATA)>
+
+
+<!ELEMENT SpecialAssignmentRewards (ResourceReward*, UnitReward*, ExperienceReward?)>
+
+<!ELEMENT SpecialAssignmentResourceReward (#PCDATA)>
+<!ATTLIST SpecialAssignmentResourceReward
+  resource CDATA #REQUIRED
+  >
+
+<!ELEMENT SpecialAssignmentUnitReward (#PCDATA)>
+<!ATTLIST SpecialAssignmentUnitReward
+  unit     CDATA #REQUIRED
+  >
+
+<!ELEMENT SpecialAssignmentExperienceReward (#PCDATA)>
 
 
 <!--Webinterface: Production-->

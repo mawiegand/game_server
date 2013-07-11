@@ -80,7 +80,7 @@ class GameRules::Rules
   self.include_root_in_json = false
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
-    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :unit_categories, :building_categories,
+    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
@@ -109,7 +109,8 @@ class GameRules::Rules
       'building_types'              => building_types,
       'science_types'               => science_types,  
       'assignment_types'            => assignment_types,  
-      'settlement_types'            => settlement_types,  
+      'special_assignment_types'    => special_assignment_types,
+      'settlement_types'            => settlement_types,
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
@@ -203,6 +204,7 @@ class GameRules::Rules
   <xsl:apply-templates select="BuildingTypes" />
   <xsl:apply-templates select="SettlementTypes" />
   <xsl:apply-templates select="AssignmentTypes" />
+  <xsl:apply-templates select="SpecialAssignmentTypes" />
   <xsl:apply-templates select="ArtifactTypes" />
   <xsl:apply-templates select="VictoryTypes" />
   <xsl:apply-templates select="QueueTypes" />
@@ -706,22 +708,22 @@ end
 
 <xsl:template match="AssignmentTypes">
 # ## ASSIGNMENT TYPES ##########################################################
-  
+
       :assignment_types => [  # ALL ASSIGMENT TYPES
 <xsl:for-each select="AssignmentType">
         {              #   <xsl:value-of select="Name"/>
-          :id          => <xsl:value-of select="position()-1"/>, 
+          :id          => <xsl:value-of select="position()-1"/>,
           :symbolic_id => :<xsl:value-of select="@id"/>,
           :level       => <xsl:value-of select="@level"/>,
           :advisor     => "<xsl:value-of select="@advisor"/>",
           :name        => {
-            <xsl:apply-templates select="Name" />              
+            <xsl:apply-templates select="Name" />
           },
           :flavour     => {
-            <xsl:apply-templates select="Flavour" />              
+            <xsl:apply-templates select="Flavour" />
           },
           :description => {
-            <xsl:apply-templates select="Description" />              
+            <xsl:apply-templates select="Description" />
           },
 <xsl:if test="ShortDescription">
           :short_description => {
@@ -739,17 +741,97 @@ end
           },
 </xsl:if>
           :duration => <xsl:value-of select="Duration"/>,
-          
+
 <xsl:if test="Rewards">
           :rewards => {
             <xsl:apply-templates select="Rewards" />
-          },          
+          },
 </xsl:if>
 
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF ASSIGNMENT TYPES
 </xsl:template>
+
+
+<xsl:template match="SpecialAssignmentTypes">
+# ## SPECIAL ASSIGNMENT TYPES ##########################################################
+
+      :special_assignment_types => [  # ALL SPECIAL ASSIGMENT TYPES
+<xsl:for-each select="SpecialAssignmentType">
+        {              #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>,
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :level       => <xsl:value-of select="@level"/>,
+          :advisor     => "<xsl:value-of select="@advisor"/>",
+          :name        => {
+            <xsl:apply-templates select="Name" />
+          },
+          :flavour     => {
+            <xsl:apply-templates select="Flavour" />
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />
+          },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
+<xsl:if test="Cost">
+          :costs      => {
+            <xsl:apply-templates select="Cost" />
+          },
+</xsl:if>
+<xsl:if test="UnitDeposit">
+          :unit_deposits => {
+            <xsl:apply-templates select="UnitDeposit" />
+          },
+</xsl:if>
+          :duration => <xsl:value-of select="Duration"/>,
+
+<xsl:if test="AssignmentRewards">
+          :rewards => {
+<xsl:apply-templates select="AssignmentRewards" />
+          },
+</xsl:if>
+
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF SPECIAL ASSIGNMENT TYPES
+</xsl:template>
+
+
+
+<xsl:template match="SpecialAssignmentRewards">
+<xsl:if test="SpecialAssignmentResourceReward">
+            :resource_rewards => [
+              <xsl:apply-templates select="SpecialAssignmentResourceReward" />
+            ],
+</xsl:if>
+<xsl:if test="SpecialAssignmentUnitReward">
+            :unit_rewards => [
+              <xsl:apply-templates select="SpecialAssignmentUnitReward" />
+            ],
+</xsl:if>
+<xsl:if test="SpecialAssignmentExperienceReward">
+            :experience_reward => '<xsl:apply-templates select="SpecialAssignmentExperienceReward" />',
+</xsl:if>
+</xsl:template>
+
+<xsl:template match="SpecialAssignmentResourceReward">
+              {
+                :resource => :<xsl:value-of select="@resource" />,
+                :amount => '<xsl:value-of select="." />',
+              },
+</xsl:template>
+<xsl:template match="SpecialAssignmentUnitReward">
+              {
+                :unit => :<xsl:value-of select="@unit" />,
+                :amount => '<xsl:value-of select="." />',
+              },
+</xsl:template>
+
 
 
 <xsl:template match="Rewards">
