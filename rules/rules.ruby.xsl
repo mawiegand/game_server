@@ -80,7 +80,7 @@ class GameRules::Rules
   self.include_root_in_json = false
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
-    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :unit_categories, :building_categories,
+    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
@@ -110,6 +110,7 @@ class GameRules::Rules
       'science_types'               => science_types,  
       'assignment_types'            => assignment_types,  
       'special_assignment_types'    => special_assignment_types,
+      'special_assignments'         => special_assignments,
       'settlement_types'            => settlement_types,
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
@@ -187,6 +188,10 @@ class GameRules::Rules
       },
       :building_experience_formula => '<xsl:value-of select="//General/BuildingExperienceFormula" />',
       :alliance_max_members => <xsl:value-of select="//General/AllianceMaxMembers" />,
+      :special_assignments  => {
+        :idle_probability => <xsl:value-of select="//General/SpecialAssignments/SpecialAssignmentIdleProbability" />,
+        :idle_time => <xsl:value-of select="//General/SpecialAssignments/SpecialAssignmentIdleTime" />,
+      },
       :artifact_count => <xsl:value-of select="count(//ArtifactTypes/Artifact)" />,
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
