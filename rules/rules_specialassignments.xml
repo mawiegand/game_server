@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <SpecialAssignmentTypes>
-  <SpecialAssignmentType id="special_assignment_tester1" advisor="chief" level="10">
+  <SpecialAssignmentType id="special_assignment_tester1" advisor="chief" level="10" probability_factor="1">
     <Name>Special Assignment Test</Name>
     <Name lang="de_DE">Special Assignment Test</Name>
     
@@ -26,6 +26,7 @@
     <Cost id="resource_stone">3*PRODUCTION</Cost>
     <Cost id="resource_wood">3*PRODUCTION</Cost>
     <Cost id="resource_fur">3*PRODUCTION</Cost>
+
     <UnitDeposit id="clubbers_2">1*PRODUCTION</UnitDeposit>
     <UnitDeposit id="thrower">1*PRODUCTION</UnitDeposit>
     <UnitDeposit id="light_cavalry">1*PRODUCTION</UnitDeposit>
@@ -37,5 +38,8 @@
     </SpecialAssignmentRewards>
     
     <Duration>604800</Duration>
+
+    <DisplayDuration>604800</DisplayDuration>
+
   </SpecialAssignmentType>
 </SpecialAssignmentTypes>

@@ -7013,6 +7013,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :symbolic_id => :special_assignment_tester1,
           :level       => 10,
           :advisor     => "chief",
+          :probability_factor => "1",
           :name        => {
             
             :en_US => "Special Assignment Test",
@@ -7058,6 +7059,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 604800,
+          :display_duration => 604800,
 
 
 

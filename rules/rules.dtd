@@ -284,12 +284,13 @@
 >
 
 
-<!ELEMENT SpecialAssignmentType (Name+, Flavour+, ShortDescription*, Description+, Cost*, UnitDeposit*, SpecialAssignmentRewards, Duration)>
+<!ELEMENT SpecialAssignmentType (Name+, Flavour+, ShortDescription*, Description+, Cost*, UnitDeposit*, SpecialAssignmentRewards, Duration, DisplayDuration)>
 
 <!ATTLIST SpecialAssignmentType
-  id ID #REQUIRED
-  advisor CDATA "chef"
-  level CDATA #REQUIRED
+  id                 ID    #REQUIRED
+  advisor            CDATA "chef"
+  level              CDATA #REQUIRED
+  probability_factor CDATA #REQUIRED
 >
 
 
@@ -399,11 +400,11 @@
 >
 
 <!ELEMENT Duration (#PCDATA)>
-<!ATTLIST Duration 
-  shortenable (true | false) "true" 
+<!ATTLIST Duration
+  shortenable (true | false) "true"
 >
 
-
+<!ELEMENT DisplayDuration (#PCDATA)>
 
 <!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?)>
 

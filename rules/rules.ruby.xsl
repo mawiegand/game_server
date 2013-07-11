@@ -769,6 +769,7 @@ end
           :symbolic_id => :<xsl:value-of select="@id"/>,
           :level       => <xsl:value-of select="@level"/>,
           :advisor     => "<xsl:value-of select="@advisor"/>",
+          :probability_factor => "<xsl:value-of select="@probability_factor"/>",
           :name        => {
             <xsl:apply-templates select="Name" />
           },
@@ -794,6 +795,7 @@ end
           },
 </xsl:if>
           :duration => <xsl:value-of select="Duration"/>,
+          :display_duration => <xsl:value-of select="DisplayDuration"/>,
 
 <xsl:if test="AssignmentRewards">
           :rewards => {
