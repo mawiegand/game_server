@@ -7011,7 +7011,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #   Special Assignment Test 0
           :id          => 0,
           :symbolic_id => :special_assignment_tester0,
-          :level       => 10,
+          :level       => 3,
           :advisor     => "chief",
           :probability_factor => 1,
           :name        => {
@@ -7062,12 +7062,46 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :display_duration => 60,
 
 
+          :rewards => {
+
+            :resource_rewards => [
+              
+              {
+                :resource => :resource_stone,
+                :amount => '30*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => '30*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => '30*PRODUCTION',
+              },
+
+            ],
+
+            :unit_rewards => [
+              
+              {
+                :unit => :unit_clubbers,
+                :amount => '30*PRODUCTION',
+              },
+
+            ],
+
+            :experience_reward => '50*PRODUCTION',
+
+          },
+
 
         },              #   END OF Special Assignment Test 0
         {              #   Special Assignment Test 1
           :id          => 1,
           :symbolic_id => :special_assignment_tester1,
-          :level       => 10,
+          :level       => 5,
           :advisor     => "chief",
           :probability_factor => 1,
           :name        => {
@@ -7118,12 +7152,46 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :display_duration => 60,
 
 
+          :rewards => {
+
+            :resource_rewards => [
+              
+              {
+                :resource => :resource_stone,
+                :amount => '30*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => '30*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => '30*PRODUCTION',
+              },
+
+            ],
+
+            :unit_rewards => [
+              
+              {
+                :unit => :unit_clubbers,
+                :amount => '30*PRODUCTION',
+              },
+
+            ],
+
+            :experience_reward => '50*PRODUCTION',
+
+          },
+
 
         },              #   END OF Special Assignment Test 1
         {              #   Special Assignment Test 2
           :id          => 2,
           :symbolic_id => :special_assignment_tester2,
-          :level       => 10,
+          :level       => 7,
           :advisor     => "chief",
           :probability_factor => 4,
           :name        => {
@@ -7173,6 +7241,40 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :duration => 60,
           :display_duration => 60,
 
+
+          :rewards => {
+
+            :resource_rewards => [
+              
+              {
+                :resource => :resource_stone,
+                :amount => '30*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => '30*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => '30*PRODUCTION',
+              },
+
+            ],
+
+            :unit_rewards => [
+              
+              {
+                :unit => :unit_clubbers,
+                :amount => '30*PRODUCTION',
+              },
+
+            ],
+
+            :experience_reward => '50*PRODUCTION',
+
+          },
 
 
         },              #   END OF Special Assignment Test 2
