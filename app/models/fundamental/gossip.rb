@@ -71,6 +71,7 @@ class Fundamental::Gossip < ActiveRecord::Base
     self.content = {
       resource_id: resource_type[:id],
       character_id: pool.owner.id,
+      male: character.male?,
       name: pool.owner.name,
       rate: pool[production],
     }
@@ -82,6 +83,7 @@ class Fundamental::Gossip < ActiveRecord::Base
     self.content = {
       character_id: character.id,
       name: character.name,
+      male: character.male?,
       likes: character.received_likes_count,
     }
   end
