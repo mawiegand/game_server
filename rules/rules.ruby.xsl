@@ -769,7 +769,7 @@ end
           :symbolic_id => :<xsl:value-of select="@id"/>,
           :level       => <xsl:value-of select="@level"/>,
           :advisor     => "<xsl:value-of select="@advisor"/>",
-          :probability_factor => "<xsl:value-of select="@probability_factor"/>",
+          :probability_factor => <xsl:value-of select="@probability_factor"/>,
           :name        => {
             <xsl:apply-templates select="Name" />
           },
