@@ -2,27 +2,27 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <SpecialAssignmentTypes>
-  <SpecialAssignmentType id="special_assignment_tester1" advisor="chief" level="10" probability_factor="1">
-    <Name>Special Assignment Test</Name>
-    <Name lang="de_DE">Special Assignment Test</Name>
-    
+  <SpecialAssignmentType id="special_assignment_tester0" advisor="chief" level="10" probability_factor="1">
+    <Name>Special Assignment Test 0</Name>
+    <Name lang="de_DE">Special Assignment Test 0</Name>
+
     <Flavour lang="de_DE">Diese Expedition wird uns Ruhm und Ehre bringen!</Flavour>
     <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
-    
+
     <ShortDescription lang="de_DE">
       <p>Unternimm eine Expedition</p>
     </ShortDescription>
     <ShortDescription lang="en_US">
       <p>Undertake an expedition</p>
     </ShortDescription>
-    
+
     <Description lang="de_DE">
       <p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
     </Description>
     <Description lang="en_US">
       <p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>
     </Description>
-    
+
     <Cost id="resource_stone">3*PRODUCTION</Cost>
     <Cost id="resource_wood">3*PRODUCTION</Cost>
     <Cost id="resource_fur">3*PRODUCTION</Cost>
@@ -36,10 +36,90 @@
       <ResourceReward resource="resource_wood">30*PRODUCTION</ResourceReward>
       <ResourceReward resource="resource_fur">30*PRODUCTION</ResourceReward>
     </SpecialAssignmentRewards>
-    
-    <Duration>604800</Duration>
 
-    <DisplayDuration>604800</DisplayDuration>
+    <Duration>60</Duration>
+
+    <DisplayDuration>60</DisplayDuration>
+
+  </SpecialAssignmentType>
+  <SpecialAssignmentType id="special_assignment_tester1" advisor="chief" level="10" probability_factor="1">
+    <Name>Special Assignment Test 1</Name>
+    <Name lang="de_DE">Special Assignment Test 1</Name>
+
+    <Flavour lang="de_DE">Diese Expedition wird uns Ruhm und Ehre bringen!</Flavour>
+    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
+
+    <ShortDescription lang="de_DE">
+      <p>Unternimm eine Expedition</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Undertake an expedition</p>
+    </ShortDescription>
+
+    <Description lang="de_DE">
+      <p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>
+    </Description>
+
+    <Cost id="resource_stone">3*PRODUCTION</Cost>
+    <Cost id="resource_wood">3*PRODUCTION</Cost>
+    <Cost id="resource_fur">3*PRODUCTION</Cost>
+
+    <UnitDeposit id="clubbers_2">1*PRODUCTION</UnitDeposit>
+    <UnitDeposit id="thrower">1*PRODUCTION</UnitDeposit>
+    <UnitDeposit id="light_cavalry">1*PRODUCTION</UnitDeposit>
+
+    <SpecialAssignmentRewards>
+      <ResourceReward resource="resource_stone">30*PRODUCTION</ResourceReward>
+      <ResourceReward resource="resource_wood">30*PRODUCTION</ResourceReward>
+      <ResourceReward resource="resource_fur">30*PRODUCTION</ResourceReward>
+    </SpecialAssignmentRewards>
+
+    <Duration>60</Duration>
+
+    <DisplayDuration>60</DisplayDuration>
+
+  </SpecialAssignmentType>
+  <SpecialAssignmentType id="special_assignment_tester2" advisor="chief" level="10" probability_factor="4">
+    <Name>Special Assignment Test 2</Name>
+    <Name lang="de_DE">Special Assignment Test 2</Name>
+
+    <Flavour lang="de_DE">Diese Expedition wird uns Ruhm und Ehre bringen!</Flavour>
+    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
+
+    <ShortDescription lang="de_DE">
+      <p>Unternimm eine Expedition</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Undertake an expedition</p>
+    </ShortDescription>
+
+    <Description lang="de_DE">
+      <p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>
+    </Description>
+
+    <Cost id="resource_stone">3*PRODUCTION</Cost>
+    <Cost id="resource_wood">3*PRODUCTION</Cost>
+    <Cost id="resource_fur">3*PRODUCTION</Cost>
+
+    <UnitDeposit id="clubbers_2">1*PRODUCTION</UnitDeposit>
+    <UnitDeposit id="thrower">1*PRODUCTION</UnitDeposit>
+    <UnitDeposit id="light_cavalry">1*PRODUCTION</UnitDeposit>
+
+    <SpecialAssignmentRewards>
+      <ResourceReward resource="resource_stone">30*PRODUCTION</ResourceReward>
+      <ResourceReward resource="resource_wood">30*PRODUCTION</ResourceReward>
+      <ResourceReward resource="resource_fur">30*PRODUCTION</ResourceReward>
+    </SpecialAssignmentRewards>
+
+    <Duration>60</Duration>
+
+    <DisplayDuration>60</DisplayDuration>
 
   </SpecialAssignmentType>
 </SpecialAssignmentTypes>

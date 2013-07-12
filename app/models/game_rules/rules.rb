@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.2
+# Version: 0.9.3
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -119,7 +119,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 2,
+                    :build => 3,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -165,8 +165,8 @@ class GameRules::Rules
       :building_experience_formula => '2*LEVEL',
       :alliance_max_members => 13,
       :special_assignments  => {
-        :idle_probability => 0.8,
-        :idle_time => 3600,
+        :idle_probability => 0.2,
+        :idle_time => 30,
       },
       :artifact_count => 5,
   
@@ -7008,17 +7008,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
       :special_assignment_types => [  # ALL SPECIAL ASSIGMENT TYPES
 
-        {              #   Special Assignment Test
+        {              #   Special Assignment Test 0
           :id          => 0,
-          :symbolic_id => :special_assignment_tester1,
+          :symbolic_id => :special_assignment_tester0,
           :level       => 10,
           :advisor     => "chief",
-          :probability_factor => "1",
+          :probability_factor => 1,
           :name        => {
             
-            :en_US => "Special Assignment Test",
+            :en_US => "Special Assignment Test 0",
   
-            :de_DE => "Special Assignment Test",
+            :de_DE => "Special Assignment Test 0",
   
           },
           :flavour     => {
@@ -7058,12 +7058,124 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
-          :duration => 604800,
-          :display_duration => 604800,
+          :duration => 60,
+          :display_duration => 60,
 
 
 
-        },              #   END OF Special Assignment Test
+        },              #   END OF Special Assignment Test 0
+        {              #   Special Assignment Test 1
+          :id          => 1,
+          :symbolic_id => :special_assignment_tester1,
+          :level       => 10,
+          :advisor     => "chief",
+          :probability_factor => 1,
+          :name        => {
+            
+            :en_US => "Special Assignment Test 1",
+  
+            :de_DE => "Special Assignment Test 1",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>",
+  
+            :en_US => "<p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Unternimm eine Expedition</p>",
+  
+            :en_US => "<p>Undertake an expedition</p>",
+  
+          },
+
+          :costs      => {
+            0 => '3*PRODUCTION',
+            1 => '3*PRODUCTION',
+            2 => '3*PRODUCTION',
+            
+          },
+
+          :unit_deposits => {
+            1 => '1*PRODUCTION',
+            4 => '1*PRODUCTION',
+            8 => '1*PRODUCTION',
+            
+          },
+
+          :duration => 60,
+          :display_duration => 60,
+
+
+
+        },              #   END OF Special Assignment Test 1
+        {              #   Special Assignment Test 2
+          :id          => 2,
+          :symbolic_id => :special_assignment_tester2,
+          :level       => 10,
+          :advisor     => "chief",
+          :probability_factor => 4,
+          :name        => {
+            
+            :en_US => "Special Assignment Test 2",
+  
+            :de_DE => "Special Assignment Test 2",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>",
+  
+            :en_US => "<p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Unternimm eine Expedition</p>",
+  
+            :en_US => "<p>Undertake an expedition</p>",
+  
+          },
+
+          :costs      => {
+            0 => '3*PRODUCTION',
+            1 => '3*PRODUCTION',
+            2 => '3*PRODUCTION',
+            
+          },
+
+          :unit_deposits => {
+            1 => '1*PRODUCTION',
+            4 => '1*PRODUCTION',
+            8 => '1*PRODUCTION',
+            
+          },
+
+          :duration => 60,
+          :display_duration => 60,
+
+
+
+        },              #   END OF Special Assignment Test 2
       ],                # END OF SPECIAL ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################
