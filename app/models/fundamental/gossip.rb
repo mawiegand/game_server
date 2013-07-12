@@ -99,7 +99,7 @@ class Fundamental::Gossip < ActiveRecord::Base
     end
     
     def add_expiration
-      self.ended_at = DateTime.now + 1.hours
+      self.ended_at = DateTime.now + 1.seconds # hours
       true
     end
   
