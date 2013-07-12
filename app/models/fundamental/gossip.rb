@@ -71,7 +71,7 @@ class Fundamental::Gossip < ActiveRecord::Base
     self.content = {
       resource_id: resource_type[:id],
       character_id: pool.owner.id,
-      male: character.male?,
+      male: pool.owner.male?,
       name: pool.owner.name,
       rate: pool[production],
     }
