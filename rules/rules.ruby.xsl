@@ -797,9 +797,9 @@ end
           :duration => <xsl:value-of select="Duration"/>,
           :display_duration => <xsl:value-of select="DisplayDuration"/>,
 
-<xsl:if test="AssignmentRewards">
+<xsl:if test="SpecialAssignmentRewards">
           :rewards => {
-<xsl:apply-templates select="AssignmentRewards" />
+<xsl:apply-templates select="SpecialAssignmentRewards " />
           },
 </xsl:if>
 

@@ -421,7 +421,7 @@
 <!ELEMENT ExperienceReward (#PCDATA)>
 
 
-<!ELEMENT SpecialAssignmentRewards (ResourceReward*, UnitReward*, ExperienceReward?)>
+<!ELEMENT SpecialAssignmentRewards (SpecialAssignmentResourceReward*, SpecialAssignmentUnitReward*, SpecialAssignmentExperienceReward?)>
 
 <!ELEMENT SpecialAssignmentResourceReward (#PCDATA)>
 <!ATTLIST SpecialAssignmentResourceReward

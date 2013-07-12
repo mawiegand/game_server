@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <SpecialAssignmentTypes>
-  <SpecialAssignmentType id="special_assignment_tester0" advisor="chief" level="10" probability_factor="1">
+  <SpecialAssignmentType id="special_assignment_tester0" advisor="chief" level="3" probability_factor="1">
     <Name>Special Assignment Test 0</Name>
     <Name lang="de_DE">Special Assignment Test 0</Name>
 
@@ -32,9 +32,11 @@
     <UnitDeposit id="light_cavalry">1*PRODUCTION</UnitDeposit>
 
     <SpecialAssignmentRewards>
-      <ResourceReward resource="resource_stone">30*PRODUCTION</ResourceReward>
-      <ResourceReward resource="resource_wood">30*PRODUCTION</ResourceReward>
-      <ResourceReward resource="resource_fur">30*PRODUCTION</ResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_stone">30*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_wood">30*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_fur">30*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentUnitReward unit="unit_clubbers">30*PRODUCTION</SpecialAssignmentUnitReward>
+      <SpecialAssignmentExperienceReward>50*PRODUCTION</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 
     <Duration>60</Duration>
@@ -42,7 +44,7 @@
     <DisplayDuration>60</DisplayDuration>
 
   </SpecialAssignmentType>
-  <SpecialAssignmentType id="special_assignment_tester1" advisor="chief" level="10" probability_factor="1">
+  <SpecialAssignmentType id="special_assignment_tester1" advisor="chief" level="5" probability_factor="1">
     <Name>Special Assignment Test 1</Name>
     <Name lang="de_DE">Special Assignment Test 1</Name>
 
@@ -72,9 +74,11 @@
     <UnitDeposit id="light_cavalry">1*PRODUCTION</UnitDeposit>
 
     <SpecialAssignmentRewards>
-      <ResourceReward resource="resource_stone">30*PRODUCTION</ResourceReward>
-      <ResourceReward resource="resource_wood">30*PRODUCTION</ResourceReward>
-      <ResourceReward resource="resource_fur">30*PRODUCTION</ResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_stone">30*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_wood">30*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_fur">30*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentUnitReward unit="unit_clubbers">30*PRODUCTION</SpecialAssignmentUnitReward>
+      <SpecialAssignmentExperienceReward>50*PRODUCTION</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 
     <Duration>60</Duration>
@@ -82,7 +86,7 @@
     <DisplayDuration>60</DisplayDuration>
 
   </SpecialAssignmentType>
-  <SpecialAssignmentType id="special_assignment_tester2" advisor="chief" level="10" probability_factor="4">
+  <SpecialAssignmentType id="special_assignment_tester2" advisor="chief" level="7" probability_factor="4">
     <Name>Special Assignment Test 2</Name>
     <Name lang="de_DE">Special Assignment Test 2</Name>
 
@@ -112,9 +116,11 @@
     <UnitDeposit id="light_cavalry">1*PRODUCTION</UnitDeposit>
 
     <SpecialAssignmentRewards>
-      <ResourceReward resource="resource_stone">30*PRODUCTION</ResourceReward>
-      <ResourceReward resource="resource_wood">30*PRODUCTION</ResourceReward>
-      <ResourceReward resource="resource_fur">30*PRODUCTION</ResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_stone">30*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_wood">30*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_fur">30*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentUnitReward unit="unit_clubbers">30*PRODUCTION</SpecialAssignmentUnitReward>
+      <SpecialAssignmentExperienceReward>50*PRODUCTION</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 
     <Duration>60</Duration>
