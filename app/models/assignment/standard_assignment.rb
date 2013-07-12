@@ -31,7 +31,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   
   def self.create_if_not_existing(character, type)
     assignment = character.standard_assignments.with_type(type).first
-    if (assignment.nil?)
+    if assignment.nil?
       assignment = character.standard_assignments.create({
         type_id: type[:id],
       })
