@@ -46,6 +46,7 @@ en:
         artifact_initiations: Art. Initiations
         settings: Settings
         retention_mails: Retention Mails
+        gossip: Gossip
       messaging:
         category: Messaging
         inboxes: Inboxes

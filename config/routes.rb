@@ -48,6 +48,7 @@ GameServer::Application.routes.draw do
       namespace :fundamental do
         
         resource :round_info, :only => [:show, :edit, :update]
+        resource :gossip,     :only => [:show]
         
         resources :persistent_character_properties
         
