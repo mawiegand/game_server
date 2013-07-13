@@ -50,6 +50,7 @@ class Fundamental::Gossip < ActiveRecord::Base
     @gossip_options ||= [
       :calc_resource_type_production_leader,
       :calc_most_liked_player,
+      :calc_most_messages_sent,
     ]
   end
   
@@ -85,6 +86,26 @@ class Fundamental::Gossip < ActiveRecord::Base
       name: character.name,
       male: character.male?,
       likes: character.received_likes_count,
+    }
+  end
+  
+  def calc_most_messages_sent
+    results   = Messaging::OutboxEntry.where(['created_at > ?', DateTime.now-1.weeks]).group(:owner_id).count
+    max_value = results.values.max
+    max_entry = results.select {|k,v| v == max_value}
+    
+    return  if max_entry.nil?
+    
+    character = Fundamental::Character.find_by_id(max_entry.keys.first)
+    
+    return  if character.nil?
+    
+    self.content_type = :most_messages_sent
+    self.content = {
+      character_id: character.id,
+      name: character.name,
+      male: character.male?,
+      messages: max_value,
     }
   end
   
