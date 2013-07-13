@@ -2,16 +2,20 @@ class Shop::PurchasesController < ApplicationController
   layout 'shop'
 
   before_filter :authenticate
-  before_filter :deny_api, :except => [:index]
+  before_filter :deny_api,             :except => [:index]
+  before_filter :authorize_staff,      :except => [:index]
+  
 
   # GET /shop/purchases
   # GET /shop/purchases.json
   def index
     if params.has_key?(:character_id)
       @character = Fundamental::Character.find(params[:character_id])
+      raise ForbiddenError.new('Access Forbidden') unless admin? || staff? || current_character == character 
       raise NotFoundError.new('Page Not Found') if @character.nil?
       @shop_purchases = @character.purchases
     else
+      raise ForbiddenError.new('Access Forbidden') unless admin? || staff?
       @shop_purchases = Shop::Purchase.all
     end
 

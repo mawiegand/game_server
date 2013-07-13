@@ -5,7 +5,13 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
 
   before_filter :authenticate,         :except => [:create]
   before_filter :deny_api,             :except => [:create]
+  before_filter :authorize_staff,      :except => [:create]
+  
   #before_filter :authorize_bytro_shop, :only   => [:create]
+  # TODO: need a correct authentication of the bytro shop
+  # idea: because it comes from our identity provider (forwarded)
+  #       we can use a common token here and do the bytro-shop
+  #       authentication in the identity provider?
 
   # GET /shop/special_offers_transactions
   # GET /shop/special_offers_transactions.json

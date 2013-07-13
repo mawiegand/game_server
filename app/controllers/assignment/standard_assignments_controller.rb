@@ -2,7 +2,9 @@ class Assignment::StandardAssignmentsController < ApplicationController
   layout 'assignment'
 
   before_filter :authenticate
-  before_filter :deny_api, :except => [:show, :index]
+  before_filter :deny_api,        :except => [:show, :index]
+  before_filter :authorize_staff, :except => [:show, :index]
+
 
   # GET /assignment/standard_assignments
   # GET /assignment/standard_assignments.json
@@ -17,6 +19,7 @@ class Assignment::StandardAssignmentsController < ApplicationController
       @assignment_standard_assignments = @character.standard_assignments
       # todo -> determine last_modified
     else 
+      raise ForbiddenError.new('Access Forbidden') if !admin? && !staff? && !developer? 
       @asked_for_index = true
     end   
 
@@ -40,7 +43,9 @@ class Assignment::StandardAssignmentsController < ApplicationController
   # GET /assignment/standard_assignments/1
   # GET /assignment/standard_assignments/1.json
   def show
-    @assignment_standard_assignment = Assignment::StandardAssignment.find(params[:id])
+    @assignment_standard_assignment = Assignment::StandardAssignment.find_by_id(params[:id])
+    raise NotFoundError.new('Not Found')         if @assignment_standard_assignment.nil?
+    raise ForbiddenError.new('Access Forbidden') unless current_character ==  @assignment_standard_assignment.character || admin? || !staff? || !developer? 
 
     respond_to do |format|
       format.html # show.html.erb
