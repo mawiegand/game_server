@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <AssignmentTypes>
-  <!-- AssignmentType id="assignment_stone" advisor="girl" level="1">
+  <AssignmentType id="assignment_stone" advisor="girl" level="1">
     <Name>Boulder Smashing</Name>
     <Name lang="de_DE">Steine klopfen</Name>
     
@@ -58,7 +58,7 @@
     <Duration>720</Duration>
   </AssignmentType>
 
-  <AssignmentType id="assignment_fur" advisor="girl" level="3">
+  <!-- AssignmentType id="assignment_fur" advisor="girl" level="3">
     <Name>Skinning</Name>
     <Name lang="de_DE">Tiere häuten</Name>
     

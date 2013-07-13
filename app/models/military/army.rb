@@ -517,7 +517,7 @@ class Military::Army < ActiveRecord::Base
     end
 
     army = Military::Army.new({
-      name: army_name[0..15],
+      name: army_name[0..16],
       home_settlement_id: location.settlement.id,
       home_settlement_name: location.settlement.name,
       ap_max: 4,

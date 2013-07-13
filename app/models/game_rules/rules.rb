@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.8.17
+# Version: 0.9.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -116,8 +116,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 0,
-                    :minor => 8,
-                    :build => 17,
+                    :minor => 9,
+                    :build => 0,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -6490,6 +6490,112 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
       :assignment_types => [  # ALL ASSIGMENT TYPES
 
+        {              #   Boulder Smashing
+          :id          => 0, 
+          :symbolic_id => :assignment_stone,
+          :level       => 1,
+          :advisor     => "girl",
+          :name        => {
+            
+            :en_US => "Boulder Smashing",
+  
+            :de_DE => "Steine klopfen",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Mit ein bisschen Motivation können diese Sammler ja ganz schön ackern.",
+  
+            :en_US => "Just a little bit of motivation and look at those gatherers go!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Vielleicht verlierst du die Wette, wie schnell deine Sammler steine kloppen können, aber am Ende bleibt für dich sowieso mehr übrig, als ihr Bier kosten wird.</p>",
+  
+            :en_US => "<p>Maybe you will lose your bet, how fast your gatherers can smash those boulders, but in the end you will get more out of their fast work then their beer will cost you anyways. </p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Mach deinen Sammlern Beine und lass sie ein paar Steine klopfen</p>",
+  
+            :en_US => "<p>Have your gatherers pick up the slack and smash a couple of boulders</p>",
+  
+          },
+
+          :duration => 600,
+          
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 50,
+              },
+
+          ],
+
+          },          
+
+
+        },              #   END OF Boulder Smashing
+        {              #   Wood Cutting
+          :id          => 1, 
+          :symbolic_id => :assignment_wood,
+          :level       => 2,
+          :advisor     => "girl",
+          :name        => {
+            
+            :en_US => "Wood Cutting",
+  
+            :de_DE => "Bäume fällen",
+                
+          },
+          :flavour     => {
+            
+            :de_DE => "Der Kampf einer Axt gegen einen Baum. Ich kann stundenlang zuschauen wie andere arbeiten.",
+  
+            :en_US => "Axe against tree, the age old battle. I could spend hours watching others work.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Wirt brauch eine neue Bank, also muss handangelegt werden. Da er nur halben Baum braucht wird sich niemand daran stören, wenn Du den Rest einstreichst.</p>",
+  
+            :en_US => "<p>The barkeeper needs a new bench. But seeing how he only needs half a tree noone is realy going to mind if you take the rest for yourself, will they?</p>",
+                
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Hilf aus und sacke etwas Holz nebenbei ein</p>",
+  
+            :en_US => "<p>Help out and get some wood in the process</p>",
+  
+          },
+
+          :duration => 720,
+          
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_wood,
+                :amount => 50,
+              },
+
+          ],
+
+          },          
+
+
+        },              #   END OF Wood Cutting
       ],                # END OF ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################
