@@ -91,7 +91,7 @@ class Fundamental::Gossip < ActiveRecord::Base
   protected
   
     def update_if_expired
-      if 1 || self.ended_at.nil? || (self.ended_at < DateTime.now && rand(50) < 1)
+      if self.ended_at.nil? || (self.ended_at < DateTime.now && rand(50) < 1)
         self.update_with_random_gossip
         self.save
         
@@ -101,7 +101,7 @@ class Fundamental::Gossip < ActiveRecord::Base
     end
     
     def add_expiration
-      self.ended_at = DateTime.now + 1.seconds # hours
+      self.ended_at = DateTime.now + 1.hours
       true
     end
   
