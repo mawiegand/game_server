@@ -19,9 +19,11 @@ class Shop::Transaction < ActiveRecord::Base
   STATES[STATE_ERROR_NO_CONNECTION] = :error_no_connection
   STATE_ERROR_NOT_BOOKED = 8
   STATES[STATE_ERROR_NOT_BOOKED] = :error_not_booked
-  STATE_BOOKED = 9  
+  STATE_BOOKED = 9
   STATES[STATE_BOOKED] = :booked
-  
+  STATE_PAID_AND_REDEEMED = 10
+  STATES[STATE_PAID_AND_REDEEMED] = :paid_and_redeemed
+
   TYPE_CREDIT = 0
   TYPE_DEBIT = 1
   

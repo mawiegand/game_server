@@ -74,7 +74,7 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
     #end
 
     # create shop transaction
-    @shop_special_offers_transaction = Shop::SpecialOffersTransaction.new
+    #@shop_special_offers_transaction = Shop::SpecialOffersTransaction.new
 
     special_offer = Shop::SpecialOffer.find_by_external_offer_id(params[:offerID])
     if special_offer.nil? # there is no special offer for this id, callback was sent based on a regular credit offer
@@ -88,26 +88,30 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
       return
     end
 
-    # fill transaction
-    @shop_special_offers_transaction.character_id = character.id
-    @shop_special_offers_transaction.external_offer_id = special_offer.external_offer_id
-    @shop_special_offers_transaction.state = Shop::Transaction::STATE_CREATED
+    ActiveRecord::Base.transaction(:requires_new => true) do
 
-    # create shop_transaction event
-    unless @shop_special_offers_transaction.save
-      render json: @shop_special_offers_transaction.errors, status: :unprocessable_entity
-      return
-    end
+      @shop_special_offers_transaction = Shop::SpecialOffersTransaction.find_or_create_by_character_id_and_external_offer_id(character.id, special_offer.external_offer_id)
+      @shop_special_offers_transaction.lock!
 
-    @shop_purchase = Shop::Purchase.new
-    @shop_purchase.character_id = @shop_special_offers_transaction.character_id
-    @shop_purchase.external_offer_id = @shop_special_offers_transaction.external_offer_id
-    @shop_purchase.special_offers_transaction_id = @shop_special_offers_transaction.id
+      if !@shop_special_offers_transaction.paid?
+        @shop_special_offers_transaction.state = Shop::Transaction::STATE_CREATED
+        @shop_special_offers_transaction.paid_at = Time.now
+      end
 
-    # create purchase object
-    unless @shop_purchase.save
-      render json: @shop_purchase.errors, status: :unprocessable_entity
-      return
+
+      # create shop_transaction event
+      unless @shop_special_offers_transaction.save
+        render json: @shop_special_offers_transaction.errors, status: :unprocessable_entity
+        return
+      end
+
+      # create unredeemed purchase if not exists
+      if @shop_special_offers_transaction.purchase.nil?
+        @shop_purchase = @shop_special_offers_transaction.purchase.create({
+          character_id:      character.id,
+          external_offer_id: special_offer.external_offer_id,
+        })
+      end
     end
 
       # answer with 201

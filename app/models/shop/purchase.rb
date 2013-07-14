@@ -4,7 +4,7 @@ class Shop::Purchase < ActiveRecord::Base
   belongs_to :special_offers_transaction, :class_name => "Shop::SpecialOffersTransaction",  :foreign_key => "special_offers_transaction_id",  :inverse_of => :purchase
 
   def redeemed?
-    !redeemed_at.nil? && redeemed_at < DateTime.now
+    !redeemed_at.nil?
   end
 
   def special_offer
