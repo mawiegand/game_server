@@ -228,7 +228,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
           local_event_id: self.id,
       )
       if !self.save  # this is the final step; this makes sure, something is actually executed
-        raise ArgumentError.new('could not create event for active training job')
+        raise ArgumentError.new('could not create event for standard assignment')
       end
     end
     self.event

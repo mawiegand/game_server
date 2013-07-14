@@ -9,6 +9,7 @@ require 'ticker/resource_effect_handler'
 require 'ticker/construction_effect_handler'
 require 'ticker/artifact_initiation_handler'
 require 'ticker/standard_assignment_handler'
+require 'ticker/special_assignment_handler'
 require 'exception/http_exceptions'
 
 
