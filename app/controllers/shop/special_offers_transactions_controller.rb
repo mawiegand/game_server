@@ -107,7 +107,7 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
 
       # create unredeemed purchase if not exists
       if @shop_special_offers_transaction.purchase.nil?
-        @shop_purchase = @shop_special_offers_transaction.purchase.create({
+        @shop_purchase = @shop_special_offers_transaction.create_purchase({
           character_id:      character.id,
           external_offer_id: special_offer.external_offer_id,
         })

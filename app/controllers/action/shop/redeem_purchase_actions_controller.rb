@@ -7,7 +7,7 @@ class Action::Shop::RedeemPurchaseActionsController < ApplicationController
   # POST /action/shop/redeem_purchase_actions.json
   def create
     raise BadRequestError.new('no current character') if current_character.nil?
-    raise BadRequestError.new('missing parameter(s)') if params[:action_redeem_purchase_action].nil? || params[:action_redeem_purchase_action][:purchase_id].blank?
+    raise BadRequestError.new('missing parameter(s)') if params[:action_redeem_purchase_action].nil? || params[:action_redeem_purchase_action][:external_offer_id].blank?
 
     special_offer = Shop::SpecialOffer.find_by_external_offer_id(params[:action_redeem_purchase_action][:external_offer_id])
     raise NotFoundError.new ("special offer with offer id #{params[:action_redeem_purchase_action][:external_offer_id]} not Found.") if special_offer.nil?
