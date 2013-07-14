@@ -51,6 +51,7 @@ class Fundamental::Gossip < ActiveRecord::Base
       :calc_resource_type_production_leader,
       :calc_most_liked_player,
       :calc_most_messages_sent,
+      :calc_most_units,
     ]
   end
   
