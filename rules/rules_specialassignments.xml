@@ -41,7 +41,7 @@
 
     <Duration>60</Duration>
 
-    <DisplayDuration>60</DisplayDuration>
+    <DisplayDuration>360</DisplayDuration>
 
   </SpecialAssignmentType>
   <SpecialAssignmentType id="special_assignment_tester1" advisor="chief" level="5" probability_factor="1">
@@ -83,7 +83,7 @@
 
     <Duration>60</Duration>
 
-    <DisplayDuration>60</DisplayDuration>
+    <DisplayDuration>360</DisplayDuration>
 
   </SpecialAssignmentType>
   <SpecialAssignmentType id="special_assignment_tester2" advisor="chief" level="7" probability_factor="4">
@@ -125,7 +125,7 @@
 
     <Duration>60</Duration>
 
-    <DisplayDuration>60</DisplayDuration>
+    <DisplayDuration>360</DisplayDuration>
 
   </SpecialAssignmentType>
 </SpecialAssignmentTypes>
