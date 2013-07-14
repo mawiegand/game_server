@@ -119,7 +119,7 @@
       <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
       <SpecialAssignmentResourceReward resource="resource_wood">3*PRODUCTION</SpecialAssignmentResourceReward>
       <SpecialAssignmentResourceReward resource="resource_fur">3*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentUnitReward unit="unit_clubbers">3*PRODUCTION</SpecialAssignmentUnitReward>
+      <SpecialAssignmentUnitReward unit="unit_clubbers">1</SpecialAssignmentUnitReward>
       <SpecialAssignmentExperienceReward>1</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 
