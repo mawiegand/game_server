@@ -47,7 +47,8 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
       new_assignment = self.new({
         character_id:     character.id,
         type_id:          self.random_type(character)[:id],
-        displayed_until:  self.new_end_date(start_at, GameRules::Rules.the_rules.special_assignments[:idle_time])
+        displayed_until:  self.new_end_date(start_at, GameRules::Rules.the_rules.special_assignments[:idle_time]),
+        seen_at:          Time.now
       })
       new_assignment.add_values
       self.raise_fail_counters(character, new_assignment.type_id)
@@ -57,7 +58,8 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
       self.create({
         character_id:     character.id,
         type_id:          -1,
-        displayed_until:  self.new_end_date(start_at, GameRules::Rules.the_rules.special_assignments[:idle_time])
+        displayed_until:  self.new_end_date(start_at, GameRules::Rules.the_rules.special_assignments[:idle_time]),
+        seen_at:          Time.now
       })
       self.raise_fail_counters(character, -1)
       nil
