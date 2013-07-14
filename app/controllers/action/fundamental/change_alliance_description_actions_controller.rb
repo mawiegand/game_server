@@ -14,7 +14,7 @@ class Action::Fundamental::ChangeAllianceDescriptionActionsController < Applicat
     raise ForbiddenError.new('tried to do change wrong alliance') unless current_character.alliance_id == params[:change_alliance_description_action][:alliance_id].to_i
     raise ForbiddenError.new('only leader can kick member') unless current_character.alliance_leader?
     
-    alliance = currenct_character.alliance
+    alliance = current_character.alliance
     alliance.description = params[:change_alliance_description_action][:description].strip
 
     raise BadRequestError.new('saving the alliance description did fails.')  unless alliance.save
