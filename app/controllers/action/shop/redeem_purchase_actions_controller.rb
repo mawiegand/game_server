@@ -35,6 +35,10 @@ class Action::Shop::RedeemPurchaseActionsController < ApplicationController
         shop_special_offers_transaction.save!
       end
     end
+
+    respond_to do |format|
+      format.json { render json: {}, status: :ok }
+    end
   end
 
 end
