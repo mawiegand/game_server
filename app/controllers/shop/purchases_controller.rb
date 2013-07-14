@@ -11,7 +11,7 @@ class Shop::PurchasesController < ApplicationController
   def index
     if params.has_key?(:character_id)
       @character = Fundamental::Character.find(params[:character_id])
-      raise ForbiddenError.new('Access Forbidden') unless admin? || staff? || current_character == character 
+      raise ForbiddenError.new('Access Forbidden') unless admin? || staff? || current_character == @character
       raise NotFoundError.new('Page Not Found') if @character.nil?
       @shop_purchases = @character.purchases
     else
