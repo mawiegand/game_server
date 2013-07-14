@@ -44,14 +44,15 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
 
     if random > GameRules::Rules.the_rules.special_assignments[:idle_probability]
       # new random assignment
+      random_type = self.random_type(character)
       new_assignment = self.new({
         character_id:     character.id,
-        type_id:          self.random_type(character)[:id],
-        displayed_until:  self.new_end_date(start_at, GameRules::Rules.the_rules.special_assignments[:idle_time]),
+        type_id:          random_type[:id],
+        displayed_until:  self.new_end_date(start_at, random_type[:display_duration]),
         seen_at:          Time.now
       })
       new_assignment.add_values
-      self.raise_fail_counters(character, new_assignment.type_id)
+      self.raise_fail_counters(character, random_type[:id]  )
       new_assignment
     else
       # create dummy assignment
