@@ -12648,9 +12648,7 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :custom_test => {
-              :id => 'test_start_assignment',
-            },
+            :standard_assignment_test => {},
 
           },          
 

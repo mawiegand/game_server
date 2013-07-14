@@ -4988,7 +4988,7 @@
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <CustomTest id="test_start_assignment">assignment started</CustomTest>
+        <StandardAssignmentTest></StandardAssignmentTest>
       </RewardTests>
       <UIMarker>mark_assignment_button</UIMarker>
     </Quest>

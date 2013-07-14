@@ -337,6 +337,9 @@ end
 <xsl:if test="AllianceTest">
             :alliance_test => {},
 </xsl:if>
+<xsl:if test="StandardAssignmentTest">
+            :standard_assignment_test => {},
+</xsl:if>
 <xsl:if test="MovementTest">
             :movement_test => {},
 </xsl:if>

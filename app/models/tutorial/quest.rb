@@ -223,14 +223,23 @@ class Tutorial::Quest < ActiveRecord::Base
           return false
         end
       end
-      
+
       unless reward_tests[:building_speed_test].nil?
         building_speed_test = reward_tests[:building_speed_test]
         unless check_building_speed(building_speed_test)
           return false
         end
       end
-      
+
+      unless reward_tests[:standard_assignment_test].nil?
+        standard_assignment_test = reward_tests[:standard_assignment_test]
+        unless standard_assignment_test.nil?
+          unless check_standard_assignment
+            return false
+          end
+        end
+      end
+
       unless reward_tests[:custom_test].nil?
         custom_test = reward_tests[:custom_test]
       end
@@ -460,6 +469,13 @@ class Tutorial::Quest < ActiveRecord::Base
 
   def check_alliance    
     !self.tutorial_state.owner.alliance.nil?
+  end
+
+  def check_standard_assignment
+    self.tutorial_state.owner.standard_assignments.each do |standard_assignment|
+      return true if standard_assignment.ongoing?
+    end
+    false
   end
 
   def check_textbox(textbox_test, answer_text)
