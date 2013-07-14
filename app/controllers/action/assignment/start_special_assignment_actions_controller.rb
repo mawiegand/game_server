@@ -7,7 +7,7 @@ class Action::Assignment::StartSpecialAssignmentActionsController < ApplicationC
     @values = params[:assignment_special_assignment]
 
     raise ForbiddenError.new('No current character')             if current_character.nil?
-    @assignment = Assignment::StandardAssignment.lock.find(params[:assignment_special_assignment][:special_assignment_id])
+    @assignment = Assignment::SpecialAssignment.lock.find(params[:assignment_special_assignment][:special_assignment_id])
 
     raise ForbiddenError.new('not owner of assignment')          unless @assignment.character == current_character
     raise BadRequestError.new('assignment must not be started')  unless @assignment.started_at.nil?
