@@ -27,9 +27,7 @@
     <Cost id="resource_wood">3*PRODUCTION</Cost>
     <Cost id="resource_fur">3*PRODUCTION</Cost>
 
-    <UnitDeposit id="clubbers_2">PRODUCTION/1000</UnitDeposit>
-    <UnitDeposit id="thrower">PRODUCTION/1000</UnitDeposit>
-    <UnitDeposit id="light_cavalry">PRODUCTION/1000</UnitDeposit>
+    <UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit>
 
     <SpecialAssignmentRewards>
       <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
@@ -69,9 +67,7 @@
     <Cost id="resource_wood">3*PRODUCTION</Cost>
     <Cost id="resource_fur">3*PRODUCTION</Cost>
 
-    <UnitDeposit id="clubbers_2">PRODUCTION/1000</UnitDeposit>
-    <UnitDeposit id="thrower">PRODUCTION/1000</UnitDeposit>
-    <UnitDeposit id="light_cavalry">PRODUCTION/1000</UnitDeposit>
+    <UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit>
 
     <SpecialAssignmentRewards>
       <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
@@ -111,9 +107,7 @@
     <Cost id="resource_wood">3*PRODUCTION</Cost>
     <Cost id="resource_fur">3*PRODUCTION</Cost>
 
-    <UnitDeposit id="clubbers_2">PRODUCTION/1000</UnitDeposit>
-    <UnitDeposit id="thrower">PRODUCTION/1000</UnitDeposit>
-    <UnitDeposit id="light_cavalry">PRODUCTION/1000</UnitDeposit>
+    <UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit>
 
     <SpecialAssignmentRewards>
       <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
