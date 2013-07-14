@@ -7052,9 +7052,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :unit_deposits => {
-            1 => '1*PRODUCTION',
-            4 => '1*PRODUCTION',
-            8 => '1*PRODUCTION',
+            1 => 'PRODUCTION/1000',
+            4 => 'PRODUCTION/1000',
+            8 => 'PRODUCTION/1000',
             
           },
 
@@ -7068,17 +7068,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :resource => :resource_stone,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
               {
                 :resource => :resource_wood,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
               {
                 :resource => :resource_fur,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
             ],
@@ -7087,12 +7087,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :unit => :unit_clubbers,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
             ],
 
-            :experience_reward => '50*PRODUCTION',
+            :experience_reward => '1',
 
           },
 
@@ -7142,9 +7142,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :unit_deposits => {
-            1 => '1*PRODUCTION',
-            4 => '1*PRODUCTION',
-            8 => '1*PRODUCTION',
+            1 => 'PRODUCTION/1000',
+            4 => 'PRODUCTION/1000',
+            8 => 'PRODUCTION/1000',
             
           },
 
@@ -7158,17 +7158,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :resource => :resource_stone,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
               {
                 :resource => :resource_wood,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
               {
                 :resource => :resource_fur,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
             ],
@@ -7177,12 +7177,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :unit => :unit_clubbers,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
             ],
 
-            :experience_reward => '50*PRODUCTION',
+            :experience_reward => '1',
 
           },
 
@@ -7232,9 +7232,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :unit_deposits => {
-            1 => '1*PRODUCTION',
-            4 => '1*PRODUCTION',
-            8 => '1*PRODUCTION',
+            1 => 'PRODUCTION/1000',
+            4 => 'PRODUCTION/1000',
+            8 => 'PRODUCTION/1000',
             
           },
 
@@ -7248,17 +7248,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :resource => :resource_stone,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
               {
                 :resource => :resource_wood,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
               {
                 :resource => :resource_fur,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
             ],
@@ -7267,12 +7267,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :unit => :unit_clubbers,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
             ],
 
-            :experience_reward => '50*PRODUCTION',
+            :experience_reward => '1',
 
           },
 

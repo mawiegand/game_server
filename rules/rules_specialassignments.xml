@@ -27,16 +27,16 @@
     <Cost id="resource_wood">3*PRODUCTION</Cost>
     <Cost id="resource_fur">3*PRODUCTION</Cost>
 
-    <UnitDeposit id="clubbers_2">1*PRODUCTION</UnitDeposit>
-    <UnitDeposit id="thrower">1*PRODUCTION</UnitDeposit>
-    <UnitDeposit id="light_cavalry">1*PRODUCTION</UnitDeposit>
+    <UnitDeposit id="clubbers_2">PRODUCTION/1000</UnitDeposit>
+    <UnitDeposit id="thrower">PRODUCTION/1000</UnitDeposit>
+    <UnitDeposit id="light_cavalry">PRODUCTION/1000</UnitDeposit>
 
     <SpecialAssignmentRewards>
-      <SpecialAssignmentResourceReward resource="resource_stone">30*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_wood">30*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_fur">30*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentUnitReward unit="unit_clubbers">30*PRODUCTION</SpecialAssignmentUnitReward>
-      <SpecialAssignmentExperienceReward>50*PRODUCTION</SpecialAssignmentExperienceReward>
+      <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_wood">3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_fur">3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentUnitReward unit="unit_clubbers">3*PRODUCTION</SpecialAssignmentUnitReward>
+      <SpecialAssignmentExperienceReward>1</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 
     <Duration>60</Duration>
@@ -69,16 +69,16 @@
     <Cost id="resource_wood">3*PRODUCTION</Cost>
     <Cost id="resource_fur">3*PRODUCTION</Cost>
 
-    <UnitDeposit id="clubbers_2">1*PRODUCTION</UnitDeposit>
-    <UnitDeposit id="thrower">1*PRODUCTION</UnitDeposit>
-    <UnitDeposit id="light_cavalry">1*PRODUCTION</UnitDeposit>
+    <UnitDeposit id="clubbers_2">PRODUCTION/1000</UnitDeposit>
+    <UnitDeposit id="thrower">PRODUCTION/1000</UnitDeposit>
+    <UnitDeposit id="light_cavalry">PRODUCTION/1000</UnitDeposit>
 
     <SpecialAssignmentRewards>
-      <SpecialAssignmentResourceReward resource="resource_stone">30*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_wood">30*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_fur">30*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentUnitReward unit="unit_clubbers">30*PRODUCTION</SpecialAssignmentUnitReward>
-      <SpecialAssignmentExperienceReward>50*PRODUCTION</SpecialAssignmentExperienceReward>
+      <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_wood">3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_fur">3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentUnitReward unit="unit_clubbers">3*PRODUCTION</SpecialAssignmentUnitReward>
+      <SpecialAssignmentExperienceReward>1</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 
     <Duration>60</Duration>
@@ -111,16 +111,16 @@
     <Cost id="resource_wood">3*PRODUCTION</Cost>
     <Cost id="resource_fur">3*PRODUCTION</Cost>
 
-    <UnitDeposit id="clubbers_2">1*PRODUCTION</UnitDeposit>
-    <UnitDeposit id="thrower">1*PRODUCTION</UnitDeposit>
-    <UnitDeposit id="light_cavalry">1*PRODUCTION</UnitDeposit>
+    <UnitDeposit id="clubbers_2">PRODUCTION/1000</UnitDeposit>
+    <UnitDeposit id="thrower">PRODUCTION/1000</UnitDeposit>
+    <UnitDeposit id="light_cavalry">PRODUCTION/1000</UnitDeposit>
 
     <SpecialAssignmentRewards>
-      <SpecialAssignmentResourceReward resource="resource_stone">30*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_wood">30*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_fur">30*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentUnitReward unit="unit_clubbers">30*PRODUCTION</SpecialAssignmentUnitReward>
-      <SpecialAssignmentExperienceReward>50*PRODUCTION</SpecialAssignmentExperienceReward>
+      <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_wood">3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_fur">3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentUnitReward unit="unit_clubbers">3*PRODUCTION</SpecialAssignmentUnitReward>
+      <SpecialAssignmentExperienceReward>1</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 
     <Duration>60</Duration>
