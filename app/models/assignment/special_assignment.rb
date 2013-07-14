@@ -277,7 +277,8 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
   def costs
     costs = {}
     GameRules::Rules.the_rules.resource_types.each do |resource_type|
-      costs[resource_type[:id]] = self[resource_type[:symbolic_id].to_s + '_cost']
+      resource_cost = self[resource_type[:symbolic_id].to_s + '_cost']
+      costs[resource_type[:id]] = resource_cost if !resource_cost.nil? && resource_cost > 0
     end
     costs
   end
@@ -285,7 +286,8 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
   def unit_deposits
     result     = {}
     GameRules::Rules.the_rules.unit_types.each do |unit_type|
-      result[unit_type[:db_field]] = self[unit_type[:db_field].to_s + '_deposit']
+      unit_deposit = self[unit_type[:db_field].to_s + '_deposit']
+      result[unit_type[:db_field]] = unit_deposit if !unit_deposit.nil? && unit_deposit > 0
     end
     result
   end
