@@ -101,7 +101,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
 
       # assume the tavern is at home base (otherwise the settlement id must be send to controller to identifiy the settlement)
       requirement_groups = type[:requirementGroups]
-      requirements_met = !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, character, character.home_location.settlement)
+      requirements_met = requirement_groups.nil? || requirement_groups.empty? || GameState::Requirements.meet_one_requirement_group?(requirement_groups, character, character.home_location.settlement)
       type[:level] <= character.assignment_level && requirements_met
     end
   end
