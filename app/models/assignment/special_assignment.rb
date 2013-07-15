@@ -348,7 +348,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     experience_reward = self[:experience_reward]
 
     if resources.count > 0
-      self.character.resource_pool.add_resources_transaction(resources)
+      self.character.resource_pool.add_resources_transaction(resource_rewards)
     end
 
     if units.count > 0
@@ -357,7 +357,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
 
       # check if resources and units can be rewarded
       # Rails.logger.warning "Cannot redeem all assignment rewards as garrison is full." unless garrison_army.can_receive?(units)
-      garrison_army.add_units(units)
+      garrison_army.add_units(unit_rewards)
     end
 
     unless experience_reward.nil?
