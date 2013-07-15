@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="18" />
+    <Version major="0" minor="3" build="19" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -4983,13 +4983,14 @@
       <RewardText locale="en_US">Placeholder</RewardText>
       <RewardFlavor locale="de_DE">Placeholder</RewardFlavor>
       <RewardFlavor locale="en_US">Placeholder</RewardFlavor>
+      <Requirement quest="quest_queue_1gathererlvl1" />
       <Rewards>
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
       <RewardTests>
         <StandardAssignmentTest></StandardAssignmentTest>
       </RewardTests>
-      <UIMarker>mark_assignment_button</UIMarker>
+      <UIMarker>mark_first_standard_assignment</UIMarker>
     </Quest>
     
     <!-- 504 -->
