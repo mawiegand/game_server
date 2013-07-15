@@ -24,7 +24,7 @@
     </Description>
 
     <RequirementGroup>
-      <Requirement id="building_chief_cottage"  min_level="5" />
+      <Requirement id="building_training_cave" min_level="10" />
     </RequirementGroup>
 
     <Cost id="resource_stone">3*PRODUCTION</Cost>
