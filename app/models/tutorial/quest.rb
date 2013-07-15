@@ -723,7 +723,7 @@ class Tutorial::Quest < ActiveRecord::Base
   protected
   
     def count_completed_tutorial_quests
-      if self.status_changed? && !self.status.nil? && self.status_change[0] != STATE_FINISHED && self.status_change[0] != STATE_CLOSED && (self.status_change[1] == STATE_FINISHED || self.status_change[1] != STATE_CLOSED) && self.belongs_to_tutorial?
+      if self.status_changed? && !self.status.nil? && self.status_change[0] != STATE_FINISHED && self.status_change[0] != STATE_CLOSED && (self.status_change[1] == STATE_FINISHED || self.status_change[1] == STATE_CLOSED) && self.belongs_to_tutorial?
         self.tutorial_state.increment(:tutorial_states_completed)
         self.tutorial_state.save
       end
