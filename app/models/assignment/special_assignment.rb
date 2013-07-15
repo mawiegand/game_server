@@ -47,15 +47,28 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     if random > GameRules::Rules.the_rules.special_assignments[:idle_probability]
       # new random assignment
       random_type = self.random_type(character)
-      new_assignment = self.new({
-        character_id:     character.id,
-        type_id:          random_type[:id],
-        displayed_until:  self.new_end_date(start_at, random_type[:display_duration]),
-        seen_at:          Time.now
-      })
-      new_assignment.add_values
-      self.raise_fail_counters(character, random_type[:id]  )
-      new_assignment
+
+      if !random_type.nil?
+        new_assignment = self.new({
+          character_id:     character.id,
+          type_id:          random_type[:id],
+          displayed_until:  self.new_end_date(start_at, random_type[:display_duration]),
+          seen_at:          Time.now
+        })
+        new_assignment.add_values
+        self.raise_fail_counters(character, random_type[:id]  )
+        new_assignment
+      else
+        # create dummy assignment
+        self.create({
+          character_id:     character.id,
+          type_id:          -1,
+          displayed_until:  self.new_end_date(start_at, GameRules::Rules.the_rules.special_assignments[:idle_time]),
+          seen_at:          Time.now
+        })
+        self.raise_fail_counters(character, -1)
+        nil
+      end
     else
       # create dummy assignment
       self.create({
@@ -102,7 +115,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
       # assume the tavern is at home base (otherwise the settlement id must be send to controller to identifiy the settlement)
       requirement_groups = type[:requirementGroups]
       requirements_met = requirement_groups.nil? || requirement_groups.empty? || GameState::Requirements.meet_one_requirement_group?(requirement_groups, character, character.home_location.settlement)
-      type[:level] <= character.assignment_level && requirements_met
+      type[:level] <= character.assignment_level # && requirements_met
     end
   end
 
