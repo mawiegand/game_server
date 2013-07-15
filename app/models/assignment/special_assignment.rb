@@ -3,6 +3,8 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
   belongs_to :character,  :class_name => "Fundamental::Character",  :foreign_key => "character_id",  :inverse_of => :special_assignment
   has_one    :event,      :class_name => "Event::Event",            :foreign_key => "local_event_id",  :dependent => :destroy, :conditions => "event_type = 'special_assignment'"
 
+  after_save :manage_event_on_ended_at_change
+
   # return current or new assignment if needed
   def self.updated_special_assignment_of_character(character)
 
