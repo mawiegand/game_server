@@ -188,7 +188,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
 
     # resource costs
     GameRules::Rules.the_rules.resource_types.each do |resource_type|
-      formula = assignment_type[:costs][resource_type[:id]]
+      formula = assignment_type[:costs][resource_type[:id]] unless assignment_type[:costs].nil?
       if !formula.nil?
         cost_formula = Util::Formula.parse_from_formula(formula, 'PRODUCTION')
         self[resource_type[:symbolic_id].to_s + '_cost'] = cost_formula.apply(weighted_production_rate)
@@ -196,7 +196,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     end
 
     # resource rewards
-    resource_rewards = assignment_type[:rewards][:resource_rewards]
+    resource_rewards = assignment_type[:rewards][:resource_rewards] unless assignment_type[:rewards].nil?
     if !resource_rewards.nil?
       resource_rewards.each do |resource_reward|
         reward_formula = Util::Formula.parse_from_formula(resource_reward[:amount], 'PRODUCTION')
@@ -206,7 +206,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
 
     # unit deposits
     GameRules::Rules.the_rules.unit_types.each do |unit_type|
-      formula = assignment_type[:unit_deposits][unit_type[:id]]
+      formula = assignment_type[:unit_deposits][unit_type[:id]] unless assignment_type[:unit_deposits].nil?
       if !formula.nil?
         deposit_formula = Util::Formula.parse_from_formula(formula, 'PRODUCTION')
         self[unit_type[:db_field].to_s + '_deposit'] = deposit_formula.apply(weighted_production_rate)
@@ -214,7 +214,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     end
 
     # unit rewards
-    unit_rewards = assignment_type[:rewards][:unit_rewards]
+    unit_rewards = assignment_type[:rewards][:unit_rewards] unless assignment_type[:rewards].nil?
     if !unit_rewards.nil?
       unit_rewards.each do |unit_reward|
         reward_formula = Util::Formula.parse_from_formula(unit_reward[:amount], 'PRODUCTION')
@@ -223,7 +223,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     end
 
     # experience reward
-    formula = assignment_type[:rewards][:experience_reward]
+    formula = assignment_type[:rewards][:experience_reward] unless assignment_type[:rewards].nil?
     if !formula.nil?
       experience_reward_formula = Util::Formula.parse_from_formula(formula, 'PRODUCTION')
       self.experience_reward = experience_reward_formula.apply(weighted_production_rate)
