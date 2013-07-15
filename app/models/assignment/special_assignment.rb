@@ -117,9 +117,6 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     end
 
     accessable_special_assignments = accessable_special_assignments(character)
-
-    logger.debug "AAAAAA accessable_special_assignments " + accessable_special_assignments.inspect
-
     # fill weights from game rules and calculate denominator
     w_i = []
     denominator = 0.0
