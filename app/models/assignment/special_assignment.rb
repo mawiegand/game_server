@@ -347,11 +347,11 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
 
     experience_reward = self[:experience_reward]
 
-    if resources.count > 0
+    if resource_rewards.count > 0
       self.character.resource_pool.add_resources_transaction(resource_rewards)
     end
 
-    if units.count > 0
+    if unit_rewards.count > 0
       garrison_army = self.character.home_location.garrison_army
       garrison_army.lock!
 
