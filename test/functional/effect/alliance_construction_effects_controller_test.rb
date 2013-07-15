@@ -3,6 +3,7 @@ require 'test_helper'
 class Effect::AllianceConstructionEffectsControllerTest < ActionController::TestCase
   setup do
     @effect_alliance_construction_effect = effect_alliance_construction_effects(:one)
+    @controller.current_backend_user = backend_users(:staff)  # this is a quick hack to make the scaffolded tests pass. Must be moved to individual tests later.
   end
 
   test "should get index" do
