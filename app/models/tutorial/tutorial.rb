@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.17
+# Version: 0.3.18
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 17, 
+        :build => 18, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 19,
   
       :quests => [  # ALL QUESTS
 
@@ -156,7 +156,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [1, 128, ],
+          :successor_quests => [1, ],
 
           :rewards => {
             
@@ -1488,7 +1488,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [16, ],
+          :successor_quests => [129, ],
 
           :rewards => {
             
@@ -1793,7 +1793,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_cottagelvl1',
+            :quest => 'quest_build_tavern',
 
           },
 
@@ -12632,12 +12632,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_queue_1gathererlvl1',
-
-          },
-
           :successor_quests => [],
 
           :rewards => {
@@ -12655,6 +12649,112 @@ class Tutorial::Tutorial
           :uimarker => ['mark_assignment_button', ],
 
         },              #   END OF quest_assignment1
+        {               #   quest_build_tavern
+          :id                => 129,
+          :symbolic_id       => :quest_build_tavern,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => true,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "The Tavern",
+  
+            :de_DE => "Die Taverne",
+                
+          },
+          :task => {
+            
+            :en_US => "Build the tavern",
+  
+            :de_DE => "Baue die Taverne",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Ein Ort zum trinken? Ganz mein Geschmack",
+  
+            :en_US => "Placeholder ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Jetzt wo deine Siedlung wächst und gedeiht brauchen deine Bewohner einen Ort an dem Sie ihre Zeit totschlagen können, wenn sie nicht gerade Arbeiten. Eine Taverne wäre da doch genau das Richtige.</p>",
+  
+            :en_US => "<p>Enter the tavern and start your first Assignment. </p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Netter Laden, man hat mir sogar schon einen Job angeboten.",
+  
+            :en_US => "Placeholder",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Taverne werden viele Aufträge vergeben. Schau doch einfach ab und zu rein.",
+  
+            :en_US => "Placeholder",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_build_cottagelvl1',
+
+          },
+
+          :successor_quests => [16, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 125,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 125,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 125,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_tavern',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
+
+        },              #   END OF quest_build_tavern
       ],                # END OF QUESTS
 
     )

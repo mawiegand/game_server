@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="17" />
+    <Version major="0" minor="3" build="18" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -619,7 +619,7 @@
       <RewardText locale="en_US">This is a bigger project than the ones we had before and it takes some time to get done.</RewardText>
       <RewardFlavor locale="de_DE">Jetzt muss es nur noch fertig werden.</RewardFlavor>
       <RewardFlavor locale="en_US">Now it just has to be finished.</RewardFlavor>
-      <Requirement quest="quest_build_cottagelvl1" />
+      <Requirement quest="quest_build_tavern" />
       <Rewards>
         <ResourceReward resource="resource_stone">165</ResourceReward>
         <ResourceReward resource="resource_wood">150</ResourceReward>
@@ -4983,7 +4983,6 @@
       <RewardText locale="en_US">Placeholder</RewardText>
       <RewardFlavor locale="de_DE">Placeholder</RewardFlavor>
       <RewardFlavor locale="en_US">Placeholder</RewardFlavor>
-      <Requirement quest="quest_queue_1gathererlvl1" />
       <Rewards>
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
@@ -4991,6 +4990,40 @@
         <StandardAssignmentTest></StandardAssignmentTest>
       </RewardTests>
       <UIMarker>mark_assignment_button</UIMarker>
+    </Quest>
+    
+    <!-- 504 -->
+    
+    <Quest id="quest_build_tavern" advisor="warrior" tutorial="true">
+      <Name>The Tavern</Name>
+      <Name locale="de_DE">Die Taverne</Name>
+      <Task>Build the tavern</Task>
+      <Task locale="de_DE">Baue die Taverne</Task>
+      <Description locale="de_DE">
+        <p>Jetzt wo deine Siedlung wächst und gedeiht brauchen deine Bewohner einen Ort an dem Sie ihre Zeit totschlagen können, wenn sie nicht gerade Arbeiten. Eine Taverne wäre da doch genau das Richtige.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Enter the tavern and start your first Assignment. </p>
+      </Description>
+      <Flavor locale="de_DE">Ein Ort zum trinken? Ganz mein Geschmack</Flavor>
+      <Flavor locale="en_US">Placeholder </Flavor>
+      <RewardText locale="de_DE">In der Taverne werden viele Aufträge vergeben. Schau doch einfach ab und zu rein.</RewardText>
+      <RewardText locale="en_US">Placeholder</RewardText>
+      <RewardFlavor locale="de_DE">Netter Laden, man hat mir sogar schon einen Job angeboten.</RewardFlavor>
+      <RewardFlavor locale="en_US">Placeholder</RewardFlavor>
+      <Requirement quest="quest_build_cottagelvl1" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">125</ResourceReward>
+        <ResourceReward resource="resource_wood">125</ResourceReward>
+        <ResourceReward resource="resource_fur">125</ResourceReward>
+        <ExperienceReward>100</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <BuildingTest building="building_tavern" min_count="1" />
+      </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
   </Quests>
 </Tutorial>

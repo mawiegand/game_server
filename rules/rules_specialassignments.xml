@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <SpecialAssignmentTypes>
-  <SpecialAssignmentType id="special_assignment_tester0" advisor="chief" level="3" probability_factor="1">
+  <SpecialAssignmentType id="special_assignment_tester0" advisor="chief" level="1" probability_factor="1">
     <Name>Special Assignment Test 0</Name>
     <Name lang="de_DE">Special Assignment Test 0</Name>
 
@@ -27,13 +27,13 @@
     <Cost id="resource_wood">3*PRODUCTION</Cost>
     <Cost id="resource_fur">3*PRODUCTION</Cost>
 
-    <UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit>
+    <!--UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit-->
 
     <SpecialAssignmentRewards>
-      <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_wood">3*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_fur">3*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentUnitReward unit="unit_clubbers">3*PRODUCTION</SpecialAssignmentUnitReward>
+      <SpecialAssignmentResourceReward resource="resource_stone">6*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_wood">6*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_fur">6*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentUnitReward unit="unit_clubbers">0.01*PRODUCTION</SpecialAssignmentUnitReward>
       <SpecialAssignmentExperienceReward>1</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 
@@ -42,7 +42,7 @@
     <DisplayDuration>360</DisplayDuration>
 
   </SpecialAssignmentType>
-  <SpecialAssignmentType id="special_assignment_tester1" advisor="chief" level="5" probability_factor="1">
+  <SpecialAssignmentType id="special_assignment_tester1" advisor="chief" level="2" probability_factor="1">
     <Name>Special Assignment Test 1</Name>
     <Name lang="de_DE">Special Assignment Test 1</Name>
 
@@ -63,23 +63,23 @@
       <p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>
     </Description>
 
-    <Cost id="resource_stone">3*PRODUCTION</Cost>
-    <Cost id="resource_wood">3*PRODUCTION</Cost>
-    <Cost id="resource_fur">3*PRODUCTION</Cost>
+    <Cost id="resource_stone">1*PRODUCTION</Cost>
+    <Cost id="resource_wood">1*PRODUCTION</Cost>
+    <Cost id="resource_fur">1*PRODUCTION</Cost>
 
-    <UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit>
+    <!--UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit-->
 
     <SpecialAssignmentRewards>
       <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
       <SpecialAssignmentResourceReward resource="resource_wood">3*PRODUCTION</SpecialAssignmentResourceReward>
       <SpecialAssignmentResourceReward resource="resource_fur">3*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentUnitReward unit="unit_clubbers">3*PRODUCTION</SpecialAssignmentUnitReward>
-      <SpecialAssignmentExperienceReward>1</SpecialAssignmentExperienceReward>
+      <!--SpecialAssignmentUnitReward unit="unit_clubbers">3*PRODUCTION</SpecialAssignmentUnitReward-->
+      <SpecialAssignmentExperienceReward>PRODUCTION/1000</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 
     <Duration>60</Duration>
 
-    <DisplayDuration>360</DisplayDuration>
+    <DisplayDuration>720</DisplayDuration>
 
   </SpecialAssignmentType>
   <SpecialAssignmentType id="special_assignment_tester2" advisor="chief" level="7" probability_factor="4">
