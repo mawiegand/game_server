@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715195633) do
+ActiveRecord::Schema.define(:version => 20130715233126) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1627,6 +1627,17 @@ ActiveRecord::Schema.define(:version => 20130715195633) do
     t.decimal  "quest_147_playtime_finished",       :default => 0.0
     t.decimal  "quest_147_playtime_started",        :default => 0.0
     t.decimal  "quest_147_retention_rate_week_1",   :default => 0.0
+  end
+
+  create_table "backend_user_content_reports", :force => true do |t|
+    t.integer  "reporter_id"
+    t.integer  "content_owner_id"
+    t.string   "content_type"
+    t.integer  "content_id"
+    t.boolean  "declined"
+    t.boolean  "accepted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "backend_users", :force => true do |t|

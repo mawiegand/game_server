@@ -36,6 +36,7 @@ GameServer::Application.routes.draw do
         resources :browser_stats
         resources :system_messages
         resources :trade_log_entries, :only => [ :index ]
+        resources :user_content_reports
       end
 
       namespace :effect do 

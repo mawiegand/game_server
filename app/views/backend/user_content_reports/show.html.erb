@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Reporter:</b>
+  <%= @backend_user_content_report.reporter_id %>
+</p>
+
+<p>
+  <b>Content owner:</b>
+  <%= @backend_user_content_report.content_owner_id %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%= @backend_user_content_report.content_type %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @backend_user_content_report.content_id %>
+</p>
+
+<p>
+  <b>Declined:</b>
+  <%= @backend_user_content_report.declined %>
+</p>
+
+<p>
+  <b>Accepted:</b>
+  <%= @backend_user_content_report.accepted %>
+</p>
+
+
+<%= link_to 'Edit', edit_backend_user_content_report_path(@backend_user_content_report) %> |
+<%= link_to 'Back', backend_user_content_reports_path %>

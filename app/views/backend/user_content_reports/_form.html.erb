@@ -1,0 +1,41 @@
+<%= form_for(@backend_user_content_report) do |f| %>
+  <% if @backend_user_content_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@backend_user_content_report.errors.count, "error") %> prohibited this backend_user_content_report from being saved:</h2>
+
+      <ul>
+      <% @backend_user_content_report.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :reporter_id %><br />
+    <%= f.number_field :reporter_id %>
+  </div>
+  <div class="field">
+    <%= f.label :content_owner_id %><br />
+    <%= f.number_field :content_owner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :content_type %><br />
+    <%= f.text_field :content_type %>
+  </div>
+  <div class="field">
+    <%= f.label :content_id %><br />
+    <%= f.number_field :content_id %>
+  </div>
+  <div class="field">
+    <%= f.label :declined %><br />
+    <%= f.check_box :declined %>
+  </div>
+  <div class="field">
+    <%= f.label :accepted %><br />
+    <%= f.check_box :accepted %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
