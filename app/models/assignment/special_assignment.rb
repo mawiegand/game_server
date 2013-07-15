@@ -273,8 +273,9 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
   def speedup_now
     return         if self.started_at.nil?
 
-    self.ended_at  = self.started_at.advance(:seconds => (self.assignment_type[:duration]).to_i / 2)
-    self.halved_at = DateTime.now
+    self.ended_at         = self.started_at.advance(:seconds => (self.assignment_type[:duration]).to_i / 2)
+    self.displayed_until  = self.ended_at
+    self.halved_at        = DateTime.now
   end
 
 
@@ -283,9 +284,10 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
   def start_now
     return         if !self.started_at.nil?
 
-    self.started_at = DateTime.now
-    self.halved_at  = nil
-    self.ended_at   = self.started_at.advance(:seconds => (self.assignment_type[:duration]).to_i)
+    self.started_at       = DateTime.now
+    self.halved_at        = nil
+    self.ended_at         = self.started_at.advance(:seconds => (self.assignment_type[:duration]).to_i)
+    self.displayed_until  = self.ended_at
     self.execution_count += 1
   end
 
@@ -343,6 +345,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     self.started_at = nil
     self.halved_at = nil
     self.ended_at = nil
+    self.displayed_until = Time.now
   end
 
   def redeem_rewards!
