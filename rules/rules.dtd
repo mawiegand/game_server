@@ -284,7 +284,7 @@
 >
 
 
-<!ELEMENT SpecialAssignmentType (Name+, Flavour+, ShortDescription*, Description+, Cost*, UnitDeposit*, SpecialAssignmentRewards, Duration, DisplayDuration)>
+<!ELEMENT SpecialAssignmentType (Name+, Flavour+, ShortDescription*, Description+, RequirementGroup*, Cost*, UnitDeposit*, SpecialAssignmentRewards, Duration, DisplayDuration)>
 
 <!ATTLIST SpecialAssignmentType
   id                 ID    #REQUIRED

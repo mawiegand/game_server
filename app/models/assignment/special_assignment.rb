@@ -97,7 +97,13 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
   end
 
   def self.accessable_special_assignments(character)
-    GameRules::Rules.the_rules.special_assignment_types.select {|type| type[:level] <= character.assignment_level }
+    GameRules::Rules.the_rules.special_assignment_types.select do |type|
+
+      # assume the tavern is at home base (otherwise the settlement id must be send to controller to identifiy the settlement)
+      requirement_groups = type[:requirementGroups]
+      requirements_met = !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, character, character.home_location.settlement)
+      type[:level] <= character.assignment_level && requirements_met
+    end
   end
 
   def self.random_type(character)
@@ -110,10 +116,15 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
       sqrt_s_i_plus_1[frequency.type_id] = Math.sqrt(frequency.num_failed + 1)
     end
 
+    accessable_special_assignments = accessable_special_assignments(character)
+
     # fill weights from game rules and calculate denominator
     w_i = []
     denominator = 0.0
-    self.accessable_special_assignments(character).each do |assignment_type|
+    accessable_special_assignments.each do |assignment_type|
+
+      logger.debug "AAAAAA #{assignment_type[:id]}"
+
       id = assignment_type[:id]
       w_i[id] = assignment_type[:probability_factor]
       denominator += w_i[id] * sqrt_s_i_plus_1[id]
@@ -122,14 +133,14 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     # calculate numerator and select type depending on a random number
     #random = Random.rand(1.0)
     numerator = 0.0
-    self.accessable_special_assignments(character).each do |assignment_type|
+    accessable_special_assignments.each do |assignment_type|
       id = assignment_type[:id]
       numerator += w_i[id] * sqrt_s_i_plus_1[id]
       return assignment_type if random < numerator / denominator
     end
 
     # return first special assignment type, if randomizing fails
-    self.accessable_special_assignments(character).first
+    accessable_special_assignments.first
   end
 
   def self.update_frequencies(character)

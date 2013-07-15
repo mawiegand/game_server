@@ -23,6 +23,10 @@
       <p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>
     </Description>
 
+    <RequirementGroup>
+      <Requirement id="building_chief_cottage"  min_level="5" />
+    </RequirementGroup>
+
     <Cost id="resource_stone">3*PRODUCTION</Cost>
     <Cost id="resource_wood">3*PRODUCTION</Cost>
     <Cost id="resource_fur">3*PRODUCTION</Cost>

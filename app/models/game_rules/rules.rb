@@ -7051,6 +7051,23 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+            ],
+
+          ],
+
           :duration => 60,
           :display_duration => 360,
 
