@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="19" />
+    <Version major="0" minor="3" build="20" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -619,7 +619,7 @@
       <RewardText locale="en_US">This is a bigger project than the ones we had before and it takes some time to get done.</RewardText>
       <RewardFlavor locale="de_DE">Jetzt muss es nur noch fertig werden.</RewardFlavor>
       <RewardFlavor locale="en_US">Now it just has to be finished.</RewardFlavor>
-      <Requirement quest="quest_build_tavern" />
+      <Requirement quest="quest_assignment1" />
       <Rewards>
         <ResourceReward resource="resource_stone">165</ResourceReward>
         <ResourceReward resource="resource_wood">150</ResourceReward>
@@ -4966,7 +4966,7 @@
      -->
     <!-- 503 -->
     
-    <Quest id="quest_assignment1" advisor="warrior" tutorial="false">
+    <Quest id="quest_assignment1" advisor="warrior" tutorial="true">
       <Name>First Assignment</Name>
       <Name locale="de_DE">Der erste Auftrag</Name>
       <Task>Start your first Assignment</Task>
@@ -4983,7 +4983,7 @@
       <RewardText locale="en_US">Placeholder</RewardText>
       <RewardFlavor locale="de_DE">Placeholder</RewardFlavor>
       <RewardFlavor locale="en_US">Placeholder</RewardFlavor>
-      <Requirement quest="quest_queue_1gathererlvl1" />
+      <Requirement quest="quest_build_tavern" />
       <Rewards>
         <ExperienceReward>250</ExperienceReward>
       </Rewards>

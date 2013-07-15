@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.19
+# Version: 0.3.20
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 19, 
+        :build => 20, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 19,
+      :num_tutorial_quests => 20,
   
       :quests => [  # ALL QUESTS
 
@@ -156,7 +156,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [1, 128, ],
+          :successor_quests => [1, ],
 
           :rewards => {
             
@@ -1793,7 +1793,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_tavern',
+            :quest => 'quest_assignment1',
 
           },
 
@@ -12584,7 +12584,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_assignment1,
           :advisor           => :warrior,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -12634,11 +12634,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_queue_1gathererlvl1',
+            :quest => 'quest_build_tavern',
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [16, ],
 
           :rewards => {
             
@@ -12714,7 +12714,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [16, ],
+          :successor_quests => [128, ],
 
           :rewards => {
             
