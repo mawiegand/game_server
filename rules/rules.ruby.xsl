@@ -789,14 +789,10 @@ end
             <xsl:apply-templates select="Cost" />
           },
 </xsl:if>
-<xsl:if test="RequirementGroup">
-          :requirementGroups=> [
-<xsl:for-each select="RequirementGroup">
-            [
-              <xsl:apply-templates select="Requirement" />
-            ],
-</xsl:for-each>
-          ],
+<xsl:if test="AssignmentTests">
+          :assignment_tests => {
+            <xsl:apply-templates select="AssignmentTests" />
+          },
 </xsl:if>
 
 <xsl:if test="UnitDeposit">
@@ -1229,6 +1225,128 @@ end
 <xsl:template match="ArmySizeBonus">
             :army_size_bonus => "<xsl:apply-templates />",
 </xsl:template>
+
+
+
+
+<xsl:template match="AssignmentTests">
+<xsl:if test="ResourceProductionTest">
+            :resource_production_tests => [
+              <xsl:apply-templates select="ResourceProductionTest" />
+            ],
+</xsl:if>
+<xsl:if test="BuildingTest">
+            :building_tests => [
+              <xsl:apply-templates select="BuildingTest" />
+            ],
+</xsl:if>
+<xsl:if test="SettlementTest">
+            :settlement_tests => [
+              <xsl:apply-templates select="SettlementTest" />
+            ],
+</xsl:if>
+<xsl:if test="ArmyTest">
+            :army_tests => [
+              <xsl:apply-templates select="ArmyTest" />
+            ],
+</xsl:if>
+<xsl:if test="ConstructionQueueTest">
+            :construction_queue_tests => [
+              <xsl:apply-templates select="ConstructionQueueTest" />
+            ],
+</xsl:if>
+<xsl:if test="TrainingQueueTest">
+            :training_queue_tests => [
+              <xsl:apply-templates select="TrainingQueueTest" />
+            ],
+</xsl:if>
+<xsl:if test="AllianceTest">
+            :alliance_test => {},
+</xsl:if>
+<xsl:if test="MovementTest">
+            :movement_test => {},
+</xsl:if>
+<xsl:if test="KillTest">
+            :kill_test => {
+              :min_units => <xsl:value-of select="KillTest/@min_units" />,
+            },
+</xsl:if>
+<xsl:if test="BattleTest">
+            :battle_test => {},
+</xsl:if>
+<xsl:if test="ArmyExperienceTest">
+            :army_experience_test => {
+              :min_experience => <xsl:value-of select="ArmyExperienceTest/@min_experience" />,
+            },
+</xsl:if>
+<xsl:if test="ScoreTest">
+            :score_test => {
+              :min_population => <xsl:value-of select="ScoreTest/@min_population" />,
+            },
+</xsl:if>
+<xsl:if test="SettlementProductionTest">
+            :settlement_production_test => {
+              :min_resources => <xsl:value-of select="SettlementProductionTest/@min_resources" />,
+            },
+</xsl:if>
+<xsl:if test="BuildingSpeedTest">
+            :building_speed_test => {
+              :min_speed => <xsl:value-of select="BuildingSpeedTest/@min_speed" />,
+            },
+</xsl:if>
+</xsl:template>
+
+
+<xsl:template match="BuildingTest">
+  {
+  :building => '<xsl:value-of select="@building" />',
+  <xsl:if test="@min_level">
+    :min_level => <xsl:value-of select="@min_level" />,
+  </xsl:if>
+  <xsl:if test="@min_count">
+    :min_count => <xsl:value-of select="@min_count" />,
+  </xsl:if>
+  },
+</xsl:template>
+
+<xsl:template match="ResourceProductionTest">
+  {
+  :resource => '<xsl:value-of select="@resource" />',
+  :minimum  => <xsl:apply-templates/>,
+  },
+</xsl:template>
+
+<xsl:template match="SettlementTest">
+  {
+  :type => '<xsl:value-of select="@type" />',
+  :min_count => <xsl:value-of select="@min_count" />,
+  },
+</xsl:template>
+
+<xsl:template match="ArmyTest">
+  {
+  :type => '<xsl:value-of select="@type" />',
+  :min_count => <xsl:value-of select="@min_count" />,
+  },
+</xsl:template>
+
+<xsl:template match="ConstructionQueueTest">
+  {
+  :building => '<xsl:value-of select="@building" />',
+  :min_count => <xsl:value-of select="@min_count" />,
+  :min_level => <xsl:value-of select="@min_level" />,
+  },
+</xsl:template>
+
+<xsl:template match="TrainingQueueTest">
+            {
+              :unit => '<xsl:value-of select="@unit" />',
+              :min_count => <xsl:value-of select="@min_count" />,
+            },
+</xsl:template>
+
+
+
 
 
 <xsl:template match="QueueCategories">

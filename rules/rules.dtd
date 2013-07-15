@@ -284,7 +284,7 @@
 >
 
 
-<!ELEMENT SpecialAssignmentType (Name+, Flavour+, ShortDescription*, Description+, RequirementGroup*, Cost*, UnitDeposit*, SpecialAssignmentRewards, Duration, DisplayDuration)>
+<!ELEMENT SpecialAssignmentType (Name+, Flavour+, ShortDescription*, Description+, AssignmentTests?, Cost*, UnitDeposit*, SpecialAssignmentRewards, Duration, DisplayDuration)>
 
 <!ATTLIST SpecialAssignmentType
   id                 ID    #REQUIRED
@@ -434,6 +434,81 @@
   >
 
 <!ELEMENT SpecialAssignmentExperienceReward (#PCDATA)>
+
+<!ELEMENT AssignmentTests (ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?, KillTest?, BattleTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?, BuildingSpeedTest?)>
+
+<!ELEMENT BuildingTest EMPTY>
+<!ATTLIST BuildingTest
+  building  CDATA #REQUIRED
+  min_level CDATA "1"
+  min_count CDATA "1"
+>
+
+<!ELEMENT ResourceProductionTest (#PCDATA)>
+<!ATTLIST ResourceProductionTest
+  resource CDATA #REQUIRED
+>
+
+
+<!ELEMENT SettlementTest EMPTY>
+<!ATTLIST SettlementTest
+  type      CDATA #REQUIRED
+  min_count CDATA "1"
+>
+
+<!ELEMENT ArmyTest (#PCDATA)>
+<!ATTLIST ArmyTest
+  type      CDATA #REQUIRED
+  min_count CDATA "1"
+>
+
+<!ELEMENT ConstructionQueueTest EMPTY>
+<!ATTLIST ConstructionQueueTest
+  building  CDATA #REQUIRED
+  min_count CDATA "1"
+  min_level CDATA "1"
+>
+
+<!ELEMENT TrainingQueueTest EMPTY>
+<!ATTLIST TrainingQueueTest
+  unit      CDATA #REQUIRED
+  min_count CDATA "1"
+>
+
+<!ELEMENT MovementTest EMPTY>
+
+<!ELEMENT AllianceTest EMPTY>
+
+<!ELEMENT KillTest EMPTY>
+<!ATTLIST KillTest
+  min_units CDATA #REQUIRED
+>
+
+<!ELEMENT BattleTest EMPTY>
+
+<!ELEMENT ArmyExperienceTest EMPTY>
+<!ATTLIST ArmyExperienceTest
+  min_experience CDATA #REQUIRED
+>
+
+<!ELEMENT ScoreTest EMPTY>
+<!ATTLIST ScoreTest
+  min_population CDATA #REQUIRED
+>
+
+<!ELEMENT BuildingSpeedTest EMPTY>
+<!ATTLIST BuildingSpeedTest
+  min_speed CDATA #REQUIRED
+>
+
+<!ELEMENT SettlementProductionTest EMPTY>
+<!ATTLIST SettlementProductionTest
+  min_resources CDATA #REQUIRED
+>
+
+
+
+
 
 
 <!--Webinterface: Production-->

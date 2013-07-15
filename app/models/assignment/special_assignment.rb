@@ -111,11 +111,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
 
   def self.accessable_special_assignments(character)
     GameRules::Rules.the_rules.special_assignment_types.select do |type|
-
-      # assume the tavern is at home base (otherwise the settlement id must be send to controller to identifiy the settlement)
-      requirement_groups = type[:requirementGroups]
-      requirements_met = requirement_groups.nil? || requirement_groups.empty? || GameState::Requirements.meet_one_requirement_group?(requirement_groups, character, character.home_location.settlement)
-      type[:level] <= character.assignment_level # && requirements_met
+      type[:level] <= character.assignment_level && self.assignment_tests_fullfilled?(character, type)
     end
   end
 
@@ -130,13 +126,12 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     end
 
     accessable_special_assignments = accessable_special_assignments(character)
+    logger.debug "AAAAAA " + accessable_special_assignments.inspect
+
     # fill weights from game rules and calculate denominator
     w_i = []
     denominator = 0.0
     accessable_special_assignments.each do |assignment_type|
-
-      logger.debug "AAAAAA #{assignment_type[:id]}"
-
       id = assignment_type[:id]
       w_i[id] = assignment_type[:probability_factor]
       denominator += w_i[id] * sqrt_s_i_plus_1[id]
@@ -442,6 +437,410 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     end
     event
   end
+
+  # ##########################################################################
+  #
+  #   ASSIGNMENT TESTS
+  #
+  # ##########################################################################
+
+  def self.assignment_tests_fullfilled?(character, assignment_type)
+
+    return false if assignment_type.nil?
+
+    # reward tests durchtesten
+    assignment_tests = assignment_type[:assignment_tests]
+
+    if !assignment_tests.nil?
+
+      unless assignment_tests[:resource_production_tests].nil?
+        assignment_tests[:resource_production_tests].each do |resource_production_test|
+          unless self.check_resource_production(character, resource_production_test)
+            return false
+          end
+        end
+      end
+
+      unless assignment_tests[:building_tests].nil?
+        assignment_tests[:building_tests].each do |building_test|
+          unless building_test.nil?
+            unless self.check_buildings(character, building_test)
+              return false
+            end
+          end
+        end
+      end
+
+      unless assignment_tests[:settlement_tests].nil?
+        assignment_tests[:settlement_tests].each do |settlement_test|
+          unless settlement_test.nil?
+            unless self.check_settlements(character, settlement_test)
+              return false
+            end
+          end
+        end
+      end
+
+      unless assignment_tests[:army_tests].nil?
+        assignment_tests[:army_tests].each do |army_test|
+          unless army_test.nil?
+            unless self.check_armies(character, army_test)
+              return false
+            end
+          end
+        end
+      end
+
+      unless assignment_tests[:construction_queue_tests].nil?
+        assignment_tests[:construction_queue_tests].each do |construction_queue_test|
+          unless construction_queue_test.nil?
+            unless self.check_construction_queues(charcter, construction_queue_test)
+              unless self.check_buildings(character, construction_queue_test)
+                return false
+              end
+            end
+          end
+        end
+      end
+
+      unless assignment_tests[:training_queue_tests].nil?
+        assignment_tests[:training_queue_tests].each do |training_queue_test|
+          unless training_queue_test.nil?
+            unless self.check_training_queues(character, training_queue_test)
+              return false
+            end
+          end
+        end
+      end
+
+      unless assignment_tests[:movement_test].nil?
+        movement_test = assignment_tests[:movement_test]
+        unless movement_test.nil?
+          unless self.check_movements(character)
+            return false
+          end
+        end
+      end
+
+      unless assignment_tests[:alliance_test].nil?
+        alliance_test = assignment_tests[:alliance_test]
+        unless alliance_test.nil?
+          unless self.check_alliance(character)
+            return false
+          end
+        end
+      end
+
+      unless assignment_tests[:kill_test].nil?
+        kill_test = assignment_tests[:kill_test]
+        unless self.check_kills(character, kill_test)
+          return false
+        end
+      end
+
+      unless assignment_tests[:battle_test].nil?
+        unless self.check_battle(character)
+          return false
+        end
+      end
+
+      unless assignment_tests[:army_experience_test].nil?
+        army_experience_test = assignment_tests[:army_experience_test]
+        unless self.check_army_experience(character, army_experience_test)
+          return false
+        end
+      end
+
+      unless assignment_tests[:score_test].nil?
+        score_test = assignment_tests[:score_test]
+        unless self.check_score(character, score_test)
+          return false
+        end
+      end
+
+      unless assignment_tests[:settlement_production_test].nil?
+        settlement_production_test = assignment_tests[:settlement_production_test]
+        unless self.check_settlement_production(character, settlement_production_test)
+          return false
+        end
+      end
+
+      unless assignment_tests[:building_speed_test].nil?
+        building_speed_test = assignment_tests[:building_speed_test]
+        unless self.check_building_speed(character, building_speed_test)
+          return false
+        end
+      end
+    else
+      logger.debug 'no reward tests found'
+    end
+    true
+  end
+
+
+  def self.check_resource_production(character, test)
+    pool = character.resource_pool
+    return false    if pool.nil?
+
+    symbol = test[:resource].to_s + '_production_rate'
+
+    (pool[symbol.to_sym] || 0) >= (test[:minimum] || 0).to_f
+  end
+
+  def self.check_buildings(character, building_test)
+    # check for min count and min level
+    return false if building_test[:min_count].nil? || building_test[:min_level].nil?
+
+    #check for building type
+    building_type = nil
+    GameRules::Rules.the_rules.building_types.each do |type|
+      if type[:symbolic_id].to_s == building_test[:building].to_s
+        building_type = type
+        break
+      end
+    end
+    return false if building_type.nil?
+
+    logger.debug "check_buildings: check if min #{building_test[:min_count]} buildings of type '#{building_test[:building]}' with min level #{building_test[:min_level]} exists"
+
+    # count slots that meet the requirements of building_test.
+    # return true, if there are enough buildings.
+    check_count = 0
+    character.settlements.each do |settlement|
+      unless settlement.slots.nil?
+        settlement.slots.each do |slot|
+          if !slot.level.nil? &&
+              !slot.building_id.nil? &&
+              building_type[:id] == slot.building_id &&
+              slot.level >= building_test[:min_level]
+            check_count += 1
+            if check_count >= building_test[:min_count]
+              return true
+            end
+          end
+        end
+      end
+    end
+
+    # building check failed, if method reaches this point
+    false
+  end
+
+  def self.check_settlements(character, settlement_test)
+    # check for min count and type
+    return false if settlement_test[:min_count].nil? || settlement_test[:type].nil?
+
+    logger.debug "check_settlements: check if min #{settlement_test[:min_count]} settlements of type #{settlement_test[:type]} exists"
+
+    settlement_type = nil
+    GameRules::Rules.the_rules.settlement_types.each do |type|
+      if type[:symbolic_id].to_s == settlement_test[:type].to_s
+        settlement_type = type
+        break
+      end
+    end
+    return false if settlement_type.nil?
+
+    settlements = character.settlements.where({type_id: settlement_type[:id]})
+    !settlements.nil? && settlements.count >= settlement_test[:min_count]
+  end
+
+  def self.check_armies(character, army_test)
+    # check for min count and min level
+    return false if army_test[:min_count].nil? || army_test[:type].nil?
+
+    logger.debug "check_armies: check if min #{army_test[:min_count]} armies of army type '#{army_test[:type]}' exists"
+
+    army_count = 0
+    character.armies.each do |army|
+      if (army.garrison? && army_test[:type].to_s == 'garrison' ||
+          !army.garrison? && army_test[:type].to_s == 'visible') &&
+          !army.size_present.nil? && army.size_present > 0
+        army_count += (army.size_present || 0)
+      end
+    end
+
+    army_count >= army_test[:min_count]
+  end
+
+  def self.check_construction_queues(character, queue_test)
+    # check for min count
+    return false if queue_test[:min_count].nil? || queue_test[:min_level].nil?
+
+    #check for building type
+    building_type = nil
+    GameRules::Rules.the_rules.building_types.each do |type|
+      if type[:symbolic_id].to_s == queue_test[:building].to_s
+        building_type = type
+        break
+      end
+    end
+    return false if building_type.nil?
+
+    logger.debug "check_construction_queues: check if min #{queue_test[:min_count]} buildings of type '#{queue_test[:building]}' are queued"
+
+    # count jobs that meet the requirements of queue_test.
+    # return true, if there are enough jobs.
+    check_count = 0
+    character.settlements.each do |settlement|
+      unless settlement.queues.nil?
+        settlement.queues.each do |queue|
+          unless queue.jobs.nil?
+            queue.jobs.each do |job|
+              if building_type[:id] === job.building_id &&
+                  (job.job_type == Construction::Job::TYPE_CREATE || job.job_type == Construction::Job::TYPE_UPGRADE) &&
+                  job.level_after >= queue_test[:min_level]
+                check_count += 1
+                if check_count >= queue_test[:min_count]
+                  return true
+                end
+              end
+            end
+          end
+        end
+      end
+
+      unless settlement.slots.nil?
+        settlement.slots.each do |slot|
+          if !slot.level.nil? &&
+              !slot.building_id.nil? &&
+              building_type[:id] == slot.building_id &&
+              slot.level >= queue_test[:min_level]
+            check_count += 1
+            if check_count >= queue_test[:min_count]
+              return true
+            end
+          end
+        end
+      end
+    end
+
+    # queue check failed, if method reaches this point
+    false
+  end
+
+  def self.check_training_queues(character, queue_test)
+    # check for min count
+    return false if queue_test[:min_count].nil?
+
+    #check for building type
+    unit_type = nil
+    GameRules::Rules.the_rules.unit_types.each do |type|
+      if type[:db_field].to_s == queue_test[:unit].to_s
+        unit_type = type
+        break
+      end
+    end
+    return false if unit_type.nil?
+
+    logger.debug "check_training_queues check if min #{queue_test[:min_count]} units of type '#{queue_test[:unit]}' are queued"
+
+    # count jobs that meet the requirements of queue_test.
+    # return true, if there are enough jobs.
+    check_count = 0
+    character.settlements.each do |settlement|
+      unless settlement.training_queues.nil?
+        settlement.training_queues.each do |queue|
+          unless queue.jobs.nil?
+            queue.jobs.each do |job|
+              if unit_type[:id] === job.unit_id
+                check_count += 1
+                if check_count >= queue_test[:min_count]
+                  return true
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+
+    # queue check failed, if method reaches this point
+    false
+  end
+
+  def self.check_movements(character)
+    armies = character.armies
+    if armies.nil?
+      false
+    else
+      armies.where(mode: Military::Army::MODE_MOVING).count > 0
+    end
+  end
+
+  def self.check_alliance(character)
+    !character.alliance.nil?
+  end
+
+  def self.check_kills(character, kill_test)
+    return false if kill_test[:min_units].nil?
+
+    logger.debug "check_kills: check if min #{kill_test[:min_units]} units are already killed"
+
+    character.kills >= kill_test[:min_units]
+  end
+
+  def self.check_battle(character)
+    logger.debug "check_battle: check if min 1 unit is fighting"
+    armies = character.armies
+    if armies.nil?
+      false
+    else
+      armies.where(mode: Military::Army::MODE_FIGHTING).count > 0 || character.kills > 0
+    end
+  end
+
+  def self.check_army_experience(character, army_experience_test)
+    return false if army_experience_test[:min_experience].nil?
+
+    logger.debug "check_army_experience: check if one army has at least #{army_experience_test[:min_experience]} XP"
+
+    character.armies.each do |army|
+      return true if army.exp >= army_experience_test[:min_experience]
+    end
+    false
+  end
+
+  def self.check_score(character, score_test)
+    return false if score_test[:min_population].nil?
+
+    logger.debug "check_score: check if a min score of #{score_test[:min_population]} is already reached"
+
+    character.score >= score_test[:min_population]
+  end
+
+  def self.check_settlement_production(character, settlement_production_test)
+    return false if settlement_production_test[:min_resources].nil?
+
+    logger.debug "check_settlement_production: check if one settlement has at least a weighted resource production of #{settlement_production_test[:min_resources]} "
+
+    production_test_weights = Tutorial::Tutorial.the_tutorial.production_test_weights
+
+    character.settlements.each do |settlement|
+      resources = 0.0
+      GameRules::Rules.the_rules.resource_types.each do |type|
+        resources += settlement[type[:symbolic_id].to_s + '_production_rate'] * (production_test_weights[type[:symbolic_id].to_sym] || 0)
+      end
+      return true if resources >= settlement_production_test[:min_resources]
+    end
+
+    false
+  end
+
+  def self.check_building_speed(character, building_speed_test)
+    return false if building_speed_test[:min_speed].nil?
+
+    logger.debug "check_building_speed: check if home settlement has at least a building queue speed of #{building_speed_test[:min_speed]}"
+
+    building_queues = character.home_location.settlement.queues
+
+    building_queues.each do |queue|
+      return true if queue.speed >= building_speed_test[:min_speed]
+    end
+
+    false
+  end
+
 
   protected
 
