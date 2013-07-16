@@ -168,7 +168,9 @@ class GameRules::Rules
                     :minor => <xsl:value-of select="//General/Version/@minor" />,
                     :build => <xsl:value-of select="//General/Version/@build" />,
       },
-      :app_control => { :debug_tracking => <xsl:value-of select="//General/AppControl/@debugTracking" />,
+      :app_control => {
+        :debug_tracking       => <xsl:value-of select="//General/AppControl/@debugTracking" />,
+        :special_offer_dialog => <xsl:value-of select="//General/AppControl/@specialOfferDialog" />,
       },
       :battle => {
         :calculation => {

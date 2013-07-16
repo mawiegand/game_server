@@ -20,7 +20,8 @@
 >
 <!ELEMENT AppControl EMPTY>
 <!ATTLIST AppControl
-  debugTracking (0 | 1) "0"
+  debugTracking      (0 | 1) "0"
+  specialOfferDialog (0 | 1) "0"
 >
 
 <!--Languages-->
