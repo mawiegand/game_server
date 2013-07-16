@@ -262,6 +262,7 @@ GameServer::Application.routes.draw do
           resources :abandon_outpost_actions, :only => [ :create ]
           resources :change_settlement_name_actions, :only => [ :create ]
           #resources :archive_entries_actions#, :only => [ :create]
+          resources :move_settlement_to_region_actions, :only => [ :create ]
         end
         namespace :tutorial do
           resources :check_quest_actions,                 :only => [ :create ]    
