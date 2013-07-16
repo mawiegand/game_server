@@ -6,18 +6,22 @@ class Action::Assignment::StartSpecialAssignmentActionsController < ApplicationC
   def create
     @values = params[:assignment_special_assignment]
 
-    raise ForbiddenError.new "No current character"                                  if current_character.nil?
+    raise ForbiddenError.new('No current character')             if current_character.nil?
+    @assignment = Assignment::SpecialAssignment.lock.find(params[:assignment_special_assignment][:special_assignment_id])
 
-    type_id = @values[:type_id].to_i || -1
-    assignment_type = GameRules::Rules.the_rules.assignment_types[type_id] || {}
+    raise ForbiddenError.new('not owner of assignment')          unless @assignment.character == current_character
+    raise BadRequestError.new('assignment must not be started')  unless @assignment.started_at.nil?
+    raise BadRequestError.new('assignment must not be ended')    unless @assignment.ended_at.nil?
+
+    # assume the tavern is at home base (otherwise the settlement id must be send to controller to identifiy the settlement)
+    requirement_groups = @assignment.assignment_type[:requirementGroups]
+    requirements_met = requirement_groups.nil? || requirement_groups.empty? || GameState::Requirements.meet_one_requirement_group?(requirement_groups, current_character, current_character.home_location.settlement)
+    raise BadRequestError.new('requirements not met')            unless requirements_met
+
+
     level = current_character.assignment_level || 0
-    
-    raise ForbiddenError.new "Character cannot solve assignments of this level"  if level < assignment_type[:level]
-    
-    @assignment = Assignment::StandardAssignment.create_if_not_existing(current_character, assignment_type)
-    
-    raise ConflictError.new "There is already an ongoing assignment of this type"    if @assignment.ongoing?
-    
+    raise ForbiddenError.new('Character cannot solve assignments of this level')  if level < @assignment.assignment_type[:level]
+
     @assignment.pay_deposit_and_start_transaction
     
     respond_to do |format|

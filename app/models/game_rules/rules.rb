@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.3
+# Version: 0.9.10
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -119,7 +119,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 3,
+                    :build => 10,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -7011,7 +7011,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #   Special Assignment Test 0
           :id          => 0,
           :symbolic_id => :special_assignment_tester0,
-          :level       => 3,
+          :level       => 1,
           :advisor     => "chief",
           :probability_factor => 1,
           :name        => {
@@ -7051,15 +7051,25 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
-          :unit_deposits => {
-            1 => '1*PRODUCTION',
-            4 => '1*PRODUCTION',
-            8 => '1*PRODUCTION',
-            
-          },
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_training_cave',
+              :id => 8,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+          ],
 
           :duration => 60,
-          :display_duration => 60,
+          :display_duration => 360,
 
 
           :rewards => {
@@ -7068,17 +7078,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :resource => :resource_stone,
-                :amount => '30*PRODUCTION',
+                :amount => '6*PRODUCTION',
               },
 
               {
                 :resource => :resource_wood,
-                :amount => '30*PRODUCTION',
+                :amount => '6*PRODUCTION',
               },
 
               {
                 :resource => :resource_fur,
-                :amount => '30*PRODUCTION',
+                :amount => '6*PRODUCTION',
               },
 
             ],
@@ -7087,12 +7097,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :unit => :unit_clubbers,
-                :amount => '30*PRODUCTION',
+                :amount => '0.01*PRODUCTION',
               },
 
             ],
 
-            :experience_reward => '50*PRODUCTION',
+            :experience_reward => '1',
 
           },
 
@@ -7101,7 +7111,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
         {              #   Special Assignment Test 1
           :id          => 1,
           :symbolic_id => :special_assignment_tester1,
-          :level       => 5,
+          :level       => 2,
           :advisor     => "chief",
           :probability_factor => 1,
           :name        => {
@@ -7135,21 +7145,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :costs      => {
-            0 => '3*PRODUCTION',
-            1 => '3*PRODUCTION',
-            2 => '3*PRODUCTION',
-            
-          },
-
-          :unit_deposits => {
+            0 => '1*PRODUCTION',
             1 => '1*PRODUCTION',
-            4 => '1*PRODUCTION',
-            8 => '1*PRODUCTION',
+            2 => '1*PRODUCTION',
             
           },
 
           :duration => 60,
-          :display_duration => 60,
+          :display_duration => 720,
 
 
           :rewards => {
@@ -7158,31 +7161,22 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :resource => :resource_stone,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
               {
                 :resource => :resource_wood,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
               {
                 :resource => :resource_fur,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
             ],
 
-            :unit_rewards => [
-              
-              {
-                :unit => :unit_clubbers,
-                :amount => '30*PRODUCTION',
-              },
-
-            ],
-
-            :experience_reward => '50*PRODUCTION',
+            :experience_reward => 'PRODUCTION/1000',
 
           },
 
@@ -7232,14 +7226,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :unit_deposits => {
-            1 => '1*PRODUCTION',
-            4 => '1*PRODUCTION',
-            8 => '1*PRODUCTION',
+            0 => 'PRODUCTION/1000',
             
           },
 
           :duration => 60,
-          :display_duration => 60,
+          :display_duration => 360,
 
 
           :rewards => {
@@ -7248,17 +7240,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :resource => :resource_stone,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
               {
                 :resource => :resource_wood,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
               {
                 :resource => :resource_fur,
-                :amount => '30*PRODUCTION',
+                :amount => '3*PRODUCTION',
               },
 
             ],
@@ -7267,12 +7259,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :unit => :unit_clubbers,
-                :amount => '30*PRODUCTION',
+                :amount => '1',
               },
 
             ],
 
-            :experience_reward => '50*PRODUCTION',
+            :experience_reward => '1',
 
           },
 

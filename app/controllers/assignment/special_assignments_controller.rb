@@ -21,14 +21,15 @@ class Assignment::SpecialAssignmentsController < ApplicationController
     last_modified = nil
 
     if params.has_key?(:character_id)
-      @character = Fundamental::Character.find(params[:character_id])
+      @character = Fundamental::Character.find_by_id(params[:character_id])
       raise NotFoundError.new('Page Not Found')               if @character.nil?
       #raise ForbiddenError.new('Access Forbidden')            if !admin? && !staff? && !developer? && @character != current_character
       @assignment_special_assignment = Assignment::SpecialAssignment.updated_special_assignment_of_character(@character)
       raise NotFoundError.new('Special Assignment Not Found') if @assignment_special_assignment.nil?
       # todo -> determine last_modified
     else
-      @assignment_special_assignment = Assignment::SpecialAssignment.find(params[:id])
+      @assignment_special_assignment = Assignment::SpecialAssignment.find_by_id(params[:id])
+      raise NotFoundError.new('Special Assignment Not Found') if @assignment_special_assignment.nil?
     end
 
     render_not_modified_or(last_modified) do
