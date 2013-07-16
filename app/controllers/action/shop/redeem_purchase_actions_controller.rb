@@ -32,6 +32,7 @@ class Action::Shop::RedeemPurchaseActionsController < ApplicationController
         purchase.save!
 
         shop_special_offers_transaction.redeemed_at = Time.now
+        shop_special_offers_transaction.state = Shop::Transaction::STATE_REDEEMED
         shop_special_offers_transaction.save!
       end
     end

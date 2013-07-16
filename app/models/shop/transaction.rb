@@ -23,6 +23,10 @@ class Shop::Transaction < ActiveRecord::Base
   STATES[STATE_BOOKED] = :booked
   STATE_PAID_AND_REDEEMED = 10
   STATES[STATE_PAID_AND_REDEEMED] = :paid_and_redeemed
+  STATE_PAID = 11
+  STATES[STATE_PAID] = :paid
+  STATE_REDEEMED = 12
+  STATES[STATE_REDEEMED] = :redeemed
 
   TYPE_CREDIT = 0
   TYPE_DEBIT = 1

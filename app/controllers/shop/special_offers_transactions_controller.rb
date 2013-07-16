@@ -94,7 +94,7 @@ class Shop::SpecialOffersTransactionsController < ApplicationController
       @shop_special_offers_transaction.lock!
 
       if !@shop_special_offers_transaction.paid?
-        @shop_special_offers_transaction.state = Shop::Transaction::STATE_CREATED
+        @shop_special_offers_transaction.state = Shop::Transaction::STATE_PAID
         @shop_special_offers_transaction.paid_at = Time.now
       end
 
