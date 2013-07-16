@@ -789,6 +789,16 @@ end
             <xsl:apply-templates select="Cost" />
           },
 </xsl:if>
+<xsl:if test="RequirementGroup">
+          :requirementGroups=> [
+<xsl:for-each select="RequirementGroup">
+            [
+              <xsl:apply-templates select="Requirement" />
+            ],
+</xsl:for-each>
+          ],
+</xsl:if>
+
 <xsl:if test="UnitDeposit">
           :unit_deposits => {
             <xsl:apply-templates select="UnitDeposit" />
