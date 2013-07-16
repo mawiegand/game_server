@@ -16,7 +16,13 @@ class Action::Tutorial::RedeemRewardsActionsController < ApplicationController
     raise BadRequestError.new('not owner of tutorial state') if quest_state.tutorial_state.owner != current_character
 
     # check if quest is already finished by user
-    raise BadRequestError.new('quest is not finished yet') if quest_state.status < Tutorial::Quest::STATE_FINISHED
+    if quest_state.status < Tutorial::Quest::STATE_FINISHED  # check again, whether quest is already finished
+      raise BadRequestError.new('quest is not finished yet and cannot be finished on the fly') unless quest_state.check_for_rewards(nil)
+      quest_state.set_finished 
+      quest_state.open_dependent_quest_states  # it's ok to run this twice; it only creates not-already-created dependent quests
+    end
+    
+    raise BadRequestError.new('quest is not finished yet') if quest_state.status < Tutorial::Quest::STATE_FINISHED    
     raise BadRequestError.new('rewards already rewarded') if quest_state.status > Tutorial::Quest::STATE_FINISHED
 
     quest_state.redeem_rewards
