@@ -1,10 +1,10 @@
-# SQLite version 3.x
-#   gem install sqlite3
+# MySQL.  Versions 4.1 and 5.0 are recommended.
 #
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
+#
+# Be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 development:
-  adapter: sqlite3
+  adapter: jdbcmysql
   database: db/development.sqlite3
   pool: 5
   timeout: 5000
@@ -13,24 +13,14 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
+  adapter: jdbcmysql
+  database: db/development.sqlite3_test
   pool: 5
   timeout: 5000
 
-staging:      # use the local postgres db
-  adapter: postgresql
-  encoding: UTF8
-  database: game_server
-  port: 5686
-  username: run-gs
+production:
+  adapter: jdbcmysql
+  database: db/development.sqlite3_production
+  pool: 5
+  timeout: 5000
 
-
-production:   # use the postgres on the database server
-  adapter: postgresql
-  encoding: UTF8
-  database: game_server
-  host: gs02.wack-a-doo.de
-  port: 5432
-  username: run-gs
-# password: 
