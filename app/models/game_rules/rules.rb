@@ -5627,7 +5627,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 0,
               :type => 'building',
 
-              :min_level => 1,
+              :min_level => 3,
 
             },
 
