@@ -73,7 +73,7 @@
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
     <Version major="0" minor="9" build="11" />
-    <AppControl debugTracking="1" />
+    <AppControl debugTracking="1" specialOfferDialog="1" />
     <Languages>
       <Language locale="en_US">English (US)</Language>
       <Language locale="de_DE">Deutsch</Language>

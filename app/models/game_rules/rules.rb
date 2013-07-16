@@ -121,7 +121,9 @@ class GameRules::Rules
                     :minor => 9,
                     :build => 11,
       },
-      :app_control => { :debug_tracking => 1,
+      :app_control => {
+        :debug_tracking       => 1,
+        :special_offer_dialog => 1,
       },
       :battle => {
         :calculation => {
