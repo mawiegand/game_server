@@ -17,6 +17,7 @@ en:
         browser_stats: Browser
         system_message: InGameMessage
         trade_log: TradeLog
+        user_content_reports: UserContentReports
       rules:
         category: Rules
         all: All

@@ -1,0 +1,33 @@
+<h1>Listing backend_user_content_reports</h1>
+
+<table>
+  <tr>
+    <th>Reporter</th>
+    <th>Content owner</th>
+    <th>Content type</th>
+    <th>Content</th>
+    <th>Declined</th>
+    <th>Accepted</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @backend_user_content_reports.each do |backend_user_content_report| %>
+  <tr>
+    <td><%= backend_user_content_report.reporter_id %></td>
+    <td><%= backend_user_content_report.content_owner_id %></td>
+    <td><%= backend_user_content_report.content_type %></td>
+    <td><%= backend_user_content_report.content_id %></td>
+    <td><%= backend_user_content_report.declined %></td>
+    <td><%= backend_user_content_report.accepted %></td>
+    <td><%= link_to 'Show', backend_user_content_report %></td>
+    <td><%= link_to 'Edit', edit_backend_user_content_report_path(backend_user_content_report) %></td>
+    <td><%= link_to 'Destroy', backend_user_content_report, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User content report', new_backend_user_content_report_path %>
