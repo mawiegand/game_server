@@ -7051,14 +7051,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
-          :assignment_tests => {
-            
-            :score_test => {
-              :min_population => 6400,
-            },
-
-          },
-
           :duration => 60,
           :display_duration => 360,
 
