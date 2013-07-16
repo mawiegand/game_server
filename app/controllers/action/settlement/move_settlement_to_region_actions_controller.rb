@@ -3,6 +3,8 @@ class Action::Settlement::MoveSettlementToRegionActionsController < ApplicationC
   before_filter :authenticate
 
   def create
+
+    raise ForbiddenError.new('moving location is currently disabled')
     
   	raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequest.new('missing parameter(s)') if params[:move_settlement_action].nil? || params[:move_settlement_action][:region_name].blank?
