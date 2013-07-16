@@ -32,6 +32,8 @@ class Assignment::SpecialAssignmentsController < ApplicationController
       raise NotFoundError.new('Special Assignment Not Found') if @assignment_special_assignment.nil?
     end
 
+    logger.debug "AAAAAA " + @assignment_special_assignment.inspect
+
     render_not_modified_or(last_modified) do
       respond_to do |format|
         format.html # show.html.erb
