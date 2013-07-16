@@ -311,6 +311,9 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
       unit_deposit = self[unit_type[:db_field].to_s + '_deposit']
       result[unit_type[:db_field]] = unit_deposit if !unit_deposit.nil? && unit_deposit > 0
     end
+
+    logger.debug "AAAAAA deposit" + result.inspect
+
     result
   end
 
@@ -322,6 +325,9 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     deposits = self.unit_deposits
     garrison_army = self.character.home_location.garrison_army
     return false  if garrison_army.nil?
+    logger.debug "AAAAAA deposits" + deposits.inspect
+    logger.debug "AAAAAA details" + garrison_army.details.inspect
+    logger.debug "AAAAAA contains? #{garrison_army.contains?(deposits)}"
     deposits.nil? || (garrison_army.contains?(deposits) && garrison_army.reduce_units(deposits))
   end
 
