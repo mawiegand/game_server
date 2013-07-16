@@ -8,10 +8,8 @@ class Action::Fundamental::UserContentReportActionsController < ApplicationContr
     raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequestError.new('missing parameter(s)') if params[:user_content_report_action].nil? || params[:user_content_report_action][:content_owner_id].blank? || params[:user_content_report_action][:content_type].blank? || params[:user_content_report_action][:content_id].blank?
     
-    #alliance = current_character.alliance
-    #alliance.description = params[:change_alliance_description_action][:description].strip
     report = Backend::UserContentReport.new
-		report.reporter_id = current_charcter.id
+		report.reporter_id = current_character.id
 		report.content_owner_id = params[:user_content_report_action][:content_owner_id]
 		report.content_type = params[:user_content_report_action][:content_type]
 		report.content_id = params[:user_content_report_action][:content_id]
