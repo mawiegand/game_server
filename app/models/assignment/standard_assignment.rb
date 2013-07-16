@@ -144,7 +144,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
     deposits = self.unit_deposits
     garrison_army = self.character.home_location.garrison_army
     return false  if garrison_army.nil?
-    deposits.nil? || garrison_army.add_units(deposits)   
+    deposits.nil? || garrison_army.add_units_safely(deposits)
   end    
   
   def pay_deposit_and_start_transaction
@@ -183,7 +183,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
 
       # check if resources and units can be rewarded
       # Rails.logger.warning "Cannot redeem all assignment rewards as garrison is full." unless garrison_army.can_receive?(units)
-      garrison_army.add_units(units)
+      garrison_army.add_units_safely(units)
     end
     
     if resources.count > 0
