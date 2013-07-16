@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <SpecialAssignmentTypes>
-  <SpecialAssignmentType id="special_assignment_tester0" advisor="chief" level="1" probability_factor="1">
+  <!-- SpecialAssignmentType id="special_assignment_tester0" advisor="chief" level="1" probability_factor="1">
     <Name>Special Assignment Test 0</Name>
     <Name lang="de_DE">Special Assignment Test 0</Name>
 
@@ -31,7 +31,7 @@
     <Cost id="resource_wood">3*PRODUCTION</Cost>
     <Cost id="resource_fur">3*PRODUCTION</Cost>
 
-    <!--UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit-->
+    < ! - - UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit - - >
 
     <SpecialAssignmentRewards>
       <SpecialAssignmentResourceReward resource="resource_stone">6*PRODUCTION</SpecialAssignmentResourceReward>
@@ -71,13 +71,13 @@
     <Cost id="resource_wood">1*PRODUCTION</Cost>
     <Cost id="resource_fur">1*PRODUCTION</Cost>
 
-    <!--UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit-->
+    < ! - - UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit - - >
 
     <SpecialAssignmentRewards>
       <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
       <SpecialAssignmentResourceReward resource="resource_wood">3*PRODUCTION</SpecialAssignmentResourceReward>
       <SpecialAssignmentResourceReward resource="resource_fur">3*PRODUCTION</SpecialAssignmentResourceReward>
-      <!--SpecialAssignmentUnitReward unit="unit_clubbers">3*PRODUCTION</SpecialAssignmentUnitReward-->
+      < ! - - SpecialAssignmentUnitReward unit="unit_clubbers">3*PRODUCTION</SpecialAssignmentUnitReward - - >
       <SpecialAssignmentExperienceReward>PRODUCTION/1000</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 
@@ -125,5 +125,5 @@
 
     <DisplayDuration>360</DisplayDuration>
 
-  </SpecialAssignmentType>
+  </SpecialAssignmentType -->
 </SpecialAssignmentTypes>
