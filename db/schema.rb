@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711152246) do
+ActiveRecord::Schema.define(:version => 20130715233126) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1629,6 +1629,17 @@ ActiveRecord::Schema.define(:version => 20130711152246) do
     t.decimal  "quest_147_retention_rate_week_1",   :default => 0.0
   end
 
+  create_table "backend_user_content_reports", :force => true do |t|
+    t.integer  "reporter_id"
+    t.integer  "content_owner_id"
+    t.string   "content_type"
+    t.integer  "content_id"
+    t.boolean  "declined"
+    t.boolean  "accepted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "backend_users", :force => true do |t|
     t.string   "email"
     t.string   "salt"
@@ -1765,20 +1776,20 @@ ActiveRecord::Schema.define(:version => 20130711152246) do
   create_table "fundamental_alliances", :force => true do |t|
     t.string   "tag"
     t.string   "name"
-    t.string   "description"
+    t.text     "description",                                   :limit => 255
     t.string   "banner"
     t.integer  "leader_id"
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "alliance_queue_alliance_research_unlock_count", :default => 0
+    t.integer  "alliance_queue_alliance_research_unlock_count",                :default => 0
     t.integer  "members_count"
     t.string   "invitation_code"
-    t.decimal  "resource_stone_production_bonus_effects",       :default => 0.0
-    t.decimal  "resource_wood_production_bonus_effects",        :default => 0.0
-    t.decimal  "resource_fur_production_bonus_effects",         :default => 0.0
-    t.decimal  "resource_cash_production_bonus_effects",        :default => 0.0
-    t.integer  "size_bonus",                                    :default => 0
+    t.decimal  "resource_stone_production_bonus_effects",                      :default => 0.0
+    t.decimal  "resource_wood_production_bonus_effects",                       :default => 0.0
+    t.decimal  "resource_fur_production_bonus_effects",                        :default => 0.0
+    t.decimal  "resource_cash_production_bonus_effects",                       :default => 0.0
+    t.integer  "size_bonus",                                                   :default => 0
   end
 
   create_table "fundamental_announcements", :force => true do |t|
@@ -2751,6 +2762,8 @@ ActiveRecord::Schema.define(:version => 20130711152246) do
     t.datetime "updated_at"
     t.integer  "character_id"
     t.integer  "state"
+    t.datetime "paid_at"
+    t.datetime "redeemed_at"
   end
 
   create_table "shop_transactions", :force => true do |t|

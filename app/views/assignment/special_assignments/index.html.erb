@@ -10,6 +10,21 @@
     <th>Execution count</th>
     <th>Displayed until</th>
     <th>Seen at</th>
+
+<% GameRules::Rules.the_rules.resource_types.each do |resource_type| %>
+    <th><%= resource_type[:name][:en_US].to_s %> Cost</th>
+<% end %>
+<% GameRules::Rules.the_rules.unit_types.each do |unit_type| %>
+    <th><%= unit_type[:name][:en_US].to_s %> Deposit</th>
+<% end %>
+<% GameRules::Rules.the_rules.resource_types.each do |resource_type| %>
+    <th><%= resource_type[:name][:en_US].to_s %> Reward</th>
+<% end %>
+<% GameRules::Rules.the_rules.unit_types.each do |unit_type| %>
+    <th><%= unit_type[:name][:en_US].to_s %> Reward</th>
+<% end %>
+    <th>XP Reward</th>
+
     <th></th>
     <th></th>
     <th></th>
@@ -25,6 +40,21 @@
     <td><%= assignment_special_assignment.execution_count %></td>
     <td><%= assignment_special_assignment.displayed_until %></td>
     <td><%= assignment_special_assignment.seen_at %></td>
+
+<% GameRules::Rules.the_rules.resource_types.each do |resource_type| %>
+    <td><%= assignment_special_assignment[resource_type[:symbolic_id].to_s + '_cost'] %></td>
+<% end %>
+<% GameRules::Rules.the_rules.unit_types.each do |unit_type| %>
+    <td><%= assignment_special_assignment[unit_type[:db_field].to_s + '_deposit'] %></td>
+<% end %>
+<% GameRules::Rules.the_rules.resource_types.each do |resource_type| %>
+    <td><%= assignment_special_assignment[resource_type[:symbolic_id].to_s + '_reward'] %></td>
+<% end %>
+<% GameRules::Rules.the_rules.unit_types.each do |unit_type| %>
+    <td><%= assignment_special_assignment[unit_type[:db_field].to_s + '_reward'] %></td>
+<% end %>
+    <td><%= assignment_special_assignment.experience_reward %></td>
+
     <td><%= link_to 'Show', assignment_special_assignment %></td>
     <td><%= link_to 'Edit', edit_assignment_special_assignment_path(assignment_special_assignment) %></td>
     <td><%= link_to 'Destroy', assignment_special_assignment, confirm: 'Are you sure?', method: :delete %></td>

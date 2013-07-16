@@ -13,7 +13,7 @@ class Settlement::SlotsController < ApplicationController
   # GET /settlement/slots.json
   def index
     if params.has_key?(:settlement_id)
-      @settlement_settlement = Settlement::Settlement.find(params[:settlement_id]);
+      @settlement_settlement = Settlement::Settlement.find(params[:settlement_id])
 
       raise NotFoundError.new('Page Not Found') if @settlement_settlement.nil?
       raise ForbiddenError.new('Access forbidden.') unless staff? || (!current_character.nil? && current_character.id == @settlement_settlement.owner_id)

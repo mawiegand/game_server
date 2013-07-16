@@ -434,8 +434,17 @@ class Military::Army < ActiveRecord::Base
     end
     self.details.save
   end
-  
-  # reduces the units of given army by the units stated as key/value pairs in 'units' 
+
+  # by calling self.save the units are cut to fit into army.size_max to avoid throwing an exception
+  def add_units_safely(units)
+    GameRules::Rules.the_rules.unit_types.each do | unit_type |
+      self.details.increment(unit_type[:db_field], units[unit_type[:db_field]].to_i)
+    end
+    self.save
+    self.details.save
+  end
+
+  # reduces the units of given army by the units stated as key/value pairs in 'units'
   def reduce_units(units)
 #   Military::ArmyDetails.transaction do
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
@@ -517,7 +526,7 @@ class Military::Army < ActiveRecord::Base
     end
 
     army = Military::Army.new({
-      name: army_name[0..16],
+      name: army_name[0..15],
       home_settlement_id: location.settlement.id,
       home_settlement_name: location.settlement.name,
       ap_max: 4,

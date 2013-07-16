@@ -2,7 +2,7 @@ class Assignment::SpecialAssignmentsController < ApplicationController
   layout 'assignment'
 
  # before_filter :authenticate
-  before_filter :deny_api, :except => [:show, :index]
+  before_filter :deny_api, :except => [:show]
 
   # GET /assignment/special_assignments
   # GET /assignment/special_assignments.json
@@ -18,11 +18,27 @@ class Assignment::SpecialAssignmentsController < ApplicationController
   # GET /assignment/special_assignments/1
   # GET /assignment/special_assignments/1.json
   def show
-    @assignment_special_assignment = Assignment::SpecialAssignment.find(params[:id])
+    last_modified = nil
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @assignment_special_assignment }
+    if params.has_key?(:character_id)
+      @character = Fundamental::Character.find_by_id(params[:character_id])
+      raise NotFoundError.new('Page Not Found')               if @character.nil?
+      #raise ForbiddenError.new('Access Forbidden')            if !admin? && !staff? && !developer? && @character != current_character
+      @assignment_special_assignment = Assignment::SpecialAssignment.updated_special_assignment_of_character(@character)
+      raise NotFoundError.new('Special Assignment Not Found') if @assignment_special_assignment.nil?
+      # todo -> determine last_modified
+    else
+      @assignment_special_assignment = Assignment::SpecialAssignment.find_by_id(params[:id])
+      raise NotFoundError.new('Special Assignment Not Found') if @assignment_special_assignment.nil?
+    end
+
+    logger.debug "AAAAAA " + @assignment_special_assignment.inspect
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @assignment_special_assignment }
+      end
     end
   end
 

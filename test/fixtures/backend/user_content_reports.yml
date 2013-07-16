@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  reporter_id: 1
+  content_owner_id: 1
+  content_type: MyString
+  content_id: 1
+  declined: false
+  accepted: false
+
+two:
+  reporter_id: 1
+  content_owner_id: 1
+  content_type: MyString
+  content_id: 1
+  declined: false
+  accepted: false

@@ -33,4 +33,5 @@ production:   # use the postgres on the database server
   host: gs02.wack-a-doo.de
   port: 5432
   username: run-gs
-# password: 
+# password:
+

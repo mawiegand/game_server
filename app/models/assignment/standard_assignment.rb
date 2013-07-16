@@ -31,7 +31,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   
   def self.create_if_not_existing(character, type)
     assignment = character.standard_assignments.with_type(type).first
-    if (assignment.nil?)
+    if assignment.nil?
       assignment = character.standard_assignments.create({
         type_id: type[:id],
       })
@@ -144,7 +144,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
     deposits = self.unit_deposits
     garrison_army = self.character.home_location.garrison_army
     return false  if garrison_army.nil?
-    deposits.nil? || garrison_army.add_units(deposits)   
+    deposits.nil? || garrison_army.add_units_safely(deposits)
   end    
   
   def pay_deposit_and_start_transaction
@@ -183,7 +183,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
 
       # check if resources and units can be rewarded
       # Rails.logger.warning "Cannot redeem all assignment rewards as garrison is full." unless garrison_army.can_receive?(units)
-      garrison_army.add_units(units)
+      garrison_army.add_units_safely(units)
     end
     
     if resources.count > 0
@@ -228,7 +228,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
           local_event_id: self.id,
       )
       if !self.save  # this is the final step; this makes sure, something is actually executed
-        raise ArgumentError.new('could not create event for active training job')
+        raise ArgumentError.new('could not create event for standard assignment')
       end
     end
     self.event

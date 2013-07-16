@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.0
+# Version: 0.9.12
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -33,7 +33,7 @@ class GameRules::Rules
   self.include_root_in_json = false
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
-    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :unit_categories, :building_categories,
+    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
@@ -62,7 +62,9 @@ class GameRules::Rules
       'building_types'              => building_types,
       'science_types'               => science_types,  
       'assignment_types'            => assignment_types,  
-      'settlement_types'            => settlement_types,  
+      'special_assignment_types'    => special_assignment_types,
+      'special_assignments'         => special_assignments,
+      'settlement_types'            => settlement_types,
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
@@ -117,7 +119,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 0,
+                    :build => 12,
       },
       :app_control => { :debug_tracking => 1,
       },
@@ -162,6 +164,10 @@ class GameRules::Rules
       },
       :building_experience_formula => '2*LEVEL',
       :alliance_max_members => 13,
+      :special_assignments  => {
+        :idle_probability => 0.2,
+        :idle_time => 30,
+      },
       :artifact_count => 5,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
@@ -5621,7 +5627,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               :id => 0,
               :type => 'building',
 
-              :min_level => 3,
+              :min_level => 1,
 
             },
 
@@ -6487,11 +6493,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
       ],                # END OF SETTLEMENT TYPES
 
 # ## ASSIGNMENT TYPES ##########################################################
-  
+
       :assignment_types => [  # ALL ASSIGMENT TYPES
 
         {              #   Boulder Smashing
-          :id          => 0, 
+          :id          => 0,
           :symbolic_id => :assignment_stone,
           :level       => 1,
           :advisor     => "girl",
@@ -6500,21 +6506,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "Boulder Smashing",
   
             :de_DE => "Steine klopfen",
-                
+  
           },
           :flavour     => {
             
             :de_DE => "Mit ein bisschen Motivation können diese Sammler ja ganz schön ackern.",
   
             :en_US => "Just a little bit of motivation and look at those gatherers go!",
-                
+  
           },
           :description => {
             
             :de_DE => "<p>Vielleicht verlierst du die Wette, wie schnell deine Sammler steine kloppen können, aber am Ende bleibt für dich sowieso mehr übrig, als ihr Bier kosten wird.</p>",
   
             :en_US => "<p>Maybe you will lose your bet, how fast your gatherers can smash those boulders, but in the end you will get more out of their fast work then their beer will cost you anyways. </p>",
-                
+  
           },
 
           :short_description => {
@@ -6526,7 +6532,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 600,
-          
+
 
           :rewards => {
             
@@ -6539,12 +6545,12 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-          },          
+          },
 
 
         },              #   END OF Boulder Smashing
         {              #   Wood Cutting
-          :id          => 1, 
+          :id          => 1,
           :symbolic_id => :assignment_wood,
           :level       => 2,
           :advisor     => "girl",
@@ -6553,21 +6559,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             :en_US => "Wood Cutting",
   
             :de_DE => "Bäume fällen",
-                
+  
           },
           :flavour     => {
             
             :de_DE => "Der Kampf einer Axt gegen einen Baum. Ich kann stundenlang zuschauen wie andere arbeiten.",
   
             :en_US => "Axe against tree, the age old battle. I could spend hours watching others work.",
-                
+  
           },
           :description => {
             
             :de_DE => "<p>Der Wirt brauch eine neue Bank, also muss handangelegt werden. Da er nur halben Baum braucht wird sich niemand daran stören, wenn Du den Rest einstreichst.</p>",
   
             :en_US => "<p>The barkeeper needs a new bench. But seeing how he only needs half a tree noone is realy going to mind if you take the rest for yourself, will they?</p>",
-                
+  
           },
 
           :short_description => {
@@ -6579,7 +6585,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :duration => 720,
-          
+
 
           :rewards => {
             
@@ -6592,11 +6598,270 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           ],
 
-          },          
+          },
 
 
         },              #   END OF Wood Cutting
       ],                # END OF ASSIGNMENT TYPES
+
+# ## SPECIAL ASSIGNMENT TYPES ##########################################################
+
+      :special_assignment_types => [  # ALL SPECIAL ASSIGMENT TYPES
+
+        {              #   Special Assignment Test 0
+          :id          => 0,
+          :symbolic_id => :special_assignment_tester0,
+          :level       => 1,
+          :advisor     => "chief",
+          :probability_factor => 1,
+          :name        => {
+            
+            :en_US => "Special Assignment Test 0",
+  
+            :de_DE => "Special Assignment Test 0",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>",
+  
+            :en_US => "<p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Unternimm eine Expedition</p>",
+  
+            :en_US => "<p>Undertake an expedition</p>",
+  
+          },
+
+          :costs      => {
+            0 => '3*PRODUCTION',
+            1 => '3*PRODUCTION',
+            2 => '3*PRODUCTION',
+            
+          },
+
+          :assignment_tests => {
+            
+            :score_test => {
+              :min_population => 6400,
+            },
+
+          },
+
+          :duration => 60,
+          :display_duration => 360,
+
+
+          :rewards => {
+
+            :resource_rewards => [
+              
+              {
+                :resource => :resource_stone,
+                :amount => '6*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => '6*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => '6*PRODUCTION',
+              },
+
+            ],
+
+            :unit_rewards => [
+              
+              {
+                :unit => :unit_clubbers,
+                :amount => '0.01*PRODUCTION',
+              },
+
+            ],
+
+            :experience_reward => '1',
+
+          },
+
+
+        },              #   END OF Special Assignment Test 0
+        {              #   Special Assignment Test 1
+          :id          => 1,
+          :symbolic_id => :special_assignment_tester1,
+          :level       => 2,
+          :advisor     => "chief",
+          :probability_factor => 1,
+          :name        => {
+            
+            :en_US => "Special Assignment Test 1",
+  
+            :de_DE => "Special Assignment Test 1",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>",
+  
+            :en_US => "<p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Unternimm eine Expedition</p>",
+  
+            :en_US => "<p>Undertake an expedition</p>",
+  
+          },
+
+          :costs      => {
+            0 => '1*PRODUCTION',
+            1 => '1*PRODUCTION',
+            2 => '1*PRODUCTION',
+            
+          },
+
+          :duration => 60,
+          :display_duration => 720,
+
+
+          :rewards => {
+
+            :resource_rewards => [
+              
+              {
+                :resource => :resource_stone,
+                :amount => '3*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => '3*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => '3*PRODUCTION',
+              },
+
+            ],
+
+            :experience_reward => 'PRODUCTION/1000',
+
+          },
+
+
+        },              #   END OF Special Assignment Test 1
+        {              #   Special Assignment Test 2
+          :id          => 2,
+          :symbolic_id => :special_assignment_tester2,
+          :level       => 7,
+          :advisor     => "chief",
+          :probability_factor => 4,
+          :name        => {
+            
+            :en_US => "Special Assignment Test 2",
+  
+            :de_DE => "Special Assignment Test 2",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>",
+  
+            :en_US => "<p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Unternimm eine Expedition</p>",
+  
+            :en_US => "<p>Undertake an expedition</p>",
+  
+          },
+
+          :costs      => {
+            0 => '3*PRODUCTION',
+            1 => '3*PRODUCTION',
+            2 => '3*PRODUCTION',
+            
+          },
+
+          :unit_deposits => {
+            0 => 'PRODUCTION/1000',
+            
+          },
+
+          :duration => 60,
+          :display_duration => 360,
+
+
+          :rewards => {
+
+            :resource_rewards => [
+              
+              {
+                :resource => :resource_stone,
+                :amount => '3*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => '3*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => '3*PRODUCTION',
+              },
+
+            ],
+
+            :unit_rewards => [
+              
+              {
+                :unit => :unit_clubbers,
+                :amount => '1',
+              },
+
+            ],
+
+            :experience_reward => '1',
+
+          },
+
+
+        },              #   END OF Special Assignment Test 2
+      ],                # END OF SPECIAL ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################
   

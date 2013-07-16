@@ -72,7 +72,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="9" build="0" />
+    <Version major="0" minor="9" build="12" />
     <AppControl debugTracking="1" />
     <Languages>
       <Language locale="en_US">English (US)</Language>
@@ -147,7 +147,7 @@
         <AvatarLayer max="0"  optional="true">veilchens</AvatarLayer>
         <AvatarLayer max="3"  optional="true"  chars="2">tattoos</AvatarLayer>
       </AvatarConfig>
-   </AvatarConfigs>
+    </AvatarConfigs>
     <ChangeCharacterName free_changes="2" resource="resource_cash" amount="20" />
     <ChangeCharacterGender free_changes="2" resource="resource_cash" amount="20" />
     <ResourceExchange resource="resource_cash" amount="2" />
@@ -157,6 +157,10 @@
     </BuildingConversion>  
     <BuildingExperienceFormula>2*LEVEL</BuildingExperienceFormula>
     <AllianceMaxMembers>13</AllianceMaxMembers>
+    <SpecialAssignments>
+      <SpecialAssignmentIdleProbability>0.2</SpecialAssignmentIdleProbability>
+      <SpecialAssignmentIdleTime>30</SpecialAssignmentIdleTime>
+    </SpecialAssignments>
   </General>
   <xi:include href="rules_victories.xml" />
   <xi:include href="rules_artifacts.xml" />
@@ -173,4 +177,5 @@
   <xi:include href="rules_character_mundane_ranks.xml" />
   <xi:include href="rules_character_sacred_ranks.xml" />
   <xi:include href="rules_assignments.xml" />
+  <xi:include href="rules_specialassignments.xml" />
 </Rules>

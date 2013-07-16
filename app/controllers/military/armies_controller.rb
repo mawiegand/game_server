@@ -161,7 +161,7 @@ class Military::ArmiesController < ApplicationController
     if role === :staff || role === :admin
       attributes_to_update = params[:military_army]
     elsif role === :owner
-      attributes_to_update[:name] = params[:military_army][:name][0..16] unless params[:military_army][:name].blank?
+      attributes_to_update[:name] = params[:military_army][:name][0..15] unless params[:military_army][:name].blank?
       attributes_to_update[:stance] = params[:military_army][:stance] unless params[:military_army][:stance].blank?
     end
 

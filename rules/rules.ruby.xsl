@@ -80,7 +80,7 @@ class GameRules::Rules
   self.include_root_in_json = false
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
-    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :unit_categories, :building_categories,
+    :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
@@ -109,7 +109,9 @@ class GameRules::Rules
       'building_types'              => building_types,
       'science_types'               => science_types,  
       'assignment_types'            => assignment_types,  
-      'settlement_types'            => settlement_types,  
+      'special_assignment_types'    => special_assignment_types,
+      'special_assignments'         => special_assignments,
+      'settlement_types'            => settlement_types,
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
@@ -186,6 +188,10 @@ class GameRules::Rules
       },
       :building_experience_formula => '<xsl:value-of select="//General/BuildingExperienceFormula" />',
       :alliance_max_members => <xsl:value-of select="//General/AllianceMaxMembers" />,
+      :special_assignments  => {
+        :idle_probability => <xsl:value-of select="//General/SpecialAssignments/SpecialAssignmentIdleProbability" />,
+        :idle_time => <xsl:value-of select="//General/SpecialAssignments/SpecialAssignmentIdleTime" />,
+      },
       :artifact_count => <xsl:value-of select="count(//ArtifactTypes/Artifact)" />,
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
@@ -203,6 +209,7 @@ class GameRules::Rules
   <xsl:apply-templates select="BuildingTypes" />
   <xsl:apply-templates select="SettlementTypes" />
   <xsl:apply-templates select="AssignmentTypes" />
+  <xsl:apply-templates select="SpecialAssignmentTypes" />
   <xsl:apply-templates select="ArtifactTypes" />
   <xsl:apply-templates select="VictoryTypes" />
   <xsl:apply-templates select="QueueTypes" />
@@ -706,22 +713,22 @@ end
 
 <xsl:template match="AssignmentTypes">
 # ## ASSIGNMENT TYPES ##########################################################
-  
+
       :assignment_types => [  # ALL ASSIGMENT TYPES
 <xsl:for-each select="AssignmentType">
         {              #   <xsl:value-of select="Name"/>
-          :id          => <xsl:value-of select="position()-1"/>, 
+          :id          => <xsl:value-of select="position()-1"/>,
           :symbolic_id => :<xsl:value-of select="@id"/>,
           :level       => <xsl:value-of select="@level"/>,
           :advisor     => "<xsl:value-of select="@advisor"/>",
           :name        => {
-            <xsl:apply-templates select="Name" />              
+            <xsl:apply-templates select="Name" />
           },
           :flavour     => {
-            <xsl:apply-templates select="Flavour" />              
+            <xsl:apply-templates select="Flavour" />
           },
           :description => {
-            <xsl:apply-templates select="Description" />              
+            <xsl:apply-templates select="Description" />
           },
 <xsl:if test="ShortDescription">
           :short_description => {
@@ -739,17 +746,105 @@ end
           },
 </xsl:if>
           :duration => <xsl:value-of select="Duration"/>,
-          
+
 <xsl:if test="Rewards">
           :rewards => {
             <xsl:apply-templates select="Rewards" />
-          },          
+          },
 </xsl:if>
 
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>
       ],                # END OF ASSIGNMENT TYPES
 </xsl:template>
+
+
+<xsl:template match="SpecialAssignmentTypes">
+# ## SPECIAL ASSIGNMENT TYPES ##########################################################
+
+      :special_assignment_types => [  # ALL SPECIAL ASSIGMENT TYPES
+<xsl:for-each select="SpecialAssignmentType">
+        {              #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>,
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :level       => <xsl:value-of select="@level"/>,
+          :advisor     => "<xsl:value-of select="@advisor"/>",
+          :probability_factor => <xsl:value-of select="@probability_factor"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />
+          },
+          :flavour     => {
+            <xsl:apply-templates select="Flavour" />
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />
+          },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
+<xsl:if test="Cost">
+          :costs      => {
+            <xsl:apply-templates select="Cost" />
+          },
+</xsl:if>
+<xsl:if test="AssignmentTests">
+          :assignment_tests => {
+            <xsl:apply-templates select="AssignmentTests" />
+          },
+</xsl:if>
+
+<xsl:if test="UnitDeposit">
+          :unit_deposits => {
+            <xsl:apply-templates select="UnitDeposit" />
+          },
+</xsl:if>
+          :duration => <xsl:value-of select="Duration"/>,
+          :display_duration => <xsl:value-of select="DisplayDuration"/>,
+
+<xsl:if test="SpecialAssignmentRewards">
+          :rewards => {
+<xsl:apply-templates select="SpecialAssignmentRewards " />
+          },
+</xsl:if>
+
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF SPECIAL ASSIGNMENT TYPES
+</xsl:template>
+
+
+
+<xsl:template match="SpecialAssignmentRewards">
+<xsl:if test="SpecialAssignmentResourceReward">
+            :resource_rewards => [
+              <xsl:apply-templates select="SpecialAssignmentResourceReward" />
+            ],
+</xsl:if>
+<xsl:if test="SpecialAssignmentUnitReward">
+            :unit_rewards => [
+              <xsl:apply-templates select="SpecialAssignmentUnitReward" />
+            ],
+</xsl:if>
+<xsl:if test="SpecialAssignmentExperienceReward">
+            :experience_reward => '<xsl:apply-templates select="SpecialAssignmentExperienceReward" />',
+</xsl:if>
+</xsl:template>
+
+<xsl:template match="SpecialAssignmentResourceReward">
+              {
+                :resource => :<xsl:value-of select="@resource" />,
+                :amount => '<xsl:value-of select="." />',
+              },
+</xsl:template>
+<xsl:template match="SpecialAssignmentUnitReward">
+              {
+                :unit => :<xsl:value-of select="@unit" />,
+                :amount => '<xsl:value-of select="." />',
+              },
+</xsl:template>
+
 
 
 <xsl:template match="Rewards">
@@ -1130,6 +1225,128 @@ end
 <xsl:template match="ArmySizeBonus">
             :army_size_bonus => "<xsl:apply-templates />",
 </xsl:template>
+
+
+
+
+<xsl:template match="AssignmentTests">
+<xsl:if test="ResourceProductionTest">
+            :resource_production_tests => [
+              <xsl:apply-templates select="ResourceProductionTest" />
+            ],
+</xsl:if>
+<xsl:if test="BuildingTest">
+            :building_tests => [
+              <xsl:apply-templates select="BuildingTest" />
+            ],
+</xsl:if>
+<xsl:if test="SettlementTest">
+            :settlement_tests => [
+              <xsl:apply-templates select="SettlementTest" />
+            ],
+</xsl:if>
+<xsl:if test="ArmyTest">
+            :army_tests => [
+              <xsl:apply-templates select="ArmyTest" />
+            ],
+</xsl:if>
+<xsl:if test="ConstructionQueueTest">
+            :construction_queue_tests => [
+              <xsl:apply-templates select="ConstructionQueueTest" />
+            ],
+</xsl:if>
+<xsl:if test="TrainingQueueTest">
+            :training_queue_tests => [
+              <xsl:apply-templates select="TrainingQueueTest" />
+            ],
+</xsl:if>
+<xsl:if test="AllianceTest">
+            :alliance_test => {},
+</xsl:if>
+<xsl:if test="MovementTest">
+            :movement_test => {},
+</xsl:if>
+<xsl:if test="KillTest">
+            :kill_test => {
+              :min_units => <xsl:value-of select="KillTest/@min_units" />,
+            },
+</xsl:if>
+<xsl:if test="BattleTest">
+            :battle_test => {},
+</xsl:if>
+<xsl:if test="ArmyExperienceTest">
+            :army_experience_test => {
+              :min_experience => <xsl:value-of select="ArmyExperienceTest/@min_experience" />,
+            },
+</xsl:if>
+<xsl:if test="ScoreTest">
+            :score_test => {
+              :min_population => <xsl:value-of select="ScoreTest/@min_population" />,
+            },
+</xsl:if>
+<xsl:if test="SettlementProductionTest">
+            :settlement_production_test => {
+              :min_resources => <xsl:value-of select="SettlementProductionTest/@min_resources" />,
+            },
+</xsl:if>
+<xsl:if test="BuildingSpeedTest">
+            :building_speed_test => {
+              :min_speed => <xsl:value-of select="BuildingSpeedTest/@min_speed" />,
+            },
+</xsl:if>
+</xsl:template>
+
+
+<xsl:template match="BuildingTest">
+  {
+  :building => '<xsl:value-of select="@building" />',
+  <xsl:if test="@min_level">
+    :min_level => <xsl:value-of select="@min_level" />,
+  </xsl:if>
+  <xsl:if test="@min_count">
+    :min_count => <xsl:value-of select="@min_count" />,
+  </xsl:if>
+  },
+</xsl:template>
+
+<xsl:template match="ResourceProductionTest">
+  {
+  :resource => '<xsl:value-of select="@resource" />',
+  :minimum  => <xsl:apply-templates/>,
+  },
+</xsl:template>
+
+<xsl:template match="SettlementTest">
+  {
+  :type => '<xsl:value-of select="@type" />',
+  :min_count => <xsl:value-of select="@min_count" />,
+  },
+</xsl:template>
+
+<xsl:template match="ArmyTest">
+  {
+  :type => '<xsl:value-of select="@type" />',
+  :min_count => <xsl:value-of select="@min_count" />,
+  },
+</xsl:template>
+
+<xsl:template match="ConstructionQueueTest">
+  {
+  :building => '<xsl:value-of select="@building" />',
+  :min_count => <xsl:value-of select="@min_count" />,
+  :min_level => <xsl:value-of select="@min_level" />,
+  },
+</xsl:template>
+
+<xsl:template match="TrainingQueueTest">
+            {
+              :unit => '<xsl:value-of select="@unit" />',
+              :min_count => <xsl:value-of select="@min_count" />,
+            },
+</xsl:template>
+
+
+
 
 
 <xsl:template match="QueueCategories">
