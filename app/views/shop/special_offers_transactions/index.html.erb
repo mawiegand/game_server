@@ -14,7 +14,7 @@
   <tr>
     <td><%= shop_special_offers_transaction.character_id %></td>
     <td><%= shop_special_offers_transaction.external_offer_id %></td>
-    <td><%= Shop::Transaction::STATES[shop_special_offers_transaction.state] %></td>
+    <td><%= Shop::Transaction::STATES[shop_special_offers_transaction.state] unless shop_special_offers_transaction.state.nil? %></td>
     <td><%= link_to 'Show', shop_special_offers_transaction %></td>
     <td><%= link_to 'Edit', edit_shop_special_offers_transaction_path(shop_special_offers_transaction) %></td>
     <td><%= link_to 'Destroy', shop_special_offers_transaction, confirm: 'Are you sure?', method: :delete %></td>
