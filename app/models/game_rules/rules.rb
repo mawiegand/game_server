@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.15
+# Version: 0.9.16
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -119,7 +119,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 15,
+                    :build => 16,
       },
       :app_control => {
         :debug_tracking       => 1,
@@ -6507,7 +6507,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :en_US => "Boulder Smashing",
   
-            :de_DE => "Steine klopfen",
+            :de_DE => "Steine klopfen!",
   
           },
           :flavour     => {
@@ -6519,7 +6519,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Vielleicht verlierst du die Wette, wie schnell deine Sammler steine kloppen können, aber am Ende bleibt für dich sowieso mehr übrig, als ihr Bier kosten wird.</p>",
+            :de_DE => "<p>Vielleicht verlierst Du die Wette, wie schnell Deine Sammler Steine kloppen können, aber am Ende bleibt für Dich sowieso mehr übrig, als ihr Bier kosten wird.</p>",
   
             :en_US => "<p>Maybe you will lose your bet, how fast your gatherers can smash those boulders, but in the end you will get more out of their fast work then their beer will cost you anyways. </p>",
   
@@ -6527,9 +6527,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :short_description => {
             
-            :de_DE => "<p>Mach deinen Sammlern Beine und lass sie ein paar Steine klopfen</p>",
+            :de_DE => "<p>Mach Deinen Sammlern Beine und lass sie ein paar Steine klopfen!</p>",
   
-            :en_US => "<p>Have your gatherers pick up the slack and smash a couple of boulders</p>",
+            :en_US => "<p>Have your gatherers pick up the slack and smash a couple of boulders!</p>",
   
           },
 
@@ -6551,16 +6551,16 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Boulder Smashing
-        {              #   Wood Cutting
+        {              #   Wood Cutting!
           :id          => 1,
           :symbolic_id => :assignment_wood,
           :level       => 2,
           :advisor     => "girl",
           :name        => {
             
-            :en_US => "Wood Cutting",
+            :en_US => "Wood Cutting!",
   
-            :de_DE => "Bäume fällen",
+            :de_DE => "Bäume fällen!",
   
           },
           :flavour     => {
@@ -6572,7 +6572,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der Wirt brauch eine neue Bank, also muss handangelegt werden. Da er nur halben Baum braucht wird sich niemand daran stören, wenn Du den Rest einstreichst.</p>",
+            :de_DE => "<p>Der Wirt braucht eine neue Bank, also muss Hand angelegt werden. Da er nur einen halben Baum braucht, wird sich niemand daran stören, wenn Du den Rest einstreichst.</p>",
   
             :en_US => "<p>The barkeeper needs a new bench. But seeing how he only needs half a tree noone is realy going to mind if you take the rest for yourself, will they?</p>",
   
@@ -6580,9 +6580,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :short_description => {
             
-            :de_DE => "<p>Hilf aus und sacke etwas Holz nebenbei ein</p>",
+            :de_DE => "<p>Hilf aus und sacke etwas Holz nebenbei ein!</p>",
   
-            :en_US => "<p>Help out and get some wood in the process</p>",
+            :en_US => "<p>Help out and get some wood in the process!</p>",
   
           },
 
@@ -6603,7 +6603,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
 
-        },              #   END OF Wood Cutting
+        },              #   END OF Wood Cutting!
       ],                # END OF ASSIGNMENT TYPES
 
 # ## SPECIAL ASSIGNMENT TYPES ##########################################################
