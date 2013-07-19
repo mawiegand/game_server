@@ -225,6 +225,7 @@ GameServer::Application.routes.draw do
           resources :kick_alliance_member_actions,           :only => [ :create ]
           resources :change_alliance_description_actions,    :only => [ :create ]
           resources :change_character_description_actions,   :only => [ :create ]
+          resources :send_alliance_application_actions,    :only => [ :create ]
           resources :change_avatar_actions,                  :only => [ :index, :create ]
           resources :change_character_notified_rank_actions, :only => [ :create ]    
           resources :change_character_name_actions,          :only => [ :create ]
