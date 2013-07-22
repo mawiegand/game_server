@@ -28,7 +28,7 @@ module CreditShop
       http_response = HTTParty.post(URL_BASE, :query => query)
       
       if http_response.code === 200
-        api_response = JSON.parse(http_response.parsed_response)
+        api_response = http_response.parsed_response
         if api_response['resultCode'] === 0
           return {
             response_code: Shop::Transaction::API_RESPONSE_OK,
@@ -77,7 +77,7 @@ module CreditShop
       http_response = HTTParty.post(URL_BASE, :query => query)
       
       if http_response.code === 200
-        api_response = JSON.parse(http_response.parsed_response)
+        api_response = http_response.parsed_response
         if api_response['resultCode'] === 0
           return {
             response_code: Shop::Transaction::API_RESPONSE_OK,
@@ -110,7 +110,7 @@ module CreditShop
       http_response = HTTParty.post(URL_BASE, :query => query)
       
       if http_response.code === 200
-        api_response = JSON.parse(http_response.parsed_response)
+        api_response = http_response.parsed_response
         if api_response['resultCode'] === 0
           return {
             response_code: Shop::Transaction::API_RESPONSE_OK,
@@ -209,7 +209,7 @@ module CreditShop
       http_response = HTTParty.post(URL_BASE, :query => query)
       
       if http_response.code === 200
-        api_response = JSON.parse(http_response.parsed_response)
+        api_response = http_response.parsed_response
         if api_response['resultCode'] === 0
           return {
             response_code: Shop::Transaction::API_RESPONSE_OK,
