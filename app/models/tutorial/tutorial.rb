@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.21
+# Version: 0.3.22
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 21, 
+        :build => 22, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 16,
   
       :quests => [  # ALL QUESTS
 
@@ -1002,7 +1002,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_building_option', ],
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_1storagelvl1
         {               #   quest_army_move
@@ -1488,7 +1488,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [129, ],
+          :successor_quests => [16, ],
 
           :rewards => {
             
@@ -1793,7 +1793,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_assignment1',
+            :quest => 'quest_build_cottagelvl1',
 
           },
 
@@ -2049,7 +2049,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_building_option', ],
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
           :message => {
             
@@ -12584,7 +12584,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_assignment1,
           :advisor           => :warrior,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -12632,13 +12632,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_tavern',
-
-          },
-
-          :successor_quests => [16, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -12660,7 +12654,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_tavern,
           :advisor           => :warrior,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -12708,13 +12702,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_cottagelvl1',
-
-          },
-
-          :successor_quests => [128, ],
+          :successor_quests => [],
 
           :rewards => {
             

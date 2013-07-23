@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="21" />
+    <Version major="0" minor="3" build="22" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -351,6 +351,7 @@
         <BuildingTest building="building_storage" min_level="1" />
       </RewardTests>
       <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
       <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
@@ -619,7 +620,7 @@
       <RewardText locale="en_US">This is a bigger project than the ones we had before and it takes some time to get done.</RewardText>
       <RewardFlavor locale="de_DE">Jetzt muss es nur noch fertig werden.</RewardFlavor>
       <RewardFlavor locale="en_US">Now it just has to be finished.</RewardFlavor>
-      <Requirement quest="quest_assignment1" />
+      <Requirement quest="quest_build_cottagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">165</ResourceReward>
         <ResourceReward resource="resource_wood">150</ResourceReward>
@@ -700,6 +701,7 @@
         <BuildingTest building="building_campfire" min_level="1" />
       </RewardTests>
       <UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_free_construction_slot</UIMarker>
       <UIMarker>mark_building_option</UIMarker>
       <Message>
         <Subject>Alliances</Subject>
@@ -4964,7 +4966,7 @@
      -->
     <!-- 503 -->
     
-    <Quest id="quest_assignment1" advisor="warrior" tutorial="true">
+    <Quest id="quest_assignment1" advisor="warrior" tutorial="false">
       <Name>First Assignment</Name>
       <Name locale="de_DE">Der erste Auftrag</Name>
       <Task>Start your first Assignment</Task>
@@ -4981,7 +4983,6 @@
       <RewardText locale="en_US">The bigger the tavern becomes the more jobs you can do. Check it out regularly to see what's new.'</RewardText>
       <RewardFlavor locale="de_DE">Nach einem Auftrag gibt es doch nichts besseres als ein kühles Bier.</RewardFlavor>
       <RewardFlavor locale="en_US">After we finish that assignment, let's go back to the tavern for a drink.</RewardFlavor>
-      <Requirement quest="quest_build_tavern" />
       <Rewards>
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
@@ -4993,7 +4994,7 @@
     
     <!-- 504 -->
     
-    <Quest id="quest_build_tavern" advisor="warrior" tutorial="true">
+    <Quest id="quest_build_tavern" advisor="warrior" tutorial="false">
       <Name>The Tavern</Name>
       <Name locale="de_DE">Die Taverne</Name>
       <Task>Build the tavern</Task>
@@ -5010,7 +5011,6 @@
       <RewardText locale="en_US">There are many people looking for favors in the tavern. Maybe you can get something out of that.</RewardText>
       <RewardFlavor locale="de_DE">Netter Laden, man hat mir sogar schon einen Job angeboten.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice place, already earned a coupple of stones aswell.</RewardFlavor>
-      <Requirement quest="quest_build_cottagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">125</ResourceReward>
         <ResourceReward resource="resource_wood">125</ResourceReward>
