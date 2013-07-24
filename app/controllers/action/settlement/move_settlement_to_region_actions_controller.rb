@@ -4,7 +4,9 @@ class Action::Settlement::MoveSettlementToRegionActionsController < ApplicationC
 
   def create
 
-  	raise BadRequestError.new('no current character') if current_character.nil?
+    raise ForbiddenError.new('currently disabled')
+
+    raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequest.new('missing parameter(s)') if params[:move_settlement_action].nil? || params[:move_settlement_action][:region_name].blank?
   	raise BadRequestError.new('already moved') unless current_character.moved_at.nil?
     
