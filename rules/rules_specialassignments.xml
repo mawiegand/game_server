@@ -2,128 +2,165 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <SpecialAssignmentTypes>
-  <!-- SpecialAssignmentType id="special_assignment_tester0" advisor="chief" level="1" probability_factor="1">
-    <Name>Special Assignment Test 0</Name>
-    <Name lang="de_DE">Special Assignment Test 0</Name>
-
-    <Flavour lang="de_DE">Diese Expedition wird uns Ruhm und Ehre bringen!</Flavour>
-    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
-
+  <SpecialAssignmentType id="special_assignment_protection1" advisor="girl" level="3" probability_factor="4">
+    <Name>Gathererprotection</Name>
+    <Name lang="de_DE">Sammlerschutz</Name>
+    
+    <Flavour lang="de_DE">Schlaue Mädchen.</Flavour>
+    <Flavour lang="en_US">Clever girls.</Flavour>
+  
     <ShortDescription lang="de_DE">
-      <p>Unternimm eine Expedition</p>
+      <p>Schütze deine Sammler</p>
     </ShortDescription>
     <ShortDescription lang="en_US">
-      <p>Undertake an expedition</p>
+      <p>Protect your gatherers</p>
     </ShortDescription>
-
+    
     <Description lang="de_DE">
-      <p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+      <p>Deine Sammler werden in letzter Zeit von einem Rudel wilder Velociraptoren heimgesucht. Jetzt verlangen Deine Sammler Schutz, andernfalls können sie nicht garantieren weiterhin effektiv arbeiten zu können.</p>
     </Description>
     <Description lang="en_US">
-      <p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>
+      <p>Your gatherers are beeing stalked by a group of fierce velociraptors. They demand your protection, otherwise they wont be able to work at full capacity.</p>
     </Description>
-
+    
     <AssignmentTests>
-      <ScoreTest min_population="6400" />
+      <BuildingTest building="building_gatherer" min_level="4" min_count="5" />
     </AssignmentTests>
-
-    <Cost id="resource_stone">3*PRODUCTION</Cost>
-    <Cost id="resource_wood">3*PRODUCTION</Cost>
-    <Cost id="resource_fur">3*PRODUCTION</Cost>
-
-    < ! - - UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit - - >
-
+    
+    <UnitDeposit id="clubbers">0.005*PRODUCTION</UnitDeposit>
+    
     <SpecialAssignmentRewards>
-      <SpecialAssignmentResourceReward resource="resource_stone">6*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_wood">6*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_fur">6*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_stone">0.25*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_wood">0.25*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_fur">0.25*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentExperienceReward>50</SpecialAssignmentExperienceReward>
+    </SpecialAssignmentRewards>
+    
+    <Duration>14400</Duration>
+    <DisplayDuration>18000</DisplayDuration>
+    
+  </SpecialAssignmentType>
+  
+  <SpecialAssignmentType id="special_assignment_bigGame" advisor="warrior" level="4" probability_factor="3">
+    <Name>The Big Game</Name>
+    <Name lang="de_DE">Das große Spiel</Name>
+    
+    <Flavour lang="de_DE">Ich persönlich bevorzuge ja klassisches Ballet.</Flavour>
+    <Flavour lang="en_US">Personally I prefer classic ballet.</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Das Große Spiel steht bevor.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>The big game is tonight.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Das Große Spiel steht bevor! Die Fans Deiner Manschaft sammeln sich schon in der Taverne und trinken sich auf Deine Kosten Mut an, um den gegnerischen Fans eine ordentliche Abreibung zu verpassen. Sollten sie auch, immerhin hast Du eine ordentliche Summe gewettet.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Tonight's the big game! The fans are already gathered, getting some liquid courage before showing the oppositions supporters who's boss. They cant loose with this much drunken power behind them. Atleast they better dont, afterall you bet quite the sum on this game.</p>
+    </Description>
+    
+    <AssignmentTests>
+      <BuildingTest building="building_barracks" min_level="5" />
+    </AssignmentTests>
+    
+    <Cost id="resource_stone">0.5*PRODUCTION</Cost>
+    <Cost id="resource_wood">0.5*PRODUCTION</Cost>
+    <Cost id="resource_fur">0.5*PRODUCTION</Cost>
+    
+    <UnitDeposit id="clubbers">100</UnitDeposit>
+    
+    <SpecialAssignmentRewards>
+      <SpecialAssignmentResourceReward resource="resource_stone">1*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_wood">1*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_fur">1*PRODUCTION</SpecialAssignmentResourceReward>
+    </SpecialAssignmentRewards>
+    
+    <Duration>25200</Duration>
+    
+    <DisplayDuration>14400</DisplayDuration>
+    
+  </SpecialAssignmentType>
+  
+  <SpecialAssignmentType id="special_assignment_hobbits" advisor="chief" level="9" probability_factor="1">
+    <Name></Name>
+    <Name lang="de_DE"></Name>
+    
+    <Flavour lang="de_DE">Lustige kleine Kerle diese Jungs.</Flavour>
+    <Flavour lang="en_US">Funny little guys, kinda hairy around the feet tho.</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Hilf den kleinen Häuptlingen bei ihrer Reise.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Help the little chiefs on their journey.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Während Du in der Taverne sitzt bemerkst Du vier kleine Häuptlinge. Sie singen und tanzen und sind das das Zentrum der Gesellschaft. Bei soviel Trubel bist Du sogar der Meinung, dass sich einer von ihnen kurz in Luft auflöst. Du schiebst es auf Deinen Gerstensaftkonsum und bist sehr verwundert, als Dich die vier kleinen Häuptlinge als Führer durch die Wildniss anwerben wollen.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>While you sit in the tavern and have a sip of ale you spot four little chiefs entering. They seem to be quite cheery fellows as they are soon the center of the crowd, leading them in song.You could swear one of them even disapears into thin air, but to be honest you have been drinking heavily. Later that evening you are aproached by them. They ask you to lead them to their next Destination.</p>
+    </Description>
+    
+    <AssignmentTests>
+      <TrainingQueueTest unit="unit_little_chief" min_count="1" />
+    </AssignmentTests>
+      
+    <SpecialAssignmentRewards>
+      <SpecialAssignmentResourceReward resource="resource_stone">0.1*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_wood">0.1*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_fur">0.1*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentExperienceReward>0.05*PRODUCTION</SpecialAssignmentExperienceReward>
+    </SpecialAssignmentRewards>
+    
+    <Duration>10800</Duration>
+    
+    <DisplayDuration>3600</DisplayDuration>
+    
+  </SpecialAssignmentType>
+  
+  <SpecialAssignmentType id="special_assignment_migration" advisor="warrior" level="5" probability_factor="1">
+    <Name>Migration</Name>
+    <Name lang="de_DE">Völkerwanderung</Name>
+    
+    <Flavour lang="de_DE">Diese wilde Krieger sollten wir besser auf unserer Seite wissen.</Flavour>
+    <Flavour lang="en_US">Those people are fierce warriors. Just right for the meatgrinder.</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Hilf den Wanderern eine neue Heimat zu finden.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Help the migrating people to find a new home.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Von den Mauern Deiner Festung erblicken Deine Späher eine Gruppe von wilden Menschen. Es scheint sich nicht um einen Schlachtzug  ssondern einer Gruppe von Auswanderen zu handeln. Du könntest sie mit ein paar Rohstoffen unterstützen, vielleicht überzeugst Du damit ein paar dazu hier zu bleiben und zukünftig für Dich zu kämpfen.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>The lookouts in your fortress spot a huge group of people marching through your lands. But rather than an army they apear to be a band of wanderers, looking for greener pastures. Maybe you can support them with a few ressources. You may convince a few of them to stay here that way.</p>
+    </Description>
+    
+    <AssignmentTests>
+      <SettlementTest type="settlement_fortress" min_count="1" />
+    </AssignmentTests>
+    
+    <Cost id="resource_stone">0.5*PRODUCTION</Cost>
+    <Cost id="resource_wood">0.4*PRODUCTION</Cost>
+    <Cost id="resource_fur">0.625*PRODUCTION</Cost>
+    
+    <SpecialAssignmentRewards>
       <SpecialAssignmentUnitReward unit="unit_clubbers">0.01*PRODUCTION</SpecialAssignmentUnitReward>
-      <SpecialAssignmentExperienceReward>1</SpecialAssignmentExperienceReward>
+      <SpecialAssignmentUnitReward unit="unit_throwers">0.0075*PRODUCTION</SpecialAssignmentUnitReward>
+      <SpecialAssignmentExperienceReward>0.001*PRODUCTION</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
-
-    <Duration>60</Duration>
-
-    <DisplayDuration>360</DisplayDuration>
-
+    
+    <Duration>9000</Duration>
+    
+    <DisplayDuration>18000</DisplayDuration>
+    
   </SpecialAssignmentType>
-  <SpecialAssignmentType id="special_assignment_tester1" advisor="chief" level="2" probability_factor="1">
-    <Name>Special Assignment Test 1</Name>
-    <Name lang="de_DE">Special Assignment Test 1</Name>
-
-    <Flavour lang="de_DE">Diese Expedition wird uns Ruhm und Ehre bringen!</Flavour>
-    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
-
-    <ShortDescription lang="de_DE">
-      <p>Unternimm eine Expedition</p>
-    </ShortDescription>
-    <ShortDescription lang="en_US">
-      <p>Undertake an expedition</p>
-    </ShortDescription>
-
-    <Description lang="de_DE">
-      <p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
-    </Description>
-    <Description lang="en_US">
-      <p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>
-    </Description>
-
-    <Cost id="resource_stone">1*PRODUCTION</Cost>
-    <Cost id="resource_wood">1*PRODUCTION</Cost>
-    <Cost id="resource_fur">1*PRODUCTION</Cost>
-
-    < ! - - UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit - - >
-
-    <SpecialAssignmentRewards>
-      <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_wood">3*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_fur">3*PRODUCTION</SpecialAssignmentResourceReward>
-      < ! - - SpecialAssignmentUnitReward unit="unit_clubbers">3*PRODUCTION</SpecialAssignmentUnitReward - - >
-      <SpecialAssignmentExperienceReward>PRODUCTION/1000</SpecialAssignmentExperienceReward>
-    </SpecialAssignmentRewards>
-
-    <Duration>60</Duration>
-
-    <DisplayDuration>720</DisplayDuration>
-
-  </SpecialAssignmentType>
-  <SpecialAssignmentType id="special_assignment_tester2" advisor="chief" level="7" probability_factor="4">
-    <Name>Special Assignment Test 2</Name>
-    <Name lang="de_DE">Special Assignment Test 2</Name>
-
-    <Flavour lang="de_DE">Diese Expedition wird uns Ruhm und Ehre bringen!</Flavour>
-    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
-
-    <ShortDescription lang="de_DE">
-      <p>Unternimm eine Expedition</p>
-    </ShortDescription>
-    <ShortDescription lang="en_US">
-      <p>Undertake an expedition</p>
-    </ShortDescription>
-
-    <Description lang="de_DE">
-      <p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
-    </Description>
-    <Description lang="en_US">
-      <p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>
-    </Description>
-
-    <Cost id="resource_stone">3*PRODUCTION</Cost>
-    <Cost id="resource_wood">3*PRODUCTION</Cost>
-    <Cost id="resource_fur">3*PRODUCTION</Cost>
-
-    <UnitDeposit id="clubbers">PRODUCTION/1000</UnitDeposit>
-
-    <SpecialAssignmentRewards>
-      <SpecialAssignmentResourceReward resource="resource_stone">3*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_wood">3*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentResourceReward resource="resource_fur">3*PRODUCTION</SpecialAssignmentResourceReward>
-      <SpecialAssignmentUnitReward unit="unit_clubbers">1</SpecialAssignmentUnitReward>
-      <SpecialAssignmentExperienceReward>1</SpecialAssignmentExperienceReward>
-    </SpecialAssignmentRewards>
-
-    <Duration>60</Duration>
-
-    <DisplayDuration>360</DisplayDuration>
-
-  </SpecialAssignmentType -->
+    
 </SpecialAssignmentTypes>

@@ -172,6 +172,19 @@ class Map::Location < ActiveRecord::Base
     end
   end
   
+  def place_settlement(settlement)
+    self.region_id = settlement.region_id
+    self.settlement_type_id = settlement.type_id
+    self.settlement_level = settlement.level
+    self.owner_id = settlement.owner_id
+    self.owner_name = Fundamental::Character.find(settlement.owner_id).name
+    self.alliance_id = settlement.alliance_id
+    self.alliance_tag = settlement.alliance_tag
+    self.visible = true
+    self.settlement_score = settlement.score
+    self.save
+  end
+  
   def remove_settlement
     self.settlement_type_id = Settlement::Settlement::TYPE_NONE
     self.settlement_level = nil

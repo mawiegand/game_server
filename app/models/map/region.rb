@@ -18,6 +18,8 @@ class Map::Region < ActiveRecord::Base
   
   before_create :add_unique_invitation_code
   
+  before_save   :prevent_empty_moving_password
+ 
   after_create  :propagate_regions_count_to_round_info
   after_destroy :propagate_regions_count_to_round_info
   
@@ -34,6 +36,27 @@ class Map::Region < ActiveRecord::Base
   
   def settleable_by?(character)
     return non_fortress_locations_owned_by(character).count == 0
+  end
+  
+  def owned_by_alliance?(alliance)
+    self.alliance == alliance and !self.alliance.nil?
+  end
+  
+  def check_moving_password?(moving_password)
+    self.moving_password == moving_password
+  end
+  
+  def is_moving_allowed?(alliance, moving_password)
+    check_moving_password?(moving_password) or self.owned_by_alliance?(alliance)
+  end
+  
+	def last_takeover_at
+		self.fortress.last_takeover_at
+	end
+
+  def find_empty_location
+    free_locations = self.locations.empty.count
+    self.locations.empty.offset(Random.rand(free_locations)).first
   end
 
   # sets the owner_id and alliance_id to the new values. If theses
@@ -54,6 +77,13 @@ class Map::Region < ActiveRecord::Base
       self.invitation_code = Util.make_random_string(16, true)
     end while !Map::Region.find_by_invitation_code(self.invitation_code).nil?
   end
+  
+  def self.find_by_id_or_name(region_identifier)
+    region = Map::Region.find_by_id(region_identifier) if Map::Region.valid_id?(region_identifier)
+    region = Map::Region.find_by_name(region_identifier) if region.nil?
+    
+    region
+  end
 
   def check_and_repair_name
     if self.fortress.name != self.name
@@ -61,7 +91,7 @@ class Map::Region < ActiveRecord::Base
       self.name = self.fortress.name
     end
   end
-
+  
   def check_consistency
     check_and_repair_name
 
@@ -76,10 +106,20 @@ class Map::Region < ActiveRecord::Base
   end
 
   private
+    def self.valid_id?(id)
+      id.index(/^[1-9]\d*$/) != nil
+    end
   
     def propagate_regions_count_to_round_info
       info = Fundamental::RoundInfo.the_round_info
       info.regions_count = Map::Region.count
       info.save
     end  
+    
+    def prevent_empty_moving_password
+      if self.moving_password.nil?
+        self.moving_password = Util.make_random_string(6)
+      end
+      true
+    end
 end

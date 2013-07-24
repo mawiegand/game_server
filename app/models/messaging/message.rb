@@ -34,6 +34,7 @@ class Messaging::Message < ActiveRecord::Base
   MESSAGE_TYPE_ARTIFACT_JUMPED    = 15
   MESSAGE_TYPE_ARTIFACT_STOLEN    = 16
   INDIVIDUAL_ANNOUNCEMENT_TYPE_ID = 17
+	ALLIANCE_APPLICATION_ID         = 18
 
   scope :system, where(type_id: ANNOUNCEMENT_TYPE_ID)
 
@@ -418,6 +419,19 @@ class Messaging::Message < ActiveRecord::Base
       send_at:   DateTime.now,
       reported:  false,
       flag:      0,
+    })
+  end
+  
+  def self.generate_alliance_application_message(character, alliance)
+    Messaging::Message.create({
+			sender:       character,
+      recipient_id: alliance.leader_id,
+      type_id:      ALLIANCE_APPLICATION_ID,
+      subject:      I18n.translate('application.messaging.alliance_application_message.subject'),
+      body:         I18n.translate('application.messaging.alliance_application_message.body1') + character.name + I18n.translate('application.messaging.alliance_application_message.body2'),
+      send_at:      DateTime.now,
+      reported:     false,
+      flag:         0,
     })
   end
 end

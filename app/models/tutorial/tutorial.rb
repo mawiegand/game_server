@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.22
+# Version: 0.3.23
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 22, 
+        :build => 23, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 16,
   
       :quests => [  # ALL QUESTS
 
@@ -898,8 +898,6 @@ class Tutorial::Tutorial
 
           :uimarker => ['mark_map', ],
 
-          :place_npcs => 1,         
-
         },              #   END OF quest_settlement_button1
         {               #   quest_build_1storagelvl1
           :id                => 8,
@@ -1004,7 +1002,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_building_option', ],
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_1storagelvl1
         {               #   quest_army_move
@@ -1103,6 +1101,8 @@ class Tutorial::Tutorial
 
           :uimarker => ['mark_map', 'mark_select_own_army', 'mark_move_own_army', ],
 
+          :place_npcs => 3,         
+
           :message => {
             
             :en => {
@@ -1141,7 +1141,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_2gathererlvl3,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -1540,7 +1540,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_improve_production_1,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -2049,7 +2049,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_building_option', ],
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
           :message => {
             
@@ -12515,37 +12515,37 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Fight for the first time and defeat at least two units!",
+            :en_US => "Fight for the first time!",
   
-            :de_DE => "Kämpfe Deinen ersten Kampf und besiege mindestens zwei Einheiten!",
+            :de_DE => "Kämpfe Deinen ersten Kampf!",
                 
           },
           :flavour => {
             
             :de_DE => "Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!",
   
-            :en_US => "An army can do more than just stand around. It's there to destroy the enemies of the tribe! Of course, an attack shouldn't precipitous. Caution is advisable; only a strong enough army should set off for an enemy fortress. ",
+            :en_US => "Those neanderthals sure are cruising for a bruising. ",
                 
           },
           :description => {
             
-            :de_DE => "<p>1. Wähle Deine Armee aus, klicke 'Angriff'.</p><p>2. Wähle als Ziel die mit dem grünen Pfeil gekennzeichneten Neandertaler aus, und bestätige in der folgenden Kampfvorschau mit 'Attacke'.</p>",
+            :de_DE => "<p>Während deine Armee unterwegs ist haben sich die hinterhältigen Neandertaler vor Deiner Siedlung versammelt. Dem muss Einhalt geboten werden. Führe Deine Garnison aus deiner Siedlung heraus in die Schlacht und zerschmettere sie. Wähle hierzu zunächst Deine Siedlung aus. Drücke jetzt den Angriffsknopf und wähle dann die Neandertaler aus um den Angriff zu starten.</p>",
   
-            :en_US => "<p>When you're ready, select your army, click on 'move' and then on the destination. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players may only be made if the other player agrees or if you have enough fighting strength. </p>",
+            :en_US => "<p>A bunch of ferocious neanderthals has gathered outside your settlement while your army is out in the field. We have to stop them. Lead our garrison out to battle and smash them to bits! To do so, first select your settlement. Then press the attack button and select the neandertals to beginn the attack.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Nennst Du das wirklich einen Kampf? Immerhin hast Du ein paar Gegner erschlagen.",
+            :de_DE => "Der Kampf wird noch eine Weile toben aber wir werden mit sicherheit Siegen! Vielleicht kehrt unsere Armee auch zurück und kommt uns zur Unterstützung.",
   
-            :en_US => "Hm. The army is on its way? Are you sure you have enough units? OK, I believe you – here are some raw materials as reinforcement for you.",
+            :en_US => "The battle is gona keep going for a while but we will surely win! Especially if the army returns and supports us.",
                 
           },
           :reward_text => {
             
-            :de_DE => "In Wack-A-Doo können an einem Kampf beliebig viele Armeen von beliebig vielen Spielern teilnehmen!",
+            :de_DE => "Auf die Selbe Art greifst du auch mit Armeen an. Armeen, die auf der Seite von Siedlungen oder Festungen kämpfen erhalten einen Kampfbonus. Während ein Kampf läuft können beliebig viele Armeen auf beiden Seiten dazukommen.",
   
-            :en_US => "Under your army you'll see the available action points. Every movement and every attack costs you an action point. Over time, the army recovers its action points again. ",
+            :en_US => "You attack the same way with armies. Armies fighting on the same side as settlements or fortresses get a boost. While a battle is going on armies can join it on either side. ",
                 
           },
 
@@ -12579,6 +12579,176 @@ class Tutorial::Tutorial
           :uimarker => ['mark_map', 'mark_select_own_army', 'mark_select_other_army', 'mark_attack_button', ],
 
         },              #   END OF quest_npc_battle
+        {               #   quest_assignment1
+          :id                => 128,
+          :symbolic_id       => :quest_assignment1,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "First Assignment",
+  
+            :de_DE => "Der erste Auftrag",
+                
+          },
+          :task => {
+            
+            :en_US => "Start your first Assignment",
+  
+            :de_DE => "Beginne deinen ersten Auftrag",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Krempel die ärmel hoch, wir haben Arbeit zu verrichten.",
+  
+            :en_US => "Pull up those sleeves, looks like we got work to do.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Taverne gibt es jede Menge Leute, die Aufträge zu vergeben haben. Betritt sie und beginne einen.</p>",
+  
+            :en_US => "<p>The tavern is full of people giving out assignments. Go there and start doing one.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Nach einem Auftrag gibt es doch nichts besseres als ein kühles Bier.",
+  
+            :en_US => "After we finish that assignment, let's go back to the tavern for a drink.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Desto größer die Taverne wird, desto mehr Aufträge werden verfügbar. Schau regelmäßig rein um zu sehen, was es zu tun gibt.",
+  
+            :en_US => "The bigger the tavern becomes the more jobs you can do. Check it out regularly to see what's new.'",
+                
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :experience_reward => 250,
+
+          },          
+
+          :reward_tests => {
+            
+            :standard_assignment_test => {},
+
+          },          
+
+          :uimarker => ['mark_first_standard_assignment', ],
+
+        },              #   END OF quest_assignment1
+        {               #   quest_build_tavern
+          :id                => 129,
+          :symbolic_id       => :quest_build_tavern,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "The Tavern",
+  
+            :de_DE => "Die Taverne",
+                
+          },
+          :task => {
+            
+            :en_US => "Build the tavern",
+  
+            :de_DE => "Baue die Taverne",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Ein Ort zum trinken? Ganz mein Geschmack",
+  
+            :en_US => "Finally a place where i can have a pint in peace.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Jetzt wo deine Siedlung wächst und gedeiht brauchen deine Bewohner einen Ort an dem Sie ihre Zeit totschlagen können, wenn sie nicht gerade Arbeiten. Eine Taverne wäre da doch genau das Richtige.</p>",
+  
+            :en_US => "<p>Now that our settlement has grown considerably people are wanting for a place to relax. I suppose a tavern of some sort would do the trick, after all who can refuse a cold beer?</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Netter Laden, man hat mir sogar schon einen Job angeboten.",
+  
+            :en_US => "Nice place, already earned a coupple of stones aswell.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Taverne werden viele Aufträge vergeben. Schau doch einfach ab und zu rein.",
+  
+            :en_US => "There are many people looking for favors in the tavern. Maybe you can get something out of that.",
+                
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 125,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 125,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 125,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_tavern',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
+
+        },              #   END OF quest_build_tavern
       ],                # END OF QUESTS
 
     )

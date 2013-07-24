@@ -35,7 +35,7 @@ class Map::RegionsController < ApplicationController
   # GET /map/regions/1
   # GET /map/regions/1.json
   def show
-    @map_region = Map::Region.find(params[:id])
+    @map_region = Map::Region.find_by_id_or_name(params[:id])
     
     respond_to do |format|
       format.html # show.html.erb

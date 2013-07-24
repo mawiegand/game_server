@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.17
+# Version: 0.9.18
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -119,7 +119,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 17,
+                    :build => 18,
       },
       :app_control => {
         :debug_tracking       => 1,
@@ -168,7 +168,7 @@ class GameRules::Rules
       :alliance_max_members => 13,
       :special_assignments  => {
         :idle_probability => 0.2,
-        :idle_time => 30,
+        :idle_time => 3600,
       },
       :artifact_count => 5,
   
@@ -6610,6 +6610,351 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
       :special_assignment_types => [  # ALL SPECIAL ASSIGMENT TYPES
 
+        {              #   Gathererprotection
+          :id          => 0,
+          :symbolic_id => :special_assignment_protection1,
+          :level       => 3,
+          :advisor     => "girl",
+          :probability_factor => 4,
+          :name        => {
+            
+            :en_US => "Gathererprotection",
+  
+            :de_DE => "Sammlerschutz",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Schlaue Mädchen.",
+  
+            :en_US => "Clever girls.",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Deine Sammler werden in letzter Zeit von einem Rudel wilder Velociraptoren heimgesucht. Jetzt verlangen Deine Sammler Schutz, andernfalls können sie nicht garantieren weiterhin effektiv arbeiten zu können.</p>",
+  
+            :en_US => "<p>Your gatherers are beeing stalked by a group of fierce velociraptors. They demand your protection, otherwise they wont be able to work at full capacity.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Schütze deine Sammler</p>",
+  
+            :en_US => "<p>Protect your gatherers</p>",
+  
+          },
+
+          :assignment_tests => {
+            
+            :building_tests => [
+              
+  {
+  :building => 'building_gatherer',
+  
+    :min_level => 4,
+  
+    :min_count => 5,
+  
+  },
+
+            ],
+
+          },
+
+          :unit_deposits => {
+            0 => '0.005*PRODUCTION',
+            
+          },
+
+          :duration => 14400,
+          :display_duration => 18000,
+
+
+          :rewards => {
+
+            :resource_rewards => [
+              
+              {
+                :resource => :resource_stone,
+                :amount => '0.25*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => '0.25*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => '0.25*PRODUCTION',
+              },
+
+            ],
+
+            :experience_reward => '50',
+
+          },
+
+
+        },              #   END OF Gathererprotection
+        {              #   The Big Game
+          :id          => 1,
+          :symbolic_id => :special_assignment_bigGame,
+          :level       => 4,
+          :advisor     => "warrior",
+          :probability_factor => 3,
+          :name        => {
+            
+            :en_US => "The Big Game",
+  
+            :de_DE => "Das große Spiel",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Ich persönlich bevorzuge ja klassisches Ballet.",
+  
+            :en_US => "Personally I prefer classic ballet.",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Das Große Spiel steht bevor! Die Fans Deiner Manschaft sammeln sich schon in der Taverne und trinken sich auf Deine Kosten Mut an, um den gegnerischen Fans eine ordentliche Abreibung zu verpassen. Sollten sie auch, immerhin hast Du eine ordentliche Summe gewettet.</p>",
+  
+            :en_US => "<p>Tonight's the big game! The fans are already gathered, getting some liquid courage before showing the oppositions supporters who's boss. They cant loose with this much drunken power behind them. Atleast they better dont, afterall you bet quite the sum on this game.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Das Große Spiel steht bevor.</p>",
+  
+            :en_US => "<p>The big game is tonight.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '0.5*PRODUCTION',
+            1 => '0.5*PRODUCTION',
+            2 => '0.5*PRODUCTION',
+            
+          },
+
+          :assignment_tests => {
+            
+            :building_tests => [
+              
+  {
+  :building => 'building_barracks',
+  
+    :min_level => 5,
+  
+    :min_count => 1,
+  
+  },
+
+            ],
+
+          },
+
+          :unit_deposits => {
+            0 => '100',
+            
+          },
+
+          :duration => 25200,
+          :display_duration => 14400,
+
+
+          :rewards => {
+
+            :resource_rewards => [
+              
+              {
+                :resource => :resource_stone,
+                :amount => '1*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => '1*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => '1*PRODUCTION',
+              },
+
+            ],
+
+          },
+
+
+        },              #   END OF The Big Game
+        {              #   
+          :id          => 2,
+          :symbolic_id => :special_assignment_hobbits,
+          :level       => 9,
+          :advisor     => "chief",
+          :probability_factor => 1,
+          :name        => {
+            
+            :en_US => "",
+  
+            :de_DE => "",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Lustige kleine Kerle diese Jungs.",
+  
+            :en_US => "Funny little guys, kinda hairy around the feet tho.",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Während Du in der Taverne sitzt bemerkst Du vier kleine Häuptlinge. Sie singen und tanzen und sind das das Zentrum der Gesellschaft. Bei soviel Trubel bist Du sogar der Meinung, dass sich einer von ihnen kurz in Luft auflöst. Du schiebst es auf Deinen Gerstensaftkonsum und bist sehr verwundert, als Dich die vier kleinen Häuptlinge als Führer durch die Wildniss anwerben wollen.</p>",
+  
+            :en_US => "<p>While you sit in the tavern and have a sip of ale you spot four little chiefs entering. They seem to be quite cheery fellows as they are soon the center of the crowd, leading them in song.You could swear one of them even disapears into thin air, but to be honest you have been drinking heavily. Later that evening you are aproached by them. They ask you to lead them to their next Destination.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Hilf den kleinen Häuptlingen bei ihrer Reise.</p>",
+  
+            :en_US => "<p>Help the little chiefs on their journey.</p>",
+  
+          },
+
+          :assignment_tests => {
+            
+            :training_queue_tests => [
+              
+            {
+              :unit => 'unit_little_chief',
+              :min_count => 1,
+            },
+
+            ],
+
+          },
+
+          :duration => 10800,
+          :display_duration => 3600,
+
+
+          :rewards => {
+
+            :resource_rewards => [
+              
+              {
+                :resource => :resource_stone,
+                :amount => '0.1*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => '0.1*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => '0.1*PRODUCTION',
+              },
+
+            ],
+
+            :experience_reward => '0.05*PRODUCTION',
+
+          },
+
+
+        },              #   END OF 
+        {              #   Migration
+          :id          => 3,
+          :symbolic_id => :special_assignment_migration,
+          :level       => 5,
+          :advisor     => "warrior",
+          :probability_factor => 1,
+          :name        => {
+            
+            :en_US => "Migration",
+  
+            :de_DE => "Völkerwanderung",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Diese wilde Krieger sollten wir besser auf unserer Seite wissen.",
+  
+            :en_US => "Those people are fierce warriors. Just right for the meatgrinder.",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Von den Mauern Deiner Festung erblicken Deine Späher eine Gruppe von wilden Menschen. Es scheint sich nicht um einen Schlachtzug  ssondern einer Gruppe von Auswanderen zu handeln. Du könntest sie mit ein paar Rohstoffen unterstützen, vielleicht überzeugst Du damit ein paar dazu hier zu bleiben und zukünftig für Dich zu kämpfen.</p>",
+  
+            :en_US => "<p>The lookouts in your fortress spot a huge group of people marching through your lands. But rather than an army they apear to be a band of wanderers, looking for greener pastures. Maybe you can support them with a few ressources. You may convince a few of them to stay here that way.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Hilf den Wanderern eine neue Heimat zu finden.</p>",
+  
+            :en_US => "<p>Help the migrating people to find a new home.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '0.5*PRODUCTION',
+            1 => '0.4*PRODUCTION',
+            2 => '0.625*PRODUCTION',
+            
+          },
+
+          :assignment_tests => {
+            
+            :settlement_tests => [
+              
+  {
+  :type => 'settlement_fortress',
+  :min_count => 1,
+  },
+
+            ],
+
+          },
+
+          :duration => 9000,
+          :display_duration => 18000,
+
+
+          :rewards => {
+
+            :unit_rewards => [
+              
+              {
+                :unit => :unit_clubbers,
+                :amount => '0.01*PRODUCTION',
+              },
+
+              {
+                :unit => :unit_throwers,
+                :amount => '0.0075*PRODUCTION',
+              },
+
+            ],
+
+            :experience_reward => '0.001*PRODUCTION',
+
+          },
+
+
+        },              #   END OF Migration
       ],                # END OF SPECIAL ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################

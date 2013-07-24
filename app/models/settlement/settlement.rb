@@ -90,7 +90,11 @@ class Settlement::Settlement < ActiveRecord::Base
   def fortress?
     self.type_id == TYPE_FORTRESS
   end
-
+  
+  def home_base?
+    self.type_id == TYPE_HOME_BASE
+  end
+  
   def self.create_settlement_at_location(location, type_id, owner)
     raise BadRequestError.new('Tried to create a settlement at a non-empty location.') unless location.settlement.nil?
     
@@ -208,6 +212,19 @@ class Settlement::Settlement < ActiveRecord::Base
     self
   end
 
+  def move_settlement_to_region(new_region)
+    return false if !self.home_base?
+    location = new_region.find_empty_location
+    self.location_id = location.id
+    self.region_id = new_region.id
+    self.node_id = new_region.node_id
+    self.garrison_army.location_id = self.location_id
+    self.garrison_army.region_id = self.region_id
+    self.garrison_army.save
+    self.save
+    location.place_settlement(self)
+  end
+
   ############################################################################
   #
   #  OWNERSHIP 
@@ -257,7 +274,9 @@ class Settlement::Settlement < ActiveRecord::Base
 
     self.garrison_army.destroy        unless self.garrison_army.nil?
     self.armies.destroy_all           unless self.armies.nil?         # destroy (vs delete), because should run through callbacks
-
+    
+    self.region.moving_password = Util.make_random_string(6)if self.fortress?
+    
     self.owner        = character
     self.alliance_id  = character.alliance_id
     self.alliance_tag = character.alliance_tag
@@ -379,6 +398,10 @@ class Settlement::Settlement < ActiveRecord::Base
     
   def command_points_available?
     !self.command_points.nil? && self.command_points > (self.armies_count-1)  # don't count garrison army 
+  end
+  
+  def fighting?
+    return self.garrison_army.fighting?
   end
   
   ############################################################################
