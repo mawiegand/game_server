@@ -118,7 +118,7 @@
     <Duration>2700</Duration>
   </AssignmentType>
   
-  <AssignmentType id="assignment_raid" advisor="warrior" level="5">
+  <!--AssignmentType id="assignment_raid" advisor="warrior" level="5">
     <Name>Drive out the Neanderthals</Name>
     <Name lang="de_DE">Neandertaler vertreiben</Name>
     
@@ -254,5 +254,5 @@
     </Rewards>
     
     <Duration>604800</Duration>
-  </AssignmentType>
+  </AssignmentType-->
 </AssignmentTypes>

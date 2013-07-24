@@ -72,7 +72,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="9" build="12" />
+    <Version major="0" minor="9" build="13" />
     <AppControl debugTracking="1" specialOfferDialog="1" />
     <Languages>
       <Language locale="en_US">English (US)</Language>
@@ -159,7 +159,7 @@
     <AllianceMaxMembers>13</AllianceMaxMembers>
     <SpecialAssignments>
       <SpecialAssignmentIdleProbability>0.2</SpecialAssignmentIdleProbability>
-      <SpecialAssignmentIdleTime>30</SpecialAssignmentIdleTime>
+      <SpecialAssignmentIdleTime>3600</SpecialAssignmentIdleTime>
     </SpecialAssignments>
   </General>
   <xi:include href="rules_victories.xml" />
