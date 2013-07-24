@@ -58,7 +58,7 @@ defaults: &defaults
   player_deletion_interval:   16 #days
   message_deletion_intervall: 30 #days
 
-  special_offer_interval:          25 #days
+  special_offer_interval:          5 #days
   special_offer_dialog_max_count:  100
 
   artifact_jump_probability:             0.1     # probability of artifact to jump after a won battle
