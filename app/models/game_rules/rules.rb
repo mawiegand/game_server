@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.18
+# Version: 0.9.19
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -119,7 +119,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 18,
+                    :build => 19,
       },
       :app_control => {
         :debug_tracking       => 1,
@@ -6604,6 +6604,119 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Wood Cutting!
+        {              #   Skinning
+          :id          => 2,
+          :symbolic_id => :assignment_fur,
+          :level       => 3,
+          :advisor     => "girl",
+          :name        => {
+            
+            :en_US => "Skinning",
+  
+            :de_DE => "Tiere häuten",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Wenn ich nur dran denke, was für schöne Sachen wir aus den Fellen machen können. ",
+  
+            :en_US => "Just think about all the nice things we can do with that fur.",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Du wolltest wirklich nur entspannen, und wurdest doch wieder für einen kleinen Auftrag rekrutiert. Der Gestank des Tierkadavers steigert nicht gerade Deine Stimmung.</p>",
+  
+            :en_US => "<p>All you wanted to do was relax with a drink, but then they just had to make you work. Atleast they are paying for your drinks and you are going to need lots of drinks to forget this skinning buisness.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Manchmal muss man den Dino bei der Haut packen.</p>",
+  
+            :en_US => "<p>Sometimes you gota grab the dino by the skin.</p>",
+  
+          },
+
+          :duration => 480,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_fur,
+                :amount => 50,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Skinning
+        {              #   Barroom Brawl
+          :id          => 3,
+          :symbolic_id => :assignment_barroombrawl,
+          :level       => 4,
+          :advisor     => "warrior",
+          :name        => {
+            
+            :en_US => "Barroom Brawl",
+  
+            :de_DE => "Schlägerei",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Ein kühles Bier und eine zünftige Tavernenschlägerei. Das nenne ich Erholung!",
+  
+            :en_US => "A Chilled beer and flying fists. Now thats what i call relaxation!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Wenn verdiente Krieger zu Gast sind steigt die Schlägerei Rate enorm. Jungspunde wollen sich profilieren, denn so manch große Krieger Karriere begann in der Taverne. Aber irgendjemand muss die Rechnung bezahlen.</p>",
+  
+            :en_US => "<p>If a bunch of accomplished warriors meet at the tavern chances are there is going to be a brawl. But after all is done, and someone has paid for the furniture, you may just find reliable companions.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Nach einer ordentlichen Schlägerei kann man gute Freunde finden.</p>",
+  
+            :en_US => "<p>After a nice brawl you sometimes find good friends.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '50',
+            1 => '50',
+            2 => '50',
+            
+          },
+
+          :duration => 2700,
+
+
+          :rewards => {
+            
+          :unit_rewards => [
+            
+              {
+                :unit => :unit_warrior,
+                :amount => 3,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Barroom Brawl
       ],                # END OF ASSIGNMENT TYPES
 
 # ## SPECIAL ASSIGNMENT TYPES ##########################################################
