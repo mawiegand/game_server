@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.19
+# Version: 0.9.20
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -119,7 +119,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 19,
+                    :build => 20,
       },
       :app_control => {
         :debug_tracking       => 1,
@@ -6906,17 +6906,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF The Big Game
-        {              #   
+        {              #   Escortmission
           :id          => 2,
           :symbolic_id => :special_assignment_hobbits,
           :level       => 9,
           :advisor     => "chief",
-          :probability_factor => 1,
+          :probability_factor => 4,
           :name        => {
             
-            :en_US => "",
+            :en_US => "Escortmission",
   
-            :de_DE => "",
+            :de_DE => "Die Eskorte",
   
           },
           :flavour     => {
@@ -6985,7 +6985,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
 
-        },              #   END OF 
+        },              #   END OF Escortmission
         {              #   Migration
           :id          => 3,
           :symbolic_id => :special_assignment_migration,
