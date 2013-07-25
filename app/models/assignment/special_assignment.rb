@@ -293,7 +293,16 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     self.ended_at         = self.started_at.advance(:seconds => (self.assignment_type[:duration]).to_i)
     self.displayed_until  = self.ended_at
     self.execution_count += 1
+
+    reset_frequency
   end
+
+  def reset_frequency
+    frequency = Assignment::SpecialAssignmentFrequency.find_by_character_id_and_type_id(self.character_id, self.type_id)
+    frequency.destroy unless frequency.nil?
+  end
+
+
 
   def costs
     costs = {}
