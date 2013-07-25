@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.13
+# Version: 0.9.21
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -119,7 +119,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 13,
+                    :build => 21,
       },
       :app_control => {
         :debug_tracking       => 1,
@@ -6738,14 +6738,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour     => {
             
-            :de_DE => "Schlaue Mädchen",
+            :de_DE => "Schlaue Mädchen.",
   
-            :en_US => "Clever girls",
+            :en_US => "Clever girls.",
   
           },
           :description => {
             
-            :de_DE => "<p>Deine Sammler werden in letzter Zeit von einem Rudel wilder Velociraptoren heimgesucht. Jetzt verlangen sie schutz während sie am Arbeiten sind, andernfalls können sie nicht garantieren weiterhin effektiv Arbeiten zu können.</p>",
+            :de_DE => "<p>Deine Sammler werden in letzter Zeit von einem Rudel wilder Velociraptoren heimgesucht. Jetzt verlangen Deine Sammler Schutz, andernfalls können sie nicht garantieren weiterhin effektiv arbeiten zu können.</p>",
   
             :en_US => "<p>Your gatherers are beeing stalked by a group of fierce velociraptors. They demand your protection, otherwise they wont be able to work at full capacity.</p>",
   
@@ -6834,7 +6834,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Das Große Spiel steht bevor! Die Fans deiner Manschaft sammeln sich schon in der Taverne und trinken sich, auf deine Kosten, Mut an um den gegnerischen Fans eine ordentliche abreibung zu verpassen. Und mit soviel Unterstützung, wie du hier organisiert hast kann man ja nur gewinnen! Sollten sie auch, immerhin hast Du eine ordentliche Summe gewettet. </p>",
+            :de_DE => "<p>Das Große Spiel steht bevor! Die Fans Deiner Manschaft sammeln sich schon in der Taverne und trinken sich auf Deine Kosten Mut an, um den gegnerischen Fans eine ordentliche Abreibung zu verpassen. Sollten sie auch, immerhin hast Du eine ordentliche Summe gewettet.</p>",
   
             :en_US => "<p>Tonight's the big game! The fans are already gathered, getting some liquid courage before showing the oppositions supporters who's boss. They cant loose with this much drunken power behind them. Atleast they better dont, afterall you bet quite the sum on this game.</p>",
   
@@ -6842,7 +6842,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :short_description => {
             
-            :de_DE => "<p>Das Große Spiel steht bevor-</p>",
+            :de_DE => "<p>Das Große Spiel steht bevor.</p>",
   
             :en_US => "<p>The big game is tonight.</p>",
   
@@ -6906,17 +6906,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF The Big Game
-        {              #   
+        {              #   Escortmission
           :id          => 2,
           :symbolic_id => :special_assignment_hobbits,
           :level       => 9,
           :advisor     => "chief",
-          :probability_factor => 1,
+          :probability_factor => 4,
           :name        => {
             
-            :en_US => "",
+            :en_US => "Escortmission",
   
-            :de_DE => "",
+            :de_DE => "Die Eskorte",
   
           },
           :flavour     => {
@@ -6928,17 +6928,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Während do in der Taverne sitzt bemerkst du vier kleine Häuptlinge, die sie gerade betreten. Es scheint sich um eine lustige Truppe zu handelnSie sind das Zentrum der gesellschaft und schon bald singen sie durch den ganzen Raum. Du bist sogar der meinung, dass sich einer von ihnen kurz in luft auflöst, aber du hattest zugegebener maßen wohl etwas mehr als nötig. Später treten die Vier an dich heran, sie suchen den fähigsten Krieger weitbreit, damit er sie durch die Wildniss führen kann.</p>",
+            :de_DE => "<p>Während Du in der Taverne sitzt bemerkst Du vier kleine Häuptlinge. Sie singen und tanzen und sind das das Zentrum der Gesellschaft. Bei soviel Trubel bist Du sogar der Meinung, dass sich einer von ihnen kurz in Luft auflöst. Du schiebst es auf Deinen Gerstensaftkonsum und bist sehr verwundert, als Dich die vier kleinen Häuptlinge als Führer durch die Wildniss anwerben wollen.</p>",
   
-            :en_US => "<p>While you sit in the tavern and have a sip of ale you spot 4 little chiefs entering. They seem to be quite cheery fellows as they are soon the center of the crowd, leading them in song.You could swear one of them even disapears into thin air, but to be honest you have been drinking heavily. Later that evening you are aproached by them. They ask you to lead them to their next Destination.</p>",
+            :en_US => "<p>While you sit in the tavern and have a sip of ale you spot four little chiefs entering. They seem to be quite cheery fellows as they are soon the center of the crowd, leading them in song.You could swear one of them even disapears into thin air, but to be honest you have been drinking heavily. Later that evening you are aproached by them. They ask you to lead them to their next Destination.</p>",
   
           },
 
           :short_description => {
             
-            :de_DE => "<p>Hilf den kleinen Häuptlingen bei ihrer Reise</p>",
+            :de_DE => "<p>Hilf den kleinen Häuptlingen bei ihrer Reise.</p>",
   
-            :en_US => "<p>Help the little chiefs on their journey</p>",
+            :en_US => "<p>Help the little chiefs on their journey.</p>",
   
           },
 
@@ -6985,7 +6985,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
 
-        },              #   END OF 
+        },              #   END OF Escortmission
         {              #   Migration
           :id          => 3,
           :symbolic_id => :special_assignment_migration,
@@ -7001,14 +7001,14 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour     => {
             
-            :de_DE => "Diese Menschen sind wilde Krieger. Gut, wenn wir sie auf unsere seite Holen können.",
+            :de_DE => "Diese wilde Krieger sollten wir besser auf unserer Seite wissen.",
   
             :en_US => "Those people are fierce warriors. Just right for the meatgrinder.",
   
           },
           :description => {
             
-            :de_DE => "<p>Von den Mauern deine Festung aus erblicken deine Späher eine Gruppe von Menschen, die durch das Land zieht. Doch statt um einen Schlachtzug  scheint es sich vielmehr um eine Gruppe von Auswanderen zu handeln, die nach einem besseren Leben suchen. Du könntest sie mit ein paar Rohstoffen unterstützen, vielleicht überzeugst du damit ein paar dazu hier zu bleiben.</p>",
+            :de_DE => "<p>Von den Mauern Deiner Festung erblicken Deine Späher eine Gruppe von wilden Menschen. Es scheint sich nicht um einen Schlachtzug  ssondern einer Gruppe von Auswanderen zu handeln. Du könntest sie mit ein paar Rohstoffen unterstützen, vielleicht überzeugst Du damit ein paar dazu hier zu bleiben und zukünftig für Dich zu kämpfen.</p>",
   
             :en_US => "<p>The lookouts in your fortress spot a huge group of people marching through your lands. But rather than an army they apear to be a band of wanderers, looking for greener pastures. Maybe you can support them with a few ressources. You may convince a few of them to stay here that way.</p>",
   
