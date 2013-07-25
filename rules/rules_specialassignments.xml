@@ -84,9 +84,9 @@
     
   </SpecialAssignmentType>
   
-  <SpecialAssignmentType id="special_assignment_hobbits" advisor="chief" level="9" probability_factor="1">
-    <Name></Name>
-    <Name lang="de_DE"></Name>
+  <SpecialAssignmentType id="special_assignment_hobbits" advisor="chief" level="9" probability_factor="4">
+    <Name>Escortmission</Name>
+    <Name lang="de_DE">Die Eskorte</Name>
     
     <Flavour lang="de_DE">Lustige kleine Kerle diese Jungs.</Flavour>
     <Flavour lang="en_US">Funny little guys, kinda hairy around the feet tho.</Flavour>
