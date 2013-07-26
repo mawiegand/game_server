@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.23
+# Version: 0.3.24
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 23, 
+        :build => 24, 
       },
       
       :production_test_weights => {
@@ -591,7 +591,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [19, 20, ],
+          :successor_quests => [129, ],
 
           :rewards => {
             
@@ -2146,7 +2146,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_build_tavern',
 
           },
 
@@ -2229,7 +2229,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_build_tavern',
 
           },
 
@@ -12702,7 +12702,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_profile',
+
+          },
+
+          :successor_quests => [19, 20, ],
 
           :rewards => {
             
@@ -12745,8 +12751,6 @@ class Tutorial::Tutorial
             ],
 
           },          
-
-          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_tavern
       ],                # END OF QUESTS
