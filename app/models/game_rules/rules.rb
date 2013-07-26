@@ -168,7 +168,7 @@ class GameRules::Rules
       :alliance_max_members => 13,
       :special_assignments  => {
         :idle_probability => 0.2,
-        :idle_time => 3600,
+        :idle_time => 60,
       },
       :artifact_count => 5,
   
@@ -6781,8 +6781,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
-          :duration => 14400,
-          :display_duration => 18000,
+          :duration => 60,
+          :display_duration => 60,
 
 
           :rewards => {
@@ -6877,8 +6877,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
           },
 
-          :duration => 25200,
-          :display_duration => 14400,
+          :duration => 60,
+          :display_duration => 60,
 
 
           :rewards => {
@@ -6955,8 +6955,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           },
 
-          :duration => 10800,
-          :display_duration => 3600,
+          :duration => 60,
+          :display_duration => 60,
 
 
           :rewards => {
@@ -7042,8 +7042,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           },
 
-          :duration => 9000,
-          :display_duration => 18000,
+          :duration => 60,
+          :display_duration => 60,
 
 
           :rewards => {
@@ -7068,255 +7068,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Migration
-        {              #   Special Assignment Test 0
-          :id          => 4,
-          :symbolic_id => :special_assignment_tester0,
-          :level       => 11,
-          :advisor     => "chief",
-          :probability_factor => 1,
-          :name        => {
-            
-            :en_US => "Special Assignment Test 0",
-  
-            :de_DE => "Special Assignment Test 0",
-  
-          },
-          :flavour     => {
-            
-            :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
-  
-            :en_US => "We will loot a bunch of resources for sure!",
-  
-          },
-          :description => {
-            
-            :de_DE => "<p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>",
-  
-            :en_US => "<p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>",
-  
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Unternimm eine Expedition</p>",
-  
-            :en_US => "<p>Undertake an expedition</p>",
-  
-          },
-
-          :costs      => {
-            0 => '3*PRODUCTION',
-            1 => '3*PRODUCTION',
-            2 => '3*PRODUCTION',
-            
-          },
-
-          :assignment_tests => {
-            
-          },
-
-          :duration => 60,
-          :display_duration => 360,
-
-
-          :rewards => {
-
-            :resource_rewards => [
-              
-              {
-                :resource => :resource_stone,
-                :amount => '6*PRODUCTION',
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => '6*PRODUCTION',
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => '6*PRODUCTION',
-              },
-
-            ],
-
-            :unit_rewards => [
-              
-              {
-                :unit => :unit_clubbers,
-                :amount => '0.01*PRODUCTION',
-              },
-
-            ],
-
-            :experience_reward => '1',
-
-          },
-
-
-        },              #   END OF Special Assignment Test 0
-        {              #   Special Assignment Test 1
-          :id          => 5,
-          :symbolic_id => :special_assignment_tester1,
-          :level       => 11,
-          :advisor     => "chief",
-          :probability_factor => 1,
-          :name        => {
-            
-            :en_US => "Special Assignment Test 1",
-  
-            :de_DE => "Special Assignment Test 1",
-  
-          },
-          :flavour     => {
-            
-            :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
-  
-            :en_US => "We will loot a bunch of resources for sure!",
-  
-          },
-          :description => {
-            
-            :de_DE => "<p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>",
-  
-            :en_US => "<p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>",
-  
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Unternimm eine Expedition</p>",
-  
-            :en_US => "<p>Undertake an expedition</p>",
-  
-          },
-
-          :costs      => {
-            0 => '1*PRODUCTION',
-            1 => '1*PRODUCTION',
-            2 => '1*PRODUCTION',
-            
-          },
-
-          :duration => 60,
-          :display_duration => 720,
-
-
-          :rewards => {
-
-            :resource_rewards => [
-              
-              {
-                :resource => :resource_stone,
-                :amount => '3*PRODUCTION',
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => '3*PRODUCTION',
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => '3*PRODUCTION',
-              },
-
-            ],
-
-            :experience_reward => 'PRODUCTION/1000',
-
-          },
-
-
-        },              #   END OF Special Assignment Test 1
-        {              #   Special Assignment Test 2
-          :id          => 6,
-          :symbolic_id => :special_assignment_tester2,
-          :level       => 11,
-          :advisor     => "chief",
-          :probability_factor => 1,
-          :name        => {
-            
-            :en_US => "Special Assignment Test 2",
-  
-            :de_DE => "Special Assignment Test 2",
-  
-          },
-          :flavour     => {
-            
-            :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
-  
-            :en_US => "We will loot a bunch of resources for sure!",
-  
-          },
-          :description => {
-            
-            :de_DE => "<p>Special Assignment Test Beschreibung. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>",
-  
-            :en_US => "<p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>",
-  
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Unternimm eine Expedition</p>",
-  
-            :en_US => "<p>Undertake an expedition</p>",
-  
-          },
-
-          :costs      => {
-            0 => '3*PRODUCTION',
-            1 => '3*PRODUCTION',
-            2 => '3*PRODUCTION',
-            
-          },
-
-          :unit_deposits => {
-            0 => 'PRODUCTION/1000',
-            
-          },
-
-          :duration => 60,
-          :display_duration => 360,
-
-
-          :rewards => {
-
-            :resource_rewards => [
-              
-              {
-                :resource => :resource_stone,
-                :amount => '3*PRODUCTION',
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => '3*PRODUCTION',
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => '3*PRODUCTION',
-              },
-
-            ],
-
-            :unit_rewards => [
-              
-              {
-                :unit => :unit_clubbers,
-                :amount => '1',
-              },
-
-            ],
-
-            :experience_reward => '1',
-
-          },
-
-
-        },              #   END OF Special Assignment Test 2
       ],                # END OF SPECIAL ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################
