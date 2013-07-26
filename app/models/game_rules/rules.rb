@@ -122,8 +122,9 @@ class GameRules::Rules
                     :build => 21,
       },
       :app_control => {
-        :debug_tracking       => 1,
-        :special_offer_dialog => 1,
+        :debug_tracking                 => 1,
+        :special_offer_dialog           => 1,
+        :special_offer_quests_displayed => 17,
       },
       :battle => {
         :calculation => {

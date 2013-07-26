@@ -73,7 +73,9 @@
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
     <Version major="0" minor="9" build="21" />
-    <AppControl debugTracking="1" specialOfferDialog="1" />
+    <AppControl debugTracking="1">
+      <SpecialOfferDialog enabled="1" questsDisplayed="17" />
+    </AppControl>
     <Languages>
       <Language locale="en_US">English (US)</Language>
       <Language locale="de_DE">Deutsch</Language>
