@@ -17,6 +17,8 @@ class Action::Fundamental::ChangeAllianceDescriptionActionsController < Applicat
     alliance = current_character.alliance
     alliance.description = (params[:change_alliance_description_action][:description] || "").strip
 
+    raise ConflictError.new('description too long')  if alliance.description.length > GAME_SERVER_CONFIG['description_max_length']
+
     raise BadRequestError.new('saving the alliance description did fails.')  unless alliance.save
 
     respond_to do |format|

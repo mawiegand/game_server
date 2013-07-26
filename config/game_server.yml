@@ -69,6 +69,8 @@ defaults: &defaults
 
   battle_xp_winner_bonus_factor:         2.0
 
+  description_max_length:               1000 # character
+
 development:
   <<: *defaults
 
