@@ -26,8 +26,8 @@
 
 <!ELEMENT SpecialOfferDialog EMPTY>
 <!ATTLIST SpecialOfferDialog
-  enabled         (0 | 1) "0"
-  questsDisplayed CDATA #REQUIRED
+  enabled                (0 | 1) "0"
+  requiredFinishedQuests CDATA #REQUIRED
 >
 
     <!--Languages-->

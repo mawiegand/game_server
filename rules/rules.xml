@@ -72,9 +72,9 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="9" build="22" />
+    <Version major="0" minor="9" build="23" />
     <AppControl debugTracking="1">
-      <SpecialOfferDialog enabled="1" questsDisplayed="17" />
+      <SpecialOfferDialog enabled="1" requiredFinishedQuests="17" />
     </AppControl>
     <Languages>
       <Language locale="en_US">English (US)</Language>
