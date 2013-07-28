@@ -1,13 +1,14 @@
 class Assignment::SpecialAssignmentsController < ApplicationController
   layout 'assignment'
 
- # before_filter :authenticate
+  before_filter :authenticate
   before_filter :deny_api, :except => [:show]
+  before_filter :authorize_staff, :except => [:show]
 
   # GET /assignment/special_assignments
   # GET /assignment/special_assignments.json
   def index
-    @assignment_special_assignments = Assignment::SpecialAssignment.all
+    @assignment_standard_assignments =  Assignment::SpecialAssignment.paginate(:page => params[:page], :per_page => 50)
 
     respond_to do |format|
       format.html # index.html.erb
