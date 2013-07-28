@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.20
+# Version: 0.9.21
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -119,7 +119,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 20,
+                    :build => 21,
       },
       :app_control => {
         :debug_tracking       => 1,
@@ -6965,17 +6965,17 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
               
               {
                 :resource => :resource_stone,
-                :amount => '0.1*PRODUCTION',
+                :amount => '0.3*PRODUCTION',
               },
 
               {
                 :resource => :resource_wood,
-                :amount => '0.1*PRODUCTION',
+                :amount => '0.3*PRODUCTION',
               },
 
               {
                 :resource => :resource_fur,
-                :amount => '0.1*PRODUCTION',
+                :amount => '0.3*PRODUCTION',
               },
 
             ],
@@ -7068,6 +7068,73 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Migration
+        {              #   The dark forest
+          :id          => 4,
+          :symbolic_id => :special_assignment_quest1,
+          :level       => 1,
+          :advisor     => "girl",
+          :probability_factor => 1,
+          :name        => {
+            
+            :en_US => "The dark forest",
+  
+            :de_DE => "Der dunkle Wald",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Das klingt doch mal nach einer Aufgabe für einen heroischen Halbgott.",
+  
+            :en_US => "That sounds like a job for a dapper demigod.",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Lange schon ranken sich Legenden darum, was sich im Zentrum des dunklen Waldes befinden könnte. Nur selten wagen sich die Jäger und Sammler bis in die nähe seines Zentrums und seltener noch kehren sie zurück. Sogar ein paar Holzfäller sollen dort schon verschollen sein. Schon länger hörst Du das munkeln in der Taverne. Vielleicht beschließt Du ja dem ganzen nach zu gehen.</p>",
+  
+            :en_US => "<p>For the longest  time there have been legends about the center of the dark forest. Not often do the hunters and gatherers dare come close to it and hardly any of them return. You have heared the stories about that place a hundred times. Maybe its time to check it ouut for yourself.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Begib dich auf Reise und erkunde die Geheimnisse des finsteren Waldes.</p>",
+  
+            :en_US => "<p>Enter the dark forest and learn its mysteries.</p>",
+  
+          },
+
+          :duration => 12600,
+          :display_duration => 3600,
+
+
+          :rewards => {
+
+            :resource_rewards => [
+              
+              {
+                :resource => :resource_stone,
+                :amount => '0.3*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => '0.3*PRODUCTION',
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => '0.3*PRODUCTION',
+              },
+
+            ],
+
+            :experience_reward => '0.003*PRODUCTION',
+
+          },
+
+
+        },              #   END OF The dark forest
       ],                # END OF SPECIAL ASSIGNMENT TYPES
 
 # ## ARTIFACT TYPES ########################################################

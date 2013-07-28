@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="23" />
+    <Version major="0" minor="3" build="24" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -758,7 +758,7 @@
       <RewardText locale="en_US">You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.</RewardText>
       <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far. </RewardFlavor>
-      <Requirement quest="quest_profile" />
+      <Requirement quest="quest_build_tavern" />
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>350</ExperienceReward>
@@ -786,7 +786,7 @@
       <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
-      <Requirement quest="quest_profile" />
+      <Requirement quest="quest_build_tavern" />
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>
         <ResourceReward resource="resource_wood">250</ResourceReward>
@@ -5012,6 +5012,7 @@
       <RewardText locale="en_US">There are many people looking for favors in the tavern. Maybe you can get something out of that.</RewardText>
       <RewardFlavor locale="de_DE">Netter Laden, man hat mir sogar schon einen Job angeboten.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice place, already earned a coupple of stones aswell.</RewardFlavor>
+      <Requirement quest="quest_profile" />
       <Rewards>
         <ResourceReward resource="resource_stone">125</ResourceReward>
         <ResourceReward resource="resource_wood">125</ResourceReward>
@@ -5021,9 +5022,9 @@
       <RewardTests>
         <BuildingTest building="building_tavern" min_count="1" />
       </RewardTests>
-      <UIMarker>mark_home_settlement</UIMarker>
+      <!--UIMarker>mark_home_settlement</UIMarker>
       <UIMarker>mark_free_construction_slot</UIMarker>
-      <UIMarker>mark_building_option</UIMarker>
+      <UIMarker>mark_building_option</UIMarker-->
     </Quest>
   </Quests>
 </Tutorial>
