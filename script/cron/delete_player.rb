@@ -60,10 +60,12 @@ puts "DELETE PLAYERS: finished fetching players becoming deletable"
 print "DELETE PLAYERS: removing unused npc settlements "
 Fundamental::Character.npc.each do |c|
   c.settlements.deletable(now).each do |s|
-    @report[:removed_settlements] << s
-    
-    # call remove method of settlement
-    s.remove_from_map
+    unless s.fighting?
+      @report[:removed_settlements] << s
+
+      # call remove method of settlement
+      s.remove_from_map
+    end
   end
 
   print "." 

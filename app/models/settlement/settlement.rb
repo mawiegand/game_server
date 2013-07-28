@@ -401,7 +401,7 @@ class Settlement::Settlement < ActiveRecord::Base
   end
   
   def fighting?
-    return self.garrison_army.fighting?
+    !self.garrison_army.nil? && self.garrison_army.fighting?
   end
   
   ############################################################################
