@@ -7,7 +7,15 @@ class Military::ArmyDetail < ActiveRecord::Base
   
 
   def reduce_units_to_size_max
-    ratio =  army.size_max.to_f / army.size_present
+
+    # calculate size_present
+    size_present = 0
+    GameRules::Rules.the_rules.unit_types.each do |type|
+      size_present += (self[type[:db_field]] || 0)
+      #logger.debug "---> size_present: #{size_present}"
+    end
+
+    ratio =  army.size_max.to_f / size_present
     size = 0     
 
     # reduce units according to ratio
@@ -39,7 +47,7 @@ class Military::ArmyDetail < ActiveRecord::Base
         n += self[unit_type[:db_field]] || 0
       end
       logger.debug "army size #{ n }, max size #{ army.size_max }"
-      raise ForbiddenError.new "qqarmy would be larger than the presently imposed size limit" unless n <= army.size_max
+      raise ForbiddenError.new "army would be larger than the presently imposed size limit" unless n <= army.size_max
     end
   
     def update_army
