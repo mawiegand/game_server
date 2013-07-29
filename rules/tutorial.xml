@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="23" />
+    <Version major="0" minor="3" build="24" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -573,7 +573,7 @@
 
 
     <!-- 15 --> <!-- Tutorial 15 -->
-    <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true">
+    <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true" blocking="true">
       <Name>The chieftain's hut again</Name>
       <Name locale="de_DE">Und wieder die Häuptlingshütte</Name>
       <Task>Upgrade your chieftain's hut to level 4.</Task>
