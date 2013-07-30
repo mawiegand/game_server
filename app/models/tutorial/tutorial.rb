@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.24
+# Version: 0.3.27
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 24, 
+        :build => 27, 
       },
       
       :production_test_weights => {
@@ -591,7 +591,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [19, 20, ],
+          :successor_quests => [130, ],
 
           :rewards => {
             
@@ -1101,7 +1101,7 @@ class Tutorial::Tutorial
 
           :uimarker => ['mark_map', 'mark_select_own_army', 'mark_move_own_army', ],
 
-          :place_npcs => 3,         
+          :place_npcs => 1,         
 
           :message => {
             
@@ -2148,11 +2148,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_build_1campfirelvl2',
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [131, ],
 
           :rewards => {
             
@@ -2171,9 +2171,7 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :alliance_members_test => {
-              :min_count => 10,
-            },
+            :alliance_test => {},
 
           },          
 
@@ -2233,7 +2231,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_build_1campfirelvl2',
 
           },
 
@@ -12753,6 +12751,191 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_tavern
+        {               #   quest_build_1campfirelvl2
+          :id                => 130,
+          :symbolic_id       => :quest_build_1campfirelvl2,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Campfire",
+  
+            :de_DE => "Lagerfeuer",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a campfire.",
+  
+            :de_DE => "Baue ein Lagerfeuer.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?",
+  
+            :en_US => "Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don't you think?
+      ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Lagerfeuer werden benötigt, um Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>",
+  
+            :en_US => "<p>Campfires are needed to start or enter alliances. And it's where little chieftains are recruited.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ach, wie das Feuer knistert. So schön warm.",
+  
+            :en_US => "Oh, listen to the fire crackling! Lovely warm flames!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Ab jetzt kannst Du Nachrichten verschicken. Nutze dies, um mit Deinen Nachbarn zu kommunizieren.",
+  
+            :en_US => "From now on you can send messages. Use this to communicate with your neighbours.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_profile',
+
+          },
+
+          :successor_quests => [19, 20, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 75,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 75,
+              },
+
+            ],
+
+            :experience_reward => 150,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_campfire',
+
+                :min_level => 2,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_1campfirelvl2
+        {               #   quest_alliance_members
+          :id                => 131,
+          :symbolic_id       => :quest_alliance_members,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Alliance",
+  
+            :de_DE => "Allianzen",
+                
+          },
+          :task => {
+            
+            :en_US => "Enter an alliance, or start your own.",
+  
+            :de_DE => "Tritt einer Allianz bei oder gründe Deine eigene.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.",
+  
+            :en_US => "Fighting enemy armies with your own armies is nice. But it would be much better if you worked together, or if your friends helped you. You should be in an alliance –allies help each other.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p><p>Eine eigene Allianz kannst Du mit Lagerfeuer Level 2 gründen.</p>",
+  
+            :en_US => "<p>From now on you can enter an alliance. An alliance has many advantages: you can exchange raw materials, help each other's defences and coordinate attacks. Only an alliance can hold a large territory. If you think you're ready for it, why not enter an alliance?</p><p>You can only start your own alliance once you've reached campfire level 2. </p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.",
+  
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far. ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.",
+  
+            :en_US => "You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_alliance',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 350,
+
+          },          
+
+          :reward_tests => {
+            
+            :alliance_members_test => {
+              :min_count => 4,
+            },
+
+          },          
+
+        },              #   END OF quest_alliance_members
       ],                # END OF QUESTS
 
     )
