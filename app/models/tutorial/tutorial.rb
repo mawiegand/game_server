@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.24
+# Version: 0.3.25
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 24, 
+        :build => 25, 
       },
       
       :production_test_weights => {
@@ -156,7 +156,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [1, ],
+          :successor_quests => [1, 19, ],
 
           :rewards => {
             
@@ -591,7 +591,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [19, 20, ],
+          :successor_quests => [20, ],
 
           :rewards => {
             
@@ -2148,7 +2148,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_queue_1gathererlvl1',
 
           },
 
@@ -2172,7 +2172,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :alliance_members_test => {
-              :min_count => 10,
+              :min_count => 4,
             },
 
           },          
