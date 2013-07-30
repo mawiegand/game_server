@@ -413,7 +413,7 @@
           <p>In Wack-A-Doo gibt es mit Nahkämpfern, Fernkämpfern und Berittenen Einheiten drei verschiedene Einheiten-Typen zur Verfügung. Zu Beginn stehen Dir nur Nahkämpfer zur Verfügung, doch im späteren Spielverlauf kannst Du auch Fernkämpfer und Berittene Einheiten rekrutieren.</p>
         ]]></Body>
       </Message>
-      <PlaceNpcs>3</PlaceNpcs>
+      <PlaceNpcs>1</PlaceNpcs>
     </Quest>
 
     <!-- 10 --> <!-- Tutorial 11 -->
@@ -759,7 +759,7 @@
       <RewardText locale="en_US">You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.</RewardText>
       <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far. </RewardFlavor>
-      <Requirement quest="quest_profile" />
+      <Requirement quest="quest_build_1campfirelvl2" />
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>350</ExperienceReward>
@@ -787,7 +787,7 @@
       <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice, your settlement is producing more resources and growing more rapidly.</RewardFlavor>
-      <Requirement quest="quest_profile" />
+      <Requirement quest="quest_build_1campfirelvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>
         <ResourceReward resource="resource_wood">250</ResourceReward>
@@ -5024,6 +5024,36 @@
       <UIMarker>mark_home_settlement</UIMarker>
       <UIMarker>mark_free_construction_slot</UIMarker>
       <UIMarker>mark_building_option</UIMarker>
+    </Quest>
+    
+    
+    <Quest id="quest_build_1campfirelvl2" advisor="chief" tutorial="false">
+      <Name>Campfire</Name>
+      <Name locale="de_DE">Lagerfeuer</Name>
+      <Task>Build a campfire.</Task>
+      <Task locale="de_DE">Baue ein Lagerfeuer.</Task>
+      <Description locale="de_DE">
+        <p>Lagerfeuer werden benötigt, um Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Campfires are needed to start or enter alliances. And it's where little chieftains are recruited.</p>
+      </Description>
+      <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
+      <Flavor locale="en_US">Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don't you think?
+      </Flavor>
+      <RewardText locale="de_DE">Ab jetzt kannst Du Nachrichten verschicken. Nutze dies, um mit Deinen Nachbarn zu kommunizieren.</RewardText>
+      <RewardText locale="en_US">From now on you can send messages. Use this to communicate with your neighbours.</RewardText>
+      <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
+      <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
+      <Requirement quest="quest_profile" />
+      <Rewards>
+        <ResourceReward resource="resource_stone">75</ResourceReward>
+        <ResourceReward resource="resource_wood">75</ResourceReward>
+        <ExperienceReward>150</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <BuildingTest building="building_campfire" min_level="2" />
+      </RewardTests>
     </Quest>
   </Quests>
 </Tutorial>
