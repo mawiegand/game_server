@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="27" />
+    <Version major="0" minor="3" build="28" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -687,8 +687,8 @@
       <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
       <Flavor locale="en_US">Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don't you think?
       </Flavor>
-      <RewardText locale="de_DE">Ab jetzt kannst Du Nachrichten verschicken. Nutze dies, um mit Deinen Nachbarn zu kommunizieren.</RewardText>
-      <RewardText locale="en_US">From now on you can send messages. Use this to communicate with your neighbours.</RewardText>
+      <RewardText locale="de_DE">Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen</RewardText>
+      <RewardText locale="en_US">Try to contact your neighbors and form an alliance with them</RewardText>
       <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
       <Requirement quest="quest_build_1storagelvl1" />
