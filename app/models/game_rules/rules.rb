@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.21
+# Version: 0.9.22
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -119,7 +119,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 21,
+                    :build => 22,
       },
       :app_control => {
         :debug_tracking       => 1,
@@ -6834,9 +6834,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Das Große Spiel steht bevor! Die Fans Deiner Manschaft sammeln sich schon in der Taverne und trinken sich auf Deine Kosten Mut an, um den gegnerischen Fans eine ordentliche Abreibung zu verpassen. Sollten sie auch, immerhin hast Du eine ordentliche Summe gewettet.</p>",
+            :de_DE => "<p>Das Große Spiel steht bevor! Die Fans Deiner Mannschaft sammeln sich schon in der Taverne und trinken sich auf Deine Kosten Mut an, um den gegnerischen Fans eine ordentliche Abreibung zu verpassen. Sollten sie auch, immerhin hast Du eine ordentliche Summe gewettet.</p>",
   
-            :en_US => "<p>Tonight's the big game! The fans are already gathered, getting some liquid courage before showing the oppositions supporters who's boss. They cant loose with this much drunken power behind them. Atleast they better dont, afterall you bet quite the sum on this game.</p>",
+            :en_US => "<p>Tonight's the big game! The fans are already gathered, getting some liquid courage before showing the oppositions supporters who's boss. They can't loose with this much drunken power behind them. Atleast they better dont, afterall you bet quite the sum on this game.</p>",
   
           },
 
@@ -6928,7 +6928,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Während Du in der Taverne sitzt bemerkst Du vier kleine Häuptlinge. Sie singen und tanzen und sind das das Zentrum der Gesellschaft. Bei soviel Trubel bist Du sogar der Meinung, dass sich einer von ihnen kurz in Luft auflöst. Du schiebst es auf Deinen Gerstensaftkonsum und bist sehr verwundert, als Dich die vier kleinen Häuptlinge als Führer durch die Wildniss anwerben wollen.</p>",
+            :de_DE => "<p>Während Du in der Taverne sitzt bemerkst Du vier kleine Häuptlinge. Sie singen und tanzen und sind das das Zentrum der Gesellschaft. Bei soviel Trubel bist Du sogar der Meinung, dass sich einer von ihnen kurz in Luft auflöst. Du schiebst es auf Deinen Konsum von Gerstensaft und bist sehr verwundert, als Dich die vier kleinen Häuptlinge als Führer durch die Wildnis anwerben wollen.</p>",
   
             :en_US => "<p>While you sit in the tavern and have a sip of ale you spot four little chiefs entering. They seem to be quite cheery fellows as they are soon the center of the crowd, leading them in song.You could swear one of them even disapears into thin air, but to be honest you have been drinking heavily. Later that evening you are aproached by them. They ask you to lead them to their next Destination.</p>",
   
@@ -7008,7 +7008,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Von den Mauern Deiner Festung erblicken Deine Späher eine Gruppe von wilden Menschen. Es scheint sich nicht um einen Schlachtzug  ssondern einer Gruppe von Auswanderen zu handeln. Du könntest sie mit ein paar Rohstoffen unterstützen, vielleicht überzeugst Du damit ein paar dazu hier zu bleiben und zukünftig für Dich zu kämpfen.</p>",
+            :de_DE => "<p>Von den Mauern Deiner Festung erblicken Deine Späher eine Gruppe von wilden Menschen. Es scheint sich allerdings nicht um einen Schlachtzug, sondern einer Gruppe von Auswanderern zu handeln. Vielleicht kannst Du sie mit ein paar Rohstoffen überzeugen bei Dir zu bleiben und zukünftig für Dich zu kämpfen.</p>",
   
             :en_US => "<p>The lookouts in your fortress spot a huge group of people marching through your lands. But rather than an army they apear to be a band of wanderers, looking for greener pastures. Maybe you can support them with a few ressources. You may convince a few of them to stay here that way.</p>",
   
