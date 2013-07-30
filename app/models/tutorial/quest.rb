@@ -182,10 +182,10 @@ class Tutorial::Quest < ActiveRecord::Base
         end
       end
 
-      unless reward_tests[:alliance_member_test].nil?
-        alliance_member_test = reward_tests[:alliance_member_test]
-        unless alliance_member_test.nil?
-          unless check_alliance_member(alliance_member_test)
+      unless reward_tests[:alliance_members_test].nil?
+        alliance_members_test = reward_tests[:alliance_members_test]
+        unless alliance_members_test.nil?
+          unless check_alliance_members(alliance_members_test)
             return false
           end
         end
@@ -480,10 +480,10 @@ class Tutorial::Quest < ActiveRecord::Base
     !self.tutorial_state.owner.alliance.nil?
   end
 
-  def check_alliance_member(alliance_member_test)
-    return false if alliance_member_test[:min_count].nil?
+  def check_alliance_members(alliance_members_test)
+    return false if alliance_members_test[:min_count].nil?
 
-    check_alliance && self.tutorial_state.owner.alliance.members.count >= alliance_member_test[:min_count]
+    check_alliance && self.tutorial_state.owner.alliance.members_count >= alliance_members_test[:min_count]
   end
 
   def check_standard_assignment
