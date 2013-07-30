@@ -15,7 +15,7 @@ class Military::ArmyDetail < ActiveRecord::Base
       #logger.debug "---> size_present: #{size_present}"
     end
 
-    if size_present > 0
+    if size_present > army.size_max
       ratio =  army.size_max.to_f / size_present
       size = 0
 
