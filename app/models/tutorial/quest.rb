@@ -172,7 +172,7 @@ class Tutorial::Quest < ActiveRecord::Base
           end
         end
       end
-      
+
       unless reward_tests[:alliance_test].nil?
         alliance_test = reward_tests[:alliance_test]
         unless alliance_test.nil?
@@ -181,7 +181,16 @@ class Tutorial::Quest < ActiveRecord::Base
           end
         end
       end
-      
+
+      unless reward_tests[:alliance_member_test].nil?
+        alliance_member_test = reward_tests[:alliance_member_test]
+        unless alliance_member_test.nil?
+          unless check_alliance_member(alliance_member_test)
+            return false
+          end
+        end
+      end
+
       unless reward_tests[:textbox_test].nil?
         textbox_test = reward_tests[:textbox_test]
         unless check_textbox(textbox_test, answer_text)
@@ -467,8 +476,14 @@ class Tutorial::Quest < ActiveRecord::Base
     end
   end
 
-  def check_alliance    
+  def check_alliance
     !self.tutorial_state.owner.alliance.nil?
+  end
+
+  def check_alliance_member(alliance_member_test)
+    return false if alliance_member_test[:min_count].nil?
+
+    check_alliance && self.tutorial_state.owner.alliance.members.count >= alliance_member_test[:min_count]
   end
 
   def check_standard_assignment
