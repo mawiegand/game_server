@@ -8,8 +8,8 @@ class Action::Fundamental::AutoJoinAllianceActionsController < ApplicationContro
   def create
     raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequestError.new('tried to join an alliance although character is already in an alliance') unless current_character.alliance.nil?
-    raise UnauthorizedError.new('no character given') if params[:auto_join_alliance_action][:characterId].nil?
-    raise UnauthorizedError.new('tried to access another character') if params[:auto_join_alliance_action][:characterId].to_i != current_character.id
+    raise UnauthorizedError.new('no character given') if params[:auto_join_alliance_action][:character_id].nil?
+    raise UnauthorizedError.new('tried to access another character') if params[:auto_join_alliance_action][:character_id].to_i != current_character.id
 
     alliance = Fundamental::Alliance.non_empty.auto_join_enabled.not_full.first
 
