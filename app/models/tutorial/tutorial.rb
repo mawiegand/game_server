@@ -12863,9 +12863,9 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Alliance",
+            :en_US => "Alliance Members",
   
-            :de_DE => "Allianzen",
+            :de_DE => "Allianzmitglieder",
                 
           },
           :task => {

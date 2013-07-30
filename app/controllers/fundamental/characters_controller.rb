@@ -154,6 +154,13 @@ class Fundamental::CharactersController < ApplicationController
         character.redeem_startup_gift(startup_gift)
       end
 
+      if params.has_key?(:alliance_invitation)
+        alliance = Fundamental::Alliance.find_by_invitation_code(params[:alliance_invitation])
+        if !alliance.nil? && !alliance.full?
+          alliance.add_character(character)
+        end
+      end
+
       redirect_to fundamental_character_path(character.id)
       
     elsif !current_character

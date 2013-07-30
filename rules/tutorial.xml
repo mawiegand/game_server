@@ -5059,8 +5059,8 @@
 
 
     <Quest id="quest_alliance_members" advisor="chef">
-      <Name>Alliance</Name>
-      <Name locale="de_DE">Allianzen</Name>
+      <Name>Alliance Members</Name>
+      <Name locale="de_DE">Allianzmitglieder</Name>
       <Task>Enter an alliance, or start your own.</Task>
       <Task locale="de_DE">Tritt einer Allianz bei oder gründe Deine eigene.</Task>
       <Description locale="de_DE">
