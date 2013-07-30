@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.24
+# Version: 0.3.25
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 24, 
+        :build => 25, 
       },
       
       :production_test_weights => {
@@ -12600,7 +12600,7 @@ class Tutorial::Tutorial
             
             :en_US => "Start your first Assignment",
   
-            :de_DE => "Beginne deinen ersten Auftrag",
+            :de_DE => "Beginne Deinen ersten Auftrag",
                 
           },
           :flavour => {
@@ -12675,14 +12675,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Ein Ort zum trinken? Ganz mein Geschmack",
+            :de_DE => "Ein Ort zum trinken? Ganz mein Geschmack.",
   
             :en_US => "Finally a place where i can have a pint in peace.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Jetzt wo deine Siedlung wächst und gedeiht brauchen deine Bewohner einen Ort an dem Sie ihre Zeit totschlagen können, wenn sie nicht gerade Arbeiten. Eine Taverne wäre da doch genau das Richtige.</p>",
+            :de_DE => "<p>Jetzt wo Deine Siedlung wächst und gedeiht brauchen Deine Bewohner einen Ort an dem Sie ihre Zeit totschlagen können, wenn sie nicht gerade arbeiten. Eine Taverne wäre da doch genau das Richtige.</p>",
   
             :en_US => "<p>Now that our settlement has grown considerably people are wanting for a place to relax. I suppose a tavern of some sort would do the trick, after all who can refuse a cold beer?</p>",
                 
