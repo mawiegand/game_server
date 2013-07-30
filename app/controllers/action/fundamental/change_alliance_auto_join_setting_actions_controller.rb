@@ -1,4 +1,4 @@
-class Action::Fundamental::ChangeAllianceAutoJoinActionsController < ApplicationController
+class Action::Fundamental::ChangeAllianceAutoJoinSettingActionsController < ApplicationController
   layout 'action'
 
   before_filter :authenticate
