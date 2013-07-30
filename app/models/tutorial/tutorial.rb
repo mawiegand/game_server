@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.25
+# Version: 0.3.26
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 25, 
+        :build => 26, 
       },
       
       :production_test_weights => {
@@ -156,7 +156,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [1, 19, ],
+          :successor_quests => [1, 130, ],
 
           :rewards => {
             
@@ -591,7 +591,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [20, ],
+          :successor_quests => [19, 20, ],
 
           :rewards => {
             
@@ -2148,7 +2148,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_queue_1gathererlvl1',
+            :quest => 'quest_profile',
 
           },
 
@@ -2171,9 +2171,7 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :alliance_members_test => {
-              :min_count => 4,
-            },
+            :alliance_test => {},
 
           },          
 
@@ -12753,6 +12751,91 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_tavern
+        {               #   quest_alliance_members
+          :id                => 130,
+          :symbolic_id       => :quest_alliance_members,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Alliance",
+  
+            :de_DE => "Allianzen",
+                
+          },
+          :task => {
+            
+            :en_US => "Enter an alliance, or start your own.",
+  
+            :de_DE => "Tritt einer Allianz bei oder gründe Deine eigene.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.",
+  
+            :en_US => "Fighting enemy armies with your own armies is nice. But it would be much better if you worked together, or if your friends helped you. You should be in an alliance –allies help each other.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p><p>Eine eigene Allianz kannst Du mit Lagerfeuer Level 2 gründen.</p>",
+  
+            :en_US => "<p>From now on you can enter an alliance. An alliance has many advantages: you can exchange raw materials, help each other's defences and coordinate attacks. Only an alliance can hold a large territory. If you think you're ready for it, why not enter an alliance?</p><p>You can only start your own alliance once you've reached campfire level 2. </p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.",
+  
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far. ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.",
+  
+            :en_US => "You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_queue_1gathererlvl1',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 350,
+
+          },          
+
+          :reward_tests => {
+            
+            :alliance_members_test => {
+              :min_count => 4,
+            },
+
+          },          
+
+        },              #   END OF quest_alliance_members
       ],                # END OF QUESTS
 
     )

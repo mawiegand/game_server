@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="25" />
+    <Version major="0" minor="3" build="26" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -759,14 +759,13 @@
       <RewardText locale="en_US">You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.</RewardText>
       <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far. </RewardFlavor>
-      <!-- Requirement quest="quest_profile" / -->
-      <Requirement quest="quest_queue_1gathererlvl1" />
+      <Requirement quest="quest_profile" />
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>350</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <AllianceMembersTest min_count="4" />
+        <AllianceTest />
       </RewardTests>
     </Quest>
 
@@ -5026,5 +5025,35 @@
       <UIMarker>mark_free_construction_slot</UIMarker>
       <UIMarker>mark_building_option</UIMarker>
     </Quest>
+
+    <Quest id="quest_alliance_members" advisor="girl">
+      <Name>Alliance</Name>
+      <Name locale="de_DE">Allianzen</Name>
+      <Task>Enter an alliance, or start your own.</Task>
+      <Task locale="de_DE">Tritt einer Allianz bei oder gründe Deine eigene.</Task>
+      <Description locale="de_DE">
+        <p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p>
+        <p>Eine eigene Allianz kannst Du mit Lagerfeuer Level 2 gründen.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>From now on you can enter an alliance. An alliance has many advantages: you can exchange raw materials, help each other's defences and coordinate attacks. Only an alliance can hold a large territory. If you think you're ready for it, why not enter an alliance?</p>
+        <p>You can only start your own alliance once you've reached campfire level 2. </p>
+      </Description>
+      <Flavor locale="de_DE">Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.</Flavor>
+      <Flavor locale="en_US">Fighting enemy armies with your own armies is nice. But it would be much better if you worked together, or if your friends helped you. You should be in an alliance –allies help each other.</Flavor>
+      <RewardText locale="de_DE">Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.</RewardText>
+      <RewardText locale="en_US">You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.</RewardText>
+      <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
+      <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far. </RewardFlavor>
+      <Requirement quest="quest_queue_1gathererlvl1" />
+      <Rewards>
+        <UnitReward unit="unit_clubbers">10</UnitReward>
+        <ExperienceReward>350</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <AllianceMembersTest min_count="4" />
+      </RewardTests>
+    </Quest>
+
   </Quests>
 </Tutorial>
