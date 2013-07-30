@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="27" />
+    <Version major="0" minor="3" build="28" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -5059,8 +5059,8 @@
 
 
     <Quest id="quest_alliance_members" advisor="chef">
-      <Name>Alliance</Name>
-      <Name locale="de_DE">Allianzen</Name>
+      <Name>Alliance Members</Name>
+      <Name locale="de_DE">Allianzmitglieder</Name>
       <Task>Enter an alliance, or start your own.</Task>
       <Task locale="de_DE">Tritt einer Allianz bei oder gründe Deine eigene.</Task>
       <Description locale="de_DE">
