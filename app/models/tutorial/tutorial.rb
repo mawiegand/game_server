@@ -2171,7 +2171,7 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :alliance_member_test => {
+            :alliance_members_test => {
               :min_count => 10,
             },
 

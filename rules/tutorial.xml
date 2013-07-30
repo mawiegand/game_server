@@ -765,7 +765,7 @@
         <ExperienceReward>350</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <AllianceMemberTest min_count="10" />
+        <AllianceMembersTest min_count="10" />
       </RewardTests>
     </Quest>
 
