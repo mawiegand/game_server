@@ -423,12 +423,13 @@ class Messaging::Message < ActiveRecord::Base
   end
   
   def self.generate_alliance_application_message(character, alliance)
+    alliance_leader = Fundamental::Character.find(alliance.leader_id)
     Messaging::Message.create({
 			sender:       character,
-      recipient_id: alliance.leader_id,
+      recipient:    alliance_leader,
       type_id:      ALLIANCE_APPLICATION_ID,
-      subject:      I18n.translate('application.messaging.alliance_application_message.subject'),
-      body:         I18n.translate('application.messaging.alliance_application_message.body1') + character.name + I18n.translate('application.messaging.alliance_application_message.body2'),
+      subject:      I18n.translate('application.messaging.alliance_application_message.subject', locale: alliance_leader.lang),
+      body:         I18n.translate('application.messaging.alliance_application_message.body1', locale: alliance_leader.lang) + character.name + I18n.translate('application.messaging.alliance_application_message.body2', locale: alliance_leader.lang),
       send_at:      DateTime.now,
       reported:     false,
       flag:         0,
