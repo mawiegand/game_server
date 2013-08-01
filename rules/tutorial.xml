@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="30" />
+    <Version major="0" minor="3" build="31" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -4791,7 +4791,7 @@
         <ActionPointReward></ActionPointReward>
       </Rewards>
       <RewardTests>
-        <KillTest min_units="2" />
+        <KillTest min_units="1" />
       </RewardTests>
       <UIMarker>mark_map</UIMarker>
       <UIMarker>mark_select_own_army</UIMarker>

@@ -171,4 +171,39 @@
     <DisplayDuration>60</DisplayDuration>
 
   </SpecialAssignmentType>
+  
+  
+  <SpecialAssignmentType id="special_assignment_quest1" advisor="girl" level="1" probability_factor="1">
+    <Name>The dark forest</Name>
+    <Name lang="de_DE">Der dunkle Wald</Name>
+    
+    <Flavour lang="de_DE">Das klingt doch mal nach einer Aufgabe für einen heroischen Halbgott.</Flavour>
+    <Flavour lang="en_US">That sounds like a job for a dapper demigod.</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Begib dich auf Reise und erkunde die Geheimnisse des finsteren Waldes.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Enter the dark forest and learn its mysteries.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Lange schon ranken sich Legenden darum, was sich im Zentrum des dunklen Waldes befinden könnte. Nur selten wagen sich die Jäger und Sammler bis in die nähe seines Zentrums und seltener noch kehren sie zurück. Sogar ein paar Holzfäller sollen dort schon verschollen sein. Schon länger hörst Du das munkeln in der Taverne. Vielleicht beschließt Du ja dem ganzen nach zu gehen.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>For the longest  time there have been legends about the center of the dark forest. Not often do the hunters and gatherers dare come close to it and hardly any of them return. You have heared the stories about that place a hundred times. Maybe its time to check it ouut for yourself.</p>
+    </Description>
+    
+    <SpecialAssignmentRewards>
+      <SpecialAssignmentResourceReward resource="resource_stone">0.3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_wood">0.3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentResourceReward resource="resource_fur">0.3*PRODUCTION</SpecialAssignmentResourceReward>
+      <SpecialAssignmentExperienceReward>0.003*PRODUCTION</SpecialAssignmentExperienceReward>
+    </SpecialAssignmentRewards>
+    
+    <Duration>60</Duration>
+    
+    <DisplayDuration>3600</DisplayDuration>
+    
+  </SpecialAssignmentType>
 </SpecialAssignmentTypes>
