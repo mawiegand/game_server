@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.28
+# Version: 0.3.29
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 28, 
+        :build => 29, 
       },
       
       :production_test_weights => {
@@ -122,7 +122,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Order a Hunter Gatherer Level 1.",
+            :en_US => "Give an order to a Level 1 Hunter Gatherer.",
   
             :de_DE => "Gib einen Jäger und Sammler Level 1 in Auftrag.",
                 
@@ -138,7 +138,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>",
   
-            :en_US => "<p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>",
+            :en_US => "<p>To give an order to a Hunter Gatherer, press on an empty building site and click Hunter Gatherer.</p>",
                 
           },          
           :reward_flavour => {
@@ -152,7 +152,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Der Jäger und Sammler sammelt Steine, Holz und Felle für Deinen Rohstoffvorrat.",
   
-            :en_US => "The Hunter Gatherer gathers small quantities of all kinds of raw materials: stone, wood and fur. ",
+            :en_US => "The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. ",
                 
           },
 
@@ -231,14 +231,14 @@ class Tutorial::Tutorial
             
             :de_DE => "Könntest Du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann arbeitet er effektiver und liefert Dir mehr Rohstoffe.",
   
-            :en_US => "Do you think you could upgrade a Hunter Gatherer to level 2? He'd feel better and give you more resources. ",
+            :en_US => "Do you think you could upgrade a Hunter Gatherer to level 2? He'd feel better, and he´d be able to collect more resources for you. ",
                 
           },
           :description => {
             
             :de_DE => "<p>Wähle dazu einen Jäger und Sammler aus. Im sich öffnenden Fenster siehst Du den aktuellen Level, darunter die nächste Ausbaustufe. Drücke auf den 'Ausbauen' Knopf, um den Ausbau zu beginnen.</p>",
   
-            :en_US => "<p>Choose a Hunter Gatherer. In the window that opens you'll see the current status of your development, including the next upgrade level. Press on the “upgrade” button to start the upgrade.</p>",
+            :en_US => "<p>Choose a Hunter Gatherer. A window open showing the current status of your development, including the next upgrade level. Press Upgrade to get started.</p>",
                 
           },          
           :reward_flavour => {
@@ -252,7 +252,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Du solltest weitere Jäger und Sammler bauen um Deine Rohstoffproduktion zu verbessern.",
   
-            :en_US => "You should build more Hunter Gatherers to improve your raw material production.",
+            :en_US => "You should create more Hunter Gatherer to improve your raw material production.",
                 
           },
 
@@ -321,14 +321,14 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Upgrade of the chieftain's hut",
+            :en_US => "Upgrade the chieftan's hut",
   
             :de_DE => "Ausbau der Häuptlingshütte",
                 
           },
           :task => {
             
-            :en_US => "Upgrade your chieftain's hut to level 2.",
+            :en_US => "Upgrade your chieftan's hut to level 2.",
   
             :de_DE => "Baue Deine Häuptlingshütte auf Level 2 aus.",
                 
@@ -337,7 +337,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort!",
   
-            :en_US => "Demigod? And what's that supposed to be? My chieftain's hut? You think I'm going to live in that? Ha! Change it immediately!",
+            :en_US => "Demigod?! I don´t think so. Look at my chieftan´s hut! You think I´m going to live in that? Ha! Change it immediately!",
                 
           },
           :description => {
@@ -418,13 +418,13 @@ class Tutorial::Tutorial
           :message => {
             
             :en => {
-              :subject => 'Welcome to Wack-A-Doo',
-              :body => "<h2>Welcome to round 3 of Wack-A-Doo's public Beta.</h2>
-          <p>Our game 'Wack-A-doo' has already finished its first rounds of public Beta, but is still in development.<br/>
-          As before we will be adding lots of new content and mechanics during this round of public Beta and try to improve your game experience. <br/>
+              :subject => 'Welcome to Wack-A-Doo!',
+              :body => "<h2>Welcome to Round 3 of Wack-A-Doo's Public Beta.</h2>
+          <p>Wack-A-Doo has finished the first rounds of its Public Beta, but the game is still in development.<br/>
+          As before, we will be adding lots of new content and mechanics during this round of public Beta, trying to improve your game experience. <br/>
           Prepare to be surprised!</p>
-          <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
-          <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
+          <p>We suggest that you follow the tutorial and complete the subsequent quests in order to learn the basics of Wack-A-Doo. Other players will also be happy to answer your questions, both in general chat and in your alliances.</p>
+          <p>You can find detailed instructions and on overview of the game mechanics in our in-game encyclopedia an in our wiki:</p>
           <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree' target='_blank'>Unit Overview</a></p>
           <p>We invite you to register and help keep our Wiki up to date.</p>
           <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
@@ -1064,7 +1064,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [11, ],
+          :successor_quests => [127, ],
 
           :rewards => {
             
@@ -1289,7 +1289,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_army_move',
+            :quest => 'quest_npc_battle',
 
           },
 
@@ -12551,7 +12551,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_army_move',
+
+          },
+
+          :successor_quests => [11, ],
 
           :rewards => {
             

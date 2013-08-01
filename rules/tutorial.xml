@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="28" />
+    <Version major="0" minor="3" build="29" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -33,18 +33,18 @@
     <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" priority="1" blocking="true" >
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
-      <Task>Order a Hunter Gatherer Level 1.</Task>
+      <Task>Give an order to a Level 1 Hunter Gatherer.</Task>
       <Task locale="de_DE">Gib einen Jäger und Sammler Level 1 in Auftrag.</Task>
       <Description locale="de_DE">
         <p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>
       </Description>
       <Description locale="en_US">
-        <p>To order a Hunter Gatherer press on an empty building site, and click on Hunter Gatherer there.</p>
+        <p>To give an order to a Hunter Gatherer, press on an empty building site and click Hunter Gatherer.</p>
       </Description>
       <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
       <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
       <RewardText locale="de_DE">Der Jäger und Sammler sammelt Steine, Holz und Felle für Deinen Rohstoffvorrat.</RewardText>
-      <RewardText locale="en_US">The Hunter Gatherer gathers small quantities of all kinds of raw materials: stone, wood and fur. </RewardText>
+      <RewardText locale="en_US">The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. </RewardText>
       <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
       <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
       <Rewards>
@@ -71,12 +71,12 @@
         <p>Wähle dazu einen Jäger und Sammler aus. Im sich öffnenden Fenster siehst Du den aktuellen Level, darunter die nächste Ausbaustufe. Drücke auf den 'Ausbauen' Knopf, um den Ausbau zu beginnen.</p>
       </Description>
       <Description locale="en_US">
-        <p>Choose a Hunter Gatherer. In the window that opens you'll see the current status of your development, including the next upgrade level. Press on the “upgrade” button to start the upgrade.</p>
+        <p>Choose a Hunter Gatherer. A window open showing the current status of your development, including the next upgrade level. Press Upgrade to get started.</p>
       </Description>
       <Flavor locale="de_DE">Könntest Du bitte einen Jäger und Sammler auf Level 2 ausbauen? Dann arbeitet er effektiver und liefert Dir mehr Rohstoffe.</Flavor>
-      <Flavor locale="en_US">Do you think you could upgrade a Hunter Gatherer to level 2? He'd feel better and give you more resources. </Flavor>
+      <Flavor locale="en_US">Do you think you could upgrade a Hunter Gatherer to level 2? He'd feel better, and he´d be able to collect more resources for you. </Flavor>
       <RewardText locale="de_DE">Du solltest weitere Jäger und Sammler bauen um Deine Rohstoffproduktion zu verbessern.</RewardText>
-      <RewardText locale="en_US">You should build more Hunter Gatherers to improve your raw material production.</RewardText>
+      <RewardText locale="en_US">You should create more Hunter Gatherer to improve your raw material production.</RewardText>
       <RewardFlavor locale="de_DE">Wie nett von Dir. Der Sammler freut sich wie verrückt und die Produktion ist gestiegen. Außerdem erhältst Du wertvolle Erfahrung.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh that's nice of you! The Hunter Gatherer is really happy. He gave me some raw materials to give you.</RewardFlavor>
       <Requirement quest="quest_queue_1gathererlvl1" />
@@ -96,9 +96,9 @@
 
     <!-- 2 --> <!-- Tutorial 3 -->
     <Quest id="quest_build_chiefcottagelvl2" advisor="chef" tutorial="true">
-      <Name>Upgrade of the chieftain's hut</Name>
+      <Name>Upgrade the chieftan's hut</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
-      <Task>Upgrade your chieftain's hut to level 2.</Task>
+      <Task>Upgrade your chieftan's hut to level 2.</Task>
       <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 2 aus.</Task>
       <Description locale="de_DE">
         <p>Die Häuptlingshütte ist das große Gebäude in der Mitte der Siedlung.</p>
@@ -107,7 +107,7 @@
         <p>The chieftain's hut is the big building in the middle of the settlement.</p>
       </Description>
       <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort!</Flavor>
-      <Flavor locale="en_US">Demigod? And what's that supposed to be? My chieftain's hut? You think I'm going to live in that? Ha! Change it immediately!</Flavor>
+      <Flavor locale="en_US">Demigod?! I don´t think so. Look at my chieftan´s hut! You think I´m going to live in that? Ha! Change it immediately!</Flavor>
       <RewardText locale="de_DE">Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese, wenn Du Dich besser auskennst.</RewardText>
       <RewardText locale="en_US">At the moment you should build your building at the small building slots.</RewardText>
       <RewardFlavor locale="de_DE">Endlich fertig, hm? Hat ja ewig gedauert. Wie Belohnung?</RewardFlavor>
@@ -127,13 +127,13 @@
       <UIMarker>mark_upgradable_building</UIMarker>
       <UIMarker>mark_upgrade_button</UIMarker>
       <Message>
-        <Subject>Welcome to Wack-A-Doo</Subject>
-        <Body><![CDATA[<h2>Welcome to round 3 of Wack-A-Doo's public Beta.</h2>
-          <p>Our game 'Wack-A-doo' has already finished its first rounds of public Beta, but is still in development.<br/>
-          As before we will be adding lots of new content and mechanics during this round of public Beta and try to improve your game experience. <br/>
+        <Subject>Welcome to Wack-A-Doo!</Subject>
+        <Body><![CDATA[<h2>Welcome to Round 3 of Wack-A-Doo's Public Beta.</h2>
+          <p>Wack-A-Doo has finished the first rounds of its Public Beta, but the game is still in development.<br/>
+          As before, we will be adding lots of new content and mechanics during this round of public Beta, trying to improve your game experience. <br/>
           Prepare to be surprised!</p>
-          <p>We suggest you play the tutorial and all following quests in order to learn the basics of Wack-A-Doo. Of course our players will be happy to answer all your questions both in general chat and in your aliance.</p>
-          <p>You can find explanations and overviews to all our mechanics in our ingame encyclopdedia and in our Wiki:</p>
+          <p>We suggest that you follow the tutorial and complete the subsequent quests in order to learn the basics of Wack-A-Doo. Other players will also be happy to answer your questions, both in general chat and in your alliances.</p>
+          <p>You can find detailed instructions and on overview of the game mechanics in our in-game encyclopedia an in our wiki:</p>
           <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree' target='_blank'>Unit Overview</a></p>
           <p>We invite you to register and help keep our Wiki up to date.</p>
           <p>Please report all bugs you find and give us Feedback. We want to hear your opinion on the game, what works and what could be improved. To do so please use our forum:</p>
@@ -463,7 +463,7 @@
       <RewardText locale="en_US">You can enter all your settlements and fortresses by selecting them and then clicking on 'Enter'.</RewardText>
       <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">You see? Pretty easy, wasn't it?!</RewardFlavor>
-      <Requirement quest="quest_army_move" />
+      <Requirement quest="quest_npc_battle" />
       <Rewards>
         <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>150</ExperienceReward>
@@ -4784,6 +4784,7 @@
       <RewardText locale="en_US">You attack the same way with armies. Armies fighting on the same side as settlements or fortresses get a boost. While a battle is going on armies can join it on either side. </RewardText>
       <RewardFlavor locale="de_DE">Der Kampf wird noch eine Weile toben aber wir werden mit sicherheit Siegen! Vielleicht kehrt unsere Armee auch zurück und kommt uns zur Unterstützung.</RewardFlavor>
       <RewardFlavor locale="en_US">The battle is gona keep going for a while but we will surely win! Especially if the army returns and supports us.</RewardFlavor>
+      <Requirement quest="quest_army_move" />
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>250</ExperienceReward>
