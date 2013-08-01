@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="29" />
+    <Version major="0" minor="3" build="30" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -4768,7 +4768,7 @@
      </Quest>
      -->
 
-    <Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
+    <Quest id="quest_npc_battle" advisor="warrior" tutorial="true">
       <Name>First battle</Name>
       <Name locale="de_DE">Der erste Kampf</Name>
       <Task>Fight for the first time!</Task>
