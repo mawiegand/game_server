@@ -243,7 +243,7 @@ class Messaging::Message < ActiveRecord::Base
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       field_name = resource_type[:symbolic_id].to_s() + '_amount'
       if !amounts[field_name].blank? && (include_all || amounts[field_name] != 0)
-        text += "<span class=\"resource-icon #{ resource_type[:symbolic_id].to_s }\"  title=\"#{ resource_type[:name][:de_DE] }\">&nbsp;</span> #{ amounts[field_name] || 0 }#{spacer}"
+        text += "<div class=\"resource-icon #{ resource_type[:symbolic_id].to_s }\"  title=\"#{ resource_type[:name][:de_DE] }\">&nbsp;</div> #{ amounts[field_name] || 0 }#{spacer}"
       end
     end   
     text     
