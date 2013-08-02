@@ -11,7 +11,7 @@ class Action::Fundamental::AutoJoinAllianceActionsController < ApplicationContro
     raise UnauthorizedError.new('no character given') if params[:auto_join_alliance_action][:character_id].nil?
     raise UnauthorizedError.new('tried to access another character') if params[:auto_join_alliance_action][:character_id].to_i != current_character.id
 
-    alliance = Fundamental::Alliance.non_empty.auto_join_enabled.not_full.first
+    alliance = Fundamental::Alliance.select_auto_join_alliance(current_character)
 
     raise NotFoundError.new('no suitable alliance found') if alliance.nil?
     raise ConflictError.new("too many members in alliance") if alliance.full?

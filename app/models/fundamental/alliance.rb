@@ -40,6 +40,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   scope :auto_join_enabled,  where(auto_join_disabled: false)
   scope :not_full,           where(['members_count < size_bonus + ?', GameRules::Rules.the_rules.alliance_max_members])
   scope :non_empty,          where('members_count > 0')
+  scope :auto_join_selectable, not_full.auto_join_enabled.non_empty
 
   
 
@@ -71,6 +72,32 @@ class Fundamental::Alliance < ActiveRecord::Base
     alliance
   end
   
+  def self.select_auto_join_alliance(character)
+    base_region = Map::Region.find(character.base_region_id)
+    alliance = base_region.fortress.alliance.auto_joinable unless base_region.fortress.alliance.nil?
+		return alliance unless alliance.nil?
+    base_region.node.neighbor_nodes.each do |neighbor_node|
+      alliance = neighbor_node.region.fortress.alliance.auto_joinable unless neighbor_node.region.fortress.alliance.nil?
+		  return alliance unless alliance.nil?
+		end
+    base_region.locations.non_empty.each do |location|
+      alliance = location.alliance.auto_joinable unless location.alliance.nil?
+		  return alliance unless alliance.nil?
+    end
+    base_region.node.neighbor_nodes.each do |neighbor_node|
+      neighbor_node.region.locations.non_empty.each do |location|
+        alliance = location.alliance.auto_joinable unless location.alliance.nil?
+		    return alliance unless alliance.nil?
+      end
+    end
+    Fundamental::Alliance.auto_join_selectable.first
+  end
+  
+  def auto_joinable
+    return self if !auto_join_disabled and self.member.count > 0 and !self.full?
+		nil
+  end
+
   def determine_new_leader
     if self.members.count > 0
       self.leader_id = self.members.first.id # TODO choose member who's first in ranking

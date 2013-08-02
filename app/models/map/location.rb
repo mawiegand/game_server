@@ -15,6 +15,7 @@ class Map::Location < ActiveRecord::Base
   scope :excluding_fortress_slots,  where(['slot <> ?', 0])
   scope :owned_by,                  lambda { |character| where(:owner_id => character.id) }
   scope :empty,                     where("settlement_type_id = ?", Settlement::Settlement::TYPE_NONE)
+  scope :non_empty,                 where("settlement_type_id != ?", Settlement::Settlement::TYPE_NONE)
   scope :home_bases,                where("settlement_type_id = ?", Settlement::Settlement::TYPE_HOME_BASE)
 
   def self.find_empty
