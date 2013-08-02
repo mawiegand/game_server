@@ -230,7 +230,7 @@ class Messaging::Message < ActiveRecord::Base
       text += "<p>Deine Handelskarren sind leer von ihrer Reise nach #{ action.target_settlement.name } (#{action.target_settlement.owner.name}) zurück gekommen.</p>"
     else 
       text += "<p>Deine Handelskarren sind von ihrer Reise nach #{ action.target_settlement.name } (#{action.target_settlement.owner.name}) zurück gekommen. Sie brachten folgende Ladung mit:</p>"
-      text += "<p>" + Messaging::Message.resource_amounts_to_html(action, false) + "</p>"
+      text += Messaging::Message.resource_amounts_to_html(action, false)
     end
     message.subject = "Rückkehr von #{action.num_carts == 1 ? "einem" : action.num_carts} " + (action.empty? ? "leeren" : "beladenen") + " Handelskarren"
     message.body = text
