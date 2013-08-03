@@ -151,6 +151,7 @@ GameServer::Application.routes.draw do
       resources :queues, :path => "/settlement/settlements/:settlement_id/training_queues", :module => 'training'            
 
       resources :settlements, :path => "/map/locations/:location_id/settlements", :module => 'settlement'            
+      resources :settlements, :path => "/map/regions/:region_id/settlements", :module => 'settlement'            
 
 
       namespace :military do 

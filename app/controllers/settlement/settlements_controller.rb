@@ -20,7 +20,7 @@ class Settlement::SettlementsController < ApplicationController
       @settlement_settlements = []                         if @settlement_settlements.nil?  # necessary? or ok to send 'null' ?
       role = determine_access_role(@character.id, @character.alliance_id)
     elsif params.has_key?(:location_id)         # find "all" settlements at a location (will be one or empty)
-      @location = Map::Location.find(params[:location_id])
+      @location = Map::Location.find_by_id(params[:location_id])
       raise NotFoundError.new('Location not found.') if @location.nil?
       if @location.settlement.nil?
         @settlement_settlements = []
@@ -29,6 +29,17 @@ class Settlement::SettlementsController < ApplicationController
         @settlement_settlements = [ @location.settlement ]
         role = determine_access_role(@location.settlement.owner_id, @location.settlement.alliance_id)
         last_modified = @location.settlement.updated_at
+      end
+    elsif params.has_key?(:region_id)         # find "all" settlements at in region (will be one or empty)
+      @region = Map::Region.find_by_id(params[:region_id])
+      raise NotFoundError.new('Region not found.') if @region.nil?
+      if @region.settlements.nil?
+        @settlement_settlements = []
+        role = determine_access_role(nil, nil)  # check for staff and admin, otherwise will be :default
+      else
+        @settlement_settlements = @region.settlements
+        role = determine_access_role(nil, nil)  # check for staff and admin, otherwise will be :default
+      #  last_modified = @region.settlements # -> TODO: find max updated_at
       end
     else                                        # return the complete index, whereas this will only be allowed for the backend (see below)
       @asked_for_index = true
