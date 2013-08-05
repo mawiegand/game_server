@@ -76,8 +76,10 @@ class Fundamental::SettingsController < ApplicationController
     raise new NotFoundError.new ("settings not found ")   if @fundamental_setting.nil?
     raise ForbiddenError.new("access forbidden")          unless  admin? || staff? || developer? || @fundamental_setting.character_id == current_character.id
 
+    incomming = params[:fudamental_setting] || params[:setting]  # no module when outgoing -> need to accept the same incomming :-(
+
     respond_to do |format|
-      if @fundamental_setting.update_attributes(params[:fundamental_setting])
+      if @fundamental_setting.update_attributes(incomming)
         format.html { redirect_to @fundamental_setting, notice: 'Setting was successfully updated.' }
         format.json { head :ok }
       else
