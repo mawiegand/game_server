@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730173127) do
+ActiveRecord::Schema.define(:version => 20130805121659) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2001,10 +2001,12 @@ ActiveRecord::Schema.define(:version => 20130730173127) do
   end
 
   create_table "fundamental_settings", :force => true do |t|
-    t.boolean  "email_messages", :default => true, :null => false
+    t.boolean  "email_messages",     :default => true, :null => false
     t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "insider_newsletter", :default => true, :null => false
+    t.boolean  "experimental",       :default => true, :null => false
   end
 
   create_table "fundamental_victory_progresses", :force => true do |t|
