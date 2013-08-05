@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.31
+# Version: 0.3.32
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 31, 
+        :build => 32, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 17,
+      :num_tutorial_quests => 20,
   
       :quests => [  # ALL QUESTS
 
@@ -463,7 +463,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_quest_button,
           :advisor           => :girl,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -511,7 +511,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_npc_battle',
+
+          },
+
+          :successor_quests => [11, ],
 
           :rewards => {
             
@@ -1289,7 +1295,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_npc_battle',
+            :quest => 'quest_quest_button',
 
           },
 
@@ -1488,7 +1494,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [16, ],
+          :successor_quests => [129, ],
 
           :rewards => {
             
@@ -1795,7 +1801,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_cottagelvl1',
+            :quest => 'quest_assignment1',
 
           },
 
@@ -12557,7 +12563,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [11, ],
+          :successor_quests => [3, ],
 
           :rewards => {
             
@@ -12582,6 +12588,8 @@ class Tutorial::Tutorial
               :min_units => 1,
             },
 
+            :battle_test => {},
+
           },          
 
           :uimarker => ['mark_map', 'mark_select_own_army', 'mark_select_other_army', 'mark_attack_button', ],
@@ -12592,7 +12600,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_assignment1,
           :advisor           => :warrior,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -12640,7 +12648,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_build_tavern',
+
+          },
+
+          :successor_quests => [16, ],
 
           :rewards => {
             
@@ -12662,7 +12676,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_build_tavern,
           :advisor           => :warrior,
           :hide_start_dialog => false,
-          :tutorial          => false,
+          :tutorial          => true,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -12710,7 +12724,13 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :requirement => {
+            
+            :quest => 'quest_build_cottagelvl1',
+
+          },
+
+          :successor_quests => [128, ],
 
           :rewards => {
             
@@ -12769,43 +12789,43 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Campfire",
+            :en_US => "A bigger campfire",
   
-            :de_DE => "Lagerfeuer",
+            :de_DE => "Ein größeres Lagerfeuer",
                 
           },
           :task => {
             
-            :en_US => "Build a campfire.",
+            :en_US => "Upgrade your campfire to level 2.",
   
-            :de_DE => "Baue ein Lagerfeuer.",
+            :de_DE => "Baue Dein Lagerfeuer auf Level 2 aus.",
                 
           },
           :flavour => {
             
-            :de_DE => "An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?",
+            :de_DE => "Das Feuer ist ja schön und gut, aber doch ein bisschen zu mikrig, als dass man es anderen Halbgöttern präsentieren könnte denkst Du nicht?",
   
-            :en_US => "Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don't you think?
+            :en_US => "This fire is nice and all, but not nearly big enough, dont you think?
       ",
                 
           },
           :description => {
             
-            :de_DE => "<p>Lagerfeuer werden benötigt, um Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>",
+            :de_DE => "<p>Baue Dein Lagerfeuer aus, um weitere Allianz-Optionen freizuschalten.</p>",
   
-            :en_US => "<p>Campfires are needed to start or enter alliances. And it's where little chieftains are recruited.</p>",
+            :en_US => "<p>Upgrade your campfire to unlock more alliance options.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Ach, wie das Feuer knistert. So schön warm.",
+            :de_DE => "Schau nur wie es lodert, dass nenn ich mal ein Feuer.",
   
             :en_US => "Oh, listen to the fire crackling! Lovely warm flames!",
                 
           },
           :reward_text => {
             
-            :de_DE => "Ab jetzt kannst Du Nachrichten verschicken. Nutze dies, um mit Deinen Nachbarn zu kommunizieren.",
+            :de_DE => "Ab jetzt kannst du eigene Allianzen gründen und andere Spieler um die versammeln.",
   
             :en_US => "From now on you can send messages. Use this to communicate with your neighbours.",
                 
@@ -12878,33 +12898,33 @@ class Tutorial::Tutorial
             
             :en_US => "Enter an alliance, or start your own.",
   
-            :de_DE => "Tritt einer Allianz bei oder gründe Deine eigene.",
+            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 4 Mitgliedern.",
                 
           },
           :flavour => {
             
-            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.",
+            :de_DE => "Schöne Allianz hast Du da, aber größer könnte sie schon noch werden, nicht?",
   
             :en_US => "Fighting enemy armies with your own armies is nice. But it would be much better if you worked together, or if your friends helped you. You should be in an alliance –allies help each other.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p><p>Eine eigene Allianz kannst Du mit Lagerfeuer Level 2 gründen.</p>",
+            :de_DE => "<p>Deine Allianz muss wachsen, wenn ihr euch in dieser grausamen Welt durchsetzten wollt. Sucht nach geeigneten Mitgliedern und nehmt sie bei euch auf, dann könnt ihr bald schon bei den Mächtigen mitmischen.</p>",
   
             :en_US => "<p>From now on you can enter an alliance. An alliance has many advantages: you can exchange raw materials, help each other's defences and coordinate attacks. Only an alliance can hold a large territory. If you think you're ready for it, why not enter an alliance?</p><p>You can only start your own alliance once you've reached campfire level 2. </p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.",
+            :de_DE => "Jetzt wirds langsam!.",
   
             :en_US => "Wow, that's some alliance! I'm sure they're going to go far. ",
                 
           },
           :reward_text => {
             
-            :de_DE => "Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.",
+            :de_DE => "Desto mehr Mitglieder ihr in eurer Allianz habt, desto größer kann euer Einfluss werden und desto mehr könnt ihr einander unterstützen.",
   
             :en_US => "You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.",
                 
