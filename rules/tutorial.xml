@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="31" />
+    <Version major="0" minor="3" build="33" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -165,7 +165,7 @@
     </Quest>
 
     <!-- 3 --> <!-- not in -->
-    <Quest id="quest_quest_button" advisor="girl" tutorial="false">
+    <Quest id="quest_quest_button" advisor="girl" tutorial="true">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
       <Task>Find the quest button and press it. Then close the dialog and come back here.</Task>
@@ -182,6 +182,7 @@
       <RewardText locale="en_US">Take a look at the quest overview regularly, then you won't lose track of them.  </RewardText>
       <RewardFlavor locale="de_DE">Klasse, jetzt hast Du alle Quests auf einen Blick. </RewardFlavor>
       <RewardFlavor locale="en_US">Great – now you can see all your quests at a glance.</RewardFlavor>
+      <Requirement quest="quest_army_move" />
       <Rewards>
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
@@ -463,7 +464,7 @@
       <RewardText locale="en_US">You can enter all your settlements and fortresses by selecting them and then clicking on 'Enter'.</RewardText>
       <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">You see? Pretty easy, wasn't it?!</RewardFlavor>
-      <Requirement quest="quest_npc_battle" />
+      <Requirement quest="quest_quest_button" />
       <Rewards>
         <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>150</ExperienceReward>
@@ -621,7 +622,7 @@
       <RewardText locale="en_US">This is a bigger project than the ones we had before and it takes some time to get done.</RewardText>
       <RewardFlavor locale="de_DE">Jetzt muss es nur noch fertig werden.</RewardFlavor>
       <RewardFlavor locale="en_US">Now it just has to be finished.</RewardFlavor>
-      <Requirement quest="quest_build_cottagelvl1" />
+      <Requirement quest="quest_assignment1" />
       <Rewards>
         <ResourceReward resource="resource_stone">165</ResourceReward>
         <ResourceReward resource="resource_wood">150</ResourceReward>
@@ -4768,7 +4769,7 @@
      </Quest>
      -->
 
-    <Quest id="quest_npc_battle" advisor="warrior" tutorial="true">
+    <Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
       <Name>First battle</Name>
       <Name locale="de_DE">Der erste Kampf</Name>
       <Task>Fight for the first time!</Task>
@@ -4784,7 +4785,6 @@
       <RewardText locale="en_US">You attack the same way with armies. Armies fighting on the same side as settlements or fortresses get a boost. While a battle is going on armies can join it on either side. </RewardText>
       <RewardFlavor locale="de_DE">Der Kampf wird noch eine Weile toben aber wir werden mit sicherheit Siegen! Vielleicht kehrt unsere Armee auch zurück und kommt uns zur Unterstützung.</RewardFlavor>
       <RewardFlavor locale="en_US">The battle is gona keep going for a while but we will surely win! Especially if the army returns and supports us.</RewardFlavor>
-      <Requirement quest="quest_army_move" />
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>250</ExperienceReward>
@@ -4792,6 +4792,7 @@
       </Rewards>
       <RewardTests>
         <KillTest min_units="1" />
+        <BattleTest/>
       </RewardTests>
       <UIMarker>mark_map</UIMarker>
       <UIMarker>mark_select_own_army</UIMarker>
@@ -4968,7 +4969,7 @@
      -->
     <!-- 503 -->
     
-    <Quest id="quest_assignment1" advisor="warrior" tutorial="false">
+    <Quest id="quest_assignment1" advisor="warrior" tutorial="true">
       <Name>First Assignment</Name>
       <Name locale="de_DE">Der erste Auftrag</Name>
       <Task>Start your first Assignment</Task>
@@ -4985,6 +4986,7 @@
       <RewardText locale="en_US">The bigger the tavern becomes the more jobs you can do. Check it out regularly to see what's new.'</RewardText>
       <RewardFlavor locale="de_DE">Nach einem Auftrag gibt es doch nichts besseres als ein kühles Bier.</RewardFlavor>
       <RewardFlavor locale="en_US">After we finish that assignment, let's go back to the tavern for a drink.</RewardFlavor>
+      <Requirement quest="quest_build_tavern" />
       <Rewards>
         <ExperienceReward>250</ExperienceReward>
       </Rewards>
@@ -4996,7 +4998,7 @@
     
     <!-- 504 -->
     
-    <Quest id="quest_build_tavern" advisor="warrior" tutorial="false">
+    <Quest id="quest_build_tavern" advisor="warrior" tutorial="true">
       <Name>The Tavern</Name>
       <Name locale="de_DE">Die Taverne</Name>
       <Task>Build the tavern</Task>
@@ -5013,6 +5015,7 @@
       <RewardText locale="en_US">There are many people looking for favors in the tavern. Maybe you can get something out of that.</RewardText>
       <RewardFlavor locale="de_DE">Netter Laden, man hat mir sogar schon einen Job angeboten.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice place, already earned a coupple of stones aswell.</RewardFlavor>
+      <Requirement quest="quest_build_cottagelvl1" />
       <Rewards>
         <ResourceReward resource="resource_stone">125</ResourceReward>
         <ResourceReward resource="resource_wood">125</ResourceReward>
@@ -5030,22 +5033,22 @@
     
     
     <Quest id="quest_build_1campfirelvl2" advisor="chef" tutorial="false">
-      <Name>Campfire</Name>
-      <Name locale="de_DE">Lagerfeuer</Name>
-      <Task>Build a campfire.</Task>
-      <Task locale="de_DE">Baue ein Lagerfeuer.</Task>
+      <Name>A bigger campfire</Name>
+      <Name locale="de_DE">Ein größeres Lagerfeuer</Name>
+      <Task>Upgrade your campfire to level 2.</Task>
+      <Task locale="de_DE">Baue Dein Lagerfeuer auf Level 2 aus.</Task>
       <Description locale="de_DE">
-        <p>Lagerfeuer werden benötigt, um Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>
+        <p>Baue Dein Lagerfeuer aus, um weitere Allianz-Optionen freizuschalten.</p>
       </Description>
       <Description locale="en_US">
-        <p>Campfires are needed to start or enter alliances. And it's where little chieftains are recruited.</p>
+        <p>Upgrade your campfire to unlock more alliance options.</p>
       </Description>
-      <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
-      <Flavor locale="en_US">Diplomats meet around the campfire, swap messages and forge alliances. It would be great to have one of them, don't you think?
+      <Flavor locale="de_DE">Das Feuer ist ja schön und gut, aber doch ein bisschen zu mikrig, als dass man es anderen Halbgöttern präsentieren könnte denkst Du nicht?</Flavor>
+      <Flavor locale="en_US">This fire is nice and all, but not nearly big enough, dont you think?
       </Flavor>
-      <RewardText locale="de_DE">Ab jetzt kannst Du Nachrichten verschicken. Nutze dies, um mit Deinen Nachbarn zu kommunizieren.</RewardText>
+      <RewardText locale="de_DE">Ab jetzt kannst du eigene Allianzen gründen und andere Spieler um die versammeln.</RewardText>
       <RewardText locale="en_US">From now on you can send messages. Use this to communicate with your neighbours.</RewardText>
-      <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Schau nur wie es lodert, dass nenn ich mal ein Feuer.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
       <Requirement quest="quest_profile" />
       <Rewards>
@@ -5063,20 +5066,19 @@
       <Name>Alliance Members</Name>
       <Name locale="de_DE">Allianzmitglieder</Name>
       <Task>Enter an alliance, or start your own.</Task>
-      <Task locale="de_DE">Tritt einer Allianz bei oder gründe Deine eigene.</Task>
+      <Task locale="de_DE">Sei Mitglied in einer Allianz mit mindestens 4 Mitgliedern.</Task>
       <Description locale="de_DE">
-        <p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p>
-        <p>Eine eigene Allianz kannst Du mit Lagerfeuer Level 2 gründen.</p>
+        <p>Deine Allianz muss wachsen, wenn ihr euch in dieser grausamen Welt durchsetzten wollt. Sucht nach geeigneten Mitgliedern und nehmt sie bei euch auf, dann könnt ihr bald schon bei den Mächtigen mitmischen.</p>
       </Description>
       <Description locale="en_US">
         <p>From now on you can enter an alliance. An alliance has many advantages: you can exchange raw materials, help each other's defences and coordinate attacks. Only an alliance can hold a large territory. If you think you're ready for it, why not enter an alliance?</p>
         <p>You can only start your own alliance once you've reached campfire level 2. </p>
       </Description>
-      <Flavor locale="de_DE">Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.</Flavor>
+      <Flavor locale="de_DE">Schöne Allianz hast Du da, aber größer könnte sie schon noch werden, nicht?</Flavor>
       <Flavor locale="en_US">Fighting enemy armies with your own armies is nice. But it would be much better if you worked together, or if your friends helped you. You should be in an alliance –allies help each other.</Flavor>
-      <RewardText locale="de_DE">Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.</RewardText>
+      <RewardText locale="de_DE">Desto mehr Mitglieder ihr in eurer Allianz habt, desto größer kann euer Einfluss werden und desto mehr könnt ihr einander unterstützen.</RewardText>
       <RewardText locale="en_US">You can see the profile of an alliance by clicking on the alliance pennant top right next to the raw materials overview.</RewardText>
-      <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Jetzt wirds langsam!.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far. </RewardFlavor>
       <Requirement quest="quest_alliance" />
       <Rewards>

@@ -14,7 +14,6 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :home_location,     :class_name => "Map::Location",              :foreign_key => "owner_id",     :conditions => "settlement_type_id=2"   # in development there might be more than one!!!
   has_one  :tutorial_state,    :class_name => "Tutorial::State",            :foreign_key => "character_id", :inverse_of => :owner
   has_many :history_events,    :class_name => "Fundamental::HistoryEvent",  :foreign_key => "character_id", :inverse_of => :character
-  has_one  :settings,          :class_name => "Fundamental::Setting",       :foreign_key => "character_id", :inverse_of => :owner
   
   has_one  :inbox,             :class_name => "Messaging::Inbox",           :foreign_key => "owner_id",     :inverse_of => :owner
   has_one  :outbox,            :class_name => "Messaging::Outbox",          :foreign_key => "owner_id",     :inverse_of => :owner
@@ -38,6 +37,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :construction_effects, :class_name => "Effect::ConstructionEffect", :foreign_key => "character_id", :inverse_of => :character
 
   has_one  :artifact,          :class_name => "Fundamental::Artifact",      :foreign_key => "owner_id",     :inverse_of => :owner
+  has_one  :setting,           :class_name => "Fundamental::Setting",       :foreign_key => "character_id", :inverse_of => :owner
   
   has_many :retention_mails,   :class_name => "Fundamental::RetentionMail", :foreign_key => "character_id", :inverse_of => :character
   belongs_to :last_retention_mail, :class_name => "Fundamental::RetentionMail", :foreign_key => "last_retention_mail_id"
@@ -1285,7 +1285,12 @@ class Fundamental::Character < ActiveRecord::Base
     login_count <= 1
   end
 
+  # \deprecated : use insider? instead
   def insider
+    !insider_since.nil? && insider_since < DateTime.now
+  end
+  
+  def insider?
     !insider_since.nil? && insider_since < DateTime.now
   end
 

@@ -2,7 +2,7 @@ class Fundamental::SettingsController < ApplicationController
   layout 'fundamental'
   
   before_filter :authenticate
-  before_filter :deny_api, :except => [:show, :index]
+  before_filter :deny_api, :except => [:show, :update]
 
   # GET /fundamental/settings
   # GET /fundamental/settings.json
@@ -18,7 +18,18 @@ class Fundamental::SettingsController < ApplicationController
   # GET /fundamental/settings/1
   # GET /fundamental/settings/1.json
   def show
-    @fundamental_setting = Fundamental::Setting.find(params[:id])
+    
+    if (params.has_key?(:character_id))
+      character = Fundamental::Character.find_by_id(params[:character_id])
+      raise NotFoundError.new("character not found")   if character.nil?
+      raise ForbiddenError.new("access forbidden")     unless admin? || staff? || developer? || character == current_character 
+      @fundamental_setting = Fundamental::Setting.find_or_create_by_character(character)
+      raise NotFoundError.new("settings not found")    if @fundamental_setting.nil?
+    else 
+      @fundamental_setting = Fundamental::Setting.find_by_id(params[:id])
+      raise NotFoundError.new("settings not found")    if @fundamental_setting.nil?
+      raise ForbiddenError.new("access forbidden")     unless admin? || staff? || developer? || @fundamenal_setting.character_id == current_character.id 
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -61,7 +72,9 @@ class Fundamental::SettingsController < ApplicationController
   # PUT /fundamental/settings/1
   # PUT /fundamental/settings/1.json
   def update
-    @fundamental_setting = Fundamental::Setting.find(params[:id])
+    @fundamental_setting = Fundamental::Setting.find_by_id(params[:id])
+    raise new NotFoundError.new ("settings not found ")   if @fundamental_setting.nil?
+    raise ForbiddenError.new("access forbidden")          unless  admin? || staff? || developer? || @fundamenal_setting.character_id == current_character.id
 
     respond_to do |format|
       if @fundamental_setting.update_attributes(params[:fundamental_setting])
