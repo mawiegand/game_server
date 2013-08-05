@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="32" />
+    <Version major="0" minor="3" build="33" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -182,7 +182,7 @@
       <RewardText locale="en_US">Take a look at the quest overview regularly, then you won't lose track of them.  </RewardText>
       <RewardFlavor locale="de_DE">Klasse, jetzt hast Du alle Quests auf einen Blick. </RewardFlavor>
       <RewardFlavor locale="en_US">Great – now you can see all your quests at a glance.</RewardFlavor>
-      <Requirement quest="quest_npc_battle" />
+      <Requirement quest="quest_army_move" />
       <Rewards>
         <ExperienceReward>50</ExperienceReward>
       </Rewards>
@@ -4769,7 +4769,7 @@
      </Quest>
      -->
 
-    <Quest id="quest_npc_battle" advisor="warrior" tutorial="true">
+    <Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
       <Name>First battle</Name>
       <Name locale="de_DE">Der erste Kampf</Name>
       <Task>Fight for the first time!</Task>
@@ -4785,7 +4785,6 @@
       <RewardText locale="en_US">You attack the same way with armies. Armies fighting on the same side as settlements or fortresses get a boost. While a battle is going on armies can join it on either side. </RewardText>
       <RewardFlavor locale="de_DE">Der Kampf wird noch eine Weile toben aber wir werden mit sicherheit Siegen! Vielleicht kehrt unsere Armee auch zurück und kommt uns zur Unterstützung.</RewardFlavor>
       <RewardFlavor locale="en_US">The battle is gona keep going for a while but we will surely win! Especially if the army returns and supports us.</RewardFlavor>
-      <Requirement quest="quest_army_move" />
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>250</ExperienceReward>

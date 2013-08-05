@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.32
+# Version: 0.3.33
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 32, 
+        :build => 33, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 20,
+      :num_tutorial_quests => 19,
   
       :quests => [  # ALL QUESTS
 
@@ -513,7 +513,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_npc_battle',
+            :quest => 'quest_army_move',
 
           },
 
@@ -1070,7 +1070,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [127, ],
+          :successor_quests => [3, ],
 
           :rewards => {
             
@@ -12509,7 +12509,7 @@ class Tutorial::Tutorial
           :symbolic_id       => :quest_npc_battle,
           :advisor           => :warrior,
           :hide_start_dialog => false,
-          :tutorial          => true,
+          :tutorial          => false,
           :tutorial_end_quest => false,
           :priority          => 0,
           :blocking          => false,
@@ -12557,13 +12557,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_army_move',
-
-          },
-
-          :successor_quests => [3, ],
+          :successor_quests => [],
 
           :rewards => {
             
