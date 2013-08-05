@@ -74,7 +74,7 @@ class Fundamental::SettingsController < ApplicationController
   def update
     @fundamental_setting = Fundamental::Setting.find_by_id(params[:id])
     raise new NotFoundError.new ("settings not found ")   if @fundamental_setting.nil?
-    raise ForbiddenError.new("access forbidden")          unless  admin? || staff? || developer? || @fundamenal_setting.character_id == current_character.id
+    raise ForbiddenError.new("access forbidden")          unless  admin? || staff? || developer? || @fundamental_setting.character_id == current_character.id
 
     respond_to do |format|
       if @fundamental_setting.update_attributes(params[:fundamental_setting])
