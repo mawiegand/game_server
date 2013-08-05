@@ -223,7 +223,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def locale
-    if I18n.locale == :de
+    if self.lang == 'de'
       :de_DE
     else
       :en_US
