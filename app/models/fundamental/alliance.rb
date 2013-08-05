@@ -94,7 +94,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   end
   
   def auto_joinable
-    return self if !auto_join_disabled and self.member.count > 0 and !self.full?
+    return self if !auto_join_disabled and self.members.count > 0 and !self.full?
 		nil
   end
 
