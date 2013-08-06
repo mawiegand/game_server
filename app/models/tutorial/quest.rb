@@ -172,7 +172,7 @@ class Tutorial::Quest < ActiveRecord::Base
           end
         end
       end
-      
+
       unless reward_tests[:alliance_test].nil?
         alliance_test = reward_tests[:alliance_test]
         unless alliance_test.nil?
@@ -181,7 +181,16 @@ class Tutorial::Quest < ActiveRecord::Base
           end
         end
       end
-      
+
+      unless reward_tests[:alliance_members_test].nil?
+        alliance_members_test = reward_tests[:alliance_members_test]
+        unless alliance_members_test.nil?
+          unless check_alliance_members(alliance_members_test)
+            return false
+          end
+        end
+      end
+
       unless reward_tests[:textbox_test].nil?
         textbox_test = reward_tests[:textbox_test]
         unless check_textbox(textbox_test, answer_text)
@@ -467,8 +476,14 @@ class Tutorial::Quest < ActiveRecord::Base
     end
   end
 
-  def check_alliance    
+  def check_alliance
     !self.tutorial_state.owner.alliance.nil?
+  end
+
+  def check_alliance_members(alliance_members_test)
+    return false if alliance_members_test[:min_count].nil?
+
+    check_alliance && self.tutorial_state.owner.alliance.members_count >= alliance_members_test[:min_count]
   end
 
   def check_standard_assignment
@@ -723,8 +738,12 @@ class Tutorial::Quest < ActiveRecord::Base
   protected
   
     def count_completed_tutorial_quests
-      if self.status_changed? && !self.status.nil? && self.status_change[0] != STATE_FINISHED && self.status_change[0] != STATE_CLOSED && (self.status_change[1] == STATE_FINISHED || self.status_change[1] == STATE_CLOSED) && self.belongs_to_tutorial?
-        self.tutorial_state.increment(:tutorial_states_completed)
+      if self.status_changed? && !self.status.nil? && self.status_change[0] != STATE_FINISHED && self.status_change[0] != STATE_CLOSED && (self.status_change[1] == STATE_FINISHED || self.status_change[1] == STATE_CLOSED)
+        self.tutorial_state.increment(:count_quests_completed)
+        
+        if self.belongs_to_tutorial?
+          self.tutorial_state.increment(:tutorial_states_completed)
+        end
         self.tutorial_state.save
       end
     end

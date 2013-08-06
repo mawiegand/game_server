@@ -208,9 +208,9 @@ Settlement::Settlement.all.each do |settlement|
 	  sleep(1)
 	end
 	
-	if settlement.owner_id != settlement.location.owner_id
-	  Rails.logger.warn(">>> ERROR: OWNER DIFFERS for location id #{settlement.location.id}. S: #{settlement.owner_id} L: #{settlement.location.onwer_id}.")
-	  settlement.location.set_owner_and_alliance(settlement.owner_id, settlement.alliance_id)
+	if settlement.owner != settlement.location.owner
+	  Rails.logger.warn(">>> ERROR: OWNER DIFFERS for location id #{settlement.location.id}. S: #{settlement.owner_id} L: #{settlement.location.owner_id}.")
+	  settlement.location.set_owner_and_alliance(settlement.owner, settlement.alliance)
 	  settlement.location.save
   end
 
@@ -220,9 +220,9 @@ Settlement::Settlement.all.each do |settlement|
     ownership_ok = false
 	end
 
-	if onwership_ok && settlement.owns_region? && settlement.owner_id != settlement.region.owner_id
+	if onwership_ok && settlement.owns_region? && settlement.owner != settlement.region.owner
 	  Rails.logger.warn(">>> ERROR: OWNER DIFFERS for region id #{settlement.region.id}. S: #{settlement.owner_id} R: #{settlement.region.owner_id}.")
-	  settlement.region.set_owner_and_alliance(settlement.owner_id, settlement.alliance_id)
+	  settlement.region.set_owner_and_alliance(settlement.owner, settlement.alliance)
 	  settlement.region.save
   end  
 

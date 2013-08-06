@@ -19,24 +19,30 @@ class Fundamental::Alliance < ActiveRecord::Base
 
   belongs_to :leader,    :class_name => "Fundamental::Character",     :foreign_key => "leader_id"
 
-  
-  attr_accessible :name, :password, :description, :banner,                                           :as => :owner
+  attr_accessible :name, :password, :description, :banner, :auto_join_disabled,                      :as => :owner
   attr_accessible *accessible_attributes(:owner), :tag, :leader_id,                                  :as => :creator # fields accesible during creation
   attr_accessible *accessible_attributes(:creator), :alliance_queue_alliance_research_unlock_count,  :as => :staff
   attr_accessible *accessible_attributes(:staff),                                                    :as => :admin
   
   attr_readable :id, :tag, :name, :description, :banner, :leader_id, :members_count, :created_at, :updated_at, :size_bonus,       :as => :default
   attr_readable *readable_attributes(:default), :alliance_queue_, :invitation_code, :as => :ally
-  attr_readable *readable_attributes(:ally), :password,                                              :as => :owner
+  attr_readable *readable_attributes(:ally), :password, :auto_join_disabled,                         :as => :owner
   attr_readable *readable_attributes(:owner),                                                        :as => :staff
   attr_readable *readable_attributes(:staff),                                                        :as => :admin
 
-  
   before_create :add_unique_invitation_code  
   
   before_save   :prevent_empty_password
   
   after_save    :propagate_to_ranking
+
+
+  scope :auto_join_enabled,  where(auto_join_disabled: false)
+  scope :not_full,           where(['members_count < size_bonus + ?', GameRules::Rules.the_rules.alliance_max_members])
+  scope :non_empty,          where('members_count > 0')
+  scope :auto_join_selectable, not_full.auto_join_enabled.non_empty
+
+  
 
   
   def self.create_alliance(tag, name, leader, role = :creator)
@@ -66,6 +72,32 @@ class Fundamental::Alliance < ActiveRecord::Base
     alliance
   end
   
+  def self.select_auto_join_alliance(character)
+    base_region = Map::Region.find(character.base_region_id)
+    alliance = base_region.fortress.alliance.auto_joinable unless base_region.fortress.alliance.nil?
+		return alliance unless alliance.nil?
+    base_region.node.neighbor_nodes.each do |neighbor_node|
+      alliance = neighbor_node.region.fortress.alliance.auto_joinable unless neighbor_node.region.fortress.alliance.nil?
+		  return alliance unless alliance.nil?
+		end
+    base_region.locations.non_empty.each do |location|
+      alliance = location.alliance.auto_joinable unless location.alliance.nil?
+		  return alliance unless alliance.nil?
+    end
+    base_region.node.neighbor_nodes.each do |neighbor_node|
+      neighbor_node.region.locations.non_empty.each do |location|
+        alliance = location.alliance.auto_joinable unless location.alliance.nil?
+		    return alliance unless alliance.nil?
+      end
+    end
+    Fundamental::Alliance.auto_join_selectable.first
+  end
+  
+  def auto_joinable
+    return self if !auto_join_disabled and self.members.count > 0 and !self.full?
+		nil
+  end
+
   def determine_new_leader
     if self.members.count > 0
       self.leader_id = self.members.first.id # TODO choose member who's first in ranking

@@ -230,7 +230,7 @@ class Messaging::Message < ActiveRecord::Base
       text += "<p>Deine Handelskarren sind leer von ihrer Reise nach #{ action.target_settlement.name } (#{action.target_settlement.owner.name}) zurück gekommen.</p>"
     else 
       text += "<p>Deine Handelskarren sind von ihrer Reise nach #{ action.target_settlement.name } (#{action.target_settlement.owner.name}) zurück gekommen. Sie brachten folgende Ladung mit:</p>"
-      text += "<p>" + Messaging::Message.resource_amounts_to_html(action, false) + "</p>"
+      text += Messaging::Message.resource_amounts_to_html(action, false)
     end
     message.subject = "Rückkehr von #{action.num_carts == 1 ? "einem" : action.num_carts} " + (action.empty? ? "leeren" : "beladenen") + " Handelskarren"
     message.body = text
@@ -243,7 +243,7 @@ class Messaging::Message < ActiveRecord::Base
     GameRules::Rules.the_rules().resource_types.each do |resource_type|
       field_name = resource_type[:symbolic_id].to_s() + '_amount'
       if !amounts[field_name].blank? && (include_all || amounts[field_name] != 0)
-        text += "<span class=\"resource-icon #{ resource_type[:symbolic_id].to_s }\"  title=\"#{ resource_type[:name][:de_DE] }\">&nbsp;</span> #{ amounts[field_name] || 0 }#{spacer}"
+        text += "<div class=\"resource-icon #{ resource_type[:symbolic_id].to_s }\"  title=\"#{ resource_type[:name][:de_DE] }\">&nbsp;</div> #{ amounts[field_name] || 0 }#{spacer}"
       end
     end   
     text     
@@ -423,12 +423,13 @@ class Messaging::Message < ActiveRecord::Base
   end
   
   def self.generate_alliance_application_message(character, alliance)
+    #alliance_leader = Fundamental::Character.find(alliance.leader_id)
     Messaging::Message.create({
 			sender:       character,
-      recipient_id: alliance.leader_id,
+      recipient:    alliance.leader,
       type_id:      ALLIANCE_APPLICATION_ID,
-      subject:      I18n.translate('application.messaging.alliance_application_message.subject'),
-      body:         I18n.translate('application.messaging.alliance_application_message.body1') + character.name + I18n.translate('application.messaging.alliance_application_message.body2'),
+      subject:      I18n.translate('application.messaging.alliance_application_message.subject', locale: alliance.leader.lang),
+      body:         I18n.translate('application.messaging.alliance_application_message.body', locale: alliance.leader.lang, :name => character.name),
       send_at:      DateTime.now,
       reported:     false,
       flag:         0,

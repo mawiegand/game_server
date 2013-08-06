@@ -183,7 +183,7 @@ class Fundamental::Artifact < ActiveRecord::Base
       self.artifact_type[:production_bonus].each do |bonus|
         if bonus[:domain_id] == 0 && self.character_resource_effects.where('resource_id = ?', bonus[:resource_id]).empty?
           add_character_resource_effect(self.owner.id, bonus)
-        elsif bonus[:domain_id] == 2 && self.alliance_resource_effects.where('resource_id = ?', bonus[:resource_id]).empty?
+        elsif bonus[:domain_id] == 2 && !self.alliance.nil? && self.alliance_resource_effects.where('resource_id = ?', bonus[:resource_id]).empty?
           add_alliance_resource_effect(self.alliance.id, bonus)
         end
       end

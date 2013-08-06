@@ -505,7 +505,7 @@ class Military::Army < ActiveRecord::Base
     
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
       if unit_type[:symbolic_id] == :neanderthal
-        details[unit_type[:db_field]] = size.to_i
+        details[unit_type[:db_field]] = [size.to_i, army.size_max].min
       else
         details[unit_type[:db_field]] = 0
       end

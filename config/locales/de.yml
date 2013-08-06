@@ -63,8 +63,7 @@ de:
         no_units: "keine Einheiten"
       alliance_application_message:
         subject: "Allianz Bewerbung"
-        body1: "Der Spieler "
-        body2: " hat sich soeben bei Deiner Allianz um Aufnahme beworben. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Bewerbung abzulehnen."
+        body: "Der Spieler %{name} hat sich bei Deiner Allianz um Aufnahme beworben. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Bewerbung abzulehnen."
     shop:
       platinum_info:
         title: Platinum Account

@@ -38,7 +38,7 @@
     
     <Duration>14400</Duration>
     <DisplayDuration>18000</DisplayDuration>
-    
+
   </SpecialAssignmentType>
   
   <SpecialAssignmentType id="special_assignment_bigGame" advisor="warrior" level="4" probability_factor="3">
@@ -79,9 +79,8 @@
     </SpecialAssignmentRewards>
     
     <Duration>25200</Duration>
-    
     <DisplayDuration>14400</DisplayDuration>
-    
+
   </SpecialAssignmentType>
   
   <SpecialAssignmentType id="special_assignment_hobbits" advisor="chief" level="9" probability_factor="4">
@@ -117,9 +116,8 @@
     </SpecialAssignmentRewards>
     
     <Duration>10800</Duration>
-    
     <DisplayDuration>3600</DisplayDuration>
-    
+
   </SpecialAssignmentType>
   
   <SpecialAssignmentType id="special_assignment_migration" advisor="warrior" level="5" probability_factor="1">
@@ -156,15 +154,13 @@
       <SpecialAssignmentUnitReward unit="unit_throwers">0.0075*PRODUCTION</SpecialAssignmentUnitReward>
       <SpecialAssignmentExperienceReward>0.001*PRODUCTION</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
-    
+
     <Duration>9000</Duration>
-    
     <DisplayDuration>18000</DisplayDuration>
     
   </SpecialAssignmentType>
   
   <!-- Das ist der generischste fantasy Bullshit den ich mir vorstellen kann -->
-  
   <SpecialAssignmentType id="special_assignment_quest1" advisor="girl" level="1" probability_factor="1">
     <Name>The dark forest</Name>
     <Name lang="de_DE">Der dunkle Wald</Name>
@@ -194,7 +190,6 @@
     </SpecialAssignmentRewards>
     
     <Duration>12600</Duration>
-    
     <DisplayDuration>3600</DisplayDuration>
     
   </SpecialAssignmentType>

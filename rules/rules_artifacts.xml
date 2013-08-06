@@ -115,6 +115,8 @@
     <ArtifactAmount>0</ArtifactAmount>
     <ExperienceProduction>15*(MRANK+1)</ExperienceProduction>
     <Effects>
+      <ProductionBonus id="resource_fur" domain="character">0.2</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="alliance">0.05</ProductionBonus>
     </Effects>
   </Artifact>
   <Artifact id="artifact_4">

@@ -112,7 +112,7 @@ class Ticker::BattleHandler::BattleSummary
 
 	end
 
-	def send_battle_report_messages()
+	def send_battle_report_messages
 		@character_army_summaries.each do |character_id, army_summaries|
 			first_army_summary_key = army_summaries.keys.first
 		  Rails.logger.debug "send battle report message for cid #{character_id} and army #{first_army_summary_key}"
@@ -129,14 +129,10 @@ class Ticker::BattleHandler::BattleSummary
 	def generate_message(character)
 		old_local = I18n.locale
 		@locale = character.locale
-		if (character.locale.to_s[0,2] == "de")
-			I18n.locale = :de
-		else
-			I18n.locale = :de
-		end
+  	I18n.locale = character.lang
 
 		#army summary
-		my_army_summaries = @character_army_summaries[character.id];
+		my_army_summaries = @character_army_summaries[character.id]
 
 		#faction overview
 		my_faction_summary = get_own_faction_summary(character)

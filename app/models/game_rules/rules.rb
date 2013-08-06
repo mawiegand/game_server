@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.22
+# Version: 0.9.26
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -119,11 +119,12 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 22,
+                    :build => 26,
       },
       :app_control => {
-        :debug_tracking       => 1,
-        :special_offer_dialog => 1,
+        :debug_tracking                         => 1,
+        :special_offer_dialog                   => 1,
+        :special_offer_required_finished_quests => 17,
       },
       :battle => {
         :calculation => {
@@ -168,7 +169,7 @@ class GameRules::Rules
       :alliance_max_members => 13,
       :special_assignments  => {
         :idle_probability => 0.2,
-        :idle_time => 3600,
+        :idle_time => 60,
       },
       :artifact_count => 5,
   
@@ -3159,7 +3160,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*20+GREATER(LEVEL,1)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*2+0.5))',
+          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*20+EQUAL(LEVEL,2)*25+GREATER(LEVEL,2)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*2+0.5))',
           :production  => [
             
           ],
@@ -7346,6 +7347,22 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :amount      => '0',
 
           :experience_production => '15*(MRANK+1)',
+
+          :production_bonus  => [
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 0,
+              :bonus              => 0.2,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.05,
+            },
+
+          ],
 
           :description_initiated => {
 

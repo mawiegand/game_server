@@ -164,9 +164,8 @@ en:
         survived: "survived"   
         no_units: "no units" 
       alliance_application_message:
-        subject: "Allianz Bewerbung"
-        body1: "Der Spieler "
-        body2: " hat sich soeben bei Deiner Allianz um Aufnahme beworben. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Bewerbung abzulehnen."
+        subject: "Alliance Application"
+        body: "The player %{name} has just applied for a membership in your alliance. Please contact him to discuss details or to reject his application."
     shop:
       platinum_info:
         title: Platinum Account

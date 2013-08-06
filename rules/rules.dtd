@@ -18,13 +18,19 @@
   minor CDATA #REQUIRED
   build CDATA #REQUIRED
 >
-<!ELEMENT AppControl EMPTY>
+
+<!ELEMENT AppControl (SpecialOfferDialog)>
 <!ATTLIST AppControl
   debugTracking      (0 | 1) "0"
-  specialOfferDialog (0 | 1) "0"
 >
 
-<!--Languages-->
+<!ELEMENT SpecialOfferDialog EMPTY>
+<!ATTLIST SpecialOfferDialog
+  enabled                (0 | 1) "0"
+  requiredFinishedQuests CDATA #REQUIRED
+>
+
+    <!--Languages-->
 <!ELEMENT Languages (Language*)>
 <!ELEMENT Language (#PCDATA)>
 <!ATTLIST Language locale ID #REQUIRED>
