@@ -7344,23 +7344,11 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '1',
+          :amount      => '0',
 
           :experience_production => '15*(MRANK+1)',
 
           :production_bonus  => [
-
-            {
-              :resource_id        => 0,
-              :domain_id          => 0,
-              :bonus              => 0.2,
-            },
-
-            {
-              :resource_id        => 1,
-              :domain_id          => 0,
-              :bonus              => 0.2,
-            },
 
             {
               :resource_id        => 2,
