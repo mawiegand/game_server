@@ -169,7 +169,7 @@ class GameRules::Rules
       :alliance_max_members => 13,
       :special_assignments  => {
         :idle_probability => 0.2,
-        :idle_time => 60,
+        :idle_time => 3600,
       },
       :artifact_count => 5,
   

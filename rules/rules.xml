@@ -161,7 +161,7 @@
     <AllianceMaxMembers>13</AllianceMaxMembers>
     <SpecialAssignments>
       <SpecialAssignmentIdleProbability>0.2</SpecialAssignmentIdleProbability>
-      <SpecialAssignmentIdleTime>60</SpecialAssignmentIdleTime>
+      <SpecialAssignmentIdleTime>3600</SpecialAssignmentIdleTime>
     </SpecialAssignments>
   </General>
   <xi:include href="rules_victories.xml" />
