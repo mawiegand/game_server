@@ -28,7 +28,7 @@ class Fundamental::SettingsController < ApplicationController
     else 
       @fundamental_setting = Fundamental::Setting.find_by_id(params[:id])
       raise NotFoundError.new("settings not found")    if @fundamental_setting.nil?
-      raise ForbiddenError.new("access forbidden")     unless admin? || staff? || developer? || @fundamenal_setting.character_id == current_character.id 
+      raise ForbiddenError.new("access forbidden")     unless admin? || staff? || developer? || @fundamental_setting.character_id == current_character.id 
     end
 
     respond_to do |format|
@@ -74,10 +74,12 @@ class Fundamental::SettingsController < ApplicationController
   def update
     @fundamental_setting = Fundamental::Setting.find_by_id(params[:id])
     raise new NotFoundError.new ("settings not found ")   if @fundamental_setting.nil?
-    raise ForbiddenError.new("access forbidden")          unless  admin? || staff? || developer? || @fundamenal_setting.character_id == current_character.id
+    raise ForbiddenError.new("access forbidden")          unless  admin? || staff? || developer? || @fundamental_setting.character_id == current_character.id
+
+    incomming = params[:fudamental_setting] || params[:setting]  # no module when outgoing -> need to accept the same incomming :-(
 
     respond_to do |format|
-      if @fundamental_setting.update_attributes(params[:fundamental_setting])
+      if @fundamental_setting.update_attributes(incomming)
         format.html { redirect_to @fundamental_setting, notice: 'Setting was successfully updated.' }
         format.json { head :ok }
       else
