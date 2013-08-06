@@ -7,8 +7,6 @@ class Action::Fundamental::SendAllianceApplicationActionsController < Applicatio
   # POST /action/military/attack_army_actions.json
   def create
 
-    raise ForbiddenError.new('currently disabled')
-
     raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequestError.new('missing parameter(s)') if params[:send_alliance_application_action].nil? || params[:send_alliance_application_action][:alliance_id].blank?
     
