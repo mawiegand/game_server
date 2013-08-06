@@ -685,7 +685,7 @@
         <p>Campfires are needed to start or enter alliances. They're also where little chieftans are recruited.</p>
       </Description>
       <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
-      <Flavor locale="en_US">Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think? 
+      <Flavor locale="en_US">Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think?
       </Flavor>
       <RewardText locale="de_DE">Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen</RewardText>
       <RewardText locale="en_US">Try to contact your neighbors and form an alliance with them</RewardText>
@@ -4965,14 +4965,13 @@
      </Rewards>
      </Quest>
      -->
-
     <!-- 503 -->
-    
+
     <Quest id="quest_assignment1" advisor="warrior" tutorial="true">
       <Name>First Assignment</Name>
       <Name locale="de_DE">Der erste Auftrag</Name>
       <Task>Start your first Assignment</Task>
-      <Task locale="de_DE">Beginne Deinen ersten Auftrag</Task>
+      <Task locale="de_DE">Beginne deinen ersten Auftrag</Task>
       <Description locale="de_DE">
         <p>In der Taverne gibt es jede Menge Leute, die Aufträge zu vergeben haben. Betritt sie und beginne einen.</p>
       </Description>
@@ -4994,21 +4993,21 @@
       </RewardTests>
       <UIMarker>mark_first_standard_assignment</UIMarker>
     </Quest>
-    
+
     <!-- 504 -->
-    
+
     <Quest id="quest_build_tavern" advisor="warrior" tutorial="true">
       <Name>The Tavern</Name>
       <Name locale="de_DE">Die Taverne</Name>
       <Task>Build the tavern</Task>
       <Task locale="de_DE">Baue die Taverne</Task>
       <Description locale="de_DE">
-        <p>Jetzt wo Deine Siedlung wächst und gedeiht brauchen Deine Bewohner einen Ort an dem Sie ihre Zeit totschlagen können, wenn sie nicht gerade arbeiten. Eine Taverne wäre da doch genau das Richtige.</p>
+        <p>Jetzt wo deine Siedlung wächst und gedeiht brauchen deine Bewohner einen Ort an dem Sie ihre Zeit totschlagen können, wenn sie nicht gerade Arbeiten. Eine Taverne wäre da doch genau das Richtige.</p>
       </Description>
       <Description locale="en_US">
         <p>Now that our settlement has grown considerably people are wanting for a place to relax. I suppose a tavern of some sort would do the trick, after all who can refuse a cold beer?</p>
       </Description>
-      <Flavor locale="de_DE">Ein Ort zum trinken? Ganz mein Geschmack.</Flavor>
+      <Flavor locale="de_DE">Ein Ort zum trinken? Ganz mein Geschmack</Flavor>
       <Flavor locale="en_US">Finally a place where i can have a pint in peace.</Flavor>
       <RewardText locale="de_DE">In der Taverne werden viele Aufträge vergeben. Schau doch einfach ab und zu rein.</RewardText>
       <RewardText locale="en_US">There are many people looking for favors in the tavern. Maybe you can get something out of that.</RewardText>
@@ -5024,13 +5023,13 @@
       <RewardTests>
         <BuildingTest building="building_tavern" min_count="1" />
       </RewardTests>
-      <!--UIMarker>mark_home_settlement</UIMarker>
+      <UIMarker>mark_home_settlement</UIMarker>
       <UIMarker>mark_free_construction_slot</UIMarker>
-      <UIMarker>mark_building_option</UIMarker-->
+      <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
-    
-    
+
+
     <Quest id="quest_build_1campfirelvl2" advisor="chef" tutorial="false">
       <Name>A bigger campfire</Name>
       <Name locale="de_DE">Ein größeres Lagerfeuer</Name>

@@ -1975,7 +1975,7 @@ class Tutorial::Tutorial
             
             :de_DE => "An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?",
   
-            :en_US => "Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think? 
+            :en_US => "Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think?
       ",
                 
           },
@@ -12602,7 +12602,7 @@ class Tutorial::Tutorial
             
             :en_US => "Start your first Assignment",
   
-            :de_DE => "Beginne Deinen ersten Auftrag",
+            :de_DE => "Beginne deinen ersten Auftrag",
                 
           },
           :flavour => {
@@ -12683,14 +12683,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Ein Ort zum trinken? Ganz mein Geschmack.",
+            :de_DE => "Ein Ort zum trinken? Ganz mein Geschmack",
   
             :en_US => "Finally a place where i can have a pint in peace.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Jetzt wo Deine Siedlung wächst und gedeiht brauchen Deine Bewohner einen Ort an dem Sie ihre Zeit totschlagen können, wenn sie nicht gerade arbeiten. Eine Taverne wäre da doch genau das Richtige.</p>",
+            :de_DE => "<p>Jetzt wo deine Siedlung wächst und gedeiht brauchen deine Bewohner einen Ort an dem Sie ihre Zeit totschlagen können, wenn sie nicht gerade Arbeiten. Eine Taverne wäre da doch genau das Richtige.</p>",
   
             :en_US => "<p>Now that our settlement has grown considerably people are wanting for a place to relax. I suppose a tavern of some sort would do the trick, after all who can refuse a cold beer?</p>",
                 
@@ -12759,6 +12759,8 @@ class Tutorial::Tutorial
             ],
 
           },          
+
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_tavern
         {               #   quest_build_1campfirelvl2
