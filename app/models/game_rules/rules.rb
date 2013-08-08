@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.37
+# Version: 0.9.38
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -35,7 +35,7 @@ class GameRules::Rules
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
-    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup,
+    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
   
   def attributes 
@@ -64,6 +64,7 @@ class GameRules::Rules
       'assignment_types'            => assignment_types,  
       'special_assignment_types'    => special_assignment_types,
       'special_assignments'         => special_assignments,
+      'slot_bubbles'                => slot_bubbles,
       'settlement_types'            => settlement_types,
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
@@ -119,7 +120,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 37,
+                    :build => 38,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -170,6 +171,12 @@ class GameRules::Rules
       :special_assignments  => {
         :idle_probability => 0.2,
         :idle_time => 3600,
+      },
+      :slot_bubbles => {
+        :idle_probability => '1/LEVEL',
+        :resource_percentage => '2*LEVEL',
+        :test_min_duration => 3500,
+        :test_max_duration => 3700,
       },
       :artifact_count => 5,
   
