@@ -266,7 +266,7 @@ GameServer::Application.routes.draw do
           resources :change_tax_rate_actions, :only => [ :create ] 
           resources :abandon_outpost_actions, :only => [ :create ]
           resources :change_settlement_name_actions, :only => [ :create ]
-          #resources :archive_entries_actions#, :only => [ :create]
+          resources :redeem_slot_bubble_actions, :only => [ :create ]
           resources :move_settlement_to_region_actions, :only => [ :create ]
         end
         namespace :tutorial do
