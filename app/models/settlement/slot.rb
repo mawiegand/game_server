@@ -418,7 +418,17 @@ class Settlement::Slot < ActiveRecord::Base
     propagate_resource_capacity         building_id, old_level, new_level
     propagate_abilities                 building_id, old_level, new_level
   end
-    
+
+  ############################################################################
+  #
+  #  SLOT BUBBLES
+  #
+  ############################################################################
+
+  def redeem_bubble
+    logger.debug "AAAAAA: redeem_bubble"
+  end
+
   ############################################################################
   #
   #  RESOURCE PRODUCTION CHANGES
