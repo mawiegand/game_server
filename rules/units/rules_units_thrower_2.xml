@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
     <Unit id="thrower_2" category="unitcategory_artillery">
-      <Name>Targetthrower</Name>
+      <Name>Target Thrower</Name>
       <Name lang="de_DE"> Zielwerfer</Name>
       <Description lang="de_DE">
         <p>Ein sicherer Wurf führt zu besseren Treffern. Nicht dass der Unterschied bemerkbar wäre, meist sind eh genug gegnerische Nahkämpfer da, aber es führt doch zu ein oder zwei kritischen Treffern.</p>

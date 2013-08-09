@@ -9,7 +9,7 @@
     <p>Der Kommandoposten erhöht auf den Leveln 1, 10 und 20 die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>  
   </Description>
   <Description lang="en_US">
-    <p>A couple of branches stretched between three trees, a bit of bark and some leaves, and there's your awning. A nice big seat for the chief, and hey presto, you've got your command post. This is where tactics are decided and orders given. Mostly the same order: “Hit 'em hard!” The command post increases a settlement's command points at level 1, 10 and 20. It also decreases the time spent on training new units.</p>
+    <p>A couple of branches stretched between three trees, a bit of bark and some leaves, and there's your awning. A nice big seat for the chief, and hey presto, you've got your command post. This is where tactics are decided and orders are given. Mostly the same order: “Hit 'em hard!” Having a command post increases a settlement's command points at Levels 1, 10 and 20. It also decreases the time spent on training new units.</p>
   </Description>
   <Flavour lang="en_US">
     <p>Coordinating armies is the art of war. Even if all armies are dispatched in the same direction with the order to “hit 'em hard”.</p>

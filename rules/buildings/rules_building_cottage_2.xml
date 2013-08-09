@@ -3,15 +3,15 @@
 
 <Building id="building_cottage_2" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2" experienceFactor="3.3">  
   <Name lang="de_DE">Winddichte Hütte</Name>
-  <Name lang="en_US">Wind-proof Hut</Name>
+  <Name lang="en_US">Windproof Hut</Name>
   <Description lang="de_DE">
     <p>In der fortschrittlichen winddichten Hütten wohnen die verdienten sprich fleißigen Bewohner. Diese Hütte hat neben Wände, die diesen Namen auch verdienen, sogar einen Feuerplatz, wodurch die Bewohner noch zufriedener werden. Und sie ist natürlich größer, denn seien wir mal ehrlich, zwei Arbeiter sind immer besser als ein zufriedener.</p>
   </Description>
   <Description lang="en_US">
-    <p>These modern, wind-proof huts are where the deserving – that is, hard-working – dwellers live. Apart from walls that can actually be called walls, there is even a fireplace which make dwellers even more satisfied. And of course, wind-proof huts are bigger because, let's be honest, two grumpy workers are still better than one happy one.</p>
+    <p>These modern, windproof huts are where the deserving - that is, hard-working - residents live. Apart from walls that can actually be called walls, there's also a fireplace, which makes the people who live there considerable more satisfied. And, of course, windproof huts are bigger because, let's be honest, two grumpy workers are still better than one happy one.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>A fireplace, neatly-fenced front garden and a front doormat. A dream!</p>
+    <p>A fireplace, a neatly fenced front lawn and a front doormat. Living the dream!</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p>Ein Feuerplatz, eingezäunter Vorgarten und eine Fußmatte vor der Tür. Ein Traum!</p>  

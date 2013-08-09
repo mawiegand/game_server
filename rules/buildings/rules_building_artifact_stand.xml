@@ -5,7 +5,7 @@
   <Name lang="de_DE">Tüftler-Werkstatt</Name>
   <Name lang="en_US">Workshop</Name>
   <Description lang="de_DE"><p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p></Description>
-  <Description lang="en_US"><p>At the workshop all kinds of Thinkers and Tinkers get together. Here they examine all unknown materials -or artifacts, as the simple minded call them- and attempt to bring about a technological revolution</p></Description>
+  <Description lang="en_US"><p>Thinkers and Tinkers get together at the workshop. They examine whatever unknown materials there are - artifacts, as the simple-minded call them - and attempt to bring about a technological revolution.</p></Description>
   <Flavour lang="de_DE"><p>Die Tüftler warten bereits auf die Artefakte. Hol Dir eins!</p></Flavour>
   <Flavour lang="en_US"><p>Those Tinkers are insane! Enter at your own risk.</p></Flavour>
 <Population>LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2))</Population>
