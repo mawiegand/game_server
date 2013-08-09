@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130805121659) do
+ActiveRecord::Schema.define(:version => 20130808091520) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2615,9 +2615,13 @@ ActiveRecord::Schema.define(:version => 20130805121659) do
     t.integer  "slot_num"
     t.string   "type"
     t.integer  "building_id"
-    t.integer  "level",         :default => 0
+    t.integer  "level",               :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "bubble_resource_id"
+    t.integer  "bubble_amount"
+    t.integer  "bubble_xp"
+    t.datetime "bubble_next_test_at"
   end
 
   create_table "shop_bonus_offers", :force => true do |t|

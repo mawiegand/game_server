@@ -72,9 +72,9 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="9" build="38" />
+    <Version major="0" minor="9" build="39" />
     <AppControl debugTracking="1">
-      <SpecialOfferDialog enabled="1" requiredFinishedQuests="20" />
+      <SpecialOfferDialog enabled="1" requiredFinishedQuests="22" />
     </AppControl>
     <Languages>
       <Language locale="en_US">English (US)</Language>
@@ -163,6 +163,11 @@
       <SpecialAssignmentIdleProbability>0.2</SpecialAssignmentIdleProbability>
       <SpecialAssignmentIdleTime>3600</SpecialAssignmentIdleTime>
     </SpecialAssignments>
+    <SlotBubbles>
+      <BubbleIdleProbability>1-(1.0/LEVEL)</BubbleIdleProbability>
+      <BubbleResourcePercentage>2*LEVEL</BubbleResourcePercentage>
+      <BubbleTestDuration min="55" max="65" />
+    </SlotBubbles>
   </General>
   <xi:include href="rules_victories.xml" />
   <xi:include href="rules_artifacts.xml" />

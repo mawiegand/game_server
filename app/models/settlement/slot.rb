@@ -8,7 +8,7 @@ class Settlement::Slot < ActiveRecord::Base
 
   after_save   :propagate_level_changes
   after_commit :trigger_consistency_check
-  
+
   scope :empty,    where(['(level IS NULL OR level = ?) AND building_id IS NULL', 0])
   scope :occupied, where(['(level IS NOT NULL AND level > ?) OR building_id IS NOT NULL', 0])
 
@@ -418,7 +418,89 @@ class Settlement::Slot < ActiveRecord::Base
     propagate_resource_capacity         building_id, old_level, new_level
     propagate_abilities                 building_id, old_level, new_level
   end
-    
+
+  ############################################################################
+  #
+  #  SLOT BUBBLES
+  #
+  ############################################################################
+
+  def has_bubble?
+    !self.bubble_resource_id.nil?  # add xp
+  end
+
+  def redeem_bubble
+    # redeem
+    resources = []
+    resources[self.bubble_resource_id] = self.bubble_amount
+    self.settlement.owner.resource_pool.add_resources_transaction(resources)
+
+    # generate_new_bubble
+    self.generate_new_bubble(Time.now)
+  end
+
+  def update_bubble_if_needed
+    while (self.bubble_next_test_at.nil? || self.bubble_next_test_at < Time.now) && !self.has_bubble?
+      self.generate_new_bubble(self.bubble_next_test_at)
+    end
+
+    self.has_bubble?
+  end
+
+  def advance_test_date(base_date)
+    slot_bubble_config = GameRules::Rules.the_rules.slot_bubbles
+    random = Random.rand(slot_bubble_config[:test_max_duration] - slot_bubble_config[:test_min_duration])
+    self.bubble_next_test_at = base_date + slot_bubble_config[:test_max_duration] + random
+  end
+
+  def generate_new_bubble(base_date)
+
+    base_date = Time.now if base_date.nil?
+
+    # werte aus regeln holen
+    slot_bubble_config = GameRules::Rules.the_rules.slot_bubbles
+    random = Random.rand(1.0)
+
+    idle_probability_formula = Util::Formula.parse_from_formula(slot_bubble_config[:idle_probability])
+    idle_probability = idle_probability_formula.apply(self.level)
+
+    puts "ip #{slot_bubble_config[:idle_probability]} #{self.level} #{idle_probability} #{random}"
+
+    if random > idle_probability
+      res_production = self.resource_production
+      puts "rs #{res_production}"
+
+      if res_production.nil?
+        self.advance_test_date(base_date)
+        self.save
+        return false
+      end
+
+      # get tradable resources with real production
+      selectable_resources = GameRules::Rules.the_rules.resource_types.select { |type| type[:tradable] && res_production[type[:id]] > 0 }
+
+      if !selectable_resources.empty?
+        selected_resource_id = selectable_resources.sample[:id]
+
+        resource_percentage_formula = Util::Formula.parse_from_formula(slot_bubble_config[:resource_percentage])
+        resource_percentage = resource_percentage_formula.apply(self.level)
+
+        self.bubble_resource_id = selected_resource_id                                   # zufallswert aus recourceproduction des slots
+        puts "amount #{res_production[selected_resource_id]} * #{resource_percentage}"
+        self.bubble_amount = (res_production[selected_resource_id] * resource_percentage / 100.0).ceil  # prozentualer wert der slotproduction (siehe regeln)
+        self.bubble_xp = (random * 100).floor % 2                                        # erstmal fix
+      end
+      self.advance_test_date(base_date)
+      self.save
+      true
+    else
+      self.bubble_resource_id = nil
+      self.advance_test_date(base_date)
+      self.save
+      false
+    end
+  end
+
   ############################################################################
   #
   #  RESOURCE PRODUCTION CHANGES
@@ -707,9 +789,9 @@ class Settlement::Slot < ActiveRecord::Base
   # works for upgrades as well as downgrades
   def last_level
     if self.jobs.empty?
-      return self.level.nil? ? 0 : self.level
+      self.level.nil? ? 0 : self.level
     else
-      return self.jobs.last.level_after
+      self.jobs.last.level_after
     end
   end
   

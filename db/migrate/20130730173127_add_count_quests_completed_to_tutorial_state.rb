@@ -9,6 +9,6 @@ class AddCountQuestsCompletedToTutorialState < ActiveRecord::Migration
   end
   
   def down
-    add_column :tutorial_states, :count_quests_completed
+    remove_column :tutorial_states, :count_quests_completed
   end
 end

@@ -12,23 +12,33 @@ class Settlement::SlotsController < ApplicationController
   # GET /settlement/slots
   # GET /settlement/slots.json
   def index
+    last_modified = nil
+
     if params.has_key?(:settlement_id)
       @settlement_settlement = Settlement::Settlement.find(params[:settlement_id])
 
       raise NotFoundError.new('Page Not Found') if @settlement_settlement.nil?
       raise ForbiddenError.new('Access forbidden.') unless staff? || (!current_character.nil? && current_character.id == @settlement_settlement.owner_id)
 
+      logger.debug "Fall!"
 
-      if_modified_since = nil
-      last_modified = nil
       if !request.env['HTTP_IF_MODIFIED_SINCE'].blank?  && !use_restkit_api?
         if_modified_since = Time.parse(request.env['HTTP_IF_MODIFIED_SINCE'])    
-        @settlement_slots = Settlement::Slot.where("updated_at > ? AND settlement_id = ?", if_modified_since, params[:settlement_id])        
-        @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
-        last_modified = @max_settlement_slot.nil? ? Time.at(0) : @max_settlement_slot
+        @settlement_slots = Settlement::Slot.where("(updated_at > ? OR (bubble_next_test_at < ? AND building_id is not null AND level > 0)) AND settlement_id = ?", if_modified_since, Time.now, params[:settlement_id])
+        updated_bubble = false
+        @settlement_slots.each do |slot|
+          updated_bubble |= slot.update_bubble_if_needed
+        end
+        unless updated_bubble
+          @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
+          last_modified = @max_settlement_slot.nil? ? Time.at(0) : @max_settlement_slot
+        end
         logger.debug "MAXIMUM #{ @max_settlement_slot }, last modified #{ if_modified_since }"         
       else 
-        @settlement_slots = Settlement::Slot.where(settlement_id: params[:settlement_id])        
+        @settlement_slots = Settlement::Slot.where(settlement_id: params[:settlement_id])
+        @settlement_slots.each do |slot|
+          slot.update_bubble_if_needed
+        end
       end
     else 
       @asked_for_index = true
