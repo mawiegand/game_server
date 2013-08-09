@@ -436,7 +436,9 @@ class Settlement::Slot < ActiveRecord::Base
     self.settlement.owner.resource_pool.add_resources_transaction(resources)
 
     # generate_new_bubble
-    self.generate_new_bubble(Time.now)
+    self.bubble_resource_id = nil
+    self.advance_test_date(Time.now)
+    self.save
   end
 
   def update_bubble_if_needed
