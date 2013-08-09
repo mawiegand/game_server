@@ -1045,7 +1045,7 @@ class Fundamental::Character < ActiveRecord::Base
     (self.production_updated_at || Time.now.advance(:hours => -2)) < Time.now.advance(:hours => -1)
   end
   
-  def add_experience(points)
+  def add_experience!(points)
     self.increment(:exp, points.floor)
     self.save    
   end

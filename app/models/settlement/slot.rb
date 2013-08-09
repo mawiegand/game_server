@@ -292,6 +292,7 @@ class Settlement::Slot < ActiveRecord::Base
   def upgrade_building
     raise BadRequestError.new('Tried to upgrade a non-existend building.') if self.building_id.nil?
     self.level = self.level + 1
+    self.generate_new_bubble!(Time.now)
     propagate_change(self.building_id, self.level - 1, self.level)
     propagate_experience(self.building_id, self.building_id, self.level - 1, self.level)
     self.save
@@ -426,79 +427,89 @@ class Settlement::Slot < ActiveRecord::Base
   ############################################################################
 
   def has_bubble?
+    # determined by bubble resource id
     !self.bubble_resource_id.nil?  # add xp
   end
 
   def redeem_bubble
-    # redeem
+    # redeem resources
     resources = []
     resources[self.bubble_resource_id] = self.bubble_amount
     self.settlement.owner.resource_pool.add_resources_transaction(resources)
 
-    # generate_new_bubble
+    # redeem xp
+    self.settlement.owner.add_experience!(self.bubble_xp) unless !self.bubble_xp.nil?
+
+    # reset bubble
     self.bubble_resource_id = nil
-    self.advance_test_date(Time.now)
-    self.save
+
+    # generate new test date
+    self.advance_test_date!(Time.now)
   end
 
   def update_bubble_if_needed
+    # recheck as long as there's no bubble and the next test date lies in the past
     while (self.bubble_next_test_at.nil? || self.bubble_next_test_at < Time.now) && !self.has_bubble?
-      self.generate_new_bubble(self.bubble_next_test_at)
+      # check depending on old test date
+      self.check_for_new_bubble!(self.bubble_next_test_at)
     end
 
+    # return if a bubble exists
     self.has_bubble?
   end
 
-  def advance_test_date(base_date)
+  def advance_test_date!(base_date)
     slot_bubble_config = GameRules::Rules.the_rules.slot_bubbles
     random = Random.rand(slot_bubble_config[:test_max_duration] - slot_bubble_config[:test_min_duration])
     self.bubble_next_test_at = base_date + slot_bubble_config[:test_max_duration] + random
+    self.save
   end
 
-  def generate_new_bubble(base_date)
+  def generate_new_bubble!(base_date)
+    slot_bubble_config = GameRules::Rules.the_rules.slot_bubbles
+
+    res_production = self.resource_production
+    if res_production.nil?
+      self.advance_test_date!(base_date)
+      return false
+    end
+
+    # get tradable resources with real production
+    selectable_resources = GameRules::Rules.the_rules.resource_types.select { |type| type[:tradable] && res_production[type[:id]] > 0 }
+
+    if !selectable_resources.empty?
+      selected_resource_id = selectable_resources.sample[:id]
+
+      resource_percentage_formula = Util::Formula.parse_from_formula(slot_bubble_config[:resource_percentage])
+      resource_percentage = resource_percentage_formula.apply(self.level)
+
+      self.bubble_resource_id = selected_resource_id                                   # zufallswert aus recourceproduction des slots
+      self.bubble_amount = (res_production[selected_resource_id] * resource_percentage / 100.0).ceil  # prozentualer wert der slotproduction (siehe regeln)
+      self.bubble_xp = Random.rand(1.0) < slot_bubble_config[:xp_probability] ? slot_bubble_config[:xp_amount] : 0
+    end
+    self.advance_test_date!(base_date)
+  end
+
+  def check_for_new_bubble!(base_date)
 
     base_date = Time.now if base_date.nil?
 
-    # werte aus regeln holen
+    # get configs
     slot_bubble_config = GameRules::Rules.the_rules.slot_bubbles
+    # get random number
     random = Random.rand(1.0)
 
+    # get idle probability from rules
     idle_probability_formula = Util::Formula.parse_from_formula(slot_bubble_config[:idle_probability])
     idle_probability = idle_probability_formula.apply(self.level)
 
-    puts "ip #{slot_bubble_config[:idle_probability]} #{self.level} #{idle_probability} #{random}"
-
+    # check if
     if random > idle_probability
-      res_production = self.resource_production
-      puts "rs #{res_production}"
-
-      if res_production.nil?
-        self.advance_test_date(base_date)
-        self.save
-        return false
-      end
-
-      # get tradable resources with real production
-      selectable_resources = GameRules::Rules.the_rules.resource_types.select { |type| type[:tradable] && res_production[type[:id]] > 0 }
-
-      if !selectable_resources.empty?
-        selected_resource_id = selectable_resources.sample[:id]
-
-        resource_percentage_formula = Util::Formula.parse_from_formula(slot_bubble_config[:resource_percentage])
-        resource_percentage = resource_percentage_formula.apply(self.level)
-
-        self.bubble_resource_id = selected_resource_id                                   # zufallswert aus recourceproduction des slots
-        puts "amount #{res_production[selected_resource_id]} * #{resource_percentage}"
-        self.bubble_amount = (res_production[selected_resource_id] * resource_percentage / 100.0).ceil  # prozentualer wert der slotproduction (siehe regeln)
-        self.bubble_xp = Random.rand(1.0) < slot_bubble_config[:xp_probability] ? slot_bubble_config[:xp_amount] : 0
-      end
-      self.advance_test_date(base_date)
-      self.save
+      generate_new_bubble!(base_date)
       true
     else
       self.bubble_resource_id = nil
-      self.advance_test_date(base_date)
-      self.save
+      self.advance_test_date!(base_date)
       false
     end
   end
