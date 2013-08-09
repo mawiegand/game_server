@@ -9,12 +9,10 @@
     <p>Das Feldlager erhöht die Garnison und die Armee um 300 Einheiten plus 50 pro Level auf Level 1-10 und 20 pro Level auf Level 11-20. Auf Level 10 ermöglicht das Feldlager einen zweiten Kommandopunkt.</p>
   </Description>
   <Description lang="en_US">
-    <p>Once a field camp is built, the message is clear: „We're here to fight, not have fun!”</p>
-    <p>A field camp means more fighters can be deployed, 300 plus 50 per level at levels 1-10 and 20 per level at levels 11-20.</p>
-    <p>At level 10 it increases a settlement's command points by one.</p>
+    <p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 300 plus 50 per level at Levels 1-10 and 20 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Field camps turn encampments into military support units. Despite all the talk about the safety that field camps offer storage compounds, it's the field camps that seem to have a magical attraction for enemies.</p>
+    <p>Field camps turn encampments into military support units. Despite all the talk about the safety and storage that field camps offer, they seem to have a magical attraction for enemies.</p>
   </Flavour>
     <Flavour lang="de_DE">
     <p>Mit dem Feldlager verwandeln wir Lagerstätten in militärische Stützpunkte. Größere Armeen und gleich zwei davon!</p>

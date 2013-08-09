@@ -6,7 +6,7 @@
       <Name>Infantry</Name>
       <Name lang="de_DE">Fußtruppen</Name>
       <Description>
-        <p>Infantry is the basic unit in every army squad. They protect stone throwers from direct attack and, given enough of them, can also fend off flank attacks.</p>
+        <p>The infantry is the basic unit of every army squad. They protect stone throwers from direct attack and, if there are enough of them, they can also fend off flank attacks.</p>
       </Description>
       <Description lang="de_DE">
         <p>Infanterie ist die Basiseinheit in jeder Truppe. Sie schützt Fernkämpfer vor direkten Angriffen und kann, wenn in ausreichender Zahl vorhanden, auch Flankenangriffe abwehren.</p>
@@ -26,7 +26,7 @@
       <Name>Riders</Name>
       <Name lang="de_DE">Berittene</Name>
       <Description>
-        <p>Mounted units move fast across the battlefield and are the only ones able to avoid enemy infantry and mount a direct attack on enemy throwers (flank attack).</p>
+        <p>Mounted units move very quickly across the battlefield and are the only units that are able to avoid enemy infantry and mount a direct attack on enemy throwers (flank attack).</p>
       </Description>
       <Description lang="de_DE">
         <p>Berittene Einheiten bewegen sich schnell auf dem Schlachtfeld, und sind als einzige in der Lage, die gegnerischen Fußtruppen zu umgehen und feindliche Fernkämpfer direkt anzugreifen (Flankenangriff).</p>

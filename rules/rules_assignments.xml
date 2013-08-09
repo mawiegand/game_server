@@ -20,7 +20,7 @@
       <p>Vielleicht verlierst Du die Wette, wie schnell Deine Sammler Steine kloppen können, aber am Ende bleibt für Dich sowieso mehr übrig, als ihr Bier kosten wird.</p>
     </Description>
     <Description lang="en_US">
-      <p>Maybe you will lose your bet, how fast your gatherers can smash those boulders, but in the end you will get more out of their fast work then their beer will cost you anyways. </p>
+      <p>Maybe you will lose your bet about how fast your gatherers can smash those boulders, but in the end you'll get more out of their fast work than their beer will cost you anyways.</p>
     </Description>
     
     <Rewards>
@@ -41,14 +41,14 @@
       <p>Hilf aus und sacke etwas Holz nebenbei ein!</p>
     </ShortDescription>
     <ShortDescription lang="en_US">
-      <p>Help out and get some wood in the process!</p>
+      <p>Help out and get some wood in the process.</p>
     </ShortDescription>
     
     <Description lang="de_DE">
       <p>Der Wirt braucht eine neue Bank, also muss Hand angelegt werden. Da er nur einen halben Baum braucht, wird sich niemand daran stören, wenn Du den Rest einstreichst.</p>
     </Description>
     <Description lang="en_US">
-      <p>The barkeeper needs a new bench. But seeing how he only needs half a tree noone is realy going to mind if you take the rest for yourself, will they?</p>
+      <p>The barkeeper needs a new bench. Although seeing as how he only needs half a tree, no one is really going to mind if you take the rest for yourself, right?</p>
     </Description>
     
     <Rewards>
@@ -76,7 +76,7 @@
       <p>Du wolltest wirklich nur entspannen, und wurdest doch wieder für einen kleinen Auftrag rekrutiert. Der Gestank des Tierkadavers steigert nicht gerade Deine Stimmung.</p>
     </Description>
     <Description lang="en_US">
-      <p>All you wanted to do was relax with a drink, but then they just had to make you work. Atleast they are paying for your drinks and you are going to need lots of drinks to forget this skinning buisness.</p>
+      <p>All you wanted to do was relax with a drink, but then they had to go and make you work. At least they're paying for your drinks. Because to be frank, you're going to need a hell of a lot of drinks to forget about this skinning business.</p>
     </Description>
     
     <Rewards>
@@ -87,24 +87,24 @@
   </AssignmentType>
 
   <AssignmentType id="assignment_barroombrawl" advisor="warrior" level="4">
-    <Name>Barroom Brawl</Name>
+    <Name>Bar Room Brawl</Name>
     <Name lang="de_DE">Schlägerei</Name>
     
     <Flavour lang="de_DE">Ein kühles Bier und eine zünftige Tavernenschlägerei. Das nenne ich Erholung!</Flavour>
-    <Flavour lang="en_US">A Chilled beer and flying fists. Now thats what i call relaxation!</Flavour>
+    <Flavour lang="en_US">A chilled beer and flying fists! Now that's what I call relaxation!</Flavour>
     
     <ShortDescription lang="de_DE">
       <p>Nach einer ordentlichen Schlägerei kann man gute Freunde finden.</p>
     </ShortDescription>
     <ShortDescription lang="en_US">
-      <p>After a nice brawl you sometimes find good friends.</p>
+      <p>After a nice brawl, you sometimes make some great friends.</p>
     </ShortDescription>
     
     <Description lang="de_DE">
       <p>Wenn verdiente Krieger zu Gast sind steigt die Schlägerei Rate enorm. Jungspunde wollen sich profilieren, denn so manch große Krieger Karriere begann in der Taverne. Aber irgendjemand muss die Rechnung bezahlen.</p>
     </Description>
     <Description lang="en_US">
-      <p>If a bunch of accomplished warriors meet at the tavern chances are there is going to be a brawl. But after all is done, and someone has paid for the furniture, you may just find reliable companions.</p>
+      <p>If a bunch of accomplished warriors meet at the tavern, chances are that there's going to be quite a brawl. But once it's all over, and someone has paid for the smashed up furniture, you may just find yourself with some reliable companions.</p>
     </Description>
     
     <Cost id="resource_stone">50</Cost>
@@ -161,14 +161,14 @@
       <p>Die große Jagd ist eine einzigartige Erfahrung</p>
     </ShortDescription>
     <ShortDescription lang="en_US">
-      <p>The great hunt is quite an experience.</p>
+      <p>A great hunt is quite an experience.</p>
     </ShortDescription>
     
     <Description lang="de_DE">
       <p>Es wird eine neue Trophäe gesucht, die man über die Bar hängen kann, und so wird zur großen Jagd aufgerufen. Da man fair sein will und nicht von fortgeschrittener Keulentechnologie gebrauch machen will, werden eine Menge Krieger zusammen getrommelt. Und wenn das Werk vollbracht ist und die Trophäe hängt gibts Freibier für alle!</p>
     </Description>
     <Description lang="en_US">
-      <p>The barkeeper is looking for a new trophy to hang above his bar, so the call goes out for a great hunt. The hunters gather, but in order to give the wildlife a fair fight all of their advanced technologie is confiscated. But seeing how there is the promise of free drinks after the hunt is completed it shouldnt take too long anyhow.</p>
+      <p>The barkeeper is looking for a new trophy to hang above his bar, so he's sent out a call to start a great hunt. The hunters cather, but in order to give the wildlife a fair fight, all of their advanced technology is confiscated. Although seeing as how there's the promise of free drinks after the hunt is completed, it shouldn't take that long.</p>
     </Description>
     
     <Cost id="resource_stone">600</Cost>
@@ -237,7 +237,7 @@
       <p>Die Welt ist ein Quadrat! Behaupten tut das zumindest einer der Betrunkenen an der Bar. Als ihn dann jemand dezent darauf hinweis, dass doch jedes Kind weiß, dass die Welt ein Ei ist haut er kurzerhand eins auf die Theke um zu zeigen, dass das eigentlich auch innen Flach ist. Jetzt will er es aber beweisen und sucht Nach freiwilligen, die sich seiner Expedition anschließen sollen, um die Ecken der Welt zu erforschen und ihre Reichtümer zu erbeuten. Und Reichtümer kann man doch immer gebrauchen.</p>
     </Description>
     <Description lang="en_US">
-      <p>The world is square! Atleast thats what one of the bars late-night patrons keeps telling whoever is in his immediate vicinity. After someone tells him every child knows that the world is an egg he suddenly gets rather agitated and yells about finding more people to join him on his expedition to find the corners of the world and loot their riches. And you aren't one to say no to riches.</p>
+      <p>The world is square! At least, that's what one of the bar's late night patrons keeps telling whoever is in his immediate vicinity. After someone tells him that every child knows that the world is an egg, he suddenly gets rather agitated and yells that he needs to find more people to join him on his expedition to find the corners of the world and loot their riches. And it must be said, you've never been one to  say no to riches.</p>
     </Description>
     
     <Cost id="resource_stone">3000</Cost>
