@@ -2,13 +2,13 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Unit id="clubbers_2" category="unitcategory_infantry">
-  <Name>Thick-skinned Clubber</Name>
+  <Name>Thick-Skinned Clubber</Name>
   <Name lang="de_DE">Dicke Keule</Name>
   <Description lang="de_DE">
     <p>'Dicke Keule' ist die Abkürzung von Dickhäutigem Keulenkrieger und bezieht sich sowohl auf die Keule als auch auf die Widerstandskraft. Dank der dicken Haut muss die Zeitspanne bis zur Bewusstlosigkeit nicht in Schmerzen durchstanden werden.</p>		
   </Description>
   <Description lang="en_US">
-    <p>Their thick skin protects them against blows from others' clubs, but doesn't help much against the ranged combatants' sharp stones. Thanks to their thick skin they are in not so much agony until they pass out.</p>
+    <p>Their thick skin protects them against blows from enemy clubs, but it doesn't help so much against the sharp stones of the ranged combatants. Although thanks to their thick skin, they don't feel a lot of pain before they pass out.</p>
   </Description>
   <Flavour lang="en_US">
     <p>“You two? Go and fetch three more of you so you can give me a halfway fair fight!”</p>

@@ -10,11 +10,11 @@
     <p>Sind in einer Siedlung bewaffnete Nahkampfeinheiten verfügbar, können keine unbewaffneten Einheiten rekrutiert werden. Sehr schwach gegen alle anderen Einheitentypen außer Nahkämpfer.</p>		
   </Description>
   <Description lang="en_US">
-    <p>The strongest, toughest and most stupid men of your tribe are trained as warriors. Having no effective weapons at their disposal, unarmed warriors overwhelm their opponents by pure muscle power and their strong will - or at least try for a while.</p>
+    <p>The strongest, toughest and most stupid men of your tribe are trained as warriors. Having no effective weapons at their disposal, unarmed warriors overwhelm their opponents by pure muscle power and their strong will - or at least they try for a while. They can be trained as long as there are no armed melee units available in the same settlement. Very weak against all unit types apart from melee fighters.</p>
     <p>Can only be trained as long as there are no armed melee units available in the same settlement. Very weak against any other unit type but melee units.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Affordable unarmed warrior for hunting down neanderthal and other players weakest units.</p>
+    <p>An affordable, unarmed warrior used for hunting down neanderthals and other players' weakest units.</p>
   </Flavour>
   <Flavour lang="de_DE">
     <p>Günstiger unbewaffneter Krieger zur Abwehr von Neandertalern und schwachen Gegnern.</p>

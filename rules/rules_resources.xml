@@ -6,24 +6,24 @@
     <Name lang="de_DE">Stein</Name>
     <Name lang="en_US">Stone</Name>
     <Flavour lang="de_DE">Grau, hart, überall zu finden.</Flavour>
-    <Flavour lang="en_US">Grey, hard, found everywhere.</Flavour>
+    <Flavour lang="en_US">Gray, hard, found everywhere.</Flavour>
     <Description lang="de_DE">
       <p>Steine -- in der STEINzeit DER Rohstoff schlechthin. Kann gesammelt, gestapelt, geschärft und geworfen werden. Mehr muss man nicht sagen.</p>
     </Description>
     <Description lang="en_US">
-      <p>Stones – in the STONE age are THE most vital raw material. Can be gathered, stacked, sharpened and thrown. Not much more to say, really.</p>
+      <p>Ah, stones. The most vital raw material of the Stone Age. Can't think why they called it that... Stones can be gathered, stacked, sharpened and thrown. Not a lot more to say about them.</p>
     </Description>
   </Resource>
   <Resource id="resource_wood" stealable="false">  
     <Name lang="de_DE">Holz</Name>
     <Name lang="en_US">Wood</Name>
     <Flavour lang="de_DE">Ein Brett in Ehren kann niemand verwehren.</Flavour>
-    <Flavour lang="en_US">It's not for nothing we say “touch wood” when we hope for good luck!</Flavour>
+    <Flavour lang="en_US">It's not for nothing that we say 'touch wood' when we hope for good luck!</Flavour>
     <Description lang="de_DE">
       <p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz. Als Rohstoff spielt Holz eine wichtige Rolle bei der Konstruktion von Gebäuden und Belagerungswaffen.</p>
     </Description>
     <Description lang="en_US">
-      <p>Even in the stone age, wood was available in all its varieties: softwood, hardwood, squared timber and, of course, boards. As a raw material, wood was really important in the construction of buildings and siege weapons.</p>
+      <p>Even in the Stone Age, wood was used for various important purposes, including the construction of buildings and siege weapons.</p>
     </Description>
   </Resource>
   <Resource id="resource_fur" stealable="false">
@@ -35,19 +35,19 @@
       <p>Hält warm, hält Wasser ab, verhängt Löcher und taugt im Notfall auch als rudimentäre Dachbedeckung.</p>
     </Description>
     <Description lang="en_US">
-      <p>Keeps you warm, is water resistant, can cover up holes and can be used as emergency roofing.</p>
+      <p>Fur, sweet fur. It keeps you warm, it's water resistant, it can cover up holes in buildings, and it can be used as emergency roofing.</p>
     </Description>
   </Resource>
   <Resource id="resource_cash" stealable="false" ratingValue="0" taxable="false" tradable="false"> <!-- used for monetarization, cannot be stolen, is not considered in ranking -->  
     <Name lang="de_DE">Kröte</Name>
     <Name lang="en_US">Golden Frog</Name>
     <Flavour lang="de_DE">Jeder mag Kröten! Die Steinzeitwährung.</Flavour>
-    <Flavour lang="en_US">Everyone likes golden frogs! Stone age currency.</Flavour>
+    <Flavour lang="en_US">Everyone likes Golden Frogs - the currency of the Stone Age.</Flavour>
     <Description lang="de_DE">
       <p>Quasi-Währung in der Steinzeit. Gerne genommen bei jeglichem Tauschhandel.</p>
     </Description>
     <Description lang="en_US">
-      <p>A kind of stone-age currency. Readily accepted in any barter transaction.</p>
+      <p>A type of Stone Age currency, readily accepted in any barter transaction.</p>
     </Description>
   </Resource>
 </ResourceTypes>
