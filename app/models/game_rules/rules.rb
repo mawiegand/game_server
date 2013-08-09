@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.38
+# Version: 0.9.39
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -120,12 +120,12 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 38,
+                    :build => 39,
       },
       :app_control => {
         :debug_tracking                         => 1,
         :special_offer_dialog                   => 1,
-        :special_offer_required_finished_quests => 20,
+        :special_offer_required_finished_quests => 22,
       },
       :battle => {
         :calculation => {
@@ -173,10 +173,10 @@ class GameRules::Rules
         :idle_time => 3600,
       },
       :slot_bubbles => {
-        :idle_probability => '1/LEVEL',
+        :idle_probability => '1-(1.0/LEVEL)',
         :resource_percentage => '2*LEVEL',
-        :test_min_duration => 3500,
-        :test_max_duration => 3700,
+        :test_min_duration => 55,
+        :test_max_duration => 65,
       },
       :artifact_count => 5,
   

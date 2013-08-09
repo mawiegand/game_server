@@ -11,6 +11,10 @@ end %>
     <th>Type</th>
     <th>Building</th>
     <th>Level</th>
+    <th>Bubble Resource</th>
+    <th>Bubble Amount</th>
+    <th>Bubble XP</th>
+    <th>Bubble Next Test</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,6 +27,10 @@ end %>
     <td><%= settlement_slot.type %></td>
     <td><%= settlement_slot.building_id %></td>
     <td><%= settlement_slot.level %></td>
+    <td><%= settlement_slot.bubble_resource_id %></td>
+    <td><%= settlement_slot.bubble_amount %></td>
+    <td><%= settlement_slot.bubble_xp %></td>
+    <td><%= settlement_slot.bubble_next_test_at %></td>
     <td><%= link_to 'Show', settlement_slot %></td>
     <td><%= link_to 'Edit', edit_settlement_slot_path(settlement_slot) %></td>
     <td><%= link_to 'Destroy', settlement_slot, confirm: 'Are you sure?', method: :delete %></td>
