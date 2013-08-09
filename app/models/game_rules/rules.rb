@@ -175,6 +175,8 @@ class GameRules::Rules
       :slot_bubbles => {
         :idle_probability => '1-(1.0/LEVEL)',
         :resource_percentage => '2*LEVEL',
+        :xp_amount => 5,
+        :xp_probability => 0.1,
         :test_min_duration => 55,
         :test_max_duration => 65,
       },

@@ -488,7 +488,7 @@ class Settlement::Slot < ActiveRecord::Base
         self.bubble_resource_id = selected_resource_id                                   # zufallswert aus recourceproduction des slots
         puts "amount #{res_production[selected_resource_id]} * #{resource_percentage}"
         self.bubble_amount = (res_production[selected_resource_id] * resource_percentage / 100.0).ceil  # prozentualer wert der slotproduction (siehe regeln)
-        self.bubble_xp = (random * 100).floor % 2                                        # erstmal fix
+        self.bubble_xp = Random.rand(1.0) < slot_bubble_config[:xp_probability] ? slot_bubble_config[:xp_amount] : 0
       end
       self.advance_test_date(base_date)
       self.save

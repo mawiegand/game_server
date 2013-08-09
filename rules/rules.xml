@@ -165,7 +165,8 @@
     </SpecialAssignments>
     <SlotBubbles>
       <BubbleIdleProbability>1-(1.0/LEVEL)</BubbleIdleProbability>
-      <BubbleResourcePercentage>2*LEVEL</BubbleResourcePercentage>
+      <BubbleResource percentage="2*LEVEL" />
+      <BubbleXP amount="5" probability="0.1" />
       <BubbleTestDuration min="55" max="65" />
     </SlotBubbles>
   </General>
