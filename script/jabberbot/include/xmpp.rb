@@ -48,8 +48,8 @@ class Xmpp
       if muc.owner?
         muc.say('Hi an alle. Dieser Raum wird nun Registriert')
         muc.configure(
-          'muc#roomconfig_roomname'                => command.room , # Raumname
-          'muc#roomconfig_roomdesc'                => command.room == "global" ? "WorldWide Chat" : "Raum des Stammes #{ command.room }", # Raum Beschreibung
+          'muc#roomconfig_roomname'                => command.room_name || command.room , # Raumname
+          'muc#roomconfig_roomdesc'                => command.room == "global" ? "WorldWide Chat" : "Raum des Stammes #{ command.room_name || command.room }", # Raum Beschreibung
           'muc#roomconfig_persistentroom'          => 1,    # Raum persistent machen
           'muc#roomconfig_publicroom'              => 0,    # Raum �ffentlich suchbar machen
           'muc#roomconfig_passwordprotectedroom'   => 0,    # Raum mit Passwort schuetzen
@@ -68,7 +68,7 @@ class Xmpp
         )
         muc.exit
 
-        @logger.info "Raum #{command.room} hinzugefuegt"
+        @logger.info "Raum #{command.room} für Ally #{ command.room_name }hinzugefuegt"
       else
         @logger.error "Der Raum #{command.room} konnte nicht hinzugefuegt werden"
       end
