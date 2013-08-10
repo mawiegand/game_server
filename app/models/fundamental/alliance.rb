@@ -92,6 +92,11 @@ class Fundamental::Alliance < ActiveRecord::Base
     end
     Fundamental::Alliance.auto_join_selectable.first
   end
+
+  def self.tag_is_valid?(tag)
+    # check if tag is not too long and if doesn't contain special chars
+    tag.length < 6 && /[^A-Za-z0-9]/.match(tag).nil?
+  end
   
   def auto_joinable
     return self if !auto_join_disabled and self.members.count > 0 and !self.full?
