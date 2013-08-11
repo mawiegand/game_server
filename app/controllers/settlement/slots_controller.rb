@@ -38,6 +38,7 @@ class Settlement::SlotsController < ApplicationController
         @settlement_slots = Settlement::Slot.where(settlement_id: params[:settlement_id])
         @settlement_slots.each do |slot|
           slot.update_bubble_if_needed
+          slot.save
         end
       end
     else 

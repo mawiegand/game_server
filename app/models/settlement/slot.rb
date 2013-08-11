@@ -292,7 +292,7 @@ class Settlement::Slot < ActiveRecord::Base
   def upgrade_building
     raise BadRequestError.new('Tried to upgrade a non-existend building.') if self.building_id.nil?
     self.level = self.level + 1
-    self.generate_new_bubble!(Time.now)
+    self.generate_new_bubble(Time.now)
     propagate_change(self.building_id, self.level - 1, self.level)
     propagate_experience(self.building_id, self.building_id, self.level - 1, self.level)
     self.save
@@ -444,33 +444,33 @@ class Settlement::Slot < ActiveRecord::Base
     self.bubble_resource_id = nil
 
     # generate new test date
-    self.advance_test_date!(Time.now)
+    self.advance_test_date(Time.now)
+    self.save
   end
 
   def update_bubble_if_needed
     # recheck as long as there's no bubble and the next test date lies in the past
     while (self.bubble_next_test_at.nil? || self.bubble_next_test_at < Time.now) && !self.has_bubble?
       # check depending on old test date
-      self.check_for_new_bubble!(self.bubble_next_test_at)
+      self.check_for_new_bubble(self.bubble_next_test_at)
     end
 
     # return if a bubble exists
     self.has_bubble?
   end
 
-  def advance_test_date!(base_date)
+  def advance_test_date(base_date)
     slot_bubble_config = GameRules::Rules.the_rules.slot_bubbles
     random = Random.rand(slot_bubble_config[:test_max_duration] - slot_bubble_config[:test_min_duration])
     self.bubble_next_test_at = base_date + slot_bubble_config[:test_max_duration] + random
-    self.save
   end
 
-  def generate_new_bubble!(base_date)
+  def generate_new_bubble(base_date)
     slot_bubble_config = GameRules::Rules.the_rules.slot_bubbles
 
     res_production = self.resource_production
     if res_production.nil?
-      self.advance_test_date!(base_date)
+      self.advance_test_date(base_date)
       return false
     end
 
@@ -487,10 +487,10 @@ class Settlement::Slot < ActiveRecord::Base
       self.bubble_amount = (res_production[selected_resource_id] * resource_percentage / 100.0).ceil  # prozentualer wert der slotproduction (siehe regeln)
       self.bubble_xp = Random.rand(1.0) < slot_bubble_config[:xp_probability] ? slot_bubble_config[:xp_amount] : 0
     end
-    self.advance_test_date!(base_date)
+    self.advance_test_date(base_date)
   end
 
-  def check_for_new_bubble!(base_date)
+  def check_for_new_bubble(base_date)
 
     base_date = Time.now if base_date.nil?
 
@@ -505,11 +505,11 @@ class Settlement::Slot < ActiveRecord::Base
 
     # check if
     if random > idle_probability
-      generate_new_bubble!(base_date)
+      generate_new_bubble(base_date)
       true
     else
       self.bubble_resource_id = nil
-      self.advance_test_date!(base_date)
+      self.advance_test_date(base_date)
       false
     end
   end
