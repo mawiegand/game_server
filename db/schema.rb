@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130808091520) do
+ActiveRecord::Schema.define(:version => 20130810132011) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1903,15 +1903,15 @@ ActiveRecord::Schema.define(:version => 20130808091520) do
     t.datetime "insider_since"
     t.boolean  "first_round"
     t.datetime "tutorial_finished_at"
-    t.integer  "assignment_level",                         :default => 0,     :null => false
-    t.datetime "moved_at"
-    t.integer  "old_base_location_id"
-    t.integer  "special_offer_dialog_count",               :default => 0
-    t.datetime "premium_expiration_displayed_at"
-    t.datetime "special_offer_displayed_at"
-    t.boolean  "logged_in_on_second_day",                  :default => false, :null => false
     t.decimal  "construction_bonus_effect",                :default => 0.0,   :null => false
     t.decimal  "construction_bonus_total",                 :default => 0.0,   :null => false
+    t.integer  "assignment_level",                         :default => 0,     :null => false
+    t.datetime "premium_expiration_displayed_at"
+    t.integer  "special_offer_dialog_count",               :default => 0
+    t.datetime "special_offer_displayed_at"
+    t.boolean  "logged_in_on_second_day",                  :default => false, :null => false
+    t.datetime "moved_at"
+    t.integer  "old_base_location_id"
     t.text     "description"
   end
 
@@ -2146,6 +2146,7 @@ ActiveRecord::Schema.define(:version => 20130808091520) do
     t.boolean  "processed",    :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "room_name"
   end
 
   create_table "messaging_messages", :force => true do |t|
