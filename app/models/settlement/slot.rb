@@ -438,7 +438,7 @@ class Settlement::Slot < ActiveRecord::Base
     self.settlement.owner.resource_pool.add_resources_transaction(resources)
 
     # redeem xp
-    self.settlement.owner.add_experience!(self.bubble_xp) unless !self.bubble_xp.nil?
+    self.settlement.owner.add_experience!(self.bubble_xp) unless self.bubble_xp.nil?
 
     # reset bubble
     self.bubble_resource_id = nil
