@@ -356,10 +356,13 @@ end
       <xsl:for-each select="AvatarConfig">
         :<xsl:value-of select="@gender" /> => {
         <xsl:for-each select="AvatarLayer">
-          :<xsl:apply-templates/> => {
+          :<xsl:apply-templates select="@id"/> => {
             :max       => <xsl:value-of select="@max" />,
             :optional  => <xsl:value-of select="@optional" />,
             :num_chars => <xsl:value-of select="@chars" />,
+            :name      => {
+              <xsl:apply-templates select="Name" />
+            },
           },
         </xsl:for-each>        
         },

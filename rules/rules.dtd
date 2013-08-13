@@ -79,10 +79,11 @@
   gender CDATA #REQUIRED
 >
 
-<!ELEMENT AvatarLayer (#PCDATA)>
+<!ELEMENT AvatarLayer (Name+)>
 <!ATTLIST AvatarLayer
   max      CDATA #REQUIRED
   optional (true | false) "false"
+  id       CDATA #REQUIRED
   chars    (1|2) "1"
 >
 <!ELEMENT ChangeCharacterName EMPTY>

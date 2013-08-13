@@ -433,20 +433,26 @@ class Settlement::Slot < ActiveRecord::Base
   end
 
   def redeem_bubble
-    # redeem resources
-    resources = []
-    resources[self.bubble_resource_id] = self.bubble_amount
-    self.settlement.owner.resource_pool.add_resources_transaction(resources)
 
-    # redeem xp
-    self.settlement.owner.add_experience!(self.bubble_xp) unless self.bubble_xp.nil?
+    # check for resource id
+    if !self.bubble_resource_id.nil?
+      # redeem resources
+      resources = []
+      resources[self.bubble_resource_id] = self.bubble_amount
+      self.settlement.owner.resource_pool.add_resources_transaction(resources)
 
-    # reset bubble
-    self.bubble_resource_id = nil
+      # redeem xp
+      self.settlement.owner.add_experience!(self.bubble_xp) unless self.bubble_xp.nil?
 
-    # generate new test date
-    self.advance_test_date(self.bubble_next_test_at)
-    self.save
+      # reset bubble
+      self.bubble_resource_id = nil
+
+      # generate new test date
+      self.advance_test_date(self.bubble_next_test_at)
+      self.save
+    else
+      false
+    end
   end
 
   def update_bubble_if_needed

@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.42
+# Version: 0.9.43
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -120,7 +120,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 42,
+                    :build => 43,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -379,48 +379,104 @@ class GameRules::Rules
             :max       => 0,
             :optional  => true,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "Chains",
+  
+            :de_DE => "Ketten",
+  
+            },
           },
         
           :eyes => {
             :max       => 3,
             :optional  => false,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "eyes",
+  
+            :de_DE => "eyes",
+  
+            },
           },
         
           :hairs => {
             :max       => 5,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "hairs",
+  
+            :de_DE => "hairs",
+  
+            },
           },
         
           :mouths => {
             :max       => 4,
             :optional  => false,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "mouths",
+  
+            :de_DE => "mouths",
+  
+            },
           },
         
           :heads => {
             :max       => 1,
             :optional  => false,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "heads",
+  
+            :de_DE => "heads",
+  
+            },
           },
         
           :beards => {
             :max       => 6,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "beards",
+  
+            :de_DE => "beards",
+  
+            },
           },
         
           :veilchens => {
             :max       => 4,
             :optional  => true,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "veilchens",
+  
+            :de_DE => "veilchens",
+  
+            },
           },
         
           :tattoos => {
             :max       => 3,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "tattoos",
+  
+            :de_DE => "tattoos",
+  
+            },
           },
                 
         },
@@ -431,48 +487,104 @@ class GameRules::Rules
             :max       => 2,
             :optional  => true,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "Chains",
+  
+            :de_DE => "Chains",
+  
+            },
           },
         
           :eyes => {
             :max       => 4,
             :optional  => false,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "eyes",
+  
+            :de_DE => "eyes",
+  
+            },
           },
         
           :hairs => {
             :max       => 11,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "hairs",
+  
+            :de_DE => "hairs",
+  
+            },
           },
         
           :mouths => {
             :max       => 5,
             :optional  => false,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "mouths",
+  
+            :de_DE => "mouths",
+  
+            },
           },
         
           :heads => {
             :max       => 1,
             :optional  => false,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "heads",
+  
+            :de_DE => "heads",
+  
+            },
           },
         
           :beards => {
             :max       => 0,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "beards",
+  
+            :de_DE => "Cbeardshains",
+  
+            },
           },
         
           :veilchens => {
             :max       => 0,
             :optional  => true,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "veilchens",
+  
+            :de_DE => "veilchens",
+  
+            },
           },
         
           :tattoos => {
             :max       => 3,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "tattoos",
+  
+            :de_DE => "tattoos",
+  
+            },
           },
                 
         },
