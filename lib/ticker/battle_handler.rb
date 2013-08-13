@@ -219,7 +219,7 @@ class Ticker::BattleHandler
             end
           end
         else
-          runloop.say "---> During Battle: Artifact not available"
+          runloop.say "During Battle: Artifact not available"
         end
 
 
