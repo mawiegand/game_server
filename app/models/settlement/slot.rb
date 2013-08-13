@@ -445,7 +445,7 @@ class Settlement::Slot < ActiveRecord::Base
     self.bubble_resource_id = nil
 
     # generate new test date
-    self.advance_test_date(Time.now)
+    self.advance_test_date(self.bubble_next_test_at)
     self.save
   end
 
