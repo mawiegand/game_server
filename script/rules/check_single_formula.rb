@@ -4,7 +4,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config',
 require 'util/formula'
 
 
-formula = 'LESS(LEVEL,11)*(10+LEVEL)+GREATER(LEVEL,10)*20'
+formula = '10+LEVEL*0.25'
 
 
 parsed_formula = Util::Formula.parse_from_formula(formula)
