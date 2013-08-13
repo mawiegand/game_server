@@ -16,13 +16,13 @@ class Military::BattleFaction < ActiveRecord::Base
     end
   
     self.participants.each do | participant |
-      GameRules::Rules.the_rules.unit_categories.each do | unit_category |        
+      GameRules::Rules.the_rules.unit_categories.each do | unit_category |
         field = (unit_category[:db_field].to_s+'_strength').to_sym
-        Rails.logger.debug field
-        Rails.logger.debug self
-        Rails.logger.debug participant
-        Rails.logger.debug self.participants
-        
+        #Rails.logger.debug field
+        #Rails.logger.debug self
+        #Rails.logger.debug participant
+        #Rails.logger.debug self.participants
+        #
         self[field] += participant.army.send(field) unless participant.army.nil?
       end
     end    
