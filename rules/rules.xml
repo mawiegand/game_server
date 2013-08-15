@@ -72,7 +72,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="9" build="43" />
+    <Version major="0" minor="9" build="44" />
     <AppControl debugTracking="1">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="22" />
     </AppControl>
@@ -212,7 +212,7 @@
       <SpecialAssignmentIdleTime>3600</SpecialAssignmentIdleTime>
     </SpecialAssignments>
     <SlotBubbles>
-      <BubbleIdleProbability>LESS(LEVEL,11)*(1-(1-(0.1+(0.01*LEVEL/2))))+GREATER(LEVEL,10)*0.05</BubbleIdleProbability>
+      <BubbleIdleProbability>LESS(LEVEL,11)*(1-(1-(1-(0.1+(0.01*LEVEL/2)))))+GREATER(LEVEL,10)*(1-0.05)</BubbleIdleProbability>
       <BubbleResource percentage="10+LEVEL*0.25" />
       <BubbleXP amount="5" probability="0.1" />
       <BubbleTestDuration min="3000" max="4200" />
