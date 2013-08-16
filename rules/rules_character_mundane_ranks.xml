@@ -223,8 +223,28 @@
     <Name lang="en_US">Tyrannosaurstyrant</Name>
   </MundaneRank>
   <!-- 44 -->
-  <MundaneRank exp="99999999" settlementPoints="5" minimumSacredRank="0">
+  <MundaneRank exp="7255579" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Tyrannosaurusmeistertyrann</Name>
     <Name lang="en_US">Tyrannosaursmastertyrant</Name>
+  </MundaneRank>
+  <!-- 45 -->
+  <MundaneRank exp="8307638" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Höhlenherrscher</Name>
+    <Name lang="en_US">Cavesovereign</Name>
+  </MundaneRank>
+  <!-- 46 -->
+  <MundaneRank exp="9512245" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Drei-Kiesel-General</Name>
+    <Name lang="en_US">Gravelgeneral</Name>
+  </MundaneRank>
+  <!-- 47 -->
+  <MundaneRank exp="10891521" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Dinosaurierdespot</Name>
+    <Name lang="en_US">Dinosaurdespot</Name>
+  </MundaneRank>
+  <!-- 48 -->
+  <MundaneRank exp="12470791" settlementPoints="1" minimumSacredRank="0">
+    <Name lang="de_DE">Kriegsfürst</Name>
+    <Name lang="en_US">Warlord</Name>
   </MundaneRank>
 </MundaneRanks>

@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.39
+# Version: 0.9.44
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -120,7 +120,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 39,
+                    :build => 44,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -173,10 +173,12 @@ class GameRules::Rules
         :idle_time => 3600,
       },
       :slot_bubbles => {
-        :idle_probability => '1-(1.0/LEVEL)',
-        :resource_percentage => '2*LEVEL',
-        :test_min_duration => 55,
-        :test_max_duration => 65,
+        :idle_probability => 'LESS(LEVEL,11)*(1-(1-(1-(0.1+(0.01*LEVEL/2)))))+GREATER(LEVEL,10)*(1-0.05)',
+        :resource_percentage => '10+LEVEL*0.25',
+        :xp_amount => 5,
+        :xp_probability => 0.1,
+        :test_min_duration => 3000,
+        :test_max_duration => 4200,
       },
       :artifact_count => 5,
   
@@ -377,48 +379,104 @@ class GameRules::Rules
             :max       => 0,
             :optional  => true,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "Chains",
+  
+            :de_DE => "Ketten",
+  
+            },
           },
         
           :eyes => {
             :max       => 3,
             :optional  => false,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "eyes",
+  
+            :de_DE => "eyes",
+  
+            },
           },
         
           :hairs => {
             :max       => 5,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "hairs",
+  
+            :de_DE => "hairs",
+  
+            },
           },
         
           :mouths => {
             :max       => 4,
             :optional  => false,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "mouths",
+  
+            :de_DE => "mouths",
+  
+            },
           },
         
           :heads => {
             :max       => 1,
             :optional  => false,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "heads",
+  
+            :de_DE => "heads",
+  
+            },
           },
         
           :beards => {
             :max       => 6,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "beards",
+  
+            :de_DE => "beards",
+  
+            },
           },
         
           :veilchens => {
             :max       => 4,
             :optional  => true,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "veilchens",
+  
+            :de_DE => "veilchens",
+  
+            },
           },
         
           :tattoos => {
             :max       => 3,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "tattoos",
+  
+            :de_DE => "tattoos",
+  
+            },
           },
                 
         },
@@ -429,48 +487,104 @@ class GameRules::Rules
             :max       => 2,
             :optional  => true,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "Chains",
+  
+            :de_DE => "Chains",
+  
+            },
           },
         
           :eyes => {
             :max       => 4,
             :optional  => false,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "eyes",
+  
+            :de_DE => "eyes",
+  
+            },
           },
         
           :hairs => {
             :max       => 11,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "hairs",
+  
+            :de_DE => "hairs",
+  
+            },
           },
         
           :mouths => {
             :max       => 5,
             :optional  => false,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "mouths",
+  
+            :de_DE => "mouths",
+  
+            },
           },
         
           :heads => {
             :max       => 1,
             :optional  => false,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "heads",
+  
+            :de_DE => "heads",
+  
+            },
           },
         
           :beards => {
             :max       => 0,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "beards",
+  
+            :de_DE => "Cbeardshains",
+  
+            },
           },
         
           :veilchens => {
             :max       => 0,
             :optional  => true,
             :num_chars => 1,
+            :name      => {
+              
+            :en_US => "veilchens",
+  
+            :de_DE => "veilchens",
+  
+            },
           },
         
           :tattoos => {
             :max       => 3,
             :optional  => true,
             :num_chars => 2,
+            :name      => {
+              
+            :en_US => "tattoos",
+  
+            :de_DE => "tattoos",
+  
+            },
           },
                 
         },
@@ -6725,6 +6839,293 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Bar Room Brawl
+        {              #   Drive out the Neanderthals
+          :id          => 4,
+          :symbolic_id => :assignment_raid,
+          :level       => 5,
+          :advisor     => "warrior",
+          :name        => {
+            
+            :en_US => "Drive out the Neanderthals",
+  
+            :de_DE => "Neandertaler vertreiben",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Diese Neandertaler machen mich wütend. Wütend und durstig!",
+  
+            :en_US => "Those neanderthals make me angry. And thirsty!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Die wilden Neandertaler dringen immer wieder in die Gebiete Deines Stammes vor. Um ihnen nun endlich Einhalt zu gebieten wurde ein cleverer Plan gefasst. Man lockt ein paar Krieger in die Taverne. Nach ein paar runden fängt man an Fackeln und Mistgabeln zu verteilen. Schon löst sich das Problem wie von selbst. Und was man so plündert, kann man auch noch behalten.</p>",
+  
+            :en_US => "<p>Wild neanderthals are advancing more into our land every day. To stop this a clever plan is needed. You gather a bunch of thirsty warriors in the tavern. After a few rounds you start distributing torches and pitchforks. And finally the problem almost solves itself and you can even keep any loot they find.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Vertreibe die Neandertaler und mach ein wenig Beute.</p>",
+  
+            :en_US => "<p>Drive out the neanderthals and loot a little.</p>",
+  
+          },
+
+          :unit_deposits => {
+            0 => '25',
+            
+          },
+
+          :duration => 7200,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Drive out the Neanderthals
+        {              #   The Great Hunt
+          :id          => 5,
+          :symbolic_id => :assignment_hunt,
+          :level       => 7,
+          :advisor     => "girl",
+          :name        => {
+            
+            :en_US => "The Great Hunt",
+  
+            :de_DE => "Die große Jagd",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "So eine Jagd ist genau das Richtige um den Apetit anzuregen und Durst zu machen.",
+  
+            :en_US => "A hunt like this is just the thing to make you thirsty.",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Es wird eine neue Trophäe gesucht, die man über die Bar hängen kann, und so wird zur großen Jagd aufgerufen. Da man fair sein will und nicht von fortgeschrittener Keulentechnologie gebrauch machen will, werden eine Menge Krieger zusammen getrommelt. Und wenn das Werk vollbracht ist und die Trophäe hängt gibts Freibier für alle!</p>",
+  
+            :en_US => "<p>The barkeeper is looking for a new trophy to hang above his bar, so he's sent out a call to start a great hunt. The hunters cather, but in order to give the wildlife a fair fight, all of their advanced technology is confiscated. Although seeing as how there's the promise of free drinks after the hunt is completed, it shouldn't take that long.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Die große Jagd ist eine einzigartige Erfahrung</p>",
+  
+            :en_US => "<p>A great hunt is quite an experience.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '600',
+            1 => '400',
+            
+          },
+
+          :unit_deposits => {
+            14 => '100',
+            
+          },
+
+          :duration => 21600,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+          ],
+
+            :experience_reward => 250,
+
+          },
+
+
+        },              #   END OF The Great Hunt
+        {              #   Caravan
+          :id          => 6,
+          :symbolic_id => :assignment_caravan,
+          :level       => 9,
+          :advisor     => "chief",
+          :name        => {
+            
+            :en_US => "Caravan",
+  
+            :de_DE => "Karavane",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Was man in fremden Ländern wohl alles hat um sich zu bereichern?",
+  
+            :en_US => "I wonder what they do in foreign countries to enrich themselves?",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Ein fliegender Händler sucht nach Investoren für seine nächste Handelsreise. Für ein paar Rohstoffe und eine Leibwache beteiligt er Dich an seinem Gewinn. Und viel wichtiger: er übernimmt die Getränkerechnung für heute!</p>",
+  
+            :en_US => "<p>A traveling merchant is looking for investors for his next journey. For a few resources and some people to guard them he will give you part of his earning. And much more importantly he will pick up your tab at the bar!</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Beschütze die Karavane und kehre reich zurück.</p>",
+  
+            :en_US => "<p>Protect the caravan and become rich in the process.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '1000',
+            1 => '1000',
+            2 => '1000',
+            
+          },
+
+          :unit_deposits => {
+            0 => '100',
+            1 => '50',
+            
+          },
+
+          :duration => 86400,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 6000,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Caravan
+        {              #   Expedition
+          :id          => 7,
+          :symbolic_id => :assignment_expedition,
+          :level       => 10,
+          :advisor     => "chief",
+          :name        => {
+            
+            :en_US => "Expedition",
+  
+            :de_DE => "Expedition",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Diese Expedition wird uns Ruhm und Ehre bringen!",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Welt ist ein Quadrat! Behaupten tut das zumindest einer der Betrunkenen an der Bar. Als ihn dann jemand dezent darauf hinweis, dass doch jedes Kind weiß, dass die Welt ein Ei ist haut er kurzerhand eins auf die Theke um zu zeigen, dass das eigentlich auch innen Flach ist. Jetzt will er es aber beweisen und sucht Nach freiwilligen, die sich seiner Expedition anschließen sollen, um die Ecken der Welt zu erforschen und ihre Reichtümer zu erbeuten. Und Reichtümer kann man doch immer gebrauchen.</p>",
+  
+            :en_US => "<p>The world is square! At least, that's what one of the bar's late night patrons keeps telling whoever is in his immediate vicinity. After someone tells him that every child knows that the world is an egg, he suddenly gets rather agitated and yells that he needs to find more people to join him on his expedition to find the corners of the world and loot their riches. And it must be said, you've never been one to  say no to riches.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Unternimm eine Expedition</p>",
+  
+            :en_US => "<p>Undertake an expedition</p>",
+  
+          },
+
+          :costs      => {
+            0 => '3000',
+            1 => '3000',
+            2 => '3000',
+            
+          },
+
+          :unit_deposits => {
+            1 => '250',
+            4 => '200',
+            8 => '100',
+            
+          },
+
+          :duration => 604800,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 36000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 36000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 36000,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Expedition
       ],                # END OF ASSIGNMENT TYPES
 
 # ## SPECIAL ASSIGNMENT TYPES ##########################################################
@@ -8270,14 +8671,66 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },             #   END OF 
           {              #  44
             :id          => 44,
-            :exp         => 99999999,
-            :settlement_points   => 5,
+            :exp         => 7255579,
+            :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
               
             :de_DE => "Tyrannosaurusmeistertyrann",
   
             :en_US => "Tyrannosaursmastertyrant",
+  
+            },
+          },             #   END OF 
+          {              #  45
+            :id          => 45,
+            :exp         => 8307638,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
+            :de_DE => "Höhlenherrscher",
+  
+            :en_US => "Cavesovereign",
+  
+            },
+          },             #   END OF 
+          {              #  46
+            :id          => 46,
+            :exp         => 9512245,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
+            :de_DE => "Drei-Kiesel-General",
+  
+            :en_US => "Gravelgeneral",
+  
+            },
+          },             #   END OF 
+          {              #  47
+            :id          => 47,
+            :exp         => 10891521,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
+            :de_DE => "Dinosaurierdespot",
+  
+            :en_US => "Dinosaurdespot",
+  
+            },
+          },             #   END OF 
+          {              #  48
+            :id          => 48,
+            :exp         => 12470791,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
+            :de_DE => "Kriegsfürst",
+  
+            :en_US => "Warlord",
   
             },
           },             #   END OF 

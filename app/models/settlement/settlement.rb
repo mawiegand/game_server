@@ -337,7 +337,9 @@ class Settlement::Settlement < ActiveRecord::Base
     old_score = self.score
     
     neandertaler = Fundamental::Character.find_by_id(1)
-    self.new_owner_transaction(neandertaler) 
+    self.new_owner_transaction(neandertaler)
+
+    # TODO check for artifact -> jump it to neighbour location
   end
 
   def remove_from_map

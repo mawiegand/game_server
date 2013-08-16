@@ -72,7 +72,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="9" build="39" />
+    <Version major="0" minor="9" build="44" />
     <AppControl debugTracking="1">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="22" />
     </AppControl>
@@ -130,24 +130,72 @@
     <TradingSpeedupCost resource="resource_cash" amount="1" />
     <AvatarConfigs>
       <AvatarConfig gender="male">
-        <AvatarLayer max="0"  optional="true">chains</AvatarLayer>
-        <AvatarLayer max="3"  optional="false" chars="2">eyes</AvatarLayer>
-        <AvatarLayer max="5"  optional="true"  chars="2">hairs</AvatarLayer>
-        <AvatarLayer max="4"  optional="false" chars="2">mouths</AvatarLayer>
-        <AvatarLayer max="1"  optional="false">heads</AvatarLayer>
-        <AvatarLayer max="6"  optional="true" chars="2">beards</AvatarLayer>
-        <AvatarLayer max="4"  optional="true">veilchens</AvatarLayer>
-        <AvatarLayer max="3"  optional="true" chars="2">tattoos</AvatarLayer>
+        <AvatarLayer max="0"  optional="true" id="chains">
+          <Name>Chains</Name>
+          <Name lang="de_DE">Ketten</Name>
+        </AvatarLayer>
+        <AvatarLayer max="3"  optional="false" chars="2" id="eyes">
+          <Name>eyes</Name>
+          <Name lang="de_DE">eyes</Name>
+        </AvatarLayer>
+        <AvatarLayer max="5"  optional="true"  chars="2" id="hairs">
+          <Name>hairs</Name>
+          <Name lang="de_DE">hairs</Name>
+        </AvatarLayer>
+        <AvatarLayer max="4"  optional="false" chars="2" id="mouths">
+          <Name>mouths</Name>
+          <Name lang="de_DE">mouths</Name>
+        </AvatarLayer>
+        <AvatarLayer max="1"  optional="false" id="heads">
+          <Name>heads</Name>
+          <Name lang="de_DE">heads</Name>
+        </AvatarLayer>
+        <AvatarLayer max="6"  optional="true" chars="2" id="beards">
+          <Name>beards</Name>
+          <Name lang="de_DE">beards</Name>
+        </AvatarLayer>
+        <AvatarLayer max="4"  optional="true" id="veilchens">
+          <Name>veilchens</Name>
+          <Name lang="de_DE">veilchens</Name>
+        </AvatarLayer>
+        <AvatarLayer max="3"  optional="true" chars="2" id="tattoos">
+          <Name>tattoos</Name>
+          <Name lang="de_DE">tattoos</Name>
+        </AvatarLayer>
       </AvatarConfig>
       <AvatarConfig gender="female">
-        <AvatarLayer max="2"  optional="true">chains</AvatarLayer>
-        <AvatarLayer max="4"  optional="false" chars="2">eyes</AvatarLayer>
-        <AvatarLayer max="11" optional="true"  chars="2">hairs</AvatarLayer>
-        <AvatarLayer max="5"  optional="false" chars="2">mouths</AvatarLayer>
-        <AvatarLayer max="1"  optional="false">heads</AvatarLayer>
-        <AvatarLayer max="0" optional="true"  chars="2">beards</AvatarLayer>
-        <AvatarLayer max="0"  optional="true">veilchens</AvatarLayer>
-        <AvatarLayer max="3"  optional="true"  chars="2">tattoos</AvatarLayer>
+        <AvatarLayer max="2"  optional="true" id="chains">
+          <Name>Chains</Name>
+          <Name lang="de_DE">Chains</Name>
+        </AvatarLayer>
+        <AvatarLayer max="4"  optional="false" chars="2" id="eyes">
+          <Name>eyes</Name>
+          <Name lang="de_DE">eyes</Name>
+        </AvatarLayer>
+        <AvatarLayer max="11" optional="true"  chars="2" id="hairs">
+          <Name>hairs</Name>
+          <Name lang="de_DE">hairs</Name>
+        </AvatarLayer>
+        <AvatarLayer max="5"  optional="false" chars="2" id="mouths">
+          <Name>mouths</Name>
+          <Name lang="de_DE">mouths</Name>
+        </AvatarLayer>
+        <AvatarLayer max="1"  optional="false" id="heads">
+          <Name>heads</Name>
+          <Name lang="de_DE">heads</Name>
+        </AvatarLayer>
+        <AvatarLayer max="0" optional="true"  chars="2" id="beards">
+          <Name>beards</Name>
+          <Name lang="de_DE">Cbeardshains</Name>
+        </AvatarLayer>
+        <AvatarLayer max="0"  optional="true" id="veilchens">
+          <Name>veilchens</Name>
+          <Name lang="de_DE">veilchens</Name>
+        </AvatarLayer>
+        <AvatarLayer max="3"  optional="true"  chars="2" id="tattoos">
+          <Name>tattoos</Name>
+          <Name lang="de_DE">tattoos</Name>
+        </AvatarLayer>
       </AvatarConfig>
     </AvatarConfigs>
     <ChangeCharacterName free_changes="2" resource="resource_cash" amount="20" />
@@ -164,9 +212,10 @@
       <SpecialAssignmentIdleTime>3600</SpecialAssignmentIdleTime>
     </SpecialAssignments>
     <SlotBubbles>
-      <BubbleIdleProbability>1-(1.0/LEVEL)</BubbleIdleProbability>
-      <BubbleResourcePercentage>2*LEVEL</BubbleResourcePercentage>
-      <BubbleTestDuration min="55" max="65" />
+      <BubbleIdleProbability>LESS(LEVEL,11)*(1-(1-(1-(0.1+(0.01*LEVEL/2)))))+GREATER(LEVEL,10)*(1-0.05)</BubbleIdleProbability>
+      <BubbleResource percentage="10+LEVEL*0.25" />
+      <BubbleXP amount="5" probability="0.1" />
+      <BubbleTestDuration min="3000" max="4200" />
     </SlotBubbles>
   </General>
   <xi:include href="rules_victories.xml" />

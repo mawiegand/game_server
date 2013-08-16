@@ -54,9 +54,9 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "sender_id", :inverse_of => :sender
   has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "receiver_id", :inverse_of => :receiver
 
-  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description,     :as => :default
+  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :playtime, :tutorial_finished_at, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :as => :owner
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -1045,7 +1045,7 @@ class Fundamental::Character < ActiveRecord::Base
     (self.production_updated_at || Time.now.advance(:hours => -2)) < Time.now.advance(:hours => -1)
   end
   
-  def add_experience(points)
+  def add_experience!(points)
     self.increment(:exp, points.floor)
     self.save    
   end

@@ -33,7 +33,8 @@ class Fundamental::Alliance < ActiveRecord::Base
   before_create :add_unique_invitation_code  
   
   before_save   :prevent_empty_password
-  
+
+  after_save    :propagate_tag_change  
   after_save    :propagate_to_ranking
 
 
@@ -91,6 +92,11 @@ class Fundamental::Alliance < ActiveRecord::Base
       end
     end
     Fundamental::Alliance.auto_join_selectable.first
+  end
+
+  def self.tag_is_valid?(tag)
+    # check if tag is not too long and if doesn't contain special chars
+    tag.length < 6 && /[^A-Za-z0-9]/.match(tag).nil?
   end
   
   def auto_joinable
@@ -307,5 +313,16 @@ class Fundamental::Alliance < ActiveRecord::Base
       true
     end
     
+    
+    def propagate_tag_change
+      alliance_tag_change = self.changes[:tag]    
+
+      if !alliance_tag_change.blank?
+        self.members.each do |character|
+          character.alliance_tag = self.tag
+          character.save
+        end
+      end
+    end
   
 end

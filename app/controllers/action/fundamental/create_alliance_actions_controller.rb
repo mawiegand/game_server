@@ -11,6 +11,7 @@ class Action::Fundamental::CreateAllianceActionsController < ApplicationControll
     raise BadRequest.new('missing parameter(s)') if params[:alliance].nil? || params[:alliance][:tag].blank? || params[:alliance][:name].blank?
     raise ForbiddenError.new('tried to create an alliance without having the ability') unless current_character.can_create_alliance?
     raise ConflictError.new('this alliance tag is already reserved') unless Fundamental::AllianceReservation.find_by_tag(params[:alliance][:tag]).nil?
+    raise ConflictError.new('this alliance tag is not allowed') unless Fundamental::Alliance.tag_is_valid?(params[:alliance][:tag])
 
     Fundamental::Alliance.create_alliance(params[:alliance][:tag], params[:alliance][:name], current_character)
     

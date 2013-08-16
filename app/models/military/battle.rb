@@ -448,7 +448,7 @@ class Military::Battle < ActiveRecord::Base
   def propagate_character_results_to_character
     self.character_results.each do |result|
       logger.debug "propagate_character_results_to_character: add #{result.experience_gained} to character id #{result.character.id}"
-      result.character.add_experience(result.experience_gained.to_i)
+      result.character.add_experience!(result.experience_gained.to_i)
     end
   end
 

@@ -106,7 +106,11 @@ class Map::Location < ActiveRecord::Base
     end
 
     nil
-  end  
+  end
+
+  #def location_with_geo_coords(coords)
+  #
+  #end
   
   # this method iteratively searches a given nodes neighbours in a breadth-first search.
   # it uses a list to remember nodes that wait to be expanded and a hash to remember
@@ -148,7 +152,15 @@ class Map::Location < ActiveRecord::Base
     
   end
   
-    
+  def valid_movement_target_for_army?(army)
+    if army.location.fortress?
+      # check neighboring fortresses
+      self.region == army.region || (self.fortress? && army.region.node.neighbor_nodes.include?(self.region.node))
+    else
+      # check same region
+      self.region == army.region
+    end
+  end
 
 
   def garrison_army

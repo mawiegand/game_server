@@ -198,7 +198,9 @@ class GameRules::Rules
       },
       :slot_bubbles => {
         :idle_probability => '<xsl:value-of select="//General/SlotBubbles/BubbleIdleProbability" />',
-        :resource_percentage => '<xsl:value-of select="//General/SlotBubbles/BubbleResourcePercentage" />',
+        :resource_percentage => '<xsl:value-of select="//General/SlotBubbles/BubbleResource/@percentage" />',
+        :xp_amount => <xsl:value-of select="//General/SlotBubbles/BubbleXP/@amount" />,
+        :xp_probability => <xsl:value-of select="//General/SlotBubbles/BubbleXP/@probability" />,
         :test_min_duration => <xsl:value-of select="//General/SlotBubbles/BubbleTestDuration/@min" />,
         :test_max_duration => <xsl:value-of select="//General/SlotBubbles/BubbleTestDuration/@max" />,
       },
@@ -354,10 +356,13 @@ end
       <xsl:for-each select="AvatarConfig">
         :<xsl:value-of select="@gender" /> => {
         <xsl:for-each select="AvatarLayer">
-          :<xsl:apply-templates/> => {
+          :<xsl:apply-templates select="@id"/> => {
             :max       => <xsl:value-of select="@max" />,
             :optional  => <xsl:value-of select="@optional" />,
             :num_chars => <xsl:value-of select="@chars" />,
+            :name      => {
+              <xsl:apply-templates select="Name" />
+            },
           },
         </xsl:for-each>        
         },

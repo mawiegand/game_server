@@ -55,9 +55,17 @@
 <!ELEMENT SpecialAssignmentIdleProbability (#PCDATA)>
 <!ELEMENT SpecialAssignmentIdleTime (#PCDATA)>
 
-<!ELEMENT SlotBubbles (BubbleIdleProbability, BubbleResourcePercentage, BubbleTestDuration)>
+<!ELEMENT SlotBubbles (BubbleIdleProbability, BubbleResource, BubbleXP, BubbleTestDuration)>
 <!ELEMENT BubbleIdleProbability (#PCDATA)>
-<!ELEMENT BubbleResourcePercentage (#PCDATA)>
+<!ELEMENT BubbleResource EMPTY>
+<!ATTLIST BubbleResource
+  percentage CDATA #REQUIRED
+>
+<!ELEMENT BubbleXP EMPTY>
+<!ATTLIST BubbleXP
+  amount      CDATA #REQUIRED
+  probability CDATA #REQUIRED
+>
 <!ELEMENT BubbleTestDuration EMPTY>
 <!ATTLIST BubbleTestDuration
   min CDATA #REQUIRED
@@ -71,10 +79,11 @@
   gender CDATA #REQUIRED
 >
 
-<!ELEMENT AvatarLayer (#PCDATA)>
+<!ELEMENT AvatarLayer (Name+)>
 <!ATTLIST AvatarLayer
   max      CDATA #REQUIRED
   optional (true | false) "false"
+  id       CDATA #REQUIRED
   chars    (1|2) "1"
 >
 <!ELEMENT ChangeCharacterName EMPTY>

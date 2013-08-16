@@ -40,7 +40,7 @@ defaults: &defaults
   
   identity_provider_base_url: 'https://test1.wack-a-doo.com/identity_provider'
   
-  settlement_recalc_probability:    0.2
+  settlement_recalc_probability:    0.01
   resource_pool_recalc_probability: 0.05
   character_recalc_probability:     0.2
   queue_speed_recalc_probability:   0.2
