@@ -227,21 +227,42 @@ end
 
 puts "INFO: now splitting germany"
 
-node = Map::Node.root
-path = "12020133333333"
+def split_to_path(path)
 
-while !node.leaf? && path.length > 0
-  c = path[0].to_i
-  node = node.children[c]
-  path = path[1..-1]
+  node = Map::Node.root
+
+  while !node.leaf? && path.length > 0
+    c = path[0].to_i
+    node = node.children[c]
+    path = path[1..-1]
+  end
+
+  while path.length > 0 && node.leaf?
+    split_all_nodes([ node ])
+    c = path[0].to_i
+    node = node.children[c]
+    path = path[1..-1]
+  end
 end
 
-while path.length > 0 && node.leaf?
-  split_all_nodes([ node ])
-  c = path[0].to_i
-  node = node.children[c]
-  path = path[1..-1]
+paths = [
+    "12020133333333",
+    "12020333333333",
+    "12020100333333",
+    "12020101333333",
+    "12020102333333",
+    "12020103333333",
+    "12022103333333",
+    "12022113333333",
+    "12022123333333",
+    "12022133333333",
+]
+
+paths.each do |path|
+  split_to_path(path)
 end
+
+
 
 puts "Created #{ Map::Node.where(leaf: true).count} leaf nodes."
 
