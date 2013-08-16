@@ -1,6 +1,5 @@
 require 'httparty'
 require 'identity_provider/access'
-require 'geo_server/geo_ip'
 require 'credit_shop'
 
 class Fundamental::CharactersController < ApplicationController
@@ -60,14 +59,14 @@ class Fundamental::CharactersController < ApplicationController
         request_access_token.in_scope?(GAME_SERVER_CONFIG['scope']) && 
         !request_access_token.identifier.blank? &&
         request_authorization && request_authorization[:grant_type] == :bearer &&
-        params.has_key?(:create_if_new)
+        params.has_key?(:create_if_new)  
 
       identity_provider_access = IdentityProvider::Access.new({
         identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
         game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
         scopes:                     ['5dentity'],
       })
-
+      
       response = identity_provider_access.fetch_identity(request_access_token.identifier)
       identity = {}
       if response.code == 200
@@ -113,12 +112,6 @@ class Fundamental::CharactersController < ApplicationController
         start_location = Map::Location.location_for_player_invitation(params[:player_invitation])
       elsif params.has_key?(:alliance_invitation)
         start_location = Map::Location.location_for_alliance_invitation(params[:alliance_invitation])
-      else
-        logger.debug "-----> fetch_coords_for_ip #{request.remote_ip}"
-        geo_coords = GeoServer::GeoIp.fetch_coords_for_ip(request.remote_ip)
-        logger.debug "-----> geo_coords #{geo_coords}"
-        start_location = Map::Location.location_with_geo_coords(geo_coords) unless geo_coords.nil?
-        logger.debug "-----> start_location #{start_location}"
       end
       
       character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator, false, start_location)

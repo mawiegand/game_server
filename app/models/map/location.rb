@@ -108,32 +108,9 @@ class Map::Location < ActiveRecord::Base
     nil
   end
 
-  def self.location_with_geo_coords(coords)
-    node = Map::Node.find_by_coords(coords['latitude'], coords['longitude'])
-    logger.debug "-----> node #{node}"
-    target_location = nil
-    if !node.nil?
-      free_locations = node.region.locations.empty.count
-      logger.debug "-----> free_locations #{free_locations}"
-      if free_locations > 0
-        target_location = node.region.locations.empty.offset(Random.rand(free_locations)).first
-        logger.debug "-----> target_location #{target_location}"
-      else
-        neighbor_nodes = node.neighbor_nodes
-        # sort them by settlement count
-        neighbor_nodes.sort! { |a,b| a.region.settlements.count <=> b.region.settlements.count }
-        # first neighbor node now contains region with fewest settlements
-        target_region = neighbor_nodes.first.region
-        # count empty locations of this region
-        free_locations = target_region.locations.empty.count
-        # if no locations available choose any other from whole map
-        return nil if free_locations == 0
-        # return randomly chosen empty location of neighbor region
-        target_location = target_region.locations.empty.offset(Random.rand(free_locations)).first
-      end
-    end
-    target_location
-  end
+  #def location_with_geo_coords(coords)
+  #
+  #end
   
   # this method iteratively searches a given nodes neighbours in a breadth-first search.
   # it uses a list to remember nodes that wait to be expanded and a hash to remember

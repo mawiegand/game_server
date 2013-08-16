@@ -175,12 +175,6 @@ class Map::Node < ActiveRecord::Base
       @map_node = Map::Node.find_by_id(address)
     end
   end
-
-  def self.find_by_coords(latitude, longitude)
-    # hack for map: added - to latitude
-    coords = Mapping::GlobalMercator.lat_lon_to_meters(-latitude, longitude)
-    Map::Node.where("leaf = ? and min_x < ? and ? < max_x and min_y < ? and ? < max_y", true, coords[:x], coords[:x], coords[:y], coords[:y]).first
-  end
   
   def recount_settlements(recursive=false)
     if self.leaf?

@@ -53,23 +53,7 @@ module Mapping
 		  ty = (1 << zoom) - 1 - ty
 		  return { x: tx, y: ty, zoom: zoom }
     end
-
-    def self.lat_lon_to_meters(lat, lon)
-      sma = 6378137.0
-
-      lat_rad = deg_to_rad(lat)
-      lon_rad = deg_to_rad(lon)
-
-      x = sma * (lon_rad)
-      y = sma * Math.log((Math.sin(lat_rad) + 1) / Math.cos(lat_rad))
-
-      {x: x, y: y}
-    end
-
-    def self.deg_to_rad(x)
-      x / 180.0 * Math::PI
-    end
-
+    
   end
   
 end
