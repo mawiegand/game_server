@@ -44,7 +44,8 @@ class Action::Military::MoveArmyActionsController < ApplicationController
       @action_military_move_army_action.sender_ip = request.remote_ip  #@remote_ip = request.env["HTTP_X_FORWARDED_FOR"]
     
       # now fetch and fill the target region id
-      target_location = @action_military_move_army_action.target_location 
+      target_location = @action_military_move_army_action.target_location
+      target_location.valid_movement_target_for_army?(army)
       raise BadRequestError.new('target location does not exist') if target_location.nil?
       @action_military_move_army_action.target_region_id = target_location.region_id
     
