@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130810132011) do
+ActiveRecord::Schema.define(:version => 20130816152357) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1776,21 +1776,21 @@ ActiveRecord::Schema.define(:version => 20130810132011) do
   create_table "fundamental_alliances", :force => true do |t|
     t.string   "tag"
     t.string   "name"
-    t.text     "description",                                   :limit => 255
+    t.text     "description"
     t.string   "banner"
     t.integer  "leader_id"
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "alliance_queue_alliance_research_unlock_count",                :default => 0
+    t.integer  "alliance_queue_alliance_research_unlock_count", :default => 0
     t.integer  "members_count"
     t.string   "invitation_code"
-    t.decimal  "resource_stone_production_bonus_effects",                      :default => 0.0
-    t.decimal  "resource_wood_production_bonus_effects",                       :default => 0.0
-    t.decimal  "resource_fur_production_bonus_effects",                        :default => 0.0
-    t.decimal  "resource_cash_production_bonus_effects",                       :default => 0.0
-    t.integer  "size_bonus",                                                   :default => 0
-    t.boolean  "auto_join_disabled",                                           :default => false, :null => false
+    t.decimal  "resource_stone_production_bonus_effects",       :default => 0.0
+    t.decimal  "resource_wood_production_bonus_effects",        :default => 0.0
+    t.decimal  "resource_fur_production_bonus_effects",         :default => 0.0
+    t.decimal  "resource_cash_production_bonus_effects",        :default => 0.0
+    t.integer  "size_bonus",                                    :default => 0
+    t.boolean  "auto_join_disabled",                            :default => false, :null => false
   end
 
   create_table "fundamental_announcements", :force => true do |t|
