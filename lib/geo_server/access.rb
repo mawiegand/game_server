@@ -21,17 +21,17 @@ module GeoServer
     protected
       
       def post(path, body = {})
-        HTTParty.post(@attributes[:geo_server_provider_base_url] + path,
+        HTTParty.post(GAME_SERVER_CONFIG[:geo_server_base_url] + path,
                       :body => body, :headers => { 'Accept' => 'application/json', 'Authorization' => "Bearer #{ @attributes[:auth_token] }"})
       end
   
       def put(path, body = {})
-        HTTParty.put(@attributes[:geo_server_provider_base_url] + path,
+        HTTParty.put(GAME_SERVER_CONFIG[:geo_server_base_url] + path,
                      :body => body, :headers => { 'Accept' => 'application/json', 'Authorization' => "Bearer #{ @attributes[:auth_token] }"})
       end
   
       def get(path, query = {})
-        HTTParty.get(@attributes[:geo_server_provider_base_url] + path,
+        HTTParty.get(GAME_SERVER_CONFIG[:geo_server_base_url] + path,
                      :query => query, :headers => { 'Accept' => 'application/json', 'Authorization' => "Bearer #{ @attributes[:auth_token] }"})
       end
   end

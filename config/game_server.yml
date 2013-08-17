@@ -121,6 +121,7 @@ staging:
     admin_jid: shadow-dragon@jabber3.wack-a-doo.com
   
   base_url: 'https://test1.wack-a-doo.com'
+  geo_server_base_url:  'https://test1.wack-a-doo.de/geo_server'
 
   scope: 'wackadoo-testround3'
   
