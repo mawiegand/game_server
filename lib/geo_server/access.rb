@@ -14,7 +14,8 @@ module GeoServer
     end
 
     def open_treasure(treasure_id, current_identifier)
-      post('/action/treasure/open_treasure_actions', {:id => treasure_id, :identifier => current_identifier})
+      response = post('/action/treasure/open_treasure_actions', {:id => treasure_id, :identifier => current_identifier})
+      response.code == 200
     end
 
     protected
