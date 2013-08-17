@@ -14,7 +14,7 @@ module GeoServer
     end
 
     def open_treasure(treasure_id, current_identifier)
-      response = post('https://test1.wack-a-doo.de/geo_server/action/treasure/open_treasure_actions', {:open_treasure_action => {:id => treasure_id, :identifier => current_identifier}})
+      response = post('/action/treasure/open_treasure_actions', {:open_treasure_action => {:id => treasure_id, :identifier => current_identifier}})
       response.code == 200
     end
 
