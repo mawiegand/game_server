@@ -56,7 +56,7 @@ class Treasure::TreasuresController < ApplicationController
   def create
     if params.has_key?(:geo_treasure_id)
       
-      geo_treasure_id = params[:geo_tresure_id]
+      geo_treasure_id = params[:geo_treasure_id]
       
       raise BadRequestError.new('no current character') if current_character.nil?
 
