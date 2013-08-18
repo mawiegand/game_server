@@ -13,7 +13,7 @@ class Treasure::TreasuresController < ApplicationController
   def index
     
     if params.has_key?(:geo_treasure_id)
-      @treasure_treasures = Treasure::Treasure.where(geo_treasure_id: geo_treasure_id)
+      @treasure_treasures = Treasure::Treasure.where(geo_treasure_id: params[:geo_treasure_id])
     else
       raise ForbiddenError.new "access forbidden"  unless admin? || staff? || developer?
       @treasure_treasures = Treasure::Treasure.all
