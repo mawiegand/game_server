@@ -83,7 +83,7 @@ class GameRules::Rules
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles,
-    :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
+    :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
   def attributes 
     { 
@@ -110,6 +110,7 @@ class GameRules::Rules
       'science_types'               => science_types,  
       'assignment_types'            => assignment_types,  
       'special_assignment_types'    => special_assignment_types,
+      'treasure_types'              => treasure_types,
       'special_assignments'         => special_assignments,
       'slot_bubbles'                => slot_bubbles,
       'settlement_types'            => settlement_types,
@@ -222,6 +223,7 @@ class GameRules::Rules
   <xsl:apply-templates select="SettlementTypes" />
   <xsl:apply-templates select="AssignmentTypes" />
   <xsl:apply-templates select="SpecialAssignmentTypes" />
+  <xsl:apply-templates select="TreasureTypes" />
   <xsl:apply-templates select="ArtifactTypes" />
   <xsl:apply-templates select="VictoryTypes" />
   <xsl:apply-templates select="QueueTypes" />
@@ -861,6 +863,62 @@ end
 </xsl:template>
 
 
+<xsl:template match="TreasureTypes">
+# ## TREASURE TYPES ##########################################################
+
+      :treasure_types => [  # ALL TREASURE TYPES
+<xsl:for-each select="TreasureType">
+        {              #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>,
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :difficulty  => "<xsl:value-of select="Difficulty"/>",
+          :advisor     => "<xsl:value-of select="@advisor"/>",
+          :probability_factor => <xsl:value-of select="@probability_factor"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />
+          },
+          :flavour     => {
+            <xsl:apply-templates select="Flavour" />
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />
+          },
+<xsl:if test="ShortDescription">
+          :short_description => {
+            <xsl:apply-templates select="ShortDescription" />
+          },
+</xsl:if>
+
+
+<xsl:if test="TreasureRewards">
+          :rewards => {
+<xsl:apply-templates select="TreasureRewards " />
+          },
+</xsl:if>
+
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF TREASURE TYPES
+</xsl:template>
+
+
+
+<xsl:template match="TreasureRewards">
+<xsl:if test="RandomizedResourceReward">
+            :randomized_resource_rewards => [
+              <xsl:apply-templates select="RandomizedResourceReward" />
+            ],
+</xsl:if>
+<xsl:if test="RandomizedExperienceReward">
+            :randomized_experience_reward => 
+              <xsl:apply-templates select="RandomizedExperienceReward" />
+            
+</xsl:if>
+
+</xsl:template>
+
+
+
 
 <xsl:template match="Rewards">
 <xsl:if test="ResourceReward">
@@ -884,6 +942,23 @@ end
                 :amount => <xsl:value-of select="." />,
               },
 </xsl:template>
+
+<xsl:template match="RandomizedResourceReward">
+              { 
+                :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
+                :resource => :<xsl:value-of select="@resource" />,
+                :amount => "<xsl:value-of select="." />",
+                :norm_variance => <xsl:value-of select="@norm_variance" />,
+              },
+</xsl:template>
+
+<xsl:template match="RandomizedExperienceReward">
+              { 
+                :amount => "<xsl:value-of select="." />",
+                :norm_variance => <xsl:value-of select="@norm_variance" />,
+              },
+</xsl:template>
+
 
 <xsl:template match="UnitReward">
               {
