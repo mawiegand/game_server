@@ -468,7 +468,7 @@ class Settlement::Slot < ActiveRecord::Base
 
   def advance_test_date(base_date)
     slot_bubble_config = GameRules::Rules.the_rules.slot_bubbles
-    random = slot_bubble_config[:test_max_duration] + Random.rand(slot_bubble_config[:test_max_duration] - slot_bubble_config[:test_min_duration])
+    random = slot_bubble_config[:test_min_duration] + Random.rand(slot_bubble_config[:test_max_duration] - slot_bubble_config[:test_min_duration])
     self.bubble_next_test_at = base_date + random
   end
 
@@ -476,7 +476,7 @@ class Settlement::Slot < ActiveRecord::Base
     slot_bubble_config = GameRules::Rules.the_rules.slot_bubbles
 
     # how long to wait for a new bubble
-    random_bubble_interval = slot_bubble_config[:test_max_duration] + Random.rand(slot_bubble_config[:test_max_duration] - slot_bubble_config[:test_min_duration])
+    random_bubble_interval = slot_bubble_config[:test_min_duration] + Random.rand(slot_bubble_config[:test_max_duration] - slot_bubble_config[:test_min_duration])
 
     # current bubble age
     bubble_age = self.bubble_next_test_at > Time.now ? 0 : Time.now - self.bubble_next_test_at
