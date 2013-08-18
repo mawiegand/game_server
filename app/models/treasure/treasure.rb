@@ -35,14 +35,14 @@ class Treasure::Treasure < ActiveRecord::Base
         expectation = Util::Formula.parse_from_formula(resource_reward[:amount]).apply(self.level)
 
         result = self.random_amount(expectation, relative_deviation)
-        self["#{resource}_reward"] = result || 0
+        self["#{resource_reward[:resource]}_reward"] = result || 0
       end
     end
   end
   
   
   
-  def book_rewars_to_finder
+  def book_rewards_to_finder
     unless self.finder.nil?
       
     end
@@ -56,7 +56,7 @@ class Treasure::Treasure < ActiveRecord::Base
     else
       deviation = expectation * relative_deviation
       begin
-        number = gaussian(expectation, deviation, rand)
+        number = gaussian(expectation, deviation, lambda { Kernel.rand })
       end while number < (expectation - 2*deviation) || number > (expectation + 2*deviation)
       
       number
