@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130818182258) do
+ActiveRecord::Schema.define(:version => 20130818182259) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2835,7 +2835,6 @@ ActiveRecord::Schema.define(:version => 20130818182258) do
     t.integer  "character_id"
     t.integer  "difficulty"
     t.integer  "level"
-    t.integer  "catagory"
     t.decimal  "latitude"
     t.decimal  "longitutde"
     t.decimal  "distance"
@@ -2847,6 +2846,7 @@ ActiveRecord::Schema.define(:version => 20130818182258) do
     t.decimal  "resource_fur_reward",   :default => 0.0
     t.decimal  "resource_cash_reward",  :default => 0.0
     t.integer  "geo_treasure_id"
+    t.integer  "category"
   end
 
   create_table "tutorial_quests", :force => true do |t|
