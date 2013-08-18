@@ -1,0 +1,45 @@
+<%= form_for(@treasure_treasure) do |f| %>
+  <% if @treasure_treasure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@treasure_treasure.errors.count, "error") %> prohibited this treasure_treasure from being saved:</h2>
+
+      <ul>
+      <% @treasure_treasure.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :character_id %><br />
+    <%= f.number_field :character_id %>
+  </div>
+  <div class="field">
+    <%= f.label :difficulty %><br />
+    <%= f.number_field :difficulty %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br />
+    <%= f.number_field :level %>
+  </div>
+  <div class="field">
+    <%= f.label :catagory %><br />
+    <%= f.number_field :catagory %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitutde %><br />
+    <%= f.text_field :longitutde %>
+  </div>
+  <div class="field">
+    <%= f.label :distance %><br />
+    <%= f.text_field :distance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

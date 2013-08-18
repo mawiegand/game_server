@@ -63,6 +63,10 @@ hash_of_models = {
                                   { :prefix => 'resource_',        :postfix => '_production_bonus_alliance',  :type => ':decimal', :options => { :default => 0.0 } },
   ],
 
+  Treasure::Treasure  =>        [ { :prefix => 'resource_',        :postfix => '_reward',                     :type => ':decimal', :options => { :default => 0.0 } }, 
+  ],
+
+
   Backend::Stat              => [ { :prefix => 'resource_',        :postfix => '_amount_sum',                 :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_amount_max',                 :type => ':decimal', :options => { :default => 0.0 } }, 
                                   { :prefix => 'resource_',        :postfix => '_production_rate_sum',        :type => ':decimal', :options => { :default => 0.0 } }, 

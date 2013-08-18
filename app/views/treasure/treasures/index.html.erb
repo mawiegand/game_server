@@ -1,0 +1,35 @@
+<h1>Listing treasure_treasures</h1>
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Difficulty</th>
+    <th>Level</th>
+    <th>Catagory</th>
+    <th>Latitude</th>
+    <th>Longitutde</th>
+    <th>Distance</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @treasure_treasures.each do |treasure_treasure| %>
+  <tr>
+    <td><%= treasure_treasure.character_id %></td>
+    <td><%= treasure_treasure.difficulty %></td>
+    <td><%= treasure_treasure.level %></td>
+    <td><%= treasure_treasure.catagory %></td>
+    <td><%= treasure_treasure.latitude %></td>
+    <td><%= treasure_treasure.longitutde %></td>
+    <td><%= treasure_treasure.distance %></td>
+    <td><%= link_to 'Show', treasure_treasure %></td>
+    <td><%= link_to 'Edit', edit_treasure_treasure_path(treasure_treasure) %></td>
+    <td><%= link_to 'Destroy', treasure_treasure, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Treasure', new_treasure_treasure_path %>

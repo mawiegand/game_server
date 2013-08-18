@@ -1,0 +1,2 @@
+module Treasure::TreasuresHelper
+end

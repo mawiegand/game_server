@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  character_id: 1
+  difficulty: 1
+  level: 1
+  catagory: 1
+  latitude: 9.99
+  longitutde: 9.99
+  distance: 9.99
+
+two:
+  character_id: 1
+  difficulty: 1
+  level: 1
+  catagory: 1
+  latitude: 9.99
+  longitutde: 9.99
+  distance: 9.99
