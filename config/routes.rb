@@ -1,7 +1,6 @@
 GameServer::Application.routes.draw do
 
 
-  namespace :treasure do resources :treasures end
 
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
@@ -286,6 +285,11 @@ GameServer::Application.routes.draw do
           resources :open_treasure_actions, :only =>[:create]
         end
       end
+      
+      namespace :treasure do 
+        resources :treasures 
+      end
+      
       
       namespace :shop do
         resources :offers

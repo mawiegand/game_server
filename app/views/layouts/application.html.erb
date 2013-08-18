@@ -42,6 +42,7 @@
       <li><%= link_to I18n.translate("application.layout.assignment.category"), assignment_standard_assignments_path %></li>
       <li><%= link_to I18n.translate("application.layout.military.category"), military_armies_path %></li>
       <li><%= link_to I18n.translate("application.layout.training.category"), training_jobs_path %></li>
+      <li><%= link_to I18n.translate("application.layout.treasure.category"), treasure_treasures_path %></li>
       <li><%= link_to I18n.translate("application.layout.like_system.category"), like_system_likes_path %></li>
 <% if backend_staff? %>
       <li><%= link_to I18n.translate("application.layout.shop.category"), shop_money_transactions_path %></li>
@@ -71,6 +72,7 @@
       <%= yield :like_system_links %>
       <%= yield :shop_links %>
       <%= yield :tutorial_links %>
+      <%= yield :treasure_links %>
     </ul>
   <% end %>
   </nav>  

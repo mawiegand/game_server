@@ -1,4 +1,11 @@
 class Treasure::TreasuresController < ApplicationController
+  
+  layout 'treasure'
+  
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :create, :index]
+  
+  
   # GET /treasure/treasures
   # GET /treasure/treasures.json
   def index
