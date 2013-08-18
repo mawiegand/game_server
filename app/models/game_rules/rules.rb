@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.44
+# Version: 1.0.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -36,7 +36,7 @@ class GameRules::Rules
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles,
-    :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange
+    :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
   def attributes 
     { 
@@ -63,6 +63,7 @@ class GameRules::Rules
       'science_types'               => science_types,  
       'assignment_types'            => assignment_types,  
       'special_assignment_types'    => special_assignment_types,
+      'treasure_types'              => treasure_types,
       'special_assignments'         => special_assignments,
       'slot_bubbles'                => slot_bubbles,
       'settlement_types'            => settlement_types,
@@ -118,9 +119,9 @@ class GameRules::Rules
   def self.the_rules
     @the_rules ||= GameRules::Rules.new(
   
-      :version => { :major => 0,
-                    :minor => 9,
-                    :build => 44,
+      :version => { :major => 1,
+                    :minor => 0,
+                    :build => 0,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -7545,6 +7546,65 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
         },              #   END OF The dark forest
       ],                # END OF SPECIAL ASSIGNMENT TYPES
+
+# ## TREASURE TYPES ##########################################################
+
+      :treasure_types => [  # ALL TREASURE TYPES
+
+        {              #   Pile of Wood
+          :id          => 0,
+          :symbolic_id => :treasure_wood,
+          :difficulty  => "LEVEL*10",
+          :advisor     => "girl",
+          :probability_factor => 10,
+          :name        => {
+            
+            :en_US => "Pile of Wood",
+  
+            :de_DE => "Holzhaufen",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Wer hat denn das liegen lassen?",
+  
+            :en_US => "Who has lost this?",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Eine unbestimmte Menge an Holz, die ein freundlicher Mitmensch unbeaufsichtigt für Dich oder einen anderen Finder hinterlegt hat. Die genaue Menge hängt vom Level dieses Schatzes ab.</p>",
+  
+            :en_US => "<p>An undetermined amount of wood, another friendly human has prepared and left for your to take. The exact amount the finder will gain depends on the level of this treasure.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Eine unbestimmte Menge an Holz, die ein freundlicher Mitmensch unbeaufsichtigt für Dich oder einen anderen Finder hinterlegt hat.</p>",
+  
+            :en_US => "<p>An undetermined amount of wood, another friendly human has prepared and left for your to take.</p>",
+  
+          },
+
+          :rewards => {
+
+            :randomized_resource_rewards => [
+              
+              { 
+                :resource_id => 1,
+                :resource => :resource_wood,
+                :amount => "LEVEL*10",
+                :norm_variance => 0.25,
+              },
+
+            ],
+
+          },
+
+
+        },              #   END OF Pile of Wood
+      ],                # END OF TREASURE TYPES
 
 # ## ARTIFACT TYPES ########################################################
   

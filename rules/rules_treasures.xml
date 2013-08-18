@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+<TreasureTypes>
+  <TreasureType id="treasure_wood" advisor="girl" probability_factor="10">
+    
+    <Difficulty>LEVEL*10</Difficulty>
+    
+    <Name>Pile of Wood</Name>
+    <Name lang="de_DE">Holzhaufen</Name>
+    
+    <Flavour lang="de_DE">Wer hat denn das liegen lassen?</Flavour>
+    <Flavour lang="en_US">Who has lost this?</Flavour>
+  
+    <ShortDescription lang="de_DE">
+      <p>Eine unbestimmte Menge an Holz, die ein freundlicher Mitmensch unbeaufsichtigt für Dich oder einen anderen Finder hinterlegt hat.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>An undetermined amount of wood, another friendly human has prepared and left for your to take.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Eine unbestimmte Menge an Holz, die ein freundlicher Mitmensch unbeaufsichtigt für Dich oder einen anderen Finder hinterlegt hat. Die genaue Menge hängt vom Level dieses Schatzes ab.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>An undetermined amount of wood, another friendly human has prepared and left for your to take. The exact amount the finder will gain depends on the level of this treasure.</p>
+    </Description>
+    
+    <TreasureRewards>
+      <RandomizedResourceReward norm_variance="0.25" resource="resource_wood">LEVEL*10</RandomizedResourceReward>
+    </TreasureRewards>
+    
+  </TreasureType>
+</TreasureTypes>
