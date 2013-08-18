@@ -13,10 +13,27 @@ module GeoServer
       get('/fundamental/characters/self')
     end
 
-    def open_treasure(treasure_id, current_identifier)
-      response = post('/action/treasure/open_treasure_actions', {:open_treasure_action => {:id => treasure_id, :identifier => current_identifier}})
-      response.code == 200
+    def open_treasure(treasure_id, character)
+      
+      response = post('/action/treasure/open_treasure_actions', 
+                      {:open_treasure_action => { :id => treasure_id, 
+                                                  :identifier => character.identifier, 
+                                                  :character_level => character.level}})
+                                                  
+                                          
     end
+
+
+    def get_treasure(treasure_id)
+      response = get("/treasure/treasures/#{treasure_id}")
+      
+      if response.code == 200 
+        return response.parsed_response
+      else 
+        return nil
+      end 
+    end
+
 
     protected
       

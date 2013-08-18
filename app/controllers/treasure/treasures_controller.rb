@@ -1,3 +1,5 @@
+require 'geo_server/access'
+
 class Treasure::TreasuresController < ApplicationController
   
   layout 'treasure'
@@ -47,7 +49,41 @@ class Treasure::TreasuresController < ApplicationController
   # POST /treasure/treasures
   # POST /treasure/treasures.json
   def create
-    @treasure_treasure = Treasure::Treasure.new(params[:treasure_treasure])
+    if (params.has_key?(:geo_treasure_id))
+      
+      geo_treasure_id = params[:geo_tresure_id]
+      
+      raise BadRequestError.new('no current character') if current_character.nil?
+
+      geo_server = GeoServer::Access.new({auth_token: request_access_token.token})
+      geo_treasure = geo_server.get_treasure(geo_treasure_id) # todo fetch geotreasure!
+      
+      raise NotFoundError.new "treasure could not be found"  if geo_treasure.nil?
+
+      response = geo_server.open_treasure(geo_treasure_id, current_character)
+      if response.code == 200 || response.code == 203
+        @treasure_treasure = Treasure::Treasure.new({
+          geo_treasure_id: geo_treasure_id,
+          level:           geo_treasure['level'],
+          difficulty:      geo_treasure['difficulty'],
+          category:        geo_treasure['category'],
+          character_id:    current_character.id,
+        })
+      elsif response.code == 404
+        raise NotFoundError.new  "treasure could not be found"
+      elsif response.code == 409
+        raise ConflictError.new  "treasure already claimed by another character"
+      elsif response.code == 403
+        raise ForbiddenError.new  "access forbidden"
+      else 
+        raise BadRequestError.new "bad request"
+      end
+      
+    elsif admin? || staff? || developer?
+      @treasure_treasure = Treasure::Treasure.new(params[:treasure_treasure])
+    else
+      raise ForbiddenError.new "access forbidden"
+    end
 
     respond_to do |format|
       if @treasure_treasure.save
