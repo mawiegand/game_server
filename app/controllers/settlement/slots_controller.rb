@@ -27,7 +27,8 @@ class Settlement::SlotsController < ApplicationController
         @settlement_slots = Settlement::Slot.where("(updated_at > ? OR (bubble_next_test_at < ? AND building_id is not null AND level > 0)) AND settlement_id = ?", if_modified_since, Time.now, params[:settlement_id])
         updated_bubble = false
         @settlement_slots.each do |slot|
-          updated_bubble |= slot.update_bubble_if_needed
+          updated_bubble ||= slot.update_bubble_if_needed
+          slot.save
         end
         unless updated_bubble
           @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
