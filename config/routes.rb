@@ -280,6 +280,9 @@ GameServer::Application.routes.draw do
           resources :redeem_purchase_actions,                :only => [ :create ]
           resources :special_offer_dialog_displayed_actions, :only =>[:create]
         end
+        namespace :geo_treasure do
+          resources :open_treasure_actions, :only =>[:create]
+        end
       end
       
       namespace :shop do
