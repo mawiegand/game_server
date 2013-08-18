@@ -6,8 +6,7 @@ class Treasure::TreasuresController < ApplicationController
   
   before_filter :authenticate
   before_filter :deny_api, :except => [:show, :create, :index]
-  
-  
+
   # GET /treasure/treasures
   # GET /treasure/treasures.json
   def index
@@ -55,7 +54,7 @@ class Treasure::TreasuresController < ApplicationController
   # POST /treasure/treasures
   # POST /treasure/treasures.json
   def create
-    if (params.has_key?(:geo_treasure_id))
+    if params.has_key?(:geo_treasure_id)
       
       geo_treasure_id = params[:geo_tresure_id]
       
