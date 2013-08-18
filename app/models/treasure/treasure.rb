@@ -39,14 +39,31 @@ class Treasure::Treasure < ActiveRecord::Base
         self["#{resource_reward[:resource]}_reward"] = result || 0
       end
     end
+    true
   end
   
   
   
   def book_rewards_to_finder
     unless self.finder.nil?
-      
+
+      resource_rewards = {}
+      GameRules::Rules.the_rules.resource_types.each do |resource_type|
+        resource_reward = self[resource_type[:symbolic_id].to_s + '_reward']
+        resource_rewards[resource_type[:id]] = resource_reward if !resource_reward.nil? && resource_reward > 0
+      end
+
+      if resource_rewards.count > 0
+        self.finder.resource_pool.add_resources_transaction(resource_rewards)
+      end
+
+      if !self.experience_reward.nil? && self.experience_reward > 0
+        self.finder.increment(:exp, self.experience_reward)
+        self.finder.save!
+      end
+            
     end
+    true
   end
   
   def random_amount(expectation, relative_deviation)
