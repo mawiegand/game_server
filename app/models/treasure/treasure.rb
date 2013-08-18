@@ -1,4 +1,5 @@
 require 'util/formula'
+require 'util/random_gaussian'
 
 class Treasure::Treasure < ActiveRecord::Base
 
@@ -56,7 +57,7 @@ class Treasure::Treasure < ActiveRecord::Base
     else
       deviation = expectation * relative_deviation
       begin
-        number = gaussian(expectation, deviation, lambda { Kernel.rand })
+        number = gaussian(expectation, deviation)
       end while number < (expectation - 2*deviation) || number > (expectation + 2*deviation)
       
       number
@@ -64,13 +65,9 @@ class Treasure::Treasure < ActiveRecord::Base
   end
   
   
-  def gaussian(mean, stddev, rand)
-    theta = 2 * Math::PI * rand.call
-    rho = Math.sqrt(-2 * Math.log(1 - rand.call))
-    scale = stddev * rho
-    x = mean + scale * Math.cos(theta)
-    y = mean + scale * Math.sin(theta)
-    return x, y
+  def gaussian(mean, stddev)
+    generator = Util::RandomGaussian.new(mean, stddev)
+    generator.rand
   end
   
 end
