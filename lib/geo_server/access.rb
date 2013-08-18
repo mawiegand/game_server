@@ -15,10 +15,10 @@ module GeoServer
 
     def open_treasure(treasure_id, character)
       
-      response = post('/action/treasure/open_treasure_actions', 
-                      {:open_treasure_action => { :id => treasure_id, 
-                                                  :identifier => character.identifier, 
-                                                  :character_level => character.level}})
+      post('/action/treasure/open_treasure_actions',
+                {:open_treasure_action => { :id => treasure_id,
+                                            :identifier => character.identifier,
+                                            :character_level => character.mundane_rank}})
                                                   
                                           
     end
