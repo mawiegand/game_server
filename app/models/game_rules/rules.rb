@@ -7604,6 +7604,108 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Pile of Wood
+        {              #   Golden Toads
+          :id          => 1,
+          :symbolic_id => :treasure_cash,
+          :difficulty  => "LEVEL*10",
+          :advisor     => "chef",
+          :probability_factor => 1,
+          :name        => {
+            
+            :en_US => "Golden Toads",
+  
+            :de_DE => "Goldkröten",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Was glitzert da am Boden?",
+  
+            :en_US => "What see my eyes glimmering over there?",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Lange Beschreibung.</p>",
+  
+            :en_US => "<p>Long Description.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Da war wohl jemand unachtsam und hat ein paar wertvolle Goldkröten liegen lassen.</p>",
+  
+            :en_US => "<p>Some golden frogs can be found at this site.</p>",
+  
+          },
+
+          :rewards => {
+
+            :randomized_resource_rewards => [
+              
+              { 
+                :resource_id => 3,
+                :resource => :resource_cash,
+                :amount => "LEVEL",
+                :norm_variance => 0,
+              },
+
+            ],
+
+          },
+
+
+        },              #   END OF Golden Toads
+        {              #   Unkartographierte Erdhöhle
+          :id          => 2,
+          :symbolic_id => :treasure_xp,
+          :difficulty  => "LEVEL*10",
+          :advisor     => "warrior",
+          :probability_factor => 10,
+          :name        => {
+            
+            :en_US => "Unkartographierte Erdhöhle",
+  
+            :de_DE => "Unexplored Cavern",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Lass uns trainieren gehen und das Ungeziefer aus der Höhle vertreiben.",
+  
+            :en_US => "Your chance to test your skills and gain some experience.",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Lange Beschreibung.</p>",
+  
+            :en_US => "<p>Long Description.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Eine unentdeckte Höhle verspricht einen Haufen Erfahrung für denjenigen, der sie zuerst begeht.</p>",
+  
+            :en_US => "<p>An undiscovered cavern hides small and large dangers that'll bolster the experience of the first explorer.</p>",
+  
+          },
+
+          :rewards => {
+
+            :randomized_experience_reward => 
+              
+              { 
+                :amount => "LEVEL*LEVEL*LEVEL*10+40",
+                :norm_variance => 0.25,
+              },
+
+          },
+
+
+        },              #   END OF Unkartographierte Erdhöhle
       ],                # END OF TREASURE TYPES
 
 # ## ARTIFACT TYPES ########################################################

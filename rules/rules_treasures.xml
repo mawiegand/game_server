@@ -31,4 +31,67 @@
     </TreasureRewards>
     
   </TreasureType>
+  
+  
+  <TreasureType id="treasure_cash" advisor="chef" probability_factor="1">
+    
+    <Difficulty>LEVEL*10</Difficulty>
+    
+    <Name>Golden Toads</Name>
+    <Name lang="de_DE">Goldkröten</Name>
+    
+    <Flavour lang="de_DE">Was glitzert da am Boden?</Flavour>
+    <Flavour lang="en_US">What see my eyes glimmering over there?</Flavour>
+  
+    <ShortDescription lang="de_DE">
+      <p>Da war wohl jemand unachtsam und hat ein paar wertvolle Goldkröten liegen lassen.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Some golden frogs can be found at this site.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Lange Beschreibung.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Long Description.</p>
+    </Description>
+    
+    <TreasureRewards>
+      <RandomizedResourceReward norm_variance="0" resource="resource_cash">LEVEL</RandomizedResourceReward>
+    </TreasureRewards>
+    
+  </TreasureType>
+  
+  
+  <TreasureType id="treasure_xp" advisor="warrior" probability_factor="10">
+    
+    <Difficulty>LEVEL*10</Difficulty>
+    
+    <Name>Unkartographierte Erdhöhle</Name>
+    <Name lang="de_DE">Unexplored Cavern</Name>
+    
+    <Flavour lang="de_DE">Lass uns trainieren gehen und das Ungeziefer aus der Höhle vertreiben.</Flavour>
+    <Flavour lang="en_US">Your chance to test your skills and gain some experience.</Flavour>
+  
+    <ShortDescription lang="de_DE">
+      <p>Eine unentdeckte Höhle verspricht einen Haufen Erfahrung für denjenigen, der sie zuerst begeht.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>An undiscovered cavern hides small and large dangers that'll bolster the experience of the first explorer.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Lange Beschreibung.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Long Description.</p>
+    </Description>
+    
+    <TreasureRewards>
+      <RandomizedExperienceReward norm_variance="0.25">LEVEL*LEVEL*LEVEL*10+40</RandomizedExperienceReward>
+    </TreasureRewards>
+    
+  </TreasureType>
+  
 </TreasureTypes>

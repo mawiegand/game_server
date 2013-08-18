@@ -911,8 +911,8 @@ end
 </xsl:if>
 <xsl:if test="RandomizedExperienceReward">
             :randomized_experience_reward => 
-              <xsl:apply-templates select="RandomizedResourceReward" />
-            ,
+              <xsl:apply-templates select="RandomizedExperienceReward" />
+            
 </xsl:if>
 
 </xsl:template>
@@ -951,6 +951,14 @@ end
                 :norm_variance => <xsl:value-of select="@norm_variance" />,
               },
 </xsl:template>
+
+<xsl:template match="RandomizedExperienceReward">
+              { 
+                :amount => "<xsl:value-of select="." />",
+                :norm_variance => <xsl:value-of select="@norm_variance" />,
+              },
+</xsl:template>
+
 
 <xsl:template match="UnitReward">
               {
