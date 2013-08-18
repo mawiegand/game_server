@@ -11,7 +11,13 @@ class Treasure::TreasuresController < ApplicationController
   # GET /treasure/treasures
   # GET /treasure/treasures.json
   def index
-    @treasure_treasures = Treasure::Treasure.all
+    
+    if params.has_key?(:geo_treasure_id)
+      @treasure_treasures = Treasure::Treasure.where(geo_treasure_id: geo_treasure_id)
+    else
+      raise ForbiddenError.new "access forbidden"  unless admin? || staff? || developer?
+      @treasure_treasures = Treasure::Treasure.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
