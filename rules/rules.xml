@@ -72,7 +72,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="9" build="44" />
+    <Version major="0" minor="9" build="45" />
     <AppControl debugTracking="1">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="22" />
     </AppControl>
@@ -147,7 +147,7 @@
           <Name lang="de_DE">Mund</Name>
         </AvatarLayer>
         <AvatarLayer max="1"  optional="false" id="heads">
-          <Name>Heads</Name>
+          <Name>Head</Name>
           <Name lang="de_DE">Kopf</Name>
         </AvatarLayer>
         <AvatarLayer max="6"  optional="true" chars="2" id="beards">

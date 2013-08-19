@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.9.44
+# Version: 0.9.45
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -120,7 +120,7 @@ class GameRules::Rules
   
       :version => { :major => 0,
                     :minor => 9,
-                    :build => 44,
+                    :build => 45,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -381,9 +381,9 @@ class GameRules::Rules
             :num_chars => 1,
             :name      => {
               
-            :en_US => "Chains",
+            :en_US => "Chain",
   
-            :de_DE => "Ketten",
+            :de_DE => "Kette",
   
             },
           },
@@ -394,9 +394,9 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "eyes",
+            :en_US => "Eyes",
   
-            :de_DE => "eyes",
+            :de_DE => "Augen",
   
             },
           },
@@ -407,9 +407,9 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "hairs",
+            :en_US => "Hair",
   
-            :de_DE => "hairs",
+            :de_DE => "Haare",
   
             },
           },
@@ -420,9 +420,9 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "mouths",
+            :en_US => "Mouth",
   
-            :de_DE => "mouths",
+            :de_DE => "Mund",
   
             },
           },
@@ -433,9 +433,9 @@ class GameRules::Rules
             :num_chars => 1,
             :name      => {
               
-            :en_US => "heads",
+            :en_US => "Head",
   
-            :de_DE => "heads",
+            :de_DE => "Kopf",
   
             },
           },
@@ -446,9 +446,9 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "beards",
+            :en_US => "Beards",
   
-            :de_DE => "beards",
+            :de_DE => "Bart",
   
             },
           },
@@ -459,9 +459,9 @@ class GameRules::Rules
             :num_chars => 1,
             :name      => {
               
-            :en_US => "veilchens",
+            :en_US => "Shiner",
   
-            :de_DE => "veilchens",
+            :de_DE => "Veilchen",
   
             },
           },
@@ -472,9 +472,9 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "tattoos",
+            :en_US => "Tattoo",
   
-            :de_DE => "tattoos",
+            :de_DE => "Tattoo",
   
             },
           },
@@ -489,9 +489,9 @@ class GameRules::Rules
             :num_chars => 1,
             :name      => {
               
-            :en_US => "Chains",
+            :en_US => "Chain",
   
-            :de_DE => "Chains",
+            :de_DE => "Kette",
   
             },
           },
@@ -502,9 +502,9 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "eyes",
+            :en_US => "Eyes",
   
-            :de_DE => "eyes",
+            :de_DE => "Augen",
   
             },
           },
@@ -515,9 +515,9 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "hairs",
+            :en_US => "Hair",
   
-            :de_DE => "hairs",
+            :de_DE => "Haare",
   
             },
           },
@@ -528,9 +528,9 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "mouths",
+            :en_US => "Mouth",
   
-            :de_DE => "mouths",
+            :de_DE => "Mund",
   
             },
           },
@@ -541,9 +541,9 @@ class GameRules::Rules
             :num_chars => 1,
             :name      => {
               
-            :en_US => "heads",
+            :en_US => "Head",
   
-            :de_DE => "heads",
+            :de_DE => "Kopf",
   
             },
           },
@@ -554,9 +554,9 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "beards",
+            :en_US => "Beard",
   
-            :de_DE => "Cbeardshains",
+            :de_DE => "Bart",
   
             },
           },
@@ -567,9 +567,9 @@ class GameRules::Rules
             :num_chars => 1,
             :name      => {
               
-            :en_US => "veilchens",
+            :en_US => "Shiner",
   
-            :de_DE => "veilchens",
+            :de_DE => "Veilchen",
   
             },
           },
@@ -580,9 +580,9 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "tattoos",
+            :en_US => "Tattoo",
   
-            :de_DE => "tattoos",
+            :de_DE => "Tattoo",
   
             },
           },
