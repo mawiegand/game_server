@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.0.0
+# Version: 1.1.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -120,7 +120,7 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 1,
-                    :minor => 0,
+                    :minor => 1,
                     :build => 0,
       },
       :app_control => {
@@ -7706,6 +7706,112 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
 
         },              #   END OF Unkartographierte Erdhöhle
+        {              #   Pile of Stone
+          :id          => 3,
+          :symbolic_id => :treasure_stone,
+          :difficulty  => "LEVEL*10",
+          :advisor     => "girl",
+          :probability_factor => 10,
+          :name        => {
+            
+            :en_US => "Pile of Stone",
+  
+            :de_DE => "Geröll",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Wer hat denn das liegen lassen?",
+  
+            :en_US => "Who has lost this?",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Eine unbestimmte Menge an Stein, die ein freundlicher Mitmensch unbeaufsichtigt für Dich oder einen anderen Finder hinterlegt hat. Die genaue Menge hängt vom Level dieses Schatzes ab.</p>",
+  
+            :en_US => "<p>An undetermined amount of stone, another friendly human has prepared and left for your to take. The exact amount the finder will gain depends on the level of this treasure.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Eine unbestimmte Menge an Stein, die ein freundlicher Mitmensch unbeaufsichtigt für Dich oder einen anderen Finder hinterlegt hat.</p>",
+  
+            :en_US => "<p>An undetermined amount of stone, another friendly human has prepared and left for your to take.</p>",
+  
+          },
+
+          :rewards => {
+
+            :randomized_resource_rewards => [
+              
+              { 
+                :resource_id => 0,
+                :resource => :resource_stone,
+                :amount => "LEVEL*10",
+                :norm_variance => 0.25,
+              },
+
+            ],
+
+          },
+
+
+        },              #   END OF Pile of Stone
+        {              #   Pile of Fur
+          :id          => 4,
+          :symbolic_id => :treasure_fur,
+          :difficulty  => "LEVEL*10",
+          :advisor     => "girl",
+          :probability_factor => 10,
+          :name        => {
+            
+            :en_US => "Pile of Fur",
+  
+            :de_DE => "Felllager",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Wer hat denn das liegen lassen?",
+  
+            :en_US => "Who has lost this?",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Eine unbestimmte Menge an Fellen, die ein freundlicher Mitmensch unbeaufsichtigt für Dich oder einen anderen Finder hinterlegt hat. Die genaue Menge hängt vom Level dieses Schatzes ab.</p>",
+  
+            :en_US => "<p>An undetermined amount of fur, another friendly human has prepared and left for your to take. The exact amount the finder will gain depends on the level of this treasure.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Eine unbestimmte Menge an Fellen, die ein freundlicher Mitmensch unbeaufsichtigt für Dich oder einen anderen Finder hinterlegt hat.</p>",
+  
+            :en_US => "<p>An undetermined amount of fur, another friendly human has prepared and left for your to take.</p>",
+  
+          },
+
+          :rewards => {
+
+            :randomized_resource_rewards => [
+              
+              { 
+                :resource_id => 2,
+                :resource => :resource_fur,
+                :amount => "LEVEL*10",
+                :norm_variance => 0.25,
+              },
+
+            ],
+
+          },
+
+
+        },              #   END OF Pile of Fur
       ],                # END OF TREASURE TYPES
 
 # ## ARTIFACT TYPES ########################################################
