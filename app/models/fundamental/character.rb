@@ -1200,6 +1200,9 @@ class Fundamental::Character < ActiveRecord::Base
     
     # hand over home settlement to npc
     self.home_location.settlement.abandon_base if !self.home_location.nil? && !self.home_location.settlement.nil?
+
+    # move artifact to neighborhood
+    self.artifact.jump_to_neighbor_location unless self.artifact.nil?
     
     # leave alliance
     self.alliance.remove_character(self) unless self.alliance.blank?
