@@ -1309,7 +1309,7 @@ class Fundamental::Character < ActiveRecord::Base
     login_count < 10
   end
 
-  def as_json(options={})
+  def serializable_hash(options={})
     options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
     options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker']
     super(options)
