@@ -6,7 +6,7 @@ require 'credit_shop'
 class Fundamental::CharactersController < ApplicationController
   layout 'fundamental'
   
-  before_filter :authenticate, :except => [:show, :self]   # presently, show must be excluded to be able to fetch self on startup (because safari looses auth-header on redirect from self to show)
+#  before_filter :authenticate, :except => [:show, :self]   # presently, show must be excluded to be able to fetch self on startup (because safari looses auth-header on redirect from self to show)
   before_filter :deny_api,     :except => [:show, :index, :self]
   
   include Fundamental::CharactersHelper
@@ -42,7 +42,7 @@ class Fundamental::CharactersController < ApplicationController
           sanitized = @fundamental_characters.map do |character| 
             role = determine_access_role(character.id, character.alliance_id)
             logger.debug "Access with ROLE: #{ role }"
-            include_root(character.sanitized_hash(role), :character)
+            include_root(character.serializable_hash(:role => role), :character)
           end
           render json: sanitized
         end
