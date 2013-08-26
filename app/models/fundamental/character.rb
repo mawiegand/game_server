@@ -602,7 +602,7 @@ class Fundamental::Character < ActiveRecord::Base
       return 
     end     
     return   if self.max_conversion_state == "logged_in_once"
-    if !reached_game.nil?
+    if !logged_in_once?
       self.max_conversion_state = "logged_in_once"
       return
     end
