@@ -601,8 +601,8 @@ class Fundamental::Character < ActiveRecord::Base
       self.max_conversion_state = "ten_minutes"
       return 
     end     
-    return   if self.max_conversion_state == "logged_in_once"
-    if !logged_in_once?
+    # return   if self.max_conversion_state == "logged_in_once"
+    if logged_in_once?
       self.max_conversion_state = "logged_in_once"
       return
     end
