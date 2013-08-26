@@ -568,7 +568,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   # logged-in at least once
   def logged_in_once?
-    login_count >= 1 && reached_game?
+    login_count >= 1 && (reached_game? || playtime >= 30.0)  # half minute in game or pressed button in welcome dialog.
   end  
   
   def update_credits_spent
