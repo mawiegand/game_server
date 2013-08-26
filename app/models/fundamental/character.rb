@@ -568,7 +568,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   # logged-in at least once
   def logged_in_once?
-    login_count >= 1 && reached_game?
+    login_count >= 1 && (reached_game? || playtime >= 60.0)  # a minute in game or pressed button in welcome dialog.
   end  
   
   def update_credits_spent
@@ -601,8 +601,8 @@ class Fundamental::Character < ActiveRecord::Base
       self.max_conversion_state = "ten_minutes"
       return 
     end     
-    return   if self.max_conversion_state == "logged_in_once"
-    if !reached_game.nil?
+    # return   if self.max_conversion_state == "logged_in_once"
+    if logged_in_once?
       self.max_conversion_state = "logged_in_once"
       return
     end
@@ -1200,6 +1200,9 @@ class Fundamental::Character < ActiveRecord::Base
     
     # hand over home settlement to npc
     self.home_location.settlement.abandon_base if !self.home_location.nil? && !self.home_location.settlement.nil?
+
+    # move artifact to neighborhood
+    self.artifact.jump_to_neighbor_location unless self.artifact.nil?
     
     # leave alliance
     self.alliance.remove_character(self) unless self.alliance.blank?
@@ -1306,7 +1309,7 @@ class Fundamental::Character < ActiveRecord::Base
     login_count < 10
   end
 
-  def as_json(options={})
+  def serializable_hash(options={})
     options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
     options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker']
     super(options)
