@@ -131,7 +131,7 @@
     <AvatarConfigs>
       <AvatarConfig gender="male">
         <AvatarLayer max="0"  optional="true" id="chains">
-          <Name>Chain</Name>
+          <Name>Necklace</Name>
           <Name lang="de_DE">Kette</Name>
         </AvatarLayer>
         <AvatarLayer max="3"  optional="false" chars="2" id="eyes">
@@ -151,7 +151,7 @@
           <Name lang="de_DE">Kopf</Name>
         </AvatarLayer>
         <AvatarLayer max="6"  optional="true" chars="2" id="beards">
-          <Name>Beards</Name>
+          <Name>Beard</Name>
           <Name lang="de_DE">Bart</Name>
         </AvatarLayer>
         <AvatarLayer max="4"  optional="true" id="veilchens">
@@ -165,7 +165,7 @@
       </AvatarConfig>
       <AvatarConfig gender="female">
         <AvatarLayer max="2"  optional="true" id="chains">
-          <Name>Chain</Name>
+          <Name>Necklace</Name>
           <Name lang="de_DE">Kette</Name>
         </AvatarLayer>
         <AvatarLayer max="4"  optional="false" chars="2" id="eyes">
