@@ -11,7 +11,7 @@ STDOUT.sync = true
 puts
 puts "This script sends all players a notification about their new insider status."
 
- sender = Fundamental::Character.find_by_name('WackyUser143')
+ sender = Fundamental::Character.find_by_name('Hajo')
  
 if !sender.nil? 
 
@@ -56,7 +56,7 @@ if !sender.nil?
 <p>Weiterhin viel Spaß<br/>
 Wack On<br/>
 <br/>
-Euer Wack-A-Doo Team</p>",
+Hajo</p>",
        send_at:   DateTime.now,
        reported:  false,
        flag:      0,
