@@ -16,7 +16,7 @@ puts "This script sends all players a notification about their new insider statu
 if !sender.nil? 
 
  Fundamental::Character.non_npc.not_deleted.each do |character|
-   if character.insider
+   #if character.insider
      
      male = character.male?
 
@@ -64,7 +64,7 @@ Hajo</p>",
           
      puts character.name
    end
- end
+ #end
 end
 
 puts "Done."
