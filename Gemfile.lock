@@ -113,6 +113,9 @@ GEM
       activesupport (= 3.1.12)
       bundler (~> 1.0)
       railties (= 3.1.12)
+    rails-dev-tweaks (0.6.1)
+      actionpack (~> 3.1)
+      railties (~> 3.1)
     rails-erd (1.1.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
@@ -127,7 +130,6 @@ GEM
       thor (~> 0.14.6)
     rake (10.0.4)
     rb-readline (0.4.2)
-    rb-readline (0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
@@ -188,6 +190,7 @@ DEPENDENCIES
   libv8
   pg
   rails (= 3.1.12)
+  rails-dev-tweaks (~> 0.6.1)
   rails-erd
   rb-readline (= 0.4.2)
   sass-rails (= 3.1.4)
