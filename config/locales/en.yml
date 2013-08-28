@@ -76,6 +76,9 @@ en:
         standard:  Standard
         special:   Special
         frequency: Frequency
+      treasure:
+        category:  Treasure
+        treasure:  Treasure
 
       military:
         category: Military
