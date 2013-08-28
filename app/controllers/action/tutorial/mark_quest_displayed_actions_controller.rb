@@ -12,7 +12,7 @@ class Action::Tutorial::MarkQuestDisplayedActionsController < ApplicationControl
     raise NotFoundError.new('Quest not found')    if quest.nil?
     raise ForbiddenError.new('Access forbidden.') if quest.tutorial_state.owner != current_character && !admin? && !staff?
 
-    raise BadRequestError.new('Quest already has been displayed')  if quest.has_been_displayed?
+    #raise BadRequestError.new('Quest already has been displayed')  if quest.has_been_displayed?
     # may be marked as displayed in every state, even, in case it's already finished. This is to allow the client
     # to first display the quest description before the reward notification even in case the quest is already
     # completed in the moment it's started (e.g. all requirements are already fullfilled)
