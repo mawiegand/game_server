@@ -22,20 +22,19 @@ class Settlement::SlotsController < ApplicationController
 
       logger.debug "Fall!"
 
-      if !request.env['HTTP_IF_MODIFIED_SINCE'].blank?  && !use_restkit_api?
+      if !request.env['HTTP_IF_MODIFIED_SINCE'].blank? && !use_restkit_api?
         if_modified_since = Time.parse(request.env['HTTP_IF_MODIFIED_SINCE'])    
         @settlement_slots = Settlement::Slot.where("(updated_at > ? OR (bubble_next_test_at < ? AND building_id is not null AND level > 0)) AND settlement_id = ?", if_modified_since, Time.now, params[:settlement_id])
         updated_bubble = false
         @settlement_slots.each do |slot|
-          updated_bubble ||= slot.update_bubble_if_needed
+          updated_bubble = slot.update_bubble_if_needed || updated_bubble
           slot.save
         end
         unless updated_bubble
           @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
           last_modified = @max_settlement_slot.nil? ? Time.at(0) : @max_settlement_slot
         end
-        logger.debug "MAXIMUM #{ @max_settlement_slot }, last modified #{ if_modified_since }"         
-      else 
+      else
         @settlement_slots = Settlement::Slot.where(settlement_id: params[:settlement_id])
         @settlement_slots.each do |slot|
           slot.update_bubble_if_needed
