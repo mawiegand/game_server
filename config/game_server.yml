@@ -55,7 +55,7 @@ defaults: &defaults
   platinum_additional_training_jobs     : 3
   
   history_update_interval:    24 #hours
-  player_deletion_interval:   16 #days
+  player_deletion_interval:   21 #days
   message_deletion_intervall: 30 #days
 
   special_offer_interval:          5 #days

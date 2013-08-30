@@ -18,47 +18,28 @@ if !sender.nil?
  Fundamental::Character.non_npc.not_deleted.each do |character|
    if character.insider
      
-     male = character.male? 
-     
+     male = character.male?
+
      Messaging::Message.create({
        type_id:    Messaging::Message::INDIVIDUAL_ANNOUNCEMENT_TYPE_ID,
        sender_id:  sender.id,
        recipient_id: character.id,
-       subject:   "Wack-A-Doo Insider!",
-       body:      "<p><small>Please find an English summary at the end of this message.</small></p>\
-<h1>Hallo #{ character.name },</h1>\
-<p>als #{ male ? "einem Spieler" : "einer Spielerin" } der ersten Stunde haben wir Dir und allen anderen aktiven #{ male ? "Spielern" : "Spielerinnen" } den Status\
-   <b>Insider</b> verliehen. Dies ist als Dankeschön für die frühe Teilnahme gedacht und bleibt\
-   Dir dauerhaft erhalten. Nachfolgende #{ male ? "Spieler" : "Spielerinnen" } können ebenfalls in diesen erlauchten Kreis\
-   aufrücken, indem sie eine Runde von Wack-A-Doo gewinnen oder mindestens drei Runden\
-   überleben.</p>\
-<p>Als Insider kannst Du ab sofort einen gesonderten Chatraum betreten und wirst
-   in Zukunft regelmäßig News über die Spielentwicklung in einem (optionalen) Newsletter 
-   beziehen können. Der Chatraum ist als ruhiges Refugium für erfahrene Spieler gedacht,
-   ab sofort im Browser (https://wack-a-doo.de) verfügbar und wird auf iOS mit
-   dem nächsten Update der App freigeschaltet. Über den Newsletter werden wir in den 
-   nächsten Wochen gesondert informieren.</p> 
-<p>Gerne lass uns Dein Feedback zukommen. Insbesondere die ersten 
-   Erfahrungen unserer neuen App User interessieren uns brennend. Die App ist noch in einem
-   recht frühen Stadium, aber wir arbeiten ununterbrochen an Verbesserungen und Erweiterungen
-   - natürlich auch für den Browser.</p>
-<p>Bitte wende Dich mit 
-   Feedback oder auch im Falle von Fragen und Problemen einfach
-   direkt an mich oder an meine Kollegen bei 5d lab (Allianz: 5D) oder per Email an 
-   <a href=\"mailto:support@5dlab.com\">support@5dlab.com</a>.</p>
-<p>Abschließend möchte ich Dich noch einmal herzlich in Wack-A-Doo willkommen heißen: 
-   Wir freuen uns, dass Du da bist!</p>
-<p>Viel Spaß<br/>und<br/>Whack On<br/><br/>Sascha.</p>
-<br/><br/><br/><hr/>
-<h1>Hi #{ character.name },</h1>\
-<p>this message was sent to let you know about your new status \"Wack-A-Doo Insider\".
-   We granted this status to all active players as a small thank you for joining and playing
-   Wack-A-Doo that early. Your status allows you to access an exclusive chat room in the
-   browser client and, in about a week, in the iOS client.</p>
-<p>Furthermore, we'd like to welcome you again to the game and to encourage you to contact
-   us in case of questions or problems - or just to give us some valuable feedback.</p>
-<p>Have fun and Whack On<br>Sascha.</p> 
-",
+       subject:   "Start Next, Rundenende & Entwicklerchat",
+       body:      "<h2>Hallo #{ character.name },</h2>
+
+        <p>wir möchten Dir als Insider weitere Informationen zukommen lassen. Im iOS Client gibt es bereits den 'experimentellen' Modus, den Du an- und abschalten kannst. Wir entwickeln gerade die ersten Geofunktionen und wollen Euch über diesen Schalter einen frühzeitigen Zugriff geben und an der Entwicklung teilhaben lassen.</p>
+
+        <p>Bereits jetzt ist im experimentellen Modus die reale Weltkarte zu sehen; in Kürze werden auch die ersten 'aktiven' Geofunktionen im Spiel erscheinen; ihr werdet Euren Character sowie andere Spieler in Eurer Umgebung sehen und könnt schätze Einsammeln. Das ganze kommt noch mit einigen Ecken und Kanten, wird aber einen ersten Eindruck geben, wo wir im nächsten halben Jahr hinwollen. Wenn Ihr Eure Position nicht mitteilen und die Features nicht testen wollt, schaltet die experimentellen Features einfach aus; es werden dann absolut keine Daten preisgegeben. Zu finden wird der Schalter unter 'Einstellungen' im Characterprofil sein.</p>
+
+        <p>Im HTML-Client werden wir experimentelle Features samt Schalter nachziehen, sobald dort Geofunktionen eingebaut werden. </p>
+
+        <p>Außerdem werden wir Dir mit der kommenden Runde auch den Zugang zu unserer 'internen' Testrunde ermöglichen; Du wirst sie über ein Auswahlmenü beim Öffnen der App anwählen und beide Runden (Test + Öffentlich) parallel spielen können. Generell planen wir ab Runde 4 mit einer Rundendauer von 3-5 Monaten, bis eine Allianz gewinnt. Die nachfolgende Runde werden wir dann in Zukunft bereits zu ungefähr der Halbzeit der gerade laufenden Runde starten. So sollte die Spannung zu jederzeit und sowohl für alte Hasen als auch Neuankömmlinge hoch sein.</p>
+
+        <p>Wir hoffen, Euch damit einen spannenden Einblick zu geben und freuen uns immer über Euer Feedback; gerne auch zu den ersten experimentellen Funktionen.</p>
+
+        <p>Viele Grüße</p>
+
+        <p>Sascha</p>",
        send_at:   DateTime.now,
        reported:  false,
        flag:      0,
