@@ -86,7 +86,7 @@ class Shop::SpecialOffer < ActiveRecord::Base
     settlement = Settlement::Settlement.create_settlement_at_location(location, 3, character)  # 3: outpost
     
     slots.each do |slot_num, specs|
-      slot = settlement.slots[slot_num]
+      slot = settlement.slots.with_num(slot_num).first
       
       if (slot.empty?)
         slot.create_building(specs[:id])
