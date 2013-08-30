@@ -206,7 +206,7 @@ def credit_to(character)
   settlement = character.bases[0]
   
   slots.each do |slot_num, specs|
-    slot = settlement.slots[slot_num]
+    slot = settlement.slots.with_num(slot_num).first
     
     if (slot.empty?)
       slot.create_building(specs[:id])
@@ -234,7 +234,7 @@ def credit_to(character)
   
   # credit units
   units.each do |specs|
-    home_base.add_units_to_garrison(specs[:id], specs[:number])
+    settlement.add_units_to_garrison(specs[:id], specs[:number])
   end
 
   puts("FILL HOME BASE: Credited units to character #{ character.id }: #{ character.name }.")

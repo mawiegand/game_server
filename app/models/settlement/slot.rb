@@ -11,6 +11,8 @@ class Settlement::Slot < ActiveRecord::Base
 
   scope :empty,    where(['(level IS NULL OR level = ?) AND building_id IS NULL', 0])
   scope :occupied, where(['(level IS NOT NULL AND level > ?) OR building_id IS NOT NULL', 0])
+  scope :ordered_by_num, order('slot_num ASC')
+  scope :with_num, lambda { |num| where(['slot_num = ?', num]) }
 
   def empty?
     self.level == 0 || self.level.nil?
