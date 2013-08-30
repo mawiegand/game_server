@@ -210,7 +210,7 @@ def credit_to(character)
     
     if (slot.empty?)
       slot.create_building(specs[:id])
-      logger.debug "FILL HOME BASE: Created building with id #{specs[:id]} in slot #{slot.inspect}."
+      puts "FILL HOME BASE: Created building with id #{specs[:id]} in slot #{slot.inspect}."
     end
     
     while slot.level < specs[:level]
@@ -218,7 +218,7 @@ def credit_to(character)
     end
   end
   
-  logger.info("FILL HOME BASE: Created new outpost for character #{ character.id }: #{ character.name }.")
+  puts("FILL HOME BASE: Created new outpost for character #{ character.id }: #{ character.name }.")
 
   
   # credit resources and golden frogs
@@ -229,7 +229,7 @@ def credit_to(character)
     cash_id  => cash_amount,
   })
 
-  logger.info("FILL HOME BASE: Credited resources to character #{ character.id }: #{ character.name }.")
+  puts("FILL HOME BASE: Credited resources to character #{ character.id }: #{ character.name }.")
   
   
   # credit units
@@ -237,7 +237,7 @@ def credit_to(character)
     home_base.add_units_to_garrison(specs[:id], specs[:number])
   end
 
-  logger.info("FILL HOME BASE: Credited units to character #{ character.id }: #{ character.name }.")
+  puts("FILL HOME BASE: Credited units to character #{ character.id }: #{ character.name }.")
     
 end
 
