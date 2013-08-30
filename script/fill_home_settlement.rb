@@ -15,18 +15,6 @@ end
 character_id = eval(ARGV[0])
 
 
-character = Fundamental::Character.find(character_id)
-
-if character.nil? 
-  abort "character #{character_id} not found"
-end
-
-if character.playtime > 20*60.0 || character.score >= 50
-  abort "character #{character_id} seems to be already playing"
-end
-
-credit_to(character)
-
 
 def credit_to(character)
   stone_id        =    0
@@ -252,3 +240,18 @@ def credit_to(character)
   logger.info("FILL HOME BASE: Credited units to character #{ character.id }: #{ character.name }.")
     
 end
+
+character = Fundamental::Character.find(character_id)
+
+if character.nil? 
+  abort "character #{character_id} not found"
+end
+
+if character.playtime > 20*60.0 || character.score >= 50
+  abort "character #{character_id} seems to be already playing"
+end
+
+credit_to(character)
+
+
+
