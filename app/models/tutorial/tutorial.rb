@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.36
+# Version: 0.3.37
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 36, 
+        :build => 37, 
       },
       
       :production_test_weights => {
@@ -498,7 +498,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Klasse, jetzt hast Du alle Quests auf einen Blick. ",
+            :de_DE => "Klasse, jetzt hast Du alle Quests auf einen Blick.",
   
             :en_US => "Great – now you can see all your quests at a glance.",
                 
@@ -507,7 +507,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Schaue regelmäßig in die Questübersicht, dann verlierst Du nie den Überblick.",
   
-            :en_US => "Take a look at the quest overview regularly, then you won't lose track of them.  ",
+            :en_US => "Take a look at the quest overview regularly, then you won't lose track of them.",
                 
           },
 
@@ -579,7 +579,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen. ",
+            :de_DE => "Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen.",
   
             :en_US => "In your profile you can see your progress and make other changes.",
                 
@@ -648,7 +648,7 @@ class Tutorial::Tutorial
             :de_DE => "Du kannst ein Ausbildungsgelände bauen, machst es aber nicht? Bau sofort eins und ich gebe Dir etwas aus meiner Schatzkiste.
       ",
   
-            :en_US => "You can build a Training Grounds but you're not doing it? If you build one now, I´ll give you something from my treasure chest...
+            :en_US => "You can build a Training Grounds but you're not doing it? If you build one now, I´ll give you something from my treasure chest.
       ",
                 
           },
@@ -1033,14 +1033,14 @@ class Tutorial::Tutorial
             
             :de_DE => "Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten.",
   
-            :en_US => "An army can do more than just stand around, you know. It´s there to destroy the enemies of the tribe! ",
+            :en_US => "An army can do more than just stand around, you know. It´s there to destroy the enemies of the tribe!",
                 
           },
           :description => {
             
             :de_DE => "<p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen von Spielern zu kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügend Kampfstärke erfolgen.</p>",
   
-            :en_US => "<p>Select your army, click on Move, and then on the destination you want to go to. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players can only be made if the other player agrees or if you have enough fighting strenght. </p>",
+            :en_US => "<p>Select your army, click on Move, and then on the destination you want to go to. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players can only be made if the other player agrees or if you have enough fighting strenght.</p>",
                 
           },          
           :reward_flavour => {
@@ -1127,7 +1127,7 @@ class Tutorial::Tutorial
           <p></p>
           <p>Weitere Siedlungen kannst Du auf zwei Arten erhalten.</p>
           <p>Lagerstätten kannst Du mit Hilfe eines Kleinen Häuptlings gründen. Bestehenden Lagerstätten und Festungen kannst Du auch von anderen Spielern klauen.</p>
-          <p>Weitere Info's erhälst du hier:<a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='blank'>Zweite Siedlung</a></p>
+          <p>Weitere Info's erhälst Du hier:<a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='blank'>Zweite Siedlung</a></p>
           <p></p>
           <p>In Wack-A-Doo gibt es mit Nahkämpfern, Fernkämpfern und Berittenen Einheiten drei verschiedene Einheiten-Typen zur Verfügung. Zu Beginn stehen Dir nur Nahkämpfer zur Verfügung, doch im späteren Spielverlauf kannst Du auch Fernkämpfer und Berittene Einheiten rekrutieren.</p>
         ",
@@ -1676,7 +1676,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.",
   
-            :en_US => "Isn't it great how much your settlement is growing? I've even managed to persuade the boss to give you something from his huge store of resources...",
+            :en_US => "Isn't it great how much your settlement is growing? I've even managed to persuade the boss to give you something from his huge store of resources.",
                 
           },
           :reward_text => {
@@ -1877,7 +1877,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Reinforce' Knopf.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Du kannst die Krieger in die Armee bewegen.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Verstärken' Knopf.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Du kannst die Krieger in die Armee bewegen.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
   
             :en_US => "<p>Go to the map and select your settlement. Press the Reinforce button. You'll be able to see the units in the garrison on the left and the warriors in the army on the right. You can then move units into the army. Give your army a name and click on Create to confirm.</p>",
                 
@@ -2133,7 +2133,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.",
   
-            :en_US => "Wow, that's some alliance! I'm sure they're going to go far. ",
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
                 
           },
           :reward_text => {
@@ -2207,7 +2207,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. </p>",
+            :de_DE => "<p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>",
   
             :en_US => "<p>Having more Hunter Gatherers would be helpful right now. Stone, wood and fur are all worth one resource point.</p>",
                 
@@ -3227,7 +3227,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Chef will die Felle für die Armee Rekrutierung, aber für mich fällt doch bestimmt auch was schönes ab, oder?",
   
-            :en_US => "The chief wants an army, but I'd just like some nice new clothes...",
+            :en_US => "The chief wants an army, but I'd just like some nice new clothes.",
                 
           },
           :description => {
@@ -3317,7 +3317,7 @@ class Tutorial::Tutorial
             
             :en_US => "Upgrade of the chieftan's hut",
   
-            :de_DE => "Häuptlingshütte Level 9.",
+            :de_DE => "Häuptlingshütte Level 9",
                 
           },
           :task => {
@@ -3447,9 +3447,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. ",
+            :de_DE => "Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen.",
   
-            :en_US => "You've started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost. I'm sick of the sight of you.",
+            :en_US => "You've started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost.",
                 
           },
           :reward_text => {
@@ -4450,7 +4450,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
   
-            :en_US => "Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it. ",
+            :en_US => "Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.",
                 
           },
           :reward_text => {
@@ -6897,9 +6897,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "FFight with an army until it has 22,500 Army Experience points.",
+            :en_US => "Fight with an army until it has 22,500 Army Experience points.",
   
-            :de_DE => "Kämpfe bis Du 22.500 Armee Erfahrung erlangst..",
+            :de_DE => "Kämpfe bis Du 22.500 Armee Erfahrung erlangst.",
                 
           },
           :flavour => {
@@ -7277,7 +7277,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "FFight with an army until it has 60,000 Army Experience points.",
+            :en_US => "Fight with an army until it has 60,000 Army Experience points.",
   
             :de_DE => "Kämpfe bis Du 60.000 Armee Erfahrung erlangst.",
                 
@@ -8248,7 +8248,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -8343,7 +8343,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -8438,7 +8438,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -8533,7 +8533,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -8628,7 +8628,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -8723,7 +8723,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -8818,7 +8818,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -8913,7 +8913,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -9008,7 +9008,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -9103,7 +9103,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -9198,7 +9198,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -9293,7 +9293,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -9388,7 +9388,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -9483,7 +9483,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -9578,7 +9578,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -9673,7 +9673,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -9768,7 +9768,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -9863,7 +9863,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -9958,7 +9958,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -10053,7 +10053,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig",
+            :de_DE => "Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.",
   
             :en_US => "Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.",
                 
@@ -10250,7 +10250,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -10440,7 +10440,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -10535,7 +10535,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -10630,7 +10630,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -10725,7 +10725,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -10820,7 +10820,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -10915,7 +10915,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -11010,7 +11010,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -11105,7 +11105,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -11200,7 +11200,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -11295,7 +11295,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -11390,7 +11390,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -11485,7 +11485,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -11580,7 +11580,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -11675,7 +11675,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -11770,7 +11770,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -11865,7 +11865,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -11960,7 +11960,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -12055,7 +12055,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -12150,7 +12150,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -12245,7 +12245,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.",
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
   
             :en_US => "Are you still paying taxes? Why?",
                 
@@ -12529,21 +12529,21 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Während deine Armee unterwegs ist haben sich die hinterhältigen Neandertaler vor Deiner Siedlung versammelt. Dem muss Einhalt geboten werden. Führe Deine Garnison aus deiner Siedlung heraus in die Schlacht und zerschmettere sie. Wähle hierzu zunächst Deine Siedlung aus. Drücke jetzt den Angriffsknopf und wähle dann die Neandertaler aus um den Angriff zu starten.</p>",
+            :de_DE => "<p>Während deine Armee unterwegs ist haben sich die hinterhältigen Neandertaler vor Deiner Siedlung versammelt. Führe Deine Garnison aus deiner Siedlung heraus in die Schlacht und zerschmettere sie. Wähle hierzu zunächst Deine Siedlung aus. Drücke jetzt den Angriffsknopf und wähle dann die Neandertaler aus, um den Angriff zu starten.</p>",
   
             :en_US => "<p>A bunch of ferocious neanderthals has gathered outside your settlement while your army is out in the field. We have to stop them. Lead our garrison out to battle and smash them to bits! To do so, first select your settlement. Then press the attack button and select the neandertals to beginn the attack.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Der Kampf wird noch eine Weile toben aber wir werden mit sicherheit Siegen! Vielleicht kehrt unsere Armee auch zurück und kommt uns zur Unterstützung.",
+            :de_DE => "Der Kampf wird noch eine Weile toben, aber wir werden mit Sicherheit Siegen! Vielleicht kehrt unsere Armee auch zurück und kommt uns zur Unterstützung.",
   
             :en_US => "The battle is gona keep going for a while but we will surely win! Especially if the army returns and supports us.",
                 
           },
           :reward_text => {
             
-            :de_DE => "Auf die Selbe Art greifst du auch mit Armeen an. Armeen, die auf der Seite von Siedlungen oder Festungen kämpfen erhalten einen Kampfbonus. Während ein Kampf läuft können beliebig viele Armeen auf beiden Seiten dazukommen.",
+            :de_DE => "Auf die selbe Art greifst Du auch mit Armeen an. Armeen, die auf der Seite von Siedlungen oder Festungen kämpfen erhalten einen Kampfbonus. Während ein Kampf läuft können beliebig viele Armeen auf beiden Seiten dazukommen.",
   
             :en_US => "You attack the same way with armies. Armies fighting on the same side as settlements or fortresses get a boost. While a battle is going on armies can join it on either side. ",
                 
@@ -12598,9 +12598,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Start your first Assignment",
+            :en_US => "Start your first Assignment.",
   
-            :de_DE => "Beginne deinen ersten Auftrag",
+            :de_DE => "Beginne deinen ersten Auftrag.",
                 
           },
           :flavour => {
@@ -12612,7 +12612,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>In der Taverne gibt es jede Menge Leute, die Aufträge zu vergeben haben. Betritt sie und beginne einen.</p>",
+            :de_DE => "<p>In der Taverne gibt es jede Menge Leute, die Aufträge zu vergeben haben. Betritt sie und beginne einen Auftrag.</p>",
   
             :en_US => "<p>The tavern is full of people giving out assignments. Go there and start doing one.</p>",
                 
@@ -12626,7 +12626,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Desto größer die Taverne wird, desto mehr Aufträge werden verfügbar. Schau regelmäßig rein um zu sehen, was es zu tun gibt.",
+            :de_DE => "Je größer die Taverne wird, desto mehr Aufträge werden verfügbar. Schau regelmäßig rein um zu sehen, was es zu tun gibt.",
   
             :en_US => "The bigger the tavern becomes the more jobs you can do. Check it out regularly to see what's new.'",
                 
@@ -12674,21 +12674,21 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build the tavern",
+            :en_US => "Build the tavern.",
   
-            :de_DE => "Baue die Taverne",
+            :de_DE => "Baue die Taverne.",
                 
           },
           :flavour => {
             
-            :de_DE => "Ein Ort zum trinken? Ganz mein Geschmack",
+            :de_DE => "Ein Ort zum trinken? Ganz mein Geschmack.",
   
             :en_US => "Finally a place where i can have a pint in peace.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Jetzt wo deine Siedlung wächst und gedeiht brauchen deine Bewohner einen Ort an dem Sie ihre Zeit totschlagen können, wenn sie nicht gerade Arbeiten. Eine Taverne wäre da doch genau das Richtige.</p>",
+            :de_DE => "<p>Jetzt wo Deine Siedlung wächst und gedeiht brauchen Deine Bewohner einen Ort, um sich bei kühlen Getränekn von der harten Arbeit zu erholen. Eine Taverne wäre da doch genau das Richtige.</p>",
   
             :en_US => "<p>Now that our settlement has grown considerably people are wanting for a place to relax. I suppose a tavern of some sort would do the trick, after all who can refuse a cold beer?</p>",
                 
@@ -12787,7 +12787,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Das Feuer ist ja schön und gut, aber doch ein bisschen zu mikrig, als dass man es anderen Halbgöttern präsentieren könnte denkst Du nicht?",
+            :de_DE => "Das Lagerfeuer brennt. Aber mal ehrlich, was sollen denn die anderen Halbgöttern von so einem kleinen Feuer halten?",
   
             :en_US => "This fire is nice and all, but not nearly big enough, dont you think?
       ",
@@ -12809,7 +12809,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Ab jetzt kannst Du eigene Allianzen gründen und andere Spieler um die versammeln. Versuche andere Spieler und deine Freunde dazu zu bringen sich die anzuschließen.",
+            :de_DE => "Ab jetzt kannst Du eine eigene Allianzen gründen. Lade Deine Freunde und benachbarte Spieler in Deine Allianz ein.",
   
             :en_US => "From now on you can found your own alliance. Try getting other players and your friends to join you.",
                 
@@ -12903,12 +12903,12 @@ class Tutorial::Tutorial
             
             :de_DE => "Jetzt wirds langsam!",
   
-            :en_US => "If we keep up like this we're gona go places. ",
+            :en_US => "If we keep up like this we're gona go places.",
                 
           },
           :reward_text => {
             
-            :de_DE => "Desto mehr Mitglieder ihr in eurer Allianz habt, desto größer kann euer Einfluss werden und desto mehr könnt ihr Einander unterstützen.",
+            :de_DE => "Desto mehr Mitglieder ihr in eurer Allianz habt, desto größer kann euer Einfluss werden und desto mehr könnt ihr einander unterstützen.",
   
             :en_US => "The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.",
                 
