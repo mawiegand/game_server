@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="36" />
+    <Version major="0" minor="3" build="37" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -179,8 +179,8 @@
       <Flavor locale="de_DE">Du kannst Dir übrigens jederzeit die laufenden Quests in der Quest-Übersicht anschauen.</Flavor>
       <Flavor locale="en_US">You can also see all your current quests at any time by using the quest overview.</Flavor>
       <RewardText locale="de_DE">Schaue regelmäßig in die Questübersicht, dann verlierst Du nie den Überblick.</RewardText>
-      <RewardText locale="en_US">Take a look at the quest overview regularly, then you won't lose track of them.  </RewardText>
-      <RewardFlavor locale="de_DE">Klasse, jetzt hast Du alle Quests auf einen Blick. </RewardFlavor>
+      <RewardText locale="en_US">Take a look at the quest overview regularly, then you won't lose track of them.</RewardText>
+      <RewardFlavor locale="de_DE">Klasse, jetzt hast Du alle Quests auf einen Blick.</RewardFlavor>
       <RewardFlavor locale="en_US">Great – now you can see all your quests at a glance.</RewardFlavor>
       <Rewards>
         <ExperienceReward>50</ExperienceReward>
@@ -207,7 +207,7 @@
       </Flavor>
       <Flavor locale="en_US">We've gone through so much together already, but I still don't know who you are! What's your name?
       </Flavor>
-      <RewardText locale="de_DE">Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen. </RewardText>
+      <RewardText locale="de_DE">Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen.</RewardText>
       <RewardText locale="en_US">In your profile you can see your progress and make other changes.</RewardText>
       <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spaß miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US">Thanks. I think we're going to have loads of fun together!</RewardFlavor>
@@ -237,7 +237,7 @@
       </Description>
       <Flavor locale="de_DE">Du kannst ein Ausbildungsgelände bauen, machst es aber nicht? Bau sofort eins und ich gebe Dir etwas aus meiner Schatzkiste.
       </Flavor>
-      <Flavor locale="en_US">You can build a Training Grounds but you're not doing it? If you build one now, I´ll give you something from my treasure chest...
+      <Flavor locale="en_US">You can build a Training Grounds but you're not doing it? If you build one now, I´ll give you something from my treasure chest.
       </Flavor>
       <RewardText locale="de_DE">Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Nahkampfeinheiten.</RewardText>
       <RewardText locale="en_US">Having a Training Grounds speeds up the time it takes to recruit melee fighters.
@@ -365,10 +365,10 @@
         <p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen von Spielern zu kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügend Kampfstärke erfolgen.</p>
       </Description>
       <Description locale="en_US">
-        <p>Select your army, click on Move, and then on the destination you want to go to. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players can only be made if the other player agrees or if you have enough fighting strenght. </p>
+        <p>Select your army, click on Move, and then on the destination you want to go to. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players can only be made if the other player agrees or if you have enough fighting strenght.</p>
       </Description>
       <Flavor locale="de_DE">Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten.</Flavor>
-      <Flavor locale="en_US">An army can do more than just stand around, you know. It´s there to destroy the enemies of the tribe! </Flavor>
+      <Flavor locale="en_US">An army can do more than just stand around, you know. It´s there to destroy the enemies of the tribe!</Flavor>
       <RewardText locale="de_DE">Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Deine Armeen generieren alle 3 Stunden einen Aktionspunkt.</RewardText>
       <RewardText locale="en_US">Below your army you'll see your available action points. Movements and attacks cost one action point and your army regenerates one action point every three hours.</RewardText>
       <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja.</RewardFlavor>
@@ -408,7 +408,7 @@
           <p></p>
           <p>Weitere Siedlungen kannst Du auf zwei Arten erhalten.</p>
           <p>Lagerstätten kannst Du mit Hilfe eines Kleinen Häuptlings gründen. Bestehenden Lagerstätten und Festungen kannst Du auch von anderen Spielern klauen.</p>
-          <p>Weitere Info's erhälst du hier:<a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='blank'>Zweite Siedlung</a></p>
+          <p>Weitere Info's erhälst Du hier:<a href='https://ios.wack-a-doo.com/de/encyclopedia/settlement' target='blank'>Zweite Siedlung</a></p>
           <p></p>
           <p>In Wack-A-Doo gibt es mit Nahkämpfern, Fernkämpfern und Berittenen Einheiten drei verschiedene Einheiten-Typen zur Verfügung. Zu Beginn stehen Dir nur Nahkämpfer zur Verfügung, doch im späteren Spielverlauf kannst Du auch Fernkämpfer und Berittene Einheiten rekrutieren.</p>
         ]]></Body>
@@ -589,7 +589,7 @@
       <RewardText locale="de_DE">Erhöhe Deine Rohstoffproduktion durch den Bau neuer Jäger und Sammler.</RewardText>
       <RewardText locale="en_US">Boost your raw materials production by building a new Hunter Gatherer.</RewardText>
       <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
-      <RewardFlavor locale="en_US">Isn't it great how much your settlement is growing? I've even managed to persuade the boss to give you something from his huge store of resources...</RewardFlavor>
+      <RewardFlavor locale="en_US">Isn't it great how much your settlement is growing? I've even managed to persuade the boss to give you something from his huge store of resources.</RewardFlavor>
       <Requirement quest="quest_queue_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>
@@ -644,7 +644,7 @@
       <Task>Assemble an army.</Task>
       <Task locale="de_DE">Stelle eine Armee auf.</Task>
       <Description locale="de_DE">
-        <p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Reinforce' Knopf.</p>
+        <p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Verstärken' Knopf.</p>
         <p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Du kannst die Krieger in die Armee bewegen.</p>
         <p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
       </Description>
@@ -758,7 +758,7 @@
       <RewardText locale="de_DE">Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.</RewardText>
       <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
       <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
-      <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far. </RewardFlavor>
+      <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl2" />
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
@@ -776,7 +776,7 @@
       <Task>Increase the resource production of one settlement to 50 resource points.</Task>
       <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 50 Rohstoffpunkte.</Task>
       <Description locale="de_DE">
-        <p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. </p>
+        <p>Weitere Jäger und Sammler helfen Dir dabei. Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
       </Description>
       <Description locale="en_US">
         <p>Having more Hunter Gatherers would be helpful right now. Stone, wood and fur are all worth one resource point.</p>
@@ -1082,7 +1082,7 @@
         <p>You need good fur production if you want to recruit an impressive army.</p>
       </Description>
       <Flavor locale="de_DE">Chef will die Felle für die Armee Rekrutierung, aber für mich fällt doch bestimmt auch was schönes ab, oder?</Flavor>
-      <Flavor locale="en_US">The chief wants an army, but I'd just like some nice new clothes...</Flavor>
+      <Flavor locale="en_US">The chief wants an army, but I'd just like some nice new clothes.</Flavor>
       <RewardText locale="de_DE">Steigere Deine Fellproduktion laufend weiter. Mit dem Besitz von Festungen oder Lagerstätten steigen auch Deine Kosten für die Verteidigung.</RewardText>
       <RewardText locale="en_US">Increase your fur production so that you can defend your settlements with more armies.</RewardText>
       <RewardFlavor locale="de_DE">Schön, jetzt kannst Du Chef mit dem Bau einer Armee erfreuen. Und mir was nettes schenken.</RewardFlavor>
@@ -1102,7 +1102,7 @@
     <!-- 31 -->
     <Quest id="quest_build_chiefcottagelvl9" advisor="girl">
       <Name>Upgrade of the chieftan's hut</Name>
-      <Name locale="de_DE">Häuptlingshütte Level 9.</Name>
+      <Name locale="de_DE">Häuptlingshütte Level 9</Name>
       <Task>Upgrade of the chieftan's hut to level 9.</Task>
       <Task locale="de_DE">Erweitere die Häuptlingshütte auf Level 9.</Task>
       <Description locale="de_DE">
@@ -1147,8 +1147,8 @@
       <Flavor locale="en_US">What? Only one settlement? You've got to spread out a bit. Start another settlement, and quick! Then I might find something lying around that I could let you have.</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"></RewardText>
-      <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen. Dein Anblick macht mich krank. </RewardFlavor>
-      <RewardFlavor locale="en_US">You've started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost. I'm sick of the sight of you.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen.</RewardFlavor>
+      <RewardFlavor locale="en_US">You've started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost.</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl9" />
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>
@@ -1445,7 +1445,7 @@
       <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
-      <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it. </RewardFlavor>
+      <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Requirement quest="quest_charkills_5" />
       <Rewards>
         <ResourceReward resource="resource_stone">2500</ResourceReward>
@@ -2215,8 +2215,8 @@
     <Quest id="quest_armyXP_11" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
-      <Task>FFight with an army until it has 22,500 Army Experience points.</Task>
-      <Task locale="de_DE">Kämpfe bis Du 22.500 Armee Erfahrung erlangst..</Task>
+      <Task>Fight with an army until it has 22,500 Army Experience points.</Task>
+      <Task locale="de_DE">Kämpfe bis Du 22.500 Armee Erfahrung erlangst.</Task>
       <Description locale="de_DE">
         <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
       </Description>
@@ -2335,7 +2335,7 @@
     <Quest id="quest_armyXP_15" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
-      <Task>FFight with an army until it has 60,000 Army Experience points.</Task>
+      <Task>Fight with an army until it has 60,000 Army Experience points.</Task>
       <Task locale="de_DE">Kämpfe bis Du 60.000 Armee Erfahrung erlangst.</Task>
       <Description locale="de_DE">
         <p>Erfahrung bekommt die Armee, für jede Einheit, die sie verliert.</p>
@@ -2650,7 +2650,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_1" />
       <Rewards>
@@ -2680,7 +2680,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_2" />
       <Rewards>
@@ -2710,7 +2710,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_3" />
       <Rewards>
@@ -2740,7 +2740,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_4" />
       <Rewards>
@@ -2770,7 +2770,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_5" />
       <Rewards>
@@ -2800,7 +2800,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_6" />
       <Rewards>
@@ -2830,7 +2830,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_7" />
       <Rewards>
@@ -2860,7 +2860,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_8" />
       <Rewards>
@@ -2890,7 +2890,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_9" />
       <Rewards>
@@ -2920,7 +2920,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_10" />
       <Rewards>
@@ -2950,7 +2950,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_11" />
       <Rewards>
@@ -2980,7 +2980,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_12" />
       <Rewards>
@@ -3010,7 +3010,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_13" />
       <Rewards>
@@ -3040,7 +3040,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_14" />
       <Rewards>
@@ -3070,7 +3070,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_15" />
       <Rewards>
@@ -3100,7 +3100,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_16" />
       <Rewards>
@@ -3130,7 +3130,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_17" />
       <Rewards>
@@ -3160,7 +3160,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_18" />
       <Rewards>
@@ -3190,7 +3190,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_19" />
       <Rewards>
@@ -3220,7 +3220,7 @@
       <Flavor locale="en_US">Your tribe has definitely grown, but it's still not big enough. Look at the other tribes. They are way bigger! You need to fix this by building up your population.</Flavor>
       <RewardText locale="de_DE">Die Rangliste ist standardmäßig nach Bewohnern sortiert.</RewardText>
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
-      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
+      <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Requirement quest="quest_score_20" />
       <Rewards>
@@ -3280,7 +3280,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3340,7 +3340,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3370,7 +3370,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3400,7 +3400,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3430,7 +3430,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3460,7 +3460,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3490,7 +3490,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3520,7 +3520,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3550,7 +3550,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3580,7 +3580,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3610,7 +3610,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3640,7 +3640,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3670,7 +3670,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3700,7 +3700,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3730,7 +3730,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3760,7 +3760,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3790,7 +3790,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3820,7 +3820,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3850,7 +3850,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3880,7 +3880,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -3910,7 +3910,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandelt. 15% müssen nicht sein.</RewardText>
+      <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
       <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -4327,7 +4327,7 @@
      <p>You need more ressources to get any progress. Kepp on building quarrys and logger.</p>
      </Description>
      <Flavor locale="de_DE">Um Deine Rohstoffproduktion zu unterstützen, baue je zwei Steinbrüche und Holzfäller auf Level 3 aus.</Flavor>
-     <Flavor locale="en_US">To bolster your raw materials production, upgrade two quarries and two logging camps to level 3 </Flavor>
+     <Flavor locale="en_US">To bolster your raw materials production, upgrade two quarries and two logging camps to level 3.</Flavor>
      <RewardText locale="de_DE">Wow, guck mal wie viel Rohstoffe Du produzierst. Ist ja cool.</RewardText>
      <RewardText locale="en_US">Wow – look at your raw materials production. That's massive!</RewardText>
      <RewardFlavor locale="de_DE">Die Steinbrüche und Holzfäller ergänzen sich in den Kosten. Baue sie abwechselnd.</RewardFlavor>
@@ -4605,8 +4605,8 @@
      <Flavor locale="en_US">Why not do your Hunter Gatherer a favour and enlarge his compound. If you upgrade it, it'll be so big he'll never get bored again!</Flavor>
      <RewardText locale="de_DE">Jäger und Sammler bauen ist immer eine gute Idee.</RewardText>
      <RewardText locale="en_US">Building a Hunter Gatherer is always a good idea.</RewardText>
-     <RewardFlavor locale="de_DE">Ach wie schön. Der Jäger und Sammler hat jetzt immer etwas zu tun..</RewardFlavor>
-     <RewardFlavor locale="en_US">Oh how nice! Now, the Hunter Gatherer has always got something to do…</RewardFlavor>
+     <RewardFlavor locale="de_DE">Ach wie schön. Der Jäger und Sammler hat jetzt immer etwas zu tun.</RewardFlavor>
+     <RewardFlavor locale="en_US">Oh how nice! Now, the Hunter Gatherer has always got something to do.</RewardFlavor>
      <Rewards>
      <ResourceReward resource="resource_stone">600</ResourceReward>
      <ResourceReward resource="resource_wood">600</ResourceReward>
@@ -4774,15 +4774,15 @@
       <Task>Fight for the first time!</Task>
       <Task locale="de_DE">Kämpfe Deinen ersten Kampf!</Task>
       <Description locale="de_DE">
-        <p>Während deine Armee unterwegs ist haben sich die hinterhältigen Neandertaler vor Deiner Siedlung versammelt. Dem muss Einhalt geboten werden. Führe Deine Garnison aus deiner Siedlung heraus in die Schlacht und zerschmettere sie. Wähle hierzu zunächst Deine Siedlung aus. Drücke jetzt den Angriffsknopf und wähle dann die Neandertaler aus um den Angriff zu starten.</p>
+        <p>Während deine Armee unterwegs ist haben sich die hinterhältigen Neandertaler vor Deiner Siedlung versammelt. Führe Deine Garnison aus deiner Siedlung heraus in die Schlacht und zerschmettere sie. Wähle hierzu zunächst Deine Siedlung aus. Drücke jetzt den Angriffsknopf und wähle dann die Neandertaler aus, um den Angriff zu starten.</p>
       </Description>
       <Description locale="en_US">
         <p>A bunch of ferocious neanderthals has gathered outside your settlement while your army is out in the field. We have to stop them. Lead our garrison out to battle and smash them to bits! To do so, first select your settlement. Then press the attack button and select the neandertals to beginn the attack.</p></Description>
       <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
       <Flavor locale="en_US">Those neanderthals sure are cruising for a bruising. </Flavor>
-      <RewardText locale="de_DE">Auf die Selbe Art greifst du auch mit Armeen an. Armeen, die auf der Seite von Siedlungen oder Festungen kämpfen erhalten einen Kampfbonus. Während ein Kampf läuft können beliebig viele Armeen auf beiden Seiten dazukommen.</RewardText>
+      <RewardText locale="de_DE">Auf die selbe Art greifst Du auch mit Armeen an. Armeen, die auf der Seite von Siedlungen oder Festungen kämpfen erhalten einen Kampfbonus. Während ein Kampf läuft können beliebig viele Armeen auf beiden Seiten dazukommen.</RewardText>
       <RewardText locale="en_US">You attack the same way with armies. Armies fighting on the same side as settlements or fortresses get a boost. While a battle is going on armies can join it on either side. </RewardText>
-      <RewardFlavor locale="de_DE">Der Kampf wird noch eine Weile toben aber wir werden mit sicherheit Siegen! Vielleicht kehrt unsere Armee auch zurück und kommt uns zur Unterstützung.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Der Kampf wird noch eine Weile toben, aber wir werden mit Sicherheit Siegen! Vielleicht kehrt unsere Armee auch zurück und kommt uns zur Unterstützung.</RewardFlavor>
       <RewardFlavor locale="en_US">The battle is gona keep going for a while but we will surely win! Especially if the army returns and supports us.</RewardFlavor>
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>
@@ -4970,17 +4970,17 @@
     <Quest id="quest_assignment1" advisor="warrior" tutorial="true">
       <Name>First Assignment</Name>
       <Name locale="de_DE">Der erste Auftrag</Name>
-      <Task>Start your first Assignment</Task>
-      <Task locale="de_DE">Beginne deinen ersten Auftrag</Task>
+      <Task>Start your first Assignment.</Task>
+      <Task locale="de_DE">Beginne deinen ersten Auftrag.</Task>
       <Description locale="de_DE">
-        <p>In der Taverne gibt es jede Menge Leute, die Aufträge zu vergeben haben. Betritt sie und beginne einen.</p>
+        <p>In der Taverne gibt es jede Menge Leute, die Aufträge zu vergeben haben. Betritt sie und beginne einen Auftrag.</p>
       </Description>
       <Description locale="en_US">
         <p>The tavern is full of people giving out assignments. Go there and start doing one.</p>
       </Description>
       <Flavor locale="de_DE">Krempel die ärmel hoch, wir haben Arbeit zu verrichten.</Flavor>
       <Flavor locale="en_US">Pull up those sleeves, looks like we got work to do.</Flavor>
-      <RewardText locale="de_DE">Desto größer die Taverne wird, desto mehr Aufträge werden verfügbar. Schau regelmäßig rein um zu sehen, was es zu tun gibt.</RewardText>
+      <RewardText locale="de_DE">Je größer die Taverne wird, desto mehr Aufträge werden verfügbar. Schau regelmäßig rein um zu sehen, was es zu tun gibt.</RewardText>
       <RewardText locale="en_US">The bigger the tavern becomes the more jobs you can do. Check it out regularly to see what's new.'</RewardText>
       <RewardFlavor locale="de_DE">Nach einem Auftrag gibt es doch nichts besseres als ein kühles Bier.</RewardFlavor>
       <RewardFlavor locale="en_US">After we finish that assignment, let's go back to the tavern for a drink.</RewardFlavor>
@@ -4999,15 +4999,15 @@
     <Quest id="quest_build_tavern" advisor="warrior" tutorial="true">
       <Name>The Tavern</Name>
       <Name locale="de_DE">Die Taverne</Name>
-      <Task>Build the tavern</Task>
-      <Task locale="de_DE">Baue die Taverne</Task>
+      <Task>Build the tavern.</Task>
+      <Task locale="de_DE">Baue die Taverne.</Task>
       <Description locale="de_DE">
-        <p>Jetzt wo deine Siedlung wächst und gedeiht brauchen deine Bewohner einen Ort an dem Sie ihre Zeit totschlagen können, wenn sie nicht gerade Arbeiten. Eine Taverne wäre da doch genau das Richtige.</p>
+        <p>Jetzt wo Deine Siedlung wächst und gedeiht brauchen Deine Bewohner einen Ort, um sich bei kühlen Getränekn von der harten Arbeit zu erholen. Eine Taverne wäre da doch genau das Richtige.</p>
       </Description>
       <Description locale="en_US">
         <p>Now that our settlement has grown considerably people are wanting for a place to relax. I suppose a tavern of some sort would do the trick, after all who can refuse a cold beer?</p>
       </Description>
-      <Flavor locale="de_DE">Ein Ort zum trinken? Ganz mein Geschmack</Flavor>
+      <Flavor locale="de_DE">Ein Ort zum trinken? Ganz mein Geschmack.</Flavor>
       <Flavor locale="en_US">Finally a place where i can have a pint in peace.</Flavor>
       <RewardText locale="de_DE">In der Taverne werden viele Aufträge vergeben. Schau doch einfach ab und zu rein.</RewardText>
       <RewardText locale="en_US">There are many people looking for favors in the tavern. Maybe you can get something out of that.</RewardText>
@@ -5028,8 +5028,6 @@
       <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
-
-
     <Quest id="quest_build_1campfirelvl2" advisor="chef" tutorial="false">
       <Name>A bigger campfire</Name>
       <Name locale="de_DE">Ein größeres Lagerfeuer</Name>
@@ -5041,10 +5039,10 @@
       <Description locale="en_US">
         <p>Upgrade your campfire to unlock more alliance options.</p>
       </Description>
-      <Flavor locale="de_DE">Das Feuer ist ja schön und gut, aber doch ein bisschen zu mikrig, als dass man es anderen Halbgöttern präsentieren könnte denkst Du nicht?</Flavor>
+      <Flavor locale="de_DE">Das Lagerfeuer brennt. Aber mal ehrlich, was sollen denn die anderen Halbgöttern von so einem kleinen Feuer halten?</Flavor>
       <Flavor locale="en_US">This fire is nice and all, but not nearly big enough, dont you think?
       </Flavor>
-      <RewardText locale="de_DE">Ab jetzt kannst Du eigene Allianzen gründen und andere Spieler um die versammeln. Versuche andere Spieler und deine Freunde dazu zu bringen sich die anzuschließen.</RewardText>
+      <RewardText locale="de_DE">Ab jetzt kannst Du eine eigene Allianzen gründen. Lade Deine Freunde und benachbarte Spieler in Deine Allianz ein.</RewardText>
       <RewardText locale="en_US">From now on you can found your own alliance. Try getting other players and your friends to join you.</RewardText>
       <RewardFlavor locale="de_DE">Schau nur wie es lodert, das nenn ich mal ein Feuer.</RewardFlavor>
       <RewardFlavor locale="en_US">Now thats what I call a fire!</RewardFlavor>
@@ -5057,9 +5055,7 @@
       <RewardTests>
         <BuildingTest building="building_campfire" min_level="2" />
       </RewardTests>
-
     </Quest>
-
 
     <Quest id="quest_alliance_members" advisor="chef">
       <Name>Alliance Members</Name>
@@ -5074,10 +5070,10 @@
       </Description>
       <Flavor locale="de_DE">Schöne Allianz hast Du da, aber größer könnte sie schon noch werden, nicht?</Flavor>
       <Flavor locale="en_US">Nice alliance you have there but it could be a little bigger, dont you think?</Flavor>
-      <RewardText locale="de_DE">Desto mehr Mitglieder ihr in eurer Allianz habt, desto größer kann euer Einfluss werden und desto mehr könnt ihr Einander unterstützen.</RewardText>
+      <RewardText locale="de_DE">Desto mehr Mitglieder ihr in eurer Allianz habt, desto größer kann euer Einfluss werden und desto mehr könnt ihr einander unterstützen.</RewardText>
       <RewardText locale="en_US">The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.</RewardText>
       <RewardFlavor locale="de_DE">Jetzt wirds langsam!</RewardFlavor>
-      <RewardFlavor locale="en_US">If we keep up like this we're gona go places. </RewardFlavor>
+      <RewardFlavor locale="en_US">If we keep up like this we're gona go places.</RewardFlavor>
       <Requirement quest="quest_alliance" />
       <Rewards>
         <UnitReward unit="unit_clubbers">10</UnitReward>

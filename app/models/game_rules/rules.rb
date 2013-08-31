@@ -381,7 +381,7 @@ class GameRules::Rules
             :num_chars => 1,
             :name      => {
               
-            :en_US => "Chain",
+            :en_US => "Necklace",
   
             :de_DE => "Kette",
   
@@ -446,7 +446,7 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "Beards",
+            :en_US => "Beard",
   
             :de_DE => "Bart",
   
@@ -489,7 +489,7 @@ class GameRules::Rules
             :num_chars => 1,
             :name      => {
               
-            :en_US => "Chain",
+            :en_US => "Necklace",
   
             :de_DE => "Kette",
   
