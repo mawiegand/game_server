@@ -574,15 +574,15 @@
 
     <!-- 15 --> <!-- Tutorial 15 -->
     <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true" blocking="true">
-      <Name>The chieftan's hut again</Name>
-      <Name locale="de_DE">Und wieder die Häuptlingshütte</Name>
-      <Task>Upgrade your chieftan's hut to level 4.</Task>
-      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
+      <Name>Finish upgrade</Name>
+      <Name locale="de_DE">Ausbau beenden</Name>
+      <Task>Finish the upgrade of the chieftan's hut.</Task>
+      <Task locale="de_DE">Beende den Ausbau der Häuptlingshütte.</Task>
       <Description locale="de_DE">
         <p>Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</p>
       </Description>
       <Description locale="en_US">
-        <p>Use these Golden Frogs to finish the upgrade right now! Press the button marked Hurry! to speed the building process up.</p>
+        <p>Use these Golden Frogs to finish the upgrade right now! Press the button marked 'Hurry!' to speed the building process up.</p>
       </Description>
       <Flavor locale="de_DE">Mit ein paar Kröten lässt sich so einiges bewirken.</Flavor>
       <Flavor locale="en_US">With a few golden frogs you can get quite a bit done.</Flavor>
@@ -607,8 +607,8 @@
     <Quest id="quest_queue_chiefcottagelvl4" advisor="girl" tutorial="true">
       <Name>And another chieftan's hut upgrade</Name>
       <Name locale="de_DE">Noch einmal die Häuptlingshütte</Name>
-      <Task>I think it's time for a bigger chieftan's hut. Why not order an upgrade?</Task>
-      <Task locale="de_DE">Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.</Task>
+      <Task>Upgrade your chieftan's hut to level 4.</Task>
+      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
       <Description locale="de_DE">
         <p>Erweitere Deine Häuptlingshütte um weitere Vorteile zu gewinnen.</p>
       </Description>
@@ -620,7 +620,7 @@
       <RewardText locale="de_DE">Das ist ein größeres Projekt, als wir es bisher hatten und dauert eine Weile.</RewardText>
       <RewardText locale="en_US">This is a bigger project than any of our previous work and it's going to take some time to complete.</RewardText>
       <RewardFlavor locale="de_DE">Jetzt muss es nur noch fertig werden.</RewardFlavor>
-      <RewardFlavor locale="en_US">NNow we've just got to finish it.</RewardFlavor>
+      <RewardFlavor locale="en_US">Now we've just got to finish it.</RewardFlavor>
       <Requirement quest="quest_assignment1" />
       <Rewards>
         <ResourceReward resource="resource_stone">165</ResourceReward>
@@ -1523,7 +1523,7 @@
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 32,650 units.</Task>
-      <Task locale="de_DE">Besiege 32650 Einheiten.</Task>
+      <Task locale="de_DE">Besiege 32.650 Einheiten.</Task>
       <Description locale="de_DE">
         <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
       </Description>
@@ -1553,7 +1553,7 @@
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 40,250 units.</Task>
-      <Task locale="de_DE">Besiege 40250 Einheiten.</Task>
+      <Task locale="de_DE">Besiege 40.250 Einheiten.</Task>
       <Description locale="de_DE">
         <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
       </Description>
@@ -3870,7 +3870,7 @@
     <Quest id="quest_resourcescore_21" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 32,400 resource points after taxes.</Task>
+      <Task>Increase the resource production of one settlement to 29,300 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 29.300 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
@@ -3930,8 +3930,8 @@
     <Quest id="quest_resourcescore_23" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
-      <Task>Increase the resource production of one settlement to 32,400 reource points.</Task>
-      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 32.420 Rohstoffpunkte</Task>
+      <Task>Increase the resource production of one settlement to 35,420 reource points.</Task>
+      <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 35.420 Rohstoffpunkte</Task>
       <Description locale="de_DE">
         <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</p>
       </Description>

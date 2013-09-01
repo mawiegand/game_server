@@ -1646,16 +1646,16 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "The chieftan's hut again",
+            :en_US => "Finish upgrade",
   
-            :de_DE => "Und wieder die Häuptlingshütte",
+            :de_DE => "Ausbau beenden",
                 
           },
           :task => {
             
-            :en_US => "Upgrade your chieftan's hut to level 4.",
+            :en_US => "Finish the upgrade of the chieftan's hut.",
   
-            :de_DE => "Baue Deine Häuptlingshütte auf Level 4 aus.",
+            :de_DE => "Beende den Ausbau der Häuptlingshütte.",
                 
           },
           :flavour => {
@@ -1669,7 +1669,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</p>",
   
-            :en_US => "<p>Use these Golden Frogs to finish the upgrade right now! Press the button marked Hurry! to speed the building process up.</p>",
+            :en_US => "<p>Use these Golden Frogs to finish the upgrade right now! Press the button marked 'Hurry!' to speed the building process up.</p>",
                 
           },          
           :reward_flavour => {
@@ -1757,9 +1757,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "I think it's time for a bigger chieftan's hut. Why not order an upgrade?",
+            :en_US => "Upgrade your chieftan's hut to level 4.",
   
-            :de_DE => "Ich denke, es ist mal wieder Zeit für eine größere Häuptlingshütte. Gib doch bitte den Ausbau in Auftrag.",
+            :de_DE => "Baue Deine Häuptlingshütte auf Level 4 aus.",
                 
           },
           :flavour => {
@@ -1780,7 +1780,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Jetzt muss es nur noch fertig werden.",
   
-            :en_US => "NNow we've just got to finish it.",
+            :en_US => "Now we've just got to finish it.",
                 
           },
           :reward_text => {
@@ -4714,7 +4714,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 32,650 units.",
   
-            :de_DE => "Besiege 32650 Einheiten.",
+            :de_DE => "Besiege 32.650 Einheiten.",
                 
           },
           :flavour => {
@@ -4809,7 +4809,7 @@ class Tutorial::Tutorial
             
             :en_US => "Defeat 40,250 units.",
   
-            :de_DE => "Besiege 40250 Einheiten.",
+            :de_DE => "Besiege 40.250 Einheiten.",
                 
           },
           :flavour => {
@@ -12122,7 +12122,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 32,400 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 29,300 resource points after taxes.",
   
             :de_DE => "Steigere die Produktion einer Siedlung auf 29.300 Rohstoffpunkte nach Steuern.",
                 
@@ -12312,9 +12312,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 32,400 reource points.",
+            :en_US => "Increase the resource production of one settlement to 35,420 reource points.",
   
-            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 32.420 Rohstoffpunkte",
+            :de_DE => "Steigere die Rohstoffproduktion einer Siedlung auf 35.420 Rohstoffpunkte",
                 
           },
           :flavour => {
