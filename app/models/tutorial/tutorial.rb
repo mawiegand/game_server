@@ -2105,28 +2105,28 @@ class Tutorial::Tutorial
             
             :en_US => "Alliance",
   
-            :de_DE => "Allianzen",
+            :de_DE => "Allianz",
                 
           },
           :task => {
             
-            :en_US => "Enter an alliance, or start your own.",
+            :en_US => "Enter an alliance, or start your own alliance.",
   
-            :de_DE => "Tritt einer Allianz bei oder gründe Deine eigene.",
+            :de_DE => "Tritt einer Allianz bei oder gründe Deine eigene Allianz.",
                 
           },
           :flavour => {
             
-            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden. Du solltest in einer Allianz sein, da hilft man sich gegenseitig.",
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
   
             :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p><p>Eine eigene Allianz kannst Du mit Lagerfeuer Level 2 gründen.</p>",
+            :de_DE => "<p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory. If you think you're ready for it, why not enter an alliance? You can only start your own alliance once you've reached campfire Level 2.</p><p>You can only start your own alliance once you've reached campfire level 2. </p>",
+            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
                 
           },          
           :reward_flavour => {
