@@ -687,8 +687,8 @@
       <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
       <Flavor locale="en_US">Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think?
       </Flavor>
-      <RewardText locale="de_DE">Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen</RewardText>
-      <RewardText locale="en_US">Try to contact your neighbors and form an alliance with them</RewardText>
+      <RewardText locale="de_DE">Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen eine Allianz aufzubauen.</RewardText>
+      <RewardText locale="en_US">Try to contact your neighbors and form an alliance with them.</RewardText>
       <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
       <Requirement quest="quest_build_1storagelvl1" />
@@ -4969,7 +4969,7 @@
       <Name>First Assignment</Name>
       <Name locale="de_DE">Der erste Auftrag</Name>
       <Task>Start your first Assignment.</Task>
-      <Task locale="de_DE">Beginne deinen ersten Auftrag.</Task>
+      <Task locale="de_DE">Beginne Deinen ersten Auftrag.</Task>
       <Description locale="de_DE">
         <p>In der Taverne gibt es jede Menge Leute, die Aufträge zu vergeben haben. Betritt sie und beginne einen Auftrag.</p>
       </Description>

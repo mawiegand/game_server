@@ -1993,9 +1993,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen",
+            :de_DE => "Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen eine Allianz aufzubauen.",
   
-            :en_US => "Try to contact your neighbors and form an alliance with them",
+            :en_US => "Try to contact your neighbors and form an alliance with them.",
                 
           },
 
@@ -12600,7 +12600,7 @@ class Tutorial::Tutorial
             
             :en_US => "Start your first Assignment.",
   
-            :de_DE => "Beginne deinen ersten Auftrag.",
+            :de_DE => "Beginne Deinen ersten Auftrag.",
                 
           },
           :flavour => {
