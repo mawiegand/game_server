@@ -4,7 +4,7 @@
 <ArtifactTypes>
   <Artifact id="artifact_0">
     <Name lang="de_DE">Abrissbirne</Name>
-    <Name lang="en_US">Demolition ball</Name>
+    <Name lang="en_US">Demolition Ball</Name>
     <Description lang="de_DE">
       <p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf zur Tüftler-Werkstatt!'</p>
     </Description>
@@ -33,7 +33,7 @@
   </Artifact>
   <Artifact id="artifact_1">
     <Name lang="de_DE">Lochscheibe</Name>
-    <Name lang="en_US">Punched disc</Name>
+    <Name lang="en_US">Punched Disc</Name>
     <Description lang="de_DE">
       <p>Der hellste Augenblick im Leben von Hansi Haudrauf war der Ausruf 'Auf zur Tüftler-Werkstatt!' als er beim Kampf gegen die Neandertaler auf den unbekannten Lochstein stieß. Da der Lochstein zu schwer war wurde er kuzerhand zur Hauptsiedlung gerollt.</p>
     </Description>
@@ -62,7 +62,7 @@
   </Artifact>
   <Artifact id="artifact_2">
     <Name lang="de_DE">Wäscheleine</Name>
-    <Name lang="en_US">Clothing horse</Name>
+    <Name lang="en_US">Clothing Horse</Name>
     <Description lang="de_DE">
       <p>Im blutigen Kampf gegen die Neandertaler entdeckte Don Donnerschlag den großen Stil in einem Baumstumpf. Da ihm das Material der Verankerung im Baumstumpf nicht geheuer war, folgte schnell der Ausruf 'Auf zur Tüftler-Werkstatt!'.</p>
     </Description>
@@ -77,7 +77,7 @@
       </Description>
       <Description>
         <p>To be honest, they should have come up with this a lot earlier. But nevertheless, thanks to this new clothing horse furriers everywere began to work more efficiently.</p>
-        </Description>
+      </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
@@ -91,7 +91,7 @@
   </Artifact>
   <Artifact id="artifact_3">
     <Name lang="de_DE">Schwarzer Monolith</Name>
-    <Name lang="en_US">Black monolith</Name>
+    <Name lang="en_US">Black Monolith</Name>
     <Description lang="de_DE">
       <p>Der Kampf gegen die Neandertaler war kaum beendet, als Knochen-Kalle die Entdeckung seines Lebens machte. Ein schwarzer Monoilith war aber leider nichts was bei den Frauen besonders gut ankommt.</p>
     </Description>
@@ -105,14 +105,14 @@
         <p>Mit dem schwarzen Monolithen kamen die Tütfler aus der Werkstatt nicht wirklich weiter. Die Untersuchungen lehrten sie zwar eine Menge und von der Erfahrung profitierte ihr Stamm und ihre Allianz, aber was zählbares kam dabei nicht raus.</p>
       </Description>
       <Description>
-      <p>In all honesty, the Tinkers couldnt make any real use of the monolith. So they just put it there to remind themselves to work harder. Apparently that works and young Tinkers will tell you how they can feel their predecessors experience flowing into them when they look at it.</p>
+        <p>In all honesty, the Tinkers couldnt make any real use of the monolith. So they just put it there to remind themselves to work harder. Apparently that works and young Tinkers will tell you how they can feel their predecessors experience flowing into them when they look at it.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>0</ArtifactAmount>
+    <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>15*(MRANK+1)</ExperienceProduction>
     <Effects>
       <ProductionBonus id="resource_fur" domain="character">0.2</ProductionBonus>
@@ -143,6 +143,34 @@
       <InitiationTime shortenable="true">FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)</InitiationTime>
     </Initiation>
     <ArtifactAmount>5</ArtifactAmount>
+    <ExperienceProduction>MRANK</ExperienceProduction>
+    <Effects>
+    </Effects>
+  </Artifact>
+  <Artifact id="artifact_5">
+    <Name lang="de_DE">Steinzerbrösler</Name>
+    <Name lang="en_US">Stone Crumbler</Name>
+    <Description lang="de_DE">
+      <p>Beschreibung des Steinzerbröslers.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Description of Stone Crumbler</p>
+    </Description>
+    <Flavour lang="de_DE">Flavor</Flavour>
+    <Flavour lang="en_US">Flavor</Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Beschreibung des eingeweihten Steinzerbröslers.</p>
+      </Description>
+      <Description>
+        <p>Description of initiated Stone Crumbler</p>
+      </Description>
+      <InitiationCost id="resource_stone" round="true">250*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">250*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">250*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>2</ArtifactAmount>
     <ExperienceProduction>MRANK</ExperienceProduction>
     <Effects>
     </Effects>

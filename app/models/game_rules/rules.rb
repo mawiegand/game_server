@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.1.1
+# Version: 1.1.2
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -121,7 +121,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 1,
-                    :build => 1,
+                    :build => 2,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -181,7 +181,7 @@ class GameRules::Rules
         :test_min_duration => 3000,
         :test_max_duration => 4200,
       },
-      :artifact_count => 5,
+      :artifact_count => 6,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
 
@@ -7825,7 +7825,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Abrissbirne",
   
-            :en_US => "Demolition ball",
+            :en_US => "Demolition Ball",
                 
           },
           :description => {
@@ -7884,7 +7884,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Lochscheibe",
   
-            :en_US => "Punched disc",
+            :en_US => "Punched Disc",
                 
           },
           :description => {
@@ -7943,7 +7943,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Wäscheleine",
   
-            :en_US => "Clothing horse",
+            :en_US => "Clothing Horse",
                 
           },
           :description => {
@@ -8002,7 +8002,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Schwarzer Monolith",
   
-            :en_US => "Black monolith",
+            :en_US => "Black Monolith",
                 
           },
           :description => {
@@ -8020,7 +8020,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '0',
+          :amount      => '1',
 
           :experience_production => '15*(MRANK+1)',
 
@@ -8101,6 +8101,51 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :initiation_time => "FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)",
 
         },              #   END OF Dino-Osterei
+        {               #   Steinzerbrösler
+          :id          => 5, 
+          :symbolic_id => :artifact_5,
+          :name        => {
+            
+            :de_DE => "Steinzerbrösler",
+  
+            :en_US => "Stone Crumbler",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Beschreibung des Steinzerbröslers.</p>",
+  
+            :en_US => "<p>Description of Stone Crumbler</p>",
+  
+          },
+          :flavour => {
+            
+            :de_DE => "Flavor",
+  
+            :en_US => "Flavor",
+  
+          },
+
+          :amount      => '2',
+
+          :experience_production => 'MRANK',
+
+          :description_initiated => {
+
+            :de_DE => "<p>Beschreibung des eingeweihten Steinzerbröslers.</p>",
+  
+            :en_US => "<p>Description of initiated Stone Crumbler</p>",
+  
+          },
+          :initiation_costs => {
+            0 => '250*LEVEL',
+            1 => '250*LEVEL',
+            2 => '250*LEVEL',
+            
+          },
+          :initiation_time => "FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)",
+
+        },              #   END OF Steinzerbrösler
       ],                # END OF ARTIFACT TYPES
 
 # ## VICTORY TYPES ########################################################
