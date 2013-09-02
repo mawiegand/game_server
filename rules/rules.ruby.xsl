@@ -1160,6 +1160,16 @@ end
 </xsl:for-each>
           ],
 </xsl:if>
+<xsl:if test="count(Effects/ConstructionBonus)">
+          :production_bonus  => [
+<xsl:for-each select="Effects/ConstructionBonus">
+            {
+              :domain_id          => <xsl:value-of select="count(id(@domain)/preceding-sibling::*)"/>,
+              :bonus              => <xsl:apply-templates />,
+            },
+</xsl:for-each>
+          ],
+</xsl:if>
 <xsl:apply-templates select="Initiation" />
         },              #   END OF <xsl:value-of select="Name"/>
 </xsl:for-each>

@@ -204,7 +204,7 @@
   shortenable (true | false) "true"
 >
 
-<!ELEMENT Effects (ProductionBonus*, SpeedupQueue*)>
+<!ELEMENT Effects (ProductionBonus*, ConstructionBonus*)>
 
 <!ELEMENT Victory (Name+, Description+, ShortDescription*, Condition)>
 <!ATTLIST Victory 
@@ -605,7 +605,12 @@
 
 <!ELEMENT ProductionBonus (#PCDATA)>
 <!ATTLIST ProductionBonus
-	id IDREF #REQUIRED
+  id IDREF #REQUIRED
+  domain IDREF "character"
+>
+
+<!ELEMENT ConstructionBonus (#PCDATA)>
+<!ATTLIST ConstructionBonus
   domain IDREF "character"
 >
 

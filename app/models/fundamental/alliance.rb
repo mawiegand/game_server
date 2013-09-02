@@ -187,7 +187,7 @@ class Fundamental::Alliance < ActiveRecord::Base
     true      
   end
   
-  def add_effect_transaction(effect)
+  def add_resource_effect_transaction(effect)
     logger.debug "--------> add_effect_transaction ally" + effect.inspect
     ActiveRecord::Base.transaction(:requires_new => true) do
       self.lock!
@@ -203,7 +203,7 @@ class Fundamental::Alliance < ActiveRecord::Base
     end
   end
 
-  def remove_effect_transaction(effect)
+  def remove_resource_effect_transaction(effect)
     logger.debug "--------> remove_effect_transaction ally" + effect.inspect
     ActiveRecord::Base.transaction(:requires_new => true) do
       self.lock!

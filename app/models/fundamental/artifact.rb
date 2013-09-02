@@ -17,6 +17,9 @@ class Fundamental::Artifact < ActiveRecord::Base
   has_many   :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT]
   has_many   :alliance_resource_effects,  :class_name => "Effect::AllianceResourceEffect", :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::AllianceResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT]
 
+  has_many   :character_construction_effects, :class_name => "Effect::ConstructionEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ARTIFACT]
+  has_many   :alliance_construction_effects,  :class_name => "Effect::AllianceConstructionEffect", :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::AllianceConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ARTIFACT]
+
   before_save :update_region
 
   after_save :propagate_changes_to_character
@@ -176,6 +179,7 @@ class Fundamental::Artifact < ActiveRecord::Base
 
   def check_consistency
     check_resource_effects
+    check_construction_effects
   end
 
   def check_resource_effects
@@ -192,6 +196,24 @@ class Fundamental::Artifact < ActiveRecord::Base
     unless self.initiated?
       self.character_resource_effects.destroy_all
       self.alliance_resource_effects.destroy_all
+    end
+    true
+  end
+
+  def check_construction_effects
+    if self.initiated? && !self.owner.npc? && !self.artifact_type[:construction_bonus].nil?
+      self.artifact_type[:construction_bonus].each do |bonus|
+        if bonus[:domain_id] == 0 && self.character_construction_effects.empty?
+          add_character_construction_effect(self.owner.id, bonus)
+        elsif bonus[:domain_id] == 2 && !self.alliance.nil? && self.alliance_resource_effects.empty?
+          add_alliance_construction_effect(self.alliance.id, bonus)
+        end
+      end
+      # TODO remove unnecessary effects aswell
+    end
+    unless self.initiated?
+      self.character_construction_effects.destroy_all
+      self.alliance_construction_effects.destroy_all
     end
     true
   end
@@ -337,6 +359,36 @@ class Fundamental::Artifact < ActiveRecord::Base
       self.alliance_resource_effects.where('resource_id = ?', bonus[:resource_id]).destroy_all
     end
 
+
+    def add_character_construction_effect(owner_id, bonus)
+      return if owner_id.nil?
+      owner = Fundamental::Character.find_by_id(owner_id)
+      return if owner.npc?
+      owner.resource_pool.resource_effects.create({
+        type_id:      Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ARTIFACT,
+        bonus:        bonus[:bonus],
+        origin_id:    self.id,
+      }) unless owner.nil?
+    end
+
+    def remove_character_construction_effect
+      self.character_resource_effects.destroy_all
+    end
+
+    def add_alliance_construction_effect(alliance_id, bonus)
+      return if alliance_id.nil?
+      alliance = Fundamental::Alliance.find_by_id(alliance_id)
+      alliance.construction_effects.create({
+         type_id:      Effect::AllianceConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ARTIFACT,
+         bonus:        bonus[:bonus],
+         origin_id:    self.id,
+       }) unless alliance.nil?
+    end
+
+    def remove_alliance_construction_effect
+      self.alliance_resource_effects.destroy_all
+    end
+
     def propagate_effect_changes
       unless self.artifact_type[:production_bonus].nil?
         owner_change     = self.changes[:owner_id]
@@ -392,6 +444,64 @@ class Fundamental::Artifact < ActiveRecord::Base
             self.artifact_type[:production_bonus].each do |bonus|
               add_character_resource_effect(owner_id, bonus)    if bonus[:domain_id] == 0
               add_alliance_resource_effect(alliance_id, bonus)  if bonus[:domain_id] == 2
+            end
+          end
+        end
+      end
+      unless self.artifact_type[:construction_bonus].nil?
+        owner_change     = self.changes[:owner_id]
+        alliance_change  = self.changes[:alliance_id]
+
+        initiated_change = self.changes[:initiated]
+        initiated_before = initiated_change.nil? ? initiated : !initiated
+        initiated_after  = initiated
+
+        # if owner changed
+        unless owner_change.nil?
+          if initiated_before
+            # effekt beim alten user löschen
+            self.artifact_type[:construction_bonus].each do |bonus|
+              remove_character_construction_effect if bonus[:domain_id] == 0
+            end
+          end
+          if initiated_after
+            # effekt beim neuen user eintragen
+            self.artifact_type[:construction_bonus].each do |bonus|
+              add_character_construction_effect(owner_change[1], bonus) if bonus[:domain_id] == 0
+            end
+          end
+        end
+
+        # if alliance changed
+        unless alliance_change.nil?
+          if initiated_before
+            # effekt bei der alten allianz löschen
+            self.artifact_type[:construction_bonus].each do |bonus|
+              remove_alliance_construction_effect if bonus[:domain_id] == 2
+            end
+          end
+          if initiated_after
+            # effekt bei neuer allianz eintragen
+            self.artifact_type[:construction_bonus].each do |bonus|
+              add_alliance_construction_effect(alliance_change[1], bonus) if bonus[:domain_id] == 2
+            end
+          end
+        end
+
+        # if only the initiation state changed
+        if owner_change.nil? && alliance_change.nil? && !initiated_change.nil?
+          if initiated_before
+            # effekt beim aktuellen user_loeschen
+            self.artifact_type[:construction_bonus].each do |bonus|
+              remove_character_construction_effect if bonus[:domain_id] == 0
+              remove_alliance_construction_effect  if bonus[:domain_id] == 2
+            end
+          end
+          if initiated_after
+            # effekt beim aktuellen user eintragen
+            self.artifact_type[:construction_bonus].each do |bonus|
+              add_character_construction_effect(owner_id, bonus)    if bonus[:domain_id] == 0
+              add_alliance_construction_effect(alliance_id, bonus)  if bonus[:domain_id] == 2
             end
           end
         end

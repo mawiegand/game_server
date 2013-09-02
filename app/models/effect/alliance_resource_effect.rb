@@ -11,12 +11,12 @@ class Effect::AllianceResourceEffect < ActiveRecord::Base
 
   def propagate_effect_creation
     logger.debug "--------> propagate_effect_creation ally"
-    alliance.add_effect_transaction(self)
+    alliance.add_resource_effect_transaction(self)
   end
 
   def propagate_effect_removal
     logger.debug "--------> propagate_effect_removal ally"
-    alliance.remove_effect_transaction(self)
+    alliance.remove_resource_effect_transaction(self)
   end
 
 end

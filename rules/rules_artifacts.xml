@@ -173,6 +173,7 @@
     <ArtifactAmount>2</ArtifactAmount>
     <ExperienceProduction>MRANK</ExperienceProduction>
     <Effects>
+      <ConstructionBonus domain="alliance">1.0</ConstructionBonus>
     </Effects>
   </Artifact>
 </ArtifactTypes>

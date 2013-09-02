@@ -55,12 +55,12 @@ class Effect::ResourceEffect < ActiveRecord::Base
 
     def propagate_effect_creation
       logger.debug "--------> propagate_effect_creation pool"
-      self.resource_pool.add_effect_transaction(self)
+      self.resource_pool.add_resource_effect_transaction(self)
     end
 
     def propagate_effect_removal
       logger.debug "--------> propagate_effect_removal pool"
-      self.resource_pool.remove_effect_transaction(self)
+      self.resource_pool.remove_resource_effect_transaction(self)
     end
 
 end
