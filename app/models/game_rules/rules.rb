@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.1.0
+# Version: 1.1.1
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -121,7 +121,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 1,
-                    :build => 0,
+                    :build => 1,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -382,7 +382,7 @@ class GameRules::Rules
             :num_chars => 1,
             :name      => {
               
-            :en_US => "Chain",
+            :en_US => "Necklace",
   
             :de_DE => "Kette",
   
@@ -447,7 +447,7 @@ class GameRules::Rules
             :num_chars => 2,
             :name      => {
               
-            :en_US => "Beards",
+            :en_US => "Beard",
   
             :de_DE => "Bart",
   
@@ -490,7 +490,7 @@ class GameRules::Rules
             :num_chars => 1,
             :name      => {
               
-            :en_US => "Chain",
+            :en_US => "Necklace",
   
             :de_DE => "Kette",
   
@@ -8127,7 +8127,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :condition   => {
 
-            :required_regions_ratio => '1',
+            :required_regions_ratio => '1-(0.0135*(MAX(DAYS-120,0)))',
 
             :duration => 5,
           },
