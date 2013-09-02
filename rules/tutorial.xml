@@ -1166,7 +1166,7 @@
       <Task>Upgrade of the chieftan's hut to level 10.</Task>
       <Task locale="de_DE">Erweitere die Häuptlingshütte auf Level 10.</Task>
       <Description locale="de_DE">
-        <p>Mit Level 10 der Häuptlingshütte wirst Du alle 40 Bauplätze Deiner Hauptsiedlung freigeschaltet haben. </p>
+        <p>Mit Level 10 der Häuptlingshütte wirst Du alle 40 Bauplätze Deiner Hauptsiedlung freigeschaltet haben.</p>
       </Description>
       <Description locale="en_US">
         <p>When your chieftan's hut gets to Level 10, all 40 building slots will be unlocked.</p>
@@ -1174,9 +1174,9 @@
       <Flavor locale="de_DE">Jetzt hat Deine Hauptsiedlung die volle Größe!</Flavor>
       <Flavor locale="en_US">You've got all 40 building slots now. Great job!</Flavor>
       <RewardText locale="de_DE"><p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
-        <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p></RewardText>
+        <p>Auf Level 12 und 20 bekommst Du je einen weiteren Kommandopunkt für eine zusätzliche Armee.</p></RewardText>
       <RewardText locale="en_US"><p>The maximum level for a chieftan's hut is Level 20.  Each level increases the battle bonus you can get. At Level 12 you'll receive a command point for another army.</p>
-        <p>At Level 12 you will recieve another command point for another army.</p></RewardText>
+        <p>At Level 12 and 20 you will recieve another command point for another army.</p></RewardText>
       <RewardFlavor locale="de_DE">Das wurde wirklich Zeit! Jetzt hat Deine Hauptsiedlung die volle Größe!</RewardFlavor>
       <RewardFlavor locale="en_US">It´s about time! Now we have all the space we need!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl9" />
