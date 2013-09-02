@@ -1993,9 +1993,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen",
+            :de_DE => "Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen eine Allianz aufzubauen.",
   
-            :en_US => "Try to contact your neighbors and form an alliance with them",
+            :en_US => "Try to contact your neighbors and form an alliance with them.",
                 
           },
 
@@ -3540,7 +3540,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit Level 10 der Häuptlingshütte wirst Du alle 40 Bauplätze Deiner Hauptsiedlung freigeschaltet haben. </p>",
+            :de_DE => "<p>Mit Level 10 der Häuptlingshütte wirst Du alle 40 Bauplätze Deiner Hauptsiedlung freigeschaltet haben.</p>",
   
             :en_US => "<p>When your chieftan's hut gets to Level 10, all 40 building slots will be unlocked.</p>",
                 
@@ -3555,10 +3555,9 @@ class Tutorial::Tutorial
           :reward_text => {
             
             :de_DE => "<p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
-        <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
+        <p>Auf Level 12 und 20 bekommst Du je einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
   
-            :en_US => "<p>The maximum level for a chieftan's hut is Level 20.  Each level increases the battle bonus you can get. At Level 12 you'll receive a command point for another army.</p>
-        <p>At Level 12 you will recieve another command point for another army.</p>",
+            :en_US => "<p>The maximum level for a chieftan's hut is Level 20.  Each level increases the battle bonus you can get. At Level 12 and 20 you'll receive a command point for another army.</p>",
                 
           },
 
@@ -12600,7 +12599,7 @@ class Tutorial::Tutorial
             
             :en_US => "Start your first Assignment.",
   
-            :de_DE => "Beginne deinen ersten Auftrag.",
+            :de_DE => "Beginne Deinen ersten Auftrag.",
                 
           },
           :flavour => {
