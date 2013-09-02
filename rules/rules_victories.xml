@@ -8,7 +8,7 @@
     <Description lang="de_DE">Für einen Herrschaftssieg muss eine Allianz einen bestimmten Anteil aller Regionen der Karte beherrschen, d.h. die Festungen der Regionen müssen einem Allianzmitglied gehören.</Description>
     <Description lang="en_US">For a domination victory an alliance has to rule an certain proprtion of all regions, i.e. the fortress of this regions have to be owned by alliance members.</Description>
     <Condition duration="5">    
-      <RequiredRegionsRatio>1-(0.0135*(MAX(DAYS-120,0)))</RequiredRegionsRatio>
+      <RequiredRegionsRatio>1-(0.01*(MAX(DAYS-106,0)))</RequiredRegionsRatio>
     </Condition>
   </Victory>
   <Victory id="victory_artifact">
