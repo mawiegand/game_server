@@ -3557,8 +3557,7 @@ class Tutorial::Tutorial
             :de_DE => "<p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
         <p>Auf Level 12 und 20 bekommst Du je einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
   
-            :en_US => "<p>The maximum level for a chieftan's hut is Level 20.  Each level increases the battle bonus you can get. At Level 12 you'll receive a command point for another army.</p>
-        <p>At Level 12 and 20 you will recieve another command point for another army.</p>",
+            :en_US => "<p>The maximum level for a chieftan's hut is Level 20.  Each level increases the battle bonus you can get. At Level 12 and 20 you'll receive a command point for another army.</p>",
                 
           },
 
