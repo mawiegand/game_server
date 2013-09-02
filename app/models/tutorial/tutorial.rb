@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.37
+# Version: 0.3.38
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 37, 
+        :build => 38, 
       },
       
       :production_test_weights => {
@@ -591,7 +591,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [130, ],
+          :successor_quests => [130, 134, ],
 
           :rewards => {
             
@@ -12920,7 +12920,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [132, ],
 
           :rewards => {
             
@@ -12946,6 +12946,257 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_alliance_members
+        {               #   quest_alliance_members2
+          :id                => 132,
+          :symbolic_id       => :quest_alliance_members2,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Alliance Members",
+  
+            :de_DE => "Allianzmitglieder",
+                
+          },
+          :task => {
+            
+            :en_US => "Be a Member of an alliance with atleast 7 others.",
+  
+            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 8 Mitgliedern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Schöne Allianz hast Du da, aber größer könnte sie schon noch werden, nicht?",
+  
+            :en_US => "Nice alliance you have there but it could be a little bigger, dont you think?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Deine Allianz muss wachsen, wenn ihr euch in dieser grausamen Welt durchsetzten wollt. Sucht nach geeigneten Mitgliedern und nehmt sie bei euch auf, dann könnt ihr bald schon bei den Mächtigen mitmischen.</p>",
+  
+            :en_US => "<p>Your alliance needs to grow if you want to survive in this cruel world. Search for more members amongst your neighbours and friends and soon you may count yourselves amongst the powerfull.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Jetzt wirds langsam!",
+  
+            :en_US => "If we keep up like this we're gona go places.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Desto mehr Mitglieder ihr in eurer Allianz habt, desto größer kann euer Einfluss werden und desto mehr könnt ihr einander unterstützen.",
+  
+            :en_US => "The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_alliance_members',
+
+          },
+
+          :successor_quests => [133, ],
+
+          :rewards => {
+            
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers_2,
+                :amount => 20,
+              },
+
+            ],
+
+            :experience_reward => 850,
+
+          },          
+
+          :reward_tests => {
+            
+            :alliance_members_test => {
+              :min_count => 8,
+            },
+
+          },          
+
+        },              #   END OF quest_alliance_members2
+        {               #   quest_alliance_members3
+          :id                => 133,
+          :symbolic_id       => :quest_alliance_members3,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Alliance Members",
+  
+            :de_DE => "Allianzmitglieder",
+                
+          },
+          :task => {
+            
+            :en_US => "Be a Member of an alliance with atleast 12 others.",
+  
+            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 13 Mitgliedern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Schöne Allianz hast Du da, aber größer könnte sie schon noch werden, nicht?",
+  
+            :en_US => "Nice alliance you have there but it could be a little bigger, dont you think?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Deine Allianz muss wachsen, wenn ihr euch in dieser grausamen Welt durchsetzten wollt. Sucht nach geeigneten Mitgliedern und nehmt sie bei euch auf, dann könnt ihr bald schon bei den Mächtigen mitmischen.</p>",
+  
+            :en_US => "<p>Your alliance needs to grow if you want to survive in this cruel world. Search for more members amongst your neighbours and friends and soon you may count yourselves amongst the powerfull.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Jetzt wirds langsam!",
+  
+            :en_US => "If we keep up like this we're gona go places.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Desto mehr Mitglieder ihr in eurer Allianz habt, desto größer kann euer Einfluss werden und desto mehr könnt ihr einander unterstützen.",
+  
+            :en_US => "The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_alliance_members2',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubbers_3,
+                :amount => 30,
+              },
+
+            ],
+
+            :experience_reward => 1100,
+
+          },          
+
+          :reward_tests => {
+            
+            :alliance_members_test => {
+              :min_count => 13,
+            },
+
+          },          
+
+        },              #   END OF quest_alliance_members3
+        {               #   quest_crossplatform
+          :id                => 134,
+          :symbolic_id       => :quest_crossplatform,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Crossplatform",
+  
+            :de_DE => "Crossplatform",
+                
+          },
+          :task => {
+            
+            :en_US => "Log into the HTML client at www.wack-a-doo.com .",
+  
+            :de_DE => "Melde dich im HTML Spiel unter www.wack-a-doo.de an.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Crossplatform? Klingt nützlich.",
+  
+            :en_US => "Crossplatform? Sounds useful.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Wack-A-Doo kann nicht nur als App gespielt werden, Du kannst Dich auch über deinen Webbrowser im Spiel anmelden und dort das selbe Spiel spielen!</p>",
+  
+            :en_US => "<p>Wack-A-Doo is not only an App, you can also play the same game in your browser!</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Herzlich Willkommen im Browserspiel!",
+  
+            :en_US => "Welcome to the browser game!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wack-A-Doo im Browser funktioniert genauso wie die App, nur mit anderem Interface.",
+  
+            :en_US => "Wack-A-Doo in your browser works exactly the same as the App, just with a different interface..",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_profile',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 20,
+              },
+
+            ],
+
+            :experience_reward => 1500,
+
+          },          
+
+          :reward_tests => {
+            
+          },          
+
+        },              #   END OF quest_crossplatform
       ],                # END OF QUESTS
 
     )

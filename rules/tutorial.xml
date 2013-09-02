@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="37" />
+    <Version major="0" minor="3" build="38" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -5079,6 +5079,86 @@
       </Rewards>
       <RewardTests>
         <AllianceMembersTest min_count="4" />
+      </RewardTests>
+    </Quest>
+    
+    <Quest id="quest_alliance_members2" advisor="chef">
+      <Name>Alliance Members</Name>
+      <Name locale="de_DE">Allianzmitglieder</Name>
+      <Task>Be a Member of an alliance with atleast 7 others.</Task>
+      <Task locale="de_DE">Sei Mitglied in einer Allianz mit mindestens 8 Mitgliedern.</Task>
+      <Description locale="de_DE">
+        <p>Deine Allianz muss wachsen, wenn ihr euch in dieser grausamen Welt durchsetzten wollt. Sucht nach geeigneten Mitgliedern und nehmt sie bei euch auf, dann könnt ihr bald schon bei den Mächtigen mitmischen.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Your alliance needs to grow if you want to survive in this cruel world. Search for more members amongst your neighbours and friends and soon you may count yourselves amongst the powerfull.</p>
+      </Description>
+      <Flavor locale="de_DE">Schöne Allianz hast Du da, aber größer könnte sie schon noch werden, nicht?</Flavor>
+      <Flavor locale="en_US">Nice alliance you have there but it could be a little bigger, dont you think?</Flavor>
+      <RewardText locale="de_DE">Desto mehr Mitglieder ihr in eurer Allianz habt, desto größer kann euer Einfluss werden und desto mehr könnt ihr einander unterstützen.</RewardText>
+      <RewardText locale="en_US">The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.</RewardText>
+      <RewardFlavor locale="de_DE">Jetzt wirds langsam!</RewardFlavor>
+      <RewardFlavor locale="en_US">If we keep up like this we're gona go places.</RewardFlavor>
+      <Requirement quest="quest_alliance_members" />
+      <Rewards>
+        <UnitReward unit="unit_clubbers_2">20</UnitReward>
+        <ExperienceReward>850</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <AllianceMembersTest min_count="8" />
+      </RewardTests>
+    </Quest>
+    
+    <Quest id="quest_alliance_members3" advisor="chef">
+      <Name>Alliance Members</Name>
+      <Name locale="de_DE">Allianzmitglieder</Name>
+      <Task>Be a Member of an alliance with atleast 12 others.</Task>
+      <Task locale="de_DE">Sei Mitglied in einer Allianz mit mindestens 13 Mitgliedern.</Task>
+      <Description locale="de_DE">
+        <p>Deine Allianz muss wachsen, wenn ihr euch in dieser grausamen Welt durchsetzten wollt. Sucht nach geeigneten Mitgliedern und nehmt sie bei euch auf, dann könnt ihr bald schon bei den Mächtigen mitmischen.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Your alliance needs to grow if you want to survive in this cruel world. Search for more members amongst your neighbours and friends and soon you may count yourselves amongst the powerfull.</p>
+      </Description>
+      <Flavor locale="de_DE">Schöne Allianz hast Du da, aber größer könnte sie schon noch werden, nicht?</Flavor>
+      <Flavor locale="en_US">Nice alliance you have there but it could be a little bigger, dont you think?</Flavor>
+      <RewardText locale="de_DE">Desto mehr Mitglieder ihr in eurer Allianz habt, desto größer kann euer Einfluss werden und desto mehr könnt ihr einander unterstützen.</RewardText>
+      <RewardText locale="en_US">The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.</RewardText>
+      <RewardFlavor locale="de_DE">Jetzt wirds langsam!</RewardFlavor>
+      <RewardFlavor locale="en_US">If we keep up like this we're gona go places.</RewardFlavor>
+      <Requirement quest="quest_alliance_members2" />
+      <Rewards>
+        <UnitReward unit="unit_clubbers_3">30</UnitReward>
+        <ExperienceReward>1100</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <AllianceMembersTest min_count="13" />
+      </RewardTests>
+    </Quest>
+    
+    <Quest id="quest_crossplatform" advisor="chef">
+      <Name>Crossplatform</Name>
+      <Name locale="de_DE">Crossplatform</Name>
+      <Task>Log into the HTML client at www.wack-a-doo.com .</Task>
+      <Task locale="de_DE">Melde dich im HTML Spiel unter www.wack-a-doo.de an.</Task>
+      <Description locale="de_DE">
+        <p>Wack-A-Doo kann nicht nur als App gespielt werden, Du kannst Dich auch über deinen Webbrowser im Spiel anmelden und dort das selbe Spiel spielen!</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Wack-A-Doo is not only an App, you can also play the same game in your browser!</p>
+      </Description>
+      <Flavor locale="de_DE">Crossplatform? Klingt nützlich.</Flavor>
+      <Flavor locale="en_US">Crossplatform? Sounds useful.</Flavor>
+      <RewardText locale="de_DE">Wack-A-Doo im Browser funktioniert genauso wie die App, nur mit anderem Interface.</RewardText>
+      <RewardText locale="en_US">Wack-A-Doo in your browser works exactly the same as the App, just with a different interface..</RewardText>
+      <RewardFlavor locale="de_DE">Herzlich Willkommen im Browserspiel!</RewardFlavor>
+      <RewardFlavor locale="en_US">Welcome to the browser game!</RewardFlavor>
+      <Requirement quest="quest_profile" />
+      <Rewards>
+        <ResourceReward resource="resource_cash">20</ResourceReward>
+        <ExperienceReward>1500</ExperienceReward>
+      </Rewards>
+      <RewardTests>
       </RewardTests>
     </Quest>
 
