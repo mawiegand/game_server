@@ -7,6 +7,10 @@ class Action::GeoTreasure::OpenTreasureActionsController < ApplicationController
 
   def create
 
+    # Action Disabled
+    raise ForbiddenError.new('Access Forbidden')
+
+
     raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequestError.new('missing parameter(s)') if params[:open_treasure_action].nil? || params[:open_treasure_action][:tresure_id].blank?
 
