@@ -591,7 +591,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [130, 134, ],
+          :successor_quests => [130, ],
 
           :rewards => {
             
@@ -12919,7 +12919,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [132, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -12996,12 +12996,6 @@ class Tutorial::Tutorial
   
             :en_US => "The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_alliance_members',
-
           },
 
           :successor_quests => [133, ],
@@ -13166,12 +13160,6 @@ class Tutorial::Tutorial
   
             :en_US => "Wack-A-Doo in your browser works exactly the same as the App, just with a different interface..",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_profile',
-
           },
 
           :successor_quests => [],

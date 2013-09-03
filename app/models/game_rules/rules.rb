@@ -8007,7 +8007,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :description => {
             
-            :de_DE => "<p>Der Kampf gegen die Neandertaler war kaum beendet, als Knochen-Kalle die Entdeckung seines Lebens machte. Ein schwarzer Monoilith war aber leider nichts was bei den Frauen besonders gut ankommt.</p>",
+            :de_DE => "<p>Der Kampf gegen die Neandertaler war kaum beendet, als Knochen-Kalle die Entdeckung seines Lebens machte. Ein schwarzer Monolith war aber leider nichts, was bei den Frauen besonders gut ankommt.</p>",
   
             :en_US => "<p>Towering and threatning the monolith is a fearfull thing to behold. Unfortunately it didnt impress the ladies as much as the warriors had hoped, so they just tossed it to the Tinkers to worry about it.</p>",
   
@@ -8023,22 +8023,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :amount      => '1',
 
           :experience_production => '15*(MRANK+1)',
-
-          :production_bonus  => [
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 0,
-              :bonus              => 0.2,
-            },
-
-            {
-              :resource_id        => 2,
-              :domain_id          => 2,
-              :bonus              => 0.05,
-            },
-
-          ],
 
           :description_initiated => {
 
@@ -8108,7 +8092,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             
             :de_DE => "Steinzerbrösler",
   
-            :en_US => "Stone Crumbler",
+            :en_US => "Stone Crusher",
                 
           },
           :description => {
@@ -8126,7 +8110,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
   
           },
 
-          :amount      => '2',
+          :amount      => '0',
 
           :experience_production => 'MRANK',
 
