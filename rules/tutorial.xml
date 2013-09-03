@@ -5138,8 +5138,8 @@
     <Quest id="quest_crossplatform" advisor="chef">
       <Name>Crossplatform</Name>
       <Name locale="de_DE">Crossplatform</Name>
-      <Task>Log into the HTML client at www.wack-a-doo.com .</Task>
-      <Task locale="de_DE">Melde dich im HTML Spiel unter www.wack-a-doo.de an.</Task>
+      <Task>Log into the HTML version of Wack-A-Doo at https://www.wack-a-doo.com.</Task>
+      <Task locale="de_DE">Logge Dich in die HTML-Version von Wack-A-Doo ein unter https://www.wack-a-doo.de an.</Task>
       <Description locale="de_DE">
         <p>Wack-A-Doo kann nicht nur als App gespielt werden, Du kannst Dich auch über deinen Webbrowser im Spiel anmelden und dort das selbe Spiel spielen!</p>
       </Description>
@@ -5147,9 +5147,9 @@
         <p>Wack-A-Doo is not only an App, you can also play the same game in your browser!</p>
       </Description>
       <Flavor locale="de_DE">Crossplatform? Klingt nützlich.</Flavor>
-      <Flavor locale="en_US">Crossplatform? Sounds useful.</Flavor>
+      <Flavor locale="en_US">Crossplatform? Sounds reasonable.</Flavor>
       <RewardText locale="de_DE">Wack-A-Doo im Browser funktioniert genauso wie die App, nur mit anderem Interface.</RewardText>
-      <RewardText locale="en_US">Wack-A-Doo in your browser works exactly the same as the App, just with a different interface..</RewardText>
+      <RewardText locale="en_US">Wack-A-Doo in your browser works exactly the same as the App, just with a different interface.</RewardText>
       <RewardFlavor locale="de_DE">Herzlich Willkommen im Browserspiel!</RewardFlavor>
       <RewardFlavor locale="en_US">Welcome to the browser game!</RewardFlavor>
       <Requirement quest="quest_profile" />
@@ -5158,6 +5158,7 @@
         <ExperienceReward>1500</ExperienceReward>
       </Rewards>
       <RewardTests>
+        <CrossPlatformTest/>
       </RewardTests>
     </Quest>
 

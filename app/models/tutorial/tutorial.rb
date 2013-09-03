@@ -13134,16 +13134,16 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Log into the HTML client at www.wack-a-doo.com .",
+            :en_US => "Log into the HTML version of Wack-A-Doo at https://www.wack-a-doo.com.",
   
-            :de_DE => "Melde dich im HTML Spiel unter www.wack-a-doo.de an.",
+            :de_DE => "Logge Dich in die HTML-Version von Wack-A-Doo ein unter https://www.wack-a-doo.de an.",
                 
           },
           :flavour => {
             
             :de_DE => "Crossplatform? Klingt nützlich.",
   
-            :en_US => "Crossplatform? Sounds useful.",
+            :en_US => "Crossplatform? Sounds reasonable.",
                 
           },
           :description => {
@@ -13164,7 +13164,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Wack-A-Doo im Browser funktioniert genauso wie die App, nur mit anderem Interface.",
   
-            :en_US => "Wack-A-Doo in your browser works exactly the same as the App, just with a different interface..",
+            :en_US => "Wack-A-Doo in your browser works exactly the same as the App, just with a different interface.",
                 
           },
 
@@ -13193,6 +13193,8 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :cross_platform_test => {},
+
           },          
 
         },              #   END OF quest_crossplatform
