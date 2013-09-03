@@ -5098,7 +5098,7 @@
       <RewardText locale="en_US">The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.</RewardText>
       <RewardFlavor locale="de_DE">Jetzt wirds langsam!</RewardFlavor>
       <RewardFlavor locale="en_US">If we keep up like this we're gona go places.</RewardFlavor>
-      <Requirement quest="quest_alliance_members" />
+      <!--<Requirement quest="quest_alliance_members" />-->
       <Rewards>
         <UnitReward unit="unit_clubbers_2">20</UnitReward>
         <ExperienceReward>850</ExperienceReward>
@@ -5152,7 +5152,7 @@
       <RewardText locale="en_US">Wack-A-Doo in your browser works exactly the same as the App, just with a different interface..</RewardText>
       <RewardFlavor locale="de_DE">Herzlich Willkommen im Browserspiel!</RewardFlavor>
       <RewardFlavor locale="en_US">Welcome to the browser game!</RewardFlavor>
-      <Requirement quest="quest_profile" />
+      <!--<Requirement quest="quest_profile" />-->
       <Rewards>
         <ResourceReward resource="resource_cash">20</ResourceReward>
         <ExperienceReward>1500</ExperienceReward>
