@@ -93,7 +93,7 @@
     <Name lang="de_DE">Schwarzer Monolith</Name>
     <Name lang="en_US">Black Monolith</Name>
     <Description lang="de_DE">
-      <p>Der Kampf gegen die Neandertaler war kaum beendet, als Knochen-Kalle die Entdeckung seines Lebens machte. Ein schwarzer Monoilith war aber leider nichts was bei den Frauen besonders gut ankommt.</p>
+      <p>Der Kampf gegen die Neandertaler war kaum beendet, als Knochen-Kalle die Entdeckung seines Lebens machte. Ein schwarzer Monolith war aber leider nichts, was bei den Frauen besonders gut ankommt.</p>
     </Description>
     <Description lang="en_US">
       <p>Towering and threatning the monolith is a fearfull thing to behold. Unfortunately it didnt impress the ladies as much as the warriors had hoped, so they just tossed it to the Tinkers to worry about it.</p>
@@ -115,8 +115,6 @@
     <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>15*(MRANK+1)</ExperienceProduction>
     <Effects>
-      <ProductionBonus id="resource_fur" domain="character">0.2</ProductionBonus>
-      <ProductionBonus id="resource_fur" domain="alliance">0.05</ProductionBonus>
     </Effects>
   </Artifact>
   <Artifact id="artifact_4">
@@ -170,7 +168,7 @@
       <InitiationCost id="resource_fur" round="true">250*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)</InitiationTime>
     </Initiation>
-    <ArtifactAmount>2</ArtifactAmount>
+    <ArtifactAmount>0</ArtifactAmount>
     <ExperienceProduction>MRANK</ExperienceProduction>
     <Effects>
       <ConstructionBonus domain="character">0.5</ConstructionBonus>
