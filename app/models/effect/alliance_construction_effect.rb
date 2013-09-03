@@ -10,12 +10,10 @@ class Effect::AllianceConstructionEffect < ActiveRecord::Base
   protected
 
   def propagate_effect_creation
-    logger.debug "--------> propagate_effect_creation ally"
     alliance.add_construction_effect_transaction(self)
   end
 
   def propagate_effect_removal
-    logger.debug "--------> propagate_effect_removal ally"
     alliance.remove_construction_effect_transaction(self)
   end
 

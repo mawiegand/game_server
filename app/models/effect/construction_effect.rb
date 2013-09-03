@@ -51,12 +51,10 @@ class Effect::ConstructionEffect < ActiveRecord::Base
   protected
 
     def propagate_effect_creation
-      logger.debug "--------> propagate_construction_effect_creation character"
       self.character.add_construction_effect_transaction(self)
     end
 
     def propagate_effect_removal
-      logger.debug "--------> propagate_construction_effect_removal character"
       self.character.remove_construction_effect_transaction(self)
     end
 

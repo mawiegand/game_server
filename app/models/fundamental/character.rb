@@ -86,7 +86,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_gender_changes
   after_save  :propagate_fortress_count_changes
   after_save  :propagate_alliance_bonus_to_alliance
-  after_save  :propagate_production_bonus
+  after_save  :propagate_construction_bonus
   after_save  :manage_assignments_on_level_change
 
   after_commit :check_consistency_sometimes
@@ -919,13 +919,12 @@ class Fundamental::Character < ActiveRecord::Base
     correct_assignment_level = recalc_assignment_level
     check_and_apply_assignment_level(correct_assignment_level)
 
-    
-    production_bonus = recalc_construction_bonus_effect
-    check_and_apply_construction_bonus_effect(production_bonus)
-    
-    production_bonus = recalc_construction_bonus_effect
-    check_and_apply_construction_bonus_effect(production_bonus)
-    
+    construction_bonus = recalc_construction_bonus_effect
+    check_and_apply_construction_bonus_effect(construction_bonus)
+
+    construction_bonus_alliance = recalc_construction_bonus_alliance
+    check_and_apply_construction_bonus_alliance(construction_bonus_alliance)
+
     if self.changed?
       logger.warn(">>> SAVING CHARACTER AFTER DETECTING ERRORS.")
       self.save
@@ -934,14 +933,14 @@ class Fundamental::Character < ActiveRecord::Base
     end
 
     true      
-  end  
-  
+  end
+
   def recalc_construction_bonus_effect
     bonus = 0.0
     self.construction_effects.each do |effect|
       bonus += effect[:bonus] || 0.0
     end
-    return bonus
+    bonus
   end
 
   def check_and_apply_construction_bonus_effect(recalc)
@@ -952,7 +951,25 @@ class Fundamental::Character < ActiveRecord::Base
       self.construction_bonus_effect = recalc
     end
   end
-  
+
+  def recalc_construction_bonus_alliance
+    self.alliance.nil? ? 0 : self.alliance.construction_bonus_effects
+  end
+
+  def check_and_apply_construction_bonus_alliance(recalc)
+    present = self.construction_bonus_alliance
+
+    if (present - recalc).abs > 0.000001
+      logger.warn(">>> CONSTRUCTION BONUS ALLIANCE RECALC DIFFERS. Old: #{present} Corrected: #{recalc}.")
+      self.construction_bonus_alliance = recalc
+    end
+  end
+
+  def recalc_and_apply_construction_bonus_alliance
+    self.construction_bonus_alliance = self.alliance.nil? ? 0 : self.alliance.construction_bonus_effects
+    self.save
+  end
+
   ############################################################################
   #
   #  P R E M I U M  A C C O U N T
@@ -1344,16 +1361,13 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def update_construction_bonus_total
-    self.construction_bonus_total = self.construction_bonus_effect # later add character abilities
+    self.construction_bonus_total = self.construction_bonus_effect + self.construction_bonus_alliance
   end
   
-  def propagate_production_bonus
+  def propagate_construction_bonus
     if construction_bonus_total_changed?
-
       delta = (construction_bonus_total_change[1] || 0.0) - (construction_bonus_total_change[0] || 0.0)
-
-      self.settlements.each do |settlement| 
-        
+      self.settlements.each do |settlement|
         GameRules::Rules.the_rules().queue_types.each do |queue_type|
           if queue_type[:category] == :queue_category_construction
             settlement.propagate_speedup_to_queue(:effects, queue_type, delta)

@@ -174,6 +174,9 @@ class Fundamental::Alliance < ActiveRecord::Base
     check_and_apply_victory_progresses
     recalculate_size_bonus
 
+    construction_bonus = recalc_construction_bonus_effect
+    check_and_apply_construction_bonus_effect(construction_bonus)
+
     if self.changed?
       logger.info(">>> SAVING ALLIANCE AFTER DETECTING ERRORS.")
       self.save
@@ -186,9 +189,25 @@ class Fundamental::Alliance < ActiveRecord::Base
 
     true      
   end
-  
+
+  def recalc_construction_bonus_effect
+    bonus = 0.0
+    self.construction_effects.each do |effect|
+      bonus += effect[:bonus] || 0.0
+    end
+    bonus
+  end
+
+  def check_and_apply_construction_bonus_effect(recalc)
+    present = self.construction_bonus_effects
+
+    if (present - recalc).abs > 0.000001
+      logger.warn(">>> CONSTRUCTION BONUS EFFECT RECALC DIFFERS. Old: #{present} Corrected: #{recalc}.")
+      self.construction_bonus_effects = recalc
+    end
+  end
+
   def add_resource_effect_transaction(effect)
-    logger.debug "--------> add_effect_transaction ally" + effect.inspect
     ActiveRecord::Base.transaction(:requires_new => true) do
       self.lock!
       attribute = GameRules::Rules.the_rules.resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
@@ -198,13 +217,12 @@ class Fundamental::Alliance < ActiveRecord::Base
       raise BadRequestError.new("no amount for effect given") if amount.nil?
 
       self[attribute] += amount
-      propagate_bonus_changes
+      propagate_production_bonus_changes
       self.save!
     end
   end
 
   def remove_resource_effect_transaction(effect)
-    logger.debug "--------> remove_effect_transaction ally" + effect.inspect
     ActiveRecord::Base.transaction(:requires_new => true) do
       self.lock!
       attribute = GameRules::Rules.the_rules.resource_types[effect[:resource_id]][:symbolic_id].to_s()+'_production_bonus_effects'
@@ -214,11 +232,37 @@ class Fundamental::Alliance < ActiveRecord::Base
       raise BadRequestError.new("no amount for effect given") if amount.nil?
 
       self[attribute] -= amount
-      propagate_bonus_changes
+      propagate_production_bonus_changes
       self.save!
     end
   end
-  
+
+  def add_construction_effect_transaction(effect)
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      amount = effect[:bonus]
+
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
+
+      self.construction_bonus_effects += amount
+      propagate_construction_bonus_changes
+      self.save!
+    end
+  end
+
+  def remove_construction_effect_transaction(effect)
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      amount = effect[:bonus]
+
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
+
+      self.construction_bonus_effects -= amount
+      propagate_construction_bonus_changes
+      self.save!
+    end
+  end
+
   def recalculate_size_bonus
     new_size_bonus = 0
     self.members.each do |member|
@@ -232,18 +276,15 @@ class Fundamental::Alliance < ActiveRecord::Base
 
   private
 
-    def propagate_bonus_changes
+    def propagate_production_bonus_changes
       ActiveRecord::Base.transaction(:requires_new => true) do
         GameRules::Rules.the_rules.resource_types.each do |resource_type|
 
           ally_attribute = resource_type[:symbolic_id].to_s + '_production_bonus_effects'
           pool_attribute = resource_type[:symbolic_id].to_s + '_production_bonus_alliance'
 
-          logger.debug "------> propagate_bonus_changes ally " + self.changes[ally_attribute].inspect
-
           unless self.changes[ally_attribute].nil?
             self.members.each do |member|
-              logger.debug "------> propagate_bonus_changes ally member " + member.inspect
               member.resource_pool.lock!
               member.resource_pool.increment(pool_attribute, self.changes[ally_attribute][1] - self.changes[ally_attribute][0])
               member.resource_pool.propagate_bonus_changes
@@ -252,7 +293,19 @@ class Fundamental::Alliance < ActiveRecord::Base
           end
         end
       end
+      true
+    end
 
+    def propagate_construction_bonus_changes
+      ActiveRecord::Base.transaction(:requires_new => true) do
+        unless self.changes['construction_bonus_effects'].nil?
+          self.members.each do |member|
+            member.lock!
+            member.construction_bonus_alliance += self.changes['construction_bonus_effects'][1] - self.changes['construction_bonus_effects'][0]
+            member.save!
+          end
+        end
+      end
       true
     end
 

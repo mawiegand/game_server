@@ -364,7 +364,7 @@ class Fundamental::Artifact < ActiveRecord::Base
       return if owner_id.nil?
       owner = Fundamental::Character.find_by_id(owner_id)
       return if owner.npc?
-      owner.resource_pool.resource_effects.create({
+      owner.construction_effects.create({
         type_id:      Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ARTIFACT,
         bonus:        bonus[:bonus],
         origin_id:    self.id,
@@ -372,7 +372,7 @@ class Fundamental::Artifact < ActiveRecord::Base
     end
 
     def remove_character_construction_effect
-      self.character_resource_effects.destroy_all
+      self.character_construction_effects.destroy_all
     end
 
     def add_alliance_construction_effect(alliance_id, bonus)
@@ -386,7 +386,8 @@ class Fundamental::Artifact < ActiveRecord::Base
     end
 
     def remove_alliance_construction_effect
-      self.alliance_resource_effects.destroy_all
+      self.alliance_construction_effects.destroy_all
+      self.owner.recalc_and_apply_construction_bonus_alliance
     end
 
     def propagate_effect_changes
