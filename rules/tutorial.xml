@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="38" />
+    <Version major="0" minor="3" build="39" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -687,8 +687,8 @@
       <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
       <Flavor locale="en_US">Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think?
       </Flavor>
-      <RewardText locale="de_DE">Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen</RewardText>
-      <RewardText locale="en_US">Try to contact your neighbors and form an alliance with them</RewardText>
+      <RewardText locale="de_DE">Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen eine Allianz aufzubauen.</RewardText>
+      <RewardText locale="en_US">Try to contact your neighbors and form an alliance with them.</RewardText>
       <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
       <Requirement quest="quest_build_1storagelvl1" />
@@ -1166,7 +1166,7 @@
       <Task>Upgrade of the chieftan's hut to level 10.</Task>
       <Task locale="de_DE">Erweitere die Häuptlingshütte auf Level 10.</Task>
       <Description locale="de_DE">
-        <p>Mit Level 10 der Häuptlingshütte wirst Du alle 40 Bauplätze Deiner Hauptsiedlung freigeschaltet haben. </p>
+        <p>Mit Level 10 der Häuptlingshütte wirst Du alle 40 Bauplätze Deiner Hauptsiedlung freigeschaltet haben.</p>
       </Description>
       <Description locale="en_US">
         <p>When your chieftan's hut gets to Level 10, all 40 building slots will be unlocked.</p>
@@ -1174,9 +1174,8 @@
       <Flavor locale="de_DE">Jetzt hat Deine Hauptsiedlung die volle Größe!</Flavor>
       <Flavor locale="en_US">You've got all 40 building slots now. Great job!</Flavor>
       <RewardText locale="de_DE"><p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
-        <p>Auf Level 12 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p></RewardText>
-      <RewardText locale="en_US"><p>The maximum level for a chieftan's hut is Level 20.  Each level increases the battle bonus you can get. At Level 12 you'll receive a command point for another army.</p>
-        <p>At Level 12 you will recieve another command point for another army.</p></RewardText>
+        <p>Auf Level 12 und 20 bekommst Du je einen weiteren Kommandopunkt für eine zusätzliche Armee.</p></RewardText>
+      <RewardText locale="en_US"><p>The maximum level for a chieftan's hut is Level 20.  Each level increases the battle bonus you can get. At Level 12 and 20 you'll receive a command point for another army.</p></RewardText>
       <RewardFlavor locale="de_DE">Das wurde wirklich Zeit! Jetzt hat Deine Hauptsiedlung die volle Größe!</RewardFlavor>
       <RewardFlavor locale="en_US">It´s about time! Now we have all the space we need!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl9" />
