@@ -1161,7 +1161,7 @@ end
           ],
 </xsl:if>
 <xsl:if test="count(Effects/ConstructionBonus)">
-          :production_bonus  => [
+          :construction_bonus  => [
 <xsl:for-each select="Effects/ConstructionBonus">
             {
               :domain_id          => <xsl:value-of select="count(id(@domain)/preceding-sibling::*)"/>,
