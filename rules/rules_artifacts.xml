@@ -146,30 +146,29 @@
     </Effects>
   </Artifact>
   <Artifact id="artifact_5">
-    <Name lang="de_DE">Steinzerbrösler</Name>
+    <Name lang="de_DE">Steinbrösler</Name>
     <Name lang="en_US">Stone Crusher</Name>
     <Description lang="de_DE">
-      <p>Beschreibung des Steinzerbröslers.</p>
+      <p>Das ist ja ... ein Hammer! Du bist Dir sofort sicher, dass es sich bei diesem Artefakt um einen Hammer handelt. Die Tüftler aus der Tüftler Werkstatt sind aber anderer Meinung und kassieren das Artefakt für nähere Untersuchungen ein.</p>
     </Description>
     <Description lang="en_US">
-      <p>Description of Stone Crumbler</p>
+      <p>Is that... a hammer! You are immediately certain that this must be a hammer. The Tinkers dont seem to think so tho and take it back to their workshop for further investigation.</p>
     </Description>
     <Flavour lang="de_DE">Flavor</Flavour>
     <Flavour lang="en_US">Flavor</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Beschreibung des eingeweihten Steinzerbröslers.</p>
+        <p>Unglaublich, es ist wirklich eine Art Hammer! Die Tüftler nennen ihn liebevoll 'Steinbrösler'. Mit dem Steinbrösler kann man Steine klein hauen und so schneller Rohmaterial für neue Gebäude gewinnen.</p>
       </Description>
       <Description>
-        <p>Description of initiated Stone Crumbler</p>
+        <p>Incredibly enough it realy apears to be some sort of hammer! The Tinkers are calling it the 'Stone Cruser'. It is realy good at smashing boulders to bits and helps building buildings.</p>
       </Description>
-      <InitiationCost id="resource_stone" round="true">250*LEVEL</InitiationCost>
-      <InitiationCost id="resource_wood" round="true">250*LEVEL</InitiationCost>
-      <InitiationCost id="resource_fur" round="true">250*LEVEL</InitiationCost>
-      <InitiationTime shortenable="true">FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)</InitiationTime>
+      <InitiationCost id="resource_stone" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1000*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))</InitiationTime>
     </Initiation>
     <ArtifactAmount>0</ArtifactAmount>
-    <ExperienceProduction>MRANK</ExperienceProduction>
     <Effects>
       <ConstructionBonus domain="character">0.5</ConstructionBonus>
       <ConstructionBonus domain="alliance">0.2</ConstructionBonus>

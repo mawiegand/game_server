@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.1.6
+# Version: 1.1.7
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -121,7 +121,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 1,
-                    :build => 6,
+                    :build => 7,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -8085,21 +8085,21 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           :initiation_time => "FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)",
 
         },              #   END OF Dino-Osterei
-        {               #   Steinzerbrösler
+        {               #   Steinbrösler
           :id          => 5, 
           :symbolic_id => :artifact_5,
           :name        => {
             
-            :de_DE => "Steinzerbrösler",
+            :de_DE => "Steinbrösler",
   
             :en_US => "Stone Crusher",
                 
           },
           :description => {
             
-            :de_DE => "<p>Beschreibung des Steinzerbröslers.</p>",
+            :de_DE => "<p>Das ist ja ... ein Hammer! Du bist Dir sofort sicher, dass es sich bei diesem Artefakt um einen Hammer handelt. Die Tüftler aus der Tüftler Werkstatt sind aber anderer Meinung und kassieren das Artefakt für nähere Untersuchungen ein.</p>",
   
-            :en_US => "<p>Description of Stone Crumbler</p>",
+            :en_US => "<p>Is that... a hammer! You are immediately certain that this must be a hammer. The Tinkers dont seem to think so tho and take it back to their workshop for further investigation.</p>",
   
           },
           :flavour => {
@@ -8111,8 +8111,6 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :amount      => '0',
-
-          :experience_production => 'MRANK',
 
           :construction_bonus  => [
 
@@ -8130,20 +8128,20 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 
           :description_initiated => {
 
-            :de_DE => "<p>Beschreibung des eingeweihten Steinzerbröslers.</p>",
+            :de_DE => "<p>Unglaublich, es ist wirklich eine Art Hammer! Die Tüftler nennen ihn liebevoll 'Steinbrösler'. Mit dem Steinbrösler kann man Steine klein hauen und so schneller Rohmaterial für neue Gebäude gewinnen.</p>",
   
-            :en_US => "<p>Description of initiated Stone Crumbler</p>",
+            :en_US => "<p>Incredibly enough it realy apears to be some sort of hammer! The Tinkers are calling it the 'Stone Cruser'. It is realy good at smashing boulders to bits and helps building buildings.</p>",
   
           },
           :initiation_costs => {
-            0 => '250*LEVEL',
-            1 => '250*LEVEL',
-            2 => '250*LEVEL',
+            0 => '1000*LEVEL',
+            1 => '1000*LEVEL',
+            2 => '1000*LEVEL',
             
           },
-          :initiation_time => "FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)",
+          :initiation_time => "FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))",
 
-        },              #   END OF Steinzerbrösler
+        },              #   END OF Steinbrösler
       ],                # END OF ARTIFACT TYPES
 
 # ## VICTORY TYPES ########################################################
