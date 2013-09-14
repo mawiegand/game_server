@@ -906,6 +906,10 @@ class Fundamental::Character < ActiveRecord::Base
 
     experience_production_rate = recalc_experience_production_rate
     check_and_apply_experience_production_rate(experience_production_rate)
+
+    score_new = recalc_score
+    check_and_apply_score(score_new)
+
     
     likes_count = recalc_likes_count
     check_and_apply_likes_count(likes_count)
@@ -1124,6 +1128,23 @@ class Fundamental::Character < ActiveRecord::Base
   
   def self.produced_experience_amount_sql_fragment(resource_field)
     "(#{ Fundamental::Character.elapsed_time_sql_fragment } * (\"#{ resource_field }\" / 3600.0) )"
+  end
+
+  # ##########################################################################
+  #
+  #   Score
+  #
+  # ##########################################################################
+
+  def recalc_score
+    self.settlements.sum(:score)
+  end
+  
+  def check_and_apply_score(new_score)
+    if (self.score || 0) != new_score
+      logger.warn(">>> CONSISTENCY ERROR: SCORE RECALC DIFFERS for character #{self.id}. Old: #{self.score} Corrected: #{new_score}.")
+      self.score = new_score
+    end
   end
 
   # ##########################################################################
