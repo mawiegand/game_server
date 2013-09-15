@@ -168,7 +168,7 @@
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>0</ArtifactAmount>
+    <ArtifactAmount>2</ArtifactAmount>
     <Effects>
       <ConstructionBonus domain="character">0.5</ConstructionBonus>
       <ConstructionBonus domain="alliance">0.2</ConstructionBonus>
