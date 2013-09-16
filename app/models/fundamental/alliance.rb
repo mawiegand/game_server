@@ -19,12 +19,12 @@ class Fundamental::Alliance < ActiveRecord::Base
 
   belongs_to :leader,    :class_name => "Fundamental::Character",     :foreign_key => "leader_id"
 
-  attr_accessible :name, :password, :description, :banner, :auto_join_disabled,                      :as => :owner
+  attr_accessible :name, :password, :description, :banner, :auto_join_disabled, :additional_members, :as => :owner
   attr_accessible *accessible_attributes(:owner), :tag, :leader_id,                                  :as => :creator # fields accesible during creation
   attr_accessible *accessible_attributes(:creator), :alliance_queue_alliance_research_unlock_count,  :as => :staff
   attr_accessible *accessible_attributes(:staff),                                                    :as => :admin
   
-  attr_readable :id, :tag, :name, :description, :banner, :leader_id, :members_count, :created_at, :updated_at, :size_bonus,       :as => :default
+  attr_readable :id, :tag, :name, :description, :banner, :leader_id, :members_count, :created_at, :updated_at, :size_bonus, :as => :default
   attr_readable *readable_attributes(:default), :alliance_queue_, :invitation_code, :as => :ally
   attr_readable *readable_attributes(:ally), :password, :auto_join_disabled,                         :as => :owner
   attr_readable *readable_attributes(:owner),                                                        :as => :staff
@@ -33,6 +33,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   before_create :add_unique_invitation_code  
   
   before_save   :prevent_empty_password
+  before_save   :update_size_bonus
 
   after_save    :propagate_tag_change  
   after_save    :propagate_to_ranking
@@ -269,7 +270,7 @@ class Fundamental::Alliance < ActiveRecord::Base
       new_size_bonus = [new_size_bonus, member.alliance_size_bonus].max
     end
     if self.size_bonus != new_size_bonus
-      self.size_bonus = new_size_bonus
+      self.size_bonus = new_size_bonus + self.additional_members
       self.save
     end
   end
@@ -377,5 +378,12 @@ class Fundamental::Alliance < ActiveRecord::Base
         end
       end
     end
-  
+
+    def update_size_bonus
+      additional_members_change = self.changes[:additional_members]
+
+      if !additional_members_change.blank?
+        self.size_bonus += additional_members_change[1] - additional_members_change[0]
+      end
+    end
 end
