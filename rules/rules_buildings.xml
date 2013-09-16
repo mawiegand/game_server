@@ -52,5 +52,7 @@
 
   <xi:include href="buildings/rules_building_alliance_hall.xml" />
   <xi:include href="buildings/rules_building_tavern.xml" />
+
+  <xi:include href="buildings/rules_building_special_gatherer.xml" />
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
 </BuildingTypes>

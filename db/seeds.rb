@@ -286,9 +286,9 @@ paths = [
     "120221013233333"
 ]
 
-paths.each do |path|
-  split_to_path(path)
-end
+#paths.each do |path|
+#  split_to_path(path)
+#end
 
 
 
