@@ -11,8 +11,9 @@ class Fundamental::Alliance < ActiveRecord::Base
   has_many   :victory_progresses, :class_name => "Fundamental::VictoryProgress", :foreign_key => "alliance_id", :inverse_of => :alliance, :dependent => :destroy
   has_many   :artifacts, :class_name => "Fundamental::Artifact",      :foreign_key => "alliance_id", :inverse_of => :alliance
 
-  has_many   :resource_effects, :class_name => "Effect::AllianceResourceEffect", :foreign_key => "alliance_id", :inverse_of => :alliance
+  has_many   :resource_effects,     :class_name => "Effect::AllianceResourceEffect",     :foreign_key => "alliance_id", :inverse_of => :alliance
   has_many   :construction_effects, :class_name => "Effect::AllianceConstructionEffect", :foreign_key => "alliance_id", :inverse_of => :alliance
+  has_many   :experience_effects,   :class_name => "Effect::AllianceExperienceEffect",   :foreign_key => "alliance_id", :inverse_of => :alliance
 
   has_one    :ranking,   :class_name => "Ranking::AllianceRanking",   :foreign_key => "alliance_id", :inverse_of => :alliance
   has_one    :reservation, :class_name => "Fundamental::AllianceReservation", :foreign_key => "alliance_id", :inverse_of => :alliance

@@ -36,6 +36,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :outposts,          :class_name => "Settlement::Settlement",     :foreign_key => "owner_id",     :conditions => ["type_id = ?", Settlement::Settlement::TYPE_OUTPOST]
 
   has_many :construction_effects, :class_name => "Effect::ConstructionEffect", :foreign_key => "character_id", :inverse_of => :character
+  has_many :experience_effects,   :class_name => "Effect::ExperienceEffect", :foreign_key => "character_id", :inverse_of => :character
 
   has_one  :artifact,          :class_name => "Fundamental::Artifact",      :foreign_key => "owner_id",     :inverse_of => :owner
   has_one  :setting,           :class_name => "Fundamental::Setting",       :foreign_key => "character_id", :inverse_of => :owner
@@ -201,24 +202,30 @@ class Fundamental::Character < ActiveRecord::Base
       self.update_column(:playtime, (playtime || 0.0) + (difference <= 120.0 ? difference : 30.0))     # assumption: larger than 2 minutes -> user was offline inbetween , so just count the startet minute  
       self.update_column(:last_request_at, Time.now)  # change timestamp without triggering before / after handlers, without update updated_at
     end
-  end  
-  
+  end
+
+  def redeem_xp_bonus_gift(xp_bonus)
+    bonus = ActiveSupport::JSON.decode(xp_bonus)
+    logger.info "REDEEM XP GIFT FOR CHARACTER #{self.identifier}: #{ xp_bonus.inspect }"
+  #  add bonus to character
+  end
+
   def redeem_startup_gift(gift_list)
     list = ActiveSupport::JSON.decode(gift_list)
     logger.info "REDEEM RESOURCE GIFT FOR CHARACTER #{self.identifier}: #{ list.inspect }"
     (list || []).each do |resource_gift|    # nothing else allowed at present
       self.resource_pool.add_resource_atomically(resource_gift['resource_type_id'].to_i, resource_gift['amount'].to_f)
     end
-    
+
     # mail schicken
     identity_provider_access = IdentityProvider::Access.new({
-      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
-      scopes:                     ['5dentity'],
-    })
+                                                                identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+                                                                game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+                                                                scopes:                     ['5dentity'],
+                                                            })
     response = identity_provider_access.deliver_gift_received_notification(self, list || [])
   end
-  
+
   def redeem_tutorial_end_rewards
     self.extend_premium_atomically(Tutorial::Tutorial.the_tutorial.tutorial_reward[:platinum_duration])
   end

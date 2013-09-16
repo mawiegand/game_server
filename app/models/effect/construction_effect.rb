@@ -47,7 +47,6 @@ class Effect::ConstructionEffect < ActiveRecord::Base
     effect
   end
 
-
   protected
 
     def propagate_effect_creation
@@ -57,7 +56,4 @@ class Effect::ConstructionEffect < ActiveRecord::Base
     def propagate_effect_removal
       self.character.remove_construction_effect_transaction(self)
     end
-
-  
-  
 end

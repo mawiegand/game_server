@@ -1,7 +1,5 @@
 GameServer::Application.routes.draw do
 
-
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -45,6 +43,8 @@ GameServer::Application.routes.draw do
         resources :construction_effects
         resources :alliance_resource_effects
         resources :resource_effects
+        resources :alliance_experience_effects
+        resources :experience_effects
       end
 
       namespace :fundamental do

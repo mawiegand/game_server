@@ -1,0 +1,31 @@
+<h1>Listing effect_experience_effects</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Origin</th>
+    <th>Character</th>
+    <th>Bonus</th>
+    <th>Finished at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @effect_experience_effects.each do |effect_experience_effect| %>
+  <tr>
+    <td><%= effect_experience_effect.type_id %></td>
+    <td><%= effect_experience_effect.origin_id %></td>
+    <td><%= effect_experience_effect.character_id %></td>
+    <td><%= effect_experience_effect.bonus %></td>
+    <td><%= effect_experience_effect.finished_at %></td>
+    <td><%= link_to 'Show', effect_experience_effect %></td>
+    <td><%= link_to 'Edit', edit_effect_experience_effect_path(effect_experience_effect) %></td>
+    <td><%= link_to 'Destroy', effect_experience_effect, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Experience effect', new_effect_experience_effect_path %>

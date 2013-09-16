@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130916090230) do
+ActiveRecord::Schema.define(:version => 20130916105915) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1639,6 +1639,15 @@ ActiveRecord::Schema.define(:version => 20130916090230) do
     t.datetime "updated_at"
   end
 
+  create_table "effect_alliance_experience_effects", :force => true do |t|
+    t.integer  "type_id"
+    t.integer  "origin_id"
+    t.integer  "alliance_id"
+    t.decimal  "bonus"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "effect_alliance_resource_effects", :force => true do |t|
     t.integer  "resource_id"
     t.integer  "type_id"
@@ -1655,6 +1664,16 @@ ActiveRecord::Schema.define(:version => 20130916090230) do
     t.decimal  "bonus"
     t.integer  "character_id"
     t.integer  "origin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "effect_experience_effects", :force => true do |t|
+    t.integer  "type_id"
+    t.integer  "origin_id"
+    t.integer  "character_id"
+    t.decimal  "bonus"
+    t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

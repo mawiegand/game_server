@@ -99,9 +99,11 @@ en:
         active_jobs: Act. Jobs
       effect:
         alliance_construction_effects: Ally Construction
-        construction_effects: Construction
-        alliance_resource_effects: Alliance Res. Effects
-        resource_effects: Character Res. Effects
+        construction_effects: Character Construction
+        alliance_resource_effects: Ally Resource
+        resource_effects: Character Resource
+        alliance_experience_effects: Ally Experience
+        experience_effects: Character Experience
         category: Effect
       event:
         category: Event

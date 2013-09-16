@@ -1,0 +1,2 @@
+module Effect::ExperienceEffectsHelper
+end
