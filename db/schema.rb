@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130903133631) do
+ActiveRecord::Schema.define(:version => 20130916090230) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1729,6 +1729,7 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.integer  "size_bonus",                                    :default => 0
     t.boolean  "auto_join_disabled",                            :default => false, :null => false
     t.decimal  "construction_bonus_effects",                    :default => 0.0,   :null => false
+    t.integer  "additional_members",                            :default => 0
   end
 
   create_table "fundamental_announcements", :force => true do |t|
@@ -2352,7 +2353,7 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.integer  "retreated_to_location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "total_experience_gained",  :default => 0
+    t.integer  "total_experience_gained",  :default => 0, :null => false
     t.boolean  "disbanded"
     t.integer  "character_id"
     t.integer  "total_kills",              :default => 0, :null => false
