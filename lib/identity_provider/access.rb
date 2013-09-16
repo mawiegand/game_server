@@ -112,6 +112,13 @@ module IdentityProvider
       post("/identities/#{mail.character.identifier}/messages", { :message => notification })
     end
 
+    def post_xp_start_bonus(character, property)
+      resource_character_property = {
+          data: property,
+      }
+      post("/identities/#{character.identifier}/character_properties", {:resource_character_property => resource_character_property})
+    end
+
     def post_result(character, round_number, round_name, won = false)
       round_info = Fundamental::RoundInfo.the_round_info
       return if character.ranking.nil?

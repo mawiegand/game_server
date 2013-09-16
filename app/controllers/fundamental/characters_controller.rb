@@ -79,7 +79,7 @@ class Fundamental::CharactersController < ApplicationController
       # set character properties to default values
       start_resource_modificator = 1.0
       start_resource_bonuses = []
-      start_xp_bonus = nil
+      start_xp_bonuses = []
       
       # fetch persistent character properties from identity provider  
       response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
@@ -103,8 +103,8 @@ class Fundamental::CharactersController < ApplicationController
                 logger.info "START RESOURCE BONUS #{ start_resource_bonuses.inspect }."
               end
               unless character_property['data']['start_xp_bonus'].blank?
-                start_xp_bonus = character_property['data']['start_xp_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
-                logger.info "START XP BONUS #{ start_xp_bonus.inspect }."
+                start_xp_bonuses << character_property['data']['start_xp_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+                logger.info "START XP BONUS #{ start_xp_bonuses.inspect }."
               end
             end
           end
@@ -173,8 +173,8 @@ class Fundamental::CharactersController < ApplicationController
         character.redeem_startup_gift(start_resource_bonus)
       end
 
-      if !start_xp_bonus.nil?
-        character.redeem_startup_gift(start_xp_bonus)
+      start_xp_bonuses.each do |start_xp_bonus|
+        character.redeem_xp_start_bonus(start_xp_bonus)
       end
 
       if params.has_key?(:alliance_invitation)
@@ -202,7 +202,7 @@ class Fundamental::CharactersController < ApplicationController
       # set character properties to default values
       start_resource_modificator = 1.0
       start_resource_bonuses = []
-      start_xp_bonus = nil
+      start_xp_bonuses = []
 
       # fetch persistent character properties from identity provider
       response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
@@ -226,8 +226,8 @@ class Fundamental::CharactersController < ApplicationController
                 logger.info "START RESOURCE BONUS #{ start_resource_bonuses.inspect }."
               end
               unless character_property['data']['start_xp_bonus'].blank?
-                start_xp_bonus = character_property['data']['start_xp_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
-                logger.info "START XP BONUS #{ start_xp_bonus.inspect }."
+                start_xp_bonuses << character_property['data']['start_xp_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+                logger.info "START XP BONUS #{ start_xp_bonuses.inspect }."
               end
             end
           end

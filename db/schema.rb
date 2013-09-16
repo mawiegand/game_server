@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130916105915) do
+ActiveRecord::Schema.define(:version => 20130916125844) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1872,6 +1872,9 @@ ActiveRecord::Schema.define(:version => 20130916105915) do
     t.boolean  "logged_in_on_second_day",                  :default => false, :null => false
     t.text     "description"
     t.decimal  "construction_bonus_alliance",              :default => 0.0,   :null => false
+    t.decimal  "exp_bonus_total",                          :default => 0.0,   :null => false
+    t.decimal  "exp_bonus_effects",                        :default => 0.0,   :null => false
+    t.decimal  "exp_bonus_alliance",                       :default => 0.0,   :null => false
   end
 
   create_table "fundamental_gossips", :force => true do |t|

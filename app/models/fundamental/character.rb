@@ -58,7 +58,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :as => :owner
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -67,9 +67,9 @@ class Fundamental::Character < ActiveRecord::Base
   before_save :update_mundane_rank
   
   before_save :update_experience_on_production_rate_changes
+  before_save :update_experience_on_bonus_changes
   before_save :update_construction_bonus_total
-
-  #before_save :update_alliance_leave_to_artifact
+  before_save :update_experience_bonus_total
 
   after_save  :propagate_insider_since_changes_to_chat
 
@@ -204,10 +204,14 @@ class Fundamental::Character < ActiveRecord::Base
     end
   end
 
-  def redeem_xp_bonus_gift(xp_bonus)
+  def redeem_xp_start_bonus(xp_bonus)
     bonus = ActiveSupport::JSON.decode(xp_bonus)
-    logger.info "REDEEM XP GIFT FOR CHARACTER #{self.identifier}: #{ xp_bonus.inspect }"
-  #  add bonus to character
+    logger.info "REDEEM XP GIFT FOR CHARACTER #{self.identifier}: #{bonus['bonus'].to_f}"
+    self.experience_effects.create({
+      type_id:      Effect::ExperienceEffect::EXPERIENCE_EFFECT_TYPE_START_GIFT,
+      bonus:        bonus['bonus'].to_f,
+      origin_id:    self.id,
+    })
   end
 
   def redeem_startup_gift(gift_list)
@@ -219,10 +223,10 @@ class Fundamental::Character < ActiveRecord::Base
 
     # mail schicken
     identity_provider_access = IdentityProvider::Access.new({
-                                                                identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-                                                                game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
-                                                                scopes:                     ['5dentity'],
-                                                            })
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
     response = identity_provider_access.deliver_gift_received_notification(self, list || [])
   end
 
@@ -933,6 +937,9 @@ class Fundamental::Character < ActiveRecord::Base
     construction_bonus = recalc_construction_bonus_effect
     check_and_apply_construction_bonus_effect(construction_bonus)
 
+    experience_bonus = recalc_experience_bonus_effect
+    check_and_apply_experience_bonus_effect(experience_bonus)
+
     construction_bonus_alliance = recalc_construction_bonus_alliance
     check_and_apply_construction_bonus_alliance(construction_bonus_alliance)
 
@@ -1085,7 +1092,7 @@ class Fundamental::Character < ActiveRecord::Base
       self.exp_production_rate += artifact.experience_production(new_mundane_rank)
     end
   end
-  
+
   def recalc_experience_production_rate
     exp_rate = 0.0
     self.settlements.each do |settlement|
@@ -1097,25 +1104,49 @@ class Fundamental::Character < ActiveRecord::Base
     end
     exp_rate
   end
-  
+
   def check_and_apply_experience_production_rate(experience_production_rate)
     if (self.exp_production_rate || 0) !=  experience_production_rate
       logger.warn(">>> CONSISTENCY ERROR: EXP PRODUCTION RATE RECALC DIFFERS for character #{self.id}. Old: #{self.exp_production_rate} Corrected: #{experience_production_rate}.")
       self.exp_production_rate = experience_production_rate
-    end    
+    end
   end
-  
+
   # updates the resource amounts if the rate changes with this write
   def update_experience_on_production_rate_changes
     if self.exp_production_rate_changed?
       self.update_experience_amount_atomically
-    end    
+    end
     true
   end
-  
+
+  def recalc_experience_bonus_effect
+    bonus = 0.0
+    self.experience_effects.each do |effect|
+      bonus += effect[:bonus] || 0.0
+    end
+    bonus
+  end
+
+  def check_and_apply_experience_bonus_effect(recalc)
+    present = self.exp_bonus_effects
+
+    if (present - recalc).abs > 0.000001
+      logger.warn(">>> EXPERIENCE BONUS EFFECT RECALC DIFFERS. Old: #{present} Corrected: #{recalc}.")
+      self.exp_bonus_effects = recalc
+    end
+  end
+
+  def update_experience_on_bonus_changes
+    if self.exp_bonus_total_changed?
+      self.update_experience_amount_atomically
+    end
+    true
+  end
+
   def update_experience_amount_atomically
     set_clauses = []
-    set_clauses << "exp = exp + #{ Fundamental::Character.produced_experience_amount_sql_fragment('exp_production_rate')}"
+    set_clauses << "exp = exp + #{ Fundamental::Character.produced_experience_amount_sql_fragment('exp_production_rate', 'exp_bonus_total')}"
     set_clauses << "\"production_updated_at\" = #{ Fundamental::Character.now_sql_fragment }"
     set_clauses << "\"updated_at\" = #{ Fundamental::Character.now_sql_fragment }"
     Fundamental::Character.update_all(set_clauses.join(', ') , id: self.id) == 1 # affect exactly one row
@@ -1133,8 +1164,8 @@ class Fundamental::Character < ActiveRecord::Base
     end
   end
   
-  def self.produced_experience_amount_sql_fragment(resource_field)
-    "(#{ Fundamental::Character.elapsed_time_sql_fragment } * (\"#{ resource_field }\" / 3600.0) )"
+  def self.produced_experience_amount_sql_fragment(resource_field, bonus_field)
+    "(#{Fundamental::Character.elapsed_time_sql_fragment} * (\"#{resource_field}\" * (1 + \"#{bonus_field}\") / 3600.0) )"
   end
 
   # ##########################################################################
@@ -1194,7 +1225,7 @@ class Fundamental::Character < ActiveRecord::Base
     self.settlements.each do |settlement|
       bonus += (settlement.alliance_size_bonus || 0)
     end
-    return bonus
+    bonus
   end
   
   def check_and_apply_alliance_size_bonus(bonus)
@@ -1360,14 +1391,14 @@ class Fundamental::Character < ActiveRecord::Base
     options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker']
     super(options)
   end
-  
-  
+
+
   # ##########################################################################
   #
   #   CONSTRUCTION EFFECTS
   #
   # ##########################################################################
-  
+
   # adds a construction bonus effect to the character.
   def add_construction_effect_transaction(effect)
     ActiveRecord::Base.transaction(:requires_new => true) do
@@ -1377,7 +1408,7 @@ class Fundamental::Character < ActiveRecord::Base
       self.save!
     end
   end
-  
+
   # adds a construction bonus effect to the character.
   def remove_construction_effect_transaction(effect)
     ActiveRecord::Base.transaction(:requires_new => true) do
@@ -1385,13 +1416,13 @@ class Fundamental::Character < ActiveRecord::Base
       amount = effect[:bonus]
       self.construction_bonus_effect = (self.construction_bonus_effect || 0.0) - amount
       self.save!
-    end    
+    end
   end
-  
+
   def update_construction_bonus_total
     self.construction_bonus_total = self.construction_bonus_effect + self.construction_bonus_alliance
   end
-  
+
   def propagate_construction_bonus
     if construction_bonus_total_changed?
       delta = (construction_bonus_total_change[1] || 0.0) - (construction_bonus_total_change[0] || 0.0)
@@ -1404,7 +1435,37 @@ class Fundamental::Character < ActiveRecord::Base
       end
     end
   end
-  
+
+  # ##########################################################################
+  #
+  #   EXPERIENCE EFFECTS
+  #
+  # ##########################################################################
+
+  # adds a experience bonus effect to the character.
+  def add_experience_effect_transaction(effect)
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      amount = effect[:bonus]
+      self.exp_bonus_effects = (self.exp_bonus_effects || 0.0) + amount
+      self.save!
+    end
+  end
+
+  # adds a experience bonus effect to the character.
+  def remove_experience_effect_transaction(effect)
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      amount = effect[:bonus]
+      self.exp_bonus_effects = (self.exp_bonus_effects || 0.0) - amount
+      self.save!
+    end
+  end
+
+  def update_experience_bonus_total
+    self.exp_bonus_total = self.exp_bonus_effects + self.exp_bonus_alliance
+  end
+
   protected
   
     def advance_to_next_mundane_rank
