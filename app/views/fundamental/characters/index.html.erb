@@ -9,6 +9,7 @@
     <th>Identifier</th>
     <th>Lang</th>
     <th>Platinum</th>
+    <th>P-Lifetime</th>
     <th>Insider</th>
     <th>Supporter</th>
     <th>1st Round</th>
@@ -51,6 +52,9 @@
     <td><%= fundamental_character.lang %></td>
     <td><span class="green"><b>
       <%= fundamental_character.platinum_account? ? 'X' : "" %>
+    </b></span></td>
+    <td><span class="green"><b>
+      <%= fundamental_character.platinum_lifetime ? 'X' : "" %>
     </b></span></td>
     <td><span class="green"><b>
       <%= fundamental_character.insider ? 'X' : "" %>
