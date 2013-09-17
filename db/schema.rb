@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130917151311) do
+ActiveRecord::Schema.define(:version => 20130917230559) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1751,7 +1751,6 @@ ActiveRecord::Schema.define(:version => 20130917151311) do
     t.integer  "additional_members",                            :default => 0
     t.decimal  "experience_bonus_effects",                      :default => 0.0,   :null => false
     t.integer  "color",                                         :default => 0
-    t.boolean  "supporter"
   end
 
   create_table "fundamental_announcements", :force => true do |t|
@@ -1881,6 +1880,7 @@ ActiveRecord::Schema.define(:version => 20130917151311) do
     t.boolean  "supporter",                                :default => false
     t.boolean  "platinum_lifetime",                        :default => false
     t.integer  "alliance_color"
+    t.boolean  "special_supporter"
   end
 
   create_table "fundamental_gossips", :force => true do |t|

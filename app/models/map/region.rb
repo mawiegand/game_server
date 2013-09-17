@@ -19,8 +19,7 @@ class Map::Region < ActiveRecord::Base
   before_create :add_unique_invitation_code
   
   before_save   :prevent_empty_moving_password
-  before_save   :update_special_image
- 
+
   after_create  :propagate_regions_count_to_round_info
   after_destroy :propagate_regions_count_to_round_info
   
@@ -60,9 +59,10 @@ class Map::Region < ActiveRecord::Base
     self.locations.empty.offset(Random.rand(free_locations)).first
   end
 
-  def update_special_image
-    if !self.alliance.nil? && self.alliance.supporter?
-      self.image_id = self.alliance_id
+  def set_special_image(owner)
+    logger.debug "-----> set_special_image #{owner.special_supporter?}"
+    if owner.special_supporter?
+      self.image_id = owner.id
     else
       self.image_id = nil
     end
@@ -80,7 +80,7 @@ class Map::Region < ActiveRecord::Base
       self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag
       self.alliance_color = self.alliance.nil? ? nil : self.alliance.color
     end
-    self.update_special_image
+    self.set_special_image(new_owner)
   end
   
   def add_unique_invitation_code
@@ -92,7 +92,6 @@ class Map::Region < ActiveRecord::Base
   def self.find_by_id_or_name(region_identifier)
     region = Map::Region.find_by_id(region_identifier) if Map::Region.valid_id?(region_identifier)
     region = Map::Region.find_by_name(region_identifier) if region.nil?
-    
     region
   end
 

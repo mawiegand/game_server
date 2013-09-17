@@ -12,6 +12,7 @@
     <th>P-Lifetime</th>
     <th>Insider</th>
     <th>Supporter</th>
+    <th>Special Supporter</th>
     <th>1st Round</th>
     <th>Staff</th>
     <th>Name</th>
@@ -61,6 +62,9 @@
     </b></span></td>
     <td><span class="green"><b>
       <%= fundamental_character.supporter ? 'X' : "" %>
+    </b></span></td>
+    <td><span class="green"><b>
+      <%= fundamental_character.special_supporter ? 'X' : "" %>
     </b></span></td>
     <td><span class="green"><b>
       <%= fundamental_character.first_round? ? 'X' : "" %>

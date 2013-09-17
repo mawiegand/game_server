@@ -39,7 +39,6 @@ class Fundamental::Alliance < ActiveRecord::Base
   after_save    :propagate_tag_change
   after_save    :propagate_color_change
   after_save    :propagate_to_ranking
-  after_save    :propagate_supporter_to_regions
 
 
   scope :auto_join_enabled,  where(auto_join_disabled: false)
@@ -481,16 +480,6 @@ class Fundamental::Alliance < ActiveRecord::Base
 
       if !additional_members_change.blank?
         self.size_bonus += additional_members_change[1] - additional_members_change[0]
-      end
-    end
-
-    def propagate_supporter_to_regions
-      supporter_change = self.changes[:supporter]
-      if !supporter_change.nil?
-        self.regions.each do |region|
-          region.update_special_image
-          region.save
-        end
       end
     end
 end
