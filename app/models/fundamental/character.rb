@@ -216,6 +216,15 @@ class Fundamental::Character < ActiveRecord::Base
     })
   end
 
+  def redeem_start_resources(start_resources)
+    list = ActiveSupport::JSON.decode(start_resources)
+    if list['client_identifier'] == GAME_SERVER_CONFIG['scope']
+      (list['resources'] || []).each do |resource|
+        self.resource_pool.add_resource_atomically(resource['resource_type_id'].to_i, resource['amount'].to_f)
+      end
+    end
+  end
+
   def redeem_startup_gift(gift_list)
     list = ActiveSupport::JSON.decode(gift_list)
     logger.info "REDEEM RESOURCE GIFT FOR CHARACTER #{self.identifier}: #{ list.inspect }"

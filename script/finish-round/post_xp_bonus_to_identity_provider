@@ -35,7 +35,7 @@ Ranking::CharacterRanking.order('overall_rank ASC').limit(100).each do |ranking_
   }
 
   puts "Start..."
-  identity_provider_access.post_xp_start_bonus(ranking_entry.character, property)
+  identity_provider_access.post_character_property(ranking_entry.character.identifier, property)
   puts "Stop..."
 
   count += 1

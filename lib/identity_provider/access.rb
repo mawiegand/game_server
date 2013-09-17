@@ -112,11 +112,11 @@ module IdentityProvider
       post("/identities/#{mail.character.identifier}/messages", { :message => notification })
     end
 
-    def post_xp_start_bonus(character, property)
+    def post_character_property(identifier, property)
       resource_character_property = {
           data: property,
       }
-      post("/identities/#{character.identifier}/character_properties", {:resource_character_property => resource_character_property})
+      post("/identities/#{identifier}/character_properties", {:resource_character_property => resource_character_property})
     end
 
     def post_result(character, round_number, round_name, won = false)
