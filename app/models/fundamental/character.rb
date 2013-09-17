@@ -285,6 +285,11 @@ class Fundamental::Character < ActiveRecord::Base
     !premium_expiration.nil? && premium_expiration > DateTime.now
   end
 
+  def set_platinum_lifetime
+    self.premium_expiration = Time.now.advance(:years => 10)
+    self.platinum_lifetime = true
+  end
+
   def bought_platinum?
     !self.shop_transactions.where("state > 4 and offer like '%Platinum%'").empty?
   end

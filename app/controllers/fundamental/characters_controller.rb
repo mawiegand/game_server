@@ -49,8 +49,6 @@ class Fundamental::CharactersController < ApplicationController
       end
     end
   end
-  
-  
 
   def self
     external_referer = request.env["HTTP_X_ALT_REFERER"] || params[:referer]
@@ -69,6 +67,7 @@ class Fundamental::CharactersController < ApplicationController
       })
 
       response = identity_provider_access.fetch_identity(request_access_token.identifier)
+      logger.info "IDENTITY RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
       identity = {}
       if response.code == 200
         identity = response.parsed_response
@@ -167,6 +166,11 @@ class Fundamental::CharactersController < ApplicationController
             end
           end
         end
+      end
+
+      if !identity['platinum_lifetime_since'].nil? && Time.parse(identity['platinum_lifetime_since']) < Time.now
+        character.set_platinum_lifetime
+        character.save
       end
 
       start_resource_bonuses.each do |start_resource_bonus|
