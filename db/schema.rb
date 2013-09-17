@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130916214925) do
+ActiveRecord::Schema.define(:version => 20130916225206) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1749,6 +1749,8 @@ ActiveRecord::Schema.define(:version => 20130916214925) do
     t.boolean  "auto_join_disabled",                            :default => false, :null => false
     t.decimal  "construction_bonus_effects",                    :default => 0.0,   :null => false
     t.integer  "additional_members",                            :default => 0
+    t.decimal  "experience_bonus_effects",                      :default => 0.0,   :null => false
+    t.integer  "color",                                         :default => 0
   end
 
   create_table "fundamental_announcements", :force => true do |t|
@@ -1877,6 +1879,7 @@ ActiveRecord::Schema.define(:version => 20130916214925) do
     t.decimal  "exp_bonus_alliance",                       :default => 0.0,   :null => false
     t.boolean  "supporter",                                :default => false
     t.boolean  "platinum_lifetime",                        :default => false
+    t.integer  "alliance_color"
   end
 
   create_table "fundamental_gossips", :force => true do |t|
@@ -2015,6 +2018,7 @@ ActiveRecord::Schema.define(:version => 20130916214925) do
     t.integer  "right_of_way"
     t.integer  "settlement_score",   :default => 0, :null => false
     t.string   "avatar_string"
+    t.integer  "alliance_color"
   end
 
   add_index "map_locations", ["region_id"], :name => "index_map_locations_on_region_id"
@@ -2058,6 +2062,7 @@ ActiveRecord::Schema.define(:version => 20130916214925) do
     t.string   "invitation_code"
     t.string   "moving_password"
     t.string   "avatar_string"
+    t.integer  "alliance_color"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
@@ -2187,6 +2192,7 @@ ActiveRecord::Schema.define(:version => 20130916214925) do
     t.datetime "attack_protection_ends_at"
     t.decimal  "ap_rate",                         :default => 1.0,   :null => false
     t.string   "avatar_string"
+    t.integer  "alliance_color"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2432,6 +2438,7 @@ ActiveRecord::Schema.define(:version => 20130916214925) do
     t.datetime "updated_at"
     t.integer  "kills",            :default => 0, :null => false
     t.integer  "kills_rank"
+    t.integer  "alliance_color"
   end
 
   create_table "ranking_character_rankings", :force => true do |t|
@@ -2468,6 +2475,7 @@ ActiveRecord::Schema.define(:version => 20130916214925) do
     t.decimal  "like_ratio",               :default => 0.0, :null => false
     t.string   "gender"
     t.string   "avatar_string"
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_histories", :force => true do |t|
@@ -2481,6 +2489,7 @@ ActiveRecord::Schema.define(:version => 20130916214925) do
     t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_settlements", :force => true do |t|
@@ -2573,6 +2582,7 @@ ActiveRecord::Schema.define(:version => 20130916214925) do
     t.integer  "name_change_count",                              :default => 0
     t.integer  "alliance_size_bonus",                            :default => 0
     t.integer  "assignment_level",                               :default => 0,            :null => false
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_slots", :force => true do |t|

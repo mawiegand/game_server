@@ -125,6 +125,7 @@ class Settlement::Settlement < ActiveRecord::Base
       :owner_id    => owner.id,
       :alliance_id => owner.alliance_id,
       :alliance_tag=> owner.alliance_tag,
+      :alliance_color=> owner.alliance_color,
       :owns_region => type_id == 1,               # fortress?
       :tax_rate    => tax_rate,
       :taxable     => type_id != 1,               # everything but fortresses are taxable
@@ -277,10 +278,11 @@ class Settlement::Settlement < ActiveRecord::Base
     
     self.region.moving_password = Util.make_random_string(6)if self.fortress?
     
-    self.owner        = character
-    self.alliance_id  = character.alliance_id
-    self.alliance_tag = character.alliance_tag
-    
+    self.owner          = character
+    self.alliance_id    = character.alliance_id
+    self.alliance_tag   = character.alliance_tag
+    self.alliance_color = character.alliance_color
+
     Military::Army.create_garrison_at(self)
     
     self.last_takeover_at = Time.now

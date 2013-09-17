@@ -5,7 +5,7 @@
     <th>Tag</th>
     <th>Name</th>
     <th>Description</th>
-    <th>Banner</th>
+    <th>Custom Color</th>
     <th>Leader</th>
     <th>Size Bonus</th>
     <th>Additional Members</th>
@@ -20,7 +20,11 @@
     <td><%= fundamental_alliance.tag %></td>
     <td><%= fundamental_alliance.name %></td>
     <td><%= fundamental_alliance.description %></td>
-    <td><%= fundamental_alliance.banner %></td>
+    <% if fundamental_alliance.color.nil? %>
+      <td>---</td>
+    <% else %>
+      <td style="background-color: rgb(<%= fundamental_alliance.color_r %>, <%= fundamental_alliance.color_g %>, <%= fundamental_alliance.color_b %>);"></td>
+    <% end %>
     <td><%= fundamental_alliance.leader_id %></td>
     <td><%= fundamental_alliance.size_bonus %></td>
     <td><%= fundamental_alliance.additional_members %></td>

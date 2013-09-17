@@ -56,7 +56,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "sender_id", :inverse_of => :sender
   has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "receiver_id", :inverse_of => :receiver
 
-  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
+  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
   attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :supporter, :platinum_lifetime, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
@@ -64,6 +64,7 @@ class Fundamental::Character < ActiveRecord::Base
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
 
   before_save :sync_alliance_tag
+  before_save :sync_alliance_color
   before_save :update_mundane_rank
   
   before_save :update_experience_on_production_rate_changes
@@ -634,11 +635,18 @@ class Fundamental::Character < ActiveRecord::Base
   def join_alliance(alliance)
     alliance.remove_character(self)
   end
-  
+
   def sync_alliance_tag
     alliance_change = self.changes[:alliance_id]
     if !alliance_change.blank? && !self.alliance.nil?
       self.alliance_tag = self.alliance.tag
+    end
+  end
+
+  def sync_alliance_color
+    alliance_change = self.changes[:alliance_id]
+    if !alliance_change.blank? && !self.alliance.nil?
+      self.alliance_color = self.alliance.color
     end
   end
 
@@ -648,9 +656,10 @@ class Fundamental::Character < ActiveRecord::Base
   # too long (there might be several hundreds of settlements, locations and
   # armies involved).
   def propagate_alliance_membership_changes
-    alliance_change     = self.changes[:alliance_id]
-    alliance_tag_change = self.changes[:alliance_tag]    
-    
+    alliance_change       = self.changes[:alliance_id]
+    alliance_tag_change   = self.changes[:alliance_tag]
+    alliance_color_change = self.changes[:alliance_color]
+
     redundancies = [
       { :model => Map::Location,             :field => :owner_id },
       { :model => Map::Region,               :field => :owner_id },
@@ -659,18 +668,20 @@ class Fundamental::Character < ActiveRecord::Base
       { :model => Ranking::CharacterRanking, :field => :character_id, :handlers_needed => true },
     ]
     
-    if !alliance_change.blank? || !alliance_tag_change.blank?
+    if !alliance_change.blank? || !alliance_tag_change.blank? || !alliance_color_change.blank?
       set_clause = { }
-      set_clause[:alliance_id]  = alliance_change[1]        unless alliance_change.nil?
-      set_clause[:alliance_tag] = alliance_tag_change[1]    unless alliance_tag_change.nil?
-      set_clause[:updated_at]   = DateTime.now
+      set_clause[:alliance_id]    = alliance_change[1]        unless alliance_change.nil?
+      set_clause[:alliance_tag]   = alliance_tag_change[1]    unless alliance_tag_change.nil?
+      set_clause[:alliance_color] = alliance_color_change[1]  unless alliance_color_change.nil?
+      set_clause[:updated_at]     = DateTime.now
 
 
       redundancies.each do |entry| 
         if !entry[:handlers_needed].nil? && entry[:handlers_needed] == true
           entry[:model].where(entry[:field] => self.id).each do |item|
-            item.alliance_id  = alliance_change[1]          unless alliance_change.nil?
-            item.alliance_tag = alliance_tag_change[1]      unless alliance_tag_change.nil?
+            item.alliance_id    = alliance_change[1]          unless alliance_change.nil?
+            item.alliance_tag   = alliance_tag_change[1]      unless alliance_tag_change.nil?
+            item.alliance_color = alliance_color_change[1]    unless alliance_color_change.nil?
             item.save
           end
         else

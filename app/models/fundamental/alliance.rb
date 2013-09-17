@@ -25,7 +25,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   attr_accessible *accessible_attributes(:creator), :alliance_queue_alliance_research_unlock_count,  :as => :staff
   attr_accessible *accessible_attributes(:staff),                                                    :as => :admin
   
-  attr_readable :id, :tag, :name, :description, :banner, :leader_id, :members_count, :created_at, :updated_at, :size_bonus, :as => :default
+  attr_readable :id, :tag, :color, :name, :description, :banner, :leader_id, :members_count, :created_at, :updated_at, :size_bonus, :as => :default
   attr_readable *readable_attributes(:default), :alliance_queue_, :invitation_code, :as => :ally
   attr_readable *readable_attributes(:ally), :password, :auto_join_disabled,                         :as => :owner
   attr_readable *readable_attributes(:owner),                                                        :as => :staff
@@ -36,7 +36,8 @@ class Fundamental::Alliance < ActiveRecord::Base
   before_save   :prevent_empty_password
   before_save   :update_size_bonus
 
-  after_save    :propagate_tag_change  
+  after_save    :propagate_tag_change
+  after_save    :propagate_color_change
   after_save    :propagate_to_ranking
 
 
@@ -45,9 +46,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   scope :non_empty,          where('members_count > 0')
   scope :auto_join_selectable, not_full.auto_join_enabled.non_empty
 
-  
 
-  
   def self.create_alliance(tag, name, leader, role = :creator)
     raise ConflictError.new("this alliance tag is already used") unless Fundamental::Alliance.find_by_tag(tag).nil?
     raise InternalServerError.new('no leader specified') if leader.nil? || leader.id.nil?
@@ -116,6 +115,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   
   def add_character(character)
     character.alliance_tag = self.tag
+    character.alliance_color = self.color
     character.alliance_id = self.id
     self.increment!(:members_count)
     character.save
@@ -134,8 +134,9 @@ class Fundamental::Alliance < ActiveRecord::Base
   end
   
   def remove_character(character)
-    return false unless character.alliance_id == self.id 
+    return false unless character.alliance_id == self.id
     character.alliance_tag = nil
+    character.alliance_color = nil
     character.alliance_id = nil
     self.decrement!(:members_count)
     character.save
@@ -179,6 +180,9 @@ class Fundamental::Alliance < ActiveRecord::Base
     construction_bonus = recalc_construction_bonus_effect
     check_and_apply_construction_bonus_effect(construction_bonus)
 
+    experience_bonus = recalc_experience_bonus_effect
+    check_and_apply_experience_bonus_effect(experience_bonus)
+
     if self.changed?
       logger.info(">>> SAVING ALLIANCE AFTER DETECTING ERRORS.")
       self.save
@@ -206,6 +210,23 @@ class Fundamental::Alliance < ActiveRecord::Base
     if (present - recalc).abs > 0.000001
       logger.warn(">>> CONSTRUCTION BONUS EFFECT RECALC DIFFERS. Old: #{present} Corrected: #{recalc}.")
       self.construction_bonus_effects = recalc
+    end
+  end
+
+  def recalc_experience_bonus_effect
+    bonus = 0.0
+    self.experience_effects.each do |effect|
+      bonus += effect[:bonus] || 0.0
+    end
+    bonus
+  end
+
+  def check_and_apply_experience_bonus_effect(recalc)
+    present = self.experience_bonus_effects
+
+    if (present - recalc).abs > 0.000001
+      logger.warn(">>> CONSTRUCTION BONUS EFFECT RECALC DIFFERS. Old: #{present} Corrected: #{recalc}.")
+      self.experience_bonus_effects = recalc
     end
   end
 
@@ -265,6 +286,32 @@ class Fundamental::Alliance < ActiveRecord::Base
     end
   end
 
+  def add_experience_effect_transaction(effect)
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      amount = effect[:bonus]
+
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
+
+      self.experience_bonus_effects += amount
+      propagate_experience_bonus_changes
+      self.save!
+    end
+  end
+
+  def remove_experience_effect_transaction(effect)
+    ActiveRecord::Base.transaction(:requires_new => true) do
+      self.lock!
+      amount = effect[:bonus]
+
+      raise BadRequestError.new("no amount for effect given") if amount.nil?
+
+      self.experience_bonus_effects -= amount
+      propagate_experience_bonus_changes
+      self.save!
+    end
+  end
+
   def recalculate_size_bonus
     new_size_bonus = 0
     self.members.each do |member|
@@ -273,6 +320,30 @@ class Fundamental::Alliance < ActiveRecord::Base
     if self.size_bonus != new_size_bonus
       self.size_bonus = new_size_bonus + self.additional_members
       self.save
+    end
+  end
+
+  def color_r
+    self.color.nil? ? nil : (self.color / (256 * 256) % 256).floor
+  end
+
+  def color_g
+    self.color.nil? ? nil : (self.color / 256 % 256).floor
+  end
+
+  def color_b
+    self.color.nil? ? nil : (self.color % 256).floor
+  end
+
+  def color_nil
+    self.color.nil?
+  end
+
+  def set_color(params)
+    if !params[:color_nil].nil? && params[:color_nil] == "1"
+      self.color = nil
+    else
+      self.color = (params[:color_r].to_i || 0) * 256 * 256 + (params[:color_g].to_i || 0) * 256 + (params[:color_b].to_i || 0)
     end
   end
 
@@ -304,6 +375,19 @@ class Fundamental::Alliance < ActiveRecord::Base
           self.members.each do |member|
             member.lock!
             member.construction_bonus_alliance += self.changes['construction_bonus_effects'][1] - self.changes['construction_bonus_effects'][0]
+            member.save!
+          end
+        end
+      end
+      true
+    end
+
+    def propagate_experience_bonus_changes
+      ActiveRecord::Base.transaction(:requires_new => true) do
+        unless self.changes['experience_bonus_effects'].nil?
+          self.members.each do |member|
+            member.lock!
+            member.exp_bonus_alliance += self.changes['experience_bonus_effects'][1] - self.changes['experience_bonus_effects'][0]
             member.save!
           end
         end
@@ -367,14 +451,25 @@ class Fundamental::Alliance < ActiveRecord::Base
       end
       true
     end
-    
-    
+
+
     def propagate_tag_change
-      alliance_tag_change = self.changes[:tag]    
+      alliance_tag_change = self.changes[:tag]
 
       if !alliance_tag_change.blank?
         self.members.each do |character|
           character.alliance_tag = self.tag
+          character.save
+        end
+      end
+    end
+
+    def propagate_color_change
+      alliance_color_change = self.changes[:color]
+
+      if !alliance_color_change.blank?
+        self.members.each do |character|
+          character.alliance_color = self.color
           character.save
         end
       end

@@ -68,7 +68,8 @@ class Map::Region < ActiveRecord::Base
     end
     if (new_alliance != self.alliance)
       self.alliance = new_alliance
-      self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag    
+      self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag
+      self.alliance_color = self.alliance.nil? ? nil : self.alliance.color
     end
   end
   
