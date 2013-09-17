@@ -337,6 +337,9 @@ end
 <xsl:if test="AllianceTest">
             :alliance_test => {},
 </xsl:if>
+<xsl:if test="CrossPlatformTest">
+            :cross_platform_test => {},
+</xsl:if>
 <xsl:if test="AllianceMembersTest">
             :alliance_members_test => {
               :min_count => <xsl:value-of select="AllianceMembersTest/@min_count" />,
