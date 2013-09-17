@@ -144,6 +144,14 @@ class Fundamental::CharactersController < ApplicationController
         sign_up:            true,
       })
 
+      if !identity['platinum_lifetime_since'].nil? && Time.parse(identity['platinum_lifetime_since']) < Time.now
+        character.set_platinum_lifetime
+      end
+
+      if !identity['supporter_since'].nil? && Time.parse(identity['supporter_since']) < Time.now
+        character.supporter = true
+      end
+
       character.insider_since = identity['insider_since']
       character.first_round = identity['created_at'].nil? ? false : Time.parse(identity['created_at']) > Time.now.advance(:hours => -1)
       character.lang = I18n.locale || "en"
@@ -166,11 +174,6 @@ class Fundamental::CharactersController < ApplicationController
             end
           end
         end
-      end
-
-      if !identity['platinum_lifetime_since'].nil? && Time.parse(identity['platinum_lifetime_since']) < Time.now
-        character.set_platinum_lifetime
-        character.save
       end
 
       start_resource_bonuses.each do |start_resource_bonus|
