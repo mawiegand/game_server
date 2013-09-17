@@ -89,6 +89,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_fortress_count_changes
   after_save  :propagate_alliance_bonus_to_alliance
   after_save  :propagate_construction_bonus
+  after_save  :propagate_supporter_changes
   after_save  :manage_assignments_on_level_change
 
   after_commit :check_consistency_sometimes
@@ -903,7 +904,18 @@ class Fundamental::Character < ActiveRecord::Base
     end
     true
   end
-  
+
+  def propagate_supporter_changes
+    supporter_change = self.changes[:supporter]
+    if !supporter_change.nil?
+      self.locations.each do |location|
+        location.set_special_image(self)
+        location.save
+      end
+    end
+    true
+  end
+
   def manage_assignments_on_level_change
     return true     unless assignment_level_changed?
     

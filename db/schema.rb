@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130916225206) do
+ActiveRecord::Schema.define(:version => 20130917151311) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1751,6 +1751,7 @@ ActiveRecord::Schema.define(:version => 20130916225206) do
     t.integer  "additional_members",                            :default => 0
     t.decimal  "experience_bonus_effects",                      :default => 0.0,   :null => false
     t.integer  "color",                                         :default => 0
+    t.boolean  "supporter"
   end
 
   create_table "fundamental_announcements", :force => true do |t|
@@ -2019,6 +2020,7 @@ ActiveRecord::Schema.define(:version => 20130916225206) do
     t.integer  "settlement_score",   :default => 0, :null => false
     t.string   "avatar_string"
     t.integer  "alliance_color"
+    t.integer  "image_id"
   end
 
   add_index "map_locations", ["region_id"], :name => "index_map_locations_on_region_id"
@@ -2063,6 +2065,7 @@ ActiveRecord::Schema.define(:version => 20130916225206) do
     t.string   "moving_password"
     t.string   "avatar_string"
     t.integer  "alliance_color"
+    t.integer  "image_id"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
