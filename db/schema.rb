@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130918115120) do
+ActiveRecord::Schema.define(:version => 20130918162102) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1788,6 +1788,7 @@ ActiveRecord::Schema.define(:version => 20130918115120) do
     t.boolean  "visible"
     t.integer  "alliance_id"
     t.integer  "army_id"
+    t.integer  "alliance_color"
   end
 
   create_table "fundamental_characters", :force => true do |t|

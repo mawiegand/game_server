@@ -748,9 +748,11 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def propagate_alliance_membership_changes_to_artifact
-    alliance_change     = self.changes[:alliance_id]
-    if !alliance_change.nil? && !self.artifact.nil?
-      self.artifact.alliance = self.alliance
+    alliance_change       = self.changes[:alliance_id]
+    alliance_color_change = self.changes[:alliance_color]
+    if (!alliance_change.nil? || !alliance_color_change.nil?) && !self.artifact.nil?
+      self.artifact.alliance_id    = self.alliance_id
+      self.artifact.alliance_color = self.alliance_color
       self.artifact.save
     end
     true
