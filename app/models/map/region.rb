@@ -60,9 +60,8 @@ class Map::Region < ActiveRecord::Base
   end
 
   def set_special_image(owner)
-    logger.debug "-----> set_special_image #{owner.special_supporter?}"
-    if owner.special_supporter?
-      self.image_id = owner.id
+    if !owner.image_set_id.nil?
+      self.image_id = owner.image_set_id
     else
       self.image_id = nil
     end

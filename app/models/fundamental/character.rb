@@ -58,7 +58,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :supporter, :special_supporter, :platinum_lifetime, :as => :owner
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :supporter, :image_set_id, :platinum_lifetime, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -90,7 +90,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_alliance_bonus_to_alliance
   after_save  :propagate_construction_bonus
   after_save  :propagate_supporter_changes
-  after_save  :propagate_special_supporter_changes
+  after_save  :propagate_image_set_changes
   after_save  :manage_assignments_on_level_change
 
   after_commit :check_consistency_sometimes
@@ -926,10 +926,10 @@ class Fundamental::Character < ActiveRecord::Base
     true
   end
 
-  def propagate_special_supporter_changes
-    special_supporter_change = self.changes[:special_supporter]
-    logger.debug "-----> special_supporter_change #{special_supporter_change}"
-    if !special_supporter_change.nil?
+  def propagate_image_set_changes
+    image_set_change = self.changes[:image_set_id]
+    logger.debug "-----> image_set_change #{image_set_change}"
+    if !image_set_change.nil?
       self.regions.each do |region|
         region.set_special_image(self)
         region.save

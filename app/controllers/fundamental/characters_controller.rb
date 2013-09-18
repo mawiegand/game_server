@@ -157,6 +157,7 @@ class Fundamental::CharactersController < ApplicationController
         character.supporter = true
       end
 
+      character.image_set_id = identity['image_set_id']
       character.insider_since = identity['insider_since']
       character.first_round = identity['created_at'].nil? ? false : Time.parse(identity['created_at']) > Time.now.advance(:hours => -1)
       character.lang = I18n.locale || "en"
