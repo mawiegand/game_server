@@ -1,0 +1,2 @@
+module Effect::AllianceExperienceEffectsHelper
+end

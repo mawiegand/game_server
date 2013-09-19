@@ -63,6 +63,7 @@ class Military::Army < ActiveRecord::Base
       npc:          settlement.owner.npc,
       alliance_id:  settlement.alliance_id,
       alliance_tag: settlement.alliance_tag,
+      alliance_color: settlement.alliance_color,
       home_settlement_name: settlement.name,
       home_settlement_id:   settlement.id,
       ap_max:       4,
@@ -551,7 +552,8 @@ class Military::Army < ActiveRecord::Base
     army.owner_name = army.owner.name
     army.alliance = army.owner.alliance
     army.alliance_tag = army.owner.alliance_tag
-    
+    army.alliance_color = army.owner.alliance_color
+
     details = army.build_details()
     
     GameRules::Rules.the_rules.unit_types.each do | unit_type |

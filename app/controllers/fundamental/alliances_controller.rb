@@ -67,7 +67,11 @@ class Fundamental::AlliancesController < ApplicationController
   def update
     @fundamental_alliance = Fundamental::Alliance.find(params[:id])
     role = determine_access_role(@fundamental_alliance.leader_id, @fundamental_alliance.id)   
-    logger.debug "ROLE: " + role.to_s 
+    logger.debug "ROLE: " + role.to_s
+
+    if staff? && !params[:fundamental_alliance][:color_nil].nil?
+      @fundamental_alliance.set_color(params[:fundamental_alliance])
+    end
 
     raise ForbiddenError.new 'tried to update an alliance without permission.' unless staff? || role == :owner
 

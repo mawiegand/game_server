@@ -24,12 +24,19 @@
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :banner %><br />
-    <%= f.text_field :banner %>
+    Color (0 - 255)<br />
+    <%= f.number_field :color_r %>
+    <%= f.number_field :color_g %>
+    <%= f.number_field :color_b %><br />
+    <p><%= f.check_box    :color_nil %> Delete Color</p>
   </div>
   <div class="field">
     <%= f.label :leader_id %><br />
     <%= f.number_field :leader_id %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_members %><br />
+    <%= f.number_field :additional_members %>
   </div>
   <div class="field">
     <%= f.label :password %><br />

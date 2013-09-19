@@ -15,6 +15,7 @@
   <!-- tier 1 buildings -->  
   <xi:include href="buildings/rules_building_chief_cottage.xml" /> 
   <xi:include href="buildings/rules_building_gatherer.xml" />
+  <xi:include href="buildings/rules_building_special_gatherer.xml" />
   <xi:include href="buildings/rules_building_barracks.xml" />
   <xi:include href="buildings/rules_building_cottage.xml" />
   <xi:include href="buildings/rules_building_tavern.xml" />
@@ -51,6 +52,6 @@
   <xi:include href="buildings/rules_building_cavalry_tower.xml" />    
   <xi:include href="buildings/rules_building_fortress_garrison.xml" />
 
-
+  <xi:include href="buildings/rules_building_special_gatherer.xml" />
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
 </BuildingTypes>

@@ -49,8 +49,6 @@ class Fundamental::CharactersController < ApplicationController
       end
     end
   end
-  
-  
 
   def self
     external_referer = request.env["HTTP_X_ALT_REFERER"] || params[:referer]
@@ -69,6 +67,7 @@ class Fundamental::CharactersController < ApplicationController
       })
 
       response = identity_provider_access.fetch_identity(request_access_token.identifier)
+      logger.info "IDENTITY RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
       identity = {}
       if response.code == 200
         identity = response.parsed_response
@@ -78,7 +77,9 @@ class Fundamental::CharactersController < ApplicationController
 
       # set character properties to default values
       start_resource_modificator = 1.0
-      startup_gifts = []
+      start_resource_bonuses = []
+      start_resources = []
+      start_xp_bonuses = []
       
       # fetch persistent character properties from identity provider  
       response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
@@ -98,8 +99,16 @@ class Fundamental::CharactersController < ApplicationController
                 logger.info "START RESOURCE MODIFICATOR #{ start_resource_modificator }."
               end
               unless character_property['data']['start_resource_bonus'].blank?
-                startup_gifts << character_property['data']['start_resource_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
-                logger.info "START RESOURCE BONUS #{ startup_gifts.inspect }."
+                start_resource_bonuses << character_property['data']['start_resource_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+                logger.info "START RESOURCE BONUS #{ start_resource_bonuses.inspect }."
+              end
+              unless character_property['data']['start_resources'].blank?
+                start_resources << character_property['data']['start_resources'].to_json # start_resource_bonus is saved as serialized hash, not as string
+                logger.info "START RESOURCES #{ start_resources.inspect }."
+              end
+              unless character_property['data']['start_xp_bonus'].blank?
+                start_xp_bonuses << character_property['data']['start_xp_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+                logger.info "START XP BONUS #{ start_xp_bonuses.inspect }."
               end
             end
           end
@@ -140,6 +149,15 @@ class Fundamental::CharactersController < ApplicationController
         sign_up:            true,
       })
 
+      if !identity['platinum_lifetime_since'].nil? && Time.parse(identity['platinum_lifetime_since']) < Time.now
+        character.set_platinum_lifetime
+      end
+
+      if !identity['supporter_since'].nil? && Time.parse(identity['supporter_since']) < Time.now
+        character.supporter = true
+      end
+
+      character.image_set_id = identity['image_set_id']
       character.insider_since = identity['insider_since']
       character.first_round = identity['created_at'].nil? ? false : Time.parse(identity['created_at']) > Time.now.advance(:hours => -1)
       character.lang = I18n.locale || "en"
@@ -164,8 +182,16 @@ class Fundamental::CharactersController < ApplicationController
         end
       end
 
-      startup_gifts.each do |startup_gift|
-        character.redeem_startup_gift(startup_gift)
+      start_resource_bonuses.each do |start_resource_bonus|
+        character.redeem_startup_gift(start_resource_bonus)
+      end
+
+      start_resources.each do |start_resource|
+        character.redeem_start_resources(start_resource)
+      end
+
+      start_xp_bonuses.each do |start_xp_bonus|
+        character.redeem_xp_start_bonus(start_xp_bonus)
       end
 
       if params.has_key?(:alliance_invitation)
@@ -192,7 +218,8 @@ class Fundamental::CharactersController < ApplicationController
       
       # set character properties to default values
       start_resource_modificator = 1.0
-      startup_gifts = []
+      start_resource_bonuses = []
+      start_xp_bonuses = []
 
       # fetch persistent character properties from identity provider
       response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
@@ -212,8 +239,12 @@ class Fundamental::CharactersController < ApplicationController
                 logger.info "START RESOURCE MODIFICATOR #{ start_resource_modificator }."
               end
               unless character_property['data']['start_resource_bonus'].blank?
-                startup_gifts << character_property['data']['start_resource_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
-                logger.info "START RESOURCE BONUS #{ startup_gifts.inspect }."
+                start_resource_bonuses << character_property['data']['start_resource_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+                logger.info "START RESOURCE BONUS #{ start_resource_bonuses.inspect }."
+              end
+              unless character_property['data']['start_xp_bonus'].blank?
+                start_xp_bonuses << character_property['data']['start_xp_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+                logger.info "START XP BONUS #{ start_xp_bonuses.inspect }."
               end
             end
           end
@@ -232,7 +263,7 @@ class Fundamental::CharactersController < ApplicationController
   
       current_character.create_ranking({
         character_name: current_character.name,
-      });
+      })
       
       location = Map::Location.find_empty
       if !location || !current_character.claim_location(location)

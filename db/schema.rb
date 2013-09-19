@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130903133631) do
+ActiveRecord::Schema.define(:version => 20130918115120) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1564,69 +1564,6 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.decimal  "quest_140_playtime_finished",       :default => 0.0
     t.decimal  "quest_140_playtime_started",        :default => 0.0
     t.decimal  "quest_140_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_141_num_finished_day_1",      :default => 0
-    t.integer  "quest_141_num_started_day_1",       :default => 0
-    t.decimal  "quest_141_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_141_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_141_num_finished",            :default => 0
-    t.integer  "quest_141_num_started",             :default => 0
-    t.decimal  "quest_141_playtime_finished",       :default => 0.0
-    t.decimal  "quest_141_playtime_started",        :default => 0.0
-    t.decimal  "quest_141_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_142_num_finished_day_1",      :default => 0
-    t.integer  "quest_142_num_started_day_1",       :default => 0
-    t.decimal  "quest_142_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_142_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_142_num_finished",            :default => 0
-    t.integer  "quest_142_num_started",             :default => 0
-    t.decimal  "quest_142_playtime_finished",       :default => 0.0
-    t.decimal  "quest_142_playtime_started",        :default => 0.0
-    t.decimal  "quest_142_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_143_num_finished_day_1",      :default => 0
-    t.integer  "quest_143_num_started_day_1",       :default => 0
-    t.decimal  "quest_143_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_143_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_143_num_finished",            :default => 0
-    t.integer  "quest_143_num_started",             :default => 0
-    t.decimal  "quest_143_playtime_finished",       :default => 0.0
-    t.decimal  "quest_143_playtime_started",        :default => 0.0
-    t.decimal  "quest_143_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_144_num_finished_day_1",      :default => 0
-    t.integer  "quest_144_num_started_day_1",       :default => 0
-    t.decimal  "quest_144_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_144_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_144_num_finished",            :default => 0
-    t.integer  "quest_144_num_started",             :default => 0
-    t.decimal  "quest_144_playtime_finished",       :default => 0.0
-    t.decimal  "quest_144_playtime_started",        :default => 0.0
-    t.decimal  "quest_144_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_145_num_finished_day_1",      :default => 0
-    t.integer  "quest_145_num_started_day_1",       :default => 0
-    t.decimal  "quest_145_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_145_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_145_num_finished",            :default => 0
-    t.integer  "quest_145_num_started",             :default => 0
-    t.decimal  "quest_145_playtime_finished",       :default => 0.0
-    t.decimal  "quest_145_playtime_started",        :default => 0.0
-    t.decimal  "quest_145_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_146_num_finished_day_1",      :default => 0
-    t.integer  "quest_146_num_started_day_1",       :default => 0
-    t.decimal  "quest_146_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_146_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_146_num_finished",            :default => 0
-    t.integer  "quest_146_num_started",             :default => 0
-    t.decimal  "quest_146_playtime_finished",       :default => 0.0
-    t.decimal  "quest_146_playtime_started",        :default => 0.0
-    t.decimal  "quest_146_retention_rate_week_1",   :default => 0.0
-    t.integer  "quest_147_num_finished_day_1",      :default => 0
-    t.integer  "quest_147_num_started_day_1",       :default => 0
-    t.decimal  "quest_147_playtime_finished_day_1", :default => 0.0
-    t.decimal  "quest_147_playtime_started_day_1",  :default => 0.0
-    t.integer  "quest_147_num_finished",            :default => 0
-    t.integer  "quest_147_num_started",             :default => 0
-    t.decimal  "quest_147_playtime_finished",       :default => 0.0
-    t.decimal  "quest_147_playtime_started",        :default => 0.0
-    t.decimal  "quest_147_retention_rate_week_1",   :default => 0.0
   end
 
   create_table "backend_user_content_reports", :force => true do |t|
@@ -1702,6 +1639,15 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.datetime "updated_at"
   end
 
+  create_table "effect_alliance_experience_effects", :force => true do |t|
+    t.integer  "type_id"
+    t.integer  "origin_id"
+    t.integer  "alliance_id"
+    t.decimal  "bonus"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "effect_alliance_resource_effects", :force => true do |t|
     t.integer  "resource_id"
     t.integer  "type_id"
@@ -1718,6 +1664,16 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.decimal  "bonus"
     t.integer  "character_id"
     t.integer  "origin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "effect_experience_effects", :force => true do |t|
+    t.integer  "type_id"
+    t.integer  "origin_id"
+    t.integer  "character_id"
+    t.decimal  "bonus"
+    t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1792,6 +1748,9 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.integer  "size_bonus",                                    :default => 0
     t.boolean  "auto_join_disabled",                            :default => false, :null => false
     t.decimal  "construction_bonus_effects",                    :default => 0.0,   :null => false
+    t.integer  "additional_members",                            :default => 0
+    t.decimal  "experience_bonus_effects",                      :default => 0.0,   :null => false
+    t.integer  "color"
   end
 
   create_table "fundamental_announcements", :force => true do |t|
@@ -1886,8 +1845,6 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.integer  "last_retention_mail_id"
     t.datetime "last_retention_mail_sent_at"
     t.integer  "kills",                                    :default => 0,     :null => false
-    t.integer  "victories",                                :default => 0,     :null => false
-    t.integer  "defeats",                                  :default => 0,     :null => false
     t.decimal  "exp_production_rate",                      :default => 0.0,   :null => false
     t.decimal  "exp_building_production_rate",             :default => 0.0,   :null => false
     t.datetime "production_updated_at"
@@ -1895,26 +1852,35 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.integer  "received_likes_count",                     :default => 0
     t.integer  "send_dislikes_count",                      :default => 0
     t.integer  "received_dislikes_count",                  :default => 0
+    t.integer  "victories",                                :default => 0,     :null => false
+    t.integer  "defeats",                                  :default => 0,     :null => false
     t.string   "same_ip"
     t.boolean  "deleted_from_game",                        :default => false
     t.datetime "last_deleted_at"
     t.integer  "alliance_size_bonus",                      :default => 0
     t.string   "lang",                                     :default => "en",  :null => false
     t.string   "avatar_string"
+    t.datetime "moved_at"
+    t.integer  "old_base_location_id"
     t.datetime "insider_since"
     t.boolean  "first_round"
     t.datetime "tutorial_finished_at"
-    t.integer  "assignment_level",                         :default => 0,     :null => false
-    t.datetime "moved_at"
-    t.integer  "old_base_location_id"
-    t.integer  "special_offer_dialog_count",               :default => 0
-    t.datetime "premium_expiration_displayed_at"
-    t.datetime "special_offer_displayed_at"
-    t.boolean  "logged_in_on_second_day",                  :default => false, :null => false
     t.decimal  "construction_bonus_effect",                :default => 0.0,   :null => false
     t.decimal  "construction_bonus_total",                 :default => 0.0,   :null => false
+    t.integer  "assignment_level",                         :default => 0,     :null => false
+    t.datetime "premium_expiration_displayed_at"
+    t.integer  "special_offer_dialog_count",               :default => 0
+    t.datetime "special_offer_displayed_at"
+    t.boolean  "logged_in_on_second_day",                  :default => false, :null => false
     t.text     "description"
     t.decimal  "construction_bonus_alliance",              :default => 0.0,   :null => false
+    t.decimal  "exp_bonus_total",                          :default => 0.0,   :null => false
+    t.decimal  "exp_bonus_effects",                        :default => 0.0,   :null => false
+    t.decimal  "exp_bonus_alliance",                       :default => 0.0,   :null => false
+    t.boolean  "supporter",                                :default => false
+    t.boolean  "platinum_lifetime",                        :default => false
+    t.integer  "alliance_color"
+    t.integer  "image_set_id"
   end
 
   create_table "fundamental_gossips", :force => true do |t|
@@ -2053,6 +2019,8 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.integer  "right_of_way"
     t.integer  "settlement_score",   :default => 0, :null => false
     t.string   "avatar_string"
+    t.integer  "alliance_color"
+    t.integer  "image_id"
   end
 
   add_index "map_locations", ["region_id"], :name => "index_map_locations_on_region_id"
@@ -2094,8 +2062,10 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.integer  "settlement_type_id"
     t.integer  "settlement_score",   :default => 0, :null => false
     t.string   "invitation_code"
-    t.string   "avatar_string"
     t.string   "moving_password"
+    t.string   "avatar_string"
+    t.integer  "alliance_color"
+    t.integer  "image_id"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
@@ -2225,6 +2195,7 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.datetime "attack_protection_ends_at"
     t.decimal  "ap_rate",                         :default => 1.0,   :null => false
     t.string   "avatar_string"
+    t.integer  "alliance_color"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2470,6 +2441,7 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.datetime "updated_at"
     t.integer  "kills",            :default => 0, :null => false
     t.integer  "kills_rank"
+    t.integer  "alliance_color"
   end
 
   create_table "ranking_character_rankings", :force => true do |t|
@@ -2506,6 +2478,7 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.decimal  "like_ratio",               :default => 0.0, :null => false
     t.string   "gender"
     t.string   "avatar_string"
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_histories", :force => true do |t|
@@ -2519,6 +2492,7 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_settlements", :force => true do |t|
@@ -2591,12 +2565,12 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.integer  "settlement_queue_artillery_unlock_count",        :default => 0
     t.integer  "settlement_queue_cavalry_unlock_count",          :default => 0
     t.integer  "settlement_queue_siege_unlock_count",            :default => 0
+    t.integer  "army_size_max"
+    t.integer  "garrison_size_max"
     t.decimal  "resource_stone_production_tax_rate",             :default => 0.0
     t.decimal  "resource_wood_production_tax_rate",              :default => 0.0
     t.decimal  "resource_fur_production_tax_rate",               :default => 0.0
     t.decimal  "resource_cash_production_tax_rate",              :default => 0.0
-    t.integer  "army_size_max"
-    t.integer  "garrison_size_max"
     t.datetime "tax_changed_at"
     t.integer  "trading_carts",                                  :default => 0,            :null => false
     t.integer  "settlement_unlock_p2p_trade_count",              :default => 0
@@ -2611,6 +2585,7 @@ ActiveRecord::Schema.define(:version => 20130903133631) do
     t.integer  "name_change_count",                              :default => 0
     t.integer  "alliance_size_bonus",                            :default => 0
     t.integer  "assignment_level",                               :default => 0,            :null => false
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_slots", :force => true do |t|

@@ -28,6 +28,18 @@
     <%= f.datetime_select :insider_since %>
   </div>
   <div class="field">
+    <%= f.label :supporter %><br />
+    <%= f.check_box :supporter %>
+  </div>
+  <div class="field">
+    <%= f.label :image_set_id %><br />
+    <%= f.number_field :image_set_id %>
+  </div>
+  <div class="field">
+    <%= f.label :platinum_lifetime %><br />
+    <%= f.check_box :platinum_lifetime %>
+  </div>
+  <div class="field">
     <%= f.label :identifier %><br />
     <%= f.text_field :identifier %>
   </div>

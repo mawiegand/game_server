@@ -194,6 +194,14 @@ class Map::Location < ActiveRecord::Base
     end
     nil
   end
+
+  def set_special_image(owner)
+    if !self.settlement.nil? && self.settlement.home_base? && owner.supporter?
+      self.image_id = 1
+    else
+      self.image_id = nil
+    end
+  end
   
   # sets the owner_id and alliance_id to the new values. If theses
   # values changed, also updates the owner name and alliance tag.
@@ -204,8 +212,10 @@ class Map::Location < ActiveRecord::Base
     end
     if new_alliance != self.alliance
       self.alliance = new_alliance
-      self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag    
+      self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag
+      self.alliance_color = self.alliance.nil? ? nil : self.alliance.color
     end
+    self.set_special_image(new_owner)
   end
   
   def place_settlement(settlement)
@@ -216,6 +226,7 @@ class Map::Location < ActiveRecord::Base
     self.owner_name = Fundamental::Character.find(settlement.owner_id).name
     self.alliance_id = settlement.alliance_id
     self.alliance_tag = settlement.alliance_tag
+    self.alliance_color = settlement.alliance_color
     self.visible = true
     self.settlement_score = settlement.score
     self.save

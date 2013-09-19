@@ -19,7 +19,7 @@ class Map::Region < ActiveRecord::Base
   before_create :add_unique_invitation_code
   
   before_save   :prevent_empty_moving_password
- 
+
   after_create  :propagate_regions_count_to_round_info
   after_destroy :propagate_regions_count_to_round_info
   
@@ -59,17 +59,27 @@ class Map::Region < ActiveRecord::Base
     self.locations.empty.offset(Random.rand(free_locations)).first
   end
 
+  def set_special_image(owner)
+    if !owner.image_set_id.nil?
+      self.image_id = owner.image_set_id
+    else
+      self.image_id = nil
+    end
+  end
+
   # sets the owner_id and alliance_id to the new values. If theses
   # values changed, also updates the owner name and alliance tag.
   def set_owner_and_alliance(new_owner, new_alliance)
-    if (new_owner != self.owner)
+    if new_owner != self.owner
       self.owner = new_owner
       self.owner_name = self.owner.nil? ? nil : self.owner.name     
     end
-    if (new_alliance != self.alliance)
+    if new_alliance != self.alliance
       self.alliance = new_alliance
-      self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag    
+      self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag
+      self.alliance_color = self.alliance.nil? ? nil : self.alliance.color
     end
+    self.set_special_image(new_owner)
   end
   
   def add_unique_invitation_code
@@ -81,7 +91,6 @@ class Map::Region < ActiveRecord::Base
   def self.find_by_id_or_name(region_identifier)
     region = Map::Region.find_by_id(region_identifier) if Map::Region.valid_id?(region_identifier)
     region = Map::Region.find_by_name(region_identifier) if region.nil?
-    
     region
   end
 

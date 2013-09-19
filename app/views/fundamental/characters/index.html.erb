@@ -9,8 +9,11 @@
     <th>Identifier</th>
     <th>Lang</th>
     <th>Platinum</th>
+    <th>P-Lifetime</th>
     <th>Insider</th>
+    <th>Supporter</th>
     <th>1st Round</th>
+    <th>Image Set</th>
     <th>Staff</th>
     <th>Name</th>
     <th>Login</th>
@@ -52,11 +55,18 @@
       <%= fundamental_character.platinum_account? ? 'X' : "" %>
     </b></span></td>
     <td><span class="green"><b>
+      <%= fundamental_character.platinum_lifetime ? 'X' : "" %>
+    </b></span></td>
+    <td><span class="green"><b>
       <%= fundamental_character.insider ? 'X' : "" %>
+    </b></span></td>
+    <td><span class="green"><b>
+      <%= fundamental_character.supporter ? 'X' : "" %>
     </b></span></td>
     <td><span class="green"><b>
       <%= fundamental_character.first_round? ? 'X' : "" %>
     </b></span></td>
+    <td><%= fundamental_character.image_set_id %></td>
     <td><%= fundamental_character.staff_roles %></td>
     <td><%= fundamental_character.name %> 
         <%if !fundamental_character.alliance_tag.blank? %>
