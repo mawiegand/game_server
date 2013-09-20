@@ -72,7 +72,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="2" build="0" />
+    <Version major="1" minor="2" build="1" />
     <AppControl debugTracking="1">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="22" />
     </AppControl>
@@ -96,15 +96,15 @@
     </CharacterCreation>
     <ConstructionSpeedup>
       <SpeedupCost resource="resource_cash" amount="0"  hours="(1.0/60.0)" />
-      <SpeedupCost resource="resource_cash" amount="1"  hours="1" />
+      <SpeedupCost resource="resource_cash" amount="1"  hours="0.5" />
       <SpeedupCost resource="resource_cash" amount="2"  hours="1" />
       <SpeedupCost resource="resource_cash" amount="4"  hours="3" />
       <SpeedupCost resource="resource_cash" amount="8"  hours="7" />
       <SpeedupCost resource="resource_cash" amount="12" hours="12" />
       <SpeedupCost resource="resource_cash" amount="16" hours="18" />
       <SpeedupCost resource="resource_cash" amount="24" hours="30" />
-      <SpeedupCost resource="resource_cash" amount="40" hours="150" />
-      <SpeedupCost resource="resource_cash" amount="60" hours="9999" />
+      <SpeedupCost resource="resource_cash" amount="36" hours="150" />
+      <SpeedupCost resource="resource_cash" amount="48" hours="9999" />
     </ConstructionSpeedup>
     <TrainingSpeedup>
       <SpeedupCost resource="resource_cash" amount="1"  hours="0.5"  />

@@ -28,8 +28,8 @@
     <Cost id="resource_cash" round="true">2*MAX(LEVEL-19,0)</Cost>
 	  <ProductionTime shortenable="true">EQUAL(LEVEL,1)*24*3600+GREATER(LEVEL,1)*(FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(1800+200*LEVEL)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*3+0.5)*0.65)</ProductionTime>
   <Abilities> <!-- just for grouping -->
-    <GarrisonSizeBonus>300+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30</GarrisonSizeBonus>
-    <ArmySizeBonus>300+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30</ArmySizeBonus>      
+    <GarrisonSizeBonus>200+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30</GarrisonSizeBonus>
+    <ArmySizeBonus>200+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30</ArmySizeBonus>
     <CommandPoints>GREATER(LEVEL,9)</CommandPoints>
   </Abilities>
 </Building>
