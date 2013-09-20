@@ -193,51 +193,57 @@ class GameRules::Rules
           :hours       => (1.0/60.0),
         },              #   END OF (1.0/60.0) hours
 
-        {               #   less than 1 hours
+        {               #   less than (30.0/60.0) hours
           :resource_id => 3,
           :amount      => 1,
+          :hours       => (30.0/60.0),
+        },              #   END OF (30.0/60.0) hours
+
+        {               #   less than 1 hours
+          :resource_id => 3,
+          :amount      => 2,
           :hours       => 1,
         },              #   END OF 1 hours
 
         {               #   less than 3 hours
           :resource_id => 3,
-          :amount      => 2,
+          :amount      => 4,
           :hours       => 3,
         },              #   END OF 3 hours
 
         {               #   less than 7 hours
           :resource_id => 3,
-          :amount      => 4,
+          :amount      => 8,
           :hours       => 7,
         },              #   END OF 7 hours
 
         {               #   less than 12 hours
           :resource_id => 3,
-          :amount      => 6,
+          :amount      => 12,
           :hours       => 12,
         },              #   END OF 12 hours
 
         {               #   less than 18 hours
           :resource_id => 3,
-          :amount      => 8,
+          :amount      => 16,
           :hours       => 18,
         },              #   END OF 18 hours
 
         {               #   less than 30 hours
           :resource_id => 3,
-          :amount      => 12,
+          :amount      => 24,
           :hours       => 30,
         },              #   END OF 30 hours
 
         {               #   less than 150 hours
           :resource_id => 3,
-          :amount      => 20,
+          :amount      => 36,
           :hours       => 150,
         },              #   END OF 150 hours
 
         {               #   less than 9999 hours
           :resource_id => 3,
-          :amount      => 30,
+          :amount      => 48,
           :hours       => 9999,
         },              #   END OF 9999 hours
 
@@ -2949,25 +2955,25 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/3+0.5)",
+                :formula            => "LESS(LEVEL,11)*(FLOORFLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/3+0.5)",
+                :formula            => "LESS(LEVEL,11)*(FLOORFLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/3+0.5)",
+                :formula            => "LESS(LEVEL,11)*(FLOORFLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
               },
             
               {
                 :id                 => 3,
                 :symbolic_id        => :resource_cash,
-                :formula            => "1/24.0",
+                :formula            => "1/12.0",
               },
             
           ],
