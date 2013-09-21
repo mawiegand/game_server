@@ -27,7 +27,7 @@
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <Effects>
-      <ProductionBonus id="resource_stone" domain="character">0.2</ProductionBonus>
+      <ProductionBonus id="resource_stone" domain="character">0.15</ProductionBonus>
       <ProductionBonus id="resource_stone" domain="alliance">0.05</ProductionBonus>
     </Effects>
   </Artifact>
@@ -56,7 +56,7 @@
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <Effects>
-      <ProductionBonus id="resource_wood" domain="character">0.2</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="character">0.15</ProductionBonus>
       <ProductionBonus id="resource_wood" domain="alliance">0.05</ProductionBonus>
     </Effects>
   </Artifact>
@@ -85,7 +85,7 @@
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <Effects>
-      <ProductionBonus id="resource_fur" domain="character">0.2</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="character">0.15</ProductionBonus>
       <ProductionBonus id="resource_fur" domain="alliance">0.05</ProductionBonus>
     </Effects>
   </Artifact>

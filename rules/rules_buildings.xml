@@ -36,8 +36,8 @@
   <xi:include href="buildings/rules_building_quarry_2.xml" />
   <xi:include href="buildings/rules_building_logger_2.xml" />
   <xi:include href="buildings/rules_building_stud.xml" />
-  <xi:include href="buildings/rules_building_furrier_2.xml" />
   <xi:include href="buildings/rules_building_command_post.xml" />
+  <xi:include href="buildings/rules_building_furrier_2.xml" />
   <xi:include href="buildings/rules_building_garrison.xml" />
 
   <!-- camp --> 
@@ -50,7 +50,6 @@
   <xi:include href="buildings/rules_building_infantry_tower.xml" />     
   <xi:include href="buildings/rules_building_artillery_tower.xml" />    
   <xi:include href="buildings/rules_building_cavalry_tower.xml" />    
-  <xi:include href="buildings/rules_building_fortress_garrison.xml" />
 
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
 </BuildingTypes>
