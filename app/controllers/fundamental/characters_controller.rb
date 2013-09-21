@@ -153,8 +153,8 @@ class Fundamental::CharactersController < ApplicationController
         character.set_platinum_lifetime
       end
 
-      if !identity['supporter_since'].nil? && Time.parse(identity['supporter_since']) < Time.now
-        character.supporter = true
+      if !identity['divine_supporter_since'].nil? && Time.parse(identity['divine_supporter_since']) < Time.now
+        character.divine_supporter = true
       end
 
       character.image_set_id = identity['image_set_id']

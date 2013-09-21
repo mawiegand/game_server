@@ -297,7 +297,7 @@
 	experienceFactor CDATA "1"
   hidden (0 | 1) "0"
 	tier CDATA #IMPLIED
-  supporters_only CDATA "false"
+  divine_supporters_only CDATA "false"
 	xml:base CDATA #REQUIRED
 >
 

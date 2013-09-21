@@ -2639,7 +2639,7 @@ class GameRules::Rules
 	        :population  => "1+MIN(MAX(LEVEL-3,0),1)+MIN(MAX(LEVEL-6,0),1)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> false,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -2797,7 +2797,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -2911,7 +2911,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -3021,7 +3021,7 @@ class GameRules::Rules
 	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -3127,7 +3127,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -3247,7 +3247,7 @@ class GameRules::Rules
 	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1))",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> false,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -3347,7 +3347,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -3453,7 +3453,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -3559,7 +3559,7 @@ class GameRules::Rules
 	        :population  => "LESS(LEVEL,11)*FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5))",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -3659,7 +3659,7 @@ class GameRules::Rules
 	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2))",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -3748,7 +3748,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -3855,7 +3855,7 @@ class GameRules::Rules
 	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1))",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> false,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -3943,7 +3943,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -4053,7 +4053,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -4154,7 +4154,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -4269,7 +4269,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -4370,7 +4370,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -4471,7 +4471,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -4581,7 +4581,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -4683,7 +4683,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> false,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -4809,7 +4809,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> false,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -4912,7 +4912,7 @@ class GameRules::Rules
 	        :population  => "(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*0.5))",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> false,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -5024,7 +5024,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => false,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -5118,7 +5118,7 @@ class GameRules::Rules
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => false,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -5208,7 +5208,7 @@ class GameRules::Rules
 	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3+250)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> false,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -5301,7 +5301,7 @@ class GameRules::Rules
 	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -5399,7 +5399,7 @@ class GameRules::Rules
 	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -5497,7 +5497,7 @@ class GameRules::Rules
 	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
@@ -5596,7 +5596,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> false,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -5659,7 +5659,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 	        :population  => "LESS(LEVEL,11)*200",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> false,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -5767,7 +5767,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2))",
   
           :buyable     => true,
-          :supporters_only => false,
+          :divine_supporters_only => false,
           :demolishable=> false,
           :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
@@ -5856,7 +5856,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
 	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
-          :supporters_only => true,
+          :divine_supporters_only => true,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,

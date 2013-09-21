@@ -196,7 +196,7 @@ class Map::Location < ActiveRecord::Base
   end
 
   def set_special_image(owner)
-    if !self.settlement.nil? && self.settlement.home_base? && owner.supporter?
+    if !self.settlement.nil? && self.settlement.home_base? && owner.divine_supporter?
       self.image_id = 1
     else
       self.image_id = nil

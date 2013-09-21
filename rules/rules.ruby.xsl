@@ -662,7 +662,7 @@ end
   </xsl:otherwise>
 </xsl:choose>
           :buyable     => <xsl:value-of select="@buyable"/>,
-          :supporters_only => <xsl:value-of select="@supporters_only"/>,
+          :divine_supporters_only => <xsl:value-of select="@divine_supporters_only"/>,
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
           :takeover_downgrade_by_levels=> <xsl:value-of select="@takeoverDowngradeByLevels"/>,

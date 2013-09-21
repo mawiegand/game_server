@@ -20,12 +20,12 @@ class Fundamental::Alliance < ActiveRecord::Base
 
   belongs_to :leader,    :class_name => "Fundamental::Character",     :foreign_key => "leader_id"
 
-  attr_accessible :name, :password, :description, :banner, :auto_join_disabled, :additional_members, :supporter, :as => :owner
+  attr_accessible :name, :password, :description, :banner, :auto_join_disabled, :additional_members, :as => :owner
   attr_accessible *accessible_attributes(:owner), :tag, :leader_id,                                  :as => :creator # fields accesible during creation
   attr_accessible *accessible_attributes(:creator), :alliance_queue_alliance_research_unlock_count,  :as => :staff
   attr_accessible *accessible_attributes(:staff),                                                    :as => :admin
   
-  attr_readable :id, :tag, :color, :name, :description, :banner, :leader_id, :members_count, :created_at, :updated_at, :size_bonus, :as => :default
+  attr_readable :id, :tag, :color, :name, :description, :banner, :leader_id, :members_count, :created_at, :updated_at, :size_bonus, :additional_members, :as => :default
   attr_readable *readable_attributes(:default), :alliance_queue_, :invitation_code, :as => :ally
   attr_readable *readable_attributes(:ally), :password, :auto_join_disabled,                         :as => :owner
   attr_readable *readable_attributes(:owner),                                                        :as => :staff
