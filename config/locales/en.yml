@@ -171,6 +171,11 @@ en:
       alliance_application_message:
         subject: "Alliance Application"
         body: "The player %{name} has just applied for a membership in your alliance. Please contact him to discuss details or to reject his application."
+    identity_provider:
+      custom_booking:
+        subject: 5D-Credit Booking
+        body1: "Your account has been credited %{amount} 5D-Credits."
+        body2: "%{amount} 5D-Credits have been debited from your account."
     shop:
       platinum_info:
         title: Platinum Account
