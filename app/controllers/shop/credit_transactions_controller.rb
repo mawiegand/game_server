@@ -56,7 +56,7 @@ class Shop::CreditTransactionsController < ApplicationController
     @shop_transaction.save
     
     
-    if (credit_amount >= booking_amount)
+    if credit_amount >= booking_amount
 
       transaction_response = CreditShop::BytroShop.post_virtual_bank_transaction(virtual_bank_transaction, character.identifier)
   
@@ -65,6 +65,14 @@ class Shop::CreditTransactionsController < ApplicationController
         @shop_transaction.state = Shop::Transaction::STATE_CLOSED
         @shop_transaction.credit_amount_booked = booking_amount
         @shop_transaction.save
+
+        # send mail
+        ip_access = IdentityProvider::Access.new(
+            identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+            game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+            scopes:                     ['5dentity'],
+        )
+        ip_access.deliver_custom_booking_notification(character, -booking_amount)
       end
     end    
 

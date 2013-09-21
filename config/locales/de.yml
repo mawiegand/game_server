@@ -64,6 +64,11 @@ de:
       alliance_application_message:
         subject: "Allianz Bewerbung"
         body: "Der Spieler %{name} hat sich bei Deiner Allianz um Aufnahme beworben. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Bewerbung abzulehnen."
+    identity_provider:
+      custom_booking:
+        subject: 5D-Credit-Buchung
+        body1: "Deinem Konto wurden %{amount} 5D-Credits gutgeschrieben."
+        body2: "Von Deinem Konto wurden %{amount} 5D-Credits abgezogen."
     shop:
       platinum_info:
         title: Platinum Account

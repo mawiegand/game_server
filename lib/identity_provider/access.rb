@@ -58,25 +58,41 @@ module IdentityProvider
       put('/identities/' + identifier, {:identity => {:nickname => name}})
     end
 
-
-    def deliver_attack_notification(recipient, attacked_army, attacker)
-      subject = "Du wirst von #{attacker.name} in Wack-a-Doo angegriffen!"        
-      body    = "Deine Armee #{attacked_army.name} mit #{attacked_army.size_present} Einheiten wird "+
-                 "in der Region #{attacked_army.region.name} von #{attacker.name}"+
-                 "#{ attacker.alliance_id.nil? ? "" : " | " + attacker.alliance_tag} angegriffen. "+
-                 "\n\nLog Dich jetzt unter https://wack-a-doo.de ein, um auf den Angriff zu reagieren."
+    def deliver_custom_booking_notification(character, amount)
+      subject = I18n.translate('application.identity_provider.custom_booking.subject', locale: character.lang)
+      if amount > 0
+        body = I18n.translate('application.identity_provider.custom_booking.body1', locale: character.lang, amount: amount)
+      else
+        body = I18n.translate('application.identity_provider.custom_booking.body2', locale: character.lang, amount: -amount)
+      end
 
       notification = {
-        recipient_id:             recipient.identifier,
-        recipient_character_name: recipient.name,
-        sender_id:                nil,
-        subject:                  subject,
-        body:                     body,
+          recipient_id:             character.identifier,
+          recipient_character_name: character.name,
+          sender_id:                nil,
+          subject:                  subject,
+          body:                     body,
+      }
+      post("/identities/#{character.identifier}/messages", { :message => notification })
+    end
+
+    def deliver_attack_notification(recipient, attacked_army, attacker)
+      subject = "Du wirst von #{attacker.name} in Wack-a-Doo angegriffen!"
+      body    = "Deine Armee #{attacked_army.name} mit #{attacked_army.size_present} Einheiten wird "+
+          "in der Region #{attacked_army.region.name} von #{attacker.name}"+
+          "#{ attacker.alliance_id.nil? ? "" : " | " + attacker.alliance_tag} angegriffen. "+
+          "\n\nLog Dich jetzt unter https://wack-a-doo.de ein, um auf den Angriff zu reagieren."
+
+      notification = {
+          recipient_id:             recipient.identifier,
+          recipient_character_name: recipient.name,
+          sender_id:                nil,
+          subject:                  subject,
+          body:                     body,
       }
       post("/identities/#{recipient.identifier}/messages", { :message => notification })
     end
-    
-    
+
     def deliver_message_notification(recipient, sender, message)
       subject = if sender.nil?
         "Du hast soeben eine Nachricht in Wack-a-Doo erhalten."
