@@ -39,6 +39,7 @@
   <xi:include href="buildings/rules_building_command_post.xml" />
   <xi:include href="buildings/rules_building_furrier_2.xml" />
   <xi:include href="buildings/rules_building_garrison.xml" />
+  <xi:include href="buildings/rules_building_large_alliance_hall.xml" />
 
   <!-- camp --> 
   <xi:include href="buildings/rules_building_haunt.xml" />

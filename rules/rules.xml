@@ -72,7 +72,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="2" build="2" />
+    <Version major="1" minor="2" build="4" />
     <AppControl debugTracking="1">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="22" />
     </AppControl>

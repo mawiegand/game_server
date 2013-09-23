@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.2.2
+# Version: 1.2.4
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -121,7 +121,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 2,
-                    :build => 2,
+                    :build => 4,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -193,11 +193,11 @@ class GameRules::Rules
           :hours       => (1.0/60.0),
         },              #   END OF (1.0/60.0) hours
 
-        {               #   less than (30.0/60.0) hours
+        {               #   less than 0.5 hours
           :resource_id => 3,
           :amount      => 1,
-          :hours       => (30.0/60.0),
-        },              #   END OF (30.0/60.0) hours
+          :hours       => 0.5,
+        },              #   END OF 0.5 hours
 
         {               #   less than 1 hours
           :resource_id => 3,
@@ -253,57 +253,63 @@ class GameRules::Rules
   
       :training_speedup => [  # ALL TRAINING SPEEDUPS
 
-        {               #   less than 3 hours
+        {               #   less than 0.5 hours
           :resource_id => 3, 
           :amount      => 1,
+          :hours       => 0.5,
+        },              #   END OF 0.5 hours
+
+        {               #   less than 3 hours
+          :resource_id => 3, 
+          :amount      => 2,
           :hours       => 3,
         },              #   END OF 3 hours
 
         {               #   less than 6 hours
           :resource_id => 3, 
-          :amount      => 2,
+          :amount      => 4,
           :hours       => 6,
         },              #   END OF 6 hours
 
         {               #   less than 11 hours
           :resource_id => 3, 
-          :amount      => 3,
+          :amount      => 6,
           :hours       => 11,
         },              #   END OF 11 hours
 
         {               #   less than 17 hours
           :resource_id => 3, 
-          :amount      => 4,
+          :amount      => 8,
           :hours       => 17,
         },              #   END OF 17 hours
 
         {               #   less than 36 hours
           :resource_id => 3, 
-          :amount      => 6,
+          :amount      => 12,
           :hours       => 36,
         },              #   END OF 36 hours
 
         {               #   less than 56 hours
           :resource_id => 3, 
-          :amount      => 8,
+          :amount      => 16,
           :hours       => 56,
         },              #   END OF 56 hours
 
         {               #   less than 96 hours
           :resource_id => 3, 
-          :amount      => 12,
+          :amount      => 24,
           :hours       => 96,
         },              #   END OF 96 hours
 
         {               #   less than 192 hours
           :resource_id => 3, 
-          :amount      => 20,
+          :amount      => 40,
           :hours       => 192,
         },              #   END OF 192 hours
 
         {               #   less than 9999 hours
           :resource_id => 3, 
-          :amount      => 30,
+          :amount      => 60,
           :hours       => 9999,
         },              #   END OF 9999 hours
 
@@ -313,57 +319,63 @@ class GameRules::Rules
 
       :artifact_initiation_speedup => [  # ALL ARTIFACT INITIATION SPEEDUPS
 
-        {               #   less than 6 hours
+        {               #   less than 3 hours
           :resource_id => 3,
           :amount      => 1,
+          :hours       => 3,
+        },              #   END OF 3 hours
+
+        {               #   less than 6 hours
+          :resource_id => 3,
+          :amount      => 2,
           :hours       => 6,
         },              #   END OF 6 hours
 
         {               #   less than 12 hours
           :resource_id => 3,
-          :amount      => 2,
+          :amount      => 4,
           :hours       => 12,
         },              #   END OF 12 hours
 
         {               #   less than 18 hours
           :resource_id => 3,
-          :amount      => 3,
+          :amount      => 6,
           :hours       => 18,
         },              #   END OF 18 hours
 
         {               #   less than 24 hours
           :resource_id => 3,
-          :amount      => 4,
+          :amount      => 8,
           :hours       => 24,
         },              #   END OF 24 hours
 
         {               #   less than 36 hours
           :resource_id => 3,
-          :amount      => 6,
+          :amount      => 12,
           :hours       => 36,
         },              #   END OF 36 hours
 
         {               #   less than 48 hours
           :resource_id => 3,
-          :amount      => 8,
+          :amount      => 16,
           :hours       => 48,
         },              #   END OF 48 hours
 
         {               #   less than 72 hours
           :resource_id => 3,
-          :amount      => 10,
+          :amount      => 20,
           :hours       => 72,
         },              #   END OF 72 hours
 
         {               #   less than 96 hours
           :resource_id => 3,
-          :amount      => 15,
+          :amount      => 30,
           :hours       => 96,
         },              #   END OF 96 hours
 
         {               #   less than 9999 hours
           :resource_id => 3,
-          :amount      => 20,
+          :amount      => 40,
           :hours       => 9999,
         },              #   END OF 9999 hours
 
@@ -1018,7 +1030,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 28,
+              :id => 29,
               :type => 'building',
 
               :min_level => 0,
@@ -1113,7 +1125,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 28,
+              :id => 29,
               :type => 'building',
 
               :min_level => 1,
@@ -1208,7 +1220,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 28,
+              :id => 29,
               :type => 'building',
 
               :min_level => 5,
@@ -1217,7 +1229,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 28,
               :type => 'building',
 
               :min_level => 4,
@@ -1312,7 +1324,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 28,
+              :id => 29,
               :type => 'building',
 
               :min_level => 10,
@@ -1321,7 +1333,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 28,
               :type => 'building',
 
               :min_level => 9,
@@ -1443,7 +1455,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 0,
@@ -1527,7 +1539,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 29,
+              :id => 30,
               :type => 'building',
 
               :min_level => 1,
@@ -1622,7 +1634,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 29,
+              :id => 30,
               :type => 'building',
 
               :min_level => 5,
@@ -1631,7 +1643,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 28,
               :type => 'building',
 
               :min_level => 4,
@@ -1726,7 +1738,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 29,
+              :id => 30,
               :type => 'building',
 
               :min_level => 10,
@@ -1735,7 +1747,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 28,
               :type => 'building',
 
               :min_level => 9,
@@ -1857,7 +1869,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 0,
@@ -1941,7 +1953,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 1,
@@ -2036,7 +2048,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 5,
@@ -2045,7 +2057,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 28,
               :type => 'building',
 
               :min_level => 4,
@@ -2140,7 +2152,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 10,
@@ -2149,7 +2161,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 28,
               :type => 'building',
 
               :min_level => 9,
@@ -2271,7 +2283,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 0,
@@ -2669,7 +2681,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 0,
@@ -2811,7 +2823,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 1,
@@ -2876,7 +2888,7 @@ class GameRules::Rules
             
             :de_DE => "Gottesgläubiger Sammler",
   
-            :en_US => "Special Hunter Gatherers",
+            :en_US => "God-Fearing Gatherer",
                 
           },
           :flavour     => {
@@ -2888,9 +2900,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Der Gottesgläubige Sammler folgt nurden  Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben. Diese Halbgötter stehen sehr hoch im Ansehen der Schöpfer der Wack-A-Doo Welt.</p><p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p>",
+            :de_DE => "<p>Der Gottesgläubige Sammler folgt nur den  Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p><p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p>",
   
-            :en_US => "<p>The most primitive of all Stone Age folk, the Hunter Gatherer collects all kinds of stuff, from branches and stones to roots, and even a couple of Golden Frogs, if the area is big enough. Basically, he hunts and gathers anything that comes into his sights - er... into the reach of his slingshot. All his treasures are set out neatly on display in his compound. </p><p>Apart from all kinds of useless stuff, hunter gatherers find everything – from branches and stones to roots and, if the area is big enough, even a couple of golden frogs.</p>",
+            :en_US => "<p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p><p>Through his devotion he can find ressources and even golden frogs at a much higher rate than their peers..</p>",
                 
           },
 
@@ -2937,19 +2949,19 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "LESS(LEVEL,11)*(FLOORFLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
+                :formula            => "LESS(LEVEL,11)*(FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "LESS(LEVEL,11)*(FLOORFLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
+                :formula            => "LESS(LEVEL,11)*(FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "LESS(LEVEL,11)*(FLOORFLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
+                :formula            => "LESS(LEVEL,11)*(FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
               },
             
               {
@@ -3026,7 +3038,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 2,
@@ -3136,7 +3148,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 3,
@@ -3331,7 +3343,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 4,
@@ -3551,7 +3563,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 5,
@@ -3657,7 +3669,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 5,
@@ -3761,7 +3773,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 0,
@@ -3952,7 +3964,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 8,
@@ -4147,7 +4159,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 11,
@@ -4199,16 +4211,16 @@ class GameRules::Rules
           },
 
         },              #   END OF Schießstand
-        {               #   Große Stammeshalle
+        {               #   Stammeshalle
           :id          => 15, 
           :symbolic_id => :building_alliance_hall,
 					:category    => 6,
           :db_field    => :building_alliance_hall,
           :name        => {
             
-            :de_DE => "Große Stammeshalle",
+            :de_DE => "Stammeshalle",
   
-            :en_US => "Tribe's Large Hall",
+            :en_US => "Tribes Hall",
                 
           },
           :flavour     => {
@@ -4220,9 +4232,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen. Oder zum Bowling, wenn die Halle denn lang genug ist.</p><p>Mit jedem Ausbau der Großen Stammeshalle kann die Allianz weitere Mitglieder aufnehmen.</p>",
+            :de_DE => "<p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen. Oder zum Bowling, wenn die Halle denn lang genug ist.</p><p>Mit jedem Ausbau der Stammeshalle kann die Allianz weitere Mitglieder aufnehmen.</p>",
   
-            :en_US => "<p>In the Large Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. Very large halls make it possible to accept more alliance members into the meeting.</p>",
+            :en_US => "<p>In the Tribes Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. More developed halls make it possible to accept more alliance members into the meeting.</p>",
                 
           },
 
@@ -4306,7 +4318,7 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Große Stammeshalle
+        },              #   END OF Stammeshalle
         {               #   Winddichte Hütte
           :id          => 16, 
           :symbolic_id => :building_cottage_2,
@@ -4365,7 +4377,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 12,
@@ -4466,7 +4478,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 13,
@@ -4581,7 +4593,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 14,
@@ -4682,7 +4694,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 14,
@@ -4783,7 +4795,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 15,
@@ -4900,7 +4912,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 0,
@@ -5019,7 +5031,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 17,
@@ -5128,7 +5140,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 0,
@@ -5166,8 +5178,100 @@ class GameRules::Rules
           },
 
         },              #   END OF Garnisonsgebäude
-        {               #   Versammlungsplatz
+        {               #   Große Stammeshalle
           :id          => 24, 
+          :symbolic_id => :building_large_alliance_hall,
+					:category    => 6,
+          :db_field    => :building_large_alliance_hall,
+          :name        => {
+            
+            :de_DE => "Große Stammeshalle",
+  
+            :en_US => "Tribe's Large Hall",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>",
+  
+            :de_DE => "<p>Gutes Essen, leckere Getränke und viel Platz. Ein würdiger Rahmen für große Verhandlungen!</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen. Oder zum Bowling, wenn die Halle denn lang genug ist.</p><p>Mit jedem Ausbau der Großen Stammeshalle kann die Allianz weitere Mitglieder aufnehmen.</p>",
+  
+            :en_US => "<p>In the Large Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. Very large halls make it possible to accept more alliance members into the meeting.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "200+20*LEVEL",
+  
+          :buyable     => true,
+          :supporters_only => false,
+          :demolishable=> false,
+          :destructable=> false,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 1.5,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_alliance_hall',
+              :id => 15,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_large_alliance_hall',
+              :id => 24,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
+            1 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
+            2 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
+            
+          },
+
+          :production_time => 'LESS(LEVEL,11)*CEIL((30*POW(LEVEL+4,3.2)+47547*(0.06*(LEVEL-5)+0.98))*1.1*3+0.5)
+      ',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],          
+
+          :abilities   => {
+
+            :alliance_size_bonus => "11+GREATER(LEVEL,1)*(LEVEL*2)",
+
+          },
+
+        },              #   END OF Große Stammeshalle
+        {               #   Versammlungsplatz
+          :id          => 25, 
           :symbolic_id => :building_haunt,
 					:category    => 4,
           :db_field    => :building_haunt,
@@ -5211,7 +5315,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 0,
@@ -5279,7 +5383,7 @@ class GameRules::Rules
 
         },              #   END OF Versammlungsplatz
         {               #   Feldlager
-          :id          => 25, 
+          :id          => 26, 
           :symbolic_id => :building_field_camp,
 					:category    => 4,
           :db_field    => :building_field_camp,
@@ -5323,7 +5427,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 6,
@@ -5373,7 +5477,7 @@ class GameRules::Rules
 
         },              #   END OF Feldlager
         {               #   Ritualstein
-          :id          => 26, 
+          :id          => 27, 
           :symbolic_id => :building_altar,
 					:category    => 4,
           :db_field    => :building_altar,
@@ -5417,7 +5521,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 25,
               :type => 'building',
 
               :min_level => 6,
@@ -5463,7 +5567,7 @@ class GameRules::Rules
 
         },              #   END OF Ritualstein
         {               #   Festungsanlagen
-          :id          => 27, 
+          :id          => 28, 
           :symbolic_id => :building_fortress_fortification,
 					:category    => 0,
           :db_field    => :building_fortress_fortification,
@@ -5556,7 +5660,7 @@ class GameRules::Rules
 
         },              #   END OF Festungsanlagen
         {               #   Turm der Knüppelei
-          :id          => 28, 
+          :id          => 29, 
           :symbolic_id => :building_infantry_tower,
 					:category    => 1,
           :db_field    => :building_infantry_tower,
@@ -5584,7 +5688,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3+250)",
+	        :population  => "(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3+250)+(LESS(LEVEL,20)*0+EQUAL(LEVEL,20)*39)",
   
           :buyable     => true,
           :supporters_only => false,
@@ -5600,7 +5704,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 28,
               :type => 'building',
 
               :min_level => 1,
@@ -5654,7 +5758,7 @@ class GameRules::Rules
 
         },              #   END OF Turm der Knüppelei
         {               #   Turm der Ballistik
-          :id          => 29, 
+          :id          => 30, 
           :symbolic_id => :building_artillery_tower,
 					:category    => 1,
           :db_field    => :building_artillery_tower,
@@ -5698,7 +5802,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 28,
               :type => 'building',
 
               :min_level => 5,
@@ -5752,7 +5856,7 @@ class GameRules::Rules
 
         },              #   END OF Turm der Ballistik
         {               #   Turm der Reitmeisterei
-          :id          => 30, 
+          :id          => 31, 
           :symbolic_id => :building_cavalry_tower,
 					:category    => 1,
           :db_field    => :building_cavalry_tower,
@@ -5796,7 +5900,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 28,
               :type => 'building',
 
               :min_level => 7,
@@ -5912,7 +6016,7 @@ class GameRules::Rules
             0 => {
               :max_level => 10,
               
-              :building  => 27,
+              :building  => 28,
               
               :level  => 1,
               
@@ -6532,7 +6636,7 @@ class GameRules::Rules
             1 => {
               :max_level => 20,
               
-              :building  => 24,
+              :building  => 25,
               
               :level  => 1,
               
@@ -8160,9 +8264,9 @@ class GameRules::Rules
           },
           :flavour => {
             
-            :de_DE => "Flavor",
+            :de_DE => "Für eine Keule ist das aber ziemlich mickrig.",
   
-            :en_US => "Flavor",
+            :en_US => "Pretty puny for a club.",
   
           },
 
