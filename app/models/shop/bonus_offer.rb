@@ -8,6 +8,14 @@ class Shop::BonusOffer < ActiveRecord::Base
       :origin_id => self.id
     )
     raise BadRequestError.new('more than one bonus active for same resource') if effects.count > 1
+
+    if effects.empty?
+      effects = Effect::ResourceEffect.where(
+          :resource_pool_id => character.resource_pool.id,
+          :type_id => Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_SHOP,
+          :resource_id => self.resource_id
+      )
+    end
     
     effects.first
   end
