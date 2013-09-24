@@ -4034,7 +4034,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen. Die Kupferschmelze ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude.</p><p>Eine Kupferschmelze kann nur auf einem kleinen Bauplatz gebaut werden.</p>",
+            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen. Die Kupferschmelze ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude.</p>",
   
             :en_US => "<p>Copper is THE discovery that moved the Stone Age forward into… yes, you guessed it, the Copper-Stone Age. Its discovery leads to not only the creation of some very attractive jewellery, but also to more deadly weapons and progress in making many kinds of implements and tools.</p>",
                 
