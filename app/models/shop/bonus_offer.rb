@@ -1,5 +1,8 @@
 class Shop::BonusOffer < ActiveRecord::Base
 
+  CURRENCY_CREDITS = 0
+  CURRENCY_GOLDEN_FROGS = 1
+
   def effect_for_character(character)
     effects = Effect::ResourceEffect.where(
       :resource_pool_id => character.resource_pool.id,

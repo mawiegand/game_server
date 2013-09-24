@@ -50,7 +50,7 @@ class Effect::ResourceEffect < ActiveRecord::Base
       )
     end
     
-    effect
+    !effect.nil?
   end
   
 
