@@ -191,7 +191,6 @@ class Fundamental::Artifact < ActiveRecord::Base
           add_alliance_resource_effect(self.alliance.id, bonus)
         end
       end
-      # TODO remove unnecessary effects aswell
     end
     unless self.initiated?
       self.character_resource_effects.destroy_all
@@ -205,11 +204,10 @@ class Fundamental::Artifact < ActiveRecord::Base
       self.artifact_type[:construction_bonus].each do |bonus|
         if bonus[:domain_id] == 0 && self.character_construction_effects.empty?
           add_character_construction_effect(self.owner.id, bonus)
-        elsif bonus[:domain_id] == 2 && !self.alliance.nil? && self.alliance_resource_effects.empty?
+        elsif bonus[:domain_id] == 2 && !self.alliance.nil? && self.alliance_construction_effects.empty?
           add_alliance_construction_effect(self.alliance.id, bonus)
         end
       end
-      # TODO remove unnecessary effects aswell
     end
     unless self.initiated?
       self.character_construction_effects.destroy_all
