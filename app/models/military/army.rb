@@ -198,6 +198,12 @@ class Military::Army < ActiveRecord::Base
     
     !founder.nil?
   end
+
+  def move_to_location(target_location)
+    self.location = target_location
+    self.region = target_location.region
+    self.save
+  end
   
   def found_outpost!
     return   if owner.nil? || location.nil?    
