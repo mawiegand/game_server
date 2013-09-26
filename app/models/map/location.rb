@@ -219,12 +219,12 @@ class Map::Location < ActiveRecord::Base
   end
   
   def place_settlement(settlement)
-    self.region_id = settlement.region_id
+    self.region = settlement.region
     self.settlement_type_id = settlement.type_id
     self.settlement_level = settlement.level
-    self.owner_id = settlement.owner_id
-    self.owner_name = Fundamental::Character.find(settlement.owner_id).name
-    self.alliance_id = settlement.alliance_id
+    self.owner = settlement.owner
+    self.owner_name = settlement.owner.name
+    self.alliance = settlement.alliance
     self.alliance_tag = settlement.alliance_tag
     self.alliance_color = settlement.alliance_color
     self.visible = true
@@ -238,7 +238,7 @@ class Map::Location < ActiveRecord::Base
     self.count_armies = nil
     self.owner_id = nil
     self.owner_name = nil
-    self.visible = nil
+    self.visible = false
     self.right_of_way = 0
     self.settlement_score = 0
     self.save

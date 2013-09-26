@@ -33,9 +33,13 @@ class Map::Region < ActiveRecord::Base
   def non_fortress_locations_owned_by(character)
     self.locations.owned_by(character).excluding_fortress_slots
   end
+
+  def owned_by_npc?
+    self.owner_id == 1
+  end
   
   def settleable_by?(character)
-    return non_fortress_locations_owned_by(character).count == 0
+    non_fortress_locations_owned_by(character).count == 0
   end
   
   def owned_by_alliance?(alliance)
@@ -47,7 +51,7 @@ class Map::Region < ActiveRecord::Base
   end
   
   def is_moving_allowed?(alliance, moving_password)
-    check_moving_password?(moving_password) or self.owned_by_alliance?(alliance)
+    self.owned_by_npc? || self.owned_by_alliance?(alliance) || check_moving_password?(moving_password)
   end
   
 	def last_takeover_at

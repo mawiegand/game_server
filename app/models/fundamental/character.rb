@@ -262,6 +262,9 @@ class Fundamental::Character < ActiveRecord::Base
     !self.alliance.nil? && self.alliance.leader_id == self.id
   end
 
+  def moved_home_settlement?
+    !self.moved_at.nil?
+  end
 
   def max_finished_quest
     tutorial_state.nil? ? nil : tutorial_state.finished_quests.maximum(:quest_id)

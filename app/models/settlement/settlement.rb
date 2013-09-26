@@ -216,11 +216,12 @@ class Settlement::Settlement < ActiveRecord::Base
   def move_settlement_to_region(new_region)
     return false if !self.home_base?
     location = new_region.find_empty_location
-    self.location_id = location.id
-    self.region_id = new_region.id
+    return false if location.nil?
+    self.location = location
+    self.region = new_region
     self.node_id = new_region.node_id
-    self.garrison_army.location_id = self.location_id
-    self.garrison_army.region_id = self.region_id
+    self.garrison_army.location = self.location
+    self.garrison_army.region = self.region
     self.garrison_army.save
     self.save
     location.place_settlement(self)
