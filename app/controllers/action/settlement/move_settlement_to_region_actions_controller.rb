@@ -24,7 +24,7 @@ class Action::Settlement::MoveSettlementToRegionActionsController < ApplicationC
     current_character.base_region_id = home_base.location.region_id
     current_character.base_node_id = home_base.location.region.node_id
     old_base_location.remove_settlement
-    current_character.moved_at = Time.now
+    #current_character.moved_at = Time.now
     current_character.artifact.jump_to_neighbor_location if !current_character.artifact.nil?
     current_character.save
     
