@@ -39,7 +39,7 @@ class Map::Region < ActiveRecord::Base
   end
   
   def settleable_by?(character)
-    non_fortress_locations_owned_by(character).count == 0
+    non_fortress_locations_owned_by(character).count == 0 && self.locations.empty.count > 0
   end
   
   def owned_by_alliance?(alliance)
