@@ -209,6 +209,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   def wear_down_condition
     self.condition = [(condition || 0.0)-0.05, 0.0].max
+    self.condition_updated_at = DateTime.now
   end
   
   def present_defense_bonus
