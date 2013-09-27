@@ -222,6 +222,11 @@ class Ticker::BattleHandler
           runloop.say "During Battle: Artifact not available"
         end
 
+        garrison_army = battle.garrison
+        if !garrison_army.nil? && !garrison_army.home.nil?
+          garrison_army.home.wear_down_condition
+          garrison_army.home.save
+        end
 
         #schedule next round
         battle.schedule_next_round
