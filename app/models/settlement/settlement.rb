@@ -211,7 +211,7 @@ class Settlement::Settlement < ActiveRecord::Base
   end
   
   def present_defense_bonus
-    (defense_bonuse || 0) * (condition || 0)
+    (defense_bonus || 0) * (condition || 0)
   end
   
   def update_condition_if_necessary
