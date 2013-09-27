@@ -76,7 +76,7 @@ module Ticker
     end
     
     def_modifier  = 1.0 
-    def_modifier += settlement.defense_bonus    unless settlement.nil?
+    def_modifier += settlement.present_defense_bonus    unless settlement.nil?
 
     runloop.say "Faction ID #{faction.id} has def_modifier #{def_modifier}"
 

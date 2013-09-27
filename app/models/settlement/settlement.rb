@@ -67,6 +67,8 @@ class Settlement::Settlement < ActiveRecord::Base
 
   after_save  :propagate_information_to_armies
   after_save  :propagate_information_to_garrison
+  
+  after_find  :update_condition_if_necessary
 
 
   def self.find_fortress_by_name_case_insensitive(name)
@@ -171,6 +173,50 @@ class Settlement::Settlement < ActiveRecord::Base
     points            = 0     if points.nil?
     garrison_size_max = 0     if garrison_size_max.nil?
     army_size_max     = 0     if army_size_max.nil?
+  end
+  
+  
+  # returns whether an update of the condition is overdue
+  def needs_condition_update?
+    logger.debug("Condition presently: #{ condition } / 1.0 last regeneration at #{ condition_updated_at }.")
+    (condition < 1.0 && (condition_updated_at.nil? || condition_updated_at + 1.hours < Time.now)) 
+  end  
+  
+  
+  def update_condition
+    reg_per_hour = 0.01   # regenerates 1 percent per hour
+    
+    # condition = MIN [ 1.0, condition + (INTERVAL(now - condition_updated_at) * CONDITION_REG_PER_SECOND) ]
+    if condition < 0.0
+      logger.error("inconsistent state in database: #{ condition } of 1.0 condition. FIXED THIS BY SETTING CONDITION TO: 0.0.")
+      self.condition = 0.0
+      self.condition_updated_at = Time.now
+      self.save
+    elsif condition > 1.0
+      logger.error("inconsistent state in database: #{ condition } of 1.0 condition. FIXED THIS BY SETTING CONDITION TO: 1.0.")
+      self.condition = 1.0
+      self.condition_updated_at = Time.now
+      self.save
+    elsif condition < 1.0 && condition_updated_at.nil? && self.battle_id.nil?
+      self.condition_updated_at = Time.now   
+      self.save
+    elsif condition < 1.0 && !condition_updated_at.nil? && self.battle_id.nil?
+      self.condition = [(self.condition || 0) + [((Time.now - self.condition_updated_at) / 3600.0) * reg_per_hour, 0.0].max, 1.0].min
+      self.condition_updated_at = Time.now
+      self.save if changed
+    end
+  end
+  
+  def wear_down_condition
+    self.condition = [(condition || 0.0)-0.05, 0.0].max
+  end
+  
+  def present_defense_bonus
+    (defense_bonuse || 0) * (condition || 0)
+  end
+  
+  def update_condition_if_necessary
+    update_condition if needs_condition_update? && self.battle_id.nil?
   end
   
   def tax_rate_change_possible?

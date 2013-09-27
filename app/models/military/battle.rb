@@ -373,7 +373,14 @@ class Military::Battle < ActiveRecord::Base
     end
     nil
   end
-
+  
+  def garrison
+    self.armies.each do |army|
+      return army if army.garrison?
+    end
+    nil
+  end
+  
   def check_for_artifact_stealing(artifact)
     return nil if artifact.nil?
 

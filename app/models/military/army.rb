@@ -29,11 +29,13 @@ class Military::Army < ActiveRecord::Base
   after_save     :update_experience_ranking
   after_save     :update_experience_and_kills_character
   after_save     :propagate_change_to_map
+  after_save     :propagate_battle_to_settlement
   before_destroy :remove_from_experience_ranking 
   before_destroy :disband_from_battle
 
   after_create   :touch_map  
   after_create   :touch_home_settlement
+  after_destroy  :remove_battle_from_settlement
   after_destroy  :touch_home_settlement
 
     
@@ -725,12 +727,22 @@ class Military::Army < ActiveRecord::Base
         self.ranking.recalc_max_experience(self.id)  # recalc and ignore this army
         self.ranking.save
       end
+      true
+    end
+
+    def remove_battle_from_settlement
+      if self.garrison? && !self.home.nil?
+        self.home.battle_id = nil 
+        self.home.save
+      end
+      true
     end
 
     def touch_home_settlement
-      if !self.home.nil?
+      if !self.home.nil?  
         self.home.touch
       end
+      true
     end
 
     def touch_map
@@ -740,6 +752,7 @@ class Military::Army < ActiveRecord::Base
       if !self.location.nil?
         self.location.touch
       end
+      true
     end    
     
     def disband_from_battle
@@ -750,6 +763,14 @@ class Military::Army < ActiveRecord::Base
       true
     end
       
+      
+    def propagate_battle_to_settlement
+      if self.battle_id_changed? && self.garrison? && !self.home.nil?
+        self.home.battle_id = self.battle_id
+        self.home.save
+      end
+      true
+    end
     
     # updates the armies_changed_at  timestamp in regions and locations. That
     # timestamp is used in case the client fetches armies for a location and 
