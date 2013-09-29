@@ -219,20 +219,20 @@
     </SlotBubbles>
     <SpecialOffer>
       <Outpost>
-        <CompletedBuilding id="building_haunt" level="5"></CompletedBuilding>
-        <CompletedBuilding id="building_gatherer" level="4"></CompletedBuilding>
-        <CompletedBuilding id="building_gatherer" level="5"></CompletedBuilding>
-        <CompletedBuilding id="building_gatherer" level="6"></CompletedBuilding>
-        <CompletedBuilding id="building_gatherer" level="7"></CompletedBuilding>
+        <Slot slotNum="1" id="building_haunt" level="5"></Slot>
+        <Slot slotNum="3" id="building_gatherer" level="4"></Slot>
+        <Slot slotNum="4" id="building_gatherer" level="5"></Slot>
+        <Slot slotNum="5" id="building_gatherer" level="6"></Slot>
+        <Slot slotNum="6" id="building_gatherer" level="7"></Slot>
       </Outpost>
       <StartResource id="resource_cash">300</StartResource>
       <StartResource id="resource_stone">500</StartResource>
       <StartResource id="resource_wood">500</StartResource>
       <StartResource id="resource_fur">500</StartResource>
-      <ProductionBonus id="resource_stone" domain="character">0.15</ProductionBonus>
-      <ProductionBonus id="resource_wood" domain="character">0.15</ProductionBonus>
-      <ProductionBonus id="resource_fur" domain="character">0.15</ProductionBonus>
-      <ConstructionBonus domain="character">1</ConstructionBonus>
+      <ProductionStartBonus id="resource_stone" duration="120">0.15</ProductionStartBonus>
+      <ProductionStartBonus id="resource_wood" duration="120">0.15</ProductionStartBonus>
+      <ProductionStartBonus id="resource_fur" duration="120">0.15</ProductionStartBonus>
+      <ConstructionStartBonus duration="120">1</ConstructionStartBonus>
     </SpecialOffer>
   </General>
   <xi:include href="rules_victories.xml" />

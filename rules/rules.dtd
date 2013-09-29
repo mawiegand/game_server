@@ -72,12 +72,13 @@
   max CDATA #REQUIRED
 >
 
-<!ELEMENT SpecialOffer (Outpost, StartResource*, ProductionBonus*, ConstructionBonus*)>
+<!ELEMENT SpecialOffer (Outpost, StartResource*, ProductionStartBonus*, ConstructionStartBonus*)>
 
-<!ELEMENT Outpost (CompletedBuilding*)>
+<!ELEMENT Outpost (Slot*)>
 
-<!ELEMENT CompletedBuilding EMPTY>
-<!ATTLIST CompletedBuilding
+<!ELEMENT Slot EMPTY>
+<!ATTLIST Slot
+  slotNum CDATA #REQUIRED
   id IDREF #REQUIRED
   level CDATA "1"
 >
@@ -625,7 +626,18 @@
   domain IDREF "character"
 >
 
-<!--Ability-->
+<!ELEMENT ProductionStartBonus (#PCDATA)>
+<!ATTLIST ProductionStartBonus
+  id IDREF #REQUIRED
+  duration CDATA #REQUIRED
+>
+
+<!ELEMENT ConstructionStartBonus (#PCDATA)>
+<!ATTLIST ConstructionStartBonus
+  duration CDATA #REQUIRED
+>
+
+    <!--Ability-->
 <!ELEMENT Ability EMPTY>
 <!ATTLIST Ability
  id CDATA #REQUIRED

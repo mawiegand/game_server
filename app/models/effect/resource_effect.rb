@@ -6,6 +6,7 @@ class Effect::ResourceEffect < ActiveRecord::Base
 
   RESOURCE_EFFECT_TYPE_SHOP = 0
   RESOURCE_EFFECT_TYPE_ARTIFACT = 1
+  RESOURCE_EFFECT_TYPE_SPECIAL_OFFER = 2
 
   after_create   :propagate_effect_creation
   before_destroy :propagate_effect_removal

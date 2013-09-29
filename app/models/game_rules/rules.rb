@@ -184,36 +184,31 @@ class GameRules::Rules
       },
       :special_offer => {
   
-        :completed_building => [
-
-          {
+        :outpost => {
+1 => {
             :id          => 21,
             :level       => 5,
           },
-
-          {
+3 => {
             :id          => 1,
             :level       => 4,
           },
-
-          {
+4 => {
             :id          => 1,
             :level       => 5,
           },
-
-          {
+5 => {
             :id          => 1,
             :level       => 6,
           },
-
-          {
+6 => {
             :id          => 1,
             :level       => 7,
           },
 
-        ],
+        },
 
-        :resource_credit => {
+        :start_resources => {
           3 => 300,
             0 => 500,
             1 => 500,
@@ -224,26 +219,29 @@ class GameRules::Rules
         :production_bonus  => [
 
           {
-            :id                 => 0,
-            :symbolic_id        => :resource_stone,
-            :formula            => "0.15",
+            :id         => 0,
+            :amount     => 0.15,
+            :duration   => 120,
           },
 
           {
-            :id                 => 1,
-            :symbolic_id        => :resource_wood,
-            :formula            => "0.15",
+            :id         => 1,
+            :amount     => 0.15,
+            :duration   => 120,
           },
 
           {
-            :id                 => 2,
-            :symbolic_id        => :resource_fur,
-            :formula            => "0.15",
+            :id         => 2,
+            :amount     => 0.15,
+            :duration   => 120,
           },
 
         ],
 
-        :construction_bonus  => "1",
+        :construction_bonus  => {
+          :amount    => 1,
+          :duration  => 120,
+        }
 
       },
       :artifact_count => 6,

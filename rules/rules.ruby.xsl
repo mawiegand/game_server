@@ -295,33 +295,36 @@ end
 
 <xsl:template match="SpecialOffer">
 <xsl:if test="Outpost">
-        :completed_building => [
-<xsl:for-each select="Outpost/CompletedBuilding">
-          {
+        :outpost => {
+<xsl:for-each select="Outpost/Slot">
+          <xsl:value-of select="@slotNum"/> => {
             :id          => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
             :level       => <xsl:value-of select="@level"/>,
           },
 </xsl:for-each>
-        ],
+        },
 </xsl:if>
 <xsl:if test="StartResource">
-        :resource_credit => {
+        :start_resources => {
           <xsl:apply-templates select="StartResource" />
         },
 </xsl:if>
-<xsl:if test="ProductionBonus">
+<xsl:if test="ProductionStartBonus">
         :production_bonus  => [
-<xsl:for-each select="ProductionBonus">
+<xsl:for-each select="ProductionStartBonus">
           {
-            :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
-            :symbolic_id        => :<xsl:value-of select="@id"/>,
-            :formula            => "<xsl:apply-templates/>",
+            :id         => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+            :amount     => <xsl:apply-templates/>,
+            :duration   => <xsl:value-of select="@duration"/>,
           },
 </xsl:for-each>
         ],
 </xsl:if>
-<xsl:if test="ConstructionBonus">
-        :construction_bonus  => "<xsl:value-of select="ConstructionBonus"/>",
+<xsl:if test="ConstructionStartBonus">
+        :construction_bonus  => {
+          :amount    => <xsl:value-of select="ConstructionStartBonus"/>,
+          :duration  => <xsl:value-of select="ConstructionStartBonus/@duration"/>,
+        }
 </xsl:if>
 
 </xsl:template>
