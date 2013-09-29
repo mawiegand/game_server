@@ -30,7 +30,10 @@ class Shop::Transaction < ActiveRecord::Base
 
   TYPE_CREDIT = 0
   TYPE_DEBIT = 1
-  
+
+  CURRENCY_CREDITS = 0
+  CURRENCY_GOLDEN_FROGS = 1
+
   API_RESPONSE_OK = 0
   API_RESPONSE_ERROR = 1
   API_RESPONSE_USER_NOT_FOUND = 2

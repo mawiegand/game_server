@@ -61,11 +61,17 @@ class Shop::TransactionsController < ApplicationController
       raise BadRequestError.new('invalid offer type')
     end
 
-    if offer_type === 'bonus' && offer.currency === Shop::BonusOffer::CURRENCY_GOLDEN_FROGS
+    if offer_type === 'bonus' && offer.currency === Shop::Transaction::CURRENCY_GOLDEN_FROGS
       price = { 3 => offer.price }
       raise ForbiddenError.new('not enough resources to pay for offer') unless current_character.resource_pool.have_at_least_resources(price)
       current_character.resource_pool.remove_resources_transaction(price)
       success = offer.credit_to(current_character)
+
+      @shop_transaction = Shop::Transaction.new({
+        character: current_character,
+        offer: offer.to_json,
+        state: Shop::Transaction::STATE_CLOSED
+      })
     else
       # lokale transaction erzeugen
       @shop_transaction = Shop::Transaction.create({
