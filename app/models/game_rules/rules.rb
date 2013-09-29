@@ -35,7 +35,7 @@ class GameRules::Rules
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
-    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles,
+    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles, :special_offer,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
   def attributes 
@@ -66,6 +66,7 @@ class GameRules::Rules
       'treasure_types'              => treasure_types,
       'special_assignments'         => special_assignments,
       'slot_bubbles'                => slot_bubbles,
+      'special_offer'               => special_offer,
       'settlement_types'            => settlement_types,
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
@@ -181,6 +182,70 @@ class GameRules::Rules
         :test_min_duration => 3000,
         :test_max_duration => 4200,
       },
+      :special_offer => {
+  
+        :completed_building => [
+
+          {
+            :id          => 21,
+            :level       => 5,
+          },
+
+          {
+            :id          => 1,
+            :level       => 4,
+          },
+
+          {
+            :id          => 1,
+            :level       => 5,
+          },
+
+          {
+            :id          => 1,
+            :level       => 6,
+          },
+
+          {
+            :id          => 1,
+            :level       => 7,
+          },
+
+        ],
+
+        :resource_credit => {
+          3 => 300,
+            0 => 500,
+            1 => 500,
+            2 => 500,
+            
+        },
+
+        :production_bonus  => [
+
+          {
+            :id                 => 0,
+            :symbolic_id        => :resource_stone,
+            :formula            => "0.15",
+          },
+
+          {
+            :id                 => 1,
+            :symbolic_id        => :resource_wood,
+            :formula            => "0.15",
+          },
+
+          {
+            :id                 => 2,
+            :symbolic_id        => :resource_fur,
+            :formula            => "0.15",
+          },
+
+        ],
+
+        :construction_bonus  => "1",
+
+      },
       :artifact_count => 6,
   
 # ## CONSTRUCTION SPEEDUP ####################################################
@@ -244,59 +309,59 @@ class GameRules::Rules
       ],                # END OF CONSTRUCTION SPEEDUP
 
 # ## TRAINING SPEEDUP ##########################################################
-  
+
       :training_speedup => [  # ALL TRAINING SPEEDUPS
 
         {               #   less than 3 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 1,
           :hours       => 3,
         },              #   END OF 3 hours
 
         {               #   less than 6 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 2,
           :hours       => 6,
         },              #   END OF 6 hours
 
         {               #   less than 11 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 3,
           :hours       => 11,
         },              #   END OF 11 hours
 
         {               #   less than 17 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 4,
           :hours       => 17,
         },              #   END OF 17 hours
 
         {               #   less than 36 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 6,
           :hours       => 36,
         },              #   END OF 36 hours
 
         {               #   less than 56 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 8,
           :hours       => 56,
         },              #   END OF 56 hours
 
         {               #   less than 96 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 12,
           :hours       => 96,
         },              #   END OF 96 hours
 
         {               #   less than 192 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 20,
           :hours       => 192,
         },              #   END OF 192 hours
 
         {               #   less than 9999 hours
-          :resource_id => 3, 
+          :resource_id => 3,
           :amount      => 30,
           :hours       => 9999,
         },              #   END OF 9999 hours
@@ -2708,7 +2773,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :capacity  => [
             
@@ -2872,7 +2937,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -2961,7 +3026,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -3072,7 +3137,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -3177,7 +3242,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :capacity  => [
             
@@ -3294,7 +3359,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -3409,7 +3474,7 @@ class GameRules::Rules
                 :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
               },
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -3515,7 +3580,7 @@ class GameRules::Rules
                 :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
               },
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -3620,7 +3685,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -3707,7 +3772,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -3811,7 +3876,7 @@ class GameRules::Rules
                 :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
               },
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -3904,7 +3969,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -3993,7 +4058,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -4104,7 +4169,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -4204,7 +4269,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :capacity  => [
             
@@ -4331,7 +4396,7 @@ class GameRules::Rules
                 :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
               },
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -4432,7 +4497,7 @@ class GameRules::Rules
                 :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
               },
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -4521,7 +4586,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -4644,7 +4709,7 @@ class GameRules::Rules
                 :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
               },
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -4743,7 +4808,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -4869,7 +4934,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -4963,7 +5028,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -5073,7 +5138,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -5167,7 +5232,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -5229,7 +5294,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -5339,7 +5404,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -5437,7 +5502,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -5535,7 +5600,7 @@ class GameRules::Rules
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -5616,7 +5681,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -5726,7 +5791,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -5815,7 +5880,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 
@@ -5931,7 +5996,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           ],
           :production_bonus  => [
             
-          ],          
+          ],
 
           :abilities   => {
 

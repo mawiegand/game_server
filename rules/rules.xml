@@ -217,6 +217,23 @@
       <BubbleXP amount="5" probability="0.1" />
       <BubbleTestDuration min="3000" max="4200" />
     </SlotBubbles>
+    <SpecialOffer>
+      <Outpost>
+        <CompletedBuilding id="building_haunt" level="5"></CompletedBuilding>
+        <CompletedBuilding id="building_gatherer" level="4"></CompletedBuilding>
+        <CompletedBuilding id="building_gatherer" level="5"></CompletedBuilding>
+        <CompletedBuilding id="building_gatherer" level="6"></CompletedBuilding>
+        <CompletedBuilding id="building_gatherer" level="7"></CompletedBuilding>
+      </Outpost>
+      <StartResource id="resource_cash">300</StartResource>
+      <StartResource id="resource_stone">500</StartResource>
+      <StartResource id="resource_wood">500</StartResource>
+      <StartResource id="resource_fur">500</StartResource>
+      <ProductionBonus id="resource_stone" domain="character">0.15</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="character">0.15</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="character">0.15</ProductionBonus>
+      <ConstructionBonus domain="character">1</ConstructionBonus>
+    </SpecialOffer>
   </General>
   <xi:include href="rules_victories.xml" />
   <xi:include href="rules_artifacts.xml" />

@@ -82,7 +82,7 @@ class GameRules::Rules
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
-    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles,
+    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles, :special_offer,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
   def attributes 
@@ -113,6 +113,7 @@ class GameRules::Rules
       'treasure_types'              => treasure_types,
       'special_assignments'         => special_assignments,
       'slot_bubbles'                => slot_bubbles,
+      'special_offer'               => special_offer,
       'settlement_types'            => settlement_types,
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
@@ -205,6 +206,9 @@ class GameRules::Rules
         :test_min_duration => <xsl:value-of select="//General/SlotBubbles/BubbleTestDuration/@min" />,
         :test_max_duration => <xsl:value-of select="//General/SlotBubbles/BubbleTestDuration/@max" />,
       },
+      :special_offer => {
+  <xsl:apply-templates select="//General/SpecialOffer" />
+      },
       :artifact_count => <xsl:value-of select="count(//ArtifactTypes/Artifact)" />,
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
@@ -289,13 +293,47 @@ end
 </xsl:template>
 
 
+<xsl:template match="SpecialOffer">
+<xsl:if test="Outpost">
+        :completed_building => [
+<xsl:for-each select="Outpost/CompletedBuilding">
+          {
+            :id          => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+            :level       => <xsl:value-of select="@level"/>,
+          },
+</xsl:for-each>
+        ],
+</xsl:if>
+<xsl:if test="StartResource">
+        :resource_credit => {
+          <xsl:apply-templates select="StartResource" />
+        },
+</xsl:if>
+<xsl:if test="ProductionBonus">
+        :production_bonus  => [
+<xsl:for-each select="ProductionBonus">
+          {
+            :id                 => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+            :symbolic_id        => :<xsl:value-of select="@id"/>,
+            :formula            => "<xsl:apply-templates/>",
+          },
+</xsl:for-each>
+        ],
+</xsl:if>
+<xsl:if test="ConstructionBonus">
+        :construction_bonus  => "<xsl:value-of select="ConstructionBonus"/>",
+</xsl:if>
+
+</xsl:template>
+
+
 <xsl:template match="TrainingSpeedup">
 # ## TRAINING SPEEDUP ##########################################################
-  
+
       :training_speedup => [  # ALL TRAINING SPEEDUPS
 <xsl:for-each select="SpeedupCost">
         {               #   less than <xsl:value-of select="@hours"/> hours
-          :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>, 
+          :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
           :amount      => <xsl:value-of select="@amount"/>,
           :hours       => <xsl:value-of select="@hours"/>,
         },              #   END OF <xsl:value-of select="@hours"/> hours
@@ -304,7 +342,7 @@ end
 </xsl:template>
 
 
-<xsl:template match="ArtifactInitiationSpeedup">
+  <xsl:template match="ArtifactInitiationSpeedup">
 # ## ARTIFACT INITIATION SPEEDUP #############################################
 
       :artifact_initiation_speedup => [  # ALL ARTIFACT INITIATION SPEEDUPS
@@ -703,7 +741,7 @@ end
                 :formula            => "<xsl:apply-templates/>",
               },
             </xsl:for-each>
-          ],          
+          ],
 <xsl:if test="Capacity">
           :capacity  => [
             <xsl:for-each select="Capacity">

@@ -4,7 +4,7 @@
   xmlns:xi CDATA #REQUIRED
 >
 
-<!ELEMENT General (Game, Version, AppControl, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, TradingSpeedupCost, AvatarConfigs, ChangeCharacterName, ChangeCharacterGender, ResourceExchange, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers, SpecialAssignments, SlotBubbles)>
+<!ELEMENT General (Game, Version, AppControl, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, TradingSpeedupCost, AvatarConfigs, ChangeCharacterName, ChangeCharacterGender, ResourceExchange, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers, SpecialAssignments, SlotBubbles, SpecialOffer)>
 
 
 <!ELEMENT Game (#PCDATA)>
@@ -70,6 +70,16 @@
 <!ATTLIST BubbleTestDuration
   min CDATA #REQUIRED
   max CDATA #REQUIRED
+>
+
+<!ELEMENT SpecialOffer (Outpost, StartResource*, ProductionBonus*, ConstructionBonus*)>
+
+<!ELEMENT Outpost (CompletedBuilding*)>
+
+<!ELEMENT CompletedBuilding EMPTY>
+<!ATTLIST CompletedBuilding
+  id IDREF #REQUIRED
+  level CDATA "1"
 >
 
 <!ELEMENT AvatarConfigs (AvatarConfig*)>
@@ -168,7 +178,7 @@
 >
 
 
-    <!ELEMENT BuildingSlot (BuildingOption+)>
+<!ELEMENT BuildingSlot (BuildingOption+)>
 <!ATTLIST BuildingSlot 
 	number CDATA #REQUIRED
 	max-level CDATA #REQUIRED 
