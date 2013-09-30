@@ -313,9 +313,8 @@ end
         :production_bonus  => [
 <xsl:for-each select="ProductionStartBonus">
           {
-            :id         => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
-            :amount     => <xsl:apply-templates/>,
-            :duration   => <xsl:value-of select="@duration"/>,
+            :bonus_offer_id  => <xsl:value-of select="@bonusOfferId"/>,
+            :duration        => <xsl:value-of select="@duration"/>,
           },
 </xsl:for-each>
         ],

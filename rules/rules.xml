@@ -229,9 +229,9 @@
       <StartResource id="resource_stone">500</StartResource>
       <StartResource id="resource_wood">500</StartResource>
       <StartResource id="resource_fur">500</StartResource>
-      <ProductionStartBonus id="resource_stone" duration="120">0.15</ProductionStartBonus>
-      <ProductionStartBonus id="resource_wood" duration="120">0.15</ProductionStartBonus>
-      <ProductionStartBonus id="resource_fur" duration="120">0.15</ProductionStartBonus>
+      <ProductionStartBonus bonusOfferId="1" duration="120"></ProductionStartBonus>
+      <ProductionStartBonus bonusOfferId="2" duration="120"></ProductionStartBonus>
+      <ProductionStartBonus bonusOfferId="3" duration="120"></ProductionStartBonus>
       <ConstructionStartBonus duration="120">1</ConstructionStartBonus>
     </SpecialOffer>
   </General>

@@ -219,21 +219,18 @@ class GameRules::Rules
         :production_bonus  => [
 
           {
-            :id         => 0,
-            :amount     => 0.15,
-            :duration   => 120,
+            :bonus_offer_id  => 1,
+            :duration        => 120,
           },
 
           {
-            :id         => 1,
-            :amount     => 0.15,
-            :duration   => 120,
+            :bonus_offer_id  => 2,
+            :duration        => 120,
           },
 
           {
-            :id         => 2,
-            :amount     => 0.15,
-            :duration   => 120,
+            :bonus_offer_id  => 3,
+            :duration        => 120,
           },
 
         ],

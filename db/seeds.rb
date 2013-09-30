@@ -378,6 +378,43 @@ Shop::ResourceOffer.create({
   ends_at: Time.now + 1.year 
 })
 
+# die folgenden drei bonus offers werden aus dem starterpaket referenziert, daher haben sie feste ids!
+
+Shop::BonusOffer.create({
+  id: 1,
+  price: 5,
+  resource_id: 0,
+  currency: Shop::Transaction::CURRENCY_CREDITS,
+  duration: 148,
+  bonus: 0.15,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year
+})
+
+Shop::BonusOffer.create({
+  id: 2,
+  price: 5,
+  resource_id: 1,
+  currency: Shop::Transaction::CURRENCY_CREDITS,
+  duration: 148,
+  bonus: 0.15,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year
+})
+
+Shop::BonusOffer.create({
+  id: 3,
+  price: 5,
+  resource_id: 2,
+  currency: Shop::Transaction::CURRENCY_CREDITS,
+  duration: 148,
+  bonus: 0.15,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year
+})
+
+
+
 Shop::BonusOffer.create({
   price: 5,
   resource_id: 0,
@@ -404,36 +441,6 @@ Shop::BonusOffer.create({
   currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
   duration: 148,
   bonus: 0.05,
-  started_at: Time.now,
-  ends_at: Time.now + 1.year
-})
-
-Shop::BonusOffer.create({
-  price: 5,
-  resource_id: 0,
-  currency: Shop::Transaction::CURRENCY_CREDITS,
-  duration: 148,
-  bonus: 0.15,
-  started_at: Time.now,
-  ends_at: Time.now + 1.year
-})
-
-Shop::BonusOffer.create({
-  price: 5,
-  resource_id: 1,
-  currency: Shop::Transaction::CURRENCY_CREDITS,
-  duration: 148,
-  bonus: 0.15,
-  started_at: Time.now,
-  ends_at: Time.now + 1.year
-})
-
-Shop::BonusOffer.create({
-  price: 5,
-  resource_id: 2,
-  currency: Shop::Transaction::CURRENCY_CREDITS,
-  duration: 148,
-  bonus: 0.15,
   started_at: Time.now,
   ends_at: Time.now + 1.year
 })
@@ -477,7 +484,7 @@ Shop::PlatinumOffer.create({
 })
 
 Shop::PlatinumOffer.create({
-  external_offer_id: 761,
+  external_offer_id: 761,  # defined by offer in bytro shop
   title: 'Special Offer',
   price: 25,
   started_at: Time.now,

@@ -626,10 +626,10 @@
   domain IDREF "character"
 >
 
-<!ELEMENT ProductionStartBonus (#PCDATA)>
+<!ELEMENT ProductionStartBonus EMPTY>
 <!ATTLIST ProductionStartBonus
-  id IDREF #REQUIRED
-  duration CDATA #REQUIRED
+  bonusOfferId  CDATA #REQUIRED
+  duration      CDATA #REQUIRED
 >
 
 <!ELEMENT ConstructionStartBonus (#PCDATA)>

@@ -58,7 +58,10 @@ class Shop::SpecialOffer < ActiveRecord::Base
     
     # credit resource effects
     special_offer_rules[:production_bonus].each do |bonus|
-      Effect::ResourceEffect.create_or_extend_shop_effect(character, bonus[:id], bonus[:amount], bonus[:duration], Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_SPECIAL_OFFER)
+      bonus_offer = Shop::BonusOffer.find_by_id(bonus[:bonus_offer_id])
+      if !bonus_offer.nil?
+        Effect::ResourceEffect.create_or_extend_shop_effect(character, bonus_offer.resource_id, bonus_offer.bonus, bonus[:duration], bonus_offer.id)
+      end
     end
 
     # credit construction speedup effect
