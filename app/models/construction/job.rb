@@ -28,7 +28,7 @@ class Construction::Job < ActiveRecord::Base
       1.upto(self.level_before) do |level|
         time += formula.apply(level)
       end
-      return time
+      return time / 4.0
     elsif self.job_type == TYPE_CONVERT
       # calculate time sum of current building
       time = 0
