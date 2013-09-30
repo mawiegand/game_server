@@ -15,6 +15,14 @@ class Shop::SpecialOffer < ActiveRecord::Base
     end
   end
 
+  def buyable_by_character(character)
+    if character.show_special_offers?         # if character is in dialog time interval (after finished tutorial)
+      character.purchases.where('external_offer_id = ? and redeemed_at is not null', self.external_offer_id).empty?
+    else
+      false
+    end
+  end
+
   def credit_to(character)
 
     special_offer_rules = GameRules::Rules.the_rules.special_offer
