@@ -473,8 +473,13 @@ Shop::PlatinumOffer.create({
   price: 10,
   duration: 168,
   started_at: Time.now,
-  ends_at: Time.now + 1.year 
+  ends_at: Time.now + 1.year
 })
 
-
-
+Shop::PlatinumOffer.create({
+  external_offer_id: 761,
+  title: 'Special Offer',
+  price: 25,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year
+})
