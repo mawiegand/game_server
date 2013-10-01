@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.39
+# Version: 0.4.0
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,8 +78,8 @@ class Tutorial::Tutorial
   
       :version => {
         :major => 0, 
-        :minor => 3, 
-        :build => 39, 
+        :minor => 4, 
+        :build => 0, 
       },
       
       :production_test_weights => {
@@ -591,7 +591,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [130, ],
+          :successor_quests => [130, 134, ],
 
           :rewards => {
             
@@ -2328,7 +2328,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [22, 23, 24, 80, ],
+          :successor_quests => [22, 24, ],
 
           :rewards => {
             
@@ -2434,7 +2434,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [37, ],
+          :successor_quests => [23, ],
 
           :rewards => {
             
@@ -2534,11 +2534,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl5',
+            :quest => 'quest_build_1quarrylvl2',
 
           },
 
-          :successor_quests => [58, ],
+          :successor_quests => [37, 58, ],
 
           :rewards => {
             
@@ -2642,7 +2642,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [25, 26, 28, ],
+          :successor_quests => [25, 26, ],
 
           :rewards => {
             
@@ -2746,7 +2746,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [28, ],
 
           :rewards => {
             
@@ -3040,7 +3040,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl6',
+            :quest => 'quest_build_training_cave',
 
           },
 
@@ -3987,7 +3987,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1quarrylvl2',
+            :quest => 'quest_build_1loggerlvl2',
 
           },
 
@@ -8068,12 +8068,6 @@ class Tutorial::Tutorial
   
             :en_US => "By default the ranking is sorted by population.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_build_chiefcottagelvl5',
-
           },
 
           :successor_quests => [81, ],
@@ -13121,9 +13115,9 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Crossplatform",
+            :en_US => "Cross-Platform",
   
-            :de_DE => "Crossplatform",
+            :de_DE => "Cross-Platform",
                 
           },
           :task => {
@@ -13135,9 +13129,9 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Crossplatform? Klingt nützlich.",
+            :de_DE => "Cross-Platform? Klingt nützlich.",
   
-            :en_US => "Crossplatform? Sounds reasonable.",
+            :en_US => "Cross-Platform? Sounds reasonable.",
                 
           },
           :description => {
@@ -13160,6 +13154,12 @@ class Tutorial::Tutorial
   
             :en_US => "Wack-A-Doo in your browser works exactly the same as the App, just with a different interface.",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_profile',
+
           },
 
           :successor_quests => [],

@@ -6,7 +6,7 @@
   <Name lang="en_US">Fortification</Name>
   <Description lang="de_DE">
     <p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>
-    <p>Die Festungsanlagen liefern einen Kommandopunkt auf Level 2 und 10.</p>
+    <p>Die Festungsanlagen liefern einen zusätzlichen Kommandopunkt auf Level 10.</p>
   </Description>
   <Description lang="en_US">
     <p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p> 
@@ -17,7 +17,7 @@
     <Flavour lang="de_DE">
     <p>Die Festung beherrscht die Region. Hier werden Krieger ausgebildet und Steuern erhoben.</p>
   </Flavour>  
-  <Population>LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3+250)</Population>
+  <Population>(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3+250)</Population>
   <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
   <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
   <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*200+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
@@ -27,7 +27,7 @@
     <UnlockGarrison level="1" />
     <GarrisonSizeBonus>1000</GarrisonSizeBonus>
     <ArmySizeBonus>1000</ArmySizeBonus>
-    <CommandPoints>LESS(LEVEL,11)*(GREATER(LEVEL,0)*1+GREATER(LEVEL,9)*1)</CommandPoints>
+    <CommandPoints>1+GREATER(LEVEL,9)*1)</CommandPoints>
     <UnlockQueue  queue="queue_buildings" />
     <SpeedupQueue queue="queue_buildings" domain="settlement">2*FLOOR(1.88*POW(LEVEL,1.425)+0.5)/100.0</SpeedupQueue>
     <DefenseBonus>0.5*LEVEL</DefenseBonus>

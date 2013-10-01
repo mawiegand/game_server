@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.2.0
+# Version: 1.3.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -121,7 +121,7 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 1,
-                    :minor => 2,
+                    :minor => 3,
                     :build => 0,
       },
       :app_control => {
@@ -186,7 +186,7 @@ class GameRules::Rules
   
         :outpost => {
 1 => {
-            :id          => 21,
+            :id          => 24,
             :level       => 5,
           },
 3 => {
@@ -253,51 +253,57 @@ class GameRules::Rules
           :hours       => (1.0/60.0),
         },              #   END OF (1.0/60.0) hours
 
-        {               #   less than 1 hours
+        {               #   less than 0.5 hours
           :resource_id => 3,
           :amount      => 1,
+          :hours       => 0.5,
+        },              #   END OF 0.5 hours
+
+        {               #   less than 1 hours
+          :resource_id => 3,
+          :amount      => 2,
           :hours       => 1,
         },              #   END OF 1 hours
 
         {               #   less than 3 hours
           :resource_id => 3,
-          :amount      => 2,
+          :amount      => 4,
           :hours       => 3,
         },              #   END OF 3 hours
 
         {               #   less than 7 hours
           :resource_id => 3,
-          :amount      => 4,
+          :amount      => 8,
           :hours       => 7,
         },              #   END OF 7 hours
 
         {               #   less than 12 hours
           :resource_id => 3,
-          :amount      => 6,
+          :amount      => 12,
           :hours       => 12,
         },              #   END OF 12 hours
 
         {               #   less than 18 hours
           :resource_id => 3,
-          :amount      => 8,
+          :amount      => 16,
           :hours       => 18,
         },              #   END OF 18 hours
 
         {               #   less than 30 hours
           :resource_id => 3,
-          :amount      => 12,
+          :amount      => 24,
           :hours       => 30,
         },              #   END OF 30 hours
 
         {               #   less than 150 hours
           :resource_id => 3,
-          :amount      => 20,
+          :amount      => 36,
           :hours       => 150,
         },              #   END OF 150 hours
 
         {               #   less than 9999 hours
           :resource_id => 3,
-          :amount      => 30,
+          :amount      => 48,
           :hours       => 9999,
         },              #   END OF 9999 hours
 
@@ -307,6 +313,72 @@ class GameRules::Rules
 
       :training_speedup => [  # ALL TRAINING SPEEDUPS
 
+        {               #   less than 0.5 hours
+          :resource_id => 3,
+          :amount      => 1,
+          :hours       => 0.5,
+        },              #   END OF 0.5 hours
+
+        {               #   less than 3 hours
+          :resource_id => 3,
+          :amount      => 2,
+          :hours       => 3,
+        },              #   END OF 3 hours
+
+        {               #   less than 6 hours
+          :resource_id => 3,
+          :amount      => 4,
+          :hours       => 6,
+        },              #   END OF 6 hours
+
+        {               #   less than 11 hours
+          :resource_id => 3,
+          :amount      => 6,
+          :hours       => 11,
+        },              #   END OF 11 hours
+
+        {               #   less than 17 hours
+          :resource_id => 3,
+          :amount      => 8,
+          :hours       => 17,
+        },              #   END OF 17 hours
+
+        {               #   less than 36 hours
+          :resource_id => 3,
+          :amount      => 12,
+          :hours       => 36,
+        },              #   END OF 36 hours
+
+        {               #   less than 56 hours
+          :resource_id => 3,
+          :amount      => 16,
+          :hours       => 56,
+        },              #   END OF 56 hours
+
+        {               #   less than 96 hours
+          :resource_id => 3,
+          :amount      => 24,
+          :hours       => 96,
+        },              #   END OF 96 hours
+
+        {               #   less than 192 hours
+          :resource_id => 3,
+          :amount      => 40,
+          :hours       => 192,
+        },              #   END OF 192 hours
+
+        {               #   less than 9999 hours
+          :resource_id => 3,
+          :amount      => 60,
+          :hours       => 9999,
+        },              #   END OF 9999 hours
+
+      ],                # END OF TRAINING SPEEDUP
+
+# ## ARTIFACT INITIATION SPEEDUP #############################################
+
+      :artifact_initiation_speedup => [  # ALL ARTIFACT INITIATION SPEEDUPS
+
         {               #   less than 3 hours
           :resource_id => 3,
           :amount      => 1,
@@ -319,105 +391,51 @@ class GameRules::Rules
           :hours       => 6,
         },              #   END OF 6 hours
 
-        {               #   less than 11 hours
-          :resource_id => 3,
-          :amount      => 3,
-          :hours       => 11,
-        },              #   END OF 11 hours
-
-        {               #   less than 17 hours
-          :resource_id => 3,
-          :amount      => 4,
-          :hours       => 17,
-        },              #   END OF 17 hours
-
-        {               #   less than 36 hours
-          :resource_id => 3,
-          :amount      => 6,
-          :hours       => 36,
-        },              #   END OF 36 hours
-
-        {               #   less than 56 hours
-          :resource_id => 3,
-          :amount      => 8,
-          :hours       => 56,
-        },              #   END OF 56 hours
-
-        {               #   less than 96 hours
-          :resource_id => 3,
-          :amount      => 12,
-          :hours       => 96,
-        },              #   END OF 96 hours
-
-        {               #   less than 192 hours
-          :resource_id => 3,
-          :amount      => 20,
-          :hours       => 192,
-        },              #   END OF 192 hours
-
-        {               #   less than 9999 hours
-          :resource_id => 3,
-          :amount      => 30,
-          :hours       => 9999,
-        },              #   END OF 9999 hours
-
-      ],                # END OF TRAINING SPEEDUP
-
-# ## ARTIFACT INITIATION SPEEDUP #############################################
-
-      :artifact_initiation_speedup => [  # ALL ARTIFACT INITIATION SPEEDUPS
-
-        {               #   less than 6 hours
-          :resource_id => 3,
-          :amount      => 1,
-          :hours       => 6,
-        },              #   END OF 6 hours
-
         {               #   less than 12 hours
           :resource_id => 3,
-          :amount      => 2,
+          :amount      => 4,
           :hours       => 12,
         },              #   END OF 12 hours
 
         {               #   less than 18 hours
           :resource_id => 3,
-          :amount      => 3,
+          :amount      => 6,
           :hours       => 18,
         },              #   END OF 18 hours
 
         {               #   less than 24 hours
           :resource_id => 3,
-          :amount      => 4,
+          :amount      => 8,
           :hours       => 24,
         },              #   END OF 24 hours
 
         {               #   less than 36 hours
           :resource_id => 3,
-          :amount      => 6,
+          :amount      => 12,
           :hours       => 36,
         },              #   END OF 36 hours
 
         {               #   less than 48 hours
           :resource_id => 3,
-          :amount      => 8,
+          :amount      => 16,
           :hours       => 48,
         },              #   END OF 48 hours
 
         {               #   less than 72 hours
           :resource_id => 3,
-          :amount      => 10,
+          :amount      => 20,
           :hours       => 72,
         },              #   END OF 72 hours
 
         {               #   less than 96 hours
           :resource_id => 3,
-          :amount      => 15,
+          :amount      => 30,
           :hours       => 96,
         },              #   END OF 96 hours
 
         {               #   less than 9999 hours
           :resource_id => 3,
-          :amount      => 20,
+          :amount      => 40,
           :hours       => 9999,
         },              #   END OF 9999 hours
 
@@ -1003,1446 +1021,8 @@ class GameRules::Rules
 
       :unit_types => [  # ALL UNIT TYPES
 
-        {               #   Club Warrior
-          :id          => 0, 
-          :symbolic_id => :clubbers,
-					:category    => 0,
-          :db_field    => :unit_clubbers,
-          :name        => {
-            
-            :en_US => "Club Warrior",
-  
-            :de_DE => "Keulenkrieger",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Holds a club and is always at the front of battle lines.</p>",
-  
-            :de_DE => "<p>Eine Keule in der Hand und immer an vorderster Front.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Keulenkrieger sind der Grundbestandteil jeder Armee. Sie stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zähe Burschen und nur schwer klein zu kriegen, allerdings finden sie nur zu oft den Tod durch feindliche Fernkämpfer.</p>",
-  
-            :en_US => "<p>Club warriors are the basic units of any Stone Age army. They fight on the front line and protect the ranged combatants from cavalry attack. They're tough and difficult to beat, but unfortunately they all too often take a hit from enemy ranged combatants.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 16,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1,
-  
-            :unitcategory_cavalry => 1.5,
-  
-            :unitcategory_artillery => 0.75,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 6,
-          :armor       => 5,
-          :hitpoints   => 90,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 1,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '900',
-
-          :costs      => {
-            0 => '20',
-            1 => '30',
-            2 => '75',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_infantry_tower',
-              :id => 25,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_barracks',
-              :id => 2,
-              :type => 'building',
-
-              :min_level => 5,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Club Warrior
-        {               #   Thick-Skinned Clubber
-          :id          => 1, 
-          :symbolic_id => :clubbers_2,
-					:category    => 0,
-          :db_field    => :unit_clubbers_2,
-          :name        => {
-            
-            :en_US => "Thick-Skinned Clubber",
-  
-            :de_DE => "Dicke Keule",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>“You two? Go and fetch three more of you so you can give me a halfway fair fight!”</p>",
-  
-            :de_DE => "<p>„Ihr zwei? Holt euch noch drei dazu, dann wird es ein halbwegs fairer Kampf!“</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>'Dicke Keule' ist die Abkürzung von Dickhäutigem Keulenkrieger und bezieht sich sowohl auf die Keule als auch auf die Widerstandskraft. Dank der dicken Haut muss die Zeitspanne bis zur Bewusstlosigkeit nicht in Schmerzen durchstanden werden.</p>",
-  
-            :en_US => "<p>Their thick skin protects them against blows from enemy clubs, but it doesn't help so much against the sharp stones of the ranged combatants. Although thanks to their thick skin, they don't feel a lot of pain before they pass out.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 16,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1,
-  
-            :unitcategory_cavalry => 1.5,
-  
-            :unitcategory_artillery => 0.75,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 6,
-          :armor       => 6,
-          :hitpoints   => 100,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 1,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '1200',
-
-          :costs      => {
-            0 => '30',
-            1 => '40',
-            2 => '113',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_infantry_tower',
-              :id => 25,
-              :type => 'building',
-
-              :min_level => 5,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 24,
-              :type => 'building',
-
-              :min_level => 4,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_barracks',
-              :id => 2,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Thick-Skinned Clubber
-        {               #   Haymaker
-          :id          => 2, 
-          :symbolic_id => :clubbers_3,
-					:category    => 0,
-          :db_field    => :unit_clubbers_3,
-          :name        => {
-            
-            :en_US => "Haymaker",
-  
-            :de_DE => "Knüppel-Schwinger",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>The art of expressive battle! Here, haymakers give marks to each other based on the finesse of their fighting style.</p>",
-  
-            :de_DE => "<p>Die Kunst des Ausdruckkampfes! Knüppel-Schwinger geben sich untereinander Noten für ihre Kampfstil.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit gutem Aussehen und Ausdruck. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs beim kraftvollen Zuschlagen wird nichts dem Zufall überlassen. Der größte Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>",
-  
-            :en_US => "<p>Haymakers unite the lethal arts of fighting with good looks and charisma. Everything from the carving of the bludgeon to the position of one's left toe when striking someone hard will receive ratings, and nothing will be left to chance. The greatest danger here is not the enemy - it's their own vanity.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 16,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1,
-  
-            :unitcategory_cavalry => 1.5,
-  
-            :unitcategory_artillery => 0.75,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 6,
-          :armor       => 7,
-          :hitpoints   => 110,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 2,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '1500',
-
-          :costs      => {
-            0 => '45',
-            1 => '68',
-            2 => '170',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_infantry_tower',
-              :id => 25,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 24,
-              :type => 'building',
-
-              :min_level => 9,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_barracks',
-              :id => 2,
-              :type => 'building',
-
-              :min_level => 15,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Haymaker
-        {               #   Tree Huggers
-          :id          => 3, 
-          :symbolic_id => :tree_huggers,
-					:category    => 0,
-          :db_field    => :unit_tree_huggers,
-          :name        => {
-            
-            :en_US => "Tree Huggers",
-  
-            :de_DE => "Baum-Brutalo",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Why use a club when you can wield a whole tree instead?</p>",
-  
-            :de_DE => "<p>Wozu eine Keule nehmen, wenn man einen ganzen Baum schwingen kann?</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Groß, stark, sauber rasierter Bart. Ein Baum-Brutalo legt sehr großen Wert auf sein Äußeres.</p><p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschenden Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säbelzahntiger, der sich den Schwanz geklemmt hat. Nicht den flauschigen, den anderen...</p>",
-  
-            :en_US => "<p>Big, strong, clean-shaven… Tree-huggers set great store by their appearance. In battle, the tree-hugger is a strange sight. Surrounded by the rustling leaves of his fighting tree, he whirls through enemy ranks like a sabre-toothed tiger with a trapped tail. And probably other sensitive extremities too.</p><p>In battle, the tree-hugger is a strange sight. Surrounded by the rustling leaves of his fighting tree, the tree-hugger whirls through enemy ranks like a sabre-toothed tiger with a trapped tail. And probably other sensitive extremities too … </p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 16,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1,
-  
-            :unitcategory_cavalry => 1.5,
-  
-            :unitcategory_artillery => 0.75,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 7,
-          :armor       => 9,
-          :hitpoints   => 135,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 3,
-          :critical_hit_chance => 0.02,
-
-          :production_time => '2100',
-
-          :costs      => {
-            0 => '68',
-            1 => '102',
-            2 => '255',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_barracks',
-              :id => 2,
-              :type => 'building',
-
-              :min_level => 20,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Tree Huggers
-        {               #   Gravel Stone Thrower
-          :id          => 4, 
-          :symbolic_id => :thrower,
-					:category    => 2,
-          :db_field    => :unit_thrower,
-          :name        => {
-            
-            :en_US => "Gravel Stone Thrower",
-  
-            :de_DE => "Kieselsteinwerfer",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>These ranged combatants couldn't hit a target board at ten paces, but luckily massed enemy phalanxes generally make a nice big target that's hard to miss. </p>",
-  
-            :de_DE => "<p>Treffen keine Zielscheibe aus zehn Meter Entfernung treffen! Zum Glück sind Schlachtreihen größere Ziele.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p><p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter, die diesen bringen.</p>",
-  
-            :en_US => "<p>Big stones, little stones – stone throwers like them all as long as they can throw them at someone's head. Well, OK – they do prefer the smaller ones. Stone throwers don't actually aim, but their stones can hit you in the eye quite easily. Gravel stone throwers aren't afraid of death as such – they're more afraid of the ostrich riders who cause it.</p>",
-                
-          },
-
-          :experience_factor => 1.5,
-          :trainable   => true,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 8,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1.5,
-  
-            :unitcategory_cavalry => 0.75,
-  
-            :unitcategory_artillery => 1,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 8,
-          :armor       => 3,
-          :hitpoints   => 50,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 5,
-          :critical_hit_chance => 0.05,
-
-          :production_time => '1500',
-
-          :costs      => {
-            0 => '75',
-            1 => '75',
-            2 => '225',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_artillery_tower',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_firing_range',
-              :id => 12,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Gravel Stone Thrower
-        {               #   Target Thrower
-          :id          => 5, 
-          :symbolic_id => :thrower_2,
-					:category    => 2,
-          :db_field    => :unit_thrower_2,
-          :name        => {
-            
-            :en_US => "Target Thrower",
-  
-            :de_DE => " Zielwerfer",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Hitting a target at fifty meters with a stone is pretty impressive. Unfortunately, the enemy is mostly further away than that.</p>",
-  
-            :de_DE => "<p>Diese Jungs können zielen, naja, zumindest fliegt der Stein in die richtige Richtung.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Ein sicherer Wurf führt zu besseren Treffern. Nicht dass der Unterschied bemerkbar wäre, meist sind eh genug gegnerische Nahkämpfer da, aber es führt doch zu ein oder zwei kritischen Treffern.</p><p>Ein bewegliches Ziel wie einen Straußenreiter zu treffen, ist eine große Leistung und der Unterschied zwischen Leben und Tod für einen Fernkämpfer.</p>",
-  
-            :en_US => "<p>A sure throw means better strikes. Not that you'd notice the difference – there are usually enough enemy melee fighters around, but it can mean a couple of good tactical strikes. Hitting a moving target like an ostrich rider is quite an achievement and can mean the difference between life and death for a stone thrower.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 8,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1.5,
-  
-            :unitcategory_cavalry => 0.75,
-  
-            :unitcategory_artillery => 1,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 9,
-          :armor       => 3,
-          :hitpoints   => 50,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 6,
-          :critical_hit_chance => 0.05,
-
-          :production_time => '2100',
-
-          :costs      => {
-            0 => '112',
-            1 => '112',
-            2 => '320',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_artillery_tower',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 5,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 24,
-              :type => 'building',
-
-              :min_level => 4,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_firing_range',
-              :id => 12,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Target Thrower
-        {               #   Stone Thrower
-          :id          => 6, 
-          :symbolic_id => :thrower_3,
-					:category    => 2,
-          :db_field    => :unit_thrower_3,
-          :name        => {
-            
-            :en_US => "Stone Thrower",
-  
-            :de_DE => "Steinschleuderer",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>The stone thowers have a simple motto - the further you can throw the stone, the better!</p>",
-  
-            :de_DE => "<p>Das Motto der Steinschleuderer: 'Je weiterer der Stein geworfen wird, desto besser!'</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mit der Schleuder können auch größere Steine weiter geworfen werden. Treffer bei unvorbereiteten Kämpfer in der zweiten Reihe erzielen eine deutlich höhere Wirkung. Je nach der Seite des Kampfes auf der man gerade steht, ist das zu bejubeln oder zu beklagen. Was durchaus nicht immer eindeutig ist.</p>",
-  
-            :en_US => "<p>You can throw bigger stones even further if you use a catapult. Stone throwers often hit unsuspecting warriors in the second row, leading to a much higher number of overall casualties that are either suffered or celebrated, depending on which side of the battle you happen to be. Which isn't always obvious.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 8,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1.5,
-  
-            :unitcategory_cavalry => 0.75,
-  
-            :unitcategory_artillery => 1,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 10,
-          :armor       => 3,
-          :hitpoints   => 50,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 7,
-          :critical_hit_chance => 0.05,
-
-          :production_time => '3000',
-
-          :costs      => {
-            0 => '168',
-            1 => '168',
-            2 => '480',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_artillery_tower',
-              :id => 26,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 24,
-              :type => 'building',
-
-              :min_level => 9,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_firing_range',
-              :id => 12,
-              :type => 'building',
-
-              :min_level => 15,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Stone Thrower
-        {               #   Spear Thrower
-          :id          => 7, 
-          :symbolic_id => :thrower_4,
-					:category    => 2,
-          :db_field    => :unit_thrower_4,
-          :name        => {
-            
-            :en_US => "Spear Thrower",
-  
-            :de_DE => " Speerwerfer",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Why anyone would bother to tie a stick to a stone is a mystery – stones are brilliant missiles. But the effect is fantastic, longer range, more accurate and easier to collect. What more could you want?</p>",
-  
-            :de_DE => "<p>Speerschleuderer sind sehr nervig, aber auch tödlich.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Ein Speer ist auch im Nahkampf, vor allem gegen Reiter, effektiv. Dumm nur, wenn man schon alle Speere weggeworfen hat, bevor ein Reiter angreift. Im Leitfaden für Speerwerfer steht, dass man immer einen Speer weniger werfen sollte, als man hat. Leider kann kein Speerwerfer zählen, geschweige denn lesen.</p>",
-  
-            :en_US => "<p>A spear is also effective at close range - especially against riders. The only difficulty is when you've already thrown all your spears before you're attacked by a rider. The field manual for spear throwers clearly states, 'Always throw one spear less than you have'. The trouble is, spear throwers can't read, let alone count.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 8,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1.5,
-  
-            :unitcategory_cavalry => 0.75,
-  
-            :unitcategory_artillery => 1,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 12,
-          :armor       => 3,
-          :hitpoints   => 50,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 8,
-          :critical_hit_chance => 0.1,
-
-          :production_time => '4200',
-
-          :costs      => {
-            0 => '250',
-            1 => '250',
-            2 => '712',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_firing_range',
-              :id => 12,
-              :type => 'building',
-
-              :min_level => 20,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Spear Thrower
-        {               #   Ostrich Rider
-          :id          => 8, 
-          :symbolic_id => :light_cavalry,
-					:category    => 1,
-          :db_field    => :unit_light_cavalry,
-          :name        => {
-            
-            :en_US => "Ostrich Rider",
-  
-            :de_DE => "Straußenreiter",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>The two-handed ostrich riders are totally focused on controlling their mounts. As they themselves are unarmed, the beaks and claws of their ostriches pose more of a threat than they do.</p>",
-  
-            :de_DE => "<p>Straußenreiter sind schnell, sonst nichts. Deshalb müssen die Reiter ihre ganze Konzentration auf das Führen ihres Reittieres legen.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Strauße sind nicht nur lecker, sondern auch gute und schnelle Reittiere. Straußenreiter sind schnell genug, um an den Nahkämpfern vorbeizukommen, so dass den Fernkämpfern nur die Hoffnung bleibt, dass die Sträuße den Kopf in den Sand stecken.</p>",
-  
-            :en_US => "<p>Ostriches don't just taste delicious! They're also exceptionally good and speedy mounts. Ostrich riders are the bane of all stone throwers. Fast enough to get past the infantry, their enemies can only hope that the ostriches will stick their heads in the sand or that their riders will fall off.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 1.2,
-          :action_points => 4,
-          :initiative  => 26,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 0.75,
-  
-            :unitcategory_cavalry => 1,
-  
-            :unitcategory_artillery => 1.5,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 6,
-          :armor       => 5,
-          :hitpoints   => 90,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 1,
-          :critical_hit_chance => 0.02,
-
-          :production_time => '1200',
-
-          :costs      => {
-            0 => '60',
-            1 => '40',
-            2 => '150',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_cavalry_tower',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_stud',
-              :id => 17,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Ostrich Rider
-        {               #   Hungry Ostrich
-          :id          => 9, 
-          :symbolic_id => :light_cavalry_2,
-					:category    => 1,
-          :db_field    => :unit_light_cavalry_2,
-          :name        => {
-            
-            :en_US => "Hungry Ostrich",
-  
-            :de_DE => "Hungriger Strauß",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p> Eyes are especially delicious treats to a hungry and dangerous ostrich.</p>",
-  
-            :de_DE => "<p>Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Der Reiter sitzt auf einem abgerichteten äußerst hungrigen Strauß. Wenn der Reiter nicht selbst gebissen wird, ist der hungrige Strauß eine wild pickende Kampfmaschine, die ungeschützte Fernkämpfer zerreißen kann.</p>",
-  
-            :en_US => "<p>The rider sits on a trained and very hungry ostrich. As long as the rider doesn't get bitten himself, the hungry ostrich stays a wild, pecking battle machine, able to destroy unprotected rangers.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 1.3,
-          :action_points => 4,
-          :initiative  => 26,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 0.75,
-  
-            :unitcategory_cavalry => 1,
-  
-            :unitcategory_artillery => 1.5,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 7,
-          :armor       => 5,
-          :hitpoints   => 100,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 1,
-          :critical_hit_chance => 0.02,
-
-          :production_time => '1500',
-
-          :costs      => {
-            0 => '90',
-            1 => '60',
-            2 => '225',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_cavalry_tower',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 5,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 24,
-              :type => 'building',
-
-              :min_level => 4,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_stud',
-              :id => 17,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Hungry Ostrich
-        {               #   Frantic Ostrich
-          :id          => 10, 
-          :symbolic_id => :light_cavalry_3,
-					:category    => 1,
-          :db_field    => :unit_light_cavalry_3,
-          :name        => {
-            
-            :en_US => "Frantic Ostrich",
-  
-            :de_DE => "Rasender Strauß",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Frantic ostriches break for nobody!</p>",
-  
-            :de_DE => "<p>Rasende Strauße bremsen für niemanden!</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Rasende Strauße sind spezialisiert auf blitzschnelle Angriffe. Gegnerische Reittiere blockieren als Spielverderber leider den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p>",
-  
-            :en_US => "<p>Frantic ostriches are specialized in lightning attacks. Enemy mounts are spoilsports though, blocking the access to sitting targets that could otherwise be picked off easily.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 1.4,
-          :action_points => 4,
-          :initiative  => 26,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 0.75,
-  
-            :unitcategory_cavalry => 1,
-  
-            :unitcategory_artillery => 1.5,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 8,
-          :armor       => 5,
-          :hitpoints   => 110,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 1,
-          :critical_hit_chance => 0.02,
-
-          :production_time => '2100',
-
-          :costs      => {
-            0 => '135',
-            1 => '90',
-            2 => '335',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_cavalry_tower',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 24,
-              :type => 'building',
-
-              :min_level => 9,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_stud',
-              :id => 17,
-              :type => 'building',
-
-              :min_level => 15,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Frantic Ostrich
-        {               #   Dinosaur Rider
-          :id          => 11, 
-          :symbolic_id => :light_cavalry_4,
-					:category    => 1,
-          :db_field    => :unit_light_cavalry_4,
-          :name        => {
-            
-            :en_US => "Dinosaur Rider",
-  
-            :de_DE => "Dinoreiter",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Dinosaurs stink! And after a battle, it can take days to get the smell out of your clothes.</p>",
-  
-            :de_DE => "<p>Ein Dino stinkt! Und die Dinowäsche nach einer Schlacht kann auch mal Tage dauern.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Füßen, Schwanz und Zähnen werden die hilflosen Gegner niedergemäht.</p>",
-  
-            :en_US => "<p>A dinosaur rider has only two jobs: the first is not to get thrown off, and the second is to keep steering his dinosaur back to the battlefield once it's broken through enemy ranks. The hapless enemy is mowed down by the dinosaur's feet, tail and teeth.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 1.5,
-          :action_points => 4,
-          :initiative  => 26,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 0.75,
-  
-            :unitcategory_cavalry => 1,
-  
-            :unitcategory_artillery => 1.5,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 10,
-          :armor       => 6,
-          :hitpoints   => 125,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 2,
-          :critical_hit_chance => 0.02,
-
-          :production_time => '3000',
-
-          :costs      => {
-            0 => '200',
-            1 => '135',
-            2 => '505',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_stud',
-              :id => 17,
-              :type => 'building',
-
-              :min_level => 20,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Dinosaur Rider
-        {               #   Neanderthals
-          :id          => 12, 
-          :symbolic_id => :neanderthal,
-					:category    => 0,
-          :db_field    => :unit_neanderthal,
-          :name        => {
-            
-            :en_US => "Neanderthals",
-  
-            :de_DE => "Neandertaler",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Neanderthals don't talk, they act – er, hit.</p>",
-  
-            :de_DE => "<p>Neandertaler reden nicht, sie handeln äh - schlagen.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Die Neandertaler sind ein wilder Stamm prähistorischer Menschen.</p><p>Sie sind zwar ziemlich beeindruckende Kämpfer, haben aber keine Ahnung von Taktik. Wenn Schreien und Zuschlagen nicht mehr ausreichen, ist es meist schon zu spät für den Neandertaler.</p>",
-  
-            :en_US => "<p>Neanderthals are a wild tribe of prehistoric people. They are quite impressive fighters, but they haven't got a clue about tactics. When shouting and hitting fail to fend off the enemy, that's usually the end for Neanderthals.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => false,
-
-          :velocity    => 1,
-          :action_points => 4,
-          :initiative  => 16,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 1,
-  
-            :unitcategory_cavalry => 1.5,
-  
-            :unitcategory_artillery => 0.75,
-  
-            :unitcategory_siege => 0.8,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 5,
-          :armor       => 3,
-          :hitpoints   => 70,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 1,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '1200',
-
-          :costs      => {
-            0 => '20',
-            1 => '10',
-            2 => '60',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_stud',
-              :id => 17,
-              :type => 'building',
-
-              :min_level => 100,
-
-            },
-
-            ],
-
-          ],          
-
-
-        },              #   END OF Neanderthals
-        {               #   Little Chief
-          :id          => 13, 
-          :symbolic_id => :little_chief,
-					:category    => 4,
-          :db_field    => :unit_little_chief,
-          :name        => {
-            
-            :en_US => "Little Chief",
-  
-            :de_DE => "Kleiner Häuptling",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>A little chief is allowed to set up an encampment in the name of the actual chieftain.</p>",
-  
-            :de_DE => "<p>Der kleine Häuptling darf im Namen des richtigen Häuptlings eine Lagerstätte gründen.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Als integranter, karrieresüchtiger, aalglatter Möchtegern ist der Kleine Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Zum Glück kann der Kleine Häuptling unter dem Vorwand der Gründung einer Lagerstätte aus der Siedlung verbannt werden.</p>",
-  
-            :en_US => "<p>A little chief is about as popular as an encounter with a hungry dinosaur. As a scheming, workaholic, slick wannabe, the little chief is a role model for entire generations of snobs. Luckily, a little chief can be banished from a settlement under the pretext of founding a new encampment.</p>",
-                
-          },
-
-          :experience_factor => 1.0,
-          :trainable   => true,
-
-          :velocity    => 0.85,
-          :action_points => 4,
-          :initiative  => 10,
-          :effectiveness => {
-            
-            :unitcategory_infantry => 0.1,
-  
-            :unitcategory_cavalry => 0.1,
-  
-            :unitcategory_artillery => 0.1,
-  
-            :unitcategory_siege => 0.1,
-  
-            :unitcategory_special => 1,
-                
-          },
-          :attack      => 1,
-          :armor       => 1,
-          :hitpoints   => 100,
-
-          :overrunnable => true,
-
-          :critical_hit_damage => 0,
-          :critical_hit_chance => 0.01,
-
-          :production_time => '43200',
-
-          :costs      => {
-            0 => '5000',
-            1 => '5000',
-            2 => '4000',
-            
-          },
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_campfire',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_alliance_hall',
-              :id => 29,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
-          ],          
-
-          :can_create => [
-3,
-
-          ],
-
-
-        },              #   END OF Little Chief
         {               #   Warrior
-          :id          => 14, 
+          :id          => 0, 
           :symbolic_id => :warrior,
 					:category    => 0,
           :db_field    => :unit_warrior,
@@ -2511,7 +1091,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 25,
+              :id => 28,
               :type => 'building',
 
               :min_level => 0,
@@ -2522,7 +1102,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_barracks',
-              :id => 2,
+              :id => 3,
               :type => 'building',
 
               :min_level => 1,
@@ -2537,6 +1117,1444 @@ class GameRules::Rules
 
 
         },              #   END OF Warrior
+        {               #   Club Warrior
+          :id          => 1, 
+          :symbolic_id => :clubbers,
+					:category    => 0,
+          :db_field    => :unit_clubbers,
+          :name        => {
+            
+            :en_US => "Club Warrior",
+  
+            :de_DE => "Keulenkrieger",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Holds a club and is always at the front of battle lines.</p>",
+  
+            :de_DE => "<p>Eine Keule in der Hand und immer an vorderster Front.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Keulenkrieger sind der Grundbestandteil jeder Armee. Sie stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zähe Burschen und nur schwer klein zu kriegen, allerdings finden sie nur zu oft den Tod durch feindliche Fernkämpfer.</p>",
+  
+            :en_US => "<p>Club warriors are the basic units of any Stone Age army. They fight on the front line and protect the ranged combatants from cavalry attack. They're tough and difficult to beat, but unfortunately they all too often take a hit from enemy ranged combatants.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 1.5,
+  
+            :unitcategory_artillery => 0.75,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 6,
+          :armor       => 5,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '900',
+
+          :costs      => {
+            0 => '20',
+            1 => '30',
+            2 => '75',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_infantry_tower',
+              :id => 28,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 3,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Club Warrior
+        {               #   Thick-Skinned Clubber
+          :id          => 2, 
+          :symbolic_id => :clubbers_2,
+					:category    => 0,
+          :db_field    => :unit_clubbers_2,
+          :name        => {
+            
+            :en_US => "Thick-Skinned Clubber",
+  
+            :de_DE => "Dicke Keule",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>“You two? Go and fetch three more of you so you can give me a halfway fair fight!”</p>",
+  
+            :de_DE => "<p>„Ihr zwei? Holt euch noch drei dazu, dann wird es ein halbwegs fairer Kampf!“</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>'Dicke Keule' ist die Abkürzung von Dickhäutigem Keulenkrieger und bezieht sich sowohl auf die Keule als auch auf die Widerstandskraft. Dank der dicken Haut muss die Zeitspanne bis zur Bewusstlosigkeit nicht in Schmerzen durchstanden werden.</p>",
+  
+            :en_US => "<p>Their thick skin protects them against blows from enemy clubs, but it doesn't help so much against the sharp stones of the ranged combatants. Although thanks to their thick skin, they don't feel a lot of pain before they pass out.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 1.5,
+  
+            :unitcategory_artillery => 0.75,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 6,
+          :armor       => 6,
+          :hitpoints   => 100,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '1200',
+
+          :costs      => {
+            0 => '30',
+            1 => '40',
+            2 => '113',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_infantry_tower',
+              :id => 28,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 4,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 3,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Thick-Skinned Clubber
+        {               #   Haymaker
+          :id          => 3, 
+          :symbolic_id => :clubbers_3,
+					:category    => 0,
+          :db_field    => :unit_clubbers_3,
+          :name        => {
+            
+            :en_US => "Haymaker",
+  
+            :de_DE => "Knüppel-Schwinger",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>The art of expressive battle! Here, haymakers give marks to each other based on the finesse of their fighting style.</p>",
+  
+            :de_DE => "<p>Die Kunst des Ausdruckkampfes! Knüppel-Schwinger geben sich untereinander Noten für ihre Kampfstil.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit gutem Aussehen und Ausdruck. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs beim kraftvollen Zuschlagen wird nichts dem Zufall überlassen. Der größte Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>",
+  
+            :en_US => "<p>Haymakers unite the lethal arts of fighting with good looks and charisma. Everything from the carving of the bludgeon to the position of one's left toe when striking someone hard will receive ratings, and nothing will be left to chance. The greatest danger here is not the enemy - it's their own vanity.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 1.5,
+  
+            :unitcategory_artillery => 0.75,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 6,
+          :armor       => 7,
+          :hitpoints   => 110,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 2,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '1500',
+
+          :costs      => {
+            0 => '45',
+            1 => '68',
+            2 => '170',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_infantry_tower',
+              :id => 28,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 9,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 3,
+              :type => 'building',
+
+              :min_level => 15,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Haymaker
+        {               #   Tree Huggers
+          :id          => 4, 
+          :symbolic_id => :tree_huggers,
+					:category    => 0,
+          :db_field    => :unit_tree_huggers,
+          :name        => {
+            
+            :en_US => "Tree Huggers",
+  
+            :de_DE => "Baum-Brutalo",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Why use a club when you can wield a whole tree instead?</p>",
+  
+            :de_DE => "<p>Wozu eine Keule nehmen, wenn man einen ganzen Baum schwingen kann?</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Groß, stark, sauber rasierter Bart. Ein Baum-Brutalo legt sehr großen Wert auf sein Äußeres.</p><p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschenden Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säbelzahntiger, der sich den Schwanz geklemmt hat. Nicht den flauschigen, den anderen...</p>",
+  
+            :en_US => "<p>Big, strong, clean-shaven… Tree-huggers set great store by their appearance. In battle, the tree-hugger is a strange sight. Surrounded by the rustling leaves of his fighting tree, he whirls through enemy ranks like a sabre-toothed tiger with a trapped tail. And probably other sensitive extremities too.</p><p>In battle, the tree-hugger is a strange sight. Surrounded by the rustling leaves of his fighting tree, the tree-hugger whirls through enemy ranks like a sabre-toothed tiger with a trapped tail. And probably other sensitive extremities too … </p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 1.5,
+  
+            :unitcategory_artillery => 0.75,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 7,
+          :armor       => 9,
+          :hitpoints   => 135,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 3,
+          :critical_hit_chance => 0.02,
+
+          :production_time => '2100',
+
+          :costs      => {
+            0 => '68',
+            1 => '102',
+            2 => '255',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_barracks',
+              :id => 3,
+              :type => 'building',
+
+              :min_level => 20,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 24,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Tree Huggers
+        {               #   Gravel Stone Thrower
+          :id          => 5, 
+          :symbolic_id => :thrower,
+					:category    => 2,
+          :db_field    => :unit_thrower,
+          :name        => {
+            
+            :en_US => "Gravel Stone Thrower",
+  
+            :de_DE => "Kieselsteinwerfer",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>These ranged combatants couldn't hit a target board at ten paces, but luckily massed enemy phalanxes generally make a nice big target that's hard to miss. </p>",
+  
+            :de_DE => "<p>Treffen keine Zielscheibe aus zehn Meter Entfernung treffen! Zum Glück sind Schlachtreihen größere Ziele.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p><p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter, die diesen bringen.</p>",
+  
+            :en_US => "<p>Big stones, little stones – stone throwers like them all as long as they can throw them at someone's head. Well, OK – they do prefer the smaller ones. Stone throwers don't actually aim, but their stones can hit you in the eye quite easily. Gravel stone throwers aren't afraid of death as such – they're more afraid of the ostrich riders who cause it.</p>",
+                
+          },
+
+          :experience_factor => 1.5,
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 8,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1.5,
+  
+            :unitcategory_cavalry => 0.75,
+  
+            :unitcategory_artillery => 1,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 8,
+          :armor       => 3,
+          :hitpoints   => 50,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 5,
+          :critical_hit_chance => 0.05,
+
+          :production_time => '1500',
+
+          :costs      => {
+            0 => '75',
+            1 => '75',
+            2 => '225',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_artillery_tower',
+              :id => 29,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 14,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Gravel Stone Thrower
+        {               #   Target Thrower
+          :id          => 6, 
+          :symbolic_id => :thrower_2,
+					:category    => 2,
+          :db_field    => :unit_thrower_2,
+          :name        => {
+            
+            :en_US => "Target Thrower",
+  
+            :de_DE => " Zielwerfer",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Hitting a target at fifty meters with a stone is pretty impressive. Unfortunately, the enemy is mostly further away than that.</p>",
+  
+            :de_DE => "<p>Diese Jungs können zielen, naja, zumindest fliegt der Stein in die richtige Richtung.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ein sicherer Wurf führt zu besseren Treffern. Nicht dass der Unterschied bemerkbar wäre, meist sind eh genug gegnerische Nahkämpfer da, aber es führt doch zu ein oder zwei kritischen Treffern.</p><p>Ein bewegliches Ziel wie einen Straußenreiter zu treffen, ist eine große Leistung und der Unterschied zwischen Leben und Tod für einen Fernkämpfer.</p>",
+  
+            :en_US => "<p>A sure throw means better strikes. Not that you'd notice the difference – there are usually enough enemy melee fighters around, but it can mean a couple of good tactical strikes. Hitting a moving target like an ostrich rider is quite an achievement and can mean the difference between life and death for a stone thrower.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 8,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1.5,
+  
+            :unitcategory_cavalry => 0.75,
+  
+            :unitcategory_artillery => 1,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 9,
+          :armor       => 3,
+          :hitpoints   => 50,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 6,
+          :critical_hit_chance => 0.05,
+
+          :production_time => '2100',
+
+          :costs      => {
+            0 => '112',
+            1 => '112',
+            2 => '320',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_artillery_tower',
+              :id => 29,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 4,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 14,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Target Thrower
+        {               #   Stone Thrower
+          :id          => 7, 
+          :symbolic_id => :thrower_3,
+					:category    => 2,
+          :db_field    => :unit_thrower_3,
+          :name        => {
+            
+            :en_US => "Stone Thrower",
+  
+            :de_DE => "Steinschleuderer",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>The stone thowers have a simple motto - the further you can throw the stone, the better!</p>",
+  
+            :de_DE => "<p>Das Motto der Steinschleuderer: 'Je weiterer der Stein geworfen wird, desto besser!'</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit der Schleuder können auch größere Steine weiter geworfen werden. Treffer bei unvorbereiteten Kämpfer in der zweiten Reihe erzielen eine deutlich höhere Wirkung. Je nach der Seite des Kampfes auf der man gerade steht, ist das zu bejubeln oder zu beklagen. Was durchaus nicht immer eindeutig ist.</p>",
+  
+            :en_US => "<p>You can throw bigger stones even further if you use a catapult. Stone throwers often hit unsuspecting warriors in the second row, leading to a much higher number of overall casualties that are either suffered or celebrated, depending on which side of the battle you happen to be. Which isn't always obvious.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 8,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1.5,
+  
+            :unitcategory_cavalry => 0.75,
+  
+            :unitcategory_artillery => 1,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 10,
+          :armor       => 3,
+          :hitpoints   => 50,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 7,
+          :critical_hit_chance => 0.05,
+
+          :production_time => '3000',
+
+          :costs      => {
+            0 => '168',
+            1 => '168',
+            2 => '480',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_artillery_tower',
+              :id => 29,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 9,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 14,
+              :type => 'building',
+
+              :min_level => 15,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Stone Thrower
+        {               #   Spear Thrower
+          :id          => 8, 
+          :symbolic_id => :thrower_4,
+					:category    => 2,
+          :db_field    => :unit_thrower_4,
+          :name        => {
+            
+            :en_US => "Spear Thrower",
+  
+            :de_DE => " Speerwerfer",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Why anyone would bother to tie a stick to a stone is a mystery – stones are brilliant missiles. But the effect is fantastic, longer range, more accurate and easier to collect. What more could you want?</p>",
+  
+            :de_DE => "<p>Speerschleuderer sind sehr nervig, aber auch tödlich.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ein Speer ist auch im Nahkampf, vor allem gegen Reiter, effektiv. Dumm nur, wenn man schon alle Speere weggeworfen hat, bevor ein Reiter angreift. Im Leitfaden für Speerwerfer steht, dass man immer einen Speer weniger werfen sollte, als man hat. Leider kann kein Speerwerfer zählen, geschweige denn lesen.</p>",
+  
+            :en_US => "<p>A spear is also effective at close range - especially against riders. The only difficulty is when you've already thrown all your spears before you're attacked by a rider. The field manual for spear throwers clearly states, 'Always throw one spear less than you have'. The trouble is, spear throwers can't read, let alone count.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 8,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1.5,
+  
+            :unitcategory_cavalry => 0.75,
+  
+            :unitcategory_artillery => 1,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 12,
+          :armor       => 3,
+          :hitpoints   => 50,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 8,
+          :critical_hit_chance => 0.1,
+
+          :production_time => '4200',
+
+          :costs      => {
+            0 => '250',
+            1 => '250',
+            2 => '712',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_firing_range',
+              :id => 14,
+              :type => 'building',
+
+              :min_level => 20,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 24,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Spear Thrower
+        {               #   Ostrich Rider
+          :id          => 9, 
+          :symbolic_id => :light_cavalry,
+					:category    => 1,
+          :db_field    => :unit_light_cavalry,
+          :name        => {
+            
+            :en_US => "Ostrich Rider",
+  
+            :de_DE => "Straußenreiter",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>The two-handed ostrich riders are totally focused on controlling their mounts. As they themselves are unarmed, the beaks and claws of their ostriches pose more of a threat than they do.</p>",
+  
+            :de_DE => "<p>Straußenreiter sind schnell, sonst nichts. Deshalb müssen die Reiter ihre ganze Konzentration auf das Führen ihres Reittieres legen.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Strauße sind nicht nur lecker, sondern auch gute und schnelle Reittiere. Straußenreiter sind schnell genug, um an den Nahkämpfern vorbeizukommen, so dass den Fernkämpfern nur die Hoffnung bleibt, dass die Sträuße den Kopf in den Sand stecken.</p>",
+  
+            :en_US => "<p>Ostriches don't just taste delicious! They're also exceptionally good and speedy mounts. Ostrich riders are the bane of all stone throwers. Fast enough to get past the infantry, their enemies can only hope that the ostriches will stick their heads in the sand or that their riders will fall off.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 1.2,
+          :action_points => 4,
+          :initiative  => 26,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.75,
+  
+            :unitcategory_cavalry => 1,
+  
+            :unitcategory_artillery => 1.5,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 6,
+          :armor       => 5,
+          :hitpoints   => 90,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.02,
+
+          :production_time => '1200',
+
+          :costs      => {
+            0 => '60',
+            1 => '40',
+            2 => '150',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_cavalry_tower',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_stud',
+              :id => 20,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Ostrich Rider
+        {               #   Hungry Ostrich
+          :id          => 10, 
+          :symbolic_id => :light_cavalry_2,
+					:category    => 1,
+          :db_field    => :unit_light_cavalry_2,
+          :name        => {
+            
+            :en_US => "Hungry Ostrich",
+  
+            :de_DE => "Hungriger Strauß",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p> Eyes are especially delicious treats to a hungry and dangerous ostrich.</p>",
+  
+            :de_DE => "<p>Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Reiter sitzt auf einem abgerichteten äußerst hungrigen Strauß. Wenn der Reiter nicht selbst gebissen wird, ist der hungrige Strauß eine wild pickende Kampfmaschine, die ungeschützte Fernkämpfer zerreißen kann.</p>",
+  
+            :en_US => "<p>The rider sits on a trained and very hungry ostrich. As long as the rider doesn't get bitten himself, the hungry ostrich stays a wild, pecking battle machine, able to destroy unprotected rangers.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 1.3,
+          :action_points => 4,
+          :initiative  => 26,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.75,
+  
+            :unitcategory_cavalry => 1,
+  
+            :unitcategory_artillery => 1.5,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 7,
+          :armor       => 5,
+          :hitpoints   => 100,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.02,
+
+          :production_time => '1500',
+
+          :costs      => {
+            0 => '90',
+            1 => '60',
+            2 => '225',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_cavalry_tower',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 4,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_stud',
+              :id => 20,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Hungry Ostrich
+        {               #   Frantic Ostrich
+          :id          => 11, 
+          :symbolic_id => :light_cavalry_3,
+					:category    => 1,
+          :db_field    => :unit_light_cavalry_3,
+          :name        => {
+            
+            :en_US => "Frantic Ostrich",
+  
+            :de_DE => "Rasender Strauß",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Frantic ostriches break for nobody!</p>",
+  
+            :de_DE => "<p>Rasende Strauße bremsen für niemanden!</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Rasende Strauße sind spezialisiert auf blitzschnelle Angriffe. Gegnerische Reittiere blockieren als Spielverderber leider den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p>",
+  
+            :en_US => "<p>Frantic ostriches are specialized in lightning attacks. Enemy mounts are spoilsports though, blocking the access to sitting targets that could otherwise be picked off easily.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 1.4,
+          :action_points => 4,
+          :initiative  => 26,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.75,
+  
+            :unitcategory_cavalry => 1,
+  
+            :unitcategory_artillery => 1.5,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 8,
+          :armor       => 5,
+          :hitpoints   => 110,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.02,
+
+          :production_time => '2100',
+
+          :costs      => {
+            0 => '135',
+            1 => '90',
+            2 => '335',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_cavalry_tower',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 9,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_stud',
+              :id => 20,
+              :type => 'building',
+
+              :min_level => 15,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Frantic Ostrich
+        {               #   Dinosaur Rider
+          :id          => 12, 
+          :symbolic_id => :light_cavalry_4,
+					:category    => 1,
+          :db_field    => :unit_light_cavalry_4,
+          :name        => {
+            
+            :en_US => "Dinosaur Rider",
+  
+            :de_DE => "Dinoreiter",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Dinosaurs stink! And after a battle, it can take days to get the smell out of your clothes.</p>",
+  
+            :de_DE => "<p>Ein Dino stinkt! Und die Dinowäsche nach einer Schlacht kann auch mal Tage dauern.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Füßen, Schwanz und Zähnen werden die hilflosen Gegner niedergemäht.</p>",
+  
+            :en_US => "<p>A dinosaur rider has only two jobs: the first is not to get thrown off, and the second is to keep steering his dinosaur back to the battlefield once it's broken through enemy ranks. The hapless enemy is mowed down by the dinosaur's feet, tail and teeth.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 1.5,
+          :action_points => 4,
+          :initiative  => 26,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.75,
+  
+            :unitcategory_cavalry => 1,
+  
+            :unitcategory_artillery => 1.5,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 10,
+          :armor       => 6,
+          :hitpoints   => 125,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 2,
+          :critical_hit_chance => 0.02,
+
+          :production_time => '3000',
+
+          :costs      => {
+            0 => '200',
+            1 => '135',
+            2 => '505',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_stud',
+              :id => 20,
+              :type => 'building',
+
+              :min_level => 20,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 24,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Dinosaur Rider
+        {               #   Neanderthals
+          :id          => 13, 
+          :symbolic_id => :neanderthal,
+					:category    => 0,
+          :db_field    => :unit_neanderthal,
+          :name        => {
+            
+            :en_US => "Neanderthals",
+  
+            :de_DE => "Neandertaler",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Neanderthals don't talk, they act – er, hit.</p>",
+  
+            :de_DE => "<p>Neandertaler reden nicht, sie handeln äh - schlagen.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Neandertaler sind ein wilder Stamm prähistorischer Menschen.</p><p>Sie sind zwar ziemlich beeindruckende Kämpfer, haben aber keine Ahnung von Taktik. Wenn Schreien und Zuschlagen nicht mehr ausreichen, ist es meist schon zu spät für den Neandertaler.</p>",
+  
+            :en_US => "<p>Neanderthals are a wild tribe of prehistoric people. They are quite impressive fighters, but they haven't got a clue about tactics. When shouting and hitting fail to fend off the enemy, that's usually the end for Neanderthals.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => false,
+
+          :velocity    => 1,
+          :action_points => 4,
+          :initiative  => 16,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 1.5,
+  
+            :unitcategory_artillery => 0.75,
+  
+            :unitcategory_siege => 0.8,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 5,
+          :armor       => 3,
+          :hitpoints   => 70,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 1,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '1200',
+
+          :costs      => {
+            0 => '20',
+            1 => '10',
+            2 => '60',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_stud',
+              :id => 20,
+              :type => 'building',
+
+              :min_level => 100,
+
+            },
+
+            ],
+
+          ],          
+
+
+        },              #   END OF Neanderthals
+        {               #   Little Chief
+          :id          => 14, 
+          :symbolic_id => :little_chief,
+					:category    => 4,
+          :db_field    => :unit_little_chief,
+          :name        => {
+            
+            :en_US => "Little Chief",
+  
+            :de_DE => "Kleiner Häuptling",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>A little chief is allowed to set up an encampment in the name of the actual chieftain.</p>",
+  
+            :de_DE => "<p>Der kleine Häuptling darf im Namen des richtigen Häuptlings eine Lagerstätte gründen.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Als integranter, karrieresüchtiger, aalglatter Möchtegern ist der Kleine Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Zum Glück kann der Kleine Häuptling unter dem Vorwand der Gründung einer Lagerstätte aus der Siedlung verbannt werden.</p>",
+  
+            :en_US => "<p>A little chief is about as popular as an encounter with a hungry dinosaur. As a scheming, workaholic, slick wannabe, the little chief is a role model for entire generations of snobs. Luckily, a little chief can be banished from a settlement under the pretext of founding a new encampment.</p>",
+                
+          },
+
+          :experience_factor => 1.0,
+          :trainable   => true,
+
+          :velocity    => 0.85,
+          :action_points => 4,
+          :initiative  => 10,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 0.1,
+  
+            :unitcategory_cavalry => 0.1,
+  
+            :unitcategory_artillery => 0.1,
+  
+            :unitcategory_siege => 0.1,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 1,
+          :armor       => 1,
+          :hitpoints   => 100,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 0,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '43200',
+
+          :costs      => {
+            0 => '5000',
+            1 => '5000',
+            2 => '4000',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_campfire',
+              :id => 7,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_alliance_hall',
+              :id => 15,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+          ],          
+
+          :can_create => [
+3,
+
+          ],
+
+
+        },              #   END OF Little Chief
       ],                # END OF UNIT TYPES
 
 # ## BUILDING CATEGORIES ######################################################
@@ -2703,9 +2721,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 3, 6, 12 und 20.</p>",
+            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 2, 6 und 20.</p>",
   
-            :en_US => "<p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6, 12 and 20.</p>",
+            :en_US => "<p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6 and 20.</p>",
                 
           },
 
@@ -2738,7 +2756,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 0,
@@ -2755,30 +2773,12 @@ class GameRules::Rules
             0 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
             1 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
             2 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            3 => 'MAX(LEVEL-19,0)',
+            3 => '2*MAX(LEVEL-19,0)',
             
           },
 
           :production_time => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*15+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*5.5*3600+GREATER(LEVEL,5)*((MIN(LEVEL,2)-MIN(LEVEL,1))*(MIN(LEVEL+1,4)-MIN(LEVEL,4))*(40*(LEVEL-1)-10)+(MIN(LEVEL,4)-MIN(LEVEL,3))*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*4+0.5))',
           :production  => [
-            
-              {
-                :id                 => 0,
-                :symbolic_id        => :resource_stone,
-                :formula            => "2",
-              },
-            
-              {
-                :id                 => 1,
-                :symbolic_id        => :resource_wood,
-                :formula            => "2",
-              },
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "2",
-              },
             
           ],
           :production_bonus  => [
@@ -2790,19 +2790,19 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "1600+100*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)",
+                :formula            => "4000+100*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "1600+100*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)",
+                :formula            => "4000+100*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)",
               },
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "1600+100*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)",
+                :formula            => "4000+100*FLOOR(((MIN(LEVEL+1,10)-MIN(LEVEL,10))*(130*POW(LEVEL,2)-130*LEVEL)+(MAX(LEVEL+1,10)-MAX(LEVEL,10))*(20*POW((LEVEL),2)+9000))/100)",
               },
             
               {
@@ -2829,7 +2829,7 @@ class GameRules::Rules
 
             :unlock_garrison => 2,            
 
-            :command_points => "GREATER(LEVEL,1)+GREATER(LEVEL,5)+GREATER(LEVEL,11)+EQUAL(LEVEL,20)",
+            :command_points => "GREATER(LEVEL,1)+GREATER(LEVEL,5)+EQUAL(LEVEL,20)",
 
             :unlock_building_slots => "MIN(LEVEL,10)*4-1",
 
@@ -2898,7 +2898,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 1,
@@ -2954,8 +2954,109 @@ class GameRules::Rules
           },
 
         },              #   END OF Jäger und Sammler
-        {               #   Ausbildungsgelände
+        {               #   Gottesgläubiger Sammler
           :id          => 2, 
+          :symbolic_id => :building_special_gatherer,
+					:category    => 6,
+          :db_field    => :building_special_gatherer,
+          :name        => {
+            
+            :de_DE => "Gottesgläubiger Sammler",
+  
+            :en_US => "God-Fearing Gatherer",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
+  
+            :de_DE => "<p>Der Gottesfürchtige Sammler steht nur den Unterstützern der Crowdfundingkampagne auf Startnext zur Verfügung.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Gottesgläubige Sammler folgt nur den  Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p><p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p>",
+  
+            :en_US => "<p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p><p>Through his devotion he can find ressources and even golden frogs at a much higher rate than their peers..</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
+  
+          :buyable     => true,
+          :divine_supporters_only => true,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 0.49,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)',
+            1 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)',
+            2 => 'FLOOR((EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5))*0.5)',
+            3 => 'MAX(LEVEL-18,0)',
+            
+          },
+
+          :production_time => 'EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*20+EQUAL(LEVEL,4)*120+GREATER(LEVEL,4)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*0.7+0.5)',
+          :production  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "LESS(LEVEL,11)*(FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
+              },
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "LESS(LEVEL,11)*(FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
+              },
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "LESS(LEVEL,11)*(FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5))",
+              },
+            
+              {
+                :id                 => 3,
+                :symbolic_id        => :resource_cash,
+                :formula            => "1/12.0",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+          },
+
+        },              #   END OF Gottesgläubiger Sammler
+        {               #   Ausbildungsgelände
+          :id          => 3, 
           :symbolic_id => :building_barracks,
 					:category    => 5,
           :db_field    => :building_barracks,
@@ -3012,7 +3113,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 2,
@@ -3065,7 +3166,7 @@ class GameRules::Rules
 
         },              #   END OF Ausbildungsgelände
         {               #   Kleine Hütte
-          :id          => 3, 
+          :id          => 4, 
           :symbolic_id => :building_cottage,
 					:category    => 5,
           :db_field    => :building_cottage,
@@ -3122,7 +3223,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 3,
@@ -3170,8 +3271,97 @@ class GameRules::Rules
           },
 
         },              #   END OF Kleine Hütte
+        {               #   Taverne
+          :id          => 5, 
+          :symbolic_id => :building_tavern,
+					:category    => 6,
+          :db_field    => :building_tavern,
+          :name        => {
+            
+            :de_DE => "Taverne",
+  
+            :en_US => "Tavern",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>A quiet seat, a cool beer, and some reasonably friendly company. What more could anyone want from life?</p>",
+  
+            :de_DE => "<p>Ein ruhiger Sitz, ein kühles Bier in mehr oder weniger angenehmer Gesellschaft - was könnte man sich mehr wünschen?</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Vielleicht findet ihr auch weitere Verdienstmöglichkeiten.</p>",
+  
+            :en_US => "<p>There is no more wretched a hive of scum and villainy than the tavern. So, it's an ideal place to relax, have a drink, and laze around during your day off. And who knows, a job may even turn up if you stick around long enough.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2))",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 12,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 3,
+
+            },
+
+            {
+              :symbolic_id => 'building_tavern',
+              :id => 5,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'LESS(LEVEL,11)*(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
+            1 => 'LESS(LEVEL,11)*(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
+            2 => 'LESS(LEVEL,11)*(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
+            
+          },
+
+          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*10+EQUAL(LEVEL,2)*30+EQUAL(LEVEL,3)*90+EQUAL(LEVEL,4)*660+EQUAL(LEVEL,5)*5200+GREATER(LEVEL,5)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*1.43*(25*POW(LEVEL,2)-50*LEVEL+40)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*2*0.7+0.5))',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :assignment_level => "LEVEL",
+
+          },
+
+        },              #   END OF Taverne
         {               #   Rohstofflager
-          :id          => 4, 
+          :id          => 6, 
           :symbolic_id => :building_storage,
 					:category    => 5,
           :db_field    => :building_storage,
@@ -3228,7 +3418,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 4,
@@ -3291,7 +3481,7 @@ class GameRules::Rules
 
         },              #   END OF Rohstofflager
         {               #   Lagerfeuer
-          :id          => 5, 
+          :id          => 7, 
           :symbolic_id => :building_campfire,
 					:category    => 6,
           :db_field    => :building_campfire,
@@ -3344,7 +3534,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_campfire',
-              :id => 5,
+              :id => 7,
               :type => 'building',
 
               :min_level => 0,
@@ -3391,7 +3581,7 @@ class GameRules::Rules
 
         },              #   END OF Lagerfeuer
         {               #   Steinbruch
-          :id          => 6, 
+          :id          => 8, 
           :symbolic_id => :building_quarry,
 					:category    => 5,
           :db_field    => :building_quarry,
@@ -3448,7 +3638,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 5,
@@ -3497,7 +3687,7 @@ class GameRules::Rules
 
         },              #   END OF Steinbruch
         {               #   Holzfäller
-          :id          => 7, 
+          :id          => 9, 
           :symbolic_id => :building_logger,
 					:category    => 5,
           :db_field    => :building_logger,
@@ -3554,7 +3744,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 5,
@@ -3603,7 +3793,7 @@ class GameRules::Rules
 
         },              #   END OF Holzfäller
         {               #   Trainingshöhle
-          :id          => 8, 
+          :id          => 10, 
           :symbolic_id => :building_training_cave,
 					:category    => 6,
           :db_field    => :building_training_cave,
@@ -3658,7 +3848,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 0,
@@ -3669,7 +3859,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_training_cave',
-              :id => 8,
+              :id => 10,
               :type => 'building',
 
               :min_level => 0,
@@ -3703,7 +3893,7 @@ class GameRules::Rules
 
         },              #   END OF Trainingshöhle
         {               #   Tüftler-Werkstatt
-          :id          => 9, 
+          :id          => 11, 
           :symbolic_id => :building_artifact_stand,
 					:category    => 6,
           :db_field    => :building_artifact_stand,
@@ -3756,7 +3946,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_artifact_stand',
-              :id => 9,
+              :id => 11,
               :type => 'building',
 
               :min_level => 0,
@@ -3792,7 +3982,7 @@ class GameRules::Rules
 
         },              #   END OF Tüftler-Werkstatt
         {               #   Kürschner
-          :id          => 10, 
+          :id          => 12, 
           :symbolic_id => :building_furrier,
 					:category    => 5,
           :db_field    => :building_furrier,
@@ -3849,7 +4039,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 8,
@@ -3899,7 +4089,7 @@ class GameRules::Rules
 
         },              #   END OF Kürschner
         {               #   Kupferschmelze
-          :id          => 11, 
+          :id          => 13, 
           :symbolic_id => :building_copper_smelter,
 					:category    => 6,
           :db_field    => :building_copper_smelter,
@@ -3919,7 +4109,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen. Die Kupferschmelze ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude.</p><p>Eine Kupferschmelze kann nur auf einem kleinen Bauplatz gebaut werden.</p>",
+            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen. Die Kupferschmelze ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude.</p>",
   
             :en_US => "<p>Copper is THE discovery that moved the Stone Age forward into… yes, you guessed it, the Copper-Stone Age. Its discovery leads to not only the creation of some very attractive jewellery, but also to more deadly weapons and progress in making many kinds of implements and tools.</p>",
                 
@@ -3952,7 +4142,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_copper_smelter',
-              :id => 11,
+              :id => 13,
               :type => 'building',
 
               :min_level => 0,
@@ -3987,7 +4177,7 @@ class GameRules::Rules
 
         },              #   END OF Kupferschmelze
         {               #   Schießstand
-          :id          => 12, 
+          :id          => 14, 
           :symbolic_id => :building_firing_range,
 					:category    => 5,
           :db_field    => :building_firing_range,
@@ -4031,7 +4221,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_copper_smelter',
-              :id => 11,
+              :id => 13,
               :type => 'building',
 
               :min_level => 1,
@@ -4044,7 +4234,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 11,
@@ -4096,8 +4286,116 @@ class GameRules::Rules
           },
 
         },              #   END OF Schießstand
+        {               #   Stammeshalle
+          :id          => 15, 
+          :symbolic_id => :building_alliance_hall,
+					:category    => 6,
+          :db_field    => :building_alliance_hall,
+          :name        => {
+            
+            :de_DE => "Stammeshalle",
+  
+            :en_US => "Tribes Hall",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>",
+  
+            :de_DE => "<p>Gutes Essen, leckere Getränke und viel Platz. Ein würdiger Rahmen für große Verhandlungen!</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen. Oder zum Bowling, wenn die Halle denn lang genug ist.</p><p>Mit jedem Ausbau der Stammeshalle kann die Allianz weitere Mitglieder aufnehmen.</p>",
+  
+            :en_US => "<p>In the Tribes Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. More developed halls make it possible to accept more alliance members into the meeting.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "100+20*LEVEL",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> false,
+          :destructable=> false,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 1.5,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_campfire',
+              :id => 7,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_alliance_hall',
+              :id => 15,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
+            1 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
+            2 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
+            
+          },
+
+          :production_time => 'LESS(LEVEL,11)*CEIL((30*POW(LEVEL+4,3.2)+47547*(0.06*(LEVEL-5)+0.98))*1.1*3+0.5)
+      ',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :alliance_size_bonus => "MAX(LEVEL,0)",
+
+          },
+
+        },              #   END OF Stammeshalle
         {               #   Winddichte Hütte
-          :id          => 13, 
+          :id          => 16, 
           :symbolic_id => :building_cottage_2,
 					:category    => 5,
           :db_field    => :building_cottage_2,
@@ -4141,7 +4439,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_copper_smelter',
-              :id => 11,
+              :id => 13,
               :type => 'building',
 
               :min_level => 2,
@@ -4154,7 +4452,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 12,
@@ -4198,7 +4496,7 @@ class GameRules::Rules
 
         },              #   END OF Winddichte Hütte
         {               #   Großes Rohstofflager
-          :id          => 14, 
+          :id          => 17, 
           :symbolic_id => :building_storage_2,
 					:category    => 5,
           :db_field    => :building_storage_2,
@@ -4242,7 +4540,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_copper_smelter',
-              :id => 11,
+              :id => 13,
               :type => 'building',
 
               :min_level => 3,
@@ -4255,7 +4553,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 13,
@@ -4313,7 +4611,7 @@ class GameRules::Rules
 
         },              #   END OF Großes Rohstofflager
         {               #   Altehrwürdiger Steinbruch
-          :id          => 15, 
+          :id          => 18, 
           :symbolic_id => :building_quarry_2,
 					:category    => 5,
           :db_field    => :building_quarry_2,
@@ -4357,7 +4655,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_copper_smelter',
-              :id => 11,
+              :id => 13,
               :type => 'building',
 
               :min_level => 4,
@@ -4370,7 +4668,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 14,
@@ -4414,7 +4712,7 @@ class GameRules::Rules
 
         },              #   END OF Altehrwürdiger Steinbruch
         {               #   Holzfäller mit Kupferaxt
-          :id          => 16, 
+          :id          => 19, 
           :symbolic_id => :building_logger_2,
 					:category    => 5,
           :db_field    => :building_logger_2,
@@ -4458,7 +4756,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_copper_smelter',
-              :id => 11,
+              :id => 13,
               :type => 'building',
 
               :min_level => 4,
@@ -4471,7 +4769,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 14,
@@ -4515,7 +4813,7 @@ class GameRules::Rules
 
         },              #   END OF Holzfäller mit Kupferaxt
         {               #   Stinkender Stall
-          :id          => 17, 
+          :id          => 20, 
           :symbolic_id => :building_stud,
 					:category    => 5,
           :db_field    => :building_stud,
@@ -4559,7 +4857,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_copper_smelter',
-              :id => 11,
+              :id => 13,
               :type => 'building',
 
               :min_level => 5,
@@ -4572,7 +4870,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 15,
@@ -4624,110 +4922,8 @@ class GameRules::Rules
           },
 
         },              #   END OF Stinkender Stall
-        {               #   Verrückter Kürschner
-          :id          => 18, 
-          :symbolic_id => :building_furrier_2,
-					:category    => 5,
-          :db_field    => :building_furrier_2,
-          :name        => {
-            
-            :de_DE => "Verrückter Kürschner",
-  
-            :en_US => "Crazy Furrier",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
-  
-            :de_DE => "<p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
-  
-            :en_US => "<p>The copper knife was a gift from the gods. At least, that's what the furriers who use their copper knives to create gorgeous clothes like to believe. Sadly, members of this group suffer from the usual side effects of a life in haute couture - vigorous fanning, a high-pitched and nasal voice, and generally crazy conduct - all in the name of art, of course. They may be mad, but they set a great example for other furriers.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 3.3,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 7,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 17,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            1 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            0 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            2 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            3 => 'MAX(LEVEL-19,0)*2',
-            
-          },
-
-          :production_time => 'FLOOR(((LESS(LEVEL,11)*30*POW(LEVEL,3.2)+GREATER(LEVEL,10)*47547*(0.06*(LEVEL-10)+0.98))*1.1+0.5)*1.75)',
-          :production  => [
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5)",
-              },
-            
-          ],
-          :production_bonus  => [
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
-              },
-            
-          ],
-
-          :abilities   => {
-
-          },
-
-        },              #   END OF Verrückter Kürschner
         {               #   Kommandozentrale
-          :id          => 19, 
+          :id          => 21, 
           :symbolic_id => :building_command_post,
 					:category    => 4,
           :db_field    => :building_command_post,
@@ -4771,7 +4967,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_copper_smelter',
-              :id => 11,
+              :id => 13,
               :type => 'building',
 
               :min_level => 6,
@@ -4780,7 +4976,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_command_post',
-              :id => 19,
+              :id => 21,
               :type => 'building',
 
               :min_level => 0,
@@ -4791,7 +4987,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 0,
@@ -4852,8 +5048,110 @@ class GameRules::Rules
           },
 
         },              #   END OF Kommandozentrale
+        {               #   Verrückter Kürschner
+          :id          => 22, 
+          :symbolic_id => :building_furrier_2,
+					:category    => 5,
+          :db_field    => :building_furrier_2,
+          :name        => {
+            
+            :de_DE => "Verrückter Kürschner",
+  
+            :en_US => "Crazy Furrier",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
+  
+            :de_DE => "<p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
+  
+            :en_US => "<p>The copper knife was a gift from the gods. At least, that's what the furriers who use their copper knives to create gorgeous clothes like to believe. Sadly, members of this group suffer from the usual side effects of a life in haute couture - vigorous fanning, a high-pitched and nasal voice, and generally crazy conduct - all in the name of art, of course. They may be mad, but they set a great example for other furriers.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 3.3,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 7,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 24,
+              :type => 'building',
+
+              :min_level => 17,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            1 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            0 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            2 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            3 => 'MAX(LEVEL-19,0)*2',
+            
+          },
+
+          :production_time => 'FLOOR(((LESS(LEVEL,11)*30*POW(LEVEL,3.2)+GREATER(LEVEL,10)*47547*(0.06*(LEVEL-10)+0.98))*1.1+0.5)*1.75)',
+          :production  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75+0.5)",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
+            
+          ],
+
+          :abilities   => {
+
+          },
+
+        },              #   END OF Verrückter Kürschner
         {               #   Garnisonsgebäude
-          :id          => 20, 
+          :id          => 23, 
           :symbolic_id => :building_garrison,
 					:category    => 5,
           :db_field    => :building_garrison,
@@ -4897,7 +5195,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_copper_smelter',
-              :id => 11,
+              :id => 13,
               :type => 'building',
 
               :min_level => 8,
@@ -4906,7 +5204,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_garrison',
-              :id => 20,
+              :id => 23,
               :type => 'building',
 
               :min_level => 0,
@@ -4917,7 +5215,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 0,
@@ -4956,7 +5254,7 @@ class GameRules::Rules
 
         },              #   END OF Garnisonsgebäude
         {               #   Versammlungsplatz
-          :id          => 21, 
+          :id          => 24, 
           :symbolic_id => :building_haunt,
 					:category    => 4,
           :db_field    => :building_haunt,
@@ -4976,7 +5274,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bisschen Platz für die Ablage von ein paar Rohstoffen.</p><p>Der Versammlungsplatz liefert jeweils einen Kommandopunkt auf Level 2 und 20.</p>",
+            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein paar Baumstümpfe zum sitzen.</p>",
   
             :en_US => "<p>The meeting place is in the middle of the compound. It's an area that has been left vacant by chance, and it has just enough space for a few raw materials and the dwellers' cosy evening gatherings.</p>",
                 
@@ -5000,7 +5298,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 0,
@@ -5056,19 +5354,19 @@ class GameRules::Rules
 
             :unlock_garrison => 3,            
 
-            :command_points => "GREATER(LEVEL,1)+EQUAL(LEVEL,20)",
+            :command_points => "GREATER(LEVEL,1)",
 
-            :unlock_building_slots => "MIN(2+MIN(LEVEL,10),11)",
+            :unlock_building_slots => "MIN(1+MIN(LEVEL,10),11)",
 
-            :garrison_size_bonus => "200",
+            :garrison_size_bonus => "LESS(LEVEL,20)*300+EQUAL(LEVEL,20)*400",
 
-            :army_size_bonus => "200",
+            :army_size_bonus => "LESS(LEVEL,20)*300+EQUAL(LEVEL,20)*400",
 
           },
 
         },              #   END OF Versammlungsplatz
         {               #   Feldlager
-          :id          => 22, 
+          :id          => 25, 
           :symbolic_id => :building_field_camp,
 					:category    => 4,
           :db_field    => :building_field_camp,
@@ -5088,9 +5386,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 300 Einheiten plus 50 pro Level auf Level 1-10 und 20 pro Level auf Level 11-20. Auf Level 10 ermöglicht das Feldlager einen zweiten Kommandopunkt.</p>",
+            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 100 Einheiten plus 50 pro Level auf Level 1-10 und 30 pro Level auf Level 11-20. Auf Level 10 ermöglicht das Feldlager einen zweiten Kommandopunkt.</p>",
   
-            :en_US => "<p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 300 plus 50 per level at Levels 1-10 and 20 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>",
+            :en_US => "<p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 100 plus 50 per level at Levels 1-10 and 30 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>",
                 
           },
 
@@ -5112,7 +5410,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 6,
@@ -5154,15 +5452,15 @@ class GameRules::Rules
 
             :command_points => "GREATER(LEVEL,9)",
 
-            :garrison_size_bonus => "300+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
+            :garrison_size_bonus => "100+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*20",
 
-            :army_size_bonus => "300+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
+            :army_size_bonus => "100+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*20",
 
           },
 
         },              #   END OF Feldlager
         {               #   Ritualstein
-          :id          => 23, 
+          :id          => 26, 
           :symbolic_id => :building_altar,
 					:category    => 4,
           :db_field    => :building_altar,
@@ -5206,7 +5504,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 6,
@@ -5252,7 +5550,7 @@ class GameRules::Rules
 
         },              #   END OF Ritualstein
         {               #   Festungsanlagen
-          :id          => 24, 
+          :id          => 27, 
           :symbolic_id => :building_fortress_fortification,
 					:category    => 0,
           :db_field    => :building_fortress_fortification,
@@ -5272,7 +5570,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p><p>Die Festungsanlagen liefern einen Kommandopunkt auf Level 2 und 10.</p>",
+            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p><p>Die Festungsanlagen liefern einen zusätzlichen Kommandopunkt auf Level 10.</p>",
   
             :en_US => "<p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p>",
                 
@@ -5280,7 +5578,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3+250)",
+	        :population  => "(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3+250)",
   
           :buyable     => true,
           :divine_supporters_only => false,
@@ -5333,7 +5631,7 @@ class GameRules::Rules
 
             :unlock_garrison => 1,            
 
-            :command_points => "LESS(LEVEL,11)*(GREATER(LEVEL,0)*1+GREATER(LEVEL,9)*1)",
+            :command_points => "1+GREATER(LEVEL,9)*1)",
 
             :unlock_building_slots => "MIN(LEVEL,1)*2",
 
@@ -5345,7 +5643,7 @@ class GameRules::Rules
 
         },              #   END OF Festungsanlagen
         {               #   Turm der Knüppelei
-          :id          => 25, 
+          :id          => 28, 
           :symbolic_id => :building_infantry_tower,
 					:category    => 1,
           :db_field    => :building_infantry_tower,
@@ -5373,7 +5671,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))+(EQUAL(LEVEL,10)*39)",
   
           :buyable     => true,
           :divine_supporters_only => false,
@@ -5389,7 +5687,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 1,
@@ -5443,7 +5741,7 @@ class GameRules::Rules
 
         },              #   END OF Turm der Knüppelei
         {               #   Turm der Ballistik
-          :id          => 26, 
+          :id          => 29, 
           :symbolic_id => :building_artillery_tower,
 					:category    => 1,
           :db_field    => :building_artillery_tower,
@@ -5471,7 +5769,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))+(EQUAL(LEVEL,10)*39)",
   
           :buyable     => true,
           :divine_supporters_only => false,
@@ -5487,7 +5785,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 5,
@@ -5541,7 +5839,7 @@ class GameRules::Rules
 
         },              #   END OF Turm der Ballistik
         {               #   Turm der Reitmeisterei
-          :id          => 27, 
+          :id          => 30, 
           :symbolic_id => :building_cavalry_tower,
 					:category    => 1,
           :db_field    => :building_cavalry_tower,
@@ -5569,7 +5867,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))",
+	        :population  => "LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))+(EQUAL(LEVEL,10)*39)",
   
           :buyable     => true,
           :divine_supporters_only => false,
@@ -5585,7 +5883,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 7,
@@ -5638,381 +5936,6 @@ class GameRules::Rules
           },
 
         },              #   END OF Turm der Reitmeisterei
-        {               #   Festungsgarnison
-          :id          => 28, 
-          :symbolic_id => :building_fortress_garrison,
-					:category    => 2,
-          :db_field    => :building_fortress_garrison,
-          :name        => {
-            
-            :de_DE => "Festungsgarnison",
-  
-            :en_US => "Fortress Garrison",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>This is where decisions are made! The larger the chieftan's hut, the bigger and more complex the settlement and the greater the number of armies that can be sent into battle.</p>",
-  
-            :de_DE => "<p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto größer und vielfältiger die Siedlung und die Anzahl der Armeen, die ins Feld geführt werden können.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.
-Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p><p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p><p>Eine prunkvolle, mit Trophäen der Feinde geschmückte Hütte verringert die Moral möglicher Angreifer und erhöht die Moral der Verteidiger.</p>",
-  
-            :en_US => "<p>The chieftan's hut reflects the size of the village. Upgrading the chieftan's hut means that new types of buildings become available - and that more of them can be built. Behind the chieftan's hut is a little storage area in which raw materials can be kept for a short time if there is no storehouse available. The chieftan's hut also makes it possible to deploy armies. A luxurious hut decorated with enemy trophies lowers the morale of possible attackers, whilst also raising the morale of the defenders.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> false,
-          :destructable=> false,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 1,
-
-          :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*1*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*2*1.5+0.5)',
-            3 => 'MAX(LEVEL-14,0)',
-            
-          },
-
-          :production_time => 'FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*19.5*POW(LEVEL,3.6)/4.3+(MIN(LEVEL,11)-MIN(LEVEL,10))*18054*(0.06*(LEVEL-10)+0.98))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*2+0.5)',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-            :garrison_size_bonus => "20*LEVEL",
-
-            :army_size_bonus => "10*LEVEL",
-
-          },
-
-        },              #   END OF Festungsgarnison
-        {               #   Große Stammeshalle
-          :id          => 29, 
-          :symbolic_id => :building_alliance_hall,
-					:category    => 6,
-          :db_field    => :building_alliance_hall,
-          :name        => {
-            
-            :de_DE => "Große Stammeshalle",
-  
-            :en_US => "Tribe's Large Hall",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>",
-  
-            :de_DE => "<p>Gutes Essen, leckere Getränke und viel Platz. Ein würdiger Rahmen für große Verhandlungen!</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen.</p><p>Oder zum Bowling, wenn die Halle denn lang genug ist.</p><p>Besonderes große Hallen erlauben es, weitere Spieler in die Allianz aufzunehmen.</p>",
-  
-            :en_US => "<p>In the Large Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. Very large halls make it possible to accept more alliance members into the meeting.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "LESS(LEVEL,11)*200",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> false,
-          :destructable=> false,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 1.5,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 11,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            {
-              :symbolic_id => 'building_campfire',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
-              :symbolic_id => 'building_alliance_hall',
-              :id => 29,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
-            1 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
-            2 => 'LESS(LEVEL,11)*25000*POW(LEVEL,1.25)',
-            
-          },
-
-          :production_time => 'LESS(LEVEL,11)*CEIL((30*POW(LEVEL+4,3.2)+47547*(0.06*(LEVEL-5)+0.98))*1.1*3+0.5)
-      ',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-            :alliance_size_bonus => "MAX(LEVEL,0)",
-
-          },
-
-        },              #   END OF Große Stammeshalle
-        {               #   Taverne
-          :id          => 30, 
-          :symbolic_id => :building_tavern,
-					:category    => 6,
-          :db_field    => :building_tavern,
-          :name        => {
-            
-            :de_DE => "Taverne",
-  
-            :en_US => "Tavern",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>A quiet seat, a cool beer, and some reasonably friendly company. What more could anyone want from life?</p>",
-  
-            :de_DE => "<p>Ein ruhiger Sitz, ein kühles Bier in mehr oder weniger angenehmer Gesellschaft - was könnte man sich mehr wünschen?</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Wer weiß, vielleicht findet sich auch die eine oder andere Verdienstmöglichkeit.</p>",
-  
-            :en_US => "<p>There is no more wretched a hive of scum and villainy than the tavern. So, it's an ideal place to relax, have a drink, and laze around during your day off. And who knows, a job may even turn up if you stick around long enough.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2))",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> false,
-          :destructable=> false,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 12,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 3,
-
-            },
-
-            {
-              :symbolic_id => 'building_tavern',
-              :id => 30,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'LESS(LEVEL,11)*(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
-            1 => 'LESS(LEVEL,11)*(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
-            2 => 'LESS(LEVEL,11)*(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
-            
-          },
-
-          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*10+EQUAL(LEVEL,2)*30+EQUAL(LEVEL,3)*90+EQUAL(LEVEL,4)*660+EQUAL(LEVEL,5)*5200+GREATER(LEVEL,5)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*1.43*(25*POW(LEVEL,2)-50*LEVEL+40)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*2*0.7+0.5))',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-            :assignment_level => "LEVEL",
-
-          },
-
-        },              #   END OF Taverne
-        {               #   Spezialjäger und -Sammler
-          :id          => 31, 
-          :symbolic_id => :building_special_gatherer,
-					:category    => 5,
-          :db_field    => :building_special_gatherer,
-          :name        => {
-            
-            :de_DE => "Spezialjäger und -Sammler",
-  
-            :en_US => "Special Hunter Gatherers",
-                
-          },
-          :flavour     => {
-            
-            :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
-  
-            :de_DE => "<p>Holz und Steine, ein paar Kaninchen oder andere Nager und ganz selten auch mal eine Kröte. Das sind die Schätze des Sammlers.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Primitivster aller Steinzeitbewohner. Er jagt und sammelt einfach alles was ihm vor die Flinte - äh Steinschleuder - kommt. Neben vielen völlig unbrauchbaren Sachen finden die Jäger und Sammler alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>",
-  
-            :en_US => "<p>The most primitive of all Stone Age folk, the Hunter Gatherer collects all kinds of stuff, from branches and stones to roots, and even a couple of Golden Frogs, if the area is big enough. Basically, he hunts and gathers anything that comes into his sights - er... into the reach of his slingshot. All his treasures are set out neatly on display in his compound. </p><p>Apart from all kinds of useless stuff, hunter gatherers find everything – from branches and stones to roots and, if the area is big enough, even a couple of golden frogs.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
-  
-          :buyable     => true,
-          :divine_supporters_only => true,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 0.49,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 21,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)',
-            1 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)',
-            2 => 'FLOOR((EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5))*0.5)',
-            3 => 'MAX(LEVEL-18,0)',
-            
-          },
-
-          :production_time => 'EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*20+EQUAL(LEVEL,4)*120+GREATER(LEVEL,4)*FLOOR(((MIN(LEVEL+1,4)-MIN(LEVEL,4))*(130*POW(LEVEL,2)-350*LEVEL+240)+(MIN(LEVEL,4)-MIN(LEVEL,3))*(MIN(LEVEL+1,11)-MIN(LEVEL,11))*30*POW(LEVEL,3.2)+(MIN(LEVEL,11)-MIN(LEVEL,10))*47547*(0.06*(LEVEL-10)+0.98))*0.7+0.5)',
-          :production  => [
-            
-              {
-                :id                 => 0,
-                :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
-              },
-            
-              {
-                :id                 => 1,
-                :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
-              },
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
-              },
-            
-              {
-                :id                 => 3,
-                :symbolic_id        => :resource_cash,
-                :formula            => "(MIN(LEVEL,11)-MIN(LEVEL,10))*1/48.0+(MIN(LEVEL,20)-MIN(LEVEL,19))*1/48.0",
-              },
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-          },
-
-        },              #   END OF Spezialjäger und -Sammler
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -6076,7 +5999,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             0 => {
               :max_level => 10,
               
-              :building  => 24,
+              :building  => 27,
               
               :level  => 1,
               
@@ -6696,7 +6619,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             1 => {
               :max_level => 20,
               
-              :building  => 21,
+              :building  => 24,
               
               :level  => 1,
               
@@ -7096,7 +7019,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :unit_deposits => {
-            0 => '25',
+            1 => '25',
             
           },
 
@@ -7170,7 +7093,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :unit_deposits => {
-            14 => '100',
+            0 => '100',
             
           },
 
@@ -7237,8 +7160,8 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :unit_deposits => {
-            0 => '100',
-            1 => '50',
+            1 => '100',
+            2 => '50',
             
           },
 
@@ -7313,9 +7236,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :unit_deposits => {
-            1 => '250',
-            4 => '200',
-            8 => '100',
+            2 => '250',
+            5 => '200',
+            9 => '100',
             
           },
 
@@ -7407,7 +7330,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :unit_deposits => {
-            0 => '0.005*PRODUCTION',
+            1 => '0.005*PRODUCTION',
             
           },
 
@@ -7503,7 +7426,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
 
           :unit_deposits => {
-            0 => '100',
+            1 => '100',
             
           },
 
@@ -8070,7 +7993,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 0,
               :domain_id          => 0,
-              :bonus              => 0.2,
+              :bonus              => 0.15,
             },
 
             {
@@ -8129,7 +8052,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 1,
               :domain_id          => 0,
-              :bonus              => 0.2,
+              :bonus              => 0.15,
             },
 
             {
@@ -8188,7 +8111,7 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
             {
               :resource_id        => 2,
               :domain_id          => 0,
-              :bonus              => 0.2,
+              :bonus              => 0.15,
             },
 
             {
@@ -8324,9 +8247,9 @@ Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwisc
           },
           :flavour => {
             
-            :de_DE => "Flavor",
+            :de_DE => "Für eine Keule ist das aber ziemlich mickrig.",
   
-            :en_US => "Flavor",
+            :en_US => "Pretty puny for a club.",
   
           },
 

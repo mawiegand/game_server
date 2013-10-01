@@ -27,7 +27,7 @@
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <Effects>
-      <ProductionBonus id="resource_stone" domain="character">0.2</ProductionBonus>
+      <ProductionBonus id="resource_stone" domain="character">0.15</ProductionBonus>
       <ProductionBonus id="resource_stone" domain="alliance">0.05</ProductionBonus>
     </Effects>
   </Artifact>
@@ -56,7 +56,7 @@
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <Effects>
-      <ProductionBonus id="resource_wood" domain="character">0.2</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="character">0.15</ProductionBonus>
       <ProductionBonus id="resource_wood" domain="alliance">0.05</ProductionBonus>
     </Effects>
   </Artifact>
@@ -85,7 +85,7 @@
     </Initiation>
     <ArtifactAmount>1</ArtifactAmount>
     <Effects>
-      <ProductionBonus id="resource_fur" domain="character">0.2</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="character">0.15</ProductionBonus>
       <ProductionBonus id="resource_fur" domain="alliance">0.05</ProductionBonus>
     </Effects>
   </Artifact>
@@ -154,8 +154,8 @@
     <Description lang="en_US">
       <p>Is that... a hammer! You are immediately certain that this must be a hammer. The Tinkers dont seem to think so tho and take it back to their workshop for further investigation.</p>
     </Description>
-    <Flavour lang="de_DE">Flavor</Flavour>
-    <Flavour lang="en_US">Flavor</Flavour>
+    <Flavour lang="de_DE">Für eine Keule ist das aber ziemlich mickrig.</Flavour>
+    <Flavour lang="en_US">Pretty puny for a club.</Flavour>
     <Initiation>
       <Description lang="de_DE">
         <p>Unglaublich, es ist wirklich eine Art Hammer! Die Tüftler nennen ihn liebevoll 'Steinbrösler'. Mit dem Steinbrösler kann man Steine klein hauen und so schneller Rohmaterial für neue Gebäude gewinnen.</p>
