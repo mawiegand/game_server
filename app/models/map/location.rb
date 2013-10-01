@@ -70,7 +70,7 @@ class Map::Location < ActiveRecord::Base
     inviting_alliance = Fundamental::Alliance.find_by_invitation_code(invitation_code)
     return nil if inviting_alliance.nil?
 
-    max_home_bases = 3
+    max_home_bases = GAME_SERVER_CONFIG['max_home_bases_in_region_for_alliance_invitation']
     regions = []
 
     # select from owned regions, if any free location
@@ -110,14 +110,12 @@ class Map::Location < ActiveRecord::Base
 
   def self.location_with_geo_coords(coords)
     node = Map::Node.find_by_coords(coords['latitude'], coords['longitude'])
-    logger.debug "-----> node #{node}"
     target_location = nil
     if !node.nil?
       free_locations = node.region.locations.empty.count
-      logger.debug "-----> free_locations #{free_locations}"
-      if free_locations > 0
+      home_bases_count = region.locations.home_bases.count
+      if free_locations > 0 && home_bases_count < GAME_SERVER_CONFIG['max_home_bases_in_region_for_geo']
         target_location = node.region.locations.empty.offset(Random.rand(free_locations)).first
-        logger.debug "-----> target_location #{target_location}"
       else
         neighbor_nodes = node.neighbor_nodes
         # sort them by settlement count
