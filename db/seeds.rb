@@ -382,10 +382,10 @@ Shop::ResourceOffer.create({
 
 Shop::BonusOffer.create({
   id: 1,
-  price: 5,
+  price: 10,
   resource_id: 0,
-  currency: Shop::Transaction::CURRENCY_CREDITS,
-  duration: 148,
+  currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
+  duration: 96,
   bonus: 0.15,
   started_at: Time.now,
   ends_at: Time.now + 1.year
@@ -393,10 +393,10 @@ Shop::BonusOffer.create({
 
 Shop::BonusOffer.create({
   id: 2,
-  price: 5,
+  price: 10,
   resource_id: 1,
-  currency: Shop::Transaction::CURRENCY_CREDITS,
-  duration: 148,
+  currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
+  duration: 96,
   bonus: 0.15,
   started_at: Time.now,
   ends_at: Time.now + 1.year
@@ -404,10 +404,10 @@ Shop::BonusOffer.create({
 
 Shop::BonusOffer.create({
   id: 3,
-  price: 5,
+  price: 10,
   resource_id: 2,
-  currency: Shop::Transaction::CURRENCY_CREDITS,
-  duration: 148,
+  currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
+  duration: 96,
   bonus: 0.15,
   started_at: Time.now,
   ends_at: Time.now + 1.year
@@ -416,61 +416,61 @@ Shop::BonusOffer.create({
 
 
 Shop::BonusOffer.create({
-  price: 5,
+  price: 1,
   resource_id: 0,
   currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
-  duration: 148,
+  duration: 48,
   bonus: 0.05,
   started_at: Time.now,
   ends_at: Time.now + 1.year
 })
 
 Shop::BonusOffer.create({
-  price: 5,
+  price: 1,
   resource_id: 1,
   currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
-  duration: 148,
+  duration: 48,
   bonus: 0.05,
   started_at: Time.now,
   ends_at: Time.now + 1.year
 })
 
 Shop::BonusOffer.create({
-  price: 5,
+  price: 1,
   resource_id: 2,
   currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
-  duration: 148,
+  duration: 48,
   bonus: 0.05,
   started_at: Time.now,
   ends_at: Time.now + 1.year
 })
 
 Shop::BonusOffer.create({
-  price: 25,
+  price: 20,
   resource_id: 0,
   currency: Shop::Transaction::CURRENCY_CREDITS,
-  duration: 148,
-  bonus: 0.25,
+  duration: 168,
+  bonus: 0.3,
   started_at: Time.now,
   ends_at: Time.now + 1.year
 })
 
 Shop::BonusOffer.create({
-  price: 25,
+  price: 20,
   resource_id: 1,
   currency: Shop::Transaction::CURRENCY_CREDITS,
-  duration: 148,
-  bonus: 0.25,
+  duration: 168,
+  bonus: 0.3,
   started_at: Time.now,
   ends_at: Time.now + 1.year
 })
 
 Shop::BonusOffer.create({
-  price: 25,
+  price: 20,
   resource_id: 2,
   currency: Shop::Transaction::CURRENCY_CREDITS,
-  duration: 148,
-  bonus: 0.25,
+  duration: 168,
+  bonus: 0.3,
   started_at: Time.now,
   ends_at: Time.now + 1.year
 })
