@@ -1,0 +1,116 @@
+#!/usr/bin/env ruby
+#
+# Script for copying ranking results to identity provider
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
+require 'identity_provider/access'
+require 'credit_shop'
+
+puts "Start transfering top 100 xp bonus"
+
+identity_provider_access = IdentityProvider::Access.new({
+  identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+  game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+  scopes:                     ['5dentity'],
+})
+
+identifiers = [
+  'GbIFHtjaGbGWNQDv',
+  'PdSeQZYkLIyNQKeU',
+  'LnbdCPFijQBqyxpI',
+  'LLUmOUYbWzDviokY',
+  'sWmAhwNkTxYbAhBH',
+  'tnEDTFRZtNdoWZAg',
+  'iSFoCLFesbkQBydY',
+  'YgyRZGGmJEBGqumA',
+  'JbzJumSOHFYDCBPN',
+  'OqeRGaPKgrvwwQjl',
+  'noeLViqfQKkoYNOx',
+  'HReLAPETjXPpRzzm',
+  'SgmFBufgVCeUYVPk',
+  'GrDKxZHxmZUhRqhe',
+  'qFUdwWdmSXuLUJBW',
+  'ddPPsFGlgDupKJHP',
+  'plEDPBKVeOTzugwm',
+  'kkGzheDKUQZewpBC',
+  'KBASVRwKoAoqsAIK',
+  'iQhmfqzWFBbtJTwJ',
+  'qwOdPvifuFeQQiTx',
+  'AZLJnkmsPsHfeGDg',
+  'YbHuouoEWsrtCSXn',
+  'KsmmEeJepgyzhLZX',
+  'AEsmTbXrGrLJFwaA'
+]
+
+identifiers.each do |identifier|
+
+  puts "transferring start resources for identifier #{identifier}"
+
+  start_resources = {
+    start_resources: {
+      client_identifier: 'wackadoo-round4',
+      resources: [
+        {resource_type_id: 0, amount: 2000},
+        {resource_type_id: 1, amount: 2000},
+        {resource_type_id: 2, amount: 2000}
+      ]
+    }
+  }
+
+  identity_provider_access.post_character_property(identifier, start_resources)
+
+  puts "transferring bought credits for identifier #{identifier}"
+
+  character = Fundamental::Character.find_by_identifier(identifier)
+  booking_amount = -750
+
+  # lokale transaction erzeugen
+  shop_transaction = Shop::Transaction.create({
+    character: character,
+    offer: 'custom accounting transaction',
+    state: Shop::Transaction::STATE_CREATED
+  })
+
+  # transaction zum payment provider schicken
+  virtual_bank_transaction = {
+    customer_identifier: identifier,
+    credit_amount_booked: booking_amount,
+    booking_type: Shop::Transaction::TYPE_CREDIT,
+    transaction_id: shop_transaction.id,
+  }
+
+  account_response = CreditShop::BytroShop.get_customer_account(identifier)
+  unless account_response[:response_code] == Shop::Transaction::API_RESPONSE_OK
+    puts "Could not connect to Shop to get account balance"
+    exit
+  end
+  credit_amount = account_response[:response_data][:amount]
+
+  shop_transaction.credit_amount_before = credit_amount
+  shop_transaction.save
+
+  transaction_response = CreditShop::BytroShop.post_virtual_bank_transaction(virtual_bank_transaction, identifier)
+
+  if transaction_response[:response_code] === Shop::Transaction::API_RESPONSE_OK
+    shop_transaction.credit_amount_after = transaction_response[:response_data][:amount]
+    shop_transaction.state = Shop::Transaction::STATE_CLOSED
+    shop_transaction.credit_amount_booked = booking_amount
+    shop_transaction.save
+
+    # send mail
+    if !character.nil?
+      ip_access = IdentityProvider::Access.new(
+        identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+        game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+        scopes:                     ['5dentity'],
+      )
+      ip_access.deliver_custom_booking_notification(character, -booking_amount)
+      puts "sent mail for character #{character.name}"
+    else
+      puts "didn't send mail as character is unknown"
+    end
+  end
+end
+
+puts "finished."
