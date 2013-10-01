@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.41
+# Version: 0.3.42
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 41, 
+        :build => 42, 
       },
       
       :production_test_weights => {
@@ -2810,7 +2810,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "UUpgrade your chieftan's hut to Level 7.",
+            :en_US => "Upgrade your chieftan's hut to Level 7.",
   
             :de_DE => "Baue Deine Häuptlingshütte auf Level 7 aus.",
                 

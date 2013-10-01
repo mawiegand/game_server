@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="41" />
+    <Version major="0" minor="3" build="42" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -952,7 +952,7 @@
     <Quest id="quest_build_chiefcottagelvl7" advisor="chef">
       <Name>Upgrade the chieftan's hut</Name>
       <Name locale="de_DE">Häuptlingshütte Level 7</Name>
-      <Task>UUpgrade your chieftan's hut to Level 7.</Task>
+      <Task>Upgrade your chieftan's hut to Level 7.</Task>
       <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 7 aus.</Task>
       <Description locale="de_DE">
         <p>Weitere vier Bauplätze und die Möglichkeit einen Artefakt Stand zu bauen.</p>
