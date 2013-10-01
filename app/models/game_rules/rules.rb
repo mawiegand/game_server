@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.3.3
+# Version: 1.3.4
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -122,7 +122,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 3,
-                    :build => 3,
+                    :build => 4,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -3003,6 +3003,17 @@ class GameRules::Rules
               :type => 'building',
 
               :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_special_gatherer',
+              :id => 2,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
