@@ -113,7 +113,7 @@ class Map::Location < ActiveRecord::Base
     target_location = nil
     if !node.nil?
       free_locations = node.region.locations.empty.count
-      home_bases_count = region.locations.home_bases.count
+      home_bases_count = node.region.locations.home_bases.count
       if free_locations > 0 && home_bases_count < GAME_SERVER_CONFIG['max_home_bases_in_region_for_geo']
         target_location = node.region.locations.empty.offset(Random.rand(free_locations)).first
       else
