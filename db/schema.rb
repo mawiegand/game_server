@@ -2586,10 +2586,10 @@ ActiveRecord::Schema.define(:version => 20130930100929) do
     t.integer  "name_change_count",                              :default => 0
     t.integer  "alliance_size_bonus",                            :default => 0
     t.integer  "assignment_level",                               :default => 0,            :null => false
-    t.integer  "alliance_color"
     t.integer  "battle_id"
     t.decimal  "condition",                                      :default => 1.0,          :null => false
     t.datetime "condition_updated_at"
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_slots", :force => true do |t|
