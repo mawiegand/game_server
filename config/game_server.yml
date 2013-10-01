@@ -70,6 +70,9 @@ defaults: &defaults
 
   battle_xp_winner_bonus_factor:         3.0
 
+  max_home_bases_in_region_for_geo:                     3
+  max_home_bases_in_region_for_alliance_invitation:     3
+
   description_max_length:               1000 # character
 
 development:
