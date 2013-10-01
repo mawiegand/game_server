@@ -5,8 +5,7 @@
   <Name lang="de_DE">Versammlungsplatz</Name>
   <Name lang="en_US">Meeting Place</Name>
   <Description lang="de_DE">
-    <p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein bisschen Platz für die Ablage von ein paar Rohstoffen.</p>
-    <p>Der Versammlungsplatz liefert jeweils einen Kommandopunkt auf Level 2 und 20.</p>
+    <p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein paar Baumstümpfe zum sitzen.</p>
   </Description>
   <Description lang="en_US">
     <p>The meeting place is in the middle of the compound. It's an area that has been left vacant by chance, and it has just enough space for a few raw materials and the dwellers' cosy evening gatherings.</p>
@@ -29,12 +28,12 @@
   <ProductionTime shortenable="false">GREATER(LEVEL,1)*(EQUAL(LEVEL,2)*3600+LESS(LEVEL,11)*(3600*FLOOR(POW(LEVEL,1.5)-1))+GREATER(LEVEL,10)*(3600*(FLOOR(POW(LEVEL,0.8)-MAX(LEVEL-5,0)))+29*3600))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="3" />
-    <GarrisonSizeBonus>200</GarrisonSizeBonus>
-    <ArmySizeBonus>200</ArmySizeBonus>
-    <CommandPoints>GREATER(LEVEL,1)+EQUAL(LEVEL,20)</CommandPoints>
+    <GarrisonSizeBonus>LESS(LEVEL,20)*300+EQUAL(LEVEL,20)*400</GarrisonSizeBonus>
+    <ArmySizeBonus>LESS(LEVEL,20)*300+EQUAL(LEVEL,20)*400</ArmySizeBonus>
+    <CommandPoints>GREATER(LEVEL,1)</CommandPoints>
     <UnlockQueue queue="queue_buildings" />
     <DefenseBonus>0.2*LEVEL</DefenseBonus>
-    <UnlockBuildingSlots>MIN(2+MIN(LEVEL,10),11)</UnlockBuildingSlots>
+    <UnlockBuildingSlots>MIN(1+MIN(LEVEL,10),11)</UnlockBuildingSlots>
   </Abilities>
 </Building>
 

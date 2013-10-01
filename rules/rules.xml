@@ -72,7 +72,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="2" build="1" />
+    <Version major="1" minor="3" build="0" />
     <AppControl debugTracking="1">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="22" />
     </AppControl>
@@ -96,36 +96,39 @@
     </CharacterCreation>
     <ConstructionSpeedup>
       <SpeedupCost resource="resource_cash" amount="0"  hours="(1.0/60.0)" />
-      <SpeedupCost resource="resource_cash" amount="1"  hours="1" />
-      <SpeedupCost resource="resource_cash" amount="2"  hours="3" />
-      <SpeedupCost resource="resource_cash" amount="4"  hours="7" />
-      <SpeedupCost resource="resource_cash" amount="6"  hours="12" />
-      <SpeedupCost resource="resource_cash" amount="8"  hours="18" />
-      <SpeedupCost resource="resource_cash" amount="12" hours="30" />
-      <SpeedupCost resource="resource_cash" amount="20" hours="150" />
-      <SpeedupCost resource="resource_cash" amount="30" hours="9999" />
+      <SpeedupCost resource="resource_cash" amount="1"  hours="0.5" />
+      <SpeedupCost resource="resource_cash" amount="2"  hours="1" />
+      <SpeedupCost resource="resource_cash" amount="4"  hours="3" />
+      <SpeedupCost resource="resource_cash" amount="8"  hours="7" />
+      <SpeedupCost resource="resource_cash" amount="12" hours="12" />
+      <SpeedupCost resource="resource_cash" amount="16" hours="18" />
+      <SpeedupCost resource="resource_cash" amount="24" hours="30" />
+      <SpeedupCost resource="resource_cash" amount="36" hours="150" />
+      <SpeedupCost resource="resource_cash" amount="48" hours="9999" />
     </ConstructionSpeedup>
     <TrainingSpeedup>
-      <SpeedupCost resource="resource_cash" amount="1"  hours="3"  />
-      <SpeedupCost resource="resource_cash" amount="2"  hours="6"  />
-      <SpeedupCost resource="resource_cash" amount="3"  hours="11"  />
-      <SpeedupCost resource="resource_cash" amount="4"  hours="17"  />
-      <SpeedupCost resource="resource_cash" amount="6"  hours="36"  />
-      <SpeedupCost resource="resource_cash" amount="8"  hours="56" />
-      <SpeedupCost resource="resource_cash" amount="12" hours="96" />
-      <SpeedupCost resource="resource_cash" amount="20" hours="192" />
-      <SpeedupCost resource="resource_cash" amount="30" hours="9999" />
+      <SpeedupCost resource="resource_cash" amount="1"  hours="0.5"  />
+      <SpeedupCost resource="resource_cash" amount="2"  hours="3"  />
+      <SpeedupCost resource="resource_cash" amount="4"  hours="6"  />
+      <SpeedupCost resource="resource_cash" amount="6"  hours="11"  />
+      <SpeedupCost resource="resource_cash" amount="8"  hours="17"  />
+      <SpeedupCost resource="resource_cash" amount="12" hours="36"  />
+      <SpeedupCost resource="resource_cash" amount="16" hours="56" />
+      <SpeedupCost resource="resource_cash" amount="24" hours="96" />
+      <SpeedupCost resource="resource_cash" amount="40" hours="192" />
+      <SpeedupCost resource="resource_cash" amount="60" hours="9999" />
     </TrainingSpeedup>
     <ArtifactInitiationSpeedup>
-      <SpeedupCost resource="resource_cash" amount="1"  hours="6" />
-      <SpeedupCost resource="resource_cash" amount="2"  hours="12" />
-      <SpeedupCost resource="resource_cash" amount="3"  hours="18" />
-      <SpeedupCost resource="resource_cash" amount="4"  hours="24" />
-      <SpeedupCost resource="resource_cash" amount="6"  hours="36" />
-      <SpeedupCost resource="resource_cash" amount="8"  hours="48" />
-      <SpeedupCost resource="resource_cash" amount="10" hours="72" />
-      <SpeedupCost resource="resource_cash" amount="15" hours="96" />
-      <SpeedupCost resource="resource_cash" amount="20" hours="9999" />
+      <SpeedupCost resource="resource_cash" amount="1"  hours="3" />
+      <SpeedupCost resource="resource_cash" amount="2"  hours="6" />
+      <SpeedupCost resource="resource_cash" amount="4"  hours="12" />
+      <SpeedupCost resource="resource_cash" amount="6"  hours="18" />
+      <SpeedupCost resource="resource_cash" amount="8"  hours="24" />
+      <SpeedupCost resource="resource_cash" amount="12" hours="36" />
+      <SpeedupCost resource="resource_cash" amount="16" hours="48" />
+      <SpeedupCost resource="resource_cash" amount="20" hours="72" />
+      <SpeedupCost resource="resource_cash" amount="30" hours="96" />
+      <SpeedupCost resource="resource_cash" amount="40" hours="9999" />
     </ArtifactInitiationSpeedup>
     <TradingSpeedupCost resource="resource_cash" amount="1" />
     <AvatarConfigs>

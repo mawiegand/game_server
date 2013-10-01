@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="39" />
+    <Version major="0" minor="3" build="40" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -876,7 +876,7 @@
       <RewardText locale="en_US">Pay attention to your maximum storage capacity.</RewardText>
       <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
       <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl5" />
+      <Requirement quest="quest_build_1quarrylvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">274</ResourceReward>
         <ResourceReward resource="resource_wood">137</ResourceReward>
@@ -1024,7 +1024,7 @@
       <RewardText locale="en_US">TA clubber is born! This is great reinforcement for your melee fighters.</RewardText>
       <RewardFlavor locale="de_DE">Sehr gut. Jetzt sind wir endlcih die Möchtegern-Krieger los.</RewardFlavor>
       <RewardFlavor locale="en_US">Thank you Demigod. They may not be the brightest crayons in the box, but clubbers can take a lot of punishment – and hand it out too! </RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl6" />
+      <Requirement quest="quest_build_training_cave" />
       <Rewards>
         <ResourceReward resource="resource_stone">800</ResourceReward>
         <ResourceReward resource="resource_wood">400</ResourceReward>
@@ -1293,7 +1293,7 @@
       <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
-      <Requirement quest="quest_build_1quarrylvl2" />
+      <Requirement quest="quest_build_1loggerlvl2" />
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>
         <ResourceReward resource="resource_wood">200</ResourceReward>
@@ -2589,7 +2589,7 @@
       <RewardText locale="en_US">By default the ranking is sorted by population.</RewardText>
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
-      <Requirement quest="quest_build_chiefcottagelvl5" />
+      <!-- Requirement quest="quest_build_chiefcottagelvl5" /-->
       <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>
         <ResourceReward resource="resource_wood">100</ResourceReward>
@@ -5136,8 +5136,8 @@
     </Quest>
     
     <Quest id="quest_crossplatform" advisor="chef">
-      <Name>Crossplatform</Name>
-      <Name locale="de_DE">Crossplatform</Name>
+      <Name>Cross-Platform</Name>
+      <Name locale="de_DE">Cross-Platform</Name>
       <Task>Log into the HTML version of Wack-A-Doo at https://www.wack-a-doo.com.</Task>
       <Task locale="de_DE">Logge Dich in die HTML-Version von Wack-A-Doo ein unter https://www.wack-a-doo.de an.</Task>
       <Description locale="de_DE">
@@ -5146,13 +5146,13 @@
       <Description locale="en_US">
         <p>Wack-A-Doo is not only an App, you can also play the same game in your browser!</p>
       </Description>
-      <Flavor locale="de_DE">Crossplatform? Klingt nützlich.</Flavor>
-      <Flavor locale="en_US">Crossplatform? Sounds reasonable.</Flavor>
+      <Flavor locale="de_DE">Cross-Platform? Klingt nützlich.</Flavor>
+      <Flavor locale="en_US">Cross-Platform? Sounds reasonable.</Flavor>
       <RewardText locale="de_DE">Wack-A-Doo im Browser funktioniert genauso wie die App, nur mit anderem Interface.</RewardText>
       <RewardText locale="en_US">Wack-A-Doo in your browser works exactly the same as the App, just with a different interface.</RewardText>
       <RewardFlavor locale="de_DE">Herzlich Willkommen im Browserspiel!</RewardFlavor>
       <RewardFlavor locale="en_US">Welcome to the browser game!</RewardFlavor>
-      <!--<Requirement quest="quest_profile" />-->
+      <Requirement quest="quest_profile" />
       <Rewards>
         <ResourceReward resource="resource_cash">20</ResourceReward>
         <ExperienceReward>1500</ExperienceReward>
