@@ -933,7 +933,6 @@ class Fundamental::Character < ActiveRecord::Base
 
   def propagate_image_set_changes
     image_set_change = self.changes[:image_set_id]
-    logger.debug "-----> image_set_change #{image_set_change}"
     if !image_set_change.nil?
       self.regions.each do |region|
         region.set_special_image(self)
