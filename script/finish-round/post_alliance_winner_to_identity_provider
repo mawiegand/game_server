@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+#
+# Script for copying ranking results to identity provider
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
+require 'identity_provider/access'
+
+puts "Start transfering winner alliance xp bonus"
+
+identity_provider_access = IdentityProvider::Access.new({
+  identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+  game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+  scopes:                     ['5dentity'],
+})
+
+winner_alliance_id = 3
+
+alliance = Fundamental::Alliance.find_by_id(winner_alliance_id)
+alliance.members.each do |character|
+
+  if character.nil?
+    puts "character with id #{character.id} not found"
+  else
+    puts "transferring for id #{character.id}: #{character.name}"
+
+    start_xp_bonus = {
+      start_xp_bonus: {
+        bonus: 0.1,
+        client_identifier: 'wackadoo-round4'
+      }
+    }
+
+    identity_provider_access.post_character_property(character.identifier, start_xp_bonus)
+  end
+end
+
+puts "finished."
