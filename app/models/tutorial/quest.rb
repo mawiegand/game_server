@@ -709,7 +709,7 @@ class Tutorial::Quest < ActiveRecord::Base
       self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)    
       garrison_army.add_units(units)
       unless rewards[:experience_reward].nil?
-        self.tutorial_state.owner.increment(:exp, rewards[:experience_reward])
+        self.tutorial_state.owner.increment(:exp, (rewards[:experience_reward] * (1 + (self.tutorial_state.owner.exp_bonus_total || 0))).floor)
         self.tutorial_state.owner.save
       end
       if !rewards[:action_point_reward].nil? && rewards[:action_point_reward]

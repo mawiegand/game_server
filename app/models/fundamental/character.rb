@@ -1137,7 +1137,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def add_experience!(points)
-    self.increment(:exp, points.floor)
+    self.increment(:exp, (points * (1 + (self.exp_bonus_total || 0))).floor)
     self.save    
   end
 

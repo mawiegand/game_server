@@ -1030,6 +1030,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1,
@@ -1125,6 +1126,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1,
@@ -1229,6 +1231,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1,
@@ -1342,6 +1345,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1,
@@ -1444,6 +1448,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.5,
           :trainable   => true,
 
           :velocity    => 1,
@@ -1539,6 +1544,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1,
@@ -1643,6 +1649,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1,
@@ -1756,6 +1763,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1,
@@ -1858,6 +1866,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1.2,
@@ -1953,6 +1962,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1.3,
@@ -2057,6 +2067,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1.4,
@@ -2170,6 +2181,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1.5,
@@ -2272,6 +2284,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => false,
 
           :velocity    => 1,
@@ -2354,6 +2367,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 0.85,
@@ -2454,6 +2468,7 @@ class GameRules::Rules
                 
           },
 
+          :experience_factor => 1.0,
           :trainable   => true,
 
           :velocity    => 1,

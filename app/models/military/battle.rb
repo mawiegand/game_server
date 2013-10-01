@@ -420,8 +420,6 @@ class Military::Battle < ActiveRecord::Base
 
     k = 1.0 * loser_units_count / winner_units_count
 
-    # logger.debug "---> k: #{k}, winner_units_count: #{winner_units_count}, loser_units_count: #{loser_units_count}, rounds.count: #{rounds.count}"
-
     rounds.each do |round|
       winner_units_count_per_round = 0
       winner_faction.participants.each do |participant|

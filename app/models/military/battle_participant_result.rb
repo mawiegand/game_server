@@ -37,7 +37,7 @@ class Military::BattleParticipantResult < ActiveRecord::Base
   def units_count
     count = 0
   	GameRules::Rules.the_rules.unit_types.each do |unit_type|
-  		count += (self[unit_type[:db_field].to_s] || 0)
+  		count += (self[unit_type[:db_field].to_s] || 0) * (unit_type[:experience_factor] || 1.0)
   	end
   	count
   end
@@ -45,7 +45,7 @@ class Military::BattleParticipantResult < ActiveRecord::Base
   def lost_units_count
     count = 0
   	GameRules::Rules.the_rules.unit_types.each do |unit_type|
-  		count += (self[unit_type[:db_field].to_s+"_casualties"] || 0)
+  		count += (self[unit_type[:db_field].to_s+"_casualties"] || 0) * (unit_type[:experience_factor] || 1.0)
   	end
   	count
   end

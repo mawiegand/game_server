@@ -399,7 +399,8 @@
 <!ATTLIST Unit 
   id ID #REQUIRED 
   category IDREF #REQUIRED
-	trainable (false|true) "true"
+  trainable (false|true) "true"
+  experienceFactor CDATA "1.0"
 	xml:base CDATA #REQUIRED
 >
 

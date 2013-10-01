@@ -475,7 +475,7 @@ class Military::Army < ActiveRecord::Base
         unit_type[:costs].each do |unit_type_id, cost|
           costs += cost.to_i
         end
-        sum += unit * (costs * 0.08).floor
+        sum += (unit * (costs * 0.08).floor * unit_type[:experience_factor]).floor
       end
     end
     sum
@@ -700,7 +700,7 @@ class Military::Army < ActiveRecord::Base
     
       if !self.changes[:exp].blank?
         delta = (self.exp_change[1] || 0)-(self.exp_change[0] || 0)
-        self.owner.increment(:exp, delta)
+        self.owner.increment(:exp, (delta * (1 + (self.owner.exp_bonus_total || 0))).floor)
       end
 
       if !self.changes[:kills].blank?
