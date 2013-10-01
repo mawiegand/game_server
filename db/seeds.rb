@@ -483,10 +483,10 @@ Shop::PlatinumOffer.create({
   ends_at: Time.now + 1.year
 })
 
-Shop::PlatinumOffer.create({
+Shop::SpecialOffer.create({
   external_offer_id: 761,  # defined by offer in bytro shop
   title: 'Special Offer',
   price: 25,
-  started_at: Time.now,
+  startet_at: Time.now,
   ends_at: Time.now + 1.year
 })

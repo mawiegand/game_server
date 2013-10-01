@@ -5631,7 +5631,7 @@ class GameRules::Rules
 
             :unlock_garrison => 1,            
 
-            :command_points => "1+GREATER(LEVEL,9)*1)",
+            :command_points => "1+GREATER(LEVEL,9)*1",
 
             :unlock_building_slots => "MIN(LEVEL,1)*2",
 
