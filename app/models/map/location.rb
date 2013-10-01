@@ -225,6 +225,7 @@ class Map::Location < ActiveRecord::Base
     self.alliance = settlement.alliance
     self.alliance_tag = settlement.alliance_tag
     self.alliance_color = settlement.alliance_color
+    self.set_special_image(settlement.owner)
     self.visible = true
     self.settlement_score = settlement.score
     self.save
@@ -239,6 +240,7 @@ class Map::Location < ActiveRecord::Base
     self.visible = false
     self.right_of_way = 0
     self.settlement_score = 0
+    self.image_id = nil
     self.save
   end
 
