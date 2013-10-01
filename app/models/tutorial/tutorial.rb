@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.40
+# Version: 0.3.41
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 40, 
+        :build => 41, 
       },
       
       :production_test_weights => {
@@ -591,7 +591,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [130, 134, ],
+          :successor_quests => [130, ],
 
           :rewards => {
             
@@ -2233,7 +2233,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [21, 103, ],
+          :successor_quests => [21, 103, 134, ],
 
           :rewards => {
             
@@ -12913,7 +12913,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [132, ],
 
           :rewards => {
             
@@ -12958,9 +12958,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Be a Member of an alliance with atleast 7 others.",
+            :en_US => "Be a Member of an alliance with atleast 12 others.",
   
-            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 8 Mitgliedern.",
+            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 13 Mitgliedern.",
                 
           },
           :flavour => {
@@ -12990,6 +12990,12 @@ class Tutorial::Tutorial
   
             :en_US => "The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_alliance_members',
+
           },
 
           :successor_quests => [133, ],
@@ -13037,9 +13043,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Be a Member of an alliance with atleast 12 others.",
+            :en_US => "Be a Member of an alliance with atleast 22 others.",
   
-            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 13 Mitgliedern.",
+            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 23 Mitgliedern.",
                 
           },
           :flavour => {
@@ -13158,7 +13164,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_profile',
+            :quest => 'quest_resourcescore_0',
 
           },
 

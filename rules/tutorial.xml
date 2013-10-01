@@ -4,7 +4,7 @@
 
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="40" />
+    <Version major="0" minor="3" build="41" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -5084,8 +5084,8 @@
     <Quest id="quest_alliance_members2" advisor="chef">
       <Name>Alliance Members</Name>
       <Name locale="de_DE">Allianzmitglieder</Name>
-      <Task>Be a Member of an alliance with atleast 7 others.</Task>
-      <Task locale="de_DE">Sei Mitglied in einer Allianz mit mindestens 8 Mitgliedern.</Task>
+      <Task>Be a Member of an alliance with atleast 12 others.</Task>
+      <Task locale="de_DE">Sei Mitglied in einer Allianz mit mindestens 13 Mitgliedern.</Task>
       <Description locale="de_DE">
         <p>Deine Allianz muss wachsen, wenn ihr euch in dieser grausamen Welt durchsetzten wollt. Sucht nach geeigneten Mitgliedern und nehmt sie bei euch auf, dann könnt ihr bald schon bei den Mächtigen mitmischen.</p>
       </Description>
@@ -5098,7 +5098,7 @@
       <RewardText locale="en_US">The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.</RewardText>
       <RewardFlavor locale="de_DE">Jetzt wirds langsam!</RewardFlavor>
       <RewardFlavor locale="en_US">If we keep up like this we're gona go places.</RewardFlavor>
-      <!--<Requirement quest="quest_alliance_members" />-->
+      <Requirement quest="quest_alliance_members" />
       <Rewards>
         <UnitReward unit="unit_clubbers_2">20</UnitReward>
         <ExperienceReward>850</ExperienceReward>
@@ -5111,8 +5111,8 @@
     <Quest id="quest_alliance_members3" advisor="chef">
       <Name>Alliance Members</Name>
       <Name locale="de_DE">Allianzmitglieder</Name>
-      <Task>Be a Member of an alliance with atleast 12 others.</Task>
-      <Task locale="de_DE">Sei Mitglied in einer Allianz mit mindestens 13 Mitgliedern.</Task>
+      <Task>Be a Member of an alliance with atleast 22 others.</Task>
+      <Task locale="de_DE">Sei Mitglied in einer Allianz mit mindestens 23 Mitgliedern.</Task>
       <Description locale="de_DE">
         <p>Deine Allianz muss wachsen, wenn ihr euch in dieser grausamen Welt durchsetzten wollt. Sucht nach geeigneten Mitgliedern und nehmt sie bei euch auf, dann könnt ihr bald schon bei den Mächtigen mitmischen.</p>
       </Description>
@@ -5152,7 +5152,7 @@
       <RewardText locale="en_US">Wack-A-Doo in your browser works exactly the same as the App, just with a different interface.</RewardText>
       <RewardFlavor locale="de_DE">Herzlich Willkommen im Browserspiel!</RewardFlavor>
       <RewardFlavor locale="en_US">Welcome to the browser game!</RewardFlavor>
-      <Requirement quest="quest_profile" />
+      <Requirement quest="quest_resourcescore_0" />
       <Rewards>
         <ResourceReward resource="resource_cash">20</ResourceReward>
         <ExperienceReward>1500</ExperienceReward>
