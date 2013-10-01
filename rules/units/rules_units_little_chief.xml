@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Unit id="little_chief" category="unitcategory_special">
+<Unit id="little_chief" category="unitcategory_special" experienceFactor="0.25">
   <Name>Little Chief</Name>
   <Name lang="de_DE">Kleiner Häuptling</Name>
   
