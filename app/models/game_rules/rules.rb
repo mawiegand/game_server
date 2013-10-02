@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.3.7
+# Version: 1.3.8
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -122,12 +122,12 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 3,
-                    :build => 7,
+                    :build => 8,
       },
       :app_control => {
         :debug_tracking                         => 1,
         :special_offer_dialog                   => 1,
-        :special_offer_required_finished_quests => 23,
+        :special_offer_required_finished_quests => 24,
       },
       :battle => {
         :calculation => {
@@ -248,13 +248,13 @@ class GameRules::Rules
 
           :de_DE => [
 
-            "Zweite Siedlung:\nLagerstätte",
+            "Zweite Siedlung:\nLagerstaette",
 
             "1500 Rohstoffe einmalig\n150 Rohstoffe pro Stunde\n15% Produktionsbonus",
 
             "300 Goldkröten",
 
-            "4 Tage Halbierte Bauzeit",
+            "Halbierte Bauzeit fuer 4 Tage",
 
           ],
 
@@ -266,7 +266,7 @@ class GameRules::Rules
 
             "300 Golden Frogs",
 
-            "4 Days Halved Construction Time",
+            "Halved Construction Time fpr 4 days",
 
           ],
 

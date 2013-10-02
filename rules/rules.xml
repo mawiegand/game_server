@@ -72,9 +72,9 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="3" build="7" />
+    <Version major="1" minor="3" build="8" />
     <AppControl debugTracking="1">
-      <SpecialOfferDialog enabled="1" requiredFinishedQuests="23" />
+      <SpecialOfferDialog enabled="1" requiredFinishedQuests="24" />
     </AppControl>
     <Languages>
       <Language locale="en_US">English (US)</Language>
@@ -238,16 +238,16 @@
       <ProductionStartBonus bonusOfferId="3" duration="96"/>
       <ConstructionStartBonus duration="96">1</ConstructionStartBonus>
       <DisplayStrings lang="de_DE">
-        <DisplayString>Zweite Siedlung:\nLagerstätte</DisplayString>
+        <DisplayString>Zweite Siedlung:\nLagerstaette</DisplayString>
         <DisplayString>1500 Rohstoffe einmalig\n150 Rohstoffe pro Stunde\n15% Produktionsbonus</DisplayString>
         <DisplayString>300 Goldkröten</DisplayString>
-        <DisplayString>4 Tage Halbierte Bauzeit</DisplayString>
+        <DisplayString>Halbierte Bauzeit fuer 4 Tage</DisplayString>
       </DisplayStrings>
       <DisplayStrings lang="en_US">
         <DisplayString>SecondSettlement:\nCamp</DisplayString>
         <DisplayString>1500 Resources\n150 Resources per hour\n15% Production Bonus</DisplayString>
         <DisplayString>300 Golden Frogs</DisplayString>
-        <DisplayString>4 Days Halved Construction Time</DisplayString>
+        <DisplayString>Halved Construction Time fpr 4 days</DisplayString>
       </DisplayStrings>
     </SpecialOffer>
   </General>
