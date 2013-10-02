@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.44
+# Version: 0.3.45
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 44, 
+        :build => 45, 
       },
       
       :production_test_weights => {
@@ -2410,7 +2410,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Mit der Häuptlingshütte hast Du den Steinbruch freigeschaltet. Warte nicht, baue sofort einen auf Level 2.</p>",
   
-            :en_US => "<p>Build a quarry and a logger to improve your production.</p>",
+            :en_US => "<p>Build a quarry level 2 to improve your production.</p>",
                 
           },          
           :reward_flavour => {
@@ -2422,9 +2422,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Steinbruch und Holzfäller sind sehr effektiv. Zur Steigerung der Fellproduktion kannst Du später den Kürschner bauen.",
+            :de_DE => "Steinbrüche sind sehr effektiv. Baue eine Viezahl davon.",
   
-            :en_US => "Quarries are very effective. Don't forget to keep an eye on your fur production though!",
+            :en_US => "Quarries are very effective. Build more quarries!",
                 
           },
 
@@ -2514,7 +2514,7 @@ class Tutorial::Tutorial
             
             :de_DE => "<p>Du kannst jetzt Holzfäller bauen. Holzfäller erhöhen Deine Holzproduktion deutlich stärker als Jäger und Sammler.</p>",
   
-            :en_US => "<p>Upgrade three quarries and three logging camps to Level 4 to increase your production.</p>",
+            :en_US => "<p>Upgrade the logger to level 2 to increase your production.</p>",
                 
           },          
           :reward_flavour => {
@@ -2528,7 +2528,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Achte auf Deine Lagerkapazität, sonst laufen die Lager in Deiner Abwesenheit über.",
   
-            :en_US => "Pay attention to your maximum storage capacity.",
+            :en_US => "You will need more loggers.",
                 
           },
 
