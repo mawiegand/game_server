@@ -16,13 +16,31 @@ identity_provider_access = IdentityProvider::Access.new({
 })
 
 identifiers = [
-  'zNYQzhIvBRZsYPDC',
-  'qbjsUHmhHOvcMEPq',
-  'olKldimGqJxfqtCD',
-  'oXWFvFUCoeNkQFXM',
-  'WNhHNnLRGtcGQpSO',
-  'AFmXvacFogdNDtXk',
-  'zZPQLHZvcRTwYpBt'
+  'GbIFHtjaGbGWNQDv',
+  'PdSeQZYkLIyNQKeU',
+  'LnbdCPFijQBqyxpI',
+  'LLUmOUYbWzDviokY',
+  'sWmAhwNkTxYbAhBH',
+  'tnEDTFRZtNdoWZAg',
+  'iSFoCLFesbkQBydY',
+  'YgyRZGGmJEBGqumA',
+  'JbzJumSOHFYDCBPN',
+  'OqeRGaPKgrvwwQjl',
+  'noeLViqfQKkoYNOx',
+  'HReLAPETjXPpRzzm',
+  'SgmFBufgVCeUYVPk',
+  'GrDKxZHxmZUhRqhe',
+  'qFUdwWdmSXuLUJBW',
+  'ddPPsFGlgDupKJHP',
+  'plEDPBKVeOTzugwm',
+  'kkGzheDKUQZewpBC',
+  'KBASVRwKoAoqsAIK',
+  'iQhmfqzWFBbtJTwJ',
+  'qwOdPvifuFeQQiTx',
+  'AZLJnkmsPsHfeGDg',
+  'YbHuouoEWsrtCSXn',
+  'KsmmEeJepgyzhLZX',
+  'AEsmTbXrGrLJFwaA'
 ]
 
 identifiers.each do |identifier|
@@ -83,9 +101,9 @@ identifiers.each do |identifier|
     # send mail
     if !character.nil?
       ip_access = IdentityProvider::Access.new(
-          identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-          game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
-          scopes:                     ['5dentity'],
+        identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+        game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+        scopes:                     ['5dentity'],
       )
       ip_access.deliver_custom_booking_notification(character, -booking_amount)
       puts "sent mail for character #{character.name}"
