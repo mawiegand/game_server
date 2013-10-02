@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.3.11
+# Version: 1.3.12
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -122,7 +122,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 3,
-                    :build => 11,
+                    :build => 12,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -8227,14 +8227,14 @@ class GameRules::Rules
           :initiation_time => "FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))",
 
         },              #   END OF Schwarzer Monolith
-        {               #   Dino-Osterei
+        {               #   Dino-Ei
           :id          => 4, 
           :symbolic_id => :artifact_4,
           :name        => {
             
-            :de_DE => "Dino-Osterei",
+            :de_DE => "Dino-Ei",
   
-            :en_US => "Dino-Easteregg",
+            :en_US => "Dino-Egg",
                 
           },
           :description => {
@@ -8252,7 +8252,7 @@ class GameRules::Rules
   
           },
 
-          :amount      => '1',
+          :amount      => '5',
 
           :experience_production => 'MRANK',
 
@@ -8271,7 +8271,7 @@ class GameRules::Rules
           },
           :initiation_time => "FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)",
 
-        },              #   END OF Dino-Osterei
+        },              #   END OF Dino-Ei
         {               #   Steinbrösler
           :id          => 5, 
           :symbolic_id => :artifact_5,

@@ -118,8 +118,8 @@
     </Effects>
   </Artifact>
   <Artifact id="artifact_4">
-    <Name lang="de_DE">Dino-Osterei</Name>
-    <Name lang="en_US">Dino-Easteregg</Name>
+    <Name lang="de_DE">Dino-Ei</Name>
+    <Name lang="en_US">Dino-Egg</Name>
     <Description lang="de_DE">
       <p>Interessant was die Neandertaler so horten. Die Tüftlerwerkstatt wird sich über den neuen Fund freuen. Vielleicht ergründen sie sogar die Ursache der bunten Farbe oder gar den Inhalt des Ei. Oder sie denken sich eine absurde Erklärung aus.</p>
     </Description>
@@ -140,7 +140,7 @@
       <InitiationCost id="resource_fur" round="true">250*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)</InitiationTime>
     </Initiation>
-    <ArtifactAmount>1</ArtifactAmount>
+    <ArtifactAmount>5</ArtifactAmount>
     <ExperienceProduction>MRANK</ExperienceProduction>
     <Effects>
     </Effects>
