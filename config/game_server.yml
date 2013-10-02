@@ -148,7 +148,7 @@ production:
     name:      service
     admin_jid: shadow-dragon@jabber4.wack-a-doo.com
   
-  scope: 'wackadoo-round3'
+  scope: 'wackadoo-round4'
 
   default_character_name: 'WackyUser'
   identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
