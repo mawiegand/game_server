@@ -8355,7 +8355,7 @@ class GameRules::Rules
 
           :condition   => {
 
-            :required_regions_ratio => '1-(0.01*(MAX(DAYS-106,0)))',
+            :required_regions_ratio => 'LESS(DAYS,91)*(1-(0.01*((70/90)*DAYS)))+GREATER(DAYS,90)*(0.3-(0.01*((29/60)*(DAYS-90))))',
 
             :duration => 5,
           },
