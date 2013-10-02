@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.3.4
+# Version: 1.3.7
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -122,7 +122,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 3,
-                    :build => 4,
+                    :build => 7,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -189,6 +189,10 @@ class GameRules::Rules
             :id          => 24,
             :level       => 5,
           },
+2 => {
+            :id          => 26,
+            :level       => 1,
+          },
 3 => {
             :id          => 1,
             :level       => 4,
@@ -220,25 +224,54 @@ class GameRules::Rules
 
           {
             :bonus_offer_id  => 1,
-            :duration        => 120,
+            :duration        => 96,
           },
 
           {
             :bonus_offer_id  => 2,
-            :duration        => 120,
+            :duration        => 96,
           },
 
           {
             :bonus_offer_id  => 3,
-            :duration        => 120,
+            :duration        => 96,
           },
 
         ],
 
         :construction_bonus  => {
           :amount    => 1,
-          :duration  => 120,
-        }
+          :duration  => 96,
+        },
+
+        :display_strings => {
+
+          :de_DE => [
+
+            "Zweite Siedlung:\nLagerstätte",
+
+            "1500 Rohstoffe einmalig\n150 Rohstoffe pro Stunde\n15% Produktionsbonus",
+
+            "300 Goldkröten",
+
+            "4 Tage Halbierte Bauzeit",
+
+          ],
+
+          :en_US => [
+
+            "SecondSettlement:\nCamp",
+
+            "1500 Resources nonrecurring\n150 Resources per hour\n15% Production Bonus",
+
+            "300 Golden Frogs",
+
+            "4 Days Halved Construction Time",
+
+          ],
+
+        },
+
 
       },
       :artifact_count => 6,
@@ -2975,9 +3008,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Der Gottesgläubige Sammler folgt nur den Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p><p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p>",
+            :de_DE => "<p>Der Gottesgläubige Sammler folgt nur den Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p><p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
   
-            :en_US => "<p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p><p>Through his devotion he can find ressources and even golden frogs at a much higher rate than their peers.</p>",
+            :en_US => "<p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p><p>Through his devotion he can find ressources and even golden frogs at a much higher rate than their peers.</p><p>This building can not be torn down.</p>",
                 
           },
 
@@ -2987,7 +3020,7 @@ class GameRules::Rules
   
           :buyable     => true,
           :divine_supporters_only => true,
-          :demolishable=> true,
+          :demolishable=> false,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
@@ -3303,9 +3336,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Vielleicht findet ihr auch weitere Verdienstmöglichkeiten.</p>",
+            :de_DE => "<p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Vielleicht findet ihr auch weitere Verdienstmöglichkeiten.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
   
-            :en_US => "<p>There is no more wretched a hive of scum and villainy than the tavern. So, it's an ideal place to relax, have a drink, and laze around during your day off. And who knows, a job may even turn up if you stick around long enough.</p>",
+            :en_US => "<p>There is no more wretched a hive of scum and villainy than the tavern. So, it's an ideal place to relax, have a drink, and laze around during your day off. And who knows, a job may even turn up if you stick around long enough.</p><p>This building can not be torn down.</p>",
                 
           },
 
@@ -3315,7 +3348,7 @@ class GameRules::Rules
   
           :buyable     => true,
           :divine_supporters_only => false,
-          :demolishable=> true,
+          :demolishable=> false,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
@@ -3512,9 +3545,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p>",
+            :de_DE => "<p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
   
-            :en_US => "<p>At the campfire, inhabitants gather in sociable groups to discuss important arrangements. Guests are either selected to join the campfire group, or arranged around it on stakes. It's also where the career of a little chief begins. A couple of flattering words here, a bit of scheming there, taking credit for someone else's bravery, and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p>",
+            :en_US => "<p>At the campfire, inhabitants gather in sociable groups to discuss important arrangements. Guests are either selected to join the campfire group, or arranged around it on stakes. It's also where the career of a little chief begins. A couple of flattering words here, a bit of scheming there, taking credit for someone else's bravery, and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p><p>This building can not be torn down.</p>",
                 
           },
 
@@ -3824,9 +3857,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth, Spiegel, in denen man sich herrlich erschrecken kann, und natürlich die ein oder andere Ratte, die eingefangen werden will.</p>",
+            :de_DE => "<p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth, Spiegel, in denen man sich herrlich erschrecken kann, und natürlich die ein oder andere Ratte, die eingefangen werden will.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
   
-            :en_US => "<p>The Training Cave offers multiple training possibilities to would-be Demigods. Huge stones to lift, an almost endless labyrinth, mirrors that can scare you witless, and of course, a few rats to catch.</p>",
+            :en_US => "<p>The Training Cave offers multiple training possibilities to would-be Demigods. Huge stones to lift, an almost endless labyrinth, mirrors that can scare you witless, and of course, a few rats to catch.</p><p>This building can not be torn down.</p>",
                 
           },
 
@@ -3836,7 +3869,7 @@ class GameRules::Rules
   
           :buyable     => true,
           :divine_supporters_only => false,
-          :demolishable=> true,
+          :demolishable=> false,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
@@ -3924,9 +3957,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p>",
+            :de_DE => "<p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
   
-            :en_US => "<p>Thinkers and Tinkers get together at the workshop. They examine whatever unknown materials there are - artifacts, as the simple-minded call them - and attempt to bring about a technological revolution.</p>",
+            :en_US => "<p>Thinkers and Tinkers get together at the workshop. They examine whatever unknown materials there are - artifacts, as the simple-minded call them - and attempt to bring about a technological revolution.</p><p>This building can not be torn down.</p>",
                 
           },
 
@@ -3936,7 +3969,7 @@ class GameRules::Rules
   
           :buyable     => true,
           :divine_supporters_only => false,
-          :demolishable=> true,
+          :demolishable=> false,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
@@ -4120,9 +4153,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen. Die Kupferschmelze ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude.</p>",
+            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen. Die Kupferschmelze ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
   
-            :en_US => "<p>Copper is THE discovery that moved the Stone Age forward into… yes, you guessed it, the Copper-Stone Age. Its discovery leads to not only the creation of some very attractive jewellery, but also to more deadly weapons and progress in making many kinds of implements and tools.</p>",
+            :en_US => "<p>Copper is THE discovery that moved the Stone Age forward into… yes, you guessed it, the Copper-Stone Age. Its discovery leads to not only the creation of some very attractive jewellery, but also to more deadly weapons and progress in making many kinds of implements and tools.</p><p>This building can not be torn down.</p>",
                 
           },
 
@@ -4318,9 +4351,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen. Oder zum Bowling, wenn die Halle denn lang genug ist.</p><p>Mit jedem Ausbau der Stammeshalle kann die Allianz weitere Mitglieder aufnehmen.</p>",
+            :de_DE => "<p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen. Oder zum Bowling, wenn die Halle denn lang genug ist.</p><p>Mit jedem Ausbau der Stammeshalle kann die Allianz weitere Mitglieder aufnehmen.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
   
-            :en_US => "<p>In the Tribes Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. More developed halls make it possible to accept more alliance members into the meeting.</p>",
+            :en_US => "<p>In the Tribes Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. More developed halls make it possible to accept more alliance members into the meeting.</p><p>This building can not be torn down.</p>",
                 
           },
 
@@ -5182,9 +5215,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Das Garnionsgebäude dient zur Unterbringung und Versorgung der Einheiten und Armeen.</p><p>Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p>",
+            :de_DE => "<p>Das Garnionsgebäude dient zur Unterbringung und Versorgung der Einheiten und Armeen.</p><p>Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
   
-            :en_US => "<p>Well, who would have thought it? Field armies also benefit from the increased discipline that having a garrison provides. And that means that bigger armies can be deployed in the field.</p>",
+            :en_US => "<p>Well, who would have thought it? Field armies also benefit from the increased discipline that having a garrison provides. And that means that bigger armies can be deployed in the field.</p><p>This building can not be torn down.</p>",
                 
           },
 
@@ -5397,7 +5430,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 100 Einheiten plus 50 pro Level auf Level 1-10 und 30 pro Level auf Level 11-20. Auf Level 10 ermöglicht das Feldlager einen zweiten Kommandopunkt.</p>",
+            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 100 Einheiten plus 50 pro Level auf Level 1-10 und 30 pro Level auf Level 11-20. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>",
   
             :en_US => "<p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 100 plus 50 per level at Levels 1-10 and 30 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>",
                 

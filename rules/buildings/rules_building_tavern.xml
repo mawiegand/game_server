@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_tavern" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="true" demolishable="true" experienceFactor="12">
+<Building id="building_tavern" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="true" demolishable="false" experienceFactor="12">
   <Name lang="de_DE">Taverne</Name>
   <Name lang="en_US">Tavern</Name>
   <Description lang="de_DE">
     <p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Vielleicht findet ihr auch weitere Verdienstmöglichkeiten.</p>
+    <p>Dieses Gebäude kann nicht abgerissen werden.</p>
    </Description>
   <Description lang="en_US">
     <p>There is no more wretched a hive of scum and villainy than the tavern. So, it's an ideal place to relax, have a drink, and laze around during your day off. And who knows, a job may even turn up if you stick around long enough.</p>
+    <p>This building can not be torn down.</p>
   </Description>
   <Flavour lang="en_US">
     <p>A quiet seat, a cool beer, and some reasonably friendly company. What more could anyone want from life?</p>

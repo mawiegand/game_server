@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+#
+# Script for copying ranking results to identity provider
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
+require 'identity_provider/access'
+
+puts "Start transfering top 100 xp bonus"
+
+identity_provider_access = IdentityProvider::Access.new({
+  identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+  game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+  scopes:                     ['5dentity'],
+})
+
+top100_ids = [127, 20, 79, 16, 8, 19, 28, 33, 819, 155, 105, 97, 142, 67, 765, 29, 30, 177, 93, 121, 12, 269, 74, 13, 88, 23, 168, 114, 898, 264, 1110, 111, 591, 161, 116, 108, 169, 77, 36, 78, 81, 82, 92, 40, 64, 51, 72, 48, 90, 232, 117, 46, 123, 636, 811, 56, 252, 95, 1084, 57, 7, 24, 125, 517, 160, 85, 138, 985, 21, 2396, 11, 5717, 6192, 112, 334, 1603, 89, 4919, 1204, 3822, 52, 131, 611, 4649, 2592, 4500, 66, 181, 4810, 2365, 620, 542, 6, 1058, 4156, 148, 2987, 3647, 31, 6774]
+
+top100_ids.each do |character_id|
+  character = Fundamental::Character.find_by_id(character_id)
+
+  if character.nil?
+    puts "character with id #{character_id} not found"
+  else
+    puts "transferring for id #{character_id}: #{character.name}"
+
+    start_xp_bonus = {
+      start_xp_bonus: {
+        client_identifier: 'wackadoo-round4',
+        bonus: 0.05,
+      }
+    }
+
+    identity_provider_access.post_character_property(character.identifier, start_xp_bonus)
+  end
+end
+
+puts "finished."

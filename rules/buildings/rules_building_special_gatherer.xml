@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_special_gatherer" group="resource" category="building_category_special_building" buyable="true" destructable="true" demolishable="true" experienceFactor="0.49" divine_supporters_only="true">
+<Building id="building_special_gatherer" group="resource" category="building_category_special_building" buyable="true" destructable="true" demolishable="false" experienceFactor="0.49" divine_supporters_only="true">
   <Name lang="de_DE">Gottesgläubiger Sammler</Name>
   <Name lang="en_US">God-Fearing Gatherer</Name>
   <Description lang="de_DE">
     <p>Der Gottesgläubige Sammler folgt nur den Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p>
     <p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p>
+    <p>Dieses Gebäude kann nicht abgerissen werden.</p>
   </Description>
   <Description lang="en_US">
     <p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p>
     <p>Through his devotion he can find ressources and even golden frogs at a much higher rate than their peers.</p>
+    <p>This building can not be torn down.</p>
   </Description>
   <Flavour lang="en_US">
     <p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>

@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.43
+# Version: 0.3.44
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 43, 
+        :build => 44, 
       },
       
       :production_test_weights => {
@@ -2241,17 +2241,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 250,
+                :amount => 450,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 250,
+                :amount => 450,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 450,
               },
 
             ],
@@ -2642,7 +2642,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [25, 26, ],
+          :successor_quests => [25, 26, 28, ],
 
           :rewards => {
             
@@ -2746,7 +2746,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [28, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -3040,7 +3040,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_training_cave',
+            :quest => 'quest_build_chiefcottagelvl6',
 
           },
 
@@ -10263,17 +10263,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 120,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 120,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 120,
+                :amount => 250,
               },
 
             ],
@@ -10358,17 +10358,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 180,
+                :amount => 300,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 180,
+                :amount => 300,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 180,
+                :amount => 300,
               },
 
             ],
@@ -10453,17 +10453,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 360,
+                :amount => 450,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 360,
+                :amount => 450,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 360,
+                :amount => 450,
               },
 
             ],

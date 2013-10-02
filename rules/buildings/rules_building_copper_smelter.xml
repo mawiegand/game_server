@@ -6,9 +6,11 @@
   <Name lang="en_US">Copper Smelter</Name>
   <Description lang="de_DE">
     <p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen. Die Kupferschmelze ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude.</p>
+    <p>Dieses Gebäude kann nicht abgerissen werden.</p>
    </Description>
   <Description lang="en_US">
     <p>Copper is THE discovery that moved the Stone Age forward into… yes, you guessed it, the Copper-Stone Age. Its discovery leads to not only the creation of some very attractive jewellery, but also to more deadly weapons and progress in making many kinds of implements and tools.</p>
+    <p>This building can not be torn down.</p>
   </Description>
   <Flavour lang="en_US">
     <p>Copper shines even in its unprocessed state, but it can only be made into jewellery once it's been smelted. It can also be used to make the occasional implement.</p>

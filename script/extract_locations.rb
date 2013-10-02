@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 #
-# Helper that creates a new stats entry.
+# Helper that extracts geo locations for all players.
 #
 
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))

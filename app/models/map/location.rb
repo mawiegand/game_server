@@ -113,7 +113,7 @@ class Map::Location < ActiveRecord::Base
     target_location = nil
     if !node.nil?
       free_locations = node.region.locations.empty.count
-      home_bases_count = region.locations.home_bases.count
+      home_bases_count = node.region.locations.home_bases.count
       if free_locations > 0 && home_bases_count < GAME_SERVER_CONFIG['max_home_bases_in_region_for_geo']
         target_location = node.region.locations.empty.offset(Random.rand(free_locations)).first
       else
@@ -225,6 +225,7 @@ class Map::Location < ActiveRecord::Base
     self.alliance = settlement.alliance
     self.alliance_tag = settlement.alliance_tag
     self.alliance_color = settlement.alliance_color
+    self.set_special_image(settlement.owner)
     self.visible = true
     self.settlement_score = settlement.score
     self.save
@@ -239,6 +240,7 @@ class Map::Location < ActiveRecord::Base
     self.visible = false
     self.right_of_way = 0
     self.settlement_score = 0
+    self.image_id = nil
     self.save
   end
 

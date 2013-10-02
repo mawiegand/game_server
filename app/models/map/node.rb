@@ -182,6 +182,11 @@ class Map::Node < ActiveRecord::Base
     Map::Node.where("leaf = ? and min_x < ? and ? < max_x and min_y < ? and ? < max_y", true, coords[:x], coords[:x], coords[:y], coords[:y]).first
   end
   
+  def contains?(latitude, longitude)
+    coords = Mapping::GlobalMercator.lat_lon_to_meters(-latitude, longitude)
+    return min_x < coords[:x] && coords[:x] <= max_x && min_y < coords[:y] && coords[:y] <= max_y
+  end
+  
   def recount_settlements(recursive=false)
     if self.leaf?
       if (recursive) 

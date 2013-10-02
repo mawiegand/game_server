@@ -72,7 +72,7 @@
   max CDATA #REQUIRED
 >
 
-<!ELEMENT SpecialOffer (Outpost, StartResource*, ProductionStartBonus*, ConstructionStartBonus*)>
+<!ELEMENT SpecialOffer (Outpost, StartResource*, ProductionStartBonus*, ConstructionStartBonus*, DisplayStrings*)>
 
 <!ELEMENT Outpost (Slot*)>
 
@@ -82,6 +82,14 @@
   id IDREF #REQUIRED
   level CDATA "1"
 >
+
+<!ELEMENT DisplayStrings (DisplayString*)>
+<!ATTLIST DisplayStrings
+  lang IDREF "en_US"
+>
+
+<!ELEMENT DisplayString (#PCDATA)>
+
 
 <!ELEMENT AvatarConfigs (AvatarConfig*)>
 

@@ -21,7 +21,7 @@
 <xsl:output method="text" encoding="UTF-8"/>
 
 <!-- text elements -->
-<xsl:strip-space elements="Name Description ShortDescription Flavour p"/>
+<xsl:strip-space elements="Name Description ShortDescription DisplayString Flavour p"/>
 
 <!-- replace-string -->
 <xsl:template name="replace-string">
@@ -273,7 +273,6 @@ end
             :<xsl:value-of select="@lang"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
 
-
 <xsl:template match="Effectiveness">
             :<xsl:value-of select="@category"/> => <xsl:apply-templates/>,
   </xsl:template> <!-- indentation needed for proper layout in output. -->
@@ -323,8 +322,17 @@ end
         :construction_bonus  => {
           :amount    => <xsl:value-of select="ConstructionStartBonus"/>,
           :duration  => <xsl:value-of select="ConstructionStartBonus/@duration"/>,
-        }
+        },
 </xsl:if>
+        :display_strings => {
+<xsl:for-each select="DisplayStrings">
+          :<xsl:value-of select="@lang" /> => [
+<xsl:for-each select="DisplayString">
+            "<xsl:value-of select="." />",
+</xsl:for-each>
+          ],
+</xsl:for-each>
+        },
 
 </xsl:template>
 

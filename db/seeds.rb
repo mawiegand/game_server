@@ -18,11 +18,12 @@ user.partner = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   = 2
-NUM_SPARSE_LEVELS = 1
+NUM_FULL_LEVELS   =  3
+NUM_SPARSE_LEVELS =  2
+MAX_LEVEL         = 11
 
-ROUND_NAME   = "Earth"
-ROUND_NUMBER =  3
+ROUND_NAME   = "Stars"
+ROUND_NUMBER =  4
 
 NPC_MIN_UNITS = 60
 NPC_MAX_UNITS = 120
@@ -53,6 +54,21 @@ terrains.each do |terrain|
   
   puts "found #{ region_names.last.count } names to chose from."
 end
+
+
+print "loading geo coordinates... "  
+  
+# construct filenames
+filename       = File.expand_path(File.join(File.dirname(__FILE__), "..", "data", "locations_google.csv"))
+geo_coords_str = File.open(filename).readlines
+
+geo_coords     = []
+geo_coords_str.each do |line|
+  lat, long = line.strip.split(",")
+  geo_coords << { lat: lat.to_f, long: long.to_f }
+end
+  
+puts "found #{ geo_coords.count } coordinates representing players."
 
 
 # ############################################################################
@@ -246,49 +262,43 @@ def split_to_path(path)
 end
 
 paths = [
-    "12020133333333",
-    "12020333333333",
-    "12020300033333",
-    "12020300133333",
-    "12020300233333",
-    "12020300333333",
-    "12020301033333",
-    "12020301133333",
-    "12020301233333",
-    "12020301333333",
-    "12020302033333",
-    "12020302133333",
-    "12020302233333",
-    "12020302333333",
-    "12020303033333",
-    "12020303133333",
-    "12020303233333",
-    "12020303333333",
-    "12022300333333",
-    "12022101333333",
-    "12022102333333",
-    "12022103333333",
-    "12022110333333",
-    "12022111333333",
-    "12022112333333",
-    "12022113333333",
-    "12022120333333",
-    "12022121333333",
-    "12022122333333",
-    "12022123333333",
-    "12022130333333",
-    "12022131333333",
-    "12022132333333",
-    "12022133333333",
-    "120221013203333",
-    "120221013213333",
-    "120221013223333",
-    "120221013233333"
+#    "120221013233333"
 ]
 
 paths.each do |path|
   split_to_path(path)
 end
+
+max_occupation = 0
+
+(NUM_FULL_LEVELS..MAX_LEVEL).each do |level|
+  max_occupation = 0
+  non_leaf = false
+  nodes = Map::Node.find_all_by_level level
+  puts "INFO: geo-splitting on level #{level}."
+  
+  nodes.each do |node|
+    if node.leaf?
+      count = 0
+      geo_coords.each do |coord|
+        count += 1 if node.contains?(coord[:lat], coord[:long])
+      end
+      if (count > max_occupation) 
+        max_occupation = count
+      end
+      if (count > 4)
+        split_all_nodes([ node ])
+        non_leaf = true
+      end
+    else
+      non_leaf = true
+    end
+  end
+  
+  puts "Maximum occupation before last split on level #{level} was #{ max_occupation}."  
+  break if !non_leaf
+end
+
 
 
 
