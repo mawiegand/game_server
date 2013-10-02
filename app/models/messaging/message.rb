@@ -293,7 +293,7 @@ class Messaging::Message < ActiveRecord::Base
   def add_overrun_loser_message_body(winner, loser)
     text  = "<h2>Deine Armee ist überrannt worden in " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s)  + "</h2>\n"
     text += "<p>Deine Armee <b>" + loser.name.to_s + "</b> ist in der Region <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
-    text += "</b>ist von einer Armee von<b>" + winner.name.to_s + "</b> von<b>" + winner.owner_name_and_ally_tag + "</b>.</p>\n"
+    text += "</b> von einer Armee von <b>" + winner.name.to_s + "</b> von der Allianz <b>" + winner.owner_name_and_ally_tag + "</b> überrannt worden.</p>\n"
     text += "<table>\n"
     text += "<tr>\n"
     text += "<th>Army Name</th><th>Besitzer</th><th>Size</th>\n"
