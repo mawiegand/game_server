@@ -159,12 +159,12 @@ class Map::Location < ActiveRecord::Base
     node = Map::Node.find_by_coords(coords['latitude'], coords['longitude'])
     if !node.nil?
       target_location = Map::Location.free_location_in(node)
-    end
     
-    if target_location.nil?
-      node = Map::Location::test_neighbours_of(node, :is_valid_starting_position)  if node.nil?
-      if !node.nil?
-        target_location = Map::Location.free_location_in(node)
+      if target_location.nil?
+        node = Map::Location::test_neighbours_of(node, :is_valid_starting_position) 
+        if !node.nil?
+          target_location = Map::Location.free_location_in(node)
+        end
       end
     end
     target_location
