@@ -107,28 +107,60 @@ class Map::Location < ActiveRecord::Base
 
     nil
   end
-
-  def self.location_with_geo_coords(coords)
-    node = Map::Node.find_by_coords(coords['latitude'], coords['longitude'])
-    target_location = nil
-    if !node.nil?
+  
+  def self.test_neighbours_of(node, test, max_tests = 30)    
+    visited_node_ids = { node.id => true }
+    nodes            = node.neighbor_nodes
+    target           = nil
+    count            = 0 
+    
+    begin
+      node, *tail = nodes                  # pop the first node in the queue
+      tail = tail || []                    # make sure it's always an array and never nil
+      
+      if visited_node_ids[node.id].nil?
+        visited_node_ids[node.id] = true
+        count += 1
+        
+        if send(test, node)
+          return node
+        elsif count < max_tests
+          tail.push(*node.neighbor_nodes)  # flatten the result array and push them to the end of the list.
+        end
+      end
+      
+      nodes = tail
+    end while !nodes.empty?   
+  end
+  
+  def self.is_valid_starting_position(node)
+    if !node.nil? && node.leaf?
       free_locations = node.region.locations.empty.count
       home_bases_count = node.region.locations.home_bases.count
       if free_locations > 0 && home_bases_count < GAME_SERVER_CONFIG['max_home_bases_in_region_for_geo']
-        target_location = node.region.locations.empty.offset(Random.rand(free_locations)).first
-      else
-        neighbor_nodes = node.neighbor_nodes
-        # sort them by settlement count
-        neighbor_nodes.sort! { |a,b| a.region.settlements.count <=> b.region.settlements.count }
-        # first neighbor node now contains region with fewest settlements
-        target_region = neighbor_nodes.first.region
-        # count empty locations of this region
-        free_locations = target_region.locations.empty.count
-        # if no locations available choose any other from whole map
-        return nil if free_locations == 0
-        # return randomly chosen empty location of neighbor region
-        target_location = target_region.locations.empty.offset(Random.rand(free_locations)).first
+        return true
       end
+    end
+    return false
+  end
+  
+  def self.free_location_in(node)
+    free_locations = node.region.locations.empty.count
+    home_bases_count = node.region.locations.home_bases.count
+    if free_locations > 0 && home_bases_count < GAME_SERVER_CONFIG['max_home_bases_in_region_for_geo']
+      target_location = node.region.locations.empty.offset(Random.rand(free_locations)).first
+    end
+    target_location
+  end
+    
+
+  def self.location_with_geo_coords(coords)
+    target_location = nil
+    node = Map::Node.find_by_coords(coords['latitude'], coords['longitude'])
+    node = Map::Location::test_neighbours_of(node, :is_valid_starting_position)  if node.nil?
+      
+    if !node.nil?
+      target_location = Map::Location.free_location_in(node)
     end
     target_location
   end
