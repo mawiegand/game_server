@@ -25,7 +25,7 @@
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>1</ArtifactAmount>
+    <ArtifactAmount>5</ArtifactAmount>
     <Effects>
       <ProductionBonus id="resource_stone" domain="character">0.15</ProductionBonus>
       <ProductionBonus id="resource_stone" domain="alliance">0.05</ProductionBonus>
@@ -54,7 +54,7 @@
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>1</ArtifactAmount>
+    <ArtifactAmount>15</ArtifactAmount>
     <Effects>
       <ProductionBonus id="resource_wood" domain="character">0.15</ProductionBonus>
       <ProductionBonus id="resource_wood" domain="alliance">0.05</ProductionBonus>
@@ -83,7 +83,7 @@
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>1</ArtifactAmount>
+    <ArtifactAmount>2</ArtifactAmount>
     <Effects>
       <ProductionBonus id="resource_fur" domain="character">0.15</ProductionBonus>
       <ProductionBonus id="resource_fur" domain="alliance">0.05</ProductionBonus>
@@ -140,7 +140,7 @@
       <InitiationCost id="resource_fur" round="true">250*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)</InitiationTime>
     </Initiation>
-    <ArtifactAmount>5</ArtifactAmount>
+    <ArtifactAmount>1</ArtifactAmount>
     <ExperienceProduction>MRANK</ExperienceProduction>
     <Effects>
     </Effects>
@@ -168,10 +168,10 @@
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>2</ArtifactAmount>
+    <ArtifactAmount>10</ArtifactAmount>
     <Effects>
       <ConstructionBonus domain="character">0.5</ConstructionBonus>
-      <ConstructionBonus domain="alliance">0.2</ConstructionBonus>
+      <ConstructionBonus domain="alliance">0.15</ConstructionBonus>
     </Effects>
   </Artifact>
 </ArtifactTypes>

@@ -244,7 +244,7 @@ class GameRules::Rules
           :duration  => 96,
         },
 
-        :displayStrings => {
+        :display_strings => {
 
           :de_DE => [
 
