@@ -189,6 +189,10 @@ class GameRules::Rules
             :id          => 24,
             :level       => 5,
           },
+2 => {
+            :id          => 26,
+            :level       => 1,
+          },
 3 => {
             :id          => 1,
             :level       => 4,
@@ -220,24 +224,24 @@ class GameRules::Rules
 
           {
             :bonus_offer_id  => 1,
-            :duration        => 120,
+            :duration        => 96,
           },
 
           {
             :bonus_offer_id  => 2,
-            :duration        => 120,
+            :duration        => 96,
           },
 
           {
             :bonus_offer_id  => 3,
-            :duration        => 120,
+            :duration        => 96,
           },
 
         ],
 
         :construction_bonus  => {
           :amount    => 1,
-          :duration  => 120,
+          :duration  => 96,
         }
 
       },
