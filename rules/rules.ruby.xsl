@@ -324,7 +324,7 @@ end
           :duration  => <xsl:value-of select="ConstructionStartBonus/@duration"/>,
         },
 </xsl:if>
-        :displayStrings => {
+        :display_strings => {
 <xsl:for-each select="DisplayStrings">
           :<xsl:value-of select="@lang" /> => [
 <xsl:for-each select="DisplayString">
