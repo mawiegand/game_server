@@ -18,7 +18,7 @@
     <p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Der Gottesfürchtige Sammler steht nur den Göttlichen Supporten und zur Verfügung.</p>
+    <p>Der Gottesfürchtige Sammler steht nur den Göttlichen Supporten zur Verfügung.</p>
   </Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)</Population>  
   <RequirementGroup>
