@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type_id: 1
+  origin_id: 1
+  character_id: 1
+  bonus: 9.99
+  finished_at: 2013-09-16 12:58:06
+
+two:
+  type_id: 1
+  origin_id: 1
+  character_id: 1
+  bonus: 9.99
+  finished_at: 2013-09-16 12:58:06

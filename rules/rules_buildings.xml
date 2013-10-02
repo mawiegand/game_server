@@ -15,8 +15,10 @@
   <!-- tier 1 buildings -->  
   <xi:include href="buildings/rules_building_chief_cottage.xml" /> 
   <xi:include href="buildings/rules_building_gatherer.xml" />
+  <xi:include href="buildings/rules_building_special_gatherer.xml" />
   <xi:include href="buildings/rules_building_barracks.xml" />
-  <xi:include href="buildings/rules_building_cottage.xml" />	
+  <xi:include href="buildings/rules_building_cottage.xml" />
+  <xi:include href="buildings/rules_building_tavern.xml" />
   <xi:include href="buildings/rules_building_storage.xml" /> 
   <xi:include href="buildings/rules_building_campfire.xml" />  
   <xi:include href="buildings/rules_building_quarry.xml" />   
@@ -27,14 +29,15 @@
   <xi:include href="buildings/rules_building_copper_smelter.xml" />  
 
   <!-- tier 2 buildings -->  
-  <xi:include href="buildings/rules_building_firing_range.xml" />  
+  <xi:include href="buildings/rules_building_firing_range.xml" />
+  <xi:include href="buildings/rules_building_alliance_hall.xml" />
   <xi:include href="buildings/rules_building_cottage_2.xml" />
   <xi:include href="buildings/rules_building_storage_2.xml" />  
   <xi:include href="buildings/rules_building_quarry_2.xml" />
   <xi:include href="buildings/rules_building_logger_2.xml" />
   <xi:include href="buildings/rules_building_stud.xml" />
-  <xi:include href="buildings/rules_building_furrier_2.xml" />
   <xi:include href="buildings/rules_building_command_post.xml" />
+  <xi:include href="buildings/rules_building_furrier_2.xml" />
   <xi:include href="buildings/rules_building_garrison.xml" />
 
   <!-- camp --> 
@@ -47,10 +50,6 @@
   <xi:include href="buildings/rules_building_infantry_tower.xml" />     
   <xi:include href="buildings/rules_building_artillery_tower.xml" />    
   <xi:include href="buildings/rules_building_cavalry_tower.xml" />    
-  <xi:include href="buildings/rules_building_fortress_garrison.xml" />
 
-
-  <xi:include href="buildings/rules_building_alliance_hall.xml" />
-  <xi:include href="buildings/rules_building_tavern.xml" />
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
 </BuildingTypes>

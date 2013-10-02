@@ -69,15 +69,17 @@
 						<td>
 							<div class="bar_container">
 								<div class="bar_container" style="width: auto; min-width: <%= 
-									if (unit_summary.sum_experience_gained > 0) 
+									if unit_summary.sum_experience_gained > 0
 										"100%" 
 									else 
 										"0%" 
 									end 
 									%>;">
 									<div class="xp_bar" style="width: 100%;"></div>
-									<div class="bar_numbers"><%= unit_summary.sum_experience_gained %></div>
-									<div class="bar_text_padding"><%= unit_summary.sum_experience_gained %></div>
+                  <% bonus = (unit_summary.sum_experience_gained * (unit_summary.participant.character.exp_bonus_total || 0)).floor %>
+                  <% bonus_title = "Bonus +#{((unit_summary.participant.character.exp_bonus_total || 0) * 100).floor}%" %>
+									<div class="bar_numbers"><%= unit_summary.sum_experience_gained %><% if bonus > 0 %><span class="bonus" title="<%= bonus_title %>">+<%= bonus %></span><% end %></div>
+									<div class="bar_text_padding"><%= unit_summary.sum_experience_gained %><% if bonus > 0 %><span class="bonus" title="<%= bonus_title %>">+<%= bonus %></span><% end %></div>
 								</div>
 							</div>
 						</td>

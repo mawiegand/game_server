@@ -22,8 +22,8 @@ NUM_FULL_LEVELS   =  3
 NUM_SPARSE_LEVELS =  2
 MAX_LEVEL         = 11
 
-ROUND_NAME   = "Earth"
-ROUND_NUMBER =  3
+ROUND_NAME   = "Stars"
+ROUND_NUMBER =  4
 
 NPC_MIN_UNITS = 60
 NPC_MAX_UNITS = 120
@@ -388,31 +388,101 @@ Shop::ResourceOffer.create({
   ends_at: Time.now + 1.year 
 })
 
+# die folgenden drei bonus offers werden aus dem starterpaket referenziert, daher haben sie feste ids!
+
 Shop::BonusOffer.create({
-  price: 5,
+  id: 1,
+  price: 10,
   resource_id: 0,
-  duration: 148,
-  bonus: 0.15, 
+  currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
+  duration: 96,
+  bonus: 0.15,
   started_at: Time.now,
-  ends_at: Time.now + 1.year 
+  ends_at: Time.now + 1.year
 })
 
 Shop::BonusOffer.create({
-  price: 5,
+  id: 2,
+  price: 10,
   resource_id: 1,
-  duration: 148,
-  bonus: 0.15, 
+  currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
+  duration: 96,
+  bonus: 0.15,
   started_at: Time.now,
-  ends_at: Time.now + 1.year 
+  ends_at: Time.now + 1.year
 })
 
 Shop::BonusOffer.create({
-  price: 5,
+  id: 3,
+  price: 10,
   resource_id: 2,
-  duration: 148,
-  bonus: 0.15, 
+  currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
+  duration: 96,
+  bonus: 0.15,
   started_at: Time.now,
-  ends_at: Time.now + 1.year 
+  ends_at: Time.now + 1.year
+})
+
+
+
+Shop::BonusOffer.create({
+  price: 1,
+  resource_id: 0,
+  currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
+  duration: 48,
+  bonus: 0.05,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year
+})
+
+Shop::BonusOffer.create({
+  price: 1,
+  resource_id: 1,
+  currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
+  duration: 48,
+  bonus: 0.05,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year
+})
+
+Shop::BonusOffer.create({
+  price: 1,
+  resource_id: 2,
+  currency: Shop::Transaction::CURRENCY_GOLDEN_FROGS,
+  duration: 48,
+  bonus: 0.05,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year
+})
+
+Shop::BonusOffer.create({
+  price: 20,
+  resource_id: 0,
+  currency: Shop::Transaction::CURRENCY_CREDITS,
+  duration: 168,
+  bonus: 0.3,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year
+})
+
+Shop::BonusOffer.create({
+  price: 20,
+  resource_id: 1,
+  currency: Shop::Transaction::CURRENCY_CREDITS,
+  duration: 168,
+  bonus: 0.3,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year
+})
+
+Shop::BonusOffer.create({
+  price: 20,
+  resource_id: 2,
+  currency: Shop::Transaction::CURRENCY_CREDITS,
+  duration: 168,
+  bonus: 0.3,
+  started_at: Time.now,
+  ends_at: Time.now + 1.year
 })
 
 Shop::PlatinumOffer.create({
@@ -420,8 +490,13 @@ Shop::PlatinumOffer.create({
   price: 10,
   duration: 168,
   started_at: Time.now,
-  ends_at: Time.now + 1.year 
+  ends_at: Time.now + 1.year
 })
 
-
-
+Shop::SpecialOffer.create({
+  external_offer_id: 761,  # defined by offer in bytro shop
+  title: 'Special Offer',
+  price: 25,
+  startet_at: Time.now,
+  ends_at: Time.now + 1.year
+})

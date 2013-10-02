@@ -22,7 +22,7 @@ class Settlement::Settlement < ActiveRecord::Base
   has_many   :outgoing_trading_carts, :class_name => "Action::Trading::TradingCartsAction", :foreign_key => "starting_settlement_id",      :inverse_of => :starting_settlement
   has_many   :incoming_trading_carts, :class_name => "Action::Trading::TradingCartsAction", :foreign_key => "target_settlement_id",        :inverse_of => :target_settlement  
   
-  attr_readable :id, :type_id, :region_id, :tax_rate, :location_id, :node_id, :name, :defense_bonus, :owner_id, :alliance_id, :level, :score, :taxable, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :settlement_unlock_prevent_takeover_count, :as => :default 
+  attr_readable :id, :type_id, :region_id, :tax_rate, :location_id, :node_id, :name, :defense_bonus, :condition, :battle_id, :owner_id, :alliance_id, :alliance_color, :level, :score, :taxable, :foundet_at, :founder_id, :owns_region, :taxable, :garrison_id, :besieged, :created_at, :updated_at, :points, :settlement_unlock_prevent_takeover_count, :as => :default
   attr_readable *readable_attributes(:default), :morale,                                               :as => :ally 
   attr_readable *readable_attributes(:ally),    :tax_changed_at, :command_points, :garrison_size_max, :army_size_max, :armies_count, :resource_, :trading_carts, :trading_carts_used, :building_slots_total, :artifact_initiation_level, :name_change_count, :as => :owner
   attr_readable *readable_attributes(:owner),                                                          :as => :staff
@@ -127,6 +127,7 @@ class Settlement::Settlement < ActiveRecord::Base
       :owner_id    => owner.id,
       :alliance_id => owner.alliance_id,
       :alliance_tag=> owner.alliance_tag,
+      :alliance_color=> owner.alliance_color,
       :owns_region => type_id == 1,               # fortress?
       :tax_rate    => tax_rate,
       :taxable     => type_id != 1,               # everything but fortresses are taxable
@@ -208,10 +209,11 @@ class Settlement::Settlement < ActiveRecord::Base
   
   def wear_down_condition
     self.condition = [(condition || 0.0)-0.05, 0.0].max
+    self.condition_updated_at = DateTime.now
   end
   
   def present_defense_bonus
-    (defense_bonus || 0) * (condition || 0)
+    (defense_bonus || 0.0) * (condition || 0.0)
   end
   
   def update_condition_if_necessary
@@ -261,11 +263,12 @@ class Settlement::Settlement < ActiveRecord::Base
   def move_settlement_to_region(new_region)
     return false if !self.home_base?
     location = new_region.find_empty_location
-    self.location_id = location.id
-    self.region_id = new_region.id
+    return false if location.nil?
+    self.location = location
+    self.region = new_region
     self.node_id = new_region.node_id
-    self.garrison_army.location_id = self.location_id
-    self.garrison_army.region_id = self.region_id
+    self.garrison_army.location = self.location
+    self.garrison_army.region = self.region
     self.garrison_army.save
     self.save
     location.place_settlement(self)
@@ -323,10 +326,11 @@ class Settlement::Settlement < ActiveRecord::Base
     
     self.region.moving_password = Util.make_random_string(6)if self.fortress?
     
-    self.owner        = character
-    self.alliance_id  = character.alliance_id
-    self.alliance_tag = character.alliance_tag
-    
+    self.owner          = character
+    self.alliance_id    = character.alliance_id
+    self.alliance_tag   = character.alliance_tag
+    self.alliance_color = character.alliance_color
+
     Military::Army.create_garrison_at(self)
     
     self.last_takeover_at = Time.now

@@ -7,9 +7,11 @@
   <Description lang="de_DE">
     <p>Das Garnionsgebäude dient zur Unterbringung und Versorgung der Einheiten und Armeen.</p>
     <p>Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p>
+    <p>Dieses Gebäude kann nicht abgerissen werden.</p>
   </Description>
   <Description lang="en_US">
-    <p>Well, who would have thought it? Field armies also benefit from the increased discipline that having a garrison provides. And that means that bigger armies can be deployed in the field.</p> 
+    <p>Well, who would have thought it? Field armies also benefit from the increased discipline that having a garrison provides. And that means that bigger armies can be deployed in the field.</p>
+    <p>This building can not be torn down.</p>
   </Description>
   <Flavour lang="en_US">
     <p>Warriors or soldiers of any kind should be kept apart from the ordinary working population. In the garrison they can bash each others' heads in and leave the poor settlement dwellers in peace.</p>

@@ -408,31 +408,29 @@ class Military::Battle < ActiveRecord::Base
   def calculate_character_results    
     winner_units_count = 0
     winner_faction.participants.each do |participant|
-      winner_units_count += participant.results.first.units_count unless participant.results.empty?
+      winner_units_count += participant.results.first.xp_weighted_units_count unless participant.results.empty?
     end
 
     loser_units_count = 0
     loser_faction.participants.each do |participant|
-      loser_units_count += participant.results.first.units_count unless participant.results.empty?
+      loser_units_count += participant.results.first.xp_weighted_units_count unless participant.results.empty?
     end
 
     return if loser_units_count == 0 || winner_units_count == 0
 
     k = 1.0 * loser_units_count / winner_units_count
 
-    # logger.debug "---> k: #{k}, winner_units_count: #{winner_units_count}, loser_units_count: #{loser_units_count}, rounds.count: #{rounds.count}"
-
     rounds.each do |round|
       winner_units_count_per_round = 0
       winner_faction.participants.each do |participant|
         round_results = participant.results.where(:round_id => round.id)
-        winner_units_count_per_round += round_results.first.units_count unless round_results.empty?
+        winner_units_count_per_round += round_results.first.xp_weighted_units_count unless round_results.empty?
       end
 
       loser_lost_units_count_per_round = 0
       loser_faction.participants.each do |participant|
         round_results = participant.results.where(:round_id => round.id)
-        loser_lost_units_count_per_round += round_results.first.lost_units_count unless round_results.empty?
+        loser_lost_units_count_per_round += round_results.first.xp_weighted_lost_units_count unless round_results.empty?
       end
 
       # winner faction: calculate winner experience according to new function
@@ -441,7 +439,7 @@ class Military::Battle < ActiveRecord::Base
         if !participant_round_results.empty? && !participant.character.deleted_from_game # prevent creating new results if character is already deleted from game
           character_result = Military::BattleCharacterResult.find_or_initialize_by_character_id_and_faction_id_and_battle_id(participant.character_id, participant.faction_id, self.id)
           participant_round_result = participant_round_results.first
-          participant_units_per_round = participant_round_result.units_count
+          participant_units_per_round = participant_round_result.xp_weighted_units_count
           character_result.experience_gained += k * GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] * participant_units_per_round * loser_lost_units_count_per_round / winner_units_count_per_round
           character_result.winner = true
           character_result.save
@@ -460,7 +458,7 @@ class Military::Battle < ActiveRecord::Base
   end
 
   def count_victory_and_defeat
-    if (winner_faction.nil?)
+    if winner_faction.nil?
       winner_faction_or_faction_A.count_defeat
       loser_faction_or_faction_B.count_defeat
     else

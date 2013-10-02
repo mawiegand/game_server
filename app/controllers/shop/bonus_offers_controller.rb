@@ -8,7 +8,7 @@ class Shop::BonusOffersController < ApplicationController
   # GET /shop/bonus_offers
   # GET /shop/bonus_offers.json
   def index
-    @shop_bonus_offers = Shop::BonusOffer.all
+    @shop_bonus_offers = Shop::BonusOffer.order('resource_id asc, currency asc, price asc')
     
     respond_to do |format|
       format.html # index.html.erb

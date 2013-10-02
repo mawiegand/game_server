@@ -99,9 +99,11 @@ en:
         active_jobs: Act. Jobs
       effect:
         alliance_construction_effects: Ally Construction
-        construction_effects: Construction
-        alliance_resource_effects: Alliance Res. Effects
-        resource_effects: Character Res. Effects
+        construction_effects: Character Construction
+        alliance_resource_effects: Ally Resource
+        resource_effects: Character Resource
+        alliance_experience_effects: Ally Experience
+        experience_effects: Character Experience
         category: Effect
       event:
         category: Event
@@ -152,7 +154,8 @@ en:
         initial_sentance: This conflict was initiated by an attack of <%= get_character_name(@battle.initiator) %> on <%= get_character_name(@battle.opponent) %> on <%= @battle.started_at %>
         winner_message: Your faction won the battle. 
         loser_message: Your faction lost the battle.
-        xp: You got %{xp} additional experience points.
+        xp_start: You got
+        xp_end: additional experience points.
         your_army: Your Army
         overview: Overview
         details: Details

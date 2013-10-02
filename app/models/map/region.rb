@@ -19,7 +19,7 @@ class Map::Region < ActiveRecord::Base
   before_create :add_unique_invitation_code
   
   before_save   :prevent_empty_moving_password
- 
+
   after_create  :propagate_regions_count_to_round_info
   after_destroy :propagate_regions_count_to_round_info
   
@@ -33,9 +33,13 @@ class Map::Region < ActiveRecord::Base
   def non_fortress_locations_owned_by(character)
     self.locations.owned_by(character).excluding_fortress_slots
   end
+
+  def owned_by_npc?
+    self.owner_id == 1
+  end
   
   def settleable_by?(character)
-    return non_fortress_locations_owned_by(character).count == 0
+    non_fortress_locations_owned_by(character).count == 0 && self.locations.empty.count > 0
   end
   
   def owned_by_alliance?(alliance)
@@ -47,7 +51,7 @@ class Map::Region < ActiveRecord::Base
   end
   
   def is_moving_allowed?(alliance, moving_password)
-    check_moving_password?(moving_password) or self.owned_by_alliance?(alliance)
+    self.owned_by_npc? || self.owned_by_alliance?(alliance) || check_moving_password?(moving_password)
   end
   
 	def last_takeover_at
@@ -59,17 +63,27 @@ class Map::Region < ActiveRecord::Base
     self.locations.empty.offset(Random.rand(free_locations)).first
   end
 
+  def set_special_image(owner)
+    if !owner.image_set_id.nil?
+      self.image_id = owner.image_set_id
+    else
+      self.image_id = nil
+    end
+  end
+
   # sets the owner_id and alliance_id to the new values. If theses
   # values changed, also updates the owner name and alliance tag.
   def set_owner_and_alliance(new_owner, new_alliance)
-    if (new_owner != self.owner)
+    if new_owner != self.owner
       self.owner = new_owner
       self.owner_name = self.owner.nil? ? nil : self.owner.name     
     end
-    if (new_alliance != self.alliance)
+    if new_alliance != self.alliance
       self.alliance = new_alliance
-      self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag    
+      self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag
+      self.alliance_color = self.alliance.nil? ? nil : self.alliance.color
     end
+    self.set_special_image(new_owner)
   end
   
   def add_unique_invitation_code
@@ -81,7 +95,6 @@ class Map::Region < ActiveRecord::Base
   def self.find_by_id_or_name(region_identifier)
     region = Map::Region.find_by_id(region_identifier) if Map::Region.valid_id?(region_identifier)
     region = Map::Region.find_by_name(region_identifier) if region.nil?
-    
     region
   end
 

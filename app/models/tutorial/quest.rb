@@ -92,7 +92,7 @@ class Tutorial::Quest < ActiveRecord::Base
   end
   
 
-  def check_for_rewards(answer_text)
+  def check_for_rewards(browser_request, answer_text)
     logger.debug "check quest nr #{self.quest_id} with answer_text #{answer_text}"
     
     # quest aus 'm Tutorial holen
@@ -236,6 +236,12 @@ class Tutorial::Quest < ActiveRecord::Base
       unless reward_tests[:building_speed_test].nil?
         building_speed_test = reward_tests[:building_speed_test]
         unless check_building_speed(building_speed_test)
+          return false
+        end
+      end
+
+      unless reward_tests[:cross_platform_test].nil?
+        unless browser_request
           return false
         end
       end
@@ -595,21 +601,21 @@ class Tutorial::Quest < ActiveRecord::Base
 
     false
   end
-  
-  def check_building_speed(building_speed_test) 
+
+  def check_building_speed(building_speed_test)
     return false if building_speed_test[:min_speed].nil?
-    
+
     logger.debug "check_building_speed: check if home settlement has at least a building queue speed of #{building_speed_test[:min_speed]}"
-    
+
     building_queues = self.tutorial_state.owner.home_location.settlement.queues
-    
+
     building_queues.each do |queue|
       return true if queue.speed >= building_speed_test[:min_speed]
     end
-    
+
     false
   end
-  
+
   def redeem_rewards
     # quest aus 'm Tutorial holen
     quest = Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
@@ -703,7 +709,7 @@ class Tutorial::Quest < ActiveRecord::Base
       self.tutorial_state.owner.resource_pool.add_resources_transaction(resources)    
       garrison_army.add_units(units)
       unless rewards[:experience_reward].nil?
-        self.tutorial_state.owner.increment(:exp, rewards[:experience_reward])
+        self.tutorial_state.owner.increment(:exp, (rewards[:experience_reward] * (1 + (self.tutorial_state.owner.exp_bonus_total || 0))).floor)
         self.tutorial_state.owner.save
       end
       if !rewards[:action_point_reward].nil? && rewards[:action_point_reward]

@@ -15,78 +15,26 @@ class Shop::SpecialOffer < ActiveRecord::Base
     end
   end
 
+  def buyable_by_character(character)
+    if character.show_special_offers?         # if character is in dialog time interval (after finished tutorial)
+      character.purchases.where('external_offer_id = ? and redeemed_at is not null', self.external_offer_id).empty?
+    else
+      false
+    end
+  end
+
   def credit_to(character)
-    stone_id        =    0
-    wood_id         =    1
-    fur_id          =    2
-    cash_id         =    3
-    cash_amount     =  300
-    resource_amount = 5000
-    
-    unit1_id        =    0
-    unit1_amount    =   20
-    unit2_id        =    4
-    unit2_amount    =   50
-    
-    production_bonus_amount   = 0.15     #  15%
-    production_bonus_duration = 120      #   5 days
-    
-    construction_bonus_amount   =   1.0  # 100%
-    construction_bonus_duration = 120    #   5 days
-    
-    slots = {
-      1 => {
-        id: 21,
-        level: 10,
-      },
-      2 => {
-        id: 23,
-        level: 1,
-      },
-      3 => {
-        id: 1,
-        level: 10,
-      },
-      4 => {
-        id: 1,
-        level: 10,
-      },
-      5 => {
-        id: 1,
-        level: 10,
-      },
-      6 => {
-        id: 1,
-        level: 10,
-      },
-      7 => {
-        id: 1,
-        level: 10,
-      },
-      8 => {
-        id: 1,
-        level: 9,
-      },
-      9 => {
-        id: 1,
-        level: 8,
-      },
-      10 => {
-        id: 4,
-        level: 7,
-      },
-    }
-        
-    home_base = character.bases[0]
+
+    special_offer_rules = GameRules::Rules.the_rules.special_offer
 
     # create outpost
     location = find_settleable_location_near_home_base(character)
-    settlement = Settlement::Settlement.create_settlement_at_location(location, 3, character)  # 3: outpost
-    
-    slots.each do |slot_num, specs|
+    settlement = Settlement::Settlement.create_settlement_at_location(location, Settlement::Settlement::TYPE_OUTPOST, character)
+
+    special_offer_rules[:outpost].each do |slot_num, specs|
       slot = settlement.slots.with_num(slot_num).first
       
-      if (slot.empty?)
+      if slot.empty?
         slot.create_building(specs[:id])
         logger.debug "STARTER PACKAGE: Created building with id #{specs[:id]} in slot #{slot.inspect}."
       end
@@ -95,34 +43,31 @@ class Shop::SpecialOffer < ActiveRecord::Base
         slot.upgrade_building
       end
     end
-    
     logger.info("STARTER PACKAGE: Created new outpost for character #{ character.id }: #{ character.name }.")
 
     
     # credit resources and golden frogs
-    character.resource_pool.modify_resources_atomically({
-      stone_id => resource_amount,
-      wood_id  => resource_amount,
-      fur_id   => resource_amount,      
-      cash_id  => cash_amount,
-    })
-
+    character.resource_pool.modify_resources_atomically(special_offer_rules[:start_resources])
     logger.info("STARTER PACKAGE: Credited resources to character #{ character.id }: #{ character.name }.")
     
     
     # credit units
-    home_base.add_units_to_garrison(unit1_id, unit1_amount)
-    home_base.add_units_to_garrison(unit2_id, unit2_amount)
-
-    logger.info("STARTER PACKAGE: Credited units to character #{ character.id }: #{ character.name }.")
+    #home_base.add_units_to_garrison(unit1_id, unit1_amount)
+    #home_base.add_units_to_garrison(unit2_id, unit2_amount)
+    #logger.info("STARTER PACKAGE: Credited units to character #{ character.id }: #{ character.name }.")
     
     # credit resource effects
-    Effect::ResourceEffect.create_or_extend_shop_effect(character, stone_id, production_bonus_amount, production_bonus_duration)
-    Effect::ResourceEffect.create_or_extend_shop_effect(character, wood_id,  production_bonus_amount, production_bonus_duration)
-    Effect::ResourceEffect.create_or_extend_shop_effect(character, fur_id,   production_bonus_amount, production_bonus_duration)
-    
+    special_offer_rules[:production_bonus].each do |bonus|
+      bonus_offer = Shop::BonusOffer.find_by_id(bonus[:bonus_offer_id])
+      if !bonus_offer.nil?
+        Effect::ResourceEffect.create_or_extend_shop_effect(character, bonus_offer.resource_id, bonus_offer.bonus, bonus[:duration], bonus_offer.id)
+      end
+    end
+
     # credit construction speedup effect
-    Effect::ConstructionEffect.create_or_extend_shop_effect(character, construction_bonus_amount, construction_bonus_duration)
+    if !special_offer_rules[:construction_bonus].nil?
+      Effect::ConstructionEffect.create_or_extend_shop_effect(character, special_offer_rules[:construction_bonus][:amount], special_offer_rules[:construction_bonus][:duration])
+    end
     
   end
 

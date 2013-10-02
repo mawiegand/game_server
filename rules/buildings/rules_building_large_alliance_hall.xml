@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_large_alliance_hall" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="false" demolishable="false" experienceFactor="1.5">
+  <Name lang="de_DE">Große Stammeshalle</Name>
+  <Name lang="en_US">Tribe's Large Hall</Name>
+  <Description lang="de_DE">
+    <p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen. Oder zum Bowling, wenn die Halle denn lang genug ist.</p>
+    <p>Mit jedem Ausbau der Großen Stammeshalle kann die Allianz weitere Mitglieder aufnehmen.</p>
+    <p>Dieses Gebäude kann nicht abgerissen werden.</p>
+   </Description>
+  <Description lang="en_US">
+    <p>In the Large Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. Very large halls make it possible to accept more alliance members into the meeting.</p>
+    <p>This building can not be torn down.</p>
+  </Description>
+  <Flavour lang="en_US">
+    <p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>
+  </Flavour>
+    <Flavour lang="de_DE">
+    <p>Gutes Essen, leckere Getränke und viel Platz. Ein würdiger Rahmen für große Verhandlungen!</p>
+  </Flavour> 
+<Population>200+20*LEVEL</Population>
+  <RequirementGroup>
+    <Requirement id="building_alliance_hall"  max_level="10" />
+    <Requirement id="building_large_alliance_hall" max_level="0" />
+  </RequirementGroup>
+    <Cost id="resource_stone" round="true">LESS(LEVEL,11)*25000*POW(LEVEL,1.25)</Cost>
+    <Cost id="resource_wood" round="true">LESS(LEVEL,11)*25000*POW(LEVEL,1.25)</Cost>
+    <Cost id="resource_fur" round="true">LESS(LEVEL,11)*25000*POW(LEVEL,1.25)</Cost>
+  <ProductionTime shortenable="true">LESS(LEVEL,11)*CEIL((30*POW(LEVEL+4,3.2)+47547*(0.06*(LEVEL-5)+0.98))*1.1*3+0.5)
+      </ProductionTime>
+  <Abilities> <!-- just for grouping -->
+      <AllianceExtension>11+GREATER(LEVEL,1)*(LEVEL*2)</AllianceExtension>
+  </Abilities>
+</Building>
+

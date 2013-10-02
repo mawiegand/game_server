@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.39
+# Version: 0.3.44
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 39, 
+        :build => 44, 
       },
       
       :production_test_weights => {
@@ -2233,7 +2233,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [21, 103, ],
+          :successor_quests => [21, 103, 134, ],
 
           :rewards => {
             
@@ -2241,17 +2241,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 250,
+                :amount => 450,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 250,
+                :amount => 450,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 450,
               },
 
             ],
@@ -2328,7 +2328,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [22, 23, 24, 80, ],
+          :successor_quests => [22, 24, ],
 
           :rewards => {
             
@@ -2434,7 +2434,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [37, ],
+          :successor_quests => [23, ],
 
           :rewards => {
             
@@ -2534,11 +2534,11 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_chiefcottagelvl5',
+            :quest => 'quest_build_1quarrylvl2',
 
           },
 
-          :successor_quests => [58, ],
+          :successor_quests => [37, 58, ],
 
           :rewards => {
             
@@ -2810,7 +2810,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "UUpgrade your chieftan's hut to Level 7.",
+            :en_US => "Upgrade your chieftan's hut to Level 7.",
   
             :de_DE => "Baue Deine Häuptlingshütte auf Level 7 aus.",
                 
@@ -3987,7 +3987,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_build_1quarrylvl2',
+            :quest => 'quest_build_1loggerlvl2',
 
           },
 
@@ -8070,12 +8070,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_build_chiefcottagelvl5',
-
-          },
-
           :successor_quests => [81, ],
 
           :rewards => {
@@ -10269,17 +10263,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 120,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 120,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 120,
+                :amount => 250,
               },
 
             ],
@@ -10364,17 +10358,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 180,
+                :amount => 300,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 180,
+                :amount => 300,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 180,
+                :amount => 300,
               },
 
             ],
@@ -10459,17 +10453,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 360,
+                :amount => 450,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 360,
+                :amount => 450,
               },
 
               {
                 :resource => :resource_fur,
-                :amount => 360,
+                :amount => 450,
               },
 
             ],
@@ -12919,7 +12913,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [132, ],
 
           :rewards => {
             
@@ -12964,9 +12958,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Be a Member of an alliance with atleast 7 others.",
+            :en_US => "Be a Member of an alliance with atleast 12 others.",
   
-            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 8 Mitgliedern.",
+            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 13 Mitgliedern.",
                 
           },
           :flavour => {
@@ -12998,6 +12992,12 @@ class Tutorial::Tutorial
                 
           },
 
+          :requirement => {
+            
+            :quest => 'quest_alliance_members',
+
+          },
+
           :successor_quests => [133, ],
 
           :rewards => {
@@ -13018,7 +13018,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :alliance_members_test => {
-              :min_count => 8,
+              :min_count => 13,
             },
 
           },          
@@ -13043,9 +13043,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Be a Member of an alliance with atleast 12 others.",
+            :en_US => "Be a Member of an alliance with atleast 22 others.",
   
-            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 13 Mitgliedern.",
+            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 23 Mitgliedern.",
                 
           },
           :flavour => {
@@ -13103,7 +13103,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :alliance_members_test => {
-              :min_count => 13,
+              :min_count => 23,
             },
 
           },          
@@ -13121,23 +13121,23 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Crossplatform",
+            :en_US => "Cross-Platform",
   
-            :de_DE => "Crossplatform",
+            :de_DE => "Cross-Platform",
                 
           },
           :task => {
             
-            :en_US => "Log into the HTML client at www.wack-a-doo.com .",
+            :en_US => "Log into the HTML version of Wack-A-Doo at https://www.wack-a-doo.com.",
   
-            :de_DE => "Melde dich im HTML Spiel unter www.wack-a-doo.de an.",
+            :de_DE => "Logge Dich in die HTML-Version von Wack-A-Doo ein unter https://www.wack-a-doo.de an.",
                 
           },
           :flavour => {
             
-            :de_DE => "Crossplatform? Klingt nützlich.",
+            :de_DE => "Cross-Platform? Klingt nützlich.",
   
-            :en_US => "Crossplatform? Sounds useful.",
+            :en_US => "Cross-Platform? Sounds reasonable.",
                 
           },
           :description => {
@@ -13158,8 +13158,14 @@ class Tutorial::Tutorial
             
             :de_DE => "Wack-A-Doo im Browser funktioniert genauso wie die App, nur mit anderem Interface.",
   
-            :en_US => "Wack-A-Doo in your browser works exactly the same as the App, just with a different interface..",
+            :en_US => "Wack-A-Doo in your browser works exactly the same as the App, just with a different interface.",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_resourcescore_0',
+
           },
 
           :successor_quests => [],
@@ -13181,6 +13187,8 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
+            :cross_platform_test => {},
+
           },          
 
         },              #   END OF quest_crossplatform

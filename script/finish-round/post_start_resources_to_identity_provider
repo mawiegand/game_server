@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+#
+# Script for copying xp bonus for first 100 characters to identity provider
+#
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'config', 'environment'))
+require 'identity_provider/access'
+
+identity_provider_access = IdentityProvider::Access.new({
+  identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+  game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+  scopes:                     ['5dentity'],
+})
+
+property = {
+  start_resources: {
+    client_identifier: 'wackadoo',
+    resources: [
+      {resource_type_id: 0, amount: 2000},
+      {resource_type_id: 1, amount: 2000},
+      {resource_type_id: 2, amount: 2000},
+    ]
+  }
+}
+
+identifier = 'EbaPAKnANeTgZXdI'
+
+puts "Start."
+identity_provider_access.post_character_property(identifier, property)
+puts "Fertig."
+

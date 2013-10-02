@@ -15,7 +15,7 @@ class Backend::SignInLogEntry < ActiveRecord::Base
   scope :refered_by_host, lambda { |host| where("referer LIKE '%#{host}%'") }
   scope :refered_by_id,   lambda { |rid|  where(r: rid) }
   scope :latest,          order('created_at DESC').limit(1)
-  
+
   protected
   
     def determine_referer_from_url

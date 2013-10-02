@@ -21,7 +21,7 @@
 <xsl:output method="text" encoding="UTF-8"/>
 
 <!-- text elements -->
-<xsl:strip-space elements="Name Description ShortDescription Flavour p"/>
+<xsl:strip-space elements="Name Description ShortDescription DisplayString Flavour p"/>
 
 <!-- replace-string -->
 <xsl:template name="replace-string">
@@ -82,7 +82,7 @@ class GameRules::Rules
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
     :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
-    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles,
+    :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles, :special_offer,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
   def attributes 
@@ -113,6 +113,7 @@ class GameRules::Rules
       'treasure_types'              => treasure_types,
       'special_assignments'         => special_assignments,
       'slot_bubbles'                => slot_bubbles,
+      'special_offer'               => special_offer,
       'settlement_types'            => settlement_types,
       'artifact_types'              => artifact_types,  
       'victory_types'               => victory_types,  
@@ -205,6 +206,9 @@ class GameRules::Rules
         :test_min_duration => <xsl:value-of select="//General/SlotBubbles/BubbleTestDuration/@min" />,
         :test_max_duration => <xsl:value-of select="//General/SlotBubbles/BubbleTestDuration/@max" />,
       },
+      :special_offer => {
+  <xsl:apply-templates select="//General/SpecialOffer" />
+      },
       :artifact_count => <xsl:value-of select="count(//ArtifactTypes/Artifact)" />,
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
@@ -269,7 +273,6 @@ end
             :<xsl:value-of select="@lang"/> => "<xsl:apply-templates/>",
   </xsl:template> <!-- indentation needed for proper layout in output. -->
 
-
 <xsl:template match="Effectiveness">
             :<xsl:value-of select="@category"/> => <xsl:apply-templates/>,
   </xsl:template> <!-- indentation needed for proper layout in output. -->
@@ -289,13 +292,58 @@ end
 </xsl:template>
 
 
+<xsl:template match="SpecialOffer">
+<xsl:if test="Outpost">
+        :outpost => {
+<xsl:for-each select="Outpost/Slot">
+          <xsl:value-of select="@slotNum"/> => {
+            :id          => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+            :level       => <xsl:value-of select="@level"/>,
+          },
+</xsl:for-each>
+        },
+</xsl:if>
+<xsl:if test="StartResource">
+        :start_resources => {
+          <xsl:apply-templates select="StartResource" />
+        },
+</xsl:if>
+<xsl:if test="ProductionStartBonus">
+        :production_bonus  => [
+<xsl:for-each select="ProductionStartBonus">
+          {
+            :bonus_offer_id  => <xsl:value-of select="@bonusOfferId"/>,
+            :duration        => <xsl:value-of select="@duration"/>,
+          },
+</xsl:for-each>
+        ],
+</xsl:if>
+<xsl:if test="ConstructionStartBonus">
+        :construction_bonus  => {
+          :amount    => <xsl:value-of select="ConstructionStartBonus"/>,
+          :duration  => <xsl:value-of select="ConstructionStartBonus/@duration"/>,
+        },
+</xsl:if>
+        :display_strings => {
+<xsl:for-each select="DisplayStrings">
+          :<xsl:value-of select="@lang" /> => [
+<xsl:for-each select="DisplayString">
+            "<xsl:value-of select="." />",
+</xsl:for-each>
+          ],
+</xsl:for-each>
+        },
+
+</xsl:template>
+
+
 <xsl:template match="TrainingSpeedup">
 # ## TRAINING SPEEDUP ##########################################################
-  
+
       :training_speedup => [  # ALL TRAINING SPEEDUPS
 <xsl:for-each select="SpeedupCost">
         {               #   less than <xsl:value-of select="@hours"/> hours
-          :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>, 
+          :resource_id => <xsl:value-of select="count(id(@resource)/preceding-sibling::*)"/>,
           :amount      => <xsl:value-of select="@amount"/>,
           :hours       => <xsl:value-of select="@hours"/>,
         },              #   END OF <xsl:value-of select="@hours"/> hours
@@ -304,7 +352,7 @@ end
 </xsl:template>
 
 
-<xsl:template match="ArtifactInitiationSpeedup">
+  <xsl:template match="ArtifactInitiationSpeedup">
 # ## ARTIFACT INITIATION SPEEDUP #############################################
 
       :artifact_initiation_speedup => [  # ALL ARTIFACT INITIATION SPEEDUPS
@@ -508,6 +556,7 @@ end
 <xsl:if test="@hidden">
           :hidden      => <xsl:value-of select="@hidden"/>,
 </xsl:if>
+          :experience_factor => <xsl:value-of select="@experienceFactor"/>,
           :trainable   => <xsl:value-of select="@trainable"/>,
 <xsl:if test="Position">
 	        :position    => <xsl:value-of select="Position"/>,
@@ -662,6 +711,7 @@ end
   </xsl:otherwise>
 </xsl:choose>
           :buyable     => <xsl:value-of select="@buyable"/>,
+          :divine_supporters_only => <xsl:value-of select="@divine_supporters_only"/>,
           :demolishable=> <xsl:value-of select="@demolishable"/>,
           :destructable=> <xsl:value-of select="@destructable"/>,
           :takeover_downgrade_by_levels=> <xsl:value-of select="@takeoverDowngradeByLevels"/>,
@@ -702,7 +752,7 @@ end
                 :formula            => "<xsl:apply-templates/>",
               },
             </xsl:for-each>
-          ],          
+          ],
 <xsl:if test="Capacity">
           :capacity  => [
             <xsl:for-each select="Capacity">

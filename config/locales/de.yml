@@ -47,7 +47,8 @@ de:
         no_rounds: Da es keine Gegenwehr gab, fanden keine Kampfrunden statt.
         winner_message: Deine Fraktion hat den Kampf gewonnen. 
         loser_message: Deine Fraktion hat den Kampf verloren.
-        xp: Du erhältst daher %{xp} zusätzliche Erfahrungspunkte.
+        xp_start: Du erhältst daher
+        xp_end: zusätzliche Erfahrungspunkte.
         your_army: Deine Armee
         overview: Übersicht
         details: Details

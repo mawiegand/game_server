@@ -4,9 +4,13 @@
   <p><%= render(I18n.translate('application.messaging.battle_report.initial_sentance')) %></p>
   <% if !my_faction_summary.nil? && my_faction_summary.faction.winner %>
     <p><%= I18n.translate('application.messaging.battle_report.winner_message') %>
-  		<% xp = @battle.xp_for_character_and_faction(character, my_faction_summary.faction).to_i %>
-  		<% if xp > 0 %>
-  		  <%= I18n.translate('application.messaging.battle_report.xp', :xp => xp) %>
+      <% xp = @battle.xp_for_character_and_faction(character, my_faction_summary.faction).to_i %>
+      <% xp_bonus = (xp * (character.exp_bonus_total || 0)).floor %>
+      <% bonus_title = "Bonus +#{((character.exp_bonus_total || 0) * 100).floor}%" %>
+      <% if xp > 0 %>
+        <%= I18n.translate('application.messaging.battle_report.xp_start') %>
+        <%= xp %><% if xp_bonus > 0 %><span class="bonus" title="<%= bonus_title %>">+<%= xp_bonus %></span><% end %>
+        <%= I18n.translate('application.messaging.battle_report.xp_end') %>
     	<% end %>
     </p>
   <% else %>

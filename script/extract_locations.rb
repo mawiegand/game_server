@@ -18,3 +18,4 @@ Fundamental::Character.not_deleted.each do |character|
     puts "#{sign_in.remote_ip}, #{geo_coords['latitude']}, #{geo_coords['longitude']}"
   end
 end
+

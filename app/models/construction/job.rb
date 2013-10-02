@@ -28,7 +28,7 @@ class Construction::Job < ActiveRecord::Base
       1.upto(self.level_before) do |level|
         time += formula.apply(level)
       end
-      return time
+      return time / 4.0
     elsif self.job_type == TYPE_CONVERT
       # calculate time sum of current building
       time = 0
@@ -118,6 +118,7 @@ class Construction::Job < ActiveRecord::Base
   def create_queueable?
     # logger.debug '---> create_queueable?'
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
+    raise ForbiddenError.new('character must be divine supporter') if building_type[:divine_supporters_only] && !slot.settlement.owner.divine_supporter?
     requirement_groups = building_type[:requirementGroups]
     raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
 

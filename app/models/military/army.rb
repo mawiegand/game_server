@@ -65,6 +65,7 @@ class Military::Army < ActiveRecord::Base
       npc:          settlement.owner.npc,
       alliance_id:  settlement.alliance_id,
       alliance_tag: settlement.alliance_tag,
+      alliance_color: settlement.alliance_color,
       home_settlement_name: settlement.name,
       home_settlement_id:   settlement.id,
       ap_max:       4,
@@ -198,6 +199,12 @@ class Military::Army < ActiveRecord::Base
     end
     
     !founder.nil?
+  end
+
+  def move_to_location(target_location)
+    self.location = target_location
+    self.region = target_location.region
+    self.save
   end
   
   def found_outpost!
@@ -468,7 +475,7 @@ class Military::Army < ActiveRecord::Base
         unit_type[:costs].each do |unit_type_id, cost|
           costs += cost.to_i
         end
-        sum += unit * (costs * 0.08).floor
+        sum += (unit * (costs * 0.08).floor * unit_type[:experience_factor]).floor
       end
     end
     sum
@@ -553,7 +560,8 @@ class Military::Army < ActiveRecord::Base
     army.owner_name = army.owner.name
     army.alliance = army.owner.alliance
     army.alliance_tag = army.owner.alliance_tag
-    
+    army.alliance_color = army.owner.alliance_color
+
     details = army.build_details()
     
     GameRules::Rules.the_rules.unit_types.each do | unit_type |
@@ -692,7 +700,7 @@ class Military::Army < ActiveRecord::Base
     
       if !self.changes[:exp].blank?
         delta = (self.exp_change[1] || 0)-(self.exp_change[0] || 0)
-        self.owner.increment(:exp, delta)
+        self.owner.increment(:exp, (delta * (1 + (self.owner.exp_bonus_total || 0))).floor)
       end
 
       if !self.changes[:kills].blank?

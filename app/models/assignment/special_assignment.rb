@@ -390,7 +390,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     end
 
     unless experience_reward.nil?
-      self.character.increment(:exp, experience_reward)
+      self.character.increment(:exp, (experience_reward * (1 + (self.character.exp_bonus_total || 0))).floor)
       self.character.save!
     end
   end

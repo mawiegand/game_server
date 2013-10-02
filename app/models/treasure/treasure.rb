@@ -58,7 +58,7 @@ class Treasure::Treasure < ActiveRecord::Base
       end
 
       if !self.experience_reward.nil? && self.experience_reward > 0
-        self.finder.increment(:exp, self.experience_reward)
+        self.finder.increment(:exp, (self.experience_reward * (1 + (self.finder.exp_bonus_total || 0))).floor)
         self.finder.save!
       end
             

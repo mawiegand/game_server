@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130927084853) do
+ActiveRecord::Schema.define(:version => 20130930100929) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1639,6 +1639,15 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.datetime "updated_at"
   end
 
+  create_table "effect_alliance_experience_effects", :force => true do |t|
+    t.integer  "type_id"
+    t.integer  "origin_id"
+    t.integer  "alliance_id"
+    t.decimal  "bonus"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "effect_alliance_resource_effects", :force => true do |t|
     t.integer  "resource_id"
     t.integer  "type_id"
@@ -1655,6 +1664,16 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.decimal  "bonus"
     t.integer  "character_id"
     t.integer  "origin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "effect_experience_effects", :force => true do |t|
+    t.integer  "type_id"
+    t.integer  "origin_id"
+    t.integer  "character_id"
+    t.decimal  "bonus"
+    t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1729,6 +1748,9 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.integer  "size_bonus",                                    :default => 0
     t.boolean  "auto_join_disabled",                            :default => false, :null => false
     t.decimal  "construction_bonus_effects",                    :default => 0.0,   :null => false
+    t.integer  "additional_members",                            :default => 0
+    t.decimal  "experience_bonus_effects",                      :default => 0.0,   :null => false
+    t.integer  "color"
   end
 
   create_table "fundamental_announcements", :force => true do |t|
@@ -1766,6 +1788,7 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.boolean  "visible"
     t.integer  "alliance_id"
     t.integer  "army_id"
+    t.integer  "alliance_color"
   end
 
   create_table "fundamental_characters", :force => true do |t|
@@ -1852,6 +1875,13 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.boolean  "logged_in_on_second_day",                  :default => false, :null => false
     t.text     "description"
     t.decimal  "construction_bonus_alliance",              :default => 0.0,   :null => false
+    t.decimal  "exp_bonus_total",                          :default => 0.0,   :null => false
+    t.decimal  "exp_bonus_effects",                        :default => 0.0,   :null => false
+    t.decimal  "exp_bonus_alliance",                       :default => 0.0,   :null => false
+    t.boolean  "divine_supporter",                         :default => false
+    t.boolean  "platinum_lifetime",                        :default => false
+    t.integer  "alliance_color"
+    t.integer  "image_set_id"
   end
 
   create_table "fundamental_gossips", :force => true do |t|
@@ -1990,6 +2020,8 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.integer  "right_of_way"
     t.integer  "settlement_score",   :default => 0, :null => false
     t.string   "avatar_string"
+    t.integer  "alliance_color"
+    t.integer  "image_id"
   end
 
   add_index "map_locations", ["region_id"], :name => "index_map_locations_on_region_id"
@@ -2033,6 +2065,8 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.string   "invitation_code"
     t.string   "moving_password"
     t.string   "avatar_string"
+    t.integer  "alliance_color"
+    t.integer  "image_id"
   end
 
   add_index "map_regions", ["node_id"], :name => "index_map_regions_on_node_id"
@@ -2162,6 +2196,7 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.datetime "attack_protection_ends_at"
     t.decimal  "ap_rate",                         :default => 1.0,   :null => false
     t.string   "avatar_string"
+    t.integer  "alliance_color"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2352,7 +2387,7 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.integer  "retreated_to_location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "total_experience_gained",  :default => 0
+    t.integer  "total_experience_gained",  :default => 0, :null => false
     t.boolean  "disbanded"
     t.integer  "character_id"
     t.integer  "total_kills",              :default => 0, :null => false
@@ -2407,6 +2442,7 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.datetime "updated_at"
     t.integer  "kills",            :default => 0, :null => false
     t.integer  "kills_rank"
+    t.integer  "alliance_color"
   end
 
   create_table "ranking_character_rankings", :force => true do |t|
@@ -2443,6 +2479,7 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.decimal  "like_ratio",               :default => 0.0, :null => false
     t.string   "gender"
     t.string   "avatar_string"
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_histories", :force => true do |t|
@@ -2456,6 +2493,7 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_settlements", :force => true do |t|
@@ -2551,6 +2589,7 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.integer  "battle_id"
     t.decimal  "condition",                                      :default => 1.0,          :null => false
     t.datetime "condition_updated_at"
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_slots", :force => true do |t|
@@ -2577,6 +2616,7 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.datetime "updated_at"
     t.integer  "duration"
     t.decimal  "bonus",       :default => 0.0, :null => false
+    t.integer  "currency"
   end
 
   create_table "shop_credit_transactions", :force => true do |t|
@@ -2708,6 +2748,7 @@ ActiveRecord::Schema.define(:version => 20130927084853) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "external_offer_id"
+    t.integer  "price"
   end
 
   create_table "shop_special_offers_transactions", :force => true do |t|

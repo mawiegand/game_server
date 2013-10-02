@@ -70,7 +70,7 @@ class Map::Location < ActiveRecord::Base
     inviting_alliance = Fundamental::Alliance.find_by_invitation_code(invitation_code)
     return nil if inviting_alliance.nil?
 
-    max_home_bases = 3
+    max_home_bases = GAME_SERVER_CONFIG['max_home_bases_in_region_for_alliance_invitation']
     regions = []
 
     # select from owned regions, if any free location
@@ -110,14 +110,12 @@ class Map::Location < ActiveRecord::Base
 
   def self.location_with_geo_coords(coords)
     node = Map::Node.find_by_coords(coords['latitude'], coords['longitude'])
-    logger.debug "-----> node #{node}"
     target_location = nil
     if !node.nil?
       free_locations = node.region.locations.empty.count
-      logger.debug "-----> free_locations #{free_locations}"
-      if free_locations > 0
+      home_bases_count = node.region.locations.home_bases.count
+      if free_locations > 0 && home_bases_count < GAME_SERVER_CONFIG['max_home_bases_in_region_for_geo']
         target_location = node.region.locations.empty.offset(Random.rand(free_locations)).first
-        logger.debug "-----> target_location #{target_location}"
       else
         neighbor_nodes = node.neighbor_nodes
         # sort them by settlement count
@@ -194,6 +192,14 @@ class Map::Location < ActiveRecord::Base
     end
     nil
   end
+
+  def set_special_image(owner)
+    if !self.settlement.nil? && self.settlement.home_base? && owner.divine_supporter?
+      self.image_id = 1
+    else
+      self.image_id = nil
+    end
+  end
   
   # sets the owner_id and alliance_id to the new values. If theses
   # values changed, also updates the owner name and alliance tag.
@@ -204,18 +210,22 @@ class Map::Location < ActiveRecord::Base
     end
     if new_alliance != self.alliance
       self.alliance = new_alliance
-      self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag    
+      self.alliance_tag = self.alliance.nil? ? nil : self.alliance.tag
+      self.alliance_color = self.alliance.nil? ? nil : self.alliance.color
     end
+    self.set_special_image(new_owner)
   end
   
   def place_settlement(settlement)
-    self.region_id = settlement.region_id
+    self.region = settlement.region
     self.settlement_type_id = settlement.type_id
     self.settlement_level = settlement.level
-    self.owner_id = settlement.owner_id
-    self.owner_name = Fundamental::Character.find(settlement.owner_id).name
-    self.alliance_id = settlement.alliance_id
+    self.owner = settlement.owner
+    self.owner_name = settlement.owner.name
+    self.alliance = settlement.alliance
     self.alliance_tag = settlement.alliance_tag
+    self.alliance_color = settlement.alliance_color
+    self.set_special_image(settlement.owner)
     self.visible = true
     self.settlement_score = settlement.score
     self.save
@@ -227,9 +237,10 @@ class Map::Location < ActiveRecord::Base
     self.count_armies = nil
     self.owner_id = nil
     self.owner_name = nil
-    self.visible = nil
+    self.visible = false
     self.right_of_way = 0
     self.settlement_score = 0
+    self.image_id = nil
     self.save
   end
 

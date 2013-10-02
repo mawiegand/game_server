@@ -12,7 +12,8 @@ class Ticker::BattleHandler::UnitSummary
 		@sum_units = 0
 		@sum_casulties = 0
 		@sum_damage_inflicted = 0
-		@sum_experience_gained = 0
+    @sum_experience_gained = 0
+    @sum_experience_bonus = 0
 	end
 
 	def update_with_participant(participant)
@@ -21,13 +22,14 @@ class Ticker::BattleHandler::UnitSummary
 			rules = GameRules::Rules.the_rules
 			rules.unit_types.each do |unit_type|
 				num = army.number_of_units_of_type(unit_type)
-				if (num > 0)
-					if (@unit_stats[unit_type[:symbolic_id]].nil?)
-					@unit_stats[unit_type[:symbolic_id]] = { 
-						:unit_type => unit_type,
-						:num => 0, 
-						:casualties => 0, 
-						:damage_inflicted => 0}
+				if num > 0
+					if @unit_stats[unit_type[:symbolic_id]].nil?
+            @unit_stats[unit_type[:symbolic_id]] = {
+              :unit_type => unit_type,
+              :num => 0,
+              :casualties => 0,
+              :damage_inflicted => 0
+            }
 					end
 					stat = @unit_stats[unit_type[:symbolic_id]] 
 					stat[:num] += num
@@ -42,18 +44,19 @@ class Ticker::BattleHandler::UnitSummary
 		#puts rules.unit_types
 		rules.unit_types.each do |unit_type|
 			num = participant_result.get_units_of_unit_type(unit_type)
-			if (num > 0)
+			if num > 0
 				#init
-				if (@unit_stats[unit_type[:symbolic_id]].nil?)
+				if @unit_stats[unit_type[:symbolic_id]].nil?
 					@unit_stats[unit_type[:symbolic_id]] = { 
 						:unit_type => unit_type,
 						:num => 0, 
 						:casualties => 0, 
-						:damage_inflicted => 0}
+						:damage_inflicted => 0
+          }
 				end
 				stat = @unit_stats[unit_type[:symbolic_id]] 
 				#num
-				if (new_participant)
+				if new_participant
 					stat[:num] += num
 					@sum_units += num
 				end
@@ -68,7 +71,8 @@ class Ticker::BattleHandler::UnitSummary
 			end
 		end
 		#experience_gained
-		@sum_experience_gained += participant_result.experience_gained
+    @sum_experience_gained += participant_result.experience_gained
+    @sum_experience_bonus += participant_result.experience_gained
 	end
 
 	def get_damage_percentage(max_damage)
