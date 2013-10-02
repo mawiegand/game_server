@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="44" />
+    <Version major="0" minor="3" build="45" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -838,12 +838,12 @@
         <p>Mit der Häuptlingshütte hast Du den Steinbruch freigeschaltet. Warte nicht, baue sofort einen auf Level 2.</p>
       </Description>
       <Description locale="en_US">
-        <p>Build a quarry and a logger to improve your production.</p>
+        <p>Build a quarry level 2 to improve your production.</p>
       </Description>
       <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
       <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
-      <RewardText locale="de_DE">Steinbruch und Holzfäller sind sehr effektiv. Zur Steigerung der Fellproduktion kannst Du später den Kürschner bauen.</RewardText>
-      <RewardText locale="en_US">Quarries are very effective. Don't forget to keep an eye on your fur production though!</RewardText>
+      <RewardText locale="de_DE">Steinbrüche sind sehr effektiv. Baue eine Viezahl davon.</RewardText>
+      <RewardText locale="en_US">Quarries are very effective. Build more quarries!</RewardText>
       <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl5" />
@@ -868,12 +868,12 @@
         <p>Du kannst jetzt Holzfäller bauen. Holzfäller erhöhen Deine Holzproduktion deutlich stärker als Jäger und Sammler.</p>
       </Description>
       <Description locale="en_US">
-        <p>Upgrade three quarries and three logging camps to Level 4 to increase your production.</p>
+        <p>Upgrade the logger to level 2 to increase your production.</p>
       </Description>
       <Flavor locale="de_DE">Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.</Flavor>
       <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
       <RewardText locale="de_DE">Achte auf Deine Lagerkapazität, sonst laufen die Lager in Deiner Abwesenheit über.</RewardText>
-      <RewardText locale="en_US">Pay attention to your maximum storage capacity.</RewardText>
+      <RewardText locale="en_US">You will need more loggers.</RewardText>
       <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
       <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
       <Requirement quest="quest_build_1quarrylvl2" />

@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.3.8
+# Version: 1.3.9
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -122,7 +122,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 3,
-                    :build => 8,
+                    :build => 9,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -266,7 +266,7 @@ class GameRules::Rules
 
             "300 Golden Frogs",
 
-            "Halved Construction Time fpr 4 days",
+            "Halved Construction Time for 4 days",
 
           ],
 
