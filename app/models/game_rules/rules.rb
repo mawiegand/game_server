@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.3.9
+# Version: 1.3.11
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -122,7 +122,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 3,
-                    :build => 9,
+                    :build => 11,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -3003,7 +3003,7 @@ class GameRules::Rules
             
             :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
   
-            :de_DE => "<p>Der Gottesfürchtige Sammler steht nur den Göttlichen Supporten und zur Verfügung.</p>",
+            :de_DE => "<p>Der Gottesfürchtige Sammler steht nur den Göttlichen Supporten zur Verfügung.</p>",
                 
           },
           :description => {
@@ -3021,7 +3021,7 @@ class GameRules::Rules
           :buyable     => true,
           :divine_supporters_only => true,
           :demolishable=> false,
-          :destructable=> true,
+          :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
           :experience_factor => 0.49,
@@ -3349,7 +3349,7 @@ class GameRules::Rules
           :buyable     => true,
           :divine_supporters_only => false,
           :demolishable=> false,
-          :destructable=> true,
+          :destructable=> false,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
           :experience_factor => 12,
