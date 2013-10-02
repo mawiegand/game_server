@@ -74,7 +74,7 @@
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
     <Version major="1" minor="3" build="7" />
     <AppControl debugTracking="1">
-      <SpecialOfferDialog enabled="1" requiredFinishedQuests="22" />
+      <SpecialOfferDialog enabled="1" requiredFinishedQuests="23" />
     </AppControl>
     <Languages>
       <Language locale="en_US">English (US)</Language>
@@ -245,7 +245,7 @@
       </DisplayStrings>
       <DisplayStrings lang="en_US">
         <DisplayString>SecondSettlement:\nCamp</DisplayString>
-        <DisplayString>1500 Resources nonrecurring\n150 Resources per hour\n15% Production Bonus</DisplayString>
+        <DisplayString>1500 Resources\n150 Resources per hour\n15% Production Bonus</DisplayString>
         <DisplayString>300 Golden Frogs</DisplayString>
         <DisplayString>4 Days Halved Construction Time</DisplayString>
       </DisplayStrings>

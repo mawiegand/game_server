@@ -127,7 +127,7 @@ class GameRules::Rules
       :app_control => {
         :debug_tracking                         => 1,
         :special_offer_dialog                   => 1,
-        :special_offer_required_finished_quests => 22,
+        :special_offer_required_finished_quests => 23,
       },
       :battle => {
         :calculation => {
@@ -262,7 +262,7 @@ class GameRules::Rules
 
             "SecondSettlement:\nCamp",
 
-            "1500 Resources nonrecurring\n150 Resources per hour\n15% Production Bonus",
+            "1500 Resources\n150 Resources per hour\n15% Production Bonus",
 
             "300 Golden Frogs",
 
@@ -8030,7 +8030,7 @@ class GameRules::Rules
   
           },
 
-          :amount      => '1',
+          :amount      => '5',
 
           :production_bonus  => [
 
@@ -8089,7 +8089,7 @@ class GameRules::Rules
   
           },
 
-          :amount      => '1',
+          :amount      => '15',
 
           :production_bonus  => [
 
@@ -8148,7 +8148,7 @@ class GameRules::Rules
   
           },
 
-          :amount      => '1',
+          :amount      => '2',
 
           :production_bonus  => [
 
@@ -8207,7 +8207,7 @@ class GameRules::Rules
   
           },
 
-          :amount      => '1',
+          :amount      => '0',
 
           :experience_production => '15*(MRANK+1)',
 
@@ -8252,7 +8252,7 @@ class GameRules::Rules
   
           },
 
-          :amount      => '5',
+          :amount      => '1',
 
           :experience_production => 'MRANK',
 
@@ -8297,7 +8297,7 @@ class GameRules::Rules
   
           },
 
-          :amount      => '2',
+          :amount      => '10',
 
           :construction_bonus  => [
 
@@ -8308,7 +8308,7 @@ class GameRules::Rules
 
             {
               :domain_id          => 2,
-              :bonus              => 0.2,
+              :bonus              => 0.15,
             },
 
           ],
