@@ -17,7 +17,7 @@ class Action::Tutorial::RedeemRewardsActionsController < ApplicationController
 
     # check if quest is already finished by user
     if quest_state.status < Tutorial::Quest::STATE_FINISHED  # check again, whether quest is already finished
-      raise BadRequestError.new('quest is not finished yet and cannot be finished on the fly') unless quest_state.check_for_rewards(nil)
+      raise BadRequestError.new('quest is not finished yet and cannot be finished on the fly') unless quest_state.check_for_rewards(!use_restkit_api?, nil)
       quest_state.set_finished 
       quest_state.open_dependent_quest_states  # it's ok to run this twice; it only creates not-already-created dependent quests
     end
