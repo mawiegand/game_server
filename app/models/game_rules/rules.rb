@@ -224,24 +224,24 @@ class GameRules::Rules
 
           {
             :bonus_offer_id  => 1,
-            :duration        => 96,
+            :duration        => 120,
           },
 
           {
             :bonus_offer_id  => 2,
-            :duration        => 96,
+            :duration        => 120,
           },
 
           {
             :bonus_offer_id  => 3,
-            :duration        => 96,
+            :duration        => 120,
           },
 
         ],
 
         :construction_bonus  => {
           :amount    => 1,
-          :duration  => 96,
+          :duration  => 120,
         }
 
       },
