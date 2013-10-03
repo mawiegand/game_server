@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="45" />
+    <Version major="0" minor="3" build="46" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -968,9 +968,9 @@
       <RewardFlavor locale="en_US">Hmm? That small? It's impossible to seat all of our guests in here… there are at least twenty neighbours to invite!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl6" />
       <Rewards>
-        <ResourceReward resource="resource_stone">2250</ResourceReward>
-        <ResourceReward resource="resource_wood">2250</ResourceReward>
-        <ResourceReward resource="resource_fur">2250</ResourceReward>
+        <ResourceReward resource="resource_stone">1600</ResourceReward>
+        <ResourceReward resource="resource_wood">1600</ResourceReward>
+        <ResourceReward resource="resource_fur">1600</ResourceReward>
         <ExperienceReward>450</ExperienceReward>
       </Rewards>
       <RewardTests>
