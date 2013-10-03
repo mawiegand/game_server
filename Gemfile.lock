@@ -43,7 +43,6 @@ GEM
     activesupport (3.1.12)
       multi_json (~> 1.0)
     ansi (1.4.3)
-    apns (1.0.0)
     arel (2.2.3)
     builder (3.0.4)
     capistrano (2.14.2)
@@ -179,7 +178,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  apns
   awe_native_extensions (>= 0.0.16)!
   capistrano (~> 2.14.0)
   ci_reporter
