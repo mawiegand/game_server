@@ -237,6 +237,34 @@ end %>
 </tr>
 
 
+<%
+
+istore_offers = [
+  { id: 761, name: "iTunes Startpackage" },
+  { id: 576, name: "iTunes X 5D-Credits" },
+]
+
+istore_offers.each do |offer|
+%>
+  <tr style="text-align: right;">
+    <td><%= offer[:id] %></td>
+    <td><%= offer[:name] %></td>
+    <td><%= if !Shop::MoneyTransaction.offer(offer[:id]).first.nil?
+              Shop::MoneyTransaction.offer(offer[:id]).first.gross
+            else
+              "-"
+            end %></td>
+    <td><%= Shop::MoneyTransaction.offer(offer[:id]).since_date(@round_started_at).no_charge_back.completed.count %></td>
+    <td><%= number_to_currency    Shop::MoneyTransaction.offer(offer[:id]).since_date(@round_started_at).no_charge_back.completed.sum(:gross), :unit => "EUR"  %></td>
+    <td><%= number_to_currency Shop::MoneyTransaction.offer(offer[:id]).since_date(@round_started_at).no_charge_back.completed.sum(:earnings), :unit => "EUR"  %></td>
+    <td><%= number_to_currency Shop::MoneyTransaction.offer(offer[:id]).since_date(@round_started_at).charge_back.sum(:gross), :unit => "EUR"  %></td>
+  </tr>
+
+<% 
+end 
+%>
+
+
 </table>
 
 <p>Gross and earnings already have been reduced by charge-backs.</p>
