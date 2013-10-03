@@ -5,7 +5,11 @@ class Shop::FbPaymentsController < ApplicationController
   VERIFY_TOKEN = 'UKUKvzHHAg8gjXynx3hioFX7nC8KLa'
 
   def callback
-    render text: params['hub.challenge']
+    if params['hub.verify_token'] == VERIFY_TOKEN
+      render text: params['hub.challenge']
+    else
+      render text: 'error'
+    end
   end
 
 end
