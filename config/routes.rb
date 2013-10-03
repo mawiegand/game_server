@@ -341,6 +341,8 @@ GameServer::Application.routes.draw do
     
       match '/signin',  :to => 'auth/sessions#new'
       match '/signout', :to => 'auth/sessions#destroy'
-    end    
+
+      match '/shop/fb_payments/callback', :to => 'shop/fb_payments#callback'
+    end
   end
 end
