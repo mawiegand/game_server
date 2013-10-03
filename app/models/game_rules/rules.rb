@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.3.12
+# Version: 1.4.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -121,8 +121,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 1,
-                    :minor => 3,
-                    :build => 12,
+                    :minor => 4,
+                    :build => 0,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -3020,8 +3020,8 @@ class GameRules::Rules
   
           :buyable     => true,
           :divine_supporters_only => true,
-          :demolishable=> false,
-          :destructable=> false,
+          :demolishable=> true,
+          :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
           :experience_factor => 0.49,
