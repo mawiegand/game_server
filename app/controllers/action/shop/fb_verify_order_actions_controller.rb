@@ -8,11 +8,8 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
 
   FB_APP_ID        = '127037377498922'
   FB_APP_SECRET    = 'f88034e6df205b5aa3854e0b92638754'
-  FB_CREDIT_AMOUNT = 30
 
   def create
-
-    status = nil
 
     offer_id       = params['fb_verify_order_action'] && params['fb_verify_order_action']['offer_id']
     payment_id     = params['fb_verify_order_action'] && params['fb_verify_order_action']['payment_id']
@@ -27,10 +24,7 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
         parsed_response = response.parsed_response
         data = Util::Facebook.parse_signed_request(signed_request, FB_APP_SECRET)
 
-        logger.debug "----> parsed_response: #{parsed_response}"
-        logger.debug "----> data: #{data}"
-
-        unless data.nil?
+        if !data.nil?
 
           action   = parsed_response['actions'] && parsed_response['actions'][0]
           item_url = parsed_response['items'] && parsed_response['items'][0] && parsed_response['items'][0]['product']
@@ -65,11 +59,23 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
               api_response = JSON.parse(api_response) if api_response.is_a?(String)
               if api_response['resultCode'] === 0
                 status = :ok
+              else
+                status = :unprocessable_entity
               end
+            else
+              status = :unprocessable_entity
             end
+          else
+            status = :bad_request
           end
+        else
+          status = :bad_request
         end
+      else
+        status = :bad_request
       end
+    else
+      status = :bad_request
     end
 
     respond_to do |format|
