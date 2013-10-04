@@ -37,7 +37,7 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
           offer    = Shop::FbCreditOffer.find_by_id(offer_id)
 
           if action['status'] == 'completed' &&
-              data['action'] == 'completed' &&
+              data['status'] == 'completed' &&
               !offer.nil? &&
               offer.url == item_url
 
