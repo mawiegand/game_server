@@ -492,7 +492,7 @@ class Fundamental::Character < ActiveRecord::Base
     raise BadRequestError.new('Could not connect player.')        unless response.code == 200    
     
     self.fb_player_id = fb_player_id
-    self.fp_player_id_connected_at = Time.now
+    self.fb_player_id_connected_at = Time.now
     self.fb_rejected_at = nil
     self.save
   end
