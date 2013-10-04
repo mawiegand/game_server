@@ -15,6 +15,8 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
 
   def create
 
+    status = nil
+
     payment_id = params['fb_verify_order_action'] && params['fb_verify_order_action']['payment_id']
     signed_request = params['fb_verify_order_action'] && params['fb_verify_order_action']['signed_request']
 
@@ -29,37 +31,31 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
 
         if action['status'] == 'completed'
 
-          fb_user_id = parsed_response['user'] && parsed_response['user']['id']
-          identity = Identity.find_by_fb_player_id(fb_user_id)
+          data = {
+              userID:      current_character.identifier,
+              method:      'bytro',
+              offerID:     '249',
+              scaleFactor: FB_CREDIT_AMOUNT.to_s,
+              tstamp:      Time.now.to_i.to_s,
+              comment:     '1',
+              # comment: Base64.encode64(virtual_bank_transaction[:transaction_id].to_s).gsub(/[\n\r ]/,'')  # Hack!
+          }
 
-          unless identity.nil?
-            data = {
-                userID:      identity.identifier,
-                method:      'bytro',
-                offerID:     '249',
-                scaleFactor: FB_CREDIT_AMOUNT.to_s,
-                tstamp:      Time.now.to_i.to_s,
-                comment:     '1',
-                # comment: Base64.encode64(virtual_bank_transaction[:transaction_id].to_s).gsub(/[\n\r ]/,'')  # Hack!
-            }
+          query = {
+              eID:    'api',
+              key:    CreditShop::BytroShop::KEY,
+              action: 'processPayment',
+              data:   CreditShop::BytroShop.encoded_data(data),
+          }
 
-            query = {
-                eID:    'api',
-                key:    CreditShop::BytroShop::KEY,
-                action: 'processPayment',
-                data:   CreditShop::BytroShop.encoded_data(data),
-            }
+          query = CreditShop::BytroShop.add_hash(query)
+          http_response = HTTParty.post(CreditShop::BytroShop::URL_BASE, :query => query)
 
-            query = CreditShop::BytroShop.add_hash(query)
-            http_response = HTTParty.post(CreditShop::BytroShop::URL_BASE, :query => query)
-
-            if http_response.code === 200
-              api_response = http_response.parsed_response
-              api_response = JSON.parse(api_response) if api_response.is_a?(String)
-              if api_response['resultCode'] === 0
-                render json: :ok
-                return
-              end
+          if http_response.code === 200
+            api_response = http_response.parsed_response
+            api_response = JSON.parse(api_response) if api_response.is_a?(String)
+            if api_response['resultCode'] === 0
+              status = :ok
             end
           end
         end
@@ -67,7 +63,7 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
     end
 
     respond_to do |format|
-      format.json { render json: {}, status: :ok }
+      format.json { render json: {}, status: status }
     end
   end
 
