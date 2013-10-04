@@ -487,8 +487,9 @@ class Fundamental::Character < ActiveRecord::Base
   
   def connect_facebook_transaction(fb_player_id, fb_access_token)
     response = identity_provider_access.connect_facebook(fb_player_id, fb_access_token, self.identifier)
-    raise ConflictError.new('Character or facebook user are already connected') if response.code == 409    
-    raise BadRequestError.new('Could not connect player.')                      unless response.code == 200    
+    raise ConflictError.new('Facebook user is already connected') if response.code == 409    
+    raise ForbiddenError.new('Character is already connected')    if response.code == 400    
+    raise BadRequestError.new('Could not connect player.')        unless response.code == 200    
   end
   
   

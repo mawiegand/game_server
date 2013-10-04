@@ -59,7 +59,7 @@ module IdentityProvider
     end
     
     def connect_facebook(fb_player_id, fb_access_token, identifier)
-      put('/identities/' + identifier + 'facebook/' + fb_player_id, {:facebook => {:access_token => fb_access_token }})
+      put('/identities/' + identifier + '/facebook/' + fb_player_id, {:facebook => {:access_token => fb_access_token }})
     end
 
     def deliver_custom_booking_notification(character, amount)
