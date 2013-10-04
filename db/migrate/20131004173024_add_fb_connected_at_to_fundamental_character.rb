@@ -28,6 +28,7 @@ class AddFbConnectedAtToFundamentalCharacter < ActiveRecord::Migration
         character.gc_player_id              = data['gc_player_id']
         character.gc_player_id_connected_at = data['gc_player_id_connected_at']
         character.gc_rejected_at            = data['gc_rejected_at']
+        character.save
       end
     end
   end
