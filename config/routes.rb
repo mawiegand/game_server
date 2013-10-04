@@ -243,6 +243,7 @@ GameServer::Application.routes.draw do
           resources :speedup_artifact_initiation_actions,    :only => [ :create ]
           resources :displayed_premium_expiration_actions,   :only => [ :create ]
           resources :user_content_report_actions,            :only => [ :create ]
+          resources :connect_facebook_actions,               :only => [ :create ]    
         end
         namespace :construction do
           resources :finish_job_actions    
