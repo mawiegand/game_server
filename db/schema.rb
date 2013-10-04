@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130930100929) do
+ActiveRecord::Schema.define(:version => 20131004095426) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2586,10 +2586,10 @@ ActiveRecord::Schema.define(:version => 20130930100929) do
     t.integer  "name_change_count",                              :default => 0
     t.integer  "alliance_size_bonus",                            :default => 0
     t.integer  "assignment_level",                               :default => 0,            :null => false
+    t.integer  "alliance_color"
     t.integer  "battle_id"
     t.decimal  "condition",                                      :default => 1.0,          :null => false
     t.datetime "condition_updated_at"
-    t.integer  "alliance_color"
   end
 
   create_table "settlement_slots", :force => true do |t|
@@ -2644,6 +2644,16 @@ ActiveRecord::Schema.define(:version => 20130930100929) do
     t.string   "hash"
     t.string   "seed"
     t.string   "partner_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_fb_credit_offers", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "url"
+    t.string   "image_url"
+    t.text     "prices"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

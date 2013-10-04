@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head prefix=
+    "og: http://ogp.me/ns#
+     fb: http://ogp.me/ns/fb#
+     product: http://ogp.me/ns/product#">
+  <meta property="og:type"                   content="og:product" />
+  <meta property="og:title"                  content="<%= @shop_fb_credit_offer.title %>" />
+  <meta property="og:image"                  content="<%= @shop_fb_credit_offer.image_url %>" />
+  <meta property="og:description"            content="<%= @shop_fb_credit_offer.description %>" />
+  <meta property="og:url"                    content="<%= @shop_fb_credit_offer.url %>" />
+  <% @prices.each do |price| %>
+    <% price.each do |currency, amount| %>
+  <meta property="product:price:amount"      content="<%= amount %>"/>
+  <meta property="product:price:currency"    content="<%= currency %>"/>
+    <% end %>
+  <% end %>
+</head>
+</html>
