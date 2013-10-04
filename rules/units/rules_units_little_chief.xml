@@ -37,9 +37,6 @@
   <RequirementGroup>
     <Requirement id="building_campfire" min_level="10" />  
   </RequirementGroup>
-  <RequirementGroup>
-      <Requirement id="building_alliance_hall" min_level="1" />
-  </RequirementGroup>
   <!-- add ability to found settlement here not in category -->    
   <CanCreate id="settlement_outpost" />
 </Unit>
