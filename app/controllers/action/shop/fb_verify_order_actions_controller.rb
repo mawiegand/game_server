@@ -28,13 +28,13 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
         data = Util::Facebook.parse_signed_request(signed_request, FB_APP_SECRET)
 
         logger.debug "----> parsed_response: #{parsed_response}"
-        logger.debug "----> parsed_response: #{data}"
+        logger.debug "----> data: #{data}"
 
         unless data.nil?
 
-          action = parsed_response['actions'][0]
-          item_url = data['items'][0]['product']
-          offer = Shop::FbCreditOffer.find_by_id(offer_id)
+          action   = parsed_response['actions'] && parsed_response['actions'][0]
+          item_url = parsed_response['items'] && parsed_response['items'][0] && parsed_response['items'][0]['product']
+          offer    = Shop::FbCreditOffer.find_by_id(offer_id)
 
           if action['status'] == 'completed' &&
               data['action'] == 'completed' &&
