@@ -1,3 +1,7 @@
+require 'httparty'
+require 'identity_provider/access'
+
+
 class AddFbConnectedAtToFundamentalCharacter < ActiveRecord::Migration
   
   def up
