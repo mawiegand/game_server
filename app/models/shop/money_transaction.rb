@@ -21,7 +21,8 @@ class Shop::MoneyTransaction < ActiveRecord::Base
     self.sent_special_offer_alert = true
     self.save
 
-    Backend::StatusMailer.sent_special_offer_alert(self).deliver
+    mail = Backend::StatusMailer.sent_special_offer_alert(self)
+    mail.deliver unless mail.nil?
   end
 
   def unsent_special_offer_alert?
