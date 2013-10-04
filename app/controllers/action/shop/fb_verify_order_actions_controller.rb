@@ -15,8 +15,8 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
 
   def create
 
-    payment_id = params['fb_verify_order_actions'] && params['fb_verify_order_actions']['payment_id']
-    signed_request = params['fb_verify_order_actions'] && params['fb_verify_order_actions']['signed_request']
+    payment_id = params['fb_verify_order_action'] && params['fb_verify_order_action']['payment_id']
+    signed_request = params['fb_verify_order_action'] && params['fb_verify_order_action']['signed_request']
 
     if !payment_id.blank? && !signed_request.blank?
 
