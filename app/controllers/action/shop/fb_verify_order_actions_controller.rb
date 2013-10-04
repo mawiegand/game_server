@@ -27,7 +27,7 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
         parsed_response = response.parsed_response
         action = parsed_response['actions'][0]
 
-        data = parse_signed_request(signed_request, FB_APP_SECRET)
+        data = Util::Facebook.parse_signed_request(signed_request, FB_APP_SECRET)
 
         unless data.nil?
 
