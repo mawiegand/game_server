@@ -490,6 +490,11 @@ class Fundamental::Character < ActiveRecord::Base
     raise ConflictError.new('Facebook user is already connected') if response.code == 409    
     raise ForbiddenError.new('Character is already connected')    if response.code == 400    
     raise BadRequestError.new('Could not connect player.')        unless response.code == 200    
+    
+    self.fb_player_id = fb_player_id
+    self.fp_player_id_connected_at = Time.now
+    self.fb_rejected_at = nil
+    self.save
   end
   
   
