@@ -227,6 +227,14 @@ class Fundamental::Character < ActiveRecord::Base
       end
     end
   end
+  
+  def identity_provider_access
+    @identity_provider_access ||= IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+  end
 
   def redeem_startup_gift(gift_list)
     list = ActiveSupport::JSON.decode(gift_list)
@@ -235,12 +243,6 @@ class Fundamental::Character < ActiveRecord::Base
       self.resource_pool.add_resource_atomically(resource_gift['resource_type_id'].to_i, resource_gift['amount'].to_f)
     end
 
-    # mail schicken
-    identity_provider_access = IdentityProvider::Access.new({
-      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
-      scopes:                     ['5dentity'],
-      })
     response = identity_provider_access.deliver_gift_received_notification(self, list || [])
   end
 
@@ -436,12 +438,6 @@ class Fundamental::Character < ActiveRecord::Base
     end
 
     # change name on identity provider
-    identity_provider_access = IdentityProvider::Access.new({
-      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
-      scopes:                     ['5dentity'],
-    })
-    
     response = identity_provider_access.change_character_name(self.identifier, name)
     raise ConflictError.new("this name is already used in identity provider") unless response.code == 200
     
@@ -483,16 +479,18 @@ class Fundamental::Character < ActiveRecord::Base
   end  
   
   def change_password_transaction(password)
-
-    identity_provider_access = IdentityProvider::Access.new({
-      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
-      scopes:                     ['5dentity'],
-    })
-    
     response = identity_provider_access.change_character_passwort(self.identifier, password)
     raise ConflictError.new('Could not change password.') unless response.code == 200
   end  
+  
+  
+  
+  def connect_facebook_transaction(fb_player_id, fb_access_token)
+    response = identity_provider_access.connect_facebook(fb_player_id, fb_access_token, self.identifier)
+    raise ConflictError.new('Character or facebook user are already connected') if response.code == 409    
+    raise BadRequestError.new('Could not connect player.')                      unless response.code == 200    
+  end
+  
   
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
   def claim_location(location)
