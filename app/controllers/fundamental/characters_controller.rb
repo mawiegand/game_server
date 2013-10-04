@@ -146,6 +146,13 @@ class Fundamental::CharactersController < ApplicationController
       if !identity['divine_supporter_since'].nil? && Time.parse(identity['divine_supporter_since']) < Time.now
         character.divine_supporter = true
       end
+      
+      character.fb_player_id              = identity['fb_player_id']
+      character.fb_player_id_connected_at = identity['fb_player_id_connected_at']
+      character.fb_rejected_at            = identity['fb_rejected_at']
+      character.gc_player_id              = identity['gc_player_id']
+      character.gc_player_id_connected_at = identity['gc_player_id_connected_at']
+      character.gc_rejected_at            = identity['gc_rejected_at']
 
       character.image_set_id = identity['image_set_id']
       character.insider_since = identity['insider_since']
