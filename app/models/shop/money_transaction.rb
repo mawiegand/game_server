@@ -10,7 +10,8 @@ class Shop::MoneyTransaction < ActiveRecord::Base
     self.sent_mail_alert = true
     self.save
 
-    Backend::StatusMailer.sent_chargeback_alert(self).deliver
+    mail = Backend::StatusMailer.sent_chargeback_alert(self)
+    mail.deliver unless mail.nil?
   end
 
   def unsent_chargeback_alert?
