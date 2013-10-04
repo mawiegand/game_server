@@ -18,20 +18,22 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
     payment_id     = params['fb_verify_order_action'] && params['fb_verify_order_action']['payment_id']
     signed_request = params['fb_verify_order_action'] && params['fb_verify_order_action']['signed_request']
 
-    if !payment_id.blank? && !signed_request.blank?
+    if !offer_id.blank? && !payment_id.blank? && !signed_request.blank?
 
       response = HTTParty.get("https://graph.facebook.com/#{payment_id}", :query => {access_token: "#{FB_APP_ID}|#{FB_APP_SECRET}"})
 
       if response.code == 200
 
         parsed_response = response.parsed_response
-        action = parsed_response['actions'][0]
-
         data = Util::Facebook.parse_signed_request(signed_request, FB_APP_SECRET)
+
+        logger.debug "----> parsed_response: #{parsed_response}"
+        logger.debug "----> parsed_response: #{data}"
 
         unless data.nil?
 
-          item_url = parsed_response['items'][0]['product']
+          action = parsed_response['actions'][0]
+          item_url = data['items'][0]['product']
           offer = Shop::FbCreditOffer.find_by_id(offer_id)
 
           if action['status'] == 'completed' &&
