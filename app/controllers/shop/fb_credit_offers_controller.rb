@@ -1,8 +1,8 @@
 class Shop::FbCreditOffersController < ApplicationController
   layout 'shop'
 
-  before_filter :deny_api
-  before_filter :authorize_staff, :except => [:show]
+  before_filter :deny_api       , :except => [:show, :index]
+  before_filter :authorize_staff, :except => [:show, :index]
 
   # GET /shop/fb_credit_offers
   # GET /shop/fb_credit_offers.json

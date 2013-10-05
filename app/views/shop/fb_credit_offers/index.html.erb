@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Amount</th>
     <th>Title</th>
     <th>Description</th>
     <th>Url</th>
@@ -14,6 +15,7 @@
 
 <% @shop_fb_credit_offers.each do |shop_fb_credit_offer| %>
   <tr>
+    <td><%= shop_fb_credit_offer.amount %></td>
     <td><%= shop_fb_credit_offer.title %></td>
     <td><%= shop_fb_credit_offer.description %></td>
     <td><%= shop_fb_credit_offer.url %></td>

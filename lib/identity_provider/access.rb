@@ -57,6 +57,10 @@ module IdentityProvider
     def change_character_name(identifier, name)
       put('/identities/' + identifier, {:identity => {:nickname => name}})
     end
+    
+    def connect_facebook(fb_player_id, fb_access_token, identifier)
+      put('/identities/' + identifier + '/facebook/' + fb_player_id, {:facebook => {:access_token => fb_access_token }})
+    end
 
     def deliver_custom_booking_notification(character, amount)
       subject = I18n.translate('application.identity_provider.custom_booking.subject', locale: character.lang)
