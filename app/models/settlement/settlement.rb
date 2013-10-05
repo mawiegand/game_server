@@ -184,7 +184,7 @@ class Settlement::Settlement < ActiveRecord::Base
   
   
   def update_condition
-    reg_per_hour = 0.01   # regenerates 1 percent per hour
+    reg_per_hour = 0.02   # regenerates 2 percent per hour
     
     # condition = MIN [ 1.0, condition + (INTERVAL(now - condition_updated_at) * CONDITION_REG_PER_SECOND) ]
     if condition < 0.0
@@ -208,7 +208,7 @@ class Settlement::Settlement < ActiveRecord::Base
   end
   
   def wear_down_condition
-    self.condition = [(condition || 0.0)-0.05, 0.0].max
+    self.condition = [(condition || 0.0)-0.03, 0.0].max
     self.condition_updated_at = DateTime.now
   end
   
