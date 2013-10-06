@@ -29,20 +29,20 @@ armies_count.times do
   settlement.save
   
   army = Military::Army.new({
-	  name: 'New Army',
-  	home_settlement_id: character.home_location.settlement.id,
-	  home_settlement_name: character.home_location.settlement.name,
-  	ap_max: 4,
-	  ap_present: 4,
+    name: 'New Army',
+    home_settlement_id: character.home_location.settlement.id,
+    home_settlement_name: character.home_location.settlement.name,
+    ap_max: 4,
+    ap_present: 4,
     ap_seconds_per_point:  Military::Army.regeneration_duration,
-  	mode: Military::Army::MODE_IDLE,
-	  stance: 0,
-  	size_max: location.settlement.army_size_max || 1000,  # 1000 is default size
-	  exp: 0,
-  	rank: 0,
-	  ap_next: DateTime.now.advance(:seconds =>  Military::Army.regeneration_duration),
-  	garrison: false,
-  	kills: 0,
+    mode: Military::Army::MODE_IDLE,
+    stance: 0,
+    size_max: location.settlement.army_size_max || 1000,  # 1000 is default size
+    exp: 0,
+    rank: 0,
+    ap_next: DateTime.now.advance(:seconds =>  Military::Army.regeneration_duration),
+    garrison: false,
+    kills: 0,
 	  victories: 0,
   })
   
@@ -60,7 +60,9 @@ armies_count.times do
   
   army.update_from_details
   
-  puts "Created " + counter + " army!" if army.save
+  puts "Created army number " + counter.to_s if army.save
+
+  counter += 1
 end
 
 puts "Finished."
