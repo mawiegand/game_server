@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130930100929) do
+ActiveRecord::Schema.define(:version => 20131004173024) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1882,6 +1882,12 @@ ActiveRecord::Schema.define(:version => 20130930100929) do
     t.boolean  "platinum_lifetime",                        :default => false
     t.integer  "alliance_color"
     t.integer  "image_set_id"
+    t.string   "fb_player_id"
+    t.datetime "fb_player_id_connected_at"
+    t.datetime "fb_rejected_at"
+    t.string   "gc_player_id"
+    t.datetime "gc_player_id_connected_at"
+    t.datetime "gc_rejected_at"
   end
 
   create_table "fundamental_gossips", :force => true do |t|
@@ -2646,6 +2652,17 @@ ActiveRecord::Schema.define(:version => 20130930100929) do
     t.string   "partner_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "shop_fb_credit_offers", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "url"
+    t.string   "image_url"
+    t.text     "prices"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "amount"
   end
 
   create_table "shop_money_transactions", :force => true do |t|

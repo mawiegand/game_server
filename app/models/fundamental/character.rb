@@ -58,7 +58,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :divine_supporter, :image_set_id, :platinum_lifetime, :moved_at, :as => :owner
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :divine_supporter, :image_set_id, :platinum_lifetime, :moved_at, :gc_player_id, :gc_rejected_at, :gc_player_id_connected_at, :fb_player_id, :fb_rejected_at, :fb_player_id_connected_at, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -227,6 +227,14 @@ class Fundamental::Character < ActiveRecord::Base
       end
     end
   end
+  
+  def identity_provider_access
+    @identity_provider_access ||= IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+  end
 
   def redeem_startup_gift(gift_list)
     list = ActiveSupport::JSON.decode(gift_list)
@@ -235,12 +243,6 @@ class Fundamental::Character < ActiveRecord::Base
       self.resource_pool.add_resource_atomically(resource_gift['resource_type_id'].to_i, resource_gift['amount'].to_f)
     end
 
-    # mail schicken
-    identity_provider_access = IdentityProvider::Access.new({
-      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
-      scopes:                     ['5dentity'],
-      })
     response = identity_provider_access.deliver_gift_received_notification(self, list || [])
   end
 
@@ -436,12 +438,6 @@ class Fundamental::Character < ActiveRecord::Base
     end
 
     # change name on identity provider
-    identity_provider_access = IdentityProvider::Access.new({
-      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
-      scopes:                     ['5dentity'],
-    })
-    
     response = identity_provider_access.change_character_name(self.identifier, name)
     raise ConflictError.new("this name is already used in identity provider") unless response.code == 200
     
@@ -483,16 +479,24 @@ class Fundamental::Character < ActiveRecord::Base
   end  
   
   def change_password_transaction(password)
-
-    identity_provider_access = IdentityProvider::Access.new({
-      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
-      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
-      scopes:                     ['5dentity'],
-    })
-    
     response = identity_provider_access.change_character_passwort(self.identifier, password)
     raise ConflictError.new('Could not change password.') unless response.code == 200
   end  
+  
+  
+  
+  def connect_facebook_transaction(fb_player_id, fb_access_token)
+    response = identity_provider_access.connect_facebook(fb_player_id, fb_access_token, self.identifier)
+    raise ConflictError.new('Facebook user is already connected') if response.code == 409    
+    raise ForbiddenError.new('Character is already connected')    if response.code == 400    
+    raise BadRequestError.new('Could not connect player.')        unless response.code == 200    
+    
+    self.fb_player_id = fb_player_id
+    self.fb_player_id_connected_at = Time.now
+    self.fb_rejected_at = nil
+    self.save
+  end
+  
   
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
   def claim_location(location)

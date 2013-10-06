@@ -2,6 +2,7 @@ class Effect::AllianceResourceEffect < ActiveRecord::Base
 
   belongs_to :alliance, :class_name => "Fundamental::Alliance", :foreign_key => "alliance_id", :inverse_of => :resource_effects
 
+  RESOURCE_EFFECT_TYPE_START_GIFT = 0
   RESOURCE_EFFECT_TYPE_ARTIFACT = 1
 
   after_create   :propagate_effect_creation
