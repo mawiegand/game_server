@@ -37,6 +37,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   before_save   :update_size_bonus
 
   after_save    :propagate_tag_change
+  after_save    :propagate_name_change
   after_save    :propagate_color_change
   after_save    :propagate_to_ranking
 
@@ -452,7 +453,6 @@ class Fundamental::Alliance < ActiveRecord::Base
       true
     end
 
-
     def propagate_tag_change
       alliance_tag_change = self.changes[:tag]
 
@@ -461,6 +461,17 @@ class Fundamental::Alliance < ActiveRecord::Base
           character.alliance_tag = self.tag
           character.save
         end
+        self.ranking.alliance_tag = self.tag
+        self.ranking.save
+      end
+    end
+
+    def propagate_name_change
+      alliance_name_change = self.changes[:name]
+
+      if !alliance_name_change.blank?
+        self.ranking.alliance_name = self.name
+        self.ranking.save
       end
     end
 
@@ -472,6 +483,8 @@ class Fundamental::Alliance < ActiveRecord::Base
           character.alliance_color = self.color
           character.save
         end
+        self.ranking.alliance_color = self.color
+        self.ranking.save
       end
     end
 
