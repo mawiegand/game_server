@@ -27,7 +27,7 @@
   <Cost id="resource_cash" round="true">EQUAL(LEVEL,20)*1</Cost>
   <ProductionTime shortenable="false">GREATER(LEVEL,1)*(EQUAL(LEVEL,2)*3600+LESS(LEVEL,11)*(3600*FLOOR(POW(LEVEL,1.5)-1))+GREATER(LEVEL,10)*(3600*(FLOOR(POW(LEVEL,0.8)-MAX(LEVEL-5,0)))+29*3600))</ProductionTime>
   <Abilities> <!-- just for grouping -->
-    <UnlockGarrison level="3" />
+    <UnlockGarrison level="2" />
     <GarrisonSizeBonus>LESS(LEVEL,20)*300+EQUAL(LEVEL,20)*400</GarrisonSizeBonus>
     <ArmySizeBonus>LESS(LEVEL,20)*300+EQUAL(LEVEL,20)*400</ArmySizeBonus>
     <CommandPoints>GREATER(LEVEL,1)</CommandPoints>

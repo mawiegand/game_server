@@ -126,6 +126,7 @@ class GameRules::Rules
       },
       :app_control => {
         :debug_tracking                         => 1,
+        :startscreen                            => 'map',
         :special_offer_dialog                   => 1,
         :special_offer_required_finished_quests => 24,
       },
@@ -5383,7 +5384,7 @@ class GameRules::Rules
 
             :defense_bonus => "0.2*LEVEL",
 
-            :unlock_garrison => 3,            
+            :unlock_garrison => 2,            
 
             :command_points => "GREATER(LEVEL,1)",
 
