@@ -173,6 +173,7 @@ class GameRules::Rules
       },
       :app_control => {
         :debug_tracking                         => <xsl:value-of select="//General/AppControl/@debugTracking" />,
+        :startscreen                            => '<xsl:value-of select="//General/AppControl/@startscreen" />',
         :special_offer_dialog                   => <xsl:value-of select="//General/AppControl/SpecialOfferDialog/@enabled" />,
         :special_offer_required_finished_quests => <xsl:value-of select="//General/AppControl/SpecialOfferDialog/@requiredFinishedQuests" />,
       },

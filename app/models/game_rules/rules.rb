@@ -126,6 +126,7 @@ class GameRules::Rules
       },
       :app_control => {
         :debug_tracking                         => 1,
+        :startscreen                            => 'map',
         :special_offer_dialog                   => 1,
         :special_offer_required_finished_quests => 24,
       },
@@ -2566,19 +2567,6 @@ class GameRules::Rules
 
             ],
 
-            [
-              
-            {
-              :symbolic_id => 'building_alliance_hall',
-              :id => 15,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            ],
-
           ],          
 
           :can_create => [
@@ -3008,9 +2996,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Der Gottesgläubige Sammler folgt nur den Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p><p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Der Gottesgläubige Sammler folgt nur den Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p><p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p>",
   
-            :en_US => "<p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p><p>Through his devotion he can find ressources and even golden frogs at a much higher rate than their peers.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p><p>Through his devotion he can find ressources and even golden frogs at a much higher rate than their peers.</p>",
                 
           },
 
@@ -5396,7 +5384,7 @@ class GameRules::Rules
 
             :defense_bonus => "0.2*LEVEL",
 
-            :unlock_garrison => 3,            
+            :unlock_garrison => 2,            
 
             :command_points => "GREATER(LEVEL,1)",
 

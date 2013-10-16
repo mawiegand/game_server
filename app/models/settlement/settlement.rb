@@ -545,7 +545,7 @@ class Settlement::Settlement < ActiveRecord::Base
     capacity = recalc_resource_capacity
     check_and_apply_capacity(capacity)    
     
-    if (self.owns_region?)
+    if self.owns_region?
       propagate_taxrate(true)
       tax_income = recalc_tax_income
       check_and_apply_tax_income(tax_income)
@@ -1299,6 +1299,7 @@ class Settlement::Settlement < ActiveRecord::Base
           end
         end
       end
+      true
     end
     
     # propagates local changes to the location, where some fields are mirrored
@@ -1313,7 +1314,7 @@ class Settlement::Settlement < ActiveRecord::Base
         self.location.settlement_type_id = self.type_id if (self.location.settlement_type_id != self.type_id)
         self.location.save
       end
-      return true
+      true
     end
   
     # propagates local changes to the region, where some fields are mirrored
@@ -1329,7 +1330,7 @@ class Settlement::Settlement < ActiveRecord::Base
         self.region.name = self.name
         self.region.save
       end
-      return true
+      true
     end
     
     def propagate_tax_changes_to_fortress
@@ -1345,6 +1346,7 @@ class Settlement::Settlement < ActiveRecord::Base
         end
       end
       self.region.fortress.save if changed  # only save character and resource pool, if there hase been a change!
+      true
     end
     
     def propagate_change_of_attribute_to_resource_pool(attribute)
@@ -1442,6 +1444,7 @@ class Settlement::Settlement < ActiveRecord::Base
           end
         end
       end
+      true
     end
     
     def propagate_information_to_garrison
@@ -1449,6 +1452,7 @@ class Settlement::Settlement < ActiveRecord::Base
         self.garrison_army.size_max = self.garrison_size_max
         self.garrison_army.save
       end
+      true
     end
     
         

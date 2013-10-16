@@ -243,6 +243,7 @@ GameServer::Application.routes.draw do
           resources :speedup_artifact_initiation_actions,    :only => [ :create ]
           resources :displayed_premium_expiration_actions,   :only => [ :create ]
           resources :user_content_report_actions,            :only => [ :create ]
+          resources :connect_facebook_actions,               :only => [ :create ]    
         end
         namespace :construction do
           resources :finish_job_actions    
@@ -279,6 +280,7 @@ GameServer::Application.routes.draw do
         end
         namespace :shop do
           resources :redeem_purchase_actions,                :only => [ :create ]
+          resources :fb_verify_order_actions,                :only => [ :create ]
           resources :special_offer_dialog_displayed_actions, :only =>[:create]
         end
         namespace :geo_treasure do
@@ -298,6 +300,7 @@ GameServer::Application.routes.draw do
         resources :bonus_offers
         resources :platinum_offers
         resources :special_offers
+        resources :fb_credit_offers
         resources :transactions
         resources :money_transactions
         resources :credit_transactions
@@ -341,6 +344,6 @@ GameServer::Application.routes.draw do
     
       match '/signin',  :to => 'auth/sessions#new'
       match '/signout', :to => 'auth/sessions#destroy'
-    end    
+    end
   end
 end

@@ -21,7 +21,8 @@
 
 <!ELEMENT AppControl (SpecialOfferDialog)>
 <!ATTLIST AppControl
-  debugTracking      (0 | 1) "0"
+  debugTracking  (0 | 1) "0"
+  startscreen    CDATA #REQUIRED
 >
 
 <!ELEMENT SpecialOfferDialog EMPTY>
