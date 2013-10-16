@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.46
+# Version: 0.3.47
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 46, 
+        :build => 47, 
       },
       
       :production_test_weights => {
@@ -599,7 +599,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 2,
               },
 
             ],
@@ -762,7 +762,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger  aus und drücke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>",
+            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger aus und drücke auf 'Rekrutiere Krieger'.</p>",
   
             :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
                 
@@ -776,7 +776,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du kannst mehrere Einheiten gleichzeitig trainieren, dazu gibst Du einfach die gewünschte Zahl an.",
+            :de_DE => "Du kannst mehrere Einheiten gleichzeitig trainieren, gib einfach die gewünschte Anzahl an.",
   
             :en_US => "You can train several units at the same time. Just select the number of units you want.",
                 
@@ -792,6 +792,15 @@ class Tutorial::Tutorial
 
           :rewards => {
             
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
+            ],
+
             :unit_rewards => [
 
               {
@@ -939,9 +948,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.",
+            :de_DE => "Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.",
   
-            :en_US => "That looks great! At last I have enough space for all my shoe…er, things!",
+            :en_US => "At last I have enough space for all my shoe…er, things!",
                 
           },
           :reward_text => {
@@ -1301,7 +1310,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 2,
               },
 
             ],
@@ -1547,7 +1556,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Improve your production of raw materials.",
+            :en_US => "Improve your production of raw materials",
   
             :de_DE => "Erhöhe Deine Rohstoffproduktion",
                 
@@ -1914,6 +1923,11 @@ class Tutorial::Tutorial
                 :amount => 150,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
             :unit_rewards => [
@@ -2154,6 +2168,15 @@ class Tutorial::Tutorial
 
           :rewards => {
             
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+            ],
+
             :unit_rewards => [
 
               {
@@ -3521,7 +3544,7 @@ class Tutorial::Tutorial
             
             :en_US => "Upgrade of the chieftan's hut",
   
-            :de_DE => "Häuptlingshütte Level 10.",
+            :de_DE => "Häuptlingshütte Level 10",
                 
           },
           :task => {
@@ -5846,7 +5869,7 @@ class Tutorial::Tutorial
             
             :en_US => "Decimate enemy units",
   
-            :de_DE => "Gegner dezimieren.",
+            :de_DE => "Gegner dezimieren",
                 
           },
           :task => {
@@ -12393,7 +12416,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Training Grounds level 10.",
+            :en_US => "Training Grounds level 10",
   
             :de_DE => "Ausbildungsgelände Level 10",
                 
@@ -12598,7 +12621,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Krempel die ärmel hoch, wir haben Arbeit zu verrichten.",
+            :de_DE => "Krempel die Ärmel hoch, wir haben Arbeit zu verrichten.",
   
             :en_US => "Pull up those sleeves, looks like we got work to do.",
                 
@@ -12681,7 +12704,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Jetzt wo Deine Siedlung wächst und gedeiht brauchen Deine Bewohner einen Ort, um sich bei kühlen Getränekn von der harten Arbeit zu erholen. Eine Taverne wäre da doch genau das Richtige.</p>",
+            :de_DE => "<p>Jetzt wo Deine Siedlung wächst und gedeiht brauchen Deine Bewohner einen Ort, um sich bei kühlen Getränken von der harten Arbeit zu erholen.</p>",
   
             :en_US => "<p>Now that our settlement has grown considerably people are wanting for a place to relax. I suppose a tavern of some sort would do the trick, after all who can refuse a cold beer?</p>",
                 
@@ -12830,6 +12853,11 @@ class Tutorial::Tutorial
                 :amount => 125,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
             ],
 
             :experience_reward => 150,
@@ -12917,6 +12945,15 @@ class Tutorial::Tutorial
 
           :rewards => {
             
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+            ],
+
             :unit_rewards => [
 
               {
@@ -13002,6 +13039,15 @@ class Tutorial::Tutorial
 
           :rewards => {
             
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 4,
+              },
+
+            ],
+
             :unit_rewards => [
 
               {
@@ -13087,6 +13133,15 @@ class Tutorial::Tutorial
 
           :rewards => {
             
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 8,
+              },
+
+            ],
+
             :unit_rewards => [
 
               {
