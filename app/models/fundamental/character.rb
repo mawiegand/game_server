@@ -1418,11 +1418,11 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def first_start
-    login_count < 1
+    login_count < 1  || (!fb_player_id.blank? && login_count <= 2)
   end
 
   def beginner
-    login_count <= 1
+    login_count <= 1 || (!fb_player_id.blank? && login_count <= 2)
   end
 
   # \deprecated : use insider? instead
