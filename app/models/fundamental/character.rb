@@ -364,9 +364,6 @@ class Fundamental::Character < ActiveRecord::Base
 
       character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
 
-      avatar = GameState::Avatars.new
-      character.avatar_string = avatar.create_random_avatar_string(character.gender.nil? || character.gender == 'male')
-
       character
     end
     
