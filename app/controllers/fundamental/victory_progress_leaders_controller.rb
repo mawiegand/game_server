@@ -22,7 +22,7 @@ class Fundamental::VictoryProgressLeadersController < ApplicationController
     
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @fundamental_victory_progress_leaders.to_json}
+      format.json { render json: include_root(@fundamental_victory_progress_leaders, :victory_progress_leaders)}
     end
   end
 end
