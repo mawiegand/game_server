@@ -49,40 +49,25 @@ class Fundamental::RetentionMail < ActiveRecord::Base
   
   def subject
     if mail_type == 'played_too_short'
-      "In Deiner Siedlung geht's grad drunter und drüber"
+      I18n.translate('application.retention.subject.played_too_short', locale: character.lang)
     elsif mail_type == 'paused_too_long'
-      "In Deiner Siedlung geht's grad drunter und drüber"
+      I18n.translate('application.retention.subject.paused_too_long', locale: character.lang)
     elsif mail_type == 'getting_inactive'
-      "#{character.name}, #{credit_reward} 5D Platinum Credits - Hol dir deine Belohnung!"
+      I18n.translate('application.retention.subject.getting_inactive', locale: character.lang, :name => character.name, :credit_reward => credit_reward)
     elsif mail_type == 'getting_deleted'
-      "Morgen werden Deine Siedlungen gelöscht"
+      I18n.translate('application.retention.subject.getting_deleted', locale: character.lang)
     end
   end
   
   def body
     if mail_type == 'played_too_short'
-      "Hallo #{character.name},\n\n" +
-      "Deine Steine schimmeln, Dein Holz schlägt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drüber. Log Dich jetzt ein und sorge für Ordnung:\n\n" +
-      "#{GAME_SERVER_CONFIG['base_url']}\n\n" +
-      "Viel Spaß wünscht Dir\n\n" +
-      "Dein Wack-A-Doo Team"
+      I18n.translate('application.retention.body.played_too_short', locale: character.lang, :name => character.name, :url => GAME_SERVER_CONFIG['base_url'])
     elsif mail_type == 'paused_too_long'
-      "Hallo #{character.name},\n\n" +
-      "Deine Steine schimmeln, Dein Holz schlägt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drüber. Log Dich jetzt ein und sorge für Ordnung:\n\n" +
-      "#{GAME_SERVER_CONFIG['base_url']}\n\n" +
-      "Viel Spaß wünscht Dir\n\n" +
-      "Dein Wack-A-Doo Team"
+      I18n.translate('application.retention.body.paused_too_long', locale: character.lang, :name => character.name, :url => GAME_SERVER_CONFIG['base_url'])
     elsif mail_type == 'getting_inactive'
-      "#{character.name}!\n\n" +
-      "Du hast Dein Können bewiesen und unsere Siedlung aufgebaut, aber wir Siedlungsbewohner haben schon lange nichts mehr von Dir gehört. Deine Gegner haben Dich schon abgeschrieben, aber ich glaube weiterhin an Dich!\n\n" + 
-      "Log Dich umgehend unter #{GAME_SERVER_CONFIG['base_url']} ein und zeig es ihnen! Als Unterstützung gebe ich Dir #{credit_reward} 5D Platinum Credits aus meiner persönlichen Schatzkiste.\n\n" +
-      "Deine Siedlungsbewohner erwarten Dich bereits! Viel Erfolg!\n\n" +
-      "Der Chef\n\n"      
+      I18n.translate('application.retention.body.getting_inactive', locale: character.lang, :name => character.name, :url => GAME_SERVER_CONFIG['base_url'], :credit_reward => credit_reward)
     elsif mail_type == 'getting_deleted'
-      "Hallo #{character.name}!\n\n" +
-      "Die Neandertaler belagern nun schon seit einigen Tagen Deine Siedlungen. Dir bleibt nur noch ein knapper Tag, um zurückzukehren und das Ruder wieder in die Hand zu nehmen. Andernfalls werden Dein Siedlungen überrannt und sind für immer verloren.\n\n" +
-      "Log Dich in den nächsten 24 Stunden unter #{GAME_SERVER_CONFIG['base_url']} ein, sonst werden Deine Siedlungen gelöscht.\n\n" +
-      "Der Chef\n\n"      
+      I18n.translate('application.retention.body.getting_deleted', locale: character.lang, :name => character.name, :url => GAME_SERVER_CONFIG['base_url'])
     end
   end
   

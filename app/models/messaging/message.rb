@@ -353,8 +353,8 @@ class Messaging::Message < ActiveRecord::Base
       reported:  false,
       flag:      0,
     })
-    message.subject = "Du hast ein Artefakt gewonnen!"
-    message.body = "<p>Hurra! Unsere Armeen haben erfolgreich gekämpft und von unserem Gegner ein Artefakt erobert. Du kannst das Artefakt in Deiner Hauptsiedlung bewundern. Für die Aktivierung musst Du einen Artefakt-Stand bauen.</p>\n"
+    message.subject = I18n.translate('application.messaging.won_artifact.subject', locale: character.lang)
+    message.body = I18n.translate('application.messaging.won_artifact.body', locale: character.lang)
     message.save
   end
 
@@ -366,8 +366,8 @@ class Messaging::Message < ActiveRecord::Base
       reported:  false,
       flag:      0,
     })
-    message.subject = "Das Artefakt ist verloren!"
-    message.body = "<p>So ein Mist! Unsere Armeen haben zwar erfolgreich gekämpft, aber das Artefakt ging während des Kampfes verloren. Suche das verlorene Artefakt bei einer Neandertaler-Armee in der Nähe.</p>\n"
+    message.subject = I18n.translate('application.messaging.lost_artifact.subject', locale: character.lang)
+    message.body = I18n.translate('application.messaging.lost_artifact.body', locale: character.lang)
     message.save
   end
 
@@ -379,8 +379,8 @@ class Messaging::Message < ActiveRecord::Base
       reported:  false,
       flag:      0,
     })
-    message.subject = "Dein Artefakt wurde geraubt!"
-    message.body = "<p>Och menno! Deine Untergebenen haben tapfer gekämpft, aber das Artefakt wurde Dir geraubt. Einheiten rekrutieren, Armeen aufstellen und dann wird sich das Artefakt zurückgeholt! Ein anderes tut es aber auch.</p>\n"
+    message.subject = I18n.translate('application.messaging.stolen_artifact.subject', locale: character.lang)
+    message.body = I18n.translate('application.messaging.stolen_artifact.body', locale: character.lang)
     message.save
   end
 
@@ -400,14 +400,11 @@ class Messaging::Message < ActiveRecord::Base
   end
 
   def add_lost_fortress_message_subject(settlement, old_owner, new_owner)
-    self.subject = "Siedlung verloren an " + settlement.region.name.to_s
+    self.subject = I18n.translate('application.messaging.lost_fortress.subject', locale: character.lang, :name => settlement.region.name.to_s)
   end
 
   def add_lost_fortress_message_body(settlement, old_owner, new_owner)
-    text  = "<h2>Du hast Deine Siedlung in der Region " + settlement.region.name.to_s + " verloren </h2>\n"
-    text += "<p>Deine Garnisonsarmee in Region <b>" + settlement.region.name.to_s + "</b> hat den Kampf um die Siedlung verloren.<b>" + settlement.name.to_s + "</b>. "
-    text += "Der neue Besitzer der Siedlung ist <b>" + new_owner.name_and_ally_tag + "</b>.</p>\n"
-    self.body = text
+    self.body = I18n.translate('application.messaging.lost_fortress.body', locale: character.lang, :region_name => settlement.region.name.to_s, :settlement_name => settlement.name.to_s, :new_owner_name => new_owner.name_and_ally_tag)
   end
   
   def self.create_tutorial_message(character, subject, boby)
