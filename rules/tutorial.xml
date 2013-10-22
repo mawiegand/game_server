@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="47" />
+    <Version major="0" minor="3" build="48" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -5145,13 +5145,13 @@
     <Quest id="quest_crossplatform" advisor="chef">
       <Name>Cross-Platform</Name>
       <Name locale="de_DE">Cross-Platform</Name>
-      <Task>Log into the HTML version of Wack-A-Doo at https://www.wack-a-doo.com.</Task>
-      <Task locale="de_DE">Logge Dich in die HTML-Version von Wack-A-Doo ein unter https://www.wack-a-doo.de an.</Task>
+      <Task>Log into the HTML version of Wack-A-Doo at https://wack-a-doo.com or into the facebook-App.</Task>
+      <Task locale="de_DE">Logge Dich in die HTML-Version von Wack-A-Doo unter https://wack-a-doo.de oder in die Facebook-App von Wack-A-Doo ein.</Task>
       <Description locale="de_DE">
-        <p>Wack-A-Doo kann nicht nur als App gespielt werden, Du kannst Dich auch über deinen Webbrowser im Spiel anmelden und dort das selbe Spiel spielen!</p>
+        <p>Du kannst den selben Wack-A-Doo Account auch über Deinen Webbrowser oder im Spiel anmelden und dort das selbe Spiel spielen!</p>
       </Description>
       <Description locale="en_US">
-        <p>Wack-A-Doo is not only an App, you can also play the same game in your browser!</p>
+        <p>Wack-A-Doo is not only an App, you can also play the same game in your browser or as facebook-app!</p>
       </Description>
       <Flavor locale="de_DE">Cross-Platform? Klingt nützlich.</Flavor>
       <Flavor locale="en_US">Cross-Platform? Sounds reasonable.</Flavor>
