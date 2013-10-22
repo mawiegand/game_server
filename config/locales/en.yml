@@ -213,7 +213,42 @@ en:
             As soon as the platinum account is enabled, the likes and disklikes that you give to other players are regenerated with a doubled speed. So you can express your like/dislike to more players per day.
         footer:
           We will still improve the platinum account. More comfort features will follow by time, which we will of course enable for you immediately.
-        
+    retention:
+      subject:
+        played_too_short:
+          "In Deiner Siedlung geht's grad drunter und drüber"
+        paused_too_long:
+          "In Deiner Siedlung geht's grad drunter und drüber"
+        getting_inactive:
+          "%{name}, %{credit_reward} 5D Platinum Credits - Hol dir deine Belohnung!"
+        getting_deleted:
+          "Morgen werden Deine Siedlungen gelöscht"
+      body:
+        played_too_short:
+          "Hallo %{name},\n\n
+          Deine Steine schimmeln, Dein Holz schlägt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drüber.
+          Log Dich jetzt ein und sorge für Ordnung:\n\n
+          %{url}\n\n
+          Viel Spaß wünscht Dir\n\n
+          Dein Wack-A-Doo Team"
+        paused_too_long:
+          "Hallo %{name},\n\n
+          Deine Steine schimmeln, Dein Holz schlägt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drüber. Log Dich jetzt ein und sorge für Ordnung:\n\n
+          %{url}\n\n
+          Viel Spaß wünscht Dir\n\n
+          Dein Wack-A-Doo Team"
+        getting_inactive:
+          "%{name}!\n\n
+          Du hast Dein Können bewiesen und unsere Siedlung aufgebaut, aber wir Siedlungsbewohner haben schon lange nichts mehr von Dir gehört. Deine Gegner haben Dich schon abgeschrieben, aber ich glaube weiterhin an Dich!\n\n
+          Log Dich umgehend unter %{url} ein und zeig es ihnen! Als Unterstützung gebe ich Dir %{credit_reward} 5D Platinum Credits aus meiner persönlichen Schatzkiste.\n\n
+          Deine Siedlungsbewohner erwarten Dich bereits! Viel Erfolg!\n\n
+          Der Chef\n\n"
+        getting_deleted:
+          "Hallo %{name}!\n\n
+          Die Neandertaler belagern nun schon seit einigen Tagen Deine Siedlungen. Dir bleibt nur noch ein knapper Tag, um zurückzukehren und das Ruder wieder in die Hand zu nehmen. Andernfalls werden Dein Siedlungen überrannt und sind für immer verloren.\n\n
+          Log Dich in den nächsten 24 Stunden unter %{url} ein, sonst werden Deine Siedlungen gelöscht.\n\n
+          Der Chef\n\n"
+
         
   sessions:
         
