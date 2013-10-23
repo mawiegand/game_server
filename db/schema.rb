@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131023135050) do
+ActiveRecord::Schema.define(:version => 20131023142445) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1710,7 +1710,7 @@ ActiveRecord::Schema.define(:version => 20131023135050) do
     t.string   "url"
     t.string   "title"
     t.string   "image"
-    t.string   "type"
+    t.string   "type_name"
     t.string   "locale"
     t.string   "description"
     t.string   "determiner"
