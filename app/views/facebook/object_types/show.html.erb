@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b>
+  <%= @facebook_object_type.url %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @facebook_object_type.title %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @facebook_object_type.image %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @facebook_object_type.type %>
+</p>
+
+<p>
+  <b>Locale:</b>
+  <%= @facebook_object_type.locale %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @facebook_object_type.description %>
+</p>
+
+<p>
+  <b>Determiner:</b>
+  <%= @facebook_object_type.determiner %>
+</p>
+
+<p>
+  <b>Restrictions:</b>
+  <%= @facebook_object_type.restrictions %>
+</p>
+
+<p>
+  <b>See also:</b>
+  <%= @facebook_object_type.see_also %>
+</p>
+
+
+<%= link_to 'Edit', edit_facebook_object_type_path(@facebook_object_type) %> |
+<%= link_to 'Back', facebook_object_types_path %>
