@@ -1,4 +1,9 @@
 class Facebook::ObjectTypesController < ApplicationController
+  layout 'facebook'
+
+  before_filter :deny_api       , :except => [:show, :index]
+  before_filter :authorize_staff, :except => [:show, :index]
+
   # GET /facebook/object_types
   # GET /facebook/object_types.json
   def index
@@ -16,7 +21,7 @@ class Facebook::ObjectTypesController < ApplicationController
     @facebook_object_type = Facebook::ObjectType.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render layout: 'empty' }
       format.json { render json: @facebook_object_type }
     end
   end
