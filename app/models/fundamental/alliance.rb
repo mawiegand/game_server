@@ -461,9 +461,12 @@ class Fundamental::Alliance < ActiveRecord::Base
           character.alliance_tag = self.tag
           character.save
         end
-        self.ranking.alliance_tag = self.tag
-        self.ranking.save
+        unless ranking.nil?
+          self.ranking.alliance_tag = self.tag
+          self.ranking.save
+        end
       end
+      true
     end
 
     def propagate_name_change
@@ -473,6 +476,7 @@ class Fundamental::Alliance < ActiveRecord::Base
         self.ranking.alliance_name = self.name
         self.ranking.save
       end
+      true
     end
 
     def propagate_color_change
@@ -486,6 +490,7 @@ class Fundamental::Alliance < ActiveRecord::Base
         self.ranking.alliance_color = self.color
         self.ranking.save
       end
+      true
     end
 
     def update_size_bonus
