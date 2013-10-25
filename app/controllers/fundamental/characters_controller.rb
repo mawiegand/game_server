@@ -313,7 +313,9 @@ class Fundamental::CharactersController < ApplicationController
   # GET /fundamental/characters/1
   # GET /fundamental/characters/1.json
   def show
-    @fundamental_character = Fundamental::Character.find(params[:id])
+    @fundamental_character = Fundamental::Character.find_by_id_or_name(params[:id])
+    @fundamental_character = Fundamental::Character.find_by_name_case_insensitive(params[:id]) if @fundamental_character.nil?
+
     role = determine_access_role(@fundamental_character.id, @fundamental_character.alliance_id) || :default
     
     if admin? && backend_request?
