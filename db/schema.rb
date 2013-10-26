@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131004173024) do
+ActiveRecord::Schema.define(:version => 20131026142040) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1706,6 +1706,20 @@ ActiveRecord::Schema.define(:version => 20131004173024) do
     t.integer  "local_event_id"
   end
 
+  create_table "facebook_object_types", :force => true do |t|
+    t.string   "url"
+    t.string   "title"
+    t.string   "image"
+    t.string   "type_name"
+    t.string   "locale"
+    t.string   "description"
+    t.string   "determiner"
+    t.string   "restrictions"
+    t.string   "see_also"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "fundamental_alliance_reservations", :force => true do |t|
     t.integer  "alliance_id"
     t.string   "tag"
@@ -2203,6 +2217,7 @@ ActiveRecord::Schema.define(:version => 20131004173024) do
     t.decimal  "ap_rate",                         :default => 1.0,   :null => false
     t.string   "avatar_string"
     t.integer  "alliance_color"
+    t.boolean  "invisible",                       :default => false
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2592,10 +2607,10 @@ ActiveRecord::Schema.define(:version => 20131004173024) do
     t.integer  "name_change_count",                              :default => 0
     t.integer  "alliance_size_bonus",                            :default => 0
     t.integer  "assignment_level",                               :default => 0,            :null => false
+    t.integer  "alliance_color"
     t.integer  "battle_id"
     t.decimal  "condition",                                      :default => 1.0,          :null => false
     t.datetime "condition_updated_at"
-    t.integer  "alliance_color"
   end
 
   create_table "settlement_slots", :force => true do |t|

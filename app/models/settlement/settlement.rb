@@ -75,6 +75,10 @@ class Settlement::Settlement < ActiveRecord::Base
     Settlement::Settlement.fortress.where('lower(name) = ?', name.downcase).first
   end
 
+  def armies_visible_to_character(character)
+    self.armies.select {|army| !army.invisible? || army.owner == character }
+  end
+
   def empire_unlock_fields 
     [ { attrl: :settlement_unlock_alliance_creation_count, attrc: :character_unlock_alliance_creation_count },
       { attrl: :settlement_unlock_diplomacy_count,         attrc: :character_unlock_diplomacy_count },

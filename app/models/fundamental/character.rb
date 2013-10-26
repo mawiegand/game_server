@@ -163,7 +163,11 @@ class Fundamental::Character < ActiveRecord::Base
   def self.find_by_name_case_insensitive(name)  
     Fundamental::Character.first(:conditions => [ "lower(name) = ?", name.downcase ])
   end
-  
+
+  def armies_visible_to_character(character)
+    self.armies.select {|army| !army.invisible? || army.owner == character }
+  end
+
   def self.valid_identifier?(identifier)
     identifier.index(@identifier_regex) != nil
   end
@@ -171,7 +175,7 @@ class Fundamental::Character < ActiveRecord::Base
   def self.valid_id?(id)
     id.index(/^[1-9]\d*$/) != nil
   end
-  
+
   def self.update_all_conversions
     Fundamental::Character.all.each do |character|
       character.update_conversion_state
