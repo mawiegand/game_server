@@ -1,0 +1,16 @@
+The player deletion script was started at <%= @report[:started_at] %> 
+and finished running at <%= @report[:finished_at] %>.
+
+<% if @report[:removed_not_started_players].count > 0 %>
+It removed <%= @report[:removed_not_started_players].count %> players, that didn't found their first settlement:
+
+  id     |  character name            | last login at
+--------+----------------------------+---------------------------
+<% @report[:removed_not_started_players].each do |player| %>
+  <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
+<% end %>
+<% end %>
+
+Whack On!
+
+- cron

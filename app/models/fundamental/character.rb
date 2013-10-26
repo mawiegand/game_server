@@ -117,7 +117,7 @@ class Fundamental::Character < ActiveRecord::Base
   scope :not_deleted,      where(deleted_from_game: false)
   scope :deleted,          where(deleted_from_game: true)
 
-  scope :not_started,      where('deleted_from_game = ? AND last_request_at < ?', false, Time.now - 1.hours)
+  scope :not_started,      where('deleted_from_game = ? AND base_location_id IS NULL AND last_request_at < ?', false, Time.now - 1.hours)
 
   # used by player deletion script
   scope :shortly_before_deletable, lambda{ |now| not_deleted.where([
@@ -1493,7 +1493,10 @@ class Fundamental::Character < ActiveRecord::Base
   def removed_not_started
     self.armies.destroy_all
 
-
+    self.claimed_locations.each do |location|
+      location.claiming_character = nil
+      location.save
+    end
 
     self.deleted_from_game = true
     self.last_deleted_at = Time.now
