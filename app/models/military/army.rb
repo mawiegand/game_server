@@ -675,7 +675,7 @@ class Military::Army < ActiveRecord::Base
   end
 
   def check_and_repair_name
-    if self.home.name != self.home_settlement_name
+    if !self.home.nil? && self.home.name != self.home_settlement_name
       logger.warn(">>>ARMY NAME DIFFERS. Old: #{self.home_settlement_name} Corrected: #{self.home.name}.")
       self.home_settlement_name = self.home.name
     end
