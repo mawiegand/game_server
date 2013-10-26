@@ -284,6 +284,7 @@ class Map::Location < ActiveRecord::Base
     self.right_of_way = 0
     self.settlement_score = 0
     self.image_id = nil
+    self.claimed_by = nil
     self.save
   end
 
