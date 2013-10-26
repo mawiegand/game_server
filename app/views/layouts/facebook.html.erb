@@ -1,0 +1,11 @@
+<% content_for :facebook_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.facebook.object_types"), facebook_object_types_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:facebook_content) ? yield(:facebook_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

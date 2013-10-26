@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131026142040) do
+ActiveRecord::Schema.define(:version => 20131026165154) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -119,6 +119,8 @@ ActiveRecord::Schema.define(:version => 20131026142040) do
     t.integer  "unit_little_chief_reward"
     t.integer  "unit_warrior_deposit"
     t.integer  "unit_warrior_reward"
+    t.integer  "unit_great_chief_deposit"
+    t.integer  "unit_great_chief_reward"
   end
 
   create_table "assignment_standard_assignments", :force => true do |t|
@@ -1902,6 +1904,7 @@ ActiveRecord::Schema.define(:version => 20131026142040) do
     t.string   "gc_player_id"
     t.datetime "gc_player_id_connected_at"
     t.datetime "gc_rejected_at"
+    t.integer  "start_variant",                            :default => 1,     :null => false
   end
 
   create_table "fundamental_gossips", :force => true do |t|
@@ -2042,6 +2045,7 @@ ActiveRecord::Schema.define(:version => 20131026142040) do
     t.string   "avatar_string"
     t.integer  "alliance_color"
     t.integer  "image_id"
+    t.integer  "claimed_by"
   end
 
   add_index "map_locations", ["region_id"], :name => "index_map_locations_on_region_id"
@@ -2252,6 +2256,7 @@ ActiveRecord::Schema.define(:version => 20131026142040) do
     t.integer  "unit_light_cavalry_3"
     t.integer  "unit_light_cavalry_4"
     t.integer  "unit_warrior"
+    t.integer  "unit_great_chief"
   end
 
   create_table "military_battle_character_results", :force => true do |t|
@@ -2396,6 +2401,10 @@ ActiveRecord::Schema.define(:version => 20131026142040) do
     t.integer  "unit_warrior_casualties"
     t.decimal  "unit_warrior_damage_taken"
     t.decimal  "unit_warrior_damage_inflicted"
+    t.integer  "unit_great_chief"
+    t.integer  "unit_great_chief_casualties"
+    t.decimal  "unit_great_chief_damage_taken"
+    t.decimal  "unit_great_chief_damage_inflicted"
   end
 
   create_table "military_battle_participants", :force => true do |t|

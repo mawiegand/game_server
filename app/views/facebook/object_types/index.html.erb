@@ -1,0 +1,39 @@
+<h1>Listing facebook_object_types</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Title</th>
+    <th>Image</th>
+    <th>TypeName</th>
+    <th>Locale</th>
+    <th>Description</th>
+    <th>Determiner</th>
+    <th>Restrictions</th>
+    <th>See also</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @facebook_object_types.each do |facebook_object_type| %>
+  <tr>
+    <td><%= facebook_object_type.url %></td>
+    <td><%= facebook_object_type.title %></td>
+    <td><%= facebook_object_type.image %></td>
+    <td><%= facebook_object_type.type_name %></td>
+    <td><%= facebook_object_type.locale %></td>
+    <td><%= facebook_object_type.description %></td>
+    <td><%= facebook_object_type.determiner %></td>
+    <td><%= facebook_object_type.restrictions %></td>
+    <td><%= facebook_object_type.see_also %></td>
+    <td><%= link_to 'Show', facebook_object_type %></td>
+    <td><%= link_to 'Edit', edit_facebook_object_type_path(facebook_object_type) %></td>
+    <td><%= link_to 'Destroy', facebook_object_type, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Object type', new_facebook_object_type_path %>

@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.4.0
+# Version: 1.5.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -121,7 +121,7 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 1,
-                    :minor => 4,
+                    :minor => 5,
                     :build => 0,
       },
       :app_control => {
@@ -2509,7 +2509,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Als integranter, karrieresüchtiger, aalglatter Möchtegern ist der Kleine Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Zum Glück kann der Kleine Häuptling unter dem Vorwand der Gründung einer Lagerstätte aus der Siedlung verbannt werden.</p>",
+            :de_DE => "<p>Als intriganter, karrieresüchtiger, aalglatter Möchtegern ist der Kleine Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Zum Glück kann der Kleine Häuptling unter dem Vorwand der Gründung einer Lagerstätte aus der Siedlung verbannt werden.</p>",
   
             :en_US => "<p>A little chief is about as popular as an encounter with a hungry dinosaur. As a scheming, workaholic, slick wannabe, the little chief is a role model for entire generations of snobs. Luckily, a little chief can be banished from a settlement under the pretext of founding a new encampment.</p>",
                 
@@ -2576,6 +2576,94 @@ class GameRules::Rules
 
 
         },              #   END OF Little Chief
+        {               #   Great Chief
+          :id          => 15, 
+          :symbolic_id => :great_chief,
+					:category    => 4,
+          :db_field    => :unit_great_chief,
+          :name        => {
+            
+            :en_US => "Great Chief",
+  
+            :de_DE => "Großer Häuptling",
+                
+          },
+          :flavour     => {
+            
+            :en_US => "<p>The great chief is allowed to set up a new home settlement and found a tribe.</p>",
+  
+            :de_DE => "<p>Der Große Häuptling kann eine Heimatsiedlung und damit einen neuen Stamm gründen.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Als intriganter, karrieresüchtiger, aalglatter Möchtegern ist der Große Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Einziger Trost für seine Untergebenen: so groß ist er gar nicht.</p>",
+  
+            :en_US => "<p>As a scheming, workaholic, slick wannabe, the great chief is a role model for entire generations of snobs. At least, he isn't that tall. Actually, he's rather small. But please, don't let him know.</p>",
+                
+          },
+
+          :experience_factor => 0.0,
+          :trainable   => false,
+
+          :velocity    => 5.00,
+          :action_points => 4,
+          :initiative  => 20,
+          :effectiveness => {
+            
+            :unitcategory_infantry => 1,
+  
+            :unitcategory_cavalry => 0.5,
+  
+            :unitcategory_artillery => 1,
+  
+            :unitcategory_siege => 1,
+  
+            :unitcategory_special => 1,
+                
+          },
+          :attack      => 10,
+          :armor       => 3,
+          :hitpoints   => 300,
+
+          :overrunnable => true,
+
+          :critical_hit_damage => 50,
+          :critical_hit_chance => 0.01,
+
+          :production_time => '432000',
+
+          :costs      => {
+            0 => '500000',
+            1 => '500000',
+            2 => '400000',
+            
+          },
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_stud',
+              :id => 20,
+              :type => 'building',
+
+              :min_level => 100,
+
+            },
+
+            ],
+
+          ],          
+
+          :can_create => [
+2,
+
+          ],
+
+
+        },              #   END OF Great Chief
       ],                # END OF UNIT TYPES
 
 # ## BUILDING CATEGORIES ######################################################

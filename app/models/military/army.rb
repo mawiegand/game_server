@@ -90,6 +90,56 @@ class Military::Army < ActiveRecord::Base
       return false
     end 
   end
+  
+  def self.create_settler_at_location(location, character)
+    logger.debug "Creating a Settler-Army for character #{character.name}."
+    
+    settler_unit_type = Military::Army.default_settler_unit_type
+    return false     if settler_unit_type.nil?
+    
+    army = location.armies.build({
+      region_id:      location.region_id,  
+      name:           settler_unit_type.name[character.locale],
+      owner_id:       character.id,
+      owner_name:     character.name,
+      npc:            character.npc,
+      alliance_id:    character.alliance_id,
+      alliance_tag:   character.alliance_tag,
+      alliance_color: character.alliance_color,
+      home_settlement_name: "-",
+      home_settlement_id:   nil,
+      ap_max:       4,
+      ap_present:   4,
+      ap_seconds_per_point: Military::Army.regeneration_duration,
+      mode:         MODE_IDLE,
+      kills:        0,
+      victories:    0,
+      size_max:     1000,   # 1000 is default size
+      exp:          0,
+      rank:         0,
+      garrison:     false,
+      invisible:    true,
+      stance:       0,
+    })
+    
+    if army.save 
+      details = army.create_details({
+        settler_unit_type[:db_field] => 1
+      })
+      return true 
+    else
+      return false
+    end
+  end
+  
+  def self.default_settler_unit_type
+    GameRules::Rules.the_rules.unit_types.each do |t|
+      if !t[:can_create].nil? && t[:can_create] == 2
+        return t
+      end
+    end
+    nil
+  end
 
   
   def self.regeneration_duration

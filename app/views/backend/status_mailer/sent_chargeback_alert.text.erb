@@ -7,7 +7,7 @@ Das Update-Skript hat eine Buchung gefunden, die erstmals mit "chargeback" marki
   E-Mailadresse:   <%= @transaction.payer_mail %>
   Invoice ID:      <%= @transaction.invoice_id %>
 
-  Alle Buchungen:  <%= GAME_SERVER_CONFIG['base_url'] + "/game_server/shop/money_transactions" %>
+  Alle Buchungen:  <%= GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/money_transactions" %>
 
 Whack On!
 
