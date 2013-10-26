@@ -79,7 +79,6 @@ en:
       treasure:
         category:  Treasure
         treasure:  Treasure
-
       military:
         category: Military
         armies: Armies
@@ -109,12 +108,16 @@ en:
         category: Event
         events: Events
         notifications: Notifications
+      facebook:
+        category: Facebook
+        object_types: Object Types
       shop:
         category: Shop
         purchases: Purchases
         resource_offers: Resource Offers
         bonus_offers: Bonus Offers
         platinum_offers: Platinum Offers
+        fb_credit_offers: Facebook Credit Offers
         transactions: Ingame Transactions
         special_offers: Special Offers
         special_offers_transactions: Special Offers Transactions

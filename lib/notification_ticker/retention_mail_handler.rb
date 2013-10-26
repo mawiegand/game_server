@@ -35,10 +35,10 @@ class NotificationTicker::RetentionMailHandler
     end     
          
     Fundamental::Character.non_npc.not_deleted.retention_paused_too_long.retention_no_mail_pending.each do |character|
-      if(!character.max_conversion_state.nil? &&
+      if !character.max_conversion_state.nil? &&
           character.max_conversion_state != 'registered' &&
           character.max_conversion_state != 'logged_in_once' &&
-          character.max_conversion_state != 'ten_minutes')
+          character.max_conversion_state != 'ten_minutes'
         mail = character.retention_mails.create({
           mail_type: 'paused_too_long'
         })

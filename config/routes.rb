@@ -336,6 +336,10 @@ GameServer::Application.routes.draw do
         resources :likes
       end
 
+      namespace :facebook do
+        resources :object_types
+      end
+
       resource :action, :only => [ :show ]
       
       resources :sessions, :module => :auth,    :only => [:new, :create, :destroy] # staff login to backend

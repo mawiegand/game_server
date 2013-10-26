@@ -154,10 +154,15 @@ class Fundamental::CharactersController < ApplicationController
       character.gc_player_id_connected_at = identity['gc_player_id_connected_at']
       character.gc_rejected_at            = identity['gc_rejected_at']
 
-      character.image_set_id = identity['image_set_id']
+      character.gender        = identity['gender']
+
+      avatar = GameState::Avatars.new
+      character.avatar_string = avatar.create_random_avatar_string(character.gender.nil? || character.gender == 'male')
+
+      character.image_set_id  = identity['image_set_id']
       character.insider_since = identity['insider_since']
-      character.first_round = identity['created_at'].nil? ? false : Time.parse(identity['created_at']) > Time.now.advance(:hours => -1)
-      character.lang = I18n.locale || "en"
+      character.first_round   = identity['created_at'].nil? ? false : Time.parse(identity['created_at']) > Time.now.advance(:hours => -1)
+      character.lang          = I18n.locale || "en"
       character.last_login_at = DateTime.now
       character.increment(:login_count)
       character.save

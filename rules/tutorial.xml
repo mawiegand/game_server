@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="46" />
+    <Version major="0" minor="3" build="48" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -213,7 +213,7 @@
       <RewardFlavor locale="en_US">Thanks. I think we're going to have loads of fun together!</RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl1" />
       <Rewards>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
+        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>200</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -267,19 +267,20 @@
       <Task>Build a warrior.</Task>
       <Task locale="de_DE">Baue einen Krieger.</Task>
       <Description locale="de_DE">
-        <p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger  aus und drücke auf 'Rekrutiere Krieger'. Die rekrutierten Einheiten landen in der Garnison der Siedlung.</p>
+        <p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger aus und drücke auf 'Rekrutiere Krieger'.</p>
       </Description>
       <Description locale="en_US">
         <p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>
       </Description>
       <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
       <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
-      <RewardText locale="de_DE">Du kannst mehrere Einheiten gleichzeitig trainieren, dazu gibst Du einfach die gewünschte Zahl an.</RewardText>
+      <RewardText locale="de_DE">Du kannst mehrere Einheiten gleichzeitig trainieren, gib einfach die gewünschte Anzahl an.</RewardText>
       <RewardText locale="en_US">You can train several units at the same time. Just select the number of units you want.</RewardText>
       <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
       <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
       <Requirement quest="quest_build_1barrackslvl1" />
       <Rewards>
+        <ResourceReward resource="resource_cash">1</ResourceReward>
         <UnitReward unit="unit_warrior">5</UnitReward>
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
@@ -338,8 +339,8 @@
       <Flavor locale="en_US">Doesn't it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!</Flavor>
       <RewardText locale="de_DE">Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern. Jeder Handelskarren kann zehn Ressourcen befördern.</RewardText>
       <RewardText locale="en_US">The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.</RewardText>
-      <RewardFlavor locale="de_DE">Toll sieht das aus. Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
-      <RewardFlavor locale="en_US">That looks great! At last I have enough space for all my shoe…er, things!</RewardFlavor>
+      <RewardFlavor locale="de_DE">Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
+      <RewardFlavor locale="en_US">At last I have enough space for all my shoe…er, things!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl4" />
       <Rewards>
         <ResourceReward resource="resource_stone">325</ResourceReward>
@@ -465,7 +466,7 @@
       <RewardFlavor locale="en_US">See? How easy was that.</RewardFlavor>
       <Requirement quest="quest_army_move" />
       <Rewards>
-        <ResourceReward resource="resource_cash">1</ResourceReward>
+        <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>150</ExperienceReward>
         <ActionPointReward></ActionPointReward>
       </Rewards>
@@ -543,7 +544,7 @@
     
     <!-- 14 --> <!-- Tutorial 14 -->
     <Quest id="quest_improve_production_1" advisor="girl" tutorial="false">
-      <Name>Improve your production of raw materials.</Name>
+      <Name>Improve your production of raw materials</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
       <Task>Improve your production of stone and wood to at least 12 units per hour.</Task>
       <Task locale="de_DE">Erhöhe Deine Produktion von Steinen und Holz auf je mindestens 12 Rohstoffeinheiten pro Stunde.</Task>
@@ -660,6 +661,7 @@
       <Requirement quest="quest_settlement_button1" />
       <Rewards>
         <ResourceReward resource="resource_fur">150</ResourceReward>
+        <ResourceReward resource="resource_cash">1</ResourceReward>
         <UnitReward unit="unit_warrior">10</UnitReward>
         <ExperienceReward>300</ExperienceReward>
       </Rewards>
@@ -759,6 +761,7 @@
       <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
       <Requirement quest="quest_build_1campfirelvl2" />
       <Rewards>
+        <ResourceReward resource="resource_cash">2</ResourceReward>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>350</ExperienceReward>
       </Rewards>
@@ -1162,7 +1165,7 @@
     <!-- 33 -->
     <Quest id="quest_build_chiefcottagelvl10" advisor="chef">
       <Name>Upgrade of the chieftan's hut</Name>
-      <Name locale="de_DE">Häuptlingshütte Level 10.</Name>
+      <Name locale="de_DE">Häuptlingshütte Level 10</Name>
       <Task>Upgrade of the chieftan's hut to level 10.</Task>
       <Task locale="de_DE">Erweitere die Häuptlingshütte auf Level 10.</Task>
       <Description locale="de_DE">
@@ -1878,7 +1881,7 @@
     <!-- 121 -->
     <Quest id="quest_charkills_21" advisor="warrior">
       <Name>Decimate enemy units</Name>
-      <Name locale="de_DE">Gegner dezimieren.</Name>
+      <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 500,000 units.</Task>
       <Task locale="de_DE">Besiege 500.000 Einheiten.</Task>
       <Description locale="de_DE">
@@ -3955,7 +3958,7 @@
     
     <!-- 500 -->
     <Quest id="quest_build_1barrackslvl10" advisor="warrior">
-      <Name>Training Grounds level 10.</Name>
+      <Name>Training Grounds level 10</Name>
       <Name locale="de_DE">Ausbildungsgelände Level 10</Name>
       <Task>Upgrade a Training Grounds to Level 10.</Task>
       <Task locale="de_DE">Baue ein Ausbildungsgelände auf Level 10.</Task>
@@ -4453,7 +4456,7 @@
      </Quest>
      
      <Quest id="quest_build_1gathererlvl5" advisor="chef">
-     <Name>Oh, these eternal Hunter Gatherers.</Name>
+     <Name>Oh, these eternal Hunter Gatherers</Name>
      <Name locale="de_DE">Immer diese Jäger und Sammler</Name>
      <Task>Upgrade a Hunter Gatherer to level 5.</Task>
      <Task locale="de_DE">Baue einen Jäger und Sammler auf Level 5 aus.</Task>
@@ -4975,7 +4978,7 @@
       <Description locale="en_US">
         <p>The tavern is full of people giving out assignments. Go there and start doing one.</p>
       </Description>
-      <Flavor locale="de_DE">Krempel die ärmel hoch, wir haben Arbeit zu verrichten.</Flavor>
+      <Flavor locale="de_DE">Krempel die Ärmel hoch, wir haben Arbeit zu verrichten.</Flavor>
       <Flavor locale="en_US">Pull up those sleeves, looks like we got work to do.</Flavor>
       <RewardText locale="de_DE">Je größer die Taverne wird, desto mehr Aufträge werden verfügbar. Schau regelmäßig rein um zu sehen, was es zu tun gibt.</RewardText>
       <RewardText locale="en_US">The bigger the tavern becomes the more jobs you can do. Check it out regularly to see what's new.'</RewardText>
@@ -4999,7 +5002,7 @@
       <Task>Build the tavern.</Task>
       <Task locale="de_DE">Baue die Taverne.</Task>
       <Description locale="de_DE">
-        <p>Jetzt wo Deine Siedlung wächst und gedeiht brauchen Deine Bewohner einen Ort, um sich bei kühlen Getränekn von der harten Arbeit zu erholen. Eine Taverne wäre da doch genau das Richtige.</p>
+        <p>Jetzt wo Deine Siedlung wächst und gedeiht brauchen Deine Bewohner einen Ort, um sich bei kühlen Getränken von der harten Arbeit zu erholen.</p>
       </Description>
       <Description locale="en_US">
         <p>Now that our settlement has grown considerably people are wanting for a place to relax. I suppose a tavern of some sort would do the trick, after all who can refuse a cold beer?</p>
@@ -5047,6 +5050,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">125</ResourceReward>
         <ResourceReward resource="resource_wood">125</ResourceReward>
+        <ResourceReward resource="resource_cash">1</ResourceReward>
         <ExperienceReward>150</ExperienceReward>
       </Rewards>
       <RewardTests>
@@ -5073,6 +5077,7 @@
       <RewardFlavor locale="en_US">If we keep up like this we're gona go places.</RewardFlavor>
       <Requirement quest="quest_alliance" />
       <Rewards>
+        <ResourceReward resource="resource_cash">2</ResourceReward>
         <UnitReward unit="unit_clubbers">10</UnitReward>
         <ExperienceReward>550</ExperienceReward>
       </Rewards>
@@ -5100,6 +5105,7 @@
       <RewardFlavor locale="en_US">If we keep up like this we're gona go places.</RewardFlavor>
       <Requirement quest="quest_alliance_members" />
       <Rewards>
+        <ResourceReward resource="resource_cash">4</ResourceReward>
         <UnitReward unit="unit_clubbers_2">20</UnitReward>
         <ExperienceReward>850</ExperienceReward>
       </Rewards>
@@ -5127,6 +5133,7 @@
       <RewardFlavor locale="en_US">If we keep up like this we're gona go places.</RewardFlavor>
       <Requirement quest="quest_alliance_members2" />
       <Rewards>
+        <ResourceReward resource="resource_cash">8</ResourceReward>
         <UnitReward unit="unit_clubbers_3">30</UnitReward>
         <ExperienceReward>1100</ExperienceReward>
       </Rewards>
@@ -5138,13 +5145,13 @@
     <Quest id="quest_crossplatform" advisor="chef">
       <Name>Cross-Platform</Name>
       <Name locale="de_DE">Cross-Platform</Name>
-      <Task>Log into the HTML version of Wack-A-Doo at https://www.wack-a-doo.com.</Task>
-      <Task locale="de_DE">Logge Dich in die HTML-Version von Wack-A-Doo ein unter https://www.wack-a-doo.de an.</Task>
+      <Task>Log into the HTML version of Wack-A-Doo at https://wack-a-doo.com or into the facebook-App.</Task>
+      <Task locale="de_DE">Logge Dich in die HTML-Version von Wack-A-Doo unter https://wack-a-doo.de oder in die Facebook-App von Wack-A-Doo ein.</Task>
       <Description locale="de_DE">
-        <p>Wack-A-Doo kann nicht nur als App gespielt werden, Du kannst Dich auch über deinen Webbrowser im Spiel anmelden und dort das selbe Spiel spielen!</p>
+        <p>Du kannst den selben Wack-A-Doo Account auch über Deinen Webbrowser oder im Spiel anmelden und dort das selbe Spiel spielen!</p>
       </Description>
       <Description locale="en_US">
-        <p>Wack-A-Doo is not only an App, you can also play the same game in your browser!</p>
+        <p>Wack-A-Doo is not only an App, you can also play the same game in your browser or as facebook-app!</p>
       </Description>
       <Flavor locale="de_DE">Cross-Platform? Klingt nützlich.</Flavor>
       <Flavor locale="en_US">Cross-Platform? Sounds reasonable.</Flavor>
