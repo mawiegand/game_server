@@ -270,6 +270,7 @@ class Settlement::Settlement < ActiveRecord::Base
     self.garrison_army.location = self.location
     self.garrison_army.region = self.region
     self.garrison_army.save
+    self.tax_rate = new_region.fortress.tax_rate
     self.save
     location.place_settlement(self)
   end
