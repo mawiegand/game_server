@@ -88,6 +88,41 @@ class Military::Army < ActiveRecord::Base
       return false
     end 
   end
+  
+  def self.create_settler_at_location(location, character)
+    logger.debug "Creating a Settler-Army for character #{character.name}."
+    
+    army = location.armies.build({
+      region_id:    location.region_id,  
+      name:         'Garrison',
+      owner_id:     settlement.owner_id,
+      owner_name:   settlement.owner.name,
+      npc:          settlement.owner.npc,
+      alliance_id:  settlement.alliance_id,
+      alliance_tag: settlement.alliance_tag,
+      alliance_color: settlement.alliance_color,
+      home_settlement_name: settlement.name,
+      home_settlement_id:   settlement.id,
+      ap_max:       4,
+      ap_present:   0,
+      ap_seconds_per_point: Military::Army.regeneration_duration,
+      mode:         MODE_IDLE,
+      kills:        0,
+      victories:    0,
+      size_max:     settlement.garrison_size_max || 1000,   # 1000 is default size
+      exp:          0,
+      rank:         0,
+      garrison:     true,
+      stance:       0,
+    })
+    
+    if army.save 
+      details = army.create_details
+      return true 
+    else
+      return false
+    end
+  end
 
   
   def self.regeneration_duration

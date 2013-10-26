@@ -161,7 +161,7 @@ public:
 class UnitType : public BuildableEntityType
 {
 public: 
-  int velocity;
+  double velocity;
   int initiative;
   int actionPoints;
   int attack;

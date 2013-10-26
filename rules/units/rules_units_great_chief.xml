@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Unit id="great_chief" category="unitcategory_special" experienceFactor="0.0" trainable="false">
+  <Name>Great Chief</Name>
+  <Name lang="de_DE">Großer Häuptling</Name>
+  
+  <Description lang="de_DE">
+    <p>Als intriganter, karrieresüchtiger, aalglatter Möchtegern ist der Große Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Einziger Trost für seine Untergebenen: so groß ist er gar nicht.</p>
+  </Description>
+  <Description lang="en_US">
+    <p>As a scheming, workaholic, slick wannabe, the great chief is a role model for entire generations of snobs. At least, he isn't that tall. Actually, he's rather small. But please, don't let him know.</p>
+  </Description>
+  <Flavour lang="en_US">
+    <p>The great chief is allowed to set up a new home settlement and found a tribe.</p>
+  </Flavour>
+  <Flavour lang="de_DE">
+    <p>Der Große Häuptling kann eine Heimatsiedlung und damit einen neuen Stamm gründen.</p>
+  </Flavour>
+  <Cost id="resource_stone" round="true">500000</Cost>  
+  <Cost id="resource_wood" round="true">500000</Cost>    
+  <Cost id="resource_fur" round="true">400000</Cost>    
+  <ProductionTime shortenable="true">432000</ProductionTime>
+  <Velocity>5.00</Velocity>
+  <ActionPoints>4</ActionPoints>
+  <Initiative>20</Initiative>
+  <Attack>10</Attack>
+  <CriticalDamage chance="0.01">50</CriticalDamage>
+  <Armor>3</Armor>
+  <Overrunnable>true</Overrunnable>
+  <Hitpoints>300</Hitpoints>
+  <Effectiveness category="unitcategory_infantry">1</Effectiveness>
+  <Effectiveness category="unitcategory_cavalry">0.5</Effectiveness>
+  <Effectiveness category="unitcategory_artillery">1</Effectiveness>
+  <Effectiveness category="unitcategory_siege">1</Effectiveness>
+  <Effectiveness category="unitcategory_special">1</Effectiveness>
+  <RequirementGroup>
+  	<Requirement id="building_stud" min_level="100" />
+  </RequirementGroup>
+  <!-- add ability to found settlement here not in category -->    
+  <CanCreate id="settlement_home_base" />
+</Unit>

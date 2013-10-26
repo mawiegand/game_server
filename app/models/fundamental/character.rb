@@ -18,6 +18,8 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :inbox,             :class_name => "Messaging::Inbox",           :foreign_key => "owner_id",     :inverse_of => :owner
   has_one  :outbox,            :class_name => "Messaging::Outbox",          :foreign_key => "owner_id",     :inverse_of => :owner
   has_one  :archive,           :class_name => "Messaging::Archive",         :foreign_key => "owner_id",     :inverse_of => :owner
+  
+  has_many :claimed_locations, :class_name => "Map::Location",              :foreign_key => "claimed_by",   :inverse_of => :claiming_character
 
   has_many :quests,            :class_name => "Tutorial::Quest",            :foreign_key => "state_id",     :inverse_of => :owner
   has_many :standard_assignments,  :class_name => "Assignment::StandardAssignment",  :foreign_key => "character_id",  :inverse_of => :character
@@ -335,6 +337,7 @@ class Fundamental::Character < ActiveRecord::Base
       name: name,
       npc:  npc,
       exp:  0,
+      start_variant: 1,
     })
 
     unless character.save
@@ -363,6 +366,78 @@ class Fundamental::Character < ActiveRecord::Base
       character.base_node_id = location.region.node_id
 
       character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
+
+      character
+    end
+    
+    unless character.save
+      raise InternalServerError.new('Could not save the base of the character.')
+    end
+
+    unless npc
+      character.create_inbox
+      character.create_outbox
+      character.create_archive
+
+      # sending of welcome message is now triggered by a tutorial quest
+      # Messaging::Message.create_welcome_message(character)
+
+      character.create_tutorial_state
+      character.tutorial_state.create_start_quest_state
+
+      cmd = Messaging::JabberCommand.grant_access(character, 'global')
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'handel')
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'plauderhöhle')
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'help')
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'whisperingcavern')
+      cmd.character_id = character.id
+      cmd.save
+      cmd = Messaging::JabberCommand.grant_access(character, 'beginner')
+      cmd.character_id = character.id
+      cmd.save
+    end
+    
+    character 
+  end
+  
+  # creates a character and a settler unit, not a settlement
+  def self.create_new_character_and_settler(identifier, name, start_resource_modificator, npc = false, start_location = nil)
+    character = Fundamental::Character.new({
+      identifier: identifier,
+      name: name,
+      npc:  npc,
+      exp:  0,
+      start_variant: 2,
+    })
+
+    unless character.save
+      raise InternalServerError.new('Could not create new character.')
+    end
+
+    character.create_resource_pool
+    
+    raise InternalServerError.new('Could not save the base of the character.')  if !character.save
+
+    unless npc
+      character.create_ranking({
+        character_name: name,
+      })
+
+      location = start_location.nil? ? Map::Location.find_empty_with_neighbors : start_location
+      if !location || !character.claim_location(location)
+        character.destroy
+        raise InternalServerError.new('Could not claim an empty location.')
+      end
+
+      Military::Army.create_settler_at_location(location, character)
 
       character
     end
@@ -497,8 +572,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   # should claim a location in a thread-safe way.... (e.g. check, that owner hasn't changed)
   def claim_location(location)
-    # here block location, in case it's not yet blocked.  blocked lactions must be ignored by find_empty
-    true
+    location.claim!(self)
   end
     
   def add_like_for(character)

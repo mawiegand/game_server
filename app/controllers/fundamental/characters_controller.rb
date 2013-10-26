@@ -51,8 +51,17 @@ class Fundamental::CharactersController < ApplicationController
   end
 
   def self
-    external_referer = request.env["HTTP_X_ALT_REFERER"] || params[:referer]
-    request_url = request.env["HTTP_X_ALT_REQUEST"]
+    external_referer  = request.env["HTTP_X_ALT_REFERER"] || params[:referer]
+    request_url       = request.env["HTTP_X_ALT_REQUEST"]
+    
+    is_ios_client     = !external_referer.blank? && external_referer == "itunes.com" # improve this! should use client-id or other mechanism
+    use_settler_start = !is_ios_client
+    
+    # ########################################################################
+    #
+    #   NEW USER
+    #
+    # ########################################################################
     
     if !current_character && request_access_token &&  request_access_token.valid? &&
         request_access_token.in_scope?(GAME_SERVER_CONFIG['scope']) && 
@@ -127,7 +136,14 @@ class Fundamental::CharactersController < ApplicationController
         start_location = Map::Location.location_with_geo_coords(geo_coords) unless geo_coords.nil?
       end
       
-      character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator, false, start_location)
+      character = nil
+      
+      if !use_settler_start
+        character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator, false, start_location)
+      else 
+        character = Fundamental::Character.create_new_character_and_settler(request_access_token.identifier, character_name, start_resource_modificator, false, start_location)
+      end
+      
       raise InternalServerError.new('Could not create Character for new User.') if character.blank?     
                     
       Backend::SignInLogEntry.create({
@@ -167,7 +183,7 @@ class Fundamental::CharactersController < ApplicationController
       character.increment(:login_count)
       character.save
       
-      if params.has_key?(:client_id)   # fetch gift
+      if !use_settler_start && params.has_key?(:client_id)   # fetch gift
         response = identity_provider_access.fetch_signup_gift(request_access_token.identifier, params[:client_id])
         logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
       
@@ -188,8 +204,10 @@ class Fundamental::CharactersController < ApplicationController
         character.redeem_startup_gift(start_resource_bonus)
       end
 
-      start_resources.each do |start_resource|
-        character.redeem_start_resources(start_resource)
+      if !use_settler_start
+        start_resources.each do |start_resource|
+          character.redeem_start_resources(start_resource)
+        end
       end
 
       start_xp_bonuses.each do |start_xp_bonus|
@@ -205,8 +223,26 @@ class Fundamental::CharactersController < ApplicationController
 
       redirect_to fundamental_character_path(character.id)
       
+      
+    # ########################################################################
+    #
+    #   ERROR: No or invalid token, missing authorization or parameter
+    #
+    # ########################################################################
+      
     elsif !current_character
+      identifier = request_access_token.nil? ? '(no token)' : request_access_token.identifier
+      logger.error "ERROR IN CHARACTER CONTROLLER #SELF: Could not find user's character with identifier #{ identifier }"
       raise NotFoundError.new("Could not find user's character.")
+      
+      
+      
+    # ########################################################################
+    #
+    #   Returning user who has been deleted due to inactivity
+    #
+    # ########################################################################      
+      
     elsif current_character.deleted_from_game?
       
       # set player back to game

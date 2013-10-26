@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.47
+# Version: 0.3.48
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 47, 
+        :build => 48, 
       },
       
       :production_test_weights => {
@@ -13183,9 +13183,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Log into the HTML version of Wack-A-Doo at https://www.wack-a-doo.com.",
+            :en_US => "Log into the HTML version of Wack-A-Doo at https://wack-a-doo.com or into the facebook-App.",
   
-            :de_DE => "Logge Dich in die HTML-Version von Wack-A-Doo ein unter https://www.wack-a-doo.de an.",
+            :de_DE => "Logge Dich in die HTML-Version von Wack-A-Doo unter https://wack-a-doo.de oder in die Facebook-App von Wack-A-Doo ein.",
                 
           },
           :flavour => {
@@ -13197,9 +13197,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Wack-A-Doo kann nicht nur als App gespielt werden, Du kannst Dich auch über deinen Webbrowser im Spiel anmelden und dort das selbe Spiel spielen!</p>",
+            :de_DE => "<p>Du kannst den selben Wack-A-Doo Account auch über Deinen Webbrowser oder im Spiel anmelden und dort das selbe Spiel spielen!</p>",
   
-            :en_US => "<p>Wack-A-Doo is not only an App, you can also play the same game in your browser!</p>",
+            :en_US => "<p>Wack-A-Doo is not only an App, you can also play the same game in your browser or as facebook-app!</p>",
                 
           },          
           :reward_flavour => {
