@@ -19,13 +19,11 @@ now = Time.now
 # get and delete all inactive player
 removed_not_started_players = 0
 Fundamental::Character.non_npc.not_started.each do |c|
-  if c.settlements.count == 0
-    @report[:removed_not_started_players] << c
-    c.removed_not_started
-    removed_not_started_players += 1
-    print "."
-    sleep(1)
-  end
+  @report[:removed_not_started_players] << c
+  c.removed_not_started
+  removed_not_started_players += 1
+  print "."
+  sleep(1)
 end
 puts ""
 
