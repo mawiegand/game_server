@@ -99,7 +99,7 @@ class Military::Army < ActiveRecord::Base
     
     army = location.armies.build({
       region_id:      location.region_id,  
-      name:           settler_unit_type.name[character.locale],
+      name:           settler_unit_type[:name][character.locale],
       owner_id:       character.id,
       owner_name:     character.name,
       npc:            character.npc,
@@ -122,19 +122,22 @@ class Military::Army < ActiveRecord::Base
       stance:       0,
     })
     
+    logger.debug "Creating the following army: #{ army.inspect }."
+    
     if army.save 
       details = army.create_details({
         settler_unit_type[:db_field] => 1
       })
       return true 
     else
+      logger.debug "Saving the amry did fail."
       return false
     end
   end
   
   def self.default_settler_unit_type
     GameRules::Rules.the_rules.unit_types.each do |t|
-      if !t[:can_create].nil? && t[:can_create] == 2
+      if !t[:can_create].nil? && t[:can_create].include?(2)
         return t
       end
     end
