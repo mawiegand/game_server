@@ -112,8 +112,10 @@ class Fundamental::Character < ActiveRecord::Base
   
   scope :churned,          lambda { where(['last_login_at IS NULL OR last_login_at < ?', Time.now - 1.weeks]) }
 
-  scope :not_deleted, where(deleted_from_game: false)
-  scope :deleted, where(deleted_from_game: true)
+  scope :not_deleted,      where(deleted_from_game: false)
+  scope :deleted,          where(deleted_from_game: true)
+
+  scope :not_started,      where('deleted_from_game = ? AND last_request_at < ?', false, Time.now - 1.hours)
 
   # used by player deletion script
   scope :shortly_before_deletable, lambda{ |now| not_deleted.where([
@@ -200,7 +202,7 @@ class Fundamental::Character < ActiveRecord::Base
   # updates the playtime of this character. called by the current_character
   # methods during authorization of a request.
   def update_last_request_at
-    if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now  
+    if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now
       difference = Time.now - (self.last_request_at ||Time.now)
       self.update_column(:playtime, (playtime || 0.0) + (difference <= 120.0 ? difference : 30.0))     # assumption: larger than 2 minutes -> user was offline inbetween , so just count the startet minute  
       self.update_column(:last_request_at, Time.now)  # change timestamp without triggering before / after handlers, without update updated_at
@@ -1413,8 +1415,18 @@ class Fundamental::Character < ActiveRecord::Base
     self.deleted_from_game = true
     self.last_deleted_at = Time.now
     self.save
-    
+
     check_consistency
+  end
+
+  def removed_not_started
+    self.armies.destroy_all
+
+
+
+    self.deleted_from_game = true
+    self.last_deleted_at = Time.now
+    self.save
   end
 
   def first_start
