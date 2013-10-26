@@ -154,7 +154,7 @@ class Map::Location < ActiveRecord::Base
     target_location
   end
   
-  def self.claim!(character)
+  def claim!(character)
     self.claiming_character = character
     self.save
   end

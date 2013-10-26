@@ -122,7 +122,7 @@ class Military::Army < ActiveRecord::Base
     
     if army.save 
       details = army.create_details({
-        settler_unit_type[:db_field]: 1
+        settler_unit_type[:db_field] => 1
       })
       return true 
     else
