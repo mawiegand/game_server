@@ -19,11 +19,13 @@ now = Time.now
 # get and delete all inactive player
 removed_not_started_players = 0
 Fundamental::Character.non_npc.not_started.each do |c|
-  @report[:deleted_players] << c
-  c.removed_not_started
-  removed_not_started_players += 1
-  print "."
-  sleep(1)
+  if c.settlements.count == 0
+    @report[:removed_not_started_players] << c
+    c.removed_not_started
+    removed_not_started_players += 1
+    print "."
+    sleep(1)
+  end
 end
 puts ""
 
@@ -31,7 +33,7 @@ puts ""
 if @report[:removed_not_started_players].count > 0
   puts "Remove claimed locations: mail report"
   @report[:finished_at] = now
-  Backend::PlayerDeletionMailer.player_deletion_report(@report).deliver
+  Backend::PlayerDeletionMailer.player_remove_claimed_settlements_report(@report).deliver
 end
 
 puts "Remove claimed locations: finished cron job"

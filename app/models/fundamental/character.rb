@@ -1491,13 +1491,13 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def removed_not_started
-    self.armies.destroy_all
-
-
-
-    self.deleted_from_game = true
-    self.last_deleted_at = Time.now
-    self.save
+    #self.armies.destroy_all
+    #
+    #
+    #
+    #self.deleted_from_game = true
+    #self.last_deleted_at = Time.now
+    #self.save
   end
 
   def first_start
