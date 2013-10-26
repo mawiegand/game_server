@@ -18,10 +18,6 @@ class Map::Location < ActiveRecord::Base
   scope :non_empty,                 where("settlement_type_id != ?", Settlement::Settlement::TYPE_NONE)
   scope :home_bases,                where("settlement_type_id = ?", Settlement::Settlement::TYPE_HOME_BASE)
 
-  def armies_visible_to_character(character)
-    self.armies.select {|army| !army.invisible? || army.owner == character }
-  end
-
   def self.find_empty
     Map::Location.empty.offset(Random.rand(Map::Location.empty.count)).first
   end

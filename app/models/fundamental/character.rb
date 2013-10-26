@@ -164,10 +164,6 @@ class Fundamental::Character < ActiveRecord::Base
     Fundamental::Character.first(:conditions => [ "lower(name) = ?", name.downcase ])
   end
 
-  def armies_visible_to_character(character)
-    self.armies.select {|army| !army.invisible? || army.owner == character }
-  end
-
   def self.valid_identifier?(identifier)
     identifier.index(@identifier_regex) != nil
   end

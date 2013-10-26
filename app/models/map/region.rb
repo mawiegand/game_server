@@ -25,10 +25,6 @@ class Map::Region < ActiveRecord::Base
   
   scope :non_occupied, where(owner_id: 1)
 
-  def armies_visible_to_character(character)
-    self.armies.select {|army| !army.invisible? || army.owner == character }
-  end
-
   def recount_settlements
     self.count_settlements = self.locations.where('settlement_type_id = 2').count
     self.save

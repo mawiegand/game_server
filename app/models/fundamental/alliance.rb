@@ -47,10 +47,6 @@ class Fundamental::Alliance < ActiveRecord::Base
   scope :non_empty,          where('members_count > 0')
   scope :auto_join_selectable, not_full.auto_join_enabled.non_empty
 
-  def armies_visible_to_character(character)
-    self.armies.select {|army| !army.invisible? || army.owner == character }
-  end
-
   def self.create_alliance(tag, name, leader, role = :creator)
     raise ConflictError.new("this alliance tag is already used") unless Fundamental::Alliance.find_by_tag(tag).nil?
     raise InternalServerError.new('no leader specified') if leader.nil? || leader.id.nil?
