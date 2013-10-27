@@ -26,6 +26,14 @@ class Tutorial::State < ActiveRecord::Base
   end
   
   def create_start_quest_state
+    quest = self.quests.create({          # hack. as the settler-quest won't be reached in this tutorial-graph, it'll be marked as finished right from the start
+      quest_id:     GAME_SERVER_CONFIG['settler_start_quest_id'],
+      status:       Tutorial::Quest::STATE_CLOSED,    
+      finished_at:  Time.now,
+      reward_displayed_at: Time.now,
+      displayed_at: Time.now
+    })
+    
     self.quests.create({
       quest_id:     0,
       status:       Tutorial::Quest::STATE_NEW,
@@ -33,10 +41,14 @@ class Tutorial::State < ActiveRecord::Base
   end
   
   def create_settler_start_quest_state
-    self.quests.create({
+    quest = self.quests.create({
       quest_id:     GAME_SERVER_CONFIG['settler_start_quest_id'],
       status:       Tutorial::Quest::STATE_NEW,       
     })
+    
+    logger.debug "Created a settler quest with id #{ GAME_SERVER_CONFIG['settler_start_quest_id'] }: #{ quest.inspect}."
+    
+    quest
   end
 
   def check_consistency
