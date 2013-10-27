@@ -138,10 +138,18 @@ class Fundamental::CharactersController < ApplicationController
       
       character = nil
       
+      character_args = {
+        resource_modificator: start_resource_modificator, 
+        npc: false,
+        location: start_location,
+        gender: identity['gender'] || 'male',
+        lang: I18n.locale || :en,
+      }
+      
       if !use_settler_start
-        character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, start_resource_modificator, false, start_location)
+        character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, character_args)
       else 
-        character = Fundamental::Character.create_new_character_and_settler(request_access_token.identifier, character_name, start_resource_modificator, false, start_location)
+        character = Fundamental::Character.create_new_character_and_settler(request_access_token.identifier, character_name, character_args)
       end
       
       raise InternalServerError.new('Could not create Character for new User.') if character.blank?     
@@ -170,15 +178,9 @@ class Fundamental::CharactersController < ApplicationController
       character.gc_player_id_connected_at = identity['gc_player_id_connected_at']
       character.gc_rejected_at            = identity['gc_rejected_at']
 
-      character.gender        = identity['gender']
-
-      avatar = GameState::Avatars.new
-      character.avatar_string = avatar.create_random_avatar_string(character.gender.nil? || character.gender == 'male')
-
       character.image_set_id  = identity['image_set_id']
       character.insider_since = identity['insider_since']
       character.first_round   = identity['created_at'].nil? ? false : Time.parse(identity['created_at']) > Time.now.advance(:hours => -1)
-      character.lang          = I18n.locale || "en"
       character.last_login_at = DateTime.now
       character.increment(:login_count)
       character.save

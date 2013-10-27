@@ -255,7 +255,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def locale
-    if self.lang == 'de'
+    if self.lang.to_sym == :de
       :de_DE
     else
       :en_US
@@ -333,14 +333,25 @@ class Fundamental::Character < ActiveRecord::Base
   end  
   
   # FIXME: this does NOT save the character after all modifications itself!!! should be corrected also inside the corresponding controller
-  def self.create_new_character(identifier, name, start_resource_modificator, npc = false, start_location = nil)
+  def self.create_new_character(identifier, name, args = {})
+    resource_modificator = args[:resource_modificator] || 1.0;
+    npc                  = args[:npc]                  || false;
+    start_location       = args[:location]             || nil;
+    gender               = args[:gender]               || nil;
+    lang                 = args[:lang]                 || :en;
+    
     character = Fundamental::Character.new({
       identifier: identifier,
       name: name,
       npc:  npc,
       exp:  0,
       start_variant: 1,
+      gender: gender,
+      lang: lang,
     })
+    
+    avatar = GameState::Avatars.new
+    character.avatar_string = avatar.create_random_avatar_string(character.gender.nil? || character.gender == 'male')
 
     unless character.save
       raise InternalServerError.new('Could not create new character.')
@@ -367,7 +378,7 @@ class Fundamental::Character < ActiveRecord::Base
       character.base_region_id = location.region_id
       character.base_node_id = location.region.node_id
 
-      character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
+      character.resource_pool.fill_with_start_resources_transaction(resource_modificator)   
 
       character
     end
@@ -411,19 +422,28 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   # creates a character and a settler unit, not a settlement
-  def self.create_new_character_and_settler(identifier, name, start_resource_modificator, npc = false, start_location = nil)
+  def self.create_new_character_and_settler(identifier, name, args = {})
+    npc                  = args[:npc]                  || false;
+    start_location       = args[:location]             || nil;
+    gender               = args[:gender]               || nil;
+    lang                 = args[:lang]                 || :en;
+    
     character = Fundamental::Character.new({
       identifier: identifier,
       name: name,
       npc:  npc,
       exp:  0,
       start_variant: 2,
+      gender: gender,
+      lang: lang,
     })
 
     unless character.save
       raise InternalServerError.new('Could not create new character.')
     end
 
+    logger.debug "Character lang: #{character.lang} and locale: #{character.locale}."
+    
     character.create_resource_pool
     
     raise InternalServerError.new('Could not save the base of the character.')  if !character.save
