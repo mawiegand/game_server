@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.48
+# Version: 0.4.0
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,8 +78,8 @@ class Tutorial::Tutorial
   
       :version => {
         :major => 0, 
-        :minor => 3, 
-        :build => 48, 
+        :minor => 4, 
+        :build => 0, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 19,
   
       :quests => [  # ALL QUESTS
 
@@ -154,6 +154,12 @@ class Tutorial::Tutorial
   
             :en_US => "The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. ",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_home_base',
+
           },
 
           :successor_quests => [1, ],
@@ -13247,6 +13253,81 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_crossplatform
+        {               #   quest_home_base
+          :id                => 135,
+          :symbolic_id       => :quest_home_base,
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+          :tutorial          => true,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Own Home Base",
+  
+            :de_DE => "Eigene Heimatsiedlung",
+                
+          },
+          :task => {
+            
+            :en_US => "Found your first Settlement",
+  
+            :de_DE => "Gründe Deine erste Siedlung",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Ein Dach über dem Kopf hätte was!",
+  
+            :en_US => "Having a roof overhead sounds like a good idea!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Gründe Deine erste Siedlung.</p>",
+  
+            :en_US => "<p>Found your first Settlement.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ein Dach über dem Kopf hätte was!",
+  
+            :en_US => "Having a roof overhead sounds like a good idea!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Gleich mal ein paar Rohstoffe, damit Du anfangen kannst, Deine Siedlung mit ein paar Gebäuden zu erweitern.",
+  
+            :en_US => "Wack-A-Doo in your browser works exactly the same as the App, just with a different interface.",
+                
+          },
+
+          :successor_quests => [0, ],
+
+          :rewards => {
+            
+            :experience_reward => 500,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_home_base',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_home_base
       ],                # END OF QUESTS
 
     )

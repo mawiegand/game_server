@@ -24,13 +24,31 @@ class Tutorial::State < ActiveRecord::Base
     end
     nil
   end
-  
+
   def create_start_quest_state
     self.quests.create({
       quest_id:     0,
       status:       Tutorial::Quest::STATE_NEW,
     })
   end
+
+  def create_start_quest_state_with_symbolic_id(quest_symbolic_id)
+
+    quest_id = 0
+
+    Tutorial::Tutorial.the_tutorial.quests.each do |quest|
+      if quest[:symbolic_id].to_s == quest_symbolic_id
+        quest_id = quest[:id]
+      end
+    end
+
+    self.quests.create({
+      quest_id:     quest_id,
+      status:       Tutorial::Quest::STATE_NEW,
+    })
+  end
+
+
 
   def check_consistency
     # durchlaufe alle beendeten quest_states

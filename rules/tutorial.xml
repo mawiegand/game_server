@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="48" />
+    <Version major="0" minor="4" build="0" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -47,6 +47,7 @@
       <RewardText locale="en_US">The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. </RewardText>
       <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
       <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
+      <Requirement quest="quest_home_base" />
       <Rewards>
         <ResourceReward resource="resource_stone">25</ResourceReward>
         <ResourceReward resource="resource_wood">25</ResourceReward>
@@ -5141,7 +5142,7 @@
         <AllianceMembersTest min_count="23" />
       </RewardTests>
     </Quest>
-    
+
     <Quest id="quest_crossplatform" advisor="chef">
       <Name>Cross-Platform</Name>
       <Name locale="de_DE">Cross-Platform</Name>
@@ -5168,6 +5169,31 @@
         <CrossPlatformTest/>
       </RewardTests>
     </Quest>
-    
+
+    <Quest id="quest_home_base" advisor="girl" tutorial="true">
+      <Name>Own Home Base</Name>
+      <Name locale="de_DE">Eigene Heimatsiedlung</Name>
+      <Task>Found your first Settlement</Task>
+      <Task locale="de_DE">Gründe Deine erste Siedlung</Task>
+      <Description locale="de_DE">
+        <p>Gründe Deine erste Siedlung.</p>
+      </Description>
+      <Description locale="en_US">
+        <p>Found your first Settlement.</p>
+      </Description>
+      <Flavor locale="de_DE">Ein Dach über dem Kopf hätte was!</Flavor>
+      <Flavor locale="en_US">Having a roof overhead sounds like a good idea!</Flavor>
+      <RewardText locale="de_DE">Gleich mal ein paar Rohstoffe, damit Du anfangen kannst, Deine Siedlung mit ein paar Gebäuden zu erweitern.</RewardText>
+      <RewardText locale="en_US">Wack-A-Doo in your browser works exactly the same as the App, just with a different interface.</RewardText>
+      <RewardFlavor locale="de_DE">Ein Dach über dem Kopf hätte was!</RewardFlavor>
+      <RewardFlavor locale="en_US">Having a roof overhead sounds like a good idea!</RewardFlavor>
+      <Rewards>
+        <ExperienceReward>500</ExperienceReward>
+      </Rewards>
+      <RewardTests>
+        <SettlementTest min_count="1" type="settlement_home_base" />
+      </RewardTests>
+    </Quest>
+
   </Quests>
 </Tutorial>

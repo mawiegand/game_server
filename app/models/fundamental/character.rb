@@ -564,10 +564,6 @@ class Fundamental::Character < ActiveRecord::Base
     raise InternalServerError.new('Could not save the base of the character.')  if !character.save
 
     unless npc
-      character.create_ranking({
-        character_name: name,
-      })
-
       location = start_location.nil? ? Map::Location.find_empty_with_neighbors : start_location
       if !location || !character.claim_location(location)
         character.destroy
@@ -592,7 +588,7 @@ class Fundamental::Character < ActiveRecord::Base
       # Messaging::Message.create_welcome_message(character)
 
       character.create_tutorial_state
-      character.tutorial_state.create_start_quest_state
+      character.tutorial_state.create_start_quest_state_with_symbolic_id('quest_home_base')
 
       cmd = Messaging::JabberCommand.grant_access(character, 'global')
       cmd.character_id = character.id

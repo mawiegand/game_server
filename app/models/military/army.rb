@@ -289,13 +289,20 @@ class Military::Army < ActiveRecord::Base
     owner.base_location_id = location.id              # TODO is this the home_location_id?
     owner.base_region_id = location.region_id
     owner.base_node_id = location.region.node_id
-    
+
+    owner.create_ranking({
+      character_name: owner.name,
+    })
+
+
     # get character properties and place resources inside the resource pool
     character_properties = owner.fetch_identity_properties
     owner.resource_pool.fill_with_start_resources_transaction(character_properties[:start_resource_modificator])
     character_properties[:start_resources].each do |start_resource|
       owner.redeem_start_resources(start_resource)
     end
+
+
 
     unless client_id.nil?  # fetch gift
       gift = owner.fetch_signup_gift_for_client(client_id)
