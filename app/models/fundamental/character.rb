@@ -411,7 +411,7 @@ class Fundamental::Character < ActiveRecord::Base
     parsed_properties
   end
   
-  def self.fetch_identity_properties
+  def fetch_identity_properties
     Fundamental::Character.fetch_identity_properties_for_identifier(self.identifier)
   end
   
