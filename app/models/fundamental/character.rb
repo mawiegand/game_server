@@ -466,7 +466,7 @@ class Fundamental::Character < ActiveRecord::Base
     })
     
     avatar = GameState::Avatars.new
-    character.avatar_string = avatar.create_random_avatar_string(character.gender.nil? || character.gender == 'male')
+    character.avatar_string = avatar.create_random_avatar_string(gender.nil? || gender == 'male')
 
     unless character.save
       raise InternalServerError.new('Could not create new character.')
@@ -552,6 +552,9 @@ class Fundamental::Character < ActiveRecord::Base
       gender: gender,
       lang: lang,
     })
+    
+    avatar = GameState::Avatars.new
+    character.avatar_string = avatar.create_random_avatar_string(gender.nil? || gender == 'male')
 
     unless character.save
       raise InternalServerError.new('Could not create new character.')
