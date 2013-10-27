@@ -158,7 +158,7 @@ class Tutorial::Tutorial
 
           :requirement => {
             
-            :quest => 'quest_home_base',
+            :quest => 'quest_found_home_base',
 
           },
 
@@ -13253,56 +13253,56 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_crossplatform
-        {               #   quest_home_base
+        {               #   quest_found_home_base
           :id                => 135,
-          :symbolic_id       => :quest_home_base,
-          :advisor           => :girl,
+          :symbolic_id       => :quest_found_home_base,
+          :advisor           => :chef,
           :hide_start_dialog => false,
           :tutorial          => true,
           :tutorial_end_quest => false,
-          :priority          => 0,
-          :blocking          => false,
+          :priority          => 1,
+          :blocking          => true,
 
           :name => {
             
-            :en_US => "Own Home Base",
+            :en_US => "Settle Down",
   
-            :de_DE => "Eigene Heimatsiedlung",
+            :de_DE => "Lass Dich nieder",
                 
           },
           :task => {
             
-            :en_US => "Found your first Settlement",
+            :en_US => "Found a Settlement",
   
-            :de_DE => "Gründe Deine erste Siedlung",
+            :de_DE => "Gründe Deine Hauptsiedlung.",
                 
           },
           :flavour => {
             
-            :de_DE => "Ein Dach über dem Kopf hätte was!",
+            :de_DE => "Willkommen Halbgott. Wir sind so weit gelaufen, lass uns hier siedeln!",
   
-            :en_US => "Having a roof overhead sounds like a good idea!",
+            :en_US => "Welcome Demigod! We've walked so far, let's found a settlement!",
                 
           },
           :description => {
             
-            :de_DE => "<p>Gründe Deine erste Siedlung.</p>",
+            :de_DE => "<p>Wähle den großen Häuptling aus und drücke den blauen Siedlungsknopf.</p>",
   
-            :en_US => "<p>Found your first Settlement.</p>",
+            :en_US => "<p>Select your Great Chief and press the blue settle button.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Ein Dach über dem Kopf hätte was!",
+            :de_DE => "Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?",
   
-            :en_US => "Having a roof overhead sounds like a good idea!",
+            :en_US => "Hey – that looks much better, don't you think? ",
                 
           },
           :reward_text => {
             
-            :de_DE => "Gleich mal ein paar Rohstoffe, damit Du anfangen kannst, Deine Siedlung mit ein paar Gebäuden zu erweitern.",
+            :de_DE => "Der Jäger und Sammler sammelt Steine, Holz und Felle für Deinen Rohstoffvorrat.",
   
-            :en_US => "Wack-A-Doo in your browser works exactly the same as the App, just with a different interface.",
+            :en_US => "The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. ",
                 
           },
 
@@ -13310,7 +13310,26 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :experience_reward => 500,
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 25,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 25,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 25,
+              },
+
+            ],
+
+            :experience_reward => 25,
 
           },          
 
@@ -13327,7 +13346,9 @@ class Tutorial::Tutorial
 
           },          
 
-        },              #   END OF quest_home_base
+          :uimarker => ['mark_map', 'mark_select_own_army', 'mark_found_settlement', ],
+
+        },              #   END OF quest_found_home_base
       ],                # END OF QUESTS
 
     )
