@@ -11,6 +11,8 @@ class Tutorial::TutorialsController < ApplicationController
   def show
     @tutorial = Tutorial::Tutorial.the_tutorial
     
+    expires_now
+    
     fresh = false
     if params.key?(:build) && params.key?(:minor) && params.key?(:major)
       fresh = Gem::Version.new("#{params[:major]}.#{params[:minor]}.#{params[:build]}") >= Gem::Version.new("#{@tutorial.version[:major]}.#{@tutorial.version[:minor]}.#{@tutorial.version[:build]}")
