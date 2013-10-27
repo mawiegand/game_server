@@ -15,8 +15,12 @@ class Map::Location < ActiveRecord::Base
 
   scope :excluding_fortress_slots,  where(['slot <> ?', 0])
   scope :owned_by,                  lambda { |character| where(:owner_id => character.id) }
-  scope :empty,                     where("settlement_type_id = ?", Settlement::Settlement::TYPE_NONE)
-  scope :non_empty,                 where("settlement_type_id != ?", Settlement::Settlement::TYPE_NONE)
+  scope :non_settled,               where("settlement_type_id = ?", Settlement::Settlement::TYPE_NONE)
+  scope :settled,                   where("settlement_type_id != ?", Settlement::Settlement::TYPE_NONE)
+  scope :empty,                     where("settlement_type_id = ? AND claimed_by IS NULL", Settlement::Settlement::TYPE_NONE)
+  scope :non_empty,                 where("settlement_type_id != ? OR claimed_by IS NOT NULL", Settlement::Settlement::TYPE_NONE)
+  scope :claimed,                   where("claimed_by IS NULL")
+  scope :non_claimed,               where("claimed_by IS NOT NULL")
   scope :home_bases,                where("settlement_type_id = ?", Settlement::Settlement::TYPE_HOME_BASE)
 
   def self.find_empty
@@ -77,7 +81,7 @@ class Map::Location < ActiveRecord::Base
     # select from owned regions, if any free location
     inviting_alliance.regions.order("updated_at ASC").each do |region|   # pseudo random order
       empty_locations  = region.locations.empty
-      home_bases_count = region.locations.home_bases.count
+      home_bases_count = region.locations.home_bases.count + region.locations.claimed.count  # also consider claimed but not yet settled spots
       if empty_locations.count > 0 && home_bases_count < max_home_bases
         return empty_locations.offset(Random.rand(empty_locations.count)).first
       end
@@ -88,7 +92,7 @@ class Map::Location < ActiveRecord::Base
     inviting_alliance.members.order("updated_at ASC").each do |character|   # pseudo random order
       region = character.home_location.region
       empty_locations = region.locations.empty
-      home_bases_count = region.locations.home_bases.count
+      home_bases_count = region.locations.home_bases.count + region.locations.claimed.count  # also consider claimed but not yet settled spots
       if empty_locations.count > 0 && home_bases_count < max_home_bases
         return empty_locations.offset(Random.rand(empty_locations.count)).first
       end
@@ -99,7 +103,7 @@ class Map::Location < ActiveRecord::Base
     regions.each do |region|   # pseudo random order
       region.node.neighbor_nodes.each do |neighbor_node|
         empty_locations  = neighbor_node.region.locations.empty
-        home_bases_count = neighbor_node.region.locations.home_bases.count
+        home_bases_count = neighbor_node.region.locations.home_bases.count + neighbor_node.region.locations.claimed.count  # also consider claimed but not yet settled spots
         if empty_locations.count > 0 && home_bases_count < max_home_bases
           return empty_locations.offset(Random.rand(empty_locations.count)).first
         end
@@ -137,7 +141,7 @@ class Map::Location < ActiveRecord::Base
   def self.is_valid_starting_position(node)
     if !node.nil? && node.leaf?
       free_locations = node.region.locations.empty.count
-      home_bases_count = node.region.locations.home_bases.count
+      home_bases_count = node.region.locations.home_bases.count + node.region.locations.claimed.count  # also consider claimed but not yet settled spots
       if free_locations > 0 && home_bases_count < GAME_SERVER_CONFIG['max_home_bases_in_region_for_geo']
         return true
       end
@@ -147,7 +151,7 @@ class Map::Location < ActiveRecord::Base
   
   def self.free_location_in(node)
     free_locations = node.region.locations.empty.count
-    home_bases_count = node.region.locations.home_bases.count
+    home_bases_count = node.region.locations.home_bases.count + node.region.locations.claimed.count  # also consider claimed but not yet settled spots
     if free_locations > 0 && home_bases_count < GAME_SERVER_CONFIG['max_home_bases_in_region_for_geo']
       target_location = node.region.locations.empty.offset(Random.rand(free_locations)).first
     end
