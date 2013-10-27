@@ -250,11 +250,23 @@ class Military::Army < ActiveRecord::Base
     
     founder = nil
     GameRules::Rules.the_rules.unit_types.each do |unit_type|
-      founder = unit_type   if !unit_type[:can_create].nil? && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+      founder = unit_type   if !unit_type[:can_create].nil? && unit_type[:can_create].include?(3)  && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
     end
     
     !founder.nil?
   end
+
+  def can_found_home_base?
+    return false    if self.details.nil?
+        
+    founder = nil
+    GameRules::Rules.the_rules.unit_types.each do |unit_type|
+      founder = unit_type   if !unit_type[:can_create].nil? && unit_type[:can_create].include?(2) && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+    end
+    
+    !founder.nil?
+  end
+
 
   def move_to_location(target_location)
     self.location = target_location
