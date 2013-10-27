@@ -75,56 +75,12 @@ class Fundamental::CharactersController < ApplicationController
         scopes:                     ['5dentity'],
       })
 
-      response = identity_provider_access.fetch_identity(request_access_token.identifier)
-      logger.info "IDENTITY RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
-      identity = {}
-      if response.code == 200
-        identity = response.parsed_response
-      end
+      identity = Fundamental::Character.fetch_identity_for_identifier(request_access_token.identifier)
+      character_properties = Fundamental::Character.fetch_identity_properties_for_identifier(request_access_token.identifier)
 
       character_name = identity['nickname'] || GAME_SERVER_CONFIG['default_character_name'] || 'Player'
-
-      # set character properties to default values
-      start_resource_modificator = 1.0
-      start_resource_bonuses = []
-      start_resources = []
-      start_xp_bonuses = []
       
-      # fetch persistent character properties from identity provider  
-      response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
-      logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
-      
-      if response.code == 200
-        properties = response.parsed_response
-        logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
-
-        unless properties.empty?
-          properties.each do |character_property|
-            if !character_property.nil? && !character_property['data'].blank?
-              unless character_property['data']['start_resource_modificator'].blank?
-                property_value = character_property['data']['start_resource_modificator'].to_f
-                logger.info "START PROPERTY_VALUE #{ property_value }."
-                start_resource_modificator = property_value if property_value > 0
-                logger.info "START RESOURCE MODIFICATOR #{ start_resource_modificator }."
-              end
-              unless character_property['data']['start_resource_bonus'].blank?
-                start_resource_bonuses << character_property['data']['start_resource_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
-                logger.info "START RESOURCE BONUS #{ start_resource_bonuses.inspect }."
-              end
-              unless character_property['data']['start_resources'].blank?
-                start_resources << character_property['data']['start_resources'].to_json # start_resource_bonus is saved as serialized hash, not as string
-                logger.info "START RESOURCES #{ start_resources.inspect }."
-              end
-              unless character_property['data']['start_xp_bonus'].blank?
-                start_xp_bonuses << character_property['data']['start_xp_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
-                logger.info "START XP BONUS #{ start_xp_bonuses.inspect }."
-              end
-            end
-          end
-        end
-      end
-
-      logger.info "START RESOURCE MODIFICATOR FINAL #{ start_resource_modificator }."
+      logger.info "START RESOURCE MODIFICATOR FINAL #{ character_properties[:start_resource_modificator] }."
       
       start_location = nil
       if params.has_key?(:player_invitation)
@@ -139,7 +95,7 @@ class Fundamental::CharactersController < ApplicationController
       character = nil
       
       character_args = {
-        resource_modificator: start_resource_modificator, 
+        resource_modificator: character_properties[:start_resource_modificator], 
         npc: false,
         location: start_location,
         gender: identity['gender'] || 'male',
@@ -186,33 +142,24 @@ class Fundamental::CharactersController < ApplicationController
       character.save
       
       if !use_settler_start && params.has_key?(:client_id)   # fetch gift
-        response = identity_provider_access.fetch_signup_gift(request_access_token.identifier, params[:client_id])
-        logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
-      
-        if response.code == 200
-          gifts = response.parsed_response
-          logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
-
-          unless gifts.nil? || gifts.empty?
-            signup_gift = gifts[0]
-            if !signup_gift.nil? && !signup_gift['data'].blank?
-              character.redeem_startup_gift(signup_gift['data'])
-            end
-          end
+        gift = Fundamental::Character.fetch_signup_gift_for_identifier_and_client(request_access_token.identifier, params[:client_id])
+        
+        unless gift.nil?
+          character.redeem_startup_gift(gift)
         end
       end
 
-      start_resource_bonuses.each do |start_resource_bonus|
+      character_properties[:start_resource_bonuses].each do |start_resource_bonus|
         character.redeem_startup_gift(start_resource_bonus)
       end
 
       if !use_settler_start
-        start_resources.each do |start_resource|
+        character_properties[:start_resources].each do |start_resource|
           character.redeem_start_resources(start_resource)
         end
       end
 
-      start_xp_bonuses.each do |start_xp_bonus|
+      character_properties[:start_xp_bonuses].each do |start_xp_bonus|
         character.redeem_xp_start_bonus(start_xp_bonus)
       end
 

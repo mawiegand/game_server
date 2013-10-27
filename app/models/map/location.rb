@@ -307,6 +307,10 @@ class Map::Location < ActiveRecord::Base
   def can_found_outpost_here?
     !fortress? && settlement.nil?
   end
+  
+  def can_found_home_base_here?
+    !fortress? && settlement.nil?
+  end
 
   protected
 

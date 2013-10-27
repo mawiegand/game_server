@@ -328,9 +328,124 @@ class Fundamental::Character < ActiveRecord::Base
     settlement_point_available?
   end
   
+  def can_found_home_base?
+    self.settlements.count == 0  # can always found at least one settlement, even without settlement point
+  end
+  
   def can_takeover_settlement?
     settlement_point_available?
   end  
+  
+  
+  
+  def self.fetch_identity_for_identifier(identifier)
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+    
+    response = identity_provider_access.fetch_identity(identifier)
+    logger.info "IDENTITY RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
+    identity = {}
+    if response.code == 200
+      identity = response.parsed_response
+    end
+    
+    identity
+  end
+  
+  def fetch_identity
+    Fundamental::Character.fetch_identity_for_identifier(self.identifier)
+  end
+  
+  
+  def self.fetch_identity_properties_for_identifier(identifier)
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+    
+    # fetch persistent character properties from identity provider  
+    response = identity_provider_access.fetch_identity_properties(identifier)
+    logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
+    
+    parsed_properties = {
+      start_resource_modificator: 1.0,
+      start_resource_bonuses: [],
+      start_resources: [],
+      start_xp_bonuses: [],
+    }
+    
+    if response.code == 200
+      properties = response.parsed_response
+      logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
+
+      unless properties.empty?
+        properties.each do |character_property|
+          if !character_property.nil? && !character_property['data'].blank?
+            unless character_property['data']['start_resource_modificator'].blank?
+              property_value = character_property['data']['start_resource_modificator'].to_f
+              logger.debug "START PROPERTY_VALUE #{ property_value }."
+              parsed_properties[:start_resource_modificator] = property_value if property_value > 0
+              logger.info "START RESOURCE MODIFICATOR #{ parsed_properties[:start_resource_modificator] }."
+            end
+            unless character_property['data']['start_resource_bonus'].blank?
+              parsed_properties[:start_resource_bonuses] << character_property['data']['start_resource_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+              logger.info "START RESOURCE BONUS #{ parsed_properties[:start_resource_bonuses].inspect }."
+            end
+            unless character_property['data']['start_resources'].blank?
+              parsed_properties[:start_resources] << character_property['data']['start_resources'].to_json # start_resource_bonus is saved as serialized hash, not as string
+              logger.info "START RESOURCES #{ parsed_properties[:start_resources].inspect }."
+            end
+            unless character_property['data']['start_xp_bonus'].blank?
+              parsed_properties[:start_xp_bonuses] << character_property['data']['start_xp_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+              logger.info "START XP BONUS #{ parsed_properties[:start_xp_bonuses].inspect }."
+            end
+          end
+        end
+      end
+    end
+    
+    parsed_properties
+  end
+  
+  def self.fetch_identity_properties
+    Fundamental::Character.fetch_identity_properties_for_identifier(self.identifier)
+  end
+  
+  
+  def self.fetch_signup_gift_for_identifier_and_client(identifier, client_id)
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+  
+    response = identity_provider_access.fetch_signup_gift(request_access_token.identifier, client_id)
+    logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
+
+    if response.code == 200
+      gifts = response.parsed_response
+      logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
+
+      unless gifts.nil? || gifts.empty?
+        signup_gift = gifts[0]
+        
+        if !signup_gift.nil? && !signup_gift['data'].blank?
+          return signup_gift['data']
+        end
+      end
+    end
+    
+    nil
+  end
+  
+  def fetch_signup_gift_for_client(client_id)
+    Fundamental::Character.fetch_signup_gift_for_identifier_and_client(self.identifier, client_id)
+  end
+  
   
   # FIXME: this does NOT save the character after all modifications itself!!! should be corrected also inside the corresponding controller
   def self.create_new_character(identifier, name, args = {})
