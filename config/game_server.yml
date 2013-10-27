@@ -76,7 +76,7 @@ defaults: &defaults
 
   description_max_length:               1000 # character
   
-  settler_start_quest_id: 0
+  settler_start_quest_id: 135
 
 development:
   <<: *defaults
