@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="48" />
+    <Version major="0" minor="4" build="0" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -47,6 +47,7 @@
       <RewardText locale="en_US">The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. </RewardText>
       <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
       <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
+      <Requirement quest="quest_found_home_base" />
       <Rewards>
         <ResourceReward resource="resource_stone">25</ResourceReward>
         <ResourceReward resource="resource_wood">25</ResourceReward>

@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.48
+# Version: 0.4.0
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,8 +78,8 @@ class Tutorial::Tutorial
   
       :version => {
         :major => 0, 
-        :minor => 3, 
-        :build => 48, 
+        :minor => 4, 
+        :build => 0, 
       },
       
       :production_test_weights => {
@@ -154,6 +154,12 @@ class Tutorial::Tutorial
   
             :en_US => "The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. ",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_found_home_base',
+
           },
 
           :successor_quests => [1, ],
@@ -13300,7 +13306,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :successor_quests => [0, ],
 
           :rewards => {
             
