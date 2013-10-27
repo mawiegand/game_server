@@ -5169,5 +5169,38 @@
       </RewardTests>
     </Quest>
     
+    
+    <!-- START QUEST --> <!-- Settler-Tutorial Quest 1-->
+      <Quest id="quest_found_home_base" advisor="chef" hide_start_dialog="false" tutorial="true" priority="1" blocking="true" >
+        <Name>Settle Down</Name>
+        <Name locale="de_DE">Lass Dich nieder</Name>
+        <Task>Found a Settlement</Task>
+        <Task locale="de_DE">Gründe Deine Hauptsiedlung.</Task>
+        <Description locale="de_DE">
+          <p>Wähle den großen Häuptling aus und drücke den blauen Siedlungsknopf.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>Select your Great Chief and press the blue settle button.</p>
+        </Description>
+        <Flavor locale="de_DE">Willkommen Halbgott. Wir sind so weit gelaufen, lass uns hier siedeln!</Flavor>
+        <Flavor locale="en_US">Welcome Demigod! We've walked so far, let's found a settlement!</Flavor>
+        <RewardText locale="de_DE">Der Jäger und Sammler sammelt Steine, Holz und Felle für Deinen Rohstoffvorrat.</RewardText>
+        <RewardText locale="en_US">The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. </RewardText>
+        <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
+        <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
+        <Rewards>
+          <ResourceReward resource="resource_stone">25</ResourceReward>
+          <ResourceReward resource="resource_wood">25</ResourceReward>
+          <ResourceReward resource="resource_fur">25</ResourceReward>
+          <ExperienceReward>25</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <BuildingTest building="building_gatherer" min_count="1" />
+        </RewardTests>
+        <UIMarker>mark_map</UIMarker>
+        <UIMarker>mark_select_own_army</UIMarker>
+        <UIMarker>mark_found_settlement</UIMarker>
+      </Quest>
+    
   </Quests>
 </Tutorial>

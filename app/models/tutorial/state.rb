@@ -31,6 +31,13 @@ class Tutorial::State < ActiveRecord::Base
       status:       Tutorial::Quest::STATE_NEW,
     })
   end
+  
+  def create_settler_start_quest_state
+    self.quests.create({
+      quest_id:     GAME_SERVER_CONFIG['settler_start_quest_id'],
+      status:       Tutorial::Quest::STATE_NEW,       
+    })
+  end
 
   def check_consistency
     # durchlaufe alle beendeten quest_states
