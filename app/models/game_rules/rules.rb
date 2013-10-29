@@ -9342,28 +9342,28 @@ class GameRules::Rules
 
       :facebook_user_stories => [  # ALL FACEBOOK USER STORIES
 
-        {              #   test_won_battle
+        {              #   test_first_fortress
           :id          => 0,
-          :type        => :test_won_battle,
-          :symbolic_id => :user_story_test_won_battle,
+          :type        => :test_first_fortress,
+          :symbolic_id => :user_story_test_first_fortress,
           :name        => {
             
-            :de_DE => "Kampf gewonnen",
+            :de_DE => "Erste Festung erobert",
   
-            :en_US => "Won Battle",
+            :en_US => "First Fortress",
   
           },
           :description => {
             
-            :de_DE => "Der Spieler hat einen Kampf gewonnen",
+            :de_DE => "Der Spieler hat seine erste Festung erobert",
   
-            :en_US => "The player won a battle",
+            :en_US => "The player conquered his first fortress",
   
           },
           :url          => 'https://test1.wack-a-doo.de/game_server/en/facebook/object_types/1',
-          :image_url    => 'https://test1.wack-a-doo.de/game_server/assets/fb_object_types/fortress.png',
+          :image_url    => 'https://test1.wack-a-doo.de/game_server/assets/fb_user_stories/wonfortress.png',
           :see_also_url => 'https://test1.wack-a-doo.de',
-        },              #   END OF test_won_battle
+        },              #   END OF test_first_fortress
       ],                # END OF FACEBOOK USER STORIES
 
     )
