@@ -2,13 +2,13 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <FacebookUserStories>
-  <FacebookUserStory id="user_story_test_won_battle" type="test_won_battle">
-    <Name lang="de_DE">Kampf gewonnen</Name>
-    <Name lang="en_US">Won Battle</Name>
-    <Description lang="de_DE">Der Spieler hat einen Kampf gewonnen</Description>
-    <Description lang="en_US">The player won a battle</Description>
+  <FacebookUserStory id="user_story_test_first_fortress" type="test_first_fortress">
+    <Name lang="de_DE">Erste Festung erobert</Name>
+    <Name lang="en_US">First Fortress</Name>
+    <Description lang="de_DE">Der Spieler hat seine erste Festung erobert</Description>
+    <Description lang="en_US">The player conquered his first fortress</Description>
     <Url>https://test1.wack-a-doo.de/game_server/en/facebook/object_types/1</Url>
-    <ImageUrl>https://test1.wack-a-doo.de/game_server/assets/fb_object_types/fortress.png</ImageUrl>
+    <ImageUrl>https://test1.wack-a-doo.de/game_server/assets/fb_user_stories/wonfortress.png</ImageUrl>
     <SeeAlsoUrl>https://test1.wack-a-doo.de</SeeAlsoUrl>
   </FacebookUserStory>
 </FacebookUserStories>
