@@ -7,7 +7,7 @@ class Facebook::ObjectTypesController < ApplicationController
   # GET /facebook/object_types
   # GET /facebook/object_types.json
   def index
-    @facebook_object_types = Facebook::ObjectType.all
+    @facebook_user_stories = GameRules::Rules.the_rules.facebook_user_stories
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,7 +18,10 @@ class Facebook::ObjectTypesController < ApplicationController
   # GET /facebook/object_types/1
   # GET /facebook/object_types/1.json
   def show
-    @facebook_object_type = Facebook::ObjectType.find(params[:id])
+    @facebook_user_story = GameRules::Rules.the_rules.facebook_user_stories[params[:id]]
+    raise NotFoundError.new('User story not found.') if @facebook_user_story.nil?
+
+    @facebook_app_id = Facebook::AppConfig.the_app_config.app_id
 
     respond_to do |format|
       format.html { render layout: 'empty' }

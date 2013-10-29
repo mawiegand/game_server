@@ -338,6 +338,7 @@ GameServer::Application.routes.draw do
 
       namespace :facebook do
         resources :object_types
+        resource  :app_config #, :only => [:show, :edit, :update]
       end
 
       resource :action, :only => [ :show ]

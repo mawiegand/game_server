@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>App Id:</b>
+  <%= @facebook_app_config.app_id %>
+</p>
+
+<p>
+  <b>App secret:</b>
+  <%= @facebook_app_config.app_secret %>
+</p>
+
+<p>
+  <b>App token:</b>
+  <%= @facebook_app_config.app_token %>
+</p>
+
+
+<%= link_to 'Edit', edit_facebook_app_config_path(@facebook_app_config) %> |
+<%= link_to 'Back', facebook_app_config_path %>

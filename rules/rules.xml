@@ -72,7 +72,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="5" build="0" />
+    <Version major="1" minor="6" build="0" />
     <AppControl debugTracking="1" startscreen="map">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="24" />
     </AppControl>
@@ -268,4 +268,5 @@
   <xi:include href="rules_assignments.xml" />
   <xi:include href="rules_specialassignments.xml" />
   <xi:include href="rules_treasures.xml" />
+  <xi:include href="rules_facebook_objects.xml" />
 </Rules>

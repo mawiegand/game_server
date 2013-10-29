@@ -1,0 +1,2 @@
+module Facebook::AppConfigsHelper
+end
