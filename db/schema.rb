@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131026165154) do
+ActiveRecord::Schema.define(:version => 20131028173757) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1708,6 +1708,14 @@ ActiveRecord::Schema.define(:version => 20131026165154) do
     t.integer  "local_event_id"
   end
 
+  create_table "facebook_app_configs", :force => true do |t|
+    t.string   "app_id"
+    t.string   "app_secret"
+    t.string   "app_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "facebook_object_types", :force => true do |t|
     t.string   "url"
     t.string   "title"
@@ -2616,10 +2624,10 @@ ActiveRecord::Schema.define(:version => 20131026165154) do
     t.integer  "name_change_count",                              :default => 0
     t.integer  "alliance_size_bonus",                            :default => 0
     t.integer  "assignment_level",                               :default => 0,            :null => false
+    t.integer  "alliance_color"
     t.integer  "battle_id"
     t.decimal  "condition",                                      :default => 1.0,          :null => false
     t.datetime "condition_updated_at"
-    t.integer  "alliance_color"
   end
 
   create_table "settlement_slots", :force => true do |t|

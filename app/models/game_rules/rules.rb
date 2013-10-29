@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.5.0
+# Version: 1.6.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -34,7 +34,7 @@ class GameRules::Rules
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
-    :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
+    :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup, :facebook_user_stories,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles, :special_offer,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
@@ -75,6 +75,7 @@ class GameRules::Rules
       'alliance_max_members'        => alliance_max_members,
       'artifact_count'              => artifact_count,
       'artifact_initiation_speedup' => artifact_initiation_speedup,
+      'facebook_user_stories'       => facebook_user_stories,
     }
   end
   
@@ -121,7 +122,7 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 1,
-                    :minor => 5,
+                    :minor => 6,
                     :build => 0,
       },
       :app_control => {
@@ -9337,6 +9338,34 @@ class GameRules::Rules
 
       },
   
+# ## FACEBOOK USER STORIES#######################################################
+
+      :facebook_user_stories => [  # ALL FACEBOOK USER STORIES
+
+        {              #   test_won_battle
+          :id          => 0,
+          :type        => :test_won_battle,
+          :symbolic_id => :user_story_test_won_battle,
+          :name        => {
+            
+            :de_DE => "Kampf gewonnen",
+  
+            :en_US => "Won Battle",
+  
+          },
+          :description => {
+            
+            :de_DE => "Der Spieler hat einen Kampf gewonnen",
+  
+            :en_US => "The player won a battle",
+  
+          },
+          :url          => 'https://test1.wack-a-doo.de/game_server/en/facebook/object_types/1',
+          :image_url    => 'https://test1.wack-a-doo.de/game_server/assets/fb_object_types/fortress.png',
+          :see_also_url => 'https://test1.wack-a-doo.de',
+        },              #   END OF test_won_battle
+      ],                # END OF FACEBOOK USER STORIES
+
     )
   end
 end

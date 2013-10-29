@@ -81,7 +81,7 @@ class GameRules::Rules
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
-    :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup,
+    :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup, :facebook_user_stories,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles, :special_offer,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
@@ -122,6 +122,7 @@ class GameRules::Rules
       'alliance_max_members'        => alliance_max_members,
       'artifact_count'              => artifact_count,
       'artifact_initiation_speedup' => artifact_initiation_speedup,
+      'facebook_user_stories'       => facebook_user_stories,
     }
   end
   
@@ -239,6 +240,7 @@ class GameRules::Rules
   <!--
   <xsl:apply-templates select="QueueCategories" />
   -->
+  <xsl:apply-templates select="FacebookUserStories" />
 
   <xsl:text><![CDATA[
     )
@@ -1494,6 +1496,30 @@ end
               :unit => '<xsl:value-of select="@unit" />',
               :min_count => <xsl:value-of select="@min_count" />,
             },
+</xsl:template>
+
+
+<xsl:template match="FacebookUserStories">
+# ## FACEBOOK USER STORIES#######################################################
+
+      :facebook_user_stories => [  # ALL FACEBOOK USER STORIES
+<xsl:for-each select="FacebookUserStory">
+        {              #   <xsl:value-of select="@type"/>
+          :id          => <xsl:value-of select="position()-1"/>,
+          :type        => :<xsl:value-of select="@type"/>,
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />
+          },
+          :description => {
+            <xsl:apply-templates select="Description" />
+          },
+          :url          => '<xsl:value-of select="Url"/>',
+          :image_url    => '<xsl:value-of select="ImageUrl"/>',
+          :see_also_url => '<xsl:value-of select="SeeAlsoUrl"/>',
+        },              #   END OF <xsl:value-of select="@type"/>
+</xsl:for-each>
+      ],                # END OF FACEBOOK USER STORIES
 </xsl:template>
 
 
