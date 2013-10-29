@@ -1,9 +1,16 @@
+require 'util/facebook'
+
 class Facebook::AppConfigsController < ApplicationController
   layout 'facebook'
 
   # GET /facebook/app_configs/1
   # GET /facebook/app_configs/1.json
   def show
+
+    if params.has_key? :refresh_app_token
+      Util::FacebookManager.refresh_app_token
+    end
+
     @facebook_app_config = Facebook::AppConfig.find(1)
 
     respond_to do |format|
