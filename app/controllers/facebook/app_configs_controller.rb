@@ -3,6 +3,8 @@ require 'util/facebook'
 class Facebook::AppConfigsController < ApplicationController
   layout 'facebook'
 
+  before_filter :deny_api
+
   # GET /facebook/app_configs/1
   # GET /facebook/app_configs/1.json
   def show
