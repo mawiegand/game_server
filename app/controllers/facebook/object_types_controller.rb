@@ -18,6 +18,7 @@ class Facebook::ObjectTypesController < ApplicationController
     @facebook_user_story = GameRules::Rules.the_rules.facebook_user_stories[params[:id].to_i]
     raise NotFoundError.new('User story not found.') if @facebook_user_story.nil?
 
+    @fb_locale = (!params[:fb_locale].nil? && params[:fb_locale] == 'de_DE') ? 'de_DE' : 'en_US'
     @facebook_app_id = Facebook::AppConfig.the_app_config.app_id
 
     respond_to do |format|
