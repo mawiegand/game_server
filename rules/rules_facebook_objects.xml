@@ -7,7 +7,7 @@
     <Name lang="en_US">First Fortress</Name>
     <Description lang="de_DE">Der Spieler hat seine erste Festung erobert</Description>
     <Description lang="en_US">The player conquered his first fortress</Description>
-    <Url>https://test1.wack-a-doo.de/game_server/en/facebook/object_types/1</Url>
+    <Url>https://test1.wack-a-doo.de/game_server/en/facebook/object_types/0</Url>
     <ImageUrl>https://test1.wack-a-doo.de/game_server/assets/fb_user_stories/wonfortress.png</ImageUrl>
     <SeeAlsoUrl>https://test1.wack-a-doo.de</SeeAlsoUrl>
   </FacebookUserStory>

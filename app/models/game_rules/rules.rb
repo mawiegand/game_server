@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.0
+# Version: 1.6.1
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -123,7 +123,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 6,
-                    :build => 0,
+                    :build => 1,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -9360,7 +9360,7 @@ class GameRules::Rules
             :en_US => "The player conquered his first fortress",
   
           },
-          :url          => 'https://test1.wack-a-doo.de/game_server/en/facebook/object_types/1',
+          :url          => 'https://test1.wack-a-doo.de/game_server/en/facebook/object_types/0',
           :image_url    => 'https://test1.wack-a-doo.de/game_server/assets/fb_user_stories/wonfortress.png',
           :see_also_url => 'https://test1.wack-a-doo.de',
         },              #   END OF test_first_fortress

@@ -15,7 +15,7 @@ class Facebook::ObjectTypesController < ApplicationController
   # GET /facebook/object_types/1
   # GET /facebook/object_types/1.json
   def show
-    @facebook_user_story = GameRules::Rules.the_rules.facebook_user_stories[params[:id]]
+    @facebook_user_story = GameRules::Rules.the_rules.facebook_user_stories[params[:id].to_i]
     raise NotFoundError.new('User story not found.') if @facebook_user_story.nil?
 
     @facebook_app_id = Facebook::AppConfig.the_app_config.app_id
