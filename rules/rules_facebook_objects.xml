@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <FacebookUserStories>
-  <FacebookUserStory id="user_story_test_first_fortress" type="test_first_fortress">
+  <FacebookUserStory id="user_story_test_first_fortress" type="test_first_fortress" action="conquer">
     <Name lang="de_DE">Erste Festung erobert</Name>
     <Name lang="en_US">First Fortress</Name>
     <Description lang="de_DE">Der Spieler hat seine erste Festung erobert</Description>
