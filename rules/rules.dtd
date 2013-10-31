@@ -19,7 +19,7 @@
   build CDATA #REQUIRED
 >
 
-<!ELEMENT AppControl (SpecialOfferDialog)>
+<!ELEMENT AppControl (SpecialOfferDialog, Facebook)>
 <!ATTLIST AppControl
   debugTracking  (0 | 1) "0"
   startscreen    CDATA #REQUIRED
@@ -29,6 +29,11 @@
 <!ATTLIST SpecialOfferDialog
   enabled                (0 | 1) "0"
   requiredFinishedQuests CDATA #REQUIRED
+>
+
+<!ELEMENT Facebook EMPTY>
+<!ATTLIST Facebook
+    userStoriesEnabled   (0 | 1) "0"
 >
 
     <!--Languages-->
@@ -366,8 +371,9 @@
 <!ELEMENT FacebookUserStory (Name+, Description+, Url, ImageUrl, SeeAlsoUrl)>
 
 <!ATTLIST FacebookUserStory
-  id    ID     #REQUIRED
-  type  CDATA  #REQUIRED
+  id      ID     #REQUIRED
+  type    CDATA  #REQUIRED
+  action  CDATA  #REQUIRED
 >
 
 <!ELEMENT Url (#PCDATA)>

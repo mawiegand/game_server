@@ -177,6 +177,7 @@ class GameRules::Rules
         :startscreen                            => '<xsl:value-of select="//General/AppControl/@startscreen" />',
         :special_offer_dialog                   => <xsl:value-of select="//General/AppControl/SpecialOfferDialog/@enabled" />,
         :special_offer_required_finished_quests => <xsl:value-of select="//General/AppControl/SpecialOfferDialog/@requiredFinishedQuests" />,
+        :facebook_user_stories                  => <xsl:value-of select="//General/AppControl/Facebook/@userStoriesEnabled" />,
       },
       :battle => {
         :calculation => {
@@ -1507,6 +1508,7 @@ end
         {              #   <xsl:value-of select="@type"/>
           :id          => <xsl:value-of select="position()-1"/>,
           :type        => :<xsl:value-of select="@type"/>,
+          :action      => :<xsl:value-of select="@action"/>,
           :symbolic_id => :<xsl:value-of select="@id"/>,
           :name        => {
             <xsl:apply-templates select="Name" />
