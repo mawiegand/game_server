@@ -8425,7 +8425,7 @@ class GameRules::Rules
             
             :de_DE => "Für einen Herrschaftssieg muss eine Allianz einen bestimmten Anteil aller Regionen der Karte beherrschen, d.h. die Festungen der Regionen müssen einem Allianzmitglied gehören.",
   
-            :en_US => "For a domination victory an alliance has to rule an certain proprtion of all regions, i.e. the fortress of this regions have to be owned by alliance members.",
+            :en_US => "For a domination victory an alliance has to rule a certain proprtion of all regions, i.e. the fortress of this regions have to be owned by alliance members.",
                 
           },
 
