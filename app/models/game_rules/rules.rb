@@ -8427,7 +8427,7 @@ class GameRules::Rules
             
             :de_DE => "Für einen Herrschaftssieg muss eine Allianz einen bestimmten Anteil aller Regionen der Karte beherrschen, d.h. die Festungen der Regionen müssen einem Allianzmitglied gehören.",
   
-            :en_US => "For a domination victory an alliance has to rule an certain proprtion of all regions, i.e. the fortress of this regions have to be owned by alliance members.",
+            :en_US => "For a domination victory an alliance has to rule a certain proprtion of all regions, i.e. the fortress of this regions have to be owned by alliance members.",
                 
           },
 
@@ -9343,29 +9343,54 @@ class GameRules::Rules
 
       :facebook_user_stories => [  # ALL FACEBOOK USER STORIES
 
-        {              #   test_first_fortress
+        {              #   battle
           :id          => 0,
-          :type        => :test_first_fortress,
-          :action      => :conquer,
-          :symbolic_id => :user_story_test_first_fortress,
+          :type        => :battle,
+          :action      => :win,
+          :symbolic_id => :user_story_won_battle,
           :name        => {
             
-            :de_DE => "Erste Festung erobert",
+            :de_DE => "Kampf",
   
-            :en_US => "First Fortress",
+            :en_US => "Battle",
   
           },
           :description => {
             
-            :de_DE => "Der Spieler hat seine erste Festung erobert",
+            :de_DE => "Ich habe einen großen Kampf gewonnen und reichlich Erfahrung gesammelt. Ein weiterer Schritt auf dem Weg zur Weltherrschaft meiner Allianz.",
   
-            :en_US => "The player conquered his first fortress",
+            :en_US => "I have won a great battle and earned much expierience. A further step to world domination of my alliance.",
   
           },
-          :url          => 'https://test1.wack-a-doo.de/game_server/en/facebook/object_types/0',
-          :image_url    => 'https://test1.wack-a-doo.de/game_server/assets/fb_user_stories/wonfortress.png',
-          :see_also_url => 'https://test1.wack-a-doo.de',
-        },              #   END OF test_first_fortress
+          :determiner   => 'a',
+          :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/0',
+          :image_url    => 'https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
+          :see_also_url => 'https://gs04.wack-a-doo.de',
+        },              #   END OF battle
+        {              #   next_rank
+          :id          => 1,
+          :type        => :next_rank,
+          :action      => :reach,
+          :symbolic_id => :user_story_reached_next_level,
+          :name        => {
+            
+            :de_DE => "Nächster Rang",
+  
+            :en_US => "Next Rank",
+  
+          },
+          :description => {
+            
+            :de_DE => "Hurray! Ich habe genug Erfahrung gesammelt und bin einen Rank aufgestiegen.",
+  
+            :en_US => "Hurray! I have earned enough experience and reached a new rank.",
+  
+          },
+          :determiner   => 'the',
+          :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/1',
+          :image_url    => 'https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
+          :see_also_url => 'https://gs04.wack-a-doo.de',
+        },              #   END OF next_rank
       ],                # END OF FACEBOOK USER STORIES
 
     )

@@ -1516,6 +1516,7 @@ end
           :description => {
             <xsl:apply-templates select="Description" />
           },
+          :determiner   => '<xsl:value-of select="Determiner"/>',
           :url          => '<xsl:value-of select="Url"/>',
           :image_url    => '<xsl:value-of select="ImageUrl"/>',
           :see_also_url => '<xsl:value-of select="SeeAlsoUrl"/>',

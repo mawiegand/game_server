@@ -2,9 +2,12 @@
 <html>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# wack-a-doo: http://ogp.me/ns/fb/wack-a-doo#">
   <meta property="fb:app_id"                 content="<%= @facebook_app_id %>" />
+  <meta property="og:locale"                 content="en_US" />
+  <meta property="og:locale:alternate"       content="de_DE" />
   <meta property="og:type"                   content="wack-a-doo:<%= @facebook_user_story[:type] %>" />
   <meta property="og:title"                  content="<%= @facebook_user_story[:name][@fb_locale.to_sym] %>" />
   <meta property="og:description"            content="<%= @facebook_user_story[:description][@fb_locale.to_sym] %>" />
+  <meta property="og:determiner"             content="<%= @facebook_user_story[:determiner] %>" />
   <meta property="og:url"                    content="<%= @facebook_user_story[:url] %>" />
   <meta property="og:image"                  content="<%= @facebook_user_story[:image_url] %>" />
   <meta property="og:see_also"               content="<%= @facebook_user_story[:see_also_url] %>" />
