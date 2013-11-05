@@ -9343,9 +9343,9 @@ class GameRules::Rules
 
       :facebook_user_stories => [  # ALL FACEBOOK USER STORIES
 
-        {              #   won_battle
+        {              #   battle
           :id          => 0,
-          :type        => :won_battle,
+          :type        => :battle,
           :action      => :win,
           :symbolic_id => :user_story_won_battle,
           :name        => {
@@ -9365,10 +9365,10 @@ class GameRules::Rules
           :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/0',
           :image_url    => 'https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
           :see_also_url => 'https://gs04.wack-a-doo.de',
-        },              #   END OF won_battle
-        {              #   reached_next_level
+        },              #   END OF battle
+        {              #   next_level
           :id          => 1,
-          :type        => :reached_next_level,
+          :type        => :next_level,
           :action      => :reach,
           :symbolic_id => :user_story_reached_next_level,
           :name        => {
@@ -9388,7 +9388,7 @@ class GameRules::Rules
           :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/1',
           :image_url    => 'https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
           :see_also_url => 'https://gs04.wack-a-doo.de',
-        },              #   END OF reached_next_level
+        },              #   END OF next_level
       ],                # END OF FACEBOOK USER STORIES
 
     )
