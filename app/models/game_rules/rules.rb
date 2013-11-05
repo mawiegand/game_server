@@ -9350,9 +9350,9 @@ class GameRules::Rules
           :symbolic_id => :user_story_won_battle,
           :name        => {
             
-            :de_DE => "Kampf gewonnen",
+            :de_DE => "Kampf",
   
-            :en_US => "Won Battle",
+            :en_US => "Battle",
   
           },
           :description => {
@@ -9374,9 +9374,9 @@ class GameRules::Rules
           :symbolic_id => :user_story_reached_next_level,
           :name        => {
             
-            :de_DE => "Nächsten Rang erreicht",
+            :de_DE => "Nächster Rang",
   
-            :en_US => "Reached next rank",
+            :en_US => "Next Rank",
   
           },
           :description => {
