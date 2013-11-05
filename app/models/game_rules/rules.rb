@@ -9366,16 +9366,16 @@ class GameRules::Rules
           :image_url    => 'https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
           :see_also_url => 'https://gs04.wack-a-doo.de',
         },              #   END OF battle
-        {              #   next_level
+        {              #   next_rank
           :id          => 1,
-          :type        => :next_level,
+          :type        => :next_rank,
           :action      => :reach,
           :symbolic_id => :user_story_reached_next_level,
           :name        => {
             
-            :de_DE => "Nächsten Level erreicht",
+            :de_DE => "Nächsten Rang erreicht",
   
-            :en_US => "Reached next level",
+            :en_US => "Reached next rank",
   
           },
           :description => {
@@ -9388,7 +9388,7 @@ class GameRules::Rules
           :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/1',
           :image_url    => 'https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
           :see_also_url => 'https://gs04.wack-a-doo.de',
-        },              #   END OF next_level
+        },              #   END OF next_rank
       ],                # END OF FACEBOOK USER STORIES
 
     )

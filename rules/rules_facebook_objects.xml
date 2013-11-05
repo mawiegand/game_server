@@ -11,9 +11,9 @@
     <ImageUrl>https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png</ImageUrl>
     <SeeAlsoUrl>https://gs04.wack-a-doo.de</SeeAlsoUrl>
   </FacebookUserStory>
-  <FacebookUserStory id="user_story_reached_next_level" type="next_level" action="reach">
-    <Name lang="de_DE">Nächsten Level erreicht</Name>
-    <Name lang="en_US">Reached next level</Name>
+  <FacebookUserStory id="user_story_reached_next_level" type="next_rank" action="reach">
+    <Name lang="de_DE">Nächsten Rang erreicht</Name>
+    <Name lang="en_US">Reached next rank</Name>
     <Description lang="de_DE">Der Spieler hat den nächsten Rang erreicht.</Description>
     <Description lang="en_US">The player reached the next rank.</Description>
     <Url>https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/1</Url>
