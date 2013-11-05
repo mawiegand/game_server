@@ -368,7 +368,7 @@
   level CDATA #REQUIRED
 >
 
-<!ELEMENT FacebookUserStory (Name+, Description+, Url, ImageUrl, SeeAlsoUrl)>
+<!ELEMENT FacebookUserStory (Name+, Description+, Determiner, Url, ImageUrl, SeeAlsoUrl)>
 
 <!ATTLIST FacebookUserStory
   id      ID     #REQUIRED
@@ -376,6 +376,7 @@
   action  CDATA  #REQUIRED
 >
 
+<!ELEMENT Determiner (#PCDATA)>
 <!ELEMENT Url (#PCDATA)>
 <!ELEMENT ImageUrl (#PCDATA)>
 <!ELEMENT SeeAlsoUrl (#PCDATA)>

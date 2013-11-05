@@ -9362,6 +9362,7 @@ class GameRules::Rules
             :en_US => "I have won a great battle and earned much expierience. A further step to world domination of my alliance.",
   
           },
+          :determiner   => 'a',
           :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/0',
           :image_url    => 'https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
           :see_also_url => 'https://gs04.wack-a-doo.de',
@@ -9385,6 +9386,7 @@ class GameRules::Rules
             :en_US => "Hurray! I have earned enough experience and reached a new rank.",
   
           },
+          :determiner   => 'the',
           :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/1',
           :image_url    => 'https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
           :see_also_url => 'https://gs04.wack-a-doo.de',
