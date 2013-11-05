@@ -9357,9 +9357,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "Der Spieler hat einen entscheidenen Kampf gewonnen",
+            :de_DE => "Der Spieler hat einen entscheidenen Kampf gewonnen.",
   
-            :en_US => "The player won a major battle",
+            :en_US => "The player won a major battle.",
   
           },
           :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/0',
@@ -9373,16 +9373,16 @@ class GameRules::Rules
           :symbolic_id => :user_story_reached_next_level,
           :name        => {
             
-            :de_DE => "Erste Festung erobert",
+            :de_DE => "Nächsten Level erreicht",
   
-            :en_US => "First Fortress",
+            :en_US => "Reached next level",
   
           },
           :description => {
             
-            :de_DE => "Der Spieler hat seine erste Festung erobert",
+            :de_DE => "Der Spieler hat den nächsten Rang erreicht.",
   
-            :en_US => "The player conquered his first fortress",
+            :en_US => "The player reached the next rank.",
   
           },
           :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/1',
