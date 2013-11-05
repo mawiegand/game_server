@@ -15,7 +15,7 @@
 
 <% @facebook_user_stories.each do |facebook_user_story| %>
   <tr>
-    <td><%= facebook_user_story[:url] %></td>
+    <td><%= link_to facebook_user_story[:url], facebook_user_story[:url] %></td>
     <td><%= facebook_user_story[:name][:de_DE] %></td>
     <td><%= facebook_user_story[:image_url] %></td>
     <td><%= facebook_user_story[:type] %></td>
