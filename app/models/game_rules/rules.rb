@@ -9357,9 +9357,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "Der Spieler hat einen entscheidenen Kampf gewonnen.",
+            :de_DE => "Ich habe einen großen Kampf gewonnen und reichlich Erfahrung gesammelt. Ein weiterer Schritt auf dem Weg zur Weltherrschaft meiner Allianz.",
   
-            :en_US => "The player won a major battle.",
+            :en_US => "I have won a great battle and earned much expierience. A further step to world domination of my alliance.",
   
           },
           :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/0',
@@ -9380,9 +9380,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "Der Spieler hat den nächsten Rang erreicht.",
+            :de_DE => "Hurray! Ich habe genug Erfahrung gesammelt und bin einen Rank aufgestiegen.",
   
-            :en_US => "The player reached the next rank.",
+            :en_US => "Hurray! I have earned enough experience and reached a new rank.",
   
           },
           :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/1',
