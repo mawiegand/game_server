@@ -7,6 +7,7 @@ class Shop::FbMoneyTransactionsController < ApplicationController
 
   def index
     @shop_fb_money_transactions = Shop::FbMoneyTransaction.paginate(:order => 'created_at desc', :page => params[:page], :per_page => 20)
+    @paginate = true
 
     respond_to do |format|
       format.html # index.html.erb
