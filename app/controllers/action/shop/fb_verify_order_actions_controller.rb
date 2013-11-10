@@ -6,9 +6,6 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
 
   before_filter :authenticate
 
-  FB_APP_ID        = '127037377498922'
-  FB_APP_SECRET    = 'f88034e6df205b5aa3854e0b92638754'
-
   def create
 
     offer_id       = params['fb_verify_order_action'] && params['fb_verify_order_action']['offer_id']
@@ -17,12 +14,12 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
 
     if !offer_id.blank? && !payment_id.blank? && !signed_request.blank?
 
-      response = HTTParty.get("https://graph.facebook.com/#{payment_id}", :query => {access_token: "#{FB_APP_ID}|#{FB_APP_SECRET}"})
+      response = HTTParty.get("https://graph.facebook.com/#{payment_id}", :query => {access_token: "#{Facebook::AppConfig.the_app_config.app_id}|#{Facebook::AppConfig.the_app_config.app_secret}"})
 
       if response.code == 200
 
-        parsed_response = response.parsed_response
-        data = Util::Facebook.parse_signed_request(signed_request, FB_APP_SECRET)
+        parsed_response = JSON.parse(response.parsed_response)
+        data = Util::Facebook.parse_signed_request(signed_request, Facebook::AppConfig.the_app_config.app_secret)
 
         if !data.nil?
 
