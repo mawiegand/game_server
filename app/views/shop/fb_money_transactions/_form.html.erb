@@ -1,0 +1,61 @@
+<%= form_for(@shop_fb_money_transaction) do |f| %>
+  <% if @shop_fb_money_transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shop_fb_money_transaction.errors.count, "error") %> prohibited this shop_fb_money_transaction from being saved:</h2>
+
+      <ul>
+      <% @shop_fb_money_transaction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :identifier %><br />
+    <%= f.text_field :identifier %>
+  </div>
+  <div class="field">
+    <%= f.label :fb_user_id %><br />
+    <%= f.text_field :fb_user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fb_user_name %><br />
+    <%= f.text_field :fb_user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_id %><br />
+    <%= f.text_field :payment_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fb_offer_id %><br />
+    <%= f.number_field :fb_offer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :credits %><br />
+    <%= f.number_field :credits %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :currency %><br />
+    <%= f.text_field :currency %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :payout_foreign_exchange_rate %><br />
+    <%= f.text_field :payout_foreign_exchange_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :test %><br />
+    <%= f.number_field :test %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

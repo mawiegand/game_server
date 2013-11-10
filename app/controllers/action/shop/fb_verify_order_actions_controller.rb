@@ -55,6 +55,21 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
               api_response = http_response.parsed_response
               api_response = JSON.parse(api_response) if api_response.is_a?(String)
               if api_response['resultCode'] === 0
+
+                Shop::FbMoneyTransaction.create({
+                  identifier:   current_character.identifier,
+                  fb_user_id:   parsed_response['user'] && parsed_response['user']['id'],
+                  fb_user_name: parsed_response['user'] && parsed_response['user']['name'],
+                  payment_id:   payment_id,
+                  fb_offer_id:  offer_id,
+                  credits:      offer.amount,
+                  amount:       action['amount'],
+                  currency:     action['currency'],
+                  country:      parsed_response['country'],
+                  payout_foreign_exchange_rate: parsed_response['payout_foreign_exchange_rate'],
+                  test:         parsed_response['test'],
+                })
+
                 status = :ok
               else
                 status = :unprocessable_entity
