@@ -1,8 +1,12 @@
 class Shop::FbMoneyTransactionsController < ApplicationController
-  # GET /shop/fb_money_transactions
-  # GET /shop/fb_money_transactions.json
+  layout 'shop'
+
+  before_filter :authenticate
+  before_filter :authorize_staff
+  before_filter :deny_api
+
   def index
-    @shop_fb_money_transactions = Shop::FbMoneyTransaction.all
+    @shop_fb_money_transactions = Shop::FbMoneyTransaction.paginate(:order => 'created_at desc', :page => params[:page], :per_page => 20)
 
     respond_to do |format|
       format.html # index.html.erb

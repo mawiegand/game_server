@@ -1,7 +1,12 @@
 <h1>Listing shop_fb_money_transactions</h1>
 
+<%= if @paginate
+      will_paginate @shop_fb_money_transactions
+    end %>
+
 <table>
   <tr>
+    <th>Date</th>
     <th>Identifier</th>
     <th>Fb user</th>
     <th>Fb user name</th>
@@ -20,6 +25,7 @@
 
 <% @shop_fb_money_transactions.each do |shop_fb_money_transaction| %>
   <tr>
+    <td><%= shop_fb_money_transaction.created_at %></td>
     <td><%= shop_fb_money_transaction.identifier %></td>
     <td><%= shop_fb_money_transaction.fb_user_id %></td>
     <td><%= shop_fb_money_transaction.fb_user_name %></td>
@@ -38,6 +44,6 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Fb money transaction', new_shop_fb_money_transaction_path %>
+<%= if @paginate
+      will_paginate @shop_fb_money_transactions
+    end %>

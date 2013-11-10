@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131028173757) do
+ActiveRecord::Schema.define(:version => 20131110212425) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2694,6 +2694,22 @@ ActiveRecord::Schema.define(:version => 20131028173757) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "amount"
+  end
+
+  create_table "shop_fb_money_transactions", :force => true do |t|
+    t.string   "identifier"
+    t.string   "fb_user_id"
+    t.string   "fb_user_name"
+    t.string   "payment_id"
+    t.integer  "fb_offer_id"
+    t.integer  "credits"
+    t.string   "amount"
+    t.string   "currency"
+    t.string   "country"
+    t.decimal  "payout_foreign_exchange_rate"
+    t.integer  "test"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "shop_money_transactions", :force => true do |t|
