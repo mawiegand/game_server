@@ -22,7 +22,7 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
 
         logger.debug "---> parsed_response #{parsed_response}"
 
-        data = Util::Facebook.parse_signed_request(signed_request, Facebook::AppConfig.the_app_config.app_secret)
+        data = Util::FacebookManager.parse_signed_request(signed_request, Facebook::AppConfig.the_app_config.app_secret)
 
         logger.debug "---> data #{data}"
 
