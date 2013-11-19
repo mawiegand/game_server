@@ -5,7 +5,7 @@
   <Name>Haymaker</Name>
   <Name lang="de_DE">Knüppel-Schwinger</Name>
   <Description lang="de_DE">
-    <p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit gutem Aussehen und Ausdruck. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs beim kraftvollen Zuschlagen wird nichts dem Zufall überlassen. Der größte Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>		
+    <p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit Ausdruck und gutem Aussehen. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs wird nichts dem Zufall überlassen. Ihr größter Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>		
   </Description>
   <Description lang="en_US">
     <p>Haymakers unite the lethal arts of fighting with good looks and charisma. Everything from the carving of the bludgeon to the position of one's left toe when striking someone hard will receive ratings, and nothing will be left to chance. The greatest danger here is not the enemy - it's their own vanity.</p>
@@ -14,7 +14,7 @@
     <p>The art of expressive battle! Here, haymakers give marks to each other based on the finesse of their fighting style.</p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Die Kunst des Ausdruckkampfes! Knüppel-Schwinger geben sich untereinander Noten für ihre Kampfstil.</p>
+    <p>Die Kunst des Ausdruckkampfes! Knüppel-Schwinger geben sich sogar untereinander Noten für ihre Kampfstil.</p>
   </Flavour>
   <Cost id="resource_stone" round="true">45</Cost>
   <Cost id="resource_wood" round="true">68</Cost>

@@ -229,29 +229,30 @@ en:
           "Morgen werden Deine Siedlungen gelöscht"
       body:
         played_too_short:
-          "Hallo %{name},\n\n
-          Deine Steine schimmeln, Dein Holz schlägt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drüber.
-          Log Dich jetzt ein und sorge für Ordnung:\n\n
+          "Hello %{name},\n\n
+          your stones crumble, your wood is rotting and your furs are losing hairs. Even the baby dinosaurs do whatever they want - in short: your setlement is in shambles.
+          Log back in and get things back in order:\n\n
           %{url}\n\n
-          Viel Spaß wünscht Dir\n\n
-          Dein Wack-A-Doo Team"
+          Have fun!\n\n
+          Your Wack-A-Doo Team"
         paused_too_long:
-          "Hallo %{name},\n\n
-          Deine Steine schimmeln, Dein Holz schlägt Wurzeln und Deinen Fellen fallen die Haare aus. Und der Dino-Nachwuchs macht auch was er will - kurz: in Deiner Siedlung geht's drunter und drüber. Log Dich jetzt ein und sorge für Ordnung:\n\n
+          "Hello %{name},\n\n
+          your stones crumble, your wood is rotting and your furs are losing hairs. Even the baby dinosaurs do whatever they want - in short: your setlement is in shambles.
+          Log back in and get things back in order:\n\n
           %{url}\n\n
-          Viel Spaß wünscht Dir\n\n
-          Dein Wack-A-Doo Team"
+          Have fun!\n\n
+          Your Wack-A-Doo Team"
         getting_inactive:
           "%{name}!\n\n
-          Du hast Dein Können bewiesen und unsere Siedlung aufgebaut, aber wir Siedlungsbewohner haben schon lange nichts mehr von Dir gehört. Deine Gegner haben Dich schon abgeschrieben, aber ich glaube weiterhin an Dich!\n\n
-          Log Dich umgehend unter %{url} ein und zeig es ihnen! Als Unterstützung gebe ich Dir %{credit_reward} 5D Platinum Credits aus meiner persönlichen Schatzkiste.\n\n
-          Deine Siedlungsbewohner erwarten Dich bereits! Viel Erfolg!\n\n
-          Der Chef\n\n"
+          You have proven your worth and built our settlements big and strong but now you have become quiet. Your enemies may think themselves already victorious but I still believe in you!\n\n
+          Come back to %{url} and show them who's boss! As a sign of my support I'll give you %{credit_reward} 5D Platinum Credits from my personal stash.\n\n
+          Your followers await you!\n\n
+          The Chief\n\n"
         getting_deleted:
-          "Hallo %{name}!\n\n
-          Die Neandertaler belagern nun schon seit einigen Tagen Deine Siedlungen. Dir bleibt nur noch ein knapper Tag, um zurückzukehren und das Ruder wieder in die Hand zu nehmen. Andernfalls werden Dein Siedlungen überrannt und sind für immer verloren.\n\n
-          Log Dich in den nächsten 24 Stunden unter %{url} ein, sonst werden Deine Siedlungen gelöscht.\n\n
-          Der Chef\n\n"
+          "Hello %{name}!\n\n
+          Your settlemnts have been besieged by neandertals and its looking grim. I fear that if you won't return and take controll within the next 24 hours all will be lost. They will overrun our defenses and destroy us.\n\n
+          Log back in at %{url} within 24 hours or your setlements get deleted.\n\n
+          The Chief\n\n"
 
         
   sessions:
