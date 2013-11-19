@@ -691,6 +691,7 @@ end
           :name        => {
             <xsl:apply-templates select="Name" />              
           },
+          :advisor     => "<xsl:value-of select="@advisor"/>",
           :flavour     => {
             <xsl:apply-templates select="Flavour" />              
           },
