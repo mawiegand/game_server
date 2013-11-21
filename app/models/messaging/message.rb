@@ -186,15 +186,15 @@ class Messaging::Message < ActiveRecord::Base
   def self.generate_trade_recipient_message(action)
     return if action.nil?
     message = Messaging::Message.new({
-      recipient_id: action.recipient_id,
+      recipient_id: recipient_id,
       type_id:   TRADE_MESSAGE_TYPE_ID,
       send_at:   DateTime.now,
     })
 
-    text = "<h2>Lieferung aus #{action.starting_settlement.name}.</h2>"
-    text += "<p>#{action.num_carts} Handelskarren aus #{ action.starting_settlement.name } (#{action.starting_settlement.owner.name}) #{ (action.num_carts == 1 ? 'ist' : 'sind') } soeben angekommen. Es wurde folgendes ausgeladen:</p>"
+    text = I18n.translate('application.messaging.trade_recipient_message.body1', locale: action.recipient.lang, name: action.starting_settlement.name)
+    text += I18n.translate('application.messaging.trade_recipient_message.body2', locale: action.recipient.lang, num_carts: action.num_carts, settlement_name: action.starting_settlement.name, owner_name: action.starting_settlement.owner.name)
     text += "<p>" + Messaging::Message.resource_amounts_to_html(action, false) + "</p>"
-    message.subject = "Lieferung aus #{action.starting_settlement.name}."
+    message.subject = I18n.translate('application.messaging.trade_recipient_message.subject', locale: action.recipient.lang, name: action.starting_settlement.name)
     message.body = text
     
     message
@@ -208,10 +208,10 @@ class Messaging::Message < ActiveRecord::Base
       send_at:   DateTime.now,
     })
 
-    text = "<h2>Ankunft von #{action.num_carts == 1 ? "einem" : action.num_carts} Handelskarren in #{action.target_settlement.name}.</h2>"
-    text += "<p>Deine Handelskarren sind soeben an ihrem Ziel #{ action.target_settlement.name } (#{action.target_settlement.owner.name}) angekommen. Es wurde folgendes vor Ort ausgeladen:</p>"
+    text = I18n.translate('application.messaging.trade_sender_message.body1', locale: action.sender.lang, name: action.target_settlement.name, num_carts: action.num_carts)
+    text += I18n.translate('application.messaging.trade_sender_message.body2', locale: action.sender.lang, settlement_name: action.target_settlement.name, owner_name: action.target_settlement.owner.name)
     text += "<p>" + Messaging::Message.resource_amounts_to_html(action, false) + "</p>"
-    message.subject = "Ankunft von #{action.num_carts} Handelskarren"
+    message.subject = I18n.translate('application.messaging.trade_sender_message.subject', locale: action.sender.lang, num_carts: action.num_carts)
     message.body = text
     
     message
@@ -225,14 +225,14 @@ class Messaging::Message < ActiveRecord::Base
       send_at:   DateTime.now,
     })
 
-    text = "<h2>Rückkehr von #{action.num_carts == 1 ? "einem" : action.num_carts} " + (action.empty? ? "leeren" : " beladenen ") + " Handelskarren nach #{action.starting_settlement.name}.</h2>"
+    text = I18n.translate('application.messaging.trade_return_message.body1', locale: action.sender.lang, name: action.starting_settlement.name, num_carts: action.num_carts)
     if action.empty?
-      text += "<p>Deine Handelskarren sind leer von ihrer Reise nach #{ action.target_settlement.name } (#{action.target_settlement.owner.name}) zurück gekommen.</p>"
-    else 
-      text += "<p>Deine Handelskarren sind von ihrer Reise nach #{ action.target_settlement.name } (#{action.target_settlement.owner.name}) zurück gekommen. Sie brachten folgende Ladung mit:</p>"
+      text += I18n.translate('application.messaging.trade_return_message.body2', locale: action.sender.lang, name: action.target_settlement.name, owner_name: action.target_settlement.owner.name)
+    else
+      text += I18n.translate('application.messaging.trade_return_message.body3', locale: action.sender.lang, name: action.target_settlement.name, owner_name: action.target_settlement.owner.name)
       text += Messaging::Message.resource_amounts_to_html(action, false)
     end
-    message.subject = "Rückkehr von #{action.num_carts == 1 ? "einem" : action.num_carts} " + (action.empty? ? "leeren" : "beladenen") + " Handelskarren"
+    message.subject = I18n.translate('application.messaging.trade_return_message.subject', locale: action.recipient.lang, num_carts: action.num_carts)
     message.body = text
     
     message
@@ -250,26 +250,19 @@ class Messaging::Message < ActiveRecord::Base
   end
     
   def add_overrun_winner_message_subject(winner, loser)
-    self.subject = "Du hast die Armee an der Siedlung " +  (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) + " überrannt" 
+    self.subject = I18n.translate('application.messaging.overrun_winner_message.subject', locale: winner.owner.lang, name: (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s))
   end
   
   def add_overrun_winner_message_body(winner, loser)
-    text  = "<h2>Deine Armee hat eine andere Armee an der Siedlung " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s) + " überrannt</h2>\n"
-    text += "<p>Deine Armee <b>" + winner.name.to_s + "</b>, stationiert an der Siedlung <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
-    text += "</b>, hat die Armee <b>" + loser.name.to_s + "</b> von <b>" + loser.owner_name_and_ally_tag + "</b> überrannt.</p>\n"
-    text += "<table>\n"
-    text += "<tr>\n"
-    text += "<th>Armeename</th><th>Besitzer</th><th>Größe</th>\n"
-    text += "</tr>\n"
-    text += "<tr>\n"
-    text += "<td>" + loser.name.to_s + "</td><td>" + loser.owner_name_and_ally_tag + "</td><td>" + loser.size_present.to_s + "</td>\n"
-    text += "</tr>\n"
-    text += "<tr>\n"
-    text += "<td>" + winner.name.to_s + "</td><td>" + winner.owner_name_and_ally_tag + "</td><td>" + winner.size_present.to_s + "</td>\n"
-    text += "</tr>\n"
-    text += "</table>\n"
-    text += "<p>Deine Einheiten haben alle überlebt, Dein Gegner hat alle Einheiten verloren. Für diesen Sieg erlangst Du keine Erfahrung.</p>\n"
-    self.body = text
+    self.body = I18n.translate('application.messaging.overrun_winner_message.body',
+                               locale: winner.owner.lang,
+                               settlement_name: (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s),
+                               winner_name: winner.name.to_s,
+                               winner_owner_name: winner.owner_name_and_ally_tag,
+                               winner_size: winner.size_present.to_s,
+                               loser_name: loser.name.to_s,
+                               loser_owner_name: loser.owner_name_and_ally_tag,
+                               loser_size: loser.size_present.to_s)
   end
 
   def self.generate_overrun_loser_message(winner, loser)
@@ -287,26 +280,19 @@ class Messaging::Message < ActiveRecord::Base
   end
   
   def add_overrun_loser_message_subject(winner, loser)
-    self.subject = "Deine Armee ist überrant worden an " +  (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
+    self.subject = I18n.translate('application.messaging.overrun_loser_message.subject', locale: loser.owner.lang, name: (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s))
   end
   
   def add_overrun_loser_message_body(winner, loser)
-    text  = "<h2>Deine Armee ist überrannt worden in " + (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s)  + "</h2>\n"
-    text += "<p>Deine Armee <b>" + loser.name.to_s + "</b> ist in der Region <b>" + (loser.location.settlement.nil? ? loser.region.name.to_s : loser.location.settlement.name.to_s) 
-    text += "</b> von einer Armee von <b>" + winner.name.to_s + "</b> von der Allianz <b>" + winner.owner_name_and_ally_tag + "</b> überrannt worden.</p>\n"
-    text += "<table>\n"
-    text += "<tr>\n"
-    text += "<th>Army Name</th><th>Besitzer</th><th>Size</th>\n"
-    text += "</tr>\n"
-    text += "<tr>\n"
-    text += "<td>" + winner.name.to_s + "</td><td>" + winner.owner_name_and_ally_tag + "</td><td> ? </td>\n"
-    text += "</tr>\n"
-    text += "<tr>\n"
-    text += "<td>" + loser.name.to_s + "</td><td>" + loser.owner_name_and_ally_tag + "</td><td>" + loser.size_present.to_s + "</td>\n"
-    text += "</tr>\n"
-    text += "</table>\n"
-    text += "<p>Keine Deiner Einheiten hat überlebt, Deine Armee ist engültig verloren.</p>\n"
-    self.body = text
+    self.body = I18n.translate('application.messaging.overrun_winner_message.body',
+                               locale: winner.owner.lang,
+                               settlement_name: (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s),
+                               winner_name: winner.name.to_s,
+                               winner_owner_name: winner.owner_name_and_ally_tag,
+                               winner_size: winner.size_present.to_s,
+                               loser_name: loser.name.to_s,
+                               loser_owner_name: loser.owner_name_and_ally_tag,
+                               loser_size: loser.size_present.to_s)
   end
   
   def self.generate_kicked_from_alliance_message(character, kicking_character)
@@ -315,8 +301,8 @@ class Messaging::Message < ActiveRecord::Base
       type_id:   ALLIANCE_TYPE_ID,
       send_at:   DateTime.now,
     })
-    message.subject = "Rauswurf"
-    message.body    = "<p>Du wurdest soeben von #{kicking_character.name} aus der Allianz #{kicking_character.alliance.name} geworfen.</p>"
+    message.subject = I18n.translate('application.messaging.kicked_from_alliance.subject', locale: character.lang)
+    message.body    = I18n.translate('application.messaging.kicked_from_alliance.body', locale: character.lang, name: kicking_character.name, alliance_name: kicking_character.alliance.name)
     message.save
   end  
   
@@ -336,12 +322,12 @@ class Messaging::Message < ActiveRecord::Base
 
   
   def add_gained_fortress_message_subject(settlement, old_owner, new_owner)
-    self.subject = "Siedlung gewonnen von " + settlement.region.name.to_s
+    self.subject = I18n.translate('application.messaging.gained_fortress_message.subject', locale: new_owner.lang, region_name: settlement.region.name.to_s)
   end
 
   def add_gained_fortress_message_body(settlement, old_owner, new_owner)
-    text  = "<h2>Du hast die Siedlung in " + settlement.region.name.to_s + " erobert.</h2>\n"
-    text += "<p>Juhu! Deine Armeen haben den Kampf in der Region <b>" + settlement.region.name.to_s + "</b> um die Siedlung <b>" + settlement.name.to_s + "</b> gewonnen. Du bist jetzt neuer Besitzer der Siedlung.</p>\n"
+    text = I18n.translate('application.messaging.gained_fortress_message.body1', locale: old_owner.lang, region_name: settlement.region.name.to_s)
+    text += I18n.translate('application.messaging.gained_fortress_message.body2', locale: old_owner.lang, region_name: settlement.region.name.to_s, settlement_name: settlement.name.to_s, new_owner_name: new_owner.name_and_ally_tag)
     self.body = text
   end
 
@@ -353,8 +339,8 @@ class Messaging::Message < ActiveRecord::Base
       reported:  false,
       flag:      0,
     })
-    message.subject = I18n.translate('application.messaging.won_artifact.subject', locale: character.lang)
-    message.body = I18n.translate('application.messaging.won_artifact.body', locale: character.lang)
+    message.subject = I18n.translate('application.messaging.artifact_captured_message.subject', locale: character.lang)
+    message.body = I18n.translate('application.messaging.artifact_captured_message.body', locale: character.lang)
     message.save
   end
 
@@ -366,8 +352,8 @@ class Messaging::Message < ActiveRecord::Base
       reported:  false,
       flag:      0,
     })
-    message.subject = I18n.translate('application.messaging.lost_artifact.subject', locale: character.lang)
-    message.body = I18n.translate('application.messaging.lost_artifact.body', locale: character.lang)
+    message.subject = I18n.translate('application.messaging.artifact_jumped_message.subject', locale: character.lang)
+    message.body = I18n.translate('application.messaging.artifact_jumped_message.body', locale: character.lang)
     message.save
   end
 
@@ -379,8 +365,8 @@ class Messaging::Message < ActiveRecord::Base
       reported:  false,
       flag:      0,
     })
-    message.subject = I18n.translate('application.messaging.stolen_artifact.subject', locale: character.lang)
-    message.body = I18n.translate('application.messaging.stolen_artifact.body', locale: character.lang)
+    message.subject = I18n.translate('application.messaging.artifact_stolen_message.subject', locale: character.lang)
+    message.body = I18n.translate('application.messaging.artifact_stolen_message.body', locale: character.lang)
     message.save
   end
 
@@ -400,11 +386,13 @@ class Messaging::Message < ActiveRecord::Base
   end
 
   def add_lost_fortress_message_subject(settlement, old_owner, new_owner)
-    self.subject = I18n.translate('application.messaging.lost_fortress.subject', locale: character.lang, :name => settlement.region.name.to_s)
+    self.subject = I18n.translate('application.messaging.lost_fortress_message.subject', locale: old_owner.lang, region_name: settlement.region.name.to_s)
   end
 
   def add_lost_fortress_message_body(settlement, old_owner, new_owner)
-    self.body = I18n.translate('application.messaging.lost_fortress.body', locale: character.lang, :region_name => settlement.region.name.to_s, :settlement_name => settlement.name.to_s, :new_owner_name => new_owner.name_and_ally_tag)
+    text = I18n.translate('application.messaging.lost_fortress_message.body1', locale: old_owner.lang, region_name: settlement.region.name.to_s)
+    text += I18n.translate('application.messaging.lost_fortress_message.body2', locale: old_owner.lang, region_name: settlement.region.name.to_s, settlement_name: settlement.name.to_s, new_owner_name: new_owner.name_and_ally_tag)
+    self.body = text
   end
   
   def self.create_tutorial_message(character, subject, boby)

@@ -65,21 +65,71 @@ de:
       alliance_application_message:
         subject: "Allianz Bewerbung"
         body: "Der Spieler %{name} hat sich bei Deiner Allianz um Aufnahme beworben. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Bewerbung abzulehnen."
-      lost_fortress:
-        subject: "Siedlung verloren an %{name}"
-        body:
-          <h2>Du hast Deine Siedlung in der Region %{region_name} verloren</h2>\n
-          <p>Deine Garnisonsarmee in Region <b>%{region_name}</b> hat den Kampf um die Siedlung <b>%{settlement_name}</b> verloren.
-          Der neue Besitzer der Siedlung ist <b>%{new_owner_name}</b>.</p>\n
-      stolen_artifact:
-        subject: "Dein Artefakt wurde geraubt!"
-        body: "<p>Och menno! Deine Untergebenen haben tapfer gekämpft, aber das Artefakt wurde Dir geraubt. Einheiten rekrutieren, Armeen aufstellen und dann wird sich das Artefakt zurückgeholt! Ein anderes tut es aber auch.</p>\n"
-      lost_artifact:
-        subject: "Das Artefakt ist verloren!"
-        body: "<p>So ein Mist! Unsere Armeen haben zwar erfolgreich gekämpft, aber das Artefakt ging während des Kampfes verloren. Suche das verlorene Artefakt bei einer Neandertaler-Armee in der Nähe.</p>\n"
-      won_artifact:
-        subject: "Du hast ein Artefakt gewonnen!"
-        body: "<p>Hurra! Unsere Armeen haben erfolgreich gekämpft und von unserem Gegner ein Artefakt erobert. Du kannst das Artefakt in Deiner Hauptsiedlung bewundern. Für die Aktivierung musst Du einen Artefakt-Stand bauen.</p>\n"
+      trade_recipient_message:
+        body1: <h2>Lieferung aus %{name}.</h2>
+        body2: <p>%{num_carts} Handelskarren aus %{ settlement_name } (%{owner_name}) sind soeben angekommen. Es wurde folgendes ausgeladen:</p>
+        subject: Lieferung aus %{action.starting_settlement.name}
+      trade_sender_message:
+        body1: <h2>Ankunft von %{num_carts} Handelskarren in %{name}.</h2>
+        body2: <p>Deine Handelskarren sind soeben an ihrem Ziel %{ settlement_name } (%{owner_name}) angekommen. Es wurde folgendes vor Ort ausgeladen:</p>
+        subject: Ankunft von %{num_carts} Handelskarren
+      trade_return_message:
+        body1: <h2>Rückkehr von %{num_carts} Handelskarren nach %{name}.</h2>
+        body2: <p>Deine Handelskarren sind leer von ihrer Reise nach %{name} (#{owner_name}) zurück gekommen.</p>
+        body3: <p>Deine Handelskarren sind von ihrer Reise nach %{name} (#{owner_name}) zurück gekommen. Sie brachten folgende Ladung mit:</p>
+        subject: Rückkehr von %{num_carts} Handelskarren
+      overrun_winner_message:
+        subject: Du hast die Armee an der Siedlung %{name} überrannt
+        body: "<h2>Deine Armee hat eine andere Armee an der Siedlung %{settlement_name} überrannt</h2>\n
+          <p>Deine Armee <b>%{winner_name}</b>, stationiert an der Siedlung <b>%{settlement_name}</b>, hat die Armee <b>%{loser_name}</b> von <b>%{loser_owner_name}</b> überrannt.</p>\n
+          <table>\n
+          <tr>\n
+          <th>Armeename</th><th>Besitzer</th><th>Größe</th>\n
+          </tr>\n
+          <tr>\n
+          <td>%{loser_name}</td><td>%{loser_owner_name}</td><td>%{loser_size}</td>\n
+          </tr>\n
+          <tr>\n
+          <td>%{winner_name}</td><td%{winner_owner_name}</td><td>%{winner_size}</td>\n
+          </tr>\n
+          </table>\n
+          <p>Deine Einheiten haben alle überlebt, Dein Gegner hat alle Einheiten verloren. Für diesen Sieg erlangst Du keine Erfahrung.</p>\n"
+      overrun_loser_message:
+        subject: Deine Armee ist in %{name} überrant worden
+        body: "<h2>Deine Armee ist überrannt worden in %{settlement_name}</h2>\n
+          <p>Deine Armee <b>%{loser_name}</b> ist in <b>%{settlement_name}</b> von der Armee <b>%{winner_name}</b> von <b>%{winner_owner_name}</b> überrannt worden.</p>\n
+          <table>\n
+          <tr>\n
+          <th>Armeename</th><th>Besitzer</th><th>Größe</th>\n
+          </tr>\n
+          <tr>\n
+          <td>%{winner_name}</td><td%{winner_owner_name}</td><td> ? </td>\n
+          </tr>\n
+          <tr>\n
+          <td>%{loser_name}</td><td>%{loser_owner_name}</td><td>%{loser_size}</td>\n
+          </tr>\n
+          </table>\n
+          <p>Keine Deiner Einheiten hat überlebt, Deine Armee ist engültig verloren.</p>\n"
+      kicked_from_alliance:
+        subject: Rauswurf
+        body: <p>Du wurdest soeben von %{name} aus der Allianz %{alliance_name} geworfen.</p>
+      lost_fortress_message:
+        subject: Siedlung verloren in %{region_name}
+        body1: <h2>Du hast Deine Siedlung in der Region %{region_name} verloren </h2>\n
+        body2: <p>Deine Garnisonsarmee in Region <b>%{region_name}</b> hat den Kampf um die Siedlung <b>%{settlement_name}</b> verloren. Der neue Besitzer der Siedlung ist <b>%{new_owner_name}</b>.</p>
+      gained_fortress_message:
+        subject: Siedlung gewonnen in %{region_name}
+        body1: <h2>Du hast die Siedlung in %{region_name} erobert.</h2>\n
+        body2: <p>Juhu! Deine Armeen haben den Kampf in der Region <b>%{region_name}</b> um die Siedlung <b>%{settlement_name}</b> gewonnen. Du bist jetzt neuer Besitzer der Siedlung.</p>
+      artifact_captured_message:
+        subject: Du hast ein Artefakt gewonnen!
+        body: <p>Hurra! Unsere Armeen haben erfolgreich gekämpft und von unserem Gegner ein Artefakt erobert. Du kannst das Artefakt in Deiner Hauptsiedlung bewundern. Für die Aktivierung musst Du einen Artefakt-Stand bauen.</p>
+      artifact_jumped_message:
+        subject: Das Artefakt ist verloren!
+        body: <p>So ein Mist! Unsere Armeen haben zwar erfolgreich gekämpft, aber das Artefakt ging während des Kampfes verloren. Suche das verlorene Artefakt bei einer Neandertaler-Armee in der Nähe.</p>
+      artifact_stolen_message:
+        subject: Dein Artefakt wurde geraubt!
+        body: <p>Och menno! Deine Untergebenen haben tapfer gekämpft, aber das Artefakt wurde Dir geraubt. Einheiten rekrutieren, Armeen aufstellen und dann wird sich das Artefakt zurückgeholt! Ein anderes tut es aber auch.</p>
     identity_provider:
       custom_booking:
         subject: 5D-Credit-Buchung
