@@ -267,7 +267,7 @@ en:
         body: <p>Du wurdest soeben von %{name} aus der Allianz %{alliance_name} geworfen.</p>
       lost_fortress_message:
         subject: Siedlung verloren in %{region_name}
-        body1: <h2>Du hast Deine Siedlung in der Region %{region_name} verloren </h2>\n
+        body1: <h2>Du hast Deine Siedlung in der Region %{region_name} verloren </h2>
         body2: <p>Deine Garnisonsarmee in Region <b>%{region_name}</b> hat den Kampf um die Siedlung <b>%{settlement_name}</b> verloren. Der neue Besitzer der Siedlung ist <b>%{new_owner_name}</b>.</p>
       gained_fortress_message:
         subject: Siedlung gewonnen in %{region_name}
