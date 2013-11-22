@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_logger_2" group="resource" category="building_category_small_building" buyable="true" destructable="true" tier="2" experienceFactor="3.3">  
+<Building id="building_logger_2" advisor="girl" group="resource" category="building_category_small_building" buyable="true" destructable="true" tier="2" experienceFactor="3.3">
   <Name lang="de_DE">Holzfäller mit Kupferaxt</Name>
   <Name lang="en_US">Logger with Copper Axe</Name>
   <Description lang="de_DE">

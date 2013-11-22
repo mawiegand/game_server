@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.4
+# Version: 1.6.5
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -123,7 +123,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 6,
-                    :build => 4,
+                    :build => 5,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -2964,7 +2964,7 @@ class GameRules::Rules
             :en_US => "Hunter Gatherers",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
@@ -3079,7 +3079,7 @@ class GameRules::Rules
             :en_US => "God-Fearing Gatherer",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
@@ -3192,7 +3192,7 @@ class GameRules::Rules
             :en_US => "Training Grounds",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Looking for a little fight? Haven't been bashed up for a while? The barracks are the place to go for anyone wanting to jump into the fray.</p>",
@@ -3410,7 +3410,7 @@ class GameRules::Rules
             :en_US => "Tavern",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>A quiet seat, a cool beer, and some reasonably friendly company. What more could anyone want from life?</p>",
@@ -3500,7 +3500,7 @@ class GameRules::Rules
             :en_US => "Raw Materials Store",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>Stone containers, dinosaur cranes and, more recently, carts. A little style is classy! </p>",
@@ -3722,7 +3722,7 @@ class GameRules::Rules
             :en_US => "Quarry",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>Stones – nothing but stones, everywhere! Sweaty labourers and the monotonous thwack of heavy tools.</p>",
@@ -3829,7 +3829,7 @@ class GameRules::Rules
             :en_US => "Logger",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>A man and his stone axe! Apart from firewood, he occasionally even brings a tree he managed to fell back to the compound.</p>",
@@ -4127,7 +4127,7 @@ class GameRules::Rules
             :en_US => "Furrier",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>A furrier know there are many ways to skin a creature. They have lovely furs and quality leatherwear that appeals to sophisticated ladies, and of course, there's usually something tasty roasting over the fire too.</p>",
@@ -4324,7 +4324,7 @@ class GameRules::Rules
             :en_US => "Firing Range",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Don't feel like brawling or getting up close and personal with stinky animals? Prefer to kill your enemy from a safe distance? Then ranged combat is right up your alley.</p>",
@@ -4646,7 +4646,7 @@ class GameRules::Rules
             :en_US => "Great Store",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>Stone containers, dinosaur cranes, and - more recently - copper carts. At last, raw materials can be transported in style.</p>",
@@ -4762,7 +4762,7 @@ class GameRules::Rules
             :en_US => "Age Old Stone Quarry",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>In the Copper-Stone Age, you'd expect workers to have copper pickaxes - but the workers actually preferred to invest their copper in jewellery for their wives. The fact they chose this option suggests their grateful wives gave them some pretty lavish rewards...</p>",
@@ -4864,7 +4864,7 @@ class GameRules::Rules
             :en_US => "Logger with Copper Axe",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>A man and his copper axe! Although copper axes always bend, this worker can still bring home the trees he's felled himself as well as some brushwood.</p>",
@@ -4966,7 +4966,7 @@ class GameRules::Rules
             :en_US => "Smelly Barn",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Smelly animals and a kitty cat to play with. Life on the stud farm couldn't be better.</p>",
@@ -5077,7 +5077,7 @@ class GameRules::Rules
             :en_US => "Central Command Post",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Coordinating armies is the art of war. Even if all armies are dispatched in the same direction with the order to “hit 'em hard”.</p>",
@@ -5204,7 +5204,7 @@ class GameRules::Rules
             :en_US => "Crazy Furrier",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
@@ -5307,7 +5307,7 @@ class GameRules::Rules
             :en_US => "Garrison",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Warriors or soldiers of any kind should be kept apart from the ordinary working population. In the garrison they can bash each others' heads in and leave the poor settlement dwellers in peace.</p>",
@@ -5524,7 +5524,7 @@ class GameRules::Rules
             :en_US => "Field Camp",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Field camps turn encampments into military support units. Despite all the talk about the safety and storage that field camps offer, they seem to have a magical attraction for enemies.</p>",
@@ -5710,7 +5710,7 @@ class GameRules::Rules
             :en_US => "Fortification",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>The fortress rules the region. Troops are deployed to collect taxes from the settlements and protect the fortress from attacks.</p>",
@@ -5804,7 +5804,7 @@ class GameRules::Rules
             :en_US => "Infantry Tower",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>This is no place for thinkers! Infantry members need strength and stamina - nothing else.</p>",
@@ -5903,7 +5903,7 @@ class GameRules::Rules
             :en_US => "Artillery Tower",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>You'd better duck! Ranged combatant training is in full swing!</p>",
@@ -6002,7 +6002,7 @@ class GameRules::Rules
             :en_US => "Cavalry Tower",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>This place is home to countless animals and sweaty men. Beware of the dung and pungent smell!</p>",

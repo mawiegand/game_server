@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_cavalry_tower" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishable="true" experienceFactor="6">  
+<Building id="building_cavalry_tower" advisor="warrior" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishable="true" experienceFactor="6">
   <Name lang="de_DE">Turm der Reitmeisterei</Name>
   <Name lang="en_US">Cavalry Tower</Name>
   <Description lang="de_DE">
