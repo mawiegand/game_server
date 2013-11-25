@@ -176,67 +176,26 @@ en:
       alliance_application_message:
         subject: "Alliance Application"
         body: "The player %{name} has just applied for a membership in your alliance. Please contact him to discuss details or to reject his application."
-      welcome_message:
-        subject: Willkommen bei Wack-a-Doo
-        body: "<h2>Willkommen in der halböffentlichen geschlossenen Erprobungsrunde</h2>\n
-          <p>Mit dieser Runde wollen wir unser Spielsystem und unsere Server testen, und sind sehr gespannt auf Deine Interpretation von Wack-a-Doo.</p>\n
-          <p>Zur besseren Orientierung empfehlen wir Dir die Erklärungen zur Benutzeroberfläche anzuschauen:</p>\n
-          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de/Benutzeroberfläche' target='_blank'>http://wiki.wack-a-doo.de/Benutzeroberfläche</a></p>\n
-          <p>Dort werden alle wesentlichen Menüfunktionen anhand von Screenshots erklärt.</p>\n
-          <p>Wack-a-Doo befindet sich gerade in der Entwicklungsphase. In dieser Erprobungsrunde werden wir natürlich auftretende Fehler beheben, wollen aber laufend Neuerungen oder Verbesserungen vornehmen. Jede Änderung werden wir entsprechend ankündigen.</p>\n
-          <p>Wir bitten Dich uns Feedback zu geben oder Fehlermeldungen zu melden. Dafür wurde uns von Shadow-Dragon ein Forumsbereich im Uga-Agga Forum eingerichtet:</p>\n
-          <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>http://forum.uga-agga.de</a></p>\n
-          <p>Bitte melde jeden Fehler, damit wir entsprechend schnell reagieren können. Auch Feedback, Ideen oder konstruktive Meinungen sind dort sehr gerne gesehen.</p>\n
-          <p>Wesentliche Spielmechanismen, Übersichten und Erklärungen findest Du in unserem Wiki zusammengefasst:</p>\n
-          <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.de' target='_blank'>http://wiki.wack-a-doo.de</a></p>\n
-          <p>Das Wiki ist lange nicht vollständig und befindet sich wie alles andere in Wack-a-Doo noch im Aufbau. Du bist eingeladen uns durch Mitarbeit am Wiki zu unterstützen und das Wiki auf einem aktuellen Niveau zu halten. Zur Zeit können im Wiki ohne Anmeldungen Inhalte eingetragen oder abgeändert werden.</p>\n
-          <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>\n
-          <p>Das Wack-a-Doo Team</p>\n"
-      battle_report:
-        subject: "Kampfbericht: <%= @battle.region.name %>"
-        title: Kampfbericht
-        initial_sentance: Ein Kampf ist ausgebrochen durch einen Angriff von <%= get_character_name(@battle.initiator) %> auf <%= get_character_name(@battle.opponent) %> zum Zeitpunkt <%= @battle.started_at %>
-        no_rounds: Da es keine Gegenwehr gab, fanden keine Kampfrunden statt.
-        winner_message: Deine Fraktion hat den Kampf gewonnen.
-        loser_message: Deine Fraktion hat den Kampf verloren.
-        xp_start: Du erhältst daher
-        xp_end: zusätzliche Erfahrungspunkte.
-        your_army: Deine Armee
-        overview: Übersicht
-        details: Details
-        round: Runde
-        total_army_of_my_faction: Gesamte Armee deiner Fraktion
-        total_army_of_enemy_faction: Armee der feindlichen Fraktion
-        total_damage: Total angerichter Schaden
-        total_lost_unts: Verlorene Einheiten
-        destroyed: "zerstört"
-        dissolved: "aufgelöst"
-        retreated: "zurückgezogen"
-        survived: "hat überlebt"
-        no_units: "keine Einheiten"
-      alliance_application_message:
-        subject: "Allianz Bewerbung"
-        body: "Der Spieler %{name} hat sich bei Deiner Allianz um Aufnahme beworben. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Bewerbung abzulehnen."
       trade_recipient_message:
-        body1: <h2>Lieferung aus %{name}.</h2>
-        body2: <p>%{num_carts} Handelskarren aus %{ settlement_name } (%{owner_name}) sind soeben angekommen. Es wurde folgendes ausgeladen:</p>
-        subject: Lieferung aus %{action.starting_settlement.name}
+        body1: <h2>Delivery from %{name}.</h2>
+        body2: <p>%{num_carts} trading carts from %{ settlement_name } (%{owner_name}) have just arrived. They carried these goods:</p>
+        subject: Delivery %{action.starting_settlement.name}
       trade_sender_message:
-        body1: <h2>Ankunft von %{num_carts} Handelskarren in %{name}.</h2>
-        body2: <p>Deine Handelskarren sind soeben an ihrem Ziel %{ settlement_name } (%{owner_name}) angekommen. Es wurde folgendes vor Ort ausgeladen:</p>
-        subject: Ankunft von %{num_carts} Handelskarren
+        body1: <h2>Arrival of %{num_carts} trading carts in %{name}.</h2>
+        body2: <p>Your trading carts have just arrived at %{ settlement_name } (%{owner_name}). They unloaded the following goods:</p>
+        subject: Arrival of %{num_carts} trading carts
       trade_return_message:
-        body1: <h2>Rückkehr von %{num_carts} Handelskarren nach %{name}.</h2>
-        body2: <p>Deine Handelskarren sind leer von ihrer Reise nach %{name} (#{owner_name}) zurück gekommen.</p>
-        body3: <p>Deine Handelskarren sind von ihrer Reise nach %{name} (#{owner_name}) zurück gekommen. Sie brachten folgende Ladung mit:</p>
-        subject: Rückkehr von %{num_carts} Handelskarren
+        body1: <h2>Return of %{num_carts} trading carts to %{name}.</h2>
+        body2: <p>Your empty trading carts have returned from %{name} (#{owner_name}).</p>
+        body3: <p>Your trading carts have returned from %{name} (#{owner_name}). They carried the following goods:</p>
+        subject: Return of %{num_carts} Handelskarren
       overrun_winner_message:
-        subject: Du hast die Armee an der Siedlung %{name} überrannt
-        body: "<h2>Deine Armee hat eine andere Armee an der Siedlung %{settlement_name} überrannt</h2>\n
-          <p>Deine Armee <b>%{winner_name}</b>, stationiert an der Siedlung <b>%{settlement_name}</b>, hat die Armee <b>%{loser_name}</b> von <b>%{loser_owner_name}</b> überrannt.</p>\n
+        subject: Your army has overrun the enemy at %{name}
+        body: <h2>Your Army has overrun the enemy near the settlement %{settlement_name}</h2>\n
+          <p>Your army <b>%{winner_name}</b>, stationt near the settlement <b>%{settlement_name}</b>, has overrun the army <b>%{loser_name}</b> of <b>%{loser_owner_name}</b>.</p>\n
           <table>\n
           <tr>\n
-          <th>Armeename</th><th>Besitzer</th><th>Größe</th>\n
+          <th>Army name</th><th>Owner</th><th>Size</th>\n
           </tr>\n
           <tr>\n
           <td>%{loser_name}</td><td>%{loser_owner_name}</td><td>%{loser_size}</td>\n
@@ -245,14 +204,14 @@ en:
           <td>%{winner_name}</td><td%{winner_owner_name}</td><td>%{winner_size}</td>\n
           </tr>\n
           </table>\n
-          <p>Deine Einheiten haben alle überlebt, Dein Gegner hat alle Einheiten verloren. Für diesen Sieg erlangst Du keine Erfahrung.</p>\n"
+          <p>All of your units survived, all of your enemies units perished. You will not gain experience from this victory.</p>\n
       overrun_loser_message:
-        subject: Deine Armee ist in %{name} überrant worden
-        body: "<h2>Deine Armee ist überrannt worden in %{settlement_name}</h2>\n
-          <p>Deine Armee <b>%{loser_name}</b> ist in <b>%{settlement_name}</b> von der Armee <b>%{winner_name}</b> von <b>%{winner_owner_name}</b> überrannt worden.</p>\n
+        subject: Your army has been overrun at %{name}
+        body: "<h2>DYour army has been overrun at %{settlement_name}</h2>\n
+          <p>Your army <b>%{loser_name}</b>has been overrun in <b>%{settlement_name}</b> by the army <b>%{winner_name}</b> of <b>%{winner_owner_name}</b>.</p>\n
           <table>\n
           <tr>\n
-          <th>Armeename</th><th>Besitzer</th><th>Größe</th>\n
+          <th>Army name</th><th>Owner</th><th>Size</th>\n
           </tr>\n
           <tr>\n
           <td>%{winner_name}</td><td%{winner_owner_name}</td><td> ? </td>\n
@@ -261,27 +220,27 @@ en:
           <td>%{loser_name}</td><td>%{loser_owner_name}</td><td>%{loser_size}</td>\n
           </tr>\n
           </table>\n
-          <p>Keine Deiner Einheiten hat überlebt, Deine Armee ist engültig verloren.</p>\n"
+          <p>Non of your units survived, your army has been shattered.</p>\n"
       kicked_from_alliance:
-        subject: Rauswurf
-        body: <p>Du wurdest soeben von %{name} aus der Allianz %{alliance_name} geworfen.</p>
+        subject: Kicked out
+        body: <p>Dyou have just been kicked out of the alliance %{alliance_name} by %{name}.</p>
       lost_fortress_message:
-        subject: Siedlung verloren in %{region_name}
-        body1: <h2>Du hast Deine Siedlung in der Region %{region_name} verloren </h2>
-        body2: <p>Deine Garnisonsarmee in Region <b>%{region_name}</b> hat den Kampf um die Siedlung <b>%{settlement_name}</b> verloren. Der neue Besitzer der Siedlung ist <b>%{new_owner_name}</b>.</p>
+        subject: Settlement lost in %{region_name}
+        body1: <h2>You have lost your settlement in the region %{region_name} </h2>
+        body2: <p>Your garrison stationed in <b>%{region_name}</b> has lost the battle for the settlement <b>%{settlement_name}</b>. <b>%{new_owner_name}</b> now owns the settlement.</p>
       gained_fortress_message:
-        subject: Siedlung gewonnen in %{region_name}
-        body1: <h2>Du hast die Siedlung in %{region_name} erobert.</h2>\n
-        body2: <p>Juhu! Deine Armeen haben den Kampf in der Region <b>%{region_name}</b> um die Siedlung <b>%{settlement_name}</b> gewonnen. Du bist jetzt neuer Besitzer der Siedlung.</p>
+        subject: Settlement conquered in %{region_name}
+        body1: <h2>You have conquered a settlement in %{region_name}.</h2>\n
+        body2: <p>Your armies have won the battle for <b>%{settlement_name}</b> in the region <b>%{region_name}</b>. You are now that settlements rightfull owner.</p>
       artifact_captured_message:
-        subject: Du hast ein Artefakt gewonnen!
-        body: <p>Hurra! Unsere Armeen haben erfolgreich gekämpft und von unserem Gegner ein Artefakt erobert. Du kannst das Artefakt in Deiner Hauptsiedlung bewundern. Für die Aktivierung musst Du einen Artefakt-Stand bauen.</p>
+        subject: You have captured an artifact!
+        body: <p>Your armies fought bravely and have conquered an artifact from our enemies. The artifact has been transported to your home settlement. In order to activate it you require a wacky lab.</p>
       artifact_jumped_message:
-        subject: Das Artefakt ist verloren!
-        body: <p>So ein Mist! Unsere Armeen haben zwar erfolgreich gekämpft, aber das Artefakt ging während des Kampfes verloren. Suche das verlorene Artefakt bei einer Neandertaler-Armee in der Nähe.</p>
+        subject: The artifact is lost!
+        body: <p>Curses! Our armies may have won the battle but during its course the artifact disapeared. They can't have gotten far, so it must be with a neanderthal army nearby.</p>
       artifact_stolen_message:
-        subject: Dein Artefakt wurde geraubt!
-        body: <p>Och menno! Deine Untergebenen haben tapfer gekämpft, aber das Artefakt wurde Dir geraubt. Einheiten rekrutieren, Armeen aufstellen und dann wird sich das Artefakt zurückgeholt! Ein anderes tut es aber auch.</p>
+        subject: Your artifact has been robbed!
+        body: <p>Your soldiers fought with their all but your artifact was robbed. Replenish your units, organize your armies and get it back!</p>
     identity_provider:
       custom_booking:
         subject: 5D-Credit Booking
@@ -313,9 +272,7 @@ en:
           title:
             Message Archive
           description:
-            Gelesene Nachrichten aus der Inbox und alle Nachrichten aus der Outbox werden nach 14 Tagen gelöscht. Mit dem
-            Platinum erhälst Du zusätzlich eine Archivbox, in die Du Nachrichten verschieben und dauerhaft speichern
-            kannst.
+            Read messages in your Inbox and all messages in your Outbox will be deleted after 14 days. If you have a Platinum Account you also have an Archivebox were you can save your messages permanently.
         like_regeneration:
           title:
             Faster Regeneration of the given Likes / Dislikes
@@ -326,13 +283,13 @@ en:
     retention:
       subject:
         played_too_short:
-          "In Deiner Siedlung geht's grad drunter und drüber"
+          "Your settlement is going haywire"
         paused_too_long:
-          "In Deiner Siedlung geht's grad drunter und drüber"
+          "Your settlement is going haywire"
         getting_inactive:
-          "%{name}, %{credit_reward} 5D Platinum Credits - Hol dir deine Belohnung!"
+          "%{name}, %{credit_reward} 5D Platinum Credits - get your reward now!"
         getting_deleted:
-          "Morgen werden Deine Siedlungen gelöscht"
+          "Tomorrow your settlements will be deleted"
       body:
         played_too_short:
           "Hello %{name},\n\n
