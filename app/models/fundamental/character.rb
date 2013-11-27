@@ -1115,8 +1115,11 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def recalc_and_apply_construction_bonus_alliance
-    self.construction_bonus_alliance = self.alliance.nil? ? 0 : self.alliance.construction_bonus_effects
-    self.save
+    new_bonus = self.alliance.nil? ? 0 : self.alliance.construction_bonus_effects
+    if new_bonus != self.construction_bonus_alliance
+      self.construction_bonus_alliance = new_bonus
+      self.save
+    end
   end
 
   ############################################################################
