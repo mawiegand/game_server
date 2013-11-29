@@ -179,21 +179,21 @@ en:
         body: "The player %{name} has just applied for a membership in your alliance. Please contact him to discuss details or to reject his application."
       trade_recipient_message:
         body1: <h2>Delivery from %{name}.</h2>
-        body2: <p>%{num_carts} trading carts from %{ settlement_name } (%{owner_name}) have just arrived. They carried these goods:</p>
+        body2: <p>%{num_carts} trading carts from %{ settlement_name } (%{owner_name}) have just arrived, carrying the following goods:</p>
         subject: Delivery %{action.starting_settlement.name}
       trade_sender_message:
         body1: <h2>Arrival of %{num_carts} trading carts in %{name}.</h2>
-        body2: <p>Your trading carts have just arrived at %{ settlement_name } (%{owner_name}). They unloaded the following goods:</p>
+        body2: <p>Your trading carts have just arrived at %{ settlement_name } (%{owner_name}), carrying the following goods:</p>
         subject: Arrival of %{num_carts} trading carts
       trade_return_message:
         body1: <h2>Return of %{num_carts} trading carts to %{name}.</h2>
         body2: <p>Your empty trading carts have returned from %{name} (#{owner_name}).</p>
-        body3: <p>Your trading carts have returned from %{name} (#{owner_name}). They carried the following goods:</p>
+        body3: <p>Your trading carts have returned from %{name} (#{owner_name}), carrying the following goods:</p>
         subject: Return of %{num_carts} Handelskarren
       overrun_winner_message:
         subject: Your army has overrun the enemy at %{name}
-        body: <h2>Your Army has overrun the enemy near the settlement %{settlement_name}</h2>\n
-          <p>Your army <b>%{winner_name}</b>, stationt near the settlement <b>%{settlement_name}</b>, has overrun the army <b>%{loser_name}</b> of <b>%{loser_owner_name}</b>.</p>\n
+        body: "<h2>Your army has overrun the enemy near the settlement %{settlement_name}</h2>\n
+          <p>Your army <b>%{winner_name}</b>, stationed near the settlement <b>%{settlement_name}</b>, has overrun the army <b>%{loser_name}</b> of <b>%{loser_owner_name}</b>.</p>\n
           <table>\n
           <tr>\n
           <th>Army name</th><th>Owner</th><th>Size</th>\n
@@ -205,11 +205,11 @@ en:
           <td>%{winner_name}</td><td%{winner_owner_name}</td><td>%{winner_size}</td>\n
           </tr>\n
           </table>\n
-          <p>All of your units survived, all of your enemies units perished. You will not gain experience from this victory.</p>\n
+          <p>All of your units survived, and all of your enemy's units perished. You will not gain experience from this victory.</p>\n"
       overrun_loser_message:
         subject: Your army has been overrun at %{name}
-        body: "<h2>DYour army has been overrun at %{settlement_name}</h2>\n
-          <p>Your army <b>%{loser_name}</b>has been overrun in <b>%{settlement_name}</b> by the army <b>%{winner_name}</b> of <b>%{winner_owner_name}</b>.</p>\n
+        body: "<h2>Your army has been overrun at %{settlement_name}</h2>\n
+          <p>Your army <b>%{loser_name}</b>has been overrun at <b>%{settlement_name}</b> by the army <b>%{winner_name}</b> led by <b>%{winner_owner_name}</b>.</p>\n
           <table>\n
           <tr>\n
           <th>Army name</th><th>Owner</th><th>Size</th>\n
@@ -221,27 +221,27 @@ en:
           <td>%{loser_name}</td><td>%{loser_owner_name}</td><td>%{loser_size}</td>\n
           </tr>\n
           </table>\n
-          <p>Non of your units survived, your army has been shattered.</p>\n"
+          <p>None of your units survived! Your army has been destroyed.</p>\n"
       kicked_from_alliance:
         subject: Kicked out
-        body: <p>Dyou have just been kicked out of the alliance %{alliance_name} by %{name}.</p>
+        body: <p>You have just been kicked out of the alliance %{alliance_name} by %{name}.</p>
       lost_fortress_message:
         subject: Settlement lost in %{region_name}
         body1: <h2>You have lost your settlement in the region %{region_name} </h2>
-        body2: <p>Your garrison stationed in <b>%{region_name}</b> has lost the battle for the settlement <b>%{settlement_name}</b>. <b>%{new_owner_name}</b> now owns the settlement.</p>
+        body2: <p>Your garrison stationed in <b>%{region_name}</b> has lost the battle for the settlement <b>%{settlement_name}</b>. <b>%{new_owner_name}</b> now owns this settlement.</p>
       gained_fortress_message:
         subject: Settlement conquered in %{region_name}
         body1: <h2>You have conquered a settlement in %{region_name}.</h2>\n
-        body2: <p>Your armies have won the battle for <b>%{settlement_name}</b> in the region <b>%{region_name}</b>. You are now that settlements rightfull owner.</p>
+        body2: <p>Your armies have won the battle for <b>%{settlement_name}</b> in the region <b>%{region_name}</b>. Congratulations - you are now that settlements rightfull owner.</p>
       artifact_captured_message:
         subject: You have captured an artifact!
-        body: <p>Your armies fought bravely and have conquered an artifact from our enemies. The artifact has been transported to your home settlement. In order to activate it you require a wacky lab.</p>
+        body: "<p>Your armies fought bravely and have conquered an artifact from your enemies. The artifact has been transported to your home settlement. You'll need a wacky lab to activate it.</p>"
       artifact_jumped_message:
         subject: The artifact is lost!
-        body: <p>Curses! Our armies may have won the battle but during its course the artifact disapeared. They can't have gotten far, so it must be with a neanderthal army nearby.</p>
+        body: <p>A thousand curses! Our armies may have won the battle but during its course the artifact has disappeared. They can't have gotten far, so it must be with a nearby Neanderthal army.</p>
       artifact_stolen_message:
-        subject: Your artifact has been robbed!
-        body: <p>Your soldiers fought with their all but your artifact was robbed. Replenish your units, organize your armies and get it back!</p>
+        subject: Your artifact has been stolen!
+        body: <p>Your soldiers gave it their all but your artifact was stolen. Replenish your units, organize your armies and get it back!</p>
     identity_provider:
       custom_booking:
         subject: 5D-Credit Booking
@@ -284,13 +284,13 @@ en:
     retention:
       subject:
         played_too_short:
-          "Your settlement is going haywire"
+          "Your settlement is going haywire. You might want to fix that..."
         paused_too_long:
-          "Your settlement is going haywire"
+          "Your settlement is going haywire. You might want to fix that..."
         getting_inactive:
           "%{name}, %{credit_reward} 5D Platinum Credits - get your reward now!"
         getting_deleted:
-          "Tomorrow your settlements will be deleted"
+          "Your settlements will be deleted tomorrow"
       body:
         played_too_short:
           "Hello %{name},\n\n
