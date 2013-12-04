@@ -54,7 +54,7 @@ class Fundamental::CharactersController < ApplicationController
     external_referer  = request.env["HTTP_X_ALT_REFERER"] || params[:referer]
     request_url       = request.env["HTTP_X_ALT_REQUEST"]
     
-    is_ios_client     = !external_referer.blank? && external_referer == "itunes.com" # improve this! should use client-id or other mechanism
+    is_ios_client     = use_restkit_api? # improve this! should use client-id or other mechanism
     use_settler_start = !is_ios_client
     
     # ########################################################################
