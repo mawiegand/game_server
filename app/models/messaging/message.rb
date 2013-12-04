@@ -284,7 +284,7 @@ class Messaging::Message < ActiveRecord::Base
   end
   
   def add_overrun_loser_message_body(winner, loser)
-    self.body = I18n.translate('application.messaging.overrun_winner_message.body',
+    self.body = I18n.translate('application.messaging.overrun_loser_message.body',
                                locale: winner.owner.lang,
                                settlement_name: (winner.location.settlement.nil? ? winner.region.name.to_s : winner.location.settlement.name.to_s),
                                winner_name: winner.name.to_s,
