@@ -186,7 +186,7 @@ class Messaging::Message < ActiveRecord::Base
   def self.generate_trade_recipient_message(action)
     return if action.nil?
     message = Messaging::Message.new({
-      recipient_id: recipient_id,
+      recipient_id: action.recipient_id,
       type_id:   TRADE_MESSAGE_TYPE_ID,
       send_at:   DateTime.now,
     })
