@@ -67,16 +67,16 @@ de:
         body: "Der Spieler %{name} hat sich bei Deiner Allianz um Aufnahme beworben. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Bewerbung abzulehnen."
       trade_recipient_message:
         body1: <h2>Lieferung aus %{name}.</h2>
-        body2: <p>%{num_carts} Handelskarren aus %{ settlement_name } (%{owner_name}) sind soeben angekommen. Es wurde folgendes ausgeladen:</p>
-        subject: Lieferung aus %{action.starting_settlement.name}
+        body2: <p>%{num_carts} Handelskarren aus %{settlement_name} (%{owner_name}) sind soeben angekommen. Es wurde folgendes ausgeladen:</p>
+        subject: Lieferung aus %{name}
       trade_sender_message:
         body1: <h2>Ankunft von %{num_carts} Handelskarren in %{name}.</h2>
-        body2: <p>Deine Handelskarren sind soeben an ihrem Ziel %{ settlement_name } (%{owner_name}) angekommen. Es wurde folgendes vor Ort ausgeladen:</p>
+        body2: <p>Deine Handelskarren sind soeben an ihrem Ziel %{settlement_name} (%{owner_name}) angekommen. Es wurde folgendes vor Ort ausgeladen:</p>
         subject: Ankunft von %{num_carts} Handelskarren
       trade_return_message:
         body1: <h2>Rückkehr von %{num_carts} Handelskarren nach %{name}.</h2>
-        body2: <p>Deine Handelskarren sind leer von ihrer Reise nach %{name} (#{owner_name}) zurück gekommen.</p>
-        body3: <p>Deine Handelskarren sind von ihrer Reise nach %{name} (#{owner_name}) zurück gekommen. Sie brachten folgende Ladung mit:</p>
+        body2: <p>Deine Handelskarren sind leer von ihrer Reise nach %{name} (%{owner_name}) zurück gekommen.</p>
+        body3: <p>Deine Handelskarren sind von ihrer Reise nach %{name} (%{owner_name}) zurück gekommen. Sie brachten folgende Ladung mit:</p>
         subject: Rückkehr von %{num_carts} Handelskarren
       overrun_winner_message:
         subject: Du hast die Armee an der Siedlung %{name} überrannt

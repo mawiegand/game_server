@@ -178,16 +178,16 @@ en:
         body: "The player %{name} has just applied for a membership in your alliance. Please contact him to discuss details or to reject his application."
       trade_recipient_message:
         body1: <h2>Delivery from %{name}.</h2>
-        body2: <p>%{num_carts} trading carts from %{ settlement_name } (%{owner_name}) have just arrived, carrying the following goods:</p>
-        subject: Delivery %{action.starting_settlement.name}
+        body2: <p>%{num_carts} trading carts from %{settlement_name} (%{owner_name}) have just arrived, carrying the following goods:</p>
+        subject: Delivery %{name}
       trade_sender_message:
         body1: <h2>Arrival of %{num_carts} trading carts in %{name}.</h2>
-        body2: <p>Your trading carts have just arrived at %{ settlement_name } (%{owner_name}), carrying the following goods:</p>
+        body2: <p>Your trading carts have just arrived at %{settlement_name} (%{owner_name}), carrying the following goods:</p>
         subject: Arrival of %{num_carts} trading carts
       trade_return_message:
         body1: <h2>Return of %{num_carts} trading carts to %{name}.</h2>
-        body2: <p>Your empty trading carts have returned from %{name} (#{owner_name}).</p>
-        body3: <p>Your trading carts have returned from %{name} (#{owner_name}), carrying the following goods:</p>
+        body2: <p>Your empty trading carts have returned from %{name} (%{owner_name}).</p>
+        body3: <p>Your trading carts have returned from %{name} (%{owner_name}), carrying the following goods:</p>
         subject: Return of %{num_carts} Handelskarren
       overrun_winner_message:
         subject: Your army has overrun the enemy at %{name}
