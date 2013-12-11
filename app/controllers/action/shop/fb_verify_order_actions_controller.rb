@@ -6,9 +6,6 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
 
   before_filter :authenticate
 
-  FB_APP_ID        = '127037377498922'
-  FB_APP_SECRET    = 'f88034e6df205b5aa3854e0b92638754'
-
   def create
 
     offer_id       = params['fb_verify_order_action'] && params['fb_verify_order_action']['offer_id']
@@ -17,12 +14,12 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
 
     if !offer_id.blank? && !payment_id.blank? && !signed_request.blank?
 
-      response = HTTParty.get("https://graph.facebook.com/#{payment_id}", :query => {access_token: "#{FB_APP_ID}|#{FB_APP_SECRET}"})
+      response = HTTParty.get("https://graph.facebook.com/#{payment_id}", :query => {access_token: "#{Facebook::AppConfig.the_app_config.app_id}|#{Facebook::AppConfig.the_app_config.app_secret}"})
 
       if response.code == 200
 
         parsed_response = response.parsed_response
-        data = Util::Facebook.parse_signed_request(signed_request, FB_APP_SECRET)
+        data = Util::FacebookManager.parse_signed_request(signed_request, Facebook::AppConfig.the_app_config.app_secret)
 
         if !data.nil?
 
@@ -58,6 +55,21 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
               api_response = http_response.parsed_response
               api_response = JSON.parse(api_response) if api_response.is_a?(String)
               if api_response['resultCode'] === 0
+
+                Shop::FbMoneyTransaction.create({
+                  identifier:   current_character.identifier,
+                  fb_user_id:   parsed_response['user'] && parsed_response['user']['id'],
+                  fb_user_name: parsed_response['user'] && parsed_response['user']['name'],
+                  payment_id:   payment_id,
+                  fb_offer_id:  offer_id,
+                  credits:      offer.amount,
+                  amount:       action['amount'],
+                  currency:     action['currency'],
+                  country:      parsed_response['country'],
+                  payout_foreign_exchange_rate: parsed_response['payout_foreign_exchange_rate'],
+                  test:         parsed_response['test'],
+                })
+
                 status = :ok
               else
                 status = :unprocessable_entity

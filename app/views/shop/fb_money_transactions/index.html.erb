@@ -1,0 +1,49 @@
+<h1>Listing shop_fb_money_transactions</h1>
+
+<%= if @paginate
+      will_paginate @shop_fb_money_transactions
+    end %>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Identifier</th>
+    <th>Fb user</th>
+    <th>Fb user name</th>
+    <th>Payment</th>
+    <th>Fb offer</th>
+    <th>Credits</th>
+    <th>Amount</th>
+    <th>Currency</th>
+    <th>Country</th>
+    <th>Payout foreign exchange rate</th>
+    <th>Test</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shop_fb_money_transactions.each do |shop_fb_money_transaction| %>
+  <tr>
+    <td><%= shop_fb_money_transaction.created_at %></td>
+    <td><%= shop_fb_money_transaction.identifier %></td>
+    <td><%= shop_fb_money_transaction.fb_user_id %></td>
+    <td><%= shop_fb_money_transaction.fb_user_name %></td>
+    <td><%= shop_fb_money_transaction.payment_id %></td>
+    <td><%= shop_fb_money_transaction.fb_offer_id %></td>
+    <td><%= shop_fb_money_transaction.credits %></td>
+    <td><%= shop_fb_money_transaction.amount %></td>
+    <td><%= shop_fb_money_transaction.currency %></td>
+    <td><%= shop_fb_money_transaction.country %></td>
+    <td><%= shop_fb_money_transaction.payout_foreign_exchange_rate %></td>
+    <td><%= shop_fb_money_transaction.test %></td>
+    <td><%= link_to 'Show', shop_fb_money_transaction %></td>
+    <td><%= link_to 'Edit', edit_shop_fb_money_transaction_path(shop_fb_money_transaction) %></td>
+    <td><%= link_to 'Destroy', shop_fb_money_transaction, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= if @paginate
+      will_paginate @shop_fb_money_transactions
+    end %>

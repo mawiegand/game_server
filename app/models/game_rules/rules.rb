@@ -7568,7 +7568,7 @@ class GameRules::Rules
   {
   :building => 'building_barracks',
   
-    :min_level => 5,
+    :min_level => 25,
   
     :min_count => 1,
   

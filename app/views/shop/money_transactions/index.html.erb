@@ -3,7 +3,7 @@
 <p>Last Update: <%= @last_update %>&nbsp;&nbsp;&nbsp;<%= link_to 'Update from Bytro API', shop_money_transactions_path + '?update=true' %>  
 </p>
 
-<%= if (@paginate) 
+<%= if @paginate
   will_paginate @money_transactions 
 end %>
 
