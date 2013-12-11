@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Identifier:</b>
+  <%= @shop_fb_money_transaction.identifier %>
+</p>
+
+<p>
+  <b>Fb user:</b>
+  <%= @shop_fb_money_transaction.fb_user_id %>
+</p>
+
+<p>
+  <b>Fb user name:</b>
+  <%= @shop_fb_money_transaction.fb_user_name %>
+</p>
+
+<p>
+  <b>Payment:</b>
+  <%= @shop_fb_money_transaction.payment_id %>
+</p>
+
+<p>
+  <b>Fb offer:</b>
+  <%= @shop_fb_money_transaction.fb_offer_id %>
+</p>
+
+<p>
+  <b>Credits:</b>
+  <%= @shop_fb_money_transaction.credits %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @shop_fb_money_transaction.amount %>
+</p>
+
+<p>
+  <b>Currency:</b>
+  <%= @shop_fb_money_transaction.currency %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @shop_fb_money_transaction.country %>
+</p>
+
+<p>
+  <b>Payout foreign exchange rate:</b>
+  <%= @shop_fb_money_transaction.payout_foreign_exchange_rate %>
+</p>
+
+<p>
+  <b>Test:</b>
+  <%= @shop_fb_money_transaction.test %>
+</p>
+
+
+<%= link_to 'Edit', edit_shop_fb_money_transaction_path(@shop_fb_money_transaction) %> |
+<%= link_to 'Back', shop_fb_money_transactions_path %>

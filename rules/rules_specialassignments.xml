@@ -63,7 +63,7 @@
     </Description>
     
     <AssignmentTests>
-      <BuildingTest building="building_barracks" min_level="5" />
+      <BuildingTest building="building_barracks" min_level="25" />
     </AssignmentTests>
     
     <Cost id="resource_stone">0.5*PRODUCTION</Cost>
