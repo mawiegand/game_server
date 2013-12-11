@@ -9,7 +9,7 @@ class Ranking::CharacterRankingsController < ApplicationController
     if !params[:mark].blank?
       char = Fundamental::Character.find_by_id(params[:mark])
       @marked_character = char unless char.nil?
-    elsif current_character
+    elsif current_character && !current_character.ranking.nil?
       @marked_character = current_character
     end
     

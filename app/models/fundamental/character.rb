@@ -60,7 +60,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :divine_supporter, :image_set_id, :platinum_lifetime, :moved_at, :gc_player_id, :gc_rejected_at, :gc_player_id_connected_at, :fb_player_id, :fb_rejected_at, :fb_player_id_connected_at, :as => :owner
+  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :start_variant, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :divine_supporter, :image_set_id, :platinum_lifetime, :moved_at, :gc_player_id, :gc_rejected_at, :gc_player_id_connected_at, :fb_player_id, :fb_rejected_at, :fb_player_id_connected_at, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -114,8 +114,10 @@ class Fundamental::Character < ActiveRecord::Base
   
   scope :churned,          lambda { where(['last_login_at IS NULL OR last_login_at < ?', Time.now - 1.weeks]) }
 
-  scope :not_deleted, where(deleted_from_game: false)
-  scope :deleted, where(deleted_from_game: true)
+  scope :not_deleted,      where(deleted_from_game: false)
+  scope :deleted,          where(deleted_from_game: true)
+
+  scope :not_started,      where('deleted_from_game = ? AND base_location_id IS NULL AND last_request_at < ?', false, Time.now - 1.hours)
 
   # used by player deletion script
   scope :shortly_before_deletable, lambda{ |now| not_deleted.where([
@@ -165,7 +167,7 @@ class Fundamental::Character < ActiveRecord::Base
   def self.find_by_name_case_insensitive(name)  
     Fundamental::Character.first(:conditions => [ "lower(name) = ?", name.downcase ])
   end
-  
+
   def self.valid_identifier?(identifier)
     identifier.index(@identifier_regex) != nil
   end
@@ -173,7 +175,7 @@ class Fundamental::Character < ActiveRecord::Base
   def self.valid_id?(id)
     id.index(/^[1-9]\d*$/) != nil
   end
-  
+
   def self.update_all_conversions
     Fundamental::Character.all.each do |character|
       character.update_conversion_state
@@ -202,7 +204,7 @@ class Fundamental::Character < ActiveRecord::Base
   # updates the playtime of this character. called by the current_character
   # methods during authorization of a request.
   def update_last_request_at
-    if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now  
+    if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now
       difference = Time.now - (self.last_request_at ||Time.now)
       self.update_column(:playtime, (playtime || 0.0) + (difference <= 120.0 ? difference : 30.0))     # assumption: larger than 2 minutes -> user was offline inbetween , so just count the startet minute  
       self.update_column(:last_request_at, Time.now)  # change timestamp without triggering before / after handlers, without update updated_at
@@ -253,7 +255,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def locale
-    if self.lang == 'de'
+    if self.lang.to_sym == :de
       :de_DE
     else
       :en_US
@@ -326,19 +328,145 @@ class Fundamental::Character < ActiveRecord::Base
     settlement_point_available?
   end
   
+  def can_found_home_base?
+    self.settlements.count == 0  # can always found at least one settlement, even without settlement point
+  end
+  
   def can_takeover_settlement?
     settlement_point_available?
   end  
   
+  
+  
+  def self.fetch_identity_for_identifier(identifier)
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+    
+    response = identity_provider_access.fetch_identity(identifier)
+    logger.info "IDENTITY RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
+    identity = {}
+    if response.code == 200
+      identity = response.parsed_response
+    end
+    
+    identity
+  end
+  
+  def fetch_identity
+    Fundamental::Character.fetch_identity_for_identifier(self.identifier)
+  end
+  
+  
+  def self.fetch_identity_properties_for_identifier(identifier)
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+    
+    # fetch persistent character properties from identity provider  
+    response = identity_provider_access.fetch_identity_properties(identifier)
+    logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
+    
+    parsed_properties = {
+      start_resource_modificator: 1.0,
+      start_resource_bonuses: [],
+      start_resources: [],
+      start_xp_bonuses: [],
+    }
+    
+    if response.code == 200
+      properties = response.parsed_response
+      logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
+
+      unless properties.empty?
+        properties.each do |character_property|
+          if !character_property.nil? && !character_property['data'].blank?
+            unless character_property['data']['start_resource_modificator'].blank?
+              property_value = character_property['data']['start_resource_modificator'].to_f
+              logger.debug "START PROPERTY_VALUE #{ property_value }."
+              parsed_properties[:start_resource_modificator] = property_value if property_value > 0
+              logger.info "START RESOURCE MODIFICATOR #{ parsed_properties[:start_resource_modificator] }."
+            end
+            unless character_property['data']['start_resource_bonus'].blank?
+              parsed_properties[:start_resource_bonuses] << character_property['data']['start_resource_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+              logger.info "START RESOURCE BONUS #{ parsed_properties[:start_resource_bonuses].inspect }."
+            end
+            unless character_property['data']['start_resources'].blank?
+              parsed_properties[:start_resources] << character_property['data']['start_resources'].to_json # start_resource_bonus is saved as serialized hash, not as string
+              logger.info "START RESOURCES #{ parsed_properties[:start_resources].inspect }."
+            end
+            unless character_property['data']['start_xp_bonus'].blank?
+              parsed_properties[:start_xp_bonuses] << character_property['data']['start_xp_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
+              logger.info "START XP BONUS #{ parsed_properties[:start_xp_bonuses].inspect }."
+            end
+          end
+        end
+      end
+    end
+    
+    parsed_properties
+  end
+  
+  def fetch_identity_properties
+    Fundamental::Character.fetch_identity_properties_for_identifier(self.identifier)
+  end
+  
+  
+  def self.fetch_signup_gift_for_identifier_and_client(identifier, client_id)
+    identity_provider_access = IdentityProvider::Access.new({
+      identity_provider_base_url: GAME_SERVER_CONFIG['identity_provider_base_url'],
+      game_identifier:            GAME_SERVER_CONFIG['game_identifier'],
+      scopes:                     ['5dentity'],
+    })
+  
+    response = identity_provider_access.fetch_signup_gift(request_access_token.identifier, client_id)
+    logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
+
+    if response.code == 200
+      gifts = response.parsed_response
+      logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
+
+      unless gifts.nil? || gifts.empty?
+        signup_gift = gifts[0]
+        
+        if !signup_gift.nil? && !signup_gift['data'].blank?
+          return signup_gift['data']
+        end
+      end
+    end
+    
+    nil
+  end
+  
+  def fetch_signup_gift_for_client(client_id)
+    Fundamental::Character.fetch_signup_gift_for_identifier_and_client(self.identifier, client_id)
+  end
+  
+  
   # FIXME: this does NOT save the character after all modifications itself!!! should be corrected also inside the corresponding controller
-  def self.create_new_character(identifier, name, start_resource_modificator, npc = false, start_location = nil)
+  def self.create_new_character(identifier, name, args = {})
+    resource_modificator = args[:resource_modificator] || 1.0;
+    npc                  = args[:npc]                  || false;
+    start_location       = args[:location]             || nil;
+    gender               = args[:gender]               || nil;
+    lang                 = args[:lang]                 || :en;
+    
     character = Fundamental::Character.new({
       identifier: identifier,
       name: name,
       npc:  npc,
       exp:  0,
       start_variant: 1,
+      gender: gender,
+      lang: lang,
     })
+    
+    avatar = GameState::Avatars.new
+    character.avatar_string = avatar.create_random_avatar_string(gender.nil? || gender == 'male')
 
     unless character.save
       raise InternalServerError.new('Could not create new character.')
@@ -365,7 +493,7 @@ class Fundamental::Character < ActiveRecord::Base
       character.base_region_id = location.region_id
       character.base_node_id = location.region.node_id
 
-      character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
+      character.resource_pool.fill_with_start_resources_transaction(resource_modificator)   
 
       character
     end
@@ -409,28 +537,36 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   # creates a character and a settler unit, not a settlement
-  def self.create_new_character_and_settler(identifier, name, start_resource_modificator, npc = false, start_location = nil)
+  def self.create_new_character_and_settler(identifier, name, args = {})
+    npc                  = args[:npc]                  || false;
+    start_location       = args[:location]             || nil;
+    gender               = args[:gender]               || nil;
+    lang                 = args[:lang]                 || :en;
+    
     character = Fundamental::Character.new({
       identifier: identifier,
       name: name,
       npc:  npc,
       exp:  0,
       start_variant: 2,
+      gender: gender,
+      lang: lang,
     })
+    
+    avatar = GameState::Avatars.new
+    character.avatar_string = avatar.create_random_avatar_string(gender.nil? || gender == 'male')
 
     unless character.save
       raise InternalServerError.new('Could not create new character.')
     end
 
+    logger.debug "Character lang: #{character.lang} and locale: #{character.locale}."
+    
     character.create_resource_pool
     
     raise InternalServerError.new('Could not save the base of the character.')  if !character.save
 
     unless npc
-      character.create_ranking({
-        character_name: name,
-      })
-
       location = start_location.nil? ? Map::Location.find_empty_with_neighbors : start_location
       if !location || !character.claim_location(location)
         character.destroy
@@ -455,7 +591,7 @@ class Fundamental::Character < ActiveRecord::Base
       # Messaging::Message.create_welcome_message(character)
 
       character.create_tutorial_state
-      character.tutorial_state.create_start_quest_state
+      character.tutorial_state.create_settler_start_quest_state
 
       cmd = Messaging::JabberCommand.grant_access(character, 'global')
       cmd.character_id = character.id
@@ -1487,8 +1623,21 @@ class Fundamental::Character < ActiveRecord::Base
     self.deleted_from_game = true
     self.last_deleted_at = Time.now
     self.save
-    
+
     check_consistency
+  end
+
+  def removed_not_started
+    self.armies.destroy_all
+
+    self.claimed_locations.each do |location|
+      location.claiming_character = nil
+      location.save
+    end
+
+    self.deleted_from_game = true
+    self.last_deleted_at = Time.now
+    self.save
   end
 
   def first_start

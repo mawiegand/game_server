@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="3" build="48" />
+    <Version major="0" minor="4" build="3" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -47,6 +47,7 @@
       <RewardText locale="en_US">The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. </RewardText>
       <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
       <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
+      <Requirement quest="quest_found_home_base" />
       <Rewards>
         <ResourceReward resource="resource_stone">25</ResourceReward>
         <ResourceReward resource="resource_wood">25</ResourceReward>
@@ -1146,8 +1147,8 @@
       </Description>
       <Flavor locale="de_DE">Wie? Nur eine Siedlung? Du musst Dich mehr ausbreiten. Gründe eine Lagerstätte, aber flott! Dann findet sich bei mir vielleicht auch etwas, das ich Dir überlassen kann.</Flavor>
       <Flavor locale="en_US">What? Only one settlement? You've got to spread out a bit. Start another settlement, and quick! Then I might find something lying around that I could let you have.</Flavor>
-      <RewardText locale="de_DE"></RewardText>
-      <RewardText locale="en_US"></RewardText>
+      <RewardText locale="de_DE">Lagerstätten können jederzeit von anderen Halbgöttern erobert werden. Als möglicher Schutz dient der Ritualstein.</RewardText>
+      <RewardText locale="en_US">Camps can be taken over be other demigods. You can protect the camp by building an altar.</RewardText>
       <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen.</RewardFlavor>
       <RewardFlavor locale="en_US">You've started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost.</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl9" />
@@ -1177,8 +1178,8 @@
       <Flavor locale="de_DE">Jetzt hat Deine Hauptsiedlung die volle Größe!</Flavor>
       <Flavor locale="en_US">You've got all 40 building slots now. Great job!</Flavor>
       <RewardText locale="de_DE"><p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
-        <p>Auf Level 12 und 20 bekommst Du je einen weiteren Kommandopunkt für eine zusätzliche Armee.</p></RewardText>
-      <RewardText locale="en_US"><p>The maximum level for a chieftan's hut is Level 20.  Each level increases the battle bonus you can get. At Level 12 and 20 you'll receive a command point for another army.</p></RewardText>
+        <p>Auf Level 20 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p></RewardText>
+      <RewardText locale="en_US"><p>The maximum level for a chieftan's hut is Level 20. Each level increases the battle bonus you can get. At 20 you'll receive a command point for another army.</p></RewardText>
       <RewardFlavor locale="de_DE">Das wurde wirklich Zeit! Jetzt hat Deine Hauptsiedlung die volle Größe!</RewardFlavor>
       <RewardFlavor locale="en_US">It´s about time! Now we have all the space we need!</RewardFlavor>
       <Requirement quest="quest_build_chiefcottagelvl9" />
@@ -5141,7 +5142,7 @@
         <AllianceMembersTest min_count="23" />
       </RewardTests>
     </Quest>
-    
+
     <Quest id="quest_crossplatform" advisor="chef">
       <Name>Cross-Platform</Name>
       <Name locale="de_DE">Cross-Platform</Name>
@@ -5168,6 +5169,37 @@
         <CrossPlatformTest/>
       </RewardTests>
     </Quest>
-    
+
+    <!-- START QUEST --> <!-- Settler-Tutorial Quest 1-->
+      <Quest id="quest_found_home_base" advisor="chef" hide_start_dialog="false" tutorial="true" priority="1" blocking="true" >
+        <Name>Settle Down</Name>
+        <Name locale="de_DE">Lass Dich nieder</Name>
+        <Task>Found a Settlement</Task>
+        <Task locale="de_DE">Gründe Deine Hauptsiedlung.</Task>
+        <Description locale="de_DE">
+          <p>Wähle den großen Häuptling aus und drücke den blauen Siedlungsknopf.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>Select your Great Chief and press the blue settle button.</p>
+        </Description>
+        <Flavor locale="de_DE">Willkommen Halbgott. Wir sind so weit gelaufen, lass uns hier siedeln!</Flavor>
+        <Flavor locale="en_US">Welcome Demigod! We've walked so far, let's found a settlement!</Flavor>
+        <RewardText locale="de_DE">Der Jäger und Sammler sammelt Steine, Holz und Felle für Deinen Rohstoffvorrat.</RewardText>
+        <RewardText locale="en_US">The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. </RewardText>
+        <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
+        <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
+        <Rewards>
+          <ResourceReward resource="resource_stone">25</ResourceReward>
+          <ResourceReward resource="resource_wood">25</ResourceReward>
+          <ResourceReward resource="resource_fur">25</ResourceReward>
+          <ExperienceReward>25</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest min_count="1" type="settlement_home_base" />
+        </RewardTests>
+        <UIMarker>mark_map</UIMarker>
+        <UIMarker>mark_select_own_army</UIMarker>
+        <UIMarker>mark_found_settlement</UIMarker>
+      </Quest>
   </Quests>
 </Tutorial>

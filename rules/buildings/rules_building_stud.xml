@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_stud" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2" experienceFactor="4.5">  
+<Building id="building_stud" advisor="warrior" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2" experienceFactor="4.5">
   <Name lang="de_DE">Stinkender Stall</Name>
   <Name lang="en_US">Smelly Barn</Name>
   <Description lang="de_DE">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_cottage_2" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2" experienceFactor="3.3">  
+<Building id="building_cottage_2" advisor="chef" group="miscellaneous" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" tier="2" experienceFactor="3.3">
   <Name lang="de_DE">Winddichte Hütte</Name>
   <Name lang="en_US">Windproof Hut</Name>
   <Description lang="de_DE">

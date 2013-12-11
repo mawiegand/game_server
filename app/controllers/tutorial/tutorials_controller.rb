@@ -10,7 +10,7 @@ class Tutorial::TutorialsController < ApplicationController
 
   def show
     @tutorial = Tutorial::Tutorial.the_tutorial
-    
+        
     fresh = false
     if params.key?(:build) && params.key?(:minor) && params.key?(:major)
       fresh = Gem::Version.new("#{params[:major]}.#{params[:minor]}.#{params[:build]}") >= Gem::Version.new("#{@tutorial.version[:major]}.#{@tutorial.version[:minor]}.#{@tutorial.version[:build]}")
@@ -23,12 +23,10 @@ class Tutorial::TutorialsController < ApplicationController
     if fresh 
       render :nothing => true, :status => '304 Not Modified'
     else
-      render_not_modified_or(@tutorial.updated_at) do # check whether we really should use the updated_at-check here. perhaps not a very good idea
-        respond_to do |format|
-          format.html # show.html.erb
-          format.json do 
-            render :json => @tutorial.as_json(:root => use_restkit_api?)
-          end
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json do 
+          render :json => @tutorial.as_json(:root => use_restkit_api?)
         end
       end
     end    

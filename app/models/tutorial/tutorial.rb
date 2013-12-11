@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.48
+# Version: 0.4.3
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,8 +78,8 @@ class Tutorial::Tutorial
   
       :version => {
         :major => 0, 
-        :minor => 3, 
-        :build => 48, 
+        :minor => 4, 
+        :build => 3, 
       },
       
       :production_test_weights => {
@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 18,
+      :num_tutorial_quests => 19,
   
       :quests => [  # ALL QUESTS
 
@@ -154,6 +154,12 @@ class Tutorial::Tutorial
   
             :en_US => "The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. ",
                 
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_found_home_base',
+
           },
 
           :successor_quests => [1, ],
@@ -3477,9 +3483,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Lagerstätten können jederzeit von anderen Halbgöttern erobert werden. Als möglicher Schutz dient der Ritualstein.",
   
-            :en_US => "",
+            :en_US => "Camps can be taken over be other demigods. You can protect the camp by building an altar.",
                 
           },
 
@@ -3578,9 +3584,9 @@ class Tutorial::Tutorial
           :reward_text => {
             
             :de_DE => "<p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
-        <p>Auf Level 12 und 20 bekommst Du je einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
+        <p>Auf Level 20 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
   
-            :en_US => "<p>The maximum level for a chieftan's hut is Level 20.  Each level increases the battle bonus you can get. At Level 12 and 20 you'll receive a command point for another army.</p>",
+            :en_US => "<p>The maximum level for a chieftan's hut is Level 20. Each level increases the battle bonus you can get. At 20 you'll receive a command point for another army.</p>",
                 
           },
 
@@ -13247,6 +13253,102 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_crossplatform
+        {               #   quest_found_home_base
+          :id                => 135,
+          :symbolic_id       => :quest_found_home_base,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => true,
+          :tutorial_end_quest => false,
+          :priority          => 1,
+          :blocking          => true,
+
+          :name => {
+            
+            :en_US => "Settle Down",
+  
+            :de_DE => "Lass Dich nieder",
+                
+          },
+          :task => {
+            
+            :en_US => "Found a Settlement",
+  
+            :de_DE => "Gründe Deine Hauptsiedlung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Willkommen Halbgott. Wir sind so weit gelaufen, lass uns hier siedeln!",
+  
+            :en_US => "Welcome Demigod! We've walked so far, let's found a settlement!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Wähle den großen Häuptling aus und drücke den blauen Siedlungsknopf.</p>",
+  
+            :en_US => "<p>Select your Great Chief and press the blue settle button.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?",
+  
+            :en_US => "Hey – that looks much better, don't you think? ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Jäger und Sammler sammelt Steine, Holz und Felle für Deinen Rohstoffvorrat.",
+  
+            :en_US => "The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. ",
+                
+          },
+
+          :successor_quests => [0, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 25,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 25,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 25,
+              },
+
+            ],
+
+            :experience_reward => 25,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_home_base',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+          :uimarker => ['mark_map', 'mark_select_own_army', 'mark_found_settlement', ],
+
+        },              #   END OF quest_found_home_base
       ],                # END OF QUESTS
 
     )
