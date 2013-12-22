@@ -37,11 +37,15 @@ class Map::Region < ActiveRecord::Base
   def owned_by_npc?
     self.owner_id == 1
   end
-  
+
   def settleable_by?(character)
     non_fortress_locations_owned_by(character).count == 0 && self.locations.empty.count > 0
   end
-  
+
+  def takeoverable_by?(character)
+    non_fortress_locations_owned_by(character).count == 0
+  end
+
   def owned_by_alliance?(alliance)
     self.alliance == alliance and !self.alliance.nil?
   end
