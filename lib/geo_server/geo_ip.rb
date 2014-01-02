@@ -15,6 +15,8 @@ module GeoServer
         
         rescue Timeout::Error => e
           Rails.logger.error "ERROR: Could not fetch geocoordinates during signup."
+          Backend::StatusMailer.send_ip_resolution_alert(ip).deliver  # relies on the presence of the mailer; should be solved in a different fashion
+          
           return nil
         end 
         
