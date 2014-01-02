@@ -24,7 +24,7 @@ class Backend::StatusMailer < ActionMailer::Base
 
     if Rails.env.production?
       mail(:to      => GAME_SERVER_CONFIG['status_email_recipient'],
-           :subject => "[#{Rails.env}] GEO-Auflösung während der Registrierung fehlgeschlagen.")
+           :subject => "[#{Rails.env}] GEO-Aufloesung waehrend der Registrierung fehlgeschlagen.")
     end
   end
 end
