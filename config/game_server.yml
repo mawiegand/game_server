@@ -38,6 +38,9 @@ defaults: &defaults
 
   default_character_name: 'WackyUser'
   
+  delete_npc_home_base_after_days:           2 # number of days after which a npc-home base is deleted
+  delete_npc_outpost_after_days:            14 # number of days after which a npc-home base is deleted
+  
   identity_provider_base_url: 'https://test1.wack-a-doo.com/identity_provider'
   game_server_base_url:       'https://test1.wack-a-doo.de/game_server'
   geo_server_base_url:        'https://test1.wack-a-doo.com/geo_server'
