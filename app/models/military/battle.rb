@@ -433,7 +433,6 @@ class Military::Battle < ActiveRecord::Base
         loser_lost_units_count_per_round += round_results.first.xp_weighted_lost_units_count unless round_results.empty?
       end
       
-      logger.info("calculate_character_results: winner_units_count = #{ winner_units_count }  winner_units_count_per_round = #{ winner_units_count_per_round } participant_units_per_round = #{ participant_units_per_round} loser_lost_units_count_per_round = #{ loser_lost_units_count_per_round } ")
 
       # winner faction: calculate winner experience according to new function
       winner_faction.participants.each do |participant|
@@ -442,6 +441,9 @@ class Military::Battle < ActiveRecord::Base
           character_result = Military::BattleCharacterResult.find_or_initialize_by_character_id_and_faction_id_and_battle_id(participant.character_id, participant.faction_id, self.id)
           participant_round_result = participant_round_results.first
           participant_units_per_round = participant_round_result.xp_weighted_units_count
+          
+          logger.debug("calculate_character_results: winner_units_count = #{ winner_units_count }  winner_units_count_per_round = #{ winner_units_count_per_round } participant_units_per_round = #{ participant_units_per_round} loser_lost_units_count_per_round = #{ loser_lost_units_count_per_round } ")
+          
           character_result.experience_gained += (k || 0) * (GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] || 0) * (participant_units_per_round || 0) * (loser_lost_units_count_per_round || 0) / (winner_units_count_per_round || 1)
           character_result.winner = true
           character_result.save
