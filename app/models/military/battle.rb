@@ -443,9 +443,11 @@ class Military::Battle < ActiveRecord::Base
           participant_units_per_round = participant_round_result.xp_weighted_units_count
           
           logger.debug("calculate_character_results: winner_units_count = #{ winner_units_count }  winner_units_count_per_round = #{ winner_units_count_per_round } participant_units_per_round = #{ participant_units_per_round} loser_lost_units_count_per_round = #{ loser_lost_units_count_per_round } ")
-          puts("calculate_character_results: winner_units_count = #{ winner_units_count }  winner_units_count_per_round = #{ winner_units_count_per_round } participant_units_per_round = #{ participant_units_per_round} loser_lost_units_count_per_round = #{ loser_lost_units_count_per_round } ")
+          puts("calculate_character_results: k = #{ k } winner_units_count = #{ winner_units_count }  winner_units_count_per_round = #{ winner_units_count_per_round } participant_units_per_round = #{ participant_units_per_round} loser_lost_units_count_per_round = #{ loser_lost_units_count_per_round } ")
           
-          character_result.experience_gained += (k || 0) * (GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] || 0) * (participant_units_per_round || 0) * (loser_lost_units_count_per_round || 0) / (winner_units_count_per_round || 1)
+          divisor = winner_units_count_per_round < 0.01 ? 1 : winner_units_count_per_round
+          
+          character_result.experience_gained = (character_result.experience_gained || 0) + (k || 0) * (GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] || 0) * (participant_units_per_round || 0) * (loser_lost_units_count_per_round || 0) / divisor
           character_result.winner = true
           character_result.save
         end
