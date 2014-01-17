@@ -353,6 +353,13 @@ class Military::Army < ActiveRecord::Base
     end
   end
   
+  def ap_attack_factor
+    max  = [self.ap_max-2, 1].max  # two below max is ok!
+    step = 0.5 / max
+    
+    [self.ap_present * step + 0.5, 1].min
+  end
+  
   def critical_damage_bonus
     logger.debug "ARMY RANK MODIFICATON: additional crit damage: #{ ((self.rank || 0) / 4).floor * 1 }."
     puts "ARMY RANK MODIFICATON: additional crit damage: #{ ((self.rank || 0) / 4).floor * 1 }."
