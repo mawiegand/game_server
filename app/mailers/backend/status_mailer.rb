@@ -18,4 +18,13 @@ class Backend::StatusMailer < ActionMailer::Base
            :subject => "[#{Rails.env}] Transaktion mit Kauf eines Premiumpakets gefunden.")
     end
   end
+  
+  def send_ip_resolution_alert(ip)
+    @ip = ip
+
+    if Rails.env.production?
+      mail(:to      => GAME_SERVER_CONFIG['status_email_recipient'],
+           :subject => "[#{Rails.env}] GEO-Aufloesung waehrend der Registrierung fehlgeschlagen.")
+    end
+  end
 end

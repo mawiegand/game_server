@@ -6,10 +6,20 @@ module GeoServer
     
     def self.fetch_coords_for_ip(ip)
       unless ip.nil?
-        response = HTTParty.get("http://freegeoip.net/json/#{ip}", {timeout: 6})
-        if response.code == 200
-          return response.parsed_response
-        end
+        
+        begin
+          response = HTTParty.get("http://freegeoip.net/json/#{ip}", {timeout: 3})
+          if response.code == 200
+            return response.parsed_response
+          end
+        
+        rescue Timeout::Error => e
+          Rails.logger.error "ERROR: Could not fetch geocoordinates during signup."
+          Backend::StatusMailer.send_ip_resolution_alert(ip).deliver  # relies on the presence of the mailer; should be solved in a different fashion
+          
+          return nil
+        end 
+        
       end
       nil
     end

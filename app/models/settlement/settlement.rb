@@ -43,8 +43,9 @@ class Settlement::Settlement < ActiveRecord::Base
   }
   
   scope :deletable, lambda { |now| where([
-    '(type_id = ? OR type_id = ?) AND ((last_takeover_at IS NULL AND updated_at < ?) OR last_takeover_at < ?)',
-    TYPE_HOME_BASE, TYPE_OUTPOST, now - 10.days, now - 2.days,
+    '(type_id = ? AND ((last_takeover_at IS NULL AND updated_at < ?) OR last_takeover_at < ?)) OR (type_id = ? AND ((last_takeover_at IS NULL AND updated_at < ?) OR last_takeover_at < ?))',
+    TYPE_HOME_BASE, now - 10.days, now - (GAME_SERVER_CONFIG['delete_npc_home_base_after_days'] || 2).days, 
+    TYPE_OUTPOST, now - 10.days, now - (GAME_SERVER_CONFIG['delete_npc_outpost_after_days'] || 14).days,
   ]).order('last_takeover_at ASC') }
   
   after_initialize :init
