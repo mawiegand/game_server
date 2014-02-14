@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.48
+# Version: 0.3.49
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 3, 
-        :build => 48, 
+        :build => 49, 
       },
       
       :production_test_weights => {
@@ -2977,7 +2977,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [135, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -13298,12 +13298,6 @@ class Tutorial::Tutorial
   
             :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_fortress',
-
           },
 
           :successor_quests => [136, ],

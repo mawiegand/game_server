@@ -5187,7 +5187,7 @@
       <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
       <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?</RewardFlavor>
       <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
-      <Requirement quest="quest_fortress" />
+      <!-- Requirement quest="quest_fortress" / -->
       <Rewards>
         <ResourceReward resource="resource_cash">2</ResourceReward>
         <ExperienceReward>750</ExperienceReward>
