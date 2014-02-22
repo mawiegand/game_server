@@ -26,7 +26,7 @@ top100_ids.each do |character_id|
 
     start_xp_bonus = {
       start_xp_bonus: {
-        client_identifier: 'wackadoo-round4',
+        client_identifier: 'wackadoo-round5',
         bonus: 0.05,
       }
     }
