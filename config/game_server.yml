@@ -146,26 +146,26 @@ production:
 
   jabber:
     debug:     true
-    host:      jabber5.wack-a-doo.com
-    muc:       conference.jabber5.wack-a-doo.com
-    bot_jid:   service@jabber5.wack-a-doo.com
+    host:      jabber6.wack-a-doo.com
+    muc:       conference.jabber6.wack-a-doo.com
+    bot_jid:   service@jabber6.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
-    admin_jid: shadow-dragon@jabber5.wack-a-doo.com
+    admin_jid: shadow-dragon@jabber6.wack-a-doo.com
   
-  scope: 'wackadoo-round4'
+  scope: 'wackadoo-round5'
 
   default_character_name: 'WackyUser'
   identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
-  game_server_base_url:       'https://gs04.wack-a-doo.de/game_server'
-  geo_server_base_url:        'https://gs04.wack-a-doo.de/geo_server'
+  game_server_base_url:       'https://gs05.wack-a-doo.de/game_server'
+  geo_server_base_url:        'https://gs05.wack-a-doo.de/geo_server'
 
   settlement_recalc_probability:    0.2
   resource_pool_recalc_probability: 0.05
   character_recalc_probability:     0.2
   queue_speed_recalc_probability:   0.2
   
-  cookie_name: 'wackadoo_r2_remember_token'  
+  cookie_name: 'wackadoo_r5_remember_token'
 
   
   

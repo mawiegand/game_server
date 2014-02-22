@@ -98,7 +98,7 @@ class JabberBots::SecurityBot
   end
 
   class BotMailer < ActionMailer::Base
-    default from: Rails.env.production? ?  "watchguard@gs04.wack-a-doo.com" : "watchguard@test1.wack-a-doo.com"
+    default from: Rails.env.production? ?  "watchguard@gs05.wack-a-doo.com" : "watchguard@test1.wack-a-doo.com"
 
     def breach_report(uid, domain, nickname, presence)
       mail(:to => GAME_SERVER_CONFIG['status_email_recipient'],

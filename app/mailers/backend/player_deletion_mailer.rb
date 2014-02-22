@@ -1,6 +1,6 @@
 class Backend::PlayerDeletionMailer < ActionMailer::Base
 
-  default from: Rails.env.production? ?  "playerdeletion@gs04.wack-a-doo.de" : "playerdeletion@test1.wack-a-doo.de"
+  default from: Rails.env.production? ?  "playerdeletion@gs05.wack-a-doo.de" : "playerdeletion@test1.wack-a-doo.de"
   
   def player_deletion_report(report)
     @report = report
