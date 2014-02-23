@@ -2229,6 +2229,7 @@ ActiveRecord::Schema.define(:version => 20131110212425) do
     t.decimal  "ap_rate",                         :default => 1.0,   :null => false
     t.string   "avatar_string"
     t.integer  "alliance_color"
+    t.boolean  "invisible",                       :default => false
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_garrison" group="military" category="building_category_small_building" buyable="true" destructable="false" demolishable="false" tier="2" experienceFactor="3">  
+<Building id="building_garrison" advisor="warrior" group="military" category="building_category_small_building" buyable="true" destructable="false" demolishable="false" tier="2" experienceFactor="3">
   <Name lang="de_DE">Garnisonsgebäude</Name>
   <Name lang="en_US">Garrison</Name>
   <Description lang="de_DE">

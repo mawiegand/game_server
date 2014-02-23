@@ -31,31 +31,53 @@ class Military::ArmiesController < ApplicationController
   #  GET /military/armies
   def index
 
-    last_modified = nil 
+    last_modified = nil
+
+    logger.debug "AAAAAA #{params}"
 
     if params.has_key?(:region_id)  
       @map_region = Map::Region.find(params[:region_id])
       raise NotFoundError.new('Page Not Found') if @map_region.nil?
       if params.has_key?(:fortress_only)
-        @military_armies = @map_region.locations[0].armies
+        if backend_request?
+          @military_armies = @map_region.locations[0].armies
+        else
+          @military_armies = @map_region.locations[0].armies.visible_to_character(current_character)
+        end
       else
-        @military_armies = @map_region.armies 
+        if backend_request?
+          @military_armies = @map_region.armies
+        else
+          @military_armies = @map_region.armies.visible_to_character(current_character)
+        end
       end
       last_modified =  @map_region.armies_changed_at
     elsif params.has_key?(:location_id)  
       @map_location = Map::Location.find(params[:location_id])
       raise NotFoundError.new('Page Not Found') if @map_location.nil?
-      @military_armies = @map_location.armies
+      if backend_request?
+        @military_armies = @map_location.armies
+      else
+        @military_armies = @map_location.armies.visible_to_character(current_character)
+      end
       last_modified =  @map_location.armies_changed_at
     elsif params.has_key?(:alliance_id)  
       @alliance = Fundamental::Alliance.find(params[:alliance_id])
       raise NotFoundError.new('Page Not Found') if @alliance.nil?
-      @military_armies = @alliance.armies
+      if backend_request?
+        @military_armies = @alliance.armies
+      else
+        @military_armies = @alliance.armies.visible_to_character(current_character)
+      end
       # todo -> determine last_modified
     elsif params.has_key?(:character_id)  
       @character = Fundamental::Character.find(params[:character_id])
       raise NotFoundError.new('Page Not Found') if @character.nil?
-      @military_armies = @character.armies
+      if backend_request?
+        @military_armies = @character.armies
+      else
+        @military_armies = @character.armies.visible_to_character(current_character)
+      end
       # todo -> determine last_modified
     elsif params.has_key?(:target_location_id)
       @military_armies = Military::Army.find_by_target_location_id(params[:target_location_id])
@@ -67,7 +89,7 @@ class Military::ArmiesController < ApplicationController
       respond_to do |format|
         format.html do
           if @military_armies.nil?
-            @military_armies =  Military::Army.paginate(:page => params[:page], :per_page => 50)    
+            @military_armies = Military::Army.paginate(:page => params[:page], :per_page => 50)
             @paginate = true   
           end 
         end
@@ -99,6 +121,7 @@ class Military::ArmiesController < ApplicationController
   def show
     @military_army = Military::Army.find(params[:id])
     raise NotFoundError.new('Page Not Found') if @military_army.nil? || (@military_army.removed? && !staff?)
+    raise NotFoundError.new('Page Not Found') if api_request? && @military_army.invisible? && @military_army.owner != current_character
 
     last_modified =  @military_army.updated_at
 

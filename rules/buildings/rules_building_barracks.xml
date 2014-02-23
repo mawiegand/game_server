@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_barracks" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" experienceFactor="4.5">  
+<Building id="building_barracks" advisor="warrior" group="military" category="building_category_small_building" buyable="true" destructable="true" demolishable="true" experienceFactor="4.5">
   <Name lang="de_DE">Ausbildungsgelände</Name>
   <Name lang="en_US">Training Grounds</Name>
   <Description lang="de_DE">

@@ -76,7 +76,7 @@ class Settlement::Settlement < ActiveRecord::Base
     Settlement::Settlement.fortress.where('lower(name) = ?', name.downcase).first
   end
 
-  def empire_unlock_fields 
+  def empire_unlock_fields
     [ { attrl: :settlement_unlock_alliance_creation_count, attrc: :character_unlock_alliance_creation_count },
       { attrl: :settlement_unlock_diplomacy_count,         attrc: :character_unlock_diplomacy_count },
     ]
@@ -271,6 +271,7 @@ class Settlement::Settlement < ActiveRecord::Base
     self.garrison_army.location = self.location
     self.garrison_army.region = self.region
     self.garrison_army.save
+    self.tax_rate = new_region.fortress.tax_rate
     self.save
     location.place_settlement(self)
   end

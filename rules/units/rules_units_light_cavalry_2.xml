@@ -14,7 +14,7 @@
         <p> Eyes are especially delicious treats to a hungry and dangerous ostrich.</p>
       </Flavour>
       <Flavour lang="de_DE">
-        <p>Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>
+        <p>Beim Sturm durch gegnerische Kampflinien sind Augen besondere Leckereien für die Strauße.</p>
       </Flavour>
       <Cost id="resource_stone" round="true">90</Cost>
       <Cost id="resource_wood" round="true">60</Cost>

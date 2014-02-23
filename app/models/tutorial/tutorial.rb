@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.49
+# Version: 0.5.0
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,8 +78,8 @@ class Tutorial::Tutorial
   
       :version => {
         :major => 0, 
-        :minor => 3, 
-        :build => 49, 
+        :minor => 5, 
+        :build => 0, 
       },
       
       :production_test_weights => {
@@ -3477,9 +3477,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Lagerstätten können jederzeit von anderen Halbgöttern erobert werden. Als möglicher Schutz dient der Ritualstein.",
   
-            :en_US => "",
+            :en_US => "Camps can be taken over be other demigods. You can protect the camp by building an altar.",
                 
           },
 
@@ -3578,9 +3578,9 @@ class Tutorial::Tutorial
           :reward_text => {
             
             :de_DE => "<p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
-        <p>Auf Level 12 und 20 bekommst Du je einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
+        <p>Auf Level 20 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
   
-            :en_US => "<p>The maximum level for a chieftan's hut is Level 20.  Each level increases the battle bonus you can get. At Level 12 and 20 you'll receive a command point for another army.</p>",
+            :en_US => "<p>The maximum level for a chieftan's hut is Level 20. Each level increases the battle bonus you can get. At 20 you'll receive a command point for another army.</p>",
                 
           },
 
@@ -13247,360 +13247,6 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_crossplatform
-        {               #   quest_fortress_2
-          :id                => 135,
-          :symbolic_id       => :quest_fortress_2,
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "2nd Fortress",
-  
-            :de_DE => "2te Festung",
-                
-          },
-          :task => {
-            
-            :en_US => "Conquer your 2nd fortress.",
-  
-            :de_DE => "Erobere Deine 2te Festung.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
-  
-            :en_US => "We need more settlements. A fortress would be the way to go.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
-  
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
-  
-            :en_US => "You conquered a fortress? That´s great!",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
-  
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
-                
-          },
-
-          :successor_quests => [136, ],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
-            ],
-
-            :experience_reward => 750,
-
-          },          
-
-          :reward_tests => {
-            
-            :settlement_tests => [
-
-              {
-                :type => 'settlement_fortress',
-                :min_count => 2,
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_fortress_2
-        {               #   quest_fortress_3
-          :id                => 136,
-          :symbolic_id       => :quest_fortress_3,
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "3rd Fortress",
-  
-            :de_DE => "3te Festung",
-                
-          },
-          :task => {
-            
-            :en_US => "Conquer your 3rd fortress.",
-  
-            :de_DE => "Erobere Deine 3te Festung.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
-  
-            :en_US => "We need more settlements. A fortress would be the way to go.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
-  
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.",
-  
-            :en_US => "You conquered a fortress? That´s great!",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
-  
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_fortress_2',
-
-          },
-
-          :successor_quests => [137, ],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_cash,
-                :amount => 4,
-              },
-
-            ],
-
-            :experience_reward => 1000,
-
-          },          
-
-          :reward_tests => {
-            
-            :settlement_tests => [
-
-              {
-                :type => 'settlement_fortress',
-                :min_count => 3,
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_fortress_3
-        {               #   quest_fortress_4
-          :id                => 137,
-          :symbolic_id       => :quest_fortress_4,
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "4th Fortress",
-  
-            :de_DE => "4te Festung",
-                
-          },
-          :task => {
-            
-            :en_US => "Conquer your 4th fortress.",
-  
-            :de_DE => "Erobere Deine 3te Festung.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
-  
-            :en_US => "We need more settlements. A fortress would be the way to go.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
-  
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Sieg des Kriegers', oder?",
-  
-            :en_US => "You conquered a fortress? That´s great!",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
-  
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_fortress_3',
-
-          },
-
-          :successor_quests => [138, ],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_cash,
-                :amount => 6,
-              },
-
-            ],
-
-            :experience_reward => 1250,
-
-          },          
-
-          :reward_tests => {
-            
-            :settlement_tests => [
-
-              {
-                :type => 'settlement_fortress',
-                :min_count => 4,
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_fortress_4
-        {               #   quest_fortress_5
-          :id                => 138,
-          :symbolic_id       => :quest_fortress_5,
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "5th Fortress",
-  
-            :de_DE => "5te Festung",
-                
-          },
-          :task => {
-            
-            :en_US => "Conquer your 5th fortress.",
-  
-            :de_DE => "Erobere Deine 3te Festung.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
-  
-            :en_US => "We need more settlements. A fortress would be the way to go.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
-  
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Regentschaft der Weisheit', oder?.",
-  
-            :en_US => "You conquered a fortress? That´s great!",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
-  
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_fortress_4',
-
-          },
-
-          :successor_quests => [],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_cash,
-                :amount => 8,
-              },
-
-            ],
-
-            :experience_reward => 1500,
-
-          },          
-
-          :reward_tests => {
-            
-            :settlement_tests => [
-
-              {
-                :type => 'settlement_fortress',
-                :min_count => 5,
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_fortress_5
       ],                # END OF QUESTS
 
     )

@@ -78,6 +78,8 @@ defaults: &defaults
   max_home_bases_in_region_for_alliance_invitation:     3
 
   description_max_length:               1000 # character
+  
+  settler_start_quest_id: 135
 
 development:
   <<: *defaults
