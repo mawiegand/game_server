@@ -41,6 +41,22 @@ class Military::BattleFaction < ActiveRecord::Base
     false
   end
 
+  # Returns true if participants are from same alliance (can include NPCs)
+  # Returns false if participants are from different alliance or contains only NPCs
+  def is_only_one_alliance_involved?
+    alliance = nil
+    participants.each do |p|
+      if !p.army.npc?
+        alliance = p.army.alliance if alliance.nil?
+        if !alliance.nil? && p.army.alliance != alliance
+          return false # Different alliances are involved
+        end
+      end
+    end
+    return false if alliance.nil? # Only NPCs are involved
+    return true # only one alliance is involved
+  end
+
   def participant_with_largest_army
     owner_of_largest_army = nil
     participants.each do |participant|
