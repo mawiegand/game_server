@@ -421,6 +421,14 @@ class Military::Battle < ActiveRecord::Base
     k = 1.0 * loser_units_count / winner_units_count
 
     rounds.each do |round|
+      logger.debug "WTF ERROR" if winner_faction.is_only_one_alliance_involved?
+      self.alliance_fight = true if (winner_faction.is_only_one_alliance_involved? && loser_faction.is_only_one_alliance_involved?)
+      if alliance_fight
+        alliance_fight_xp_penalty = GAME_SERVER_CONFIG['alliance_fight_xp_penalty']
+      else
+        alliance_fight_xp_penalty = 1.0
+      end
+      logger.debug "WTF penalty: #{alliance_fight_xp_penalty}"
       winner_units_count_per_round = 0
       winner_faction.participants.each do |participant|
         round_results = participant.results.where(:round_id => round.id)
@@ -440,7 +448,11 @@ class Military::Battle < ActiveRecord::Base
           character_result = Military::BattleCharacterResult.find_or_initialize_by_character_id_and_faction_id_and_battle_id(participant.character_id, participant.faction_id, self.id)
           participant_round_result = participant_round_results.first
           participant_units_per_round = participant_round_result.xp_weighted_units_count
-          character_result.experience_gained += k * GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] * participant_units_per_round * loser_lost_units_count_per_round / winner_units_count_per_round
+          experience = k * alliance_fight_xp_penalty * participant_units_per_round * loser_lost_units_count_per_round / winner_units_count_per_round
+          logger.debug "WTF penalty false: #{experience}"
+          experience *= GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] if !self.alliance_fight
+          logger.debug "WTF penalty true: #{experience * alliance_fight_xp_penalty}"
+          character_result.experience_gained += experience
           character_result.winner = true
           character_result.save
         end

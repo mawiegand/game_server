@@ -44,16 +44,23 @@ class Military::BattleFaction < ActiveRecord::Base
   # Returns true if participants are from same alliance (can include NPCs)
   # Returns false if participants are from different alliance or contains only NPCs
   def is_only_one_alliance_involved?
-    alliance = nil
+    logger.debug "alliances test"
+    only_npcs = true
+    first_army = participants.first.army
+    logger.debug "alliances empty" if first_army.nil?
     participants.each do |p|
-      if !p.army.npc?
-        alliance = p.army.alliance if alliance.nil?
-        if !alliance.nil? && p.army.alliance != alliance
+      logger.debug "alliances army name: #{p.army.name}"
+      if !(p.army.owned_by_npc?)
+        if !(first_army.same_alliance_as?(p.army))
+          logger.debug "Different alliances"
           return false # Different alliances are involved
         end
+        only_npcs = false
       end
     end
-    return false if alliance.nil? # Only NPCs are involved
+    logger.debug "NPC alliances"
+    return false if only_npcs # Only NPCs are involved
+    logger.debug "same alliances"
     return true # only one alliance is involved
   end
 
