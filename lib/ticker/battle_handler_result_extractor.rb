@@ -208,11 +208,11 @@ module Ticker
       end
 
       # update survivors on army
-      experience = Military::Army.experience_value_of(participant_results.get_unit_reduce_hash)
+      experience = Military::Army.experience_value_of(participant_results.get_unit_reduce_hash) * battle.alliance_fight_penalty
     
       participant.army.reduce_units(participant_results.get_unit_reduce_hash)
-      participant.army.exp   += experience                 # this is directly propagated to the character
-      participant.army.kills += participant_results.kills  # this is directly propagated to the character 
+      participant.army.exp   += experience                  # this is directly propagated to the character
+      participant.army.kills += participant_results.kills   # this is directly propagated to the character 
       participant.army.save
     
       experience
