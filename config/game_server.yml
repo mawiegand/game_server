@@ -73,7 +73,7 @@ defaults: &defaults
   moving_disable_time_after_region_takeover: 12 #hours to disable moving to region after region was taken over
 
   battle_xp_winner_bonus_factor:         3.0
-  alliance_fight_xp_penalty:             0.5
+  alliance_fight_xp_penalty:             5.0
 
   max_home_bases_in_region_for_geo:                     3
   max_home_bases_in_region_for_alliance_invitation:     3

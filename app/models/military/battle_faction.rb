@@ -64,6 +64,13 @@ class Military::BattleFaction < ActiveRecord::Base
     return true # only one alliance is involved
   end
 
+  def first_none_npc_participant
+    participants.each do |p|
+      return p if !(p.army.owned_by_npc?)
+    end
+    return nil
+  end
+
   def participant_with_largest_army
     owner_of_largest_army = nil
     participants.each do |participant|

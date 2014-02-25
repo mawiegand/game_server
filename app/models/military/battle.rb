@@ -422,7 +422,13 @@ class Military::Battle < ActiveRecord::Base
 
     rounds.each do |round|
       logger.debug "WTF ERROR" if winner_faction.is_only_one_alliance_involved?
-      self.alliance_fight = true if (winner_faction.is_only_one_alliance_involved? && loser_faction.is_only_one_alliance_involved?)
+      if winner_faction.is_only_one_alliance_involved? && loser_faction.is_only_one_alliance_involved?
+        first_army = winner_faction.first_none_npc_participant.army
+        second_army = loser_faction.first_none_npc_participant.army
+        if !first_army.nil? && !second_army.nil? && first_army.same_alliance_as?(second_army)
+          self.alliance_fight = true
+        end
+      end
       if alliance_fight
         alliance_fight_xp_penalty = GAME_SERVER_CONFIG['alliance_fight_xp_penalty']
       else
