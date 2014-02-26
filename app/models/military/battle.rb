@@ -404,6 +404,22 @@ class Military::Battle < ActiveRecord::Base
   #  experience points
   #
   ################################################################################
+  
+  def update_alliance_fight
+    return  if self.alliance_fight?    # if a battle was at one point in time an alliance fight (the "bad" fight), it'll stay a bad fight!
+    
+    # update alliance-fight flag here!
+  end
+   
+   
+  def alliance_fight_penalty
+    self.alliance_fight? ? (GAME_SERVER_CONFIG['alliance_fight_xp_penalty'].blank? || 1.0) : 1.0
+  end
+  
+  def alliance_fight_winner_bonus_penalty
+    self.alliance_fight? ? (GAME_SERVER_CONFIG['alliance_fight_winner_bonus_penalty'] || 0.0) : 1.0
+  end
+  
 
   def calculate_character_results    
     winner_units_count = 0
