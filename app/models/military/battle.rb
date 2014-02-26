@@ -408,10 +408,13 @@ class Military::Battle < ActiveRecord::Base
   def update_alliance_fight
     return  if self.alliance_fight?    # if a battle was at one point in time an alliance fight (the "bad" fight), it'll stay a bad fight!
     
+    faction_a = self.factions[0]
+    faction_b = other_faction(faction_a.id)
+    
     # update alliance-fight flag here!
-    if winner_faction.is_only_one_alliance_involved? && loser_faction.is_only_one_alliance_involved?
-      first_army = winner_faction.first_none_npc_participant.army
-      second_army = loser_faction.first_none_npc_participant.army
+    if faction_a.is_only_one_alliance_involved? && faction_b.is_only_one_alliance_involved?
+      first_army = faction_a.first_none_npc_participant.army
+      second_army = faction_b.first_none_npc_participant.army
       if !first_army.nil? && !second_army.nil? && first_army.same_alliance_as?(second_army)
         self.alliance_fight = true
       end
@@ -419,7 +422,7 @@ class Military::Battle < ActiveRecord::Base
   end
    
   def alliance_fight_penalty
-    self.alliance_fight? ? (GAME_SERVER_CONFIG['alliance_fight_xp_penalty'].blank? || 1.0) : 1.0
+    self.alliance_fight? ? (GAME_SERVER_CONFIG['alliance_fight_xp_penalty'] || 1.0) : 1.0
   end
   
   def alliance_fight_winner_bonus_penalty

@@ -32,7 +32,7 @@ class Ticker::BattleHandler
       #runloop.say "Process battle round #{ battle.battle_rounds_count || 0} for battle #{ battle.id } at loc #{ battle.location_id} in reg #{ battle.region_id }."
     
       if !battle.battle_done?
-        battle.update_alliance_battle
+        battle.update_alliance_fight
 
         ## create and fill the AWE battle
         awe_battle = Battle::Battle.new
