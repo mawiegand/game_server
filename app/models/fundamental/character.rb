@@ -449,11 +449,11 @@ class Fundamental::Character < ActiveRecord::Base
   
   # FIXME: this does NOT save the character after all modifications itself!!! should be corrected also inside the corresponding controller
   def self.create_new_character(identifier, name, args = {})
-    resource_modificator = args[:resource_modificator] || 1.0;
-    npc                  = args[:npc]                  || false;
-    start_location       = args[:location]             || nil;
-    gender               = args[:gender]               || nil;
-    lang                 = args[:lang]                 || :en;
+    resource_modificator = args[:resource_modificator] || 1.0
+    npc                  = args[:npc]                  || false
+    start_location       = args[:location]             || nil
+    gender               = args[:gender]               || nil
+    lang                 = args[:lang]                 || :en
     
     character = Fundamental::Character.new({
       identifier: identifier,
@@ -538,10 +538,10 @@ class Fundamental::Character < ActiveRecord::Base
   
   # creates a character and a settler unit, not a settlement
   def self.create_new_character_and_settler(identifier, name, args = {})
-    npc                  = args[:npc]                  || false;
-    start_location       = args[:location]             || nil;
-    gender               = args[:gender]               || nil;
-    lang                 = args[:lang]                 || :en;
+    npc                  = args[:npc]                  || false
+    start_location       = args[:location]             || nil
+    gender               = args[:gender]               || nil
+    lang                 = args[:lang]                 || :en
     
     character = Fundamental::Character.new({
       identifier: identifier,
