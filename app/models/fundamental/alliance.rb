@@ -120,9 +120,9 @@ class Fundamental::Alliance < ActiveRecord::Base
     new_leader_id = self.leader_id
     self.leader_votes.each do |v|
       vote_results[v.candidate_id] = (vote_results[v.candidate_id] + 1) || 1 
-      if vote_results[v.candidate_id] > (vote_results[new_leader_id] || 0)
+      if vote_results[v.candidate_id] > (vote_results[new_leader_id] || 0)
         new_leader_id = v.candidate_id
-      elsif vote_results[v.candidate_id] == (vote_results[new_leader_id] || 0)
+      elsif vote_results[v.candidate_id] == (vote_results[new_leader_id] || 0)
         if v.candidate_id == self.leader_id || new_leader_id == self.leader_id # if votes are equal and one is current leader choose the current leader first 
           new_leader_id = self.leader_id
         else # if votes are equal but none is current leader, choose leader with highest score
