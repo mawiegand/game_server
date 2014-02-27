@@ -71,9 +71,8 @@ GameServer::Application.routes.draw do
           resources :alliance_shouts
           resource  :alliance_reservation
           resources :victory_progresses
+          resources :alliance_leader_votes
         end
-        
-        resources :alliance_leader_votes, :only => [:create, :update, :delete]
         
         resources :victory_progresses 
         resources :victory_progress_leaders, :only => [ :index ]
