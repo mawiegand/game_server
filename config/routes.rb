@@ -1,5 +1,4 @@
 GameServer::Application.routes.draw do
-
   scope "/game_server" do
     scope "(:locale)", :locale => /en|de/ do   
       
@@ -73,6 +72,8 @@ GameServer::Application.routes.draw do
           resource  :alliance_reservation
           resources :victory_progresses
         end
+        
+        resources :alliance_leader_votes, :only => [:create, :update, :delete]
         
         resources :victory_progresses 
         resources :victory_progress_leaders, :only => [ :index ]

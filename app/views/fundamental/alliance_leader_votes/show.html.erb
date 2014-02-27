@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Alliance:</b>
+  <%= @fundamental_alliance_leader_vote.alliance_id %>
+</p>
+
+<p>
+  <b>Voter:</b>
+  <%= @fundamental_alliance_leader_vote.voter_id %>
+</p>
+
+<p>
+  <b>Candidate:</b>
+  <%= @fundamental_alliance_leader_vote.candidate_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_alliance_leader_vote_path(@fundamental_alliance_leader_vote) %> |
+<%= link_to 'Back', fundamental_alliance_leader_votes_path %>

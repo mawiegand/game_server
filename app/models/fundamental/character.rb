@@ -57,6 +57,9 @@ class Fundamental::Character < ActiveRecord::Base
 
   has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "sender_id", :inverse_of => :sender
   has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "receiver_id", :inverse_of => :receiver
+  
+  has_one  :alliance_leader_candidate, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "candidate_id", :inverse_of => :candidate
+  has_one  :alliance_leader_vote, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "voter_id", :inverse_of => :voter
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
