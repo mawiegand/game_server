@@ -2,7 +2,7 @@ class Fundamental::AllianceLeaderVotesController < ApplicationController
   layout 'fundamental'
   
   before_filter :authenticate
-  before_filter :deny_api, :except => [:show, :update]
+  before_filter :deny_api, :except => [:show, :edit]
   
   
   # GET /fundamental/alliance_leader_votes
