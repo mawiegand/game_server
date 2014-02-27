@@ -468,6 +468,7 @@ class Fundamental::Alliance < ActiveRecord::Base
       if !self.changes[:members_count].blank? && self.member_count == 0
         Fundamental::AllianceLeaderVote.delete_all("id = ?", self.id)
       end
+      true
     end
     
     def propagate_to_ranking 
