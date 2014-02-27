@@ -1,4 +1,10 @@
 class Fundamental::AllianceLeaderVotesController < ApplicationController
+  layout 'fundamental'
+  
+  before_filter :authenticate
+  before_filter :deny_api, :except => [:show, :update]
+  
+  
   # GET /fundamental/alliance_leader_votes
   # GET /fundamental/alliance_leader_votes.json
   def index
