@@ -864,11 +864,11 @@ class Fundamental::Character < ActiveRecord::Base
   # ##########################################################################
   
   def leave_alliance(alliance)
-    alliance.add_character(self)
+    alliance.remove_character(self)
   end
   
   def join_alliance(alliance)
-    alliance.remove_character(self)
+    alliance.add_character(self)
   end
 
   def sync_alliance_tag
@@ -924,6 +924,15 @@ class Fundamental::Character < ActiveRecord::Base
           entry[:model].update_all(set_clause, where_clause) 
         end
       end
+    end
+    true
+  end
+  
+  def propagate_alliance_membership_changes_to_alliance_leader_vote
+    alliance_change       = self.changes[:alliance_id]
+    
+    if !alliance_change.blank?
+      Fundamental::AllianceLeaderVote.delete_all("voter_id = ? OR candidate_id = ?", self.id, self.id)
     end
     true
   end
