@@ -27,9 +27,9 @@
   <Cost id="resource_wood" round="true">EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL</Cost>
     <Cost id="resource_fur" round="true">(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL)*0.5</Cost>
   <Cost id="resource_cash" round="true">EQUAL(LEVEL,10)+MAX(LEVEL-19,0)*2</Cost> 
-  <ProductionTime shortenable="false">EQUAL(LEVEL,1)*32*3600+EQUAL(LEVEL,2)*34*3600+GREATER(LEVEL,2)*FLOOR((30000*POW(2.71828,0.04*MIN(LEVEL,10))*(0.06*(MAX(LEVEL-10,0))+1))*4)+EQUAL(LEVEL,20)*1570</ProductionTime>  
+  <ProductionTime shortenable="false">(3600*15)+(3600*LEVEL)</ProductionTime>  
   <Abilities> <!-- just for grouping -->
-    <CommandPoints>1+GREATER(LEVEL,9)+EQUAL(LEVEL,20)</CommandPoints>
+    <CommandPoints>1+EQUAL(LEVEL,20)</CommandPoints>
     <SpeedupQueue queue="queue_infantry" domain="settlement">LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0</SpeedupQueue>
     <SpeedupQueue queue="queue_artillery" domain="settlement">LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0</SpeedupQueue>
     <SpeedupQueue queue="queue_cavalry" domain="settlement">LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0</SpeedupQueue>
