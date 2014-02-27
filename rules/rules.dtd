@@ -315,7 +315,8 @@
   id ID #REQUIRED 
   category IDREF #REQUIRED
   group IDREF #REQUIRED
-	buyable (false | true) "true"
+  advisor CDATA "chef"
+  buyable (false | true) "true"
 	demolishable (false | true) "true"
 	destructable (false | true) "true"
 	takeoverDestroy CDATA "false"

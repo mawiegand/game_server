@@ -3,7 +3,7 @@
 
     <Unit id="thrower_4" category="unitcategory_artillery">
       <Name>Spear Thrower</Name>
-      <Name lang="de_DE"> Speerwerfer</Name>
+      <Name lang="de_DE">Speerwerfer</Name>
       <Description lang="de_DE">
         <p>Ein Speer ist auch im Nahkampf, vor allem gegen Reiter, effektiv. Dumm nur, wenn man schon alle Speere weggeworfen hat, bevor ein Reiter angreift. Im Leitfaden für Speerwerfer steht, dass man immer einen Speer weniger werfen sollte, als man hat. Leider kann kein Speerwerfer zählen, geschweige denn lesen.</p> 
       </Description>
@@ -14,7 +14,7 @@
         <p>Why anyone would bother to tie a stick to a stone is a mystery – stones are brilliant missiles. But the effect is fantastic, longer range, more accurate and easier to collect. What more could you want?</p>
       </Flavour>
       <Flavour lang="de_DE">
-        <p>Speerschleuderer sind sehr nervig, aber auch tödlich.</p>
+        <p>Speerschleuderer sind genauso nervig wie tödlich.</p>
       </Flavour>
       <Cost id="resource_stone" round="true">250</Cost>
       <Cost id="resource_wood" round="true">250</Cost>

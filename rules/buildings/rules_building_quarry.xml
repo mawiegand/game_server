@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_quarry" group="resource" category="building_category_small_building" buyable="true" destructable="true" experienceFactor="1.5">  
+<Building id="building_quarry" advisor="girl" group="resource" category="building_category_small_building" buyable="true" destructable="true" experienceFactor="1.5">
   <Name lang="de_DE">Steinbruch</Name>
   <Name lang="en_US">Quarry</Name>
   <Description lang="de_DE">

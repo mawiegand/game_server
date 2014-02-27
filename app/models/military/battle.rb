@@ -404,6 +404,30 @@ class Military::Battle < ActiveRecord::Base
   #  experience points
   #
   ################################################################################
+  
+  def update_alliance_fight
+    return  if self.alliance_fight?    # if a battle was at one point in time an alliance fight (the "bad" fight), it'll stay a bad fight!
+    
+    faction_a = self.factions[0]
+    faction_b = other_faction(faction_a.id)
+    
+    # update alliance-fight flag here!
+    if faction_a.is_only_one_alliance_involved? && faction_b.is_only_one_alliance_involved?
+      first_army = faction_a.first_none_npc_participant.army
+      second_army = faction_b.first_none_npc_participant.army
+      if !first_army.nil? && !second_army.nil? && first_army.same_alliance_as?(second_army)
+        self.alliance_fight = true
+      end
+    end
+  end
+   
+  def alliance_fight_penalty
+    self.alliance_fight? ? (GAME_SERVER_CONFIG['alliance_fight_xp_penalty'] || 1.0) : 1.0
+  end
+  
+  def alliance_fight_winner_bonus_penalty
+    self.alliance_fight? ? (GAME_SERVER_CONFIG['alliance_fight_winner_bonus_penalty'] || 0.0) : 1.0
+  end
 
   def calculate_character_results    
     winner_units_count = 0
@@ -432,6 +456,7 @@ class Military::Battle < ActiveRecord::Base
         round_results = participant.results.where(:round_id => round.id)
         loser_lost_units_count_per_round += round_results.first.xp_weighted_lost_units_count unless round_results.empty?
       end
+      
 
       # winner faction: calculate winner experience according to new function
       winner_faction.participants.each do |participant|
@@ -440,7 +465,12 @@ class Military::Battle < ActiveRecord::Base
           character_result = Military::BattleCharacterResult.find_or_initialize_by_character_id_and_faction_id_and_battle_id(participant.character_id, participant.faction_id, self.id)
           participant_round_result = participant_round_results.first
           participant_units_per_round = participant_round_result.xp_weighted_units_count
-          character_result.experience_gained += k * GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] * participant_units_per_round * loser_lost_units_count_per_round / winner_units_count_per_round
+          
+          logger.debug("calculate_character_results: winner_units_count = #{ winner_units_count }  winner_units_count_per_round = #{ winner_units_count_per_round } participant_units_per_round = #{ participant_units_per_round} loser_lost_units_count_per_round = #{ loser_lost_units_count_per_round } ")
+          
+          divisor = winner_units_count_per_round < 0.01 ? 1 : winner_units_count_per_round
+          
+          character_result.experience_gained = (character_result.experience_gained || 0) + alliance_fight_winner_bonus_penalty * (k || 0) * (GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] || 0) * (participant_units_per_round || 0) * (loser_lost_units_count_per_round || 0) / divisor
           character_result.winner = true
           character_result.save
         end

@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.3.48
+# Version: 0.5.0
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,8 +78,8 @@ class Tutorial::Tutorial
   
       :version => {
         :major => 0, 
-        :minor => 3, 
-        :build => 48, 
+        :minor => 5, 
+        :build => 0, 
       },
       
       :production_test_weights => {
@@ -2930,7 +2930,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Fortress ",
+            :en_US => "Fortress",
   
             :de_DE => "Festung erobern",
                 
@@ -3477,9 +3477,9 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "",
+            :de_DE => "Lagerstätten können jederzeit von anderen Halbgöttern erobert werden. Als möglicher Schutz dient der Ritualstein.",
   
-            :en_US => "",
+            :en_US => "Camps can be taken over be other demigods. You can protect the camp by building an altar.",
                 
           },
 
@@ -3578,9 +3578,9 @@ class Tutorial::Tutorial
           :reward_text => {
             
             :de_DE => "<p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
-        <p>Auf Level 12 und 20 bekommst Du je einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
+        <p>Auf Level 20 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p>",
   
-            :en_US => "<p>The maximum level for a chieftan's hut is Level 20.  Each level increases the battle bonus you can get. At Level 12 and 20 you'll receive a command point for another army.</p>",
+            :en_US => "<p>The maximum level for a chieftan's hut is Level 20. Each level increases the battle bonus you can get. At 20 you'll receive a command point for another army.</p>",
                 
           },
 

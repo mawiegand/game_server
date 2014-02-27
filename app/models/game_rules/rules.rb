@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.3
+# Version: 1.6.5
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -123,12 +123,12 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 6,
-                    :build => 3,
+                    :build => 5,
       },
       :app_control => {
         :debug_tracking                         => 1,
         :startscreen                            => 'map',
-        :special_offer_dialog                   => 1,
+        :special_offer_dialog                   => 0,
         :special_offer_required_finished_quests => 24,
         :facebook_user_stories                  => 1,
       },
@@ -1078,7 +1078,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die stärksten, draufgängerischsten und dümmsten Männer des Stammes werden zu Kriegern ausgebildet. In Ermangelung von tauglichen Waffen werden sie ausgiebig im Nahkampf geschult und erwehren sich der Gegner mit purer Muskelkraft und Willensstärke - oder versuchen es zumindest.</p><p>Sind in einer Siedlung bewaffnete Nahkampfeinheiten verfügbar, können keine unbewaffneten Einheiten rekrutiert werden. Sehr schwach gegen alle anderen Einheitentypen außer Nahkämpfer.</p>",
+            :de_DE => "<p>Die stärksten, draufgängerischsten und dümmsten Männer des Stammes werden zu Kriegern ausgebildet. In Ermangelung von tauglichen Waffen werden sie ausgiebig im Nahkampf geschult und erwehren sich der Gegner mit purer Muskelkraft und Willensstärke - oder versuchen es zumindest.</p><p>Sind in einer Siedlung bewaffnete Nahkampfeinheiten verfügbar, können keine unbewaffneten Einheiten rekrutiert werden. Krieger sind sehr schwach gegen alle anderen Einheitentypen außer Nahkämpfer.</p>",
   
             :en_US => "<p>The strongest, toughest and most stupid men of your tribe are trained as warriors. Having no effective weapons at their disposal, unarmed warriors overwhelm their opponents by pure muscle power and their strong will - or at least they try for a while. They can be trained as long as there are no armed melee units available in the same settlement. Very weak against all unit types apart from melee fighters.</p><p>Can only be trained as long as there are no armed melee units available in the same settlement. Very weak against any other unit type but melee units.</p>",
                 
@@ -1174,7 +1174,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Keulenkrieger sind der Grundbestandteil jeder Armee. Sie stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zähe Burschen und nur schwer klein zu kriegen, allerdings finden sie nur zu oft den Tod durch feindliche Fernkämpfer.</p>",
+            :de_DE => "<p>Keulenkrieger stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zwar zähe Burschen, finden allerdings allzu zu oft den Tod durch feindliche Fernkämpfer.</p>",
   
             :en_US => "<p>Club warriors are the basic units of any Stone Age army. They fight on the front line and protect the ranged combatants from cavalry attack. They're tough and difficult to beat, but unfortunately they all too often take a hit from enemy ranged combatants.</p>",
                 
@@ -1270,7 +1270,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>'Dicke Keule' ist die Abkürzung von Dickhäutigem Keulenkrieger und bezieht sich sowohl auf die Keule als auch auf die Widerstandskraft. Dank der dicken Haut muss die Zeitspanne bis zur Bewusstlosigkeit nicht in Schmerzen durchstanden werden.</p>",
+            :de_DE => "<p>'Dicke Keule' ist die Abkürzung von 'Dickhäutigen Keulenkrieger' und bezieht sich sowohl auf die Keule als auch auf die Widerstandskraft. Dank der dicken Haut muss die Zeitspanne bis zur Bewusstlosigkeit nicht in Schmerzen durchstanden werden.</p>",
   
             :en_US => "<p>Their thick skin protects them against blows from enemy clubs, but it doesn't help so much against the sharp stones of the ranged combatants. Although thanks to their thick skin, they don't feel a lot of pain before they pass out.</p>",
                 
@@ -1370,12 +1370,12 @@ class GameRules::Rules
             
             :en_US => "<p>The art of expressive battle! Here, haymakers give marks to each other based on the finesse of their fighting style.</p>",
   
-            :de_DE => "<p>Die Kunst des Ausdruckkampfes! Knüppel-Schwinger geben sich untereinander Noten für ihre Kampfstil.</p>",
+            :de_DE => "<p>Die Kunst des Ausdruckkampfes! Knüppel-Schwinger geben sich sogar untereinander Noten für ihre Kampfstil.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit gutem Aussehen und Ausdruck. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs beim kraftvollen Zuschlagen wird nichts dem Zufall überlassen. Der größte Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>",
+            :de_DE => "<p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit Ausdruck und gutem Aussehen. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs wird nichts dem Zufall überlassen. Ihr größter Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>",
   
             :en_US => "<p>Haymakers unite the lethal arts of fighting with good looks and charisma. Everything from the carving of the bludgeon to the position of one's left toe when striking someone hard will receive ratings, and nothing will be left to chance. The greatest danger here is not the enemy - it's their own vanity.</p>",
                 
@@ -1587,12 +1587,12 @@ class GameRules::Rules
             
             :en_US => "<p>These ranged combatants couldn't hit a target board at ten paces, but luckily massed enemy phalanxes generally make a nice big target that's hard to miss. </p>",
   
-            :de_DE => "<p>Treffen keine Zielscheibe aus zehn Meter Entfernung treffen! Zum Glück sind Schlachtreihen größere Ziele.</p>",
+            :de_DE => "<p>Treffen keine Zielscheibe aus zehn Metern Entfernung! Zum Glück sind Schlachtreihen größere Ziele.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p><p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter, die diesen bringen.</p>",
+            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p><p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter, die diesen bringen.</p>",
   
             :en_US => "<p>Big stones, little stones – stone throwers like them all as long as they can throw them at someone's head. Well, OK – they do prefer the smaller ones. Stone throwers don't actually aim, but their stones can hit you in the eye quite easily. Gravel stone throwers aren't afraid of death as such – they're more afraid of the ostrich riders who cause it.</p>",
                 
@@ -1683,12 +1683,12 @@ class GameRules::Rules
             
             :en_US => "<p>Hitting a target at fifty meters with a stone is pretty impressive. Unfortunately, the enemy is mostly further away than that.</p>",
   
-            :de_DE => "<p>Diese Jungs können zielen, naja, zumindest fliegt der Stein in die richtige Richtung.</p>",
+            :de_DE => "<p>Diese Jungs können zielen! Naja- zumindest fliegt der Stein in die richtige Richtung.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein sicherer Wurf führt zu besseren Treffern. Nicht dass der Unterschied bemerkbar wäre, meist sind eh genug gegnerische Nahkämpfer da, aber es führt doch zu ein oder zwei kritischen Treffern.</p><p>Ein bewegliches Ziel wie einen Straußenreiter zu treffen, ist eine große Leistung und der Unterschied zwischen Leben und Tod für einen Fernkämpfer.</p>",
+            :de_DE => "<p>Ein sicherer Wurf führt zu besseren Treffern. Aufgrund der Masse an gegnerischen Nahkämpfern macht sich dies zwar nicht wirklich bemerkbar, aber es führt doch zu ein oder zwei kritischen Treffern mehr.</p><p>Ein bewegliches Ziel wie einen Straußenreiter zu treffen, ist eine große Leistung und der Unterschied zwischen Leben und Tod für einen Fernkämpfer.</p>",
   
             :en_US => "<p>A sure throw means better strikes. Not that you'd notice the difference – there are usually enough enemy melee fighters around, but it can mean a couple of good tactical strikes. Hitting a moving target like an ostrich rider is quite an achievement and can mean the difference between life and death for a stone thrower.</p>",
                 
@@ -1793,7 +1793,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Mit der Schleuder können auch größere Steine weiter geworfen werden. Treffer bei unvorbereiteten Kämpfer in der zweiten Reihe erzielen eine deutlich höhere Wirkung. Je nach der Seite des Kampfes auf der man gerade steht, ist das zu bejubeln oder zu beklagen. Was durchaus nicht immer eindeutig ist.</p>",
+            :de_DE => "<p>Mit der Schleuder können auch größere Steine weiter geworfen werden. Treffer bei unvorbereiteten Kämpfern in der zweiten Reihe erzielen eine deutlich höhere Wirkung. Je nach der Seite des Kampfes auf der man gerade steht, ist das zu bejubeln oder zu beklagen. Was durchaus nicht immer eindeutig ist.</p>",
   
             :en_US => "<p>You can throw bigger stones even further if you use a catapult. Stone throwers often hit unsuspecting warriors in the second row, leading to a much higher number of overall casualties that are either suffered or celebrated, depending on which side of the battle you happen to be. Which isn't always obvious.</p>",
                 
@@ -1895,14 +1895,14 @@ class GameRules::Rules
             
             :en_US => "Spear Thrower",
   
-            :de_DE => " Speerwerfer",
+            :de_DE => "Speerwerfer",
                 
           },
           :flavour     => {
             
             :en_US => "<p>Why anyone would bother to tie a stick to a stone is a mystery – stones are brilliant missiles. But the effect is fantastic, longer range, more accurate and easier to collect. What more could you want?</p>",
   
-            :de_DE => "<p>Speerschleuderer sind sehr nervig, aber auch tödlich.</p>",
+            :de_DE => "<p>Speerschleuderer sind genauso nervig wie tödlich.</p>",
                 
           },
           :description => {
@@ -2101,7 +2101,7 @@ class GameRules::Rules
             
             :en_US => "<p> Eyes are especially delicious treats to a hungry and dangerous ostrich.</p>",
   
-            :de_DE => "<p>Beim Sturm durch gegnerische Kampflinien sind besonders Augen Leckereien für die Strauße. </p>",
+            :de_DE => "<p>Beim Sturm durch gegnerische Kampflinien sind Augen besondere Leckereien für die Strauße.</p>",
                 
           },
           :description => {
@@ -2823,6 +2823,7 @@ class GameRules::Rules
             :en_US => "Chieftain's Hut",
                 
           },
+          :advisor     => "chef",
           :flavour     => {
             
             :en_US => "<p>Show me your chieftain's hut and I'll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>",
@@ -2963,6 +2964,7 @@ class GameRules::Rules
             :en_US => "Hunter Gatherers",
                 
           },
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
@@ -3077,6 +3079,7 @@ class GameRules::Rules
             :en_US => "God-Fearing Gatherer",
                 
           },
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
@@ -3189,6 +3192,7 @@ class GameRules::Rules
             :en_US => "Training Grounds",
                 
           },
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Looking for a little fight? Haven't been bashed up for a while? The barracks are the place to go for anyone wanting to jump into the fray.</p>",
@@ -3299,6 +3303,7 @@ class GameRules::Rules
             :en_US => "Small Hut",
                 
           },
+          :advisor     => "chef",
           :flavour     => {
             
             :en_US => "<p>Your subjects live in small huts. The more subjects there are, the faster you can build other buildings.</p>",
@@ -3405,6 +3410,7 @@ class GameRules::Rules
             :en_US => "Tavern",
                 
           },
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>A quiet seat, a cool beer, and some reasonably friendly company. What more could anyone want from life?</p>",
@@ -3494,6 +3500,7 @@ class GameRules::Rules
             :en_US => "Raw Materials Store",
                 
           },
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>Stone containers, dinosaur cranes and, more recently, carts. A little style is classy! </p>",
@@ -3614,6 +3621,7 @@ class GameRules::Rules
             :en_US => "Campfire",
                 
           },
+          :advisor     => "chef",
           :flavour     => {
             
             :en_US => "<p>The place where alliance members hold diplomatic exchanges or discussions. It takes at least two to have a good conversation, even though often only one of them does the talking. Talk? A little chief can do that better than anyone else.</p>",
@@ -3714,6 +3722,7 @@ class GameRules::Rules
             :en_US => "Quarry",
                 
           },
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>Stones – nothing but stones, everywhere! Sweaty labourers and the monotonous thwack of heavy tools.</p>",
@@ -3820,6 +3829,7 @@ class GameRules::Rules
             :en_US => "Logger",
                 
           },
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>A man and his stone axe! Apart from firewood, he occasionally even brings a tree he managed to fell back to the compound.</p>",
@@ -3926,6 +3936,7 @@ class GameRules::Rules
             :en_US => "Training Cave",
                 
           },
+          :advisor     => "chef",
           :flavour     => {
             
             :de_DE => "<p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p>",
@@ -4026,6 +4037,7 @@ class GameRules::Rules
             :en_US => "Workshop",
                 
           },
+          :advisor     => "chef",
           :flavour     => {
             
             :de_DE => "<p>Die Tüftler warten bereits auf die Artefakte. Hol Dir eins!</p>",
@@ -4115,6 +4127,7 @@ class GameRules::Rules
             :en_US => "Furrier",
                 
           },
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>A furrier know there are many ways to skin a creature. They have lovely furs and quality leatherwear that appeals to sophisticated ladies, and of course, there's usually something tasty roasting over the fire too.</p>",
@@ -4222,6 +4235,7 @@ class GameRules::Rules
             :en_US => "Copper Smelter",
                 
           },
+          :advisor     => "chef",
           :flavour     => {
             
             :en_US => "<p>Copper shines even in its unprocessed state, but it can only be made into jewellery once it's been smelted. It can also be used to make the occasional implement.</p>",
@@ -4310,6 +4324,7 @@ class GameRules::Rules
             :en_US => "Firing Range",
                 
           },
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Don't feel like brawling or getting up close and personal with stinky animals? Prefer to kill your enemy from a safe distance? Then ranged combat is right up your alley.</p>",
@@ -4420,6 +4435,7 @@ class GameRules::Rules
             :en_US => "Tribes Hall",
                 
           },
+          :advisor     => "chef",
           :flavour     => {
             
             :en_US => "<p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>",
@@ -4528,6 +4544,7 @@ class GameRules::Rules
             :en_US => "Windproof Hut",
                 
           },
+          :advisor     => "chef",
           :flavour     => {
             
             :en_US => "<p>A fireplace, a neatly fenced front lawn and a front doormat. Living the dream!</p>",
@@ -4629,6 +4646,7 @@ class GameRules::Rules
             :en_US => "Great Store",
                 
           },
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>Stone containers, dinosaur cranes, and - more recently - copper carts. At last, raw materials can be transported in style.</p>",
@@ -4744,6 +4762,7 @@ class GameRules::Rules
             :en_US => "Age Old Stone Quarry",
                 
           },
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>In the Copper-Stone Age, you'd expect workers to have copper pickaxes - but the workers actually preferred to invest their copper in jewellery for their wives. The fact they chose this option suggests their grateful wives gave them some pretty lavish rewards...</p>",
@@ -4845,6 +4864,7 @@ class GameRules::Rules
             :en_US => "Logger with Copper Axe",
                 
           },
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>A man and his copper axe! Although copper axes always bend, this worker can still bring home the trees he's felled himself as well as some brushwood.</p>",
@@ -4946,6 +4966,7 @@ class GameRules::Rules
             :en_US => "Smelly Barn",
                 
           },
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Smelly animals and a kitty cat to play with. Life on the stud farm couldn't be better.</p>",
@@ -5056,6 +5077,7 @@ class GameRules::Rules
             :en_US => "Central Command Post",
                 
           },
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Coordinating armies is the art of war. Even if all armies are dispatched in the same direction with the order to “hit 'em hard”.</p>",
@@ -5182,6 +5204,7 @@ class GameRules::Rules
             :en_US => "Crazy Furrier",
                 
           },
+          :advisor     => "girl",
           :flavour     => {
             
             :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
@@ -5284,6 +5307,7 @@ class GameRules::Rules
             :en_US => "Garrison",
                 
           },
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Warriors or soldiers of any kind should be kept apart from the ordinary working population. In the garrison they can bash each others' heads in and leave the poor settlement dwellers in peace.</p>",
@@ -5387,6 +5411,7 @@ class GameRules::Rules
             :en_US => "Meeting Place",
                 
           },
+          :advisor     => "chef",
           :flavour     => {
             
             :en_US => "<p>This is where all the important people in the compound meet every evening to discuss important issues. Like, for instance, how to solve the troubling shortage of beer they've been experiencing lately...</p>",
@@ -5499,6 +5524,7 @@ class GameRules::Rules
             :en_US => "Field Camp",
                 
           },
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>Field camps turn encampments into military support units. Despite all the talk about the safety and storage that field camps offer, they seem to have a magical attraction for enemies.</p>",
@@ -5593,6 +5619,7 @@ class GameRules::Rules
             :en_US => "Altar",
                 
           },
+          :advisor     => "chef",
           :flavour     => {
             
             :en_US => "<p>The ceremonies and regular sacrifices carried out on the altar are intended to appease the gods. An encampment blessed by the gods cannot be conquered by enemies.</p>",
@@ -5683,6 +5710,7 @@ class GameRules::Rules
             :en_US => "Fortification",
                 
           },
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>The fortress rules the region. Troops are deployed to collect taxes from the settlements and protect the fortress from attacks.</p>",
@@ -5776,6 +5804,7 @@ class GameRules::Rules
             :en_US => "Infantry Tower",
                 
           },
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>This is no place for thinkers! Infantry members need strength and stamina - nothing else.</p>",
@@ -5874,6 +5903,7 @@ class GameRules::Rules
             :en_US => "Artillery Tower",
                 
           },
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>You'd better duck! Ranged combatant training is in full swing!</p>",
@@ -5972,6 +6002,7 @@ class GameRules::Rules
             :en_US => "Cavalry Tower",
                 
           },
+          :advisor     => "warrior",
           :flavour     => {
             
             :en_US => "<p>This place is home to countless animals and sweaty men. Beware of the dung and pungent smell!</p>",
@@ -8433,7 +8464,7 @@ class GameRules::Rules
 
           :condition   => {
 
-            :required_regions_ratio => 'LESS(DAYS,91)*(1-(0.01*((70/90)*DAYS)))+GREATER(DAYS,90)*(0.3-(0.01*((29/60)*(DAYS-90))))',
+            :required_regions_ratio => 'LESS(DAYS,91)*(1-(0.01*((70.0/90.0)*DAYS)))+GREATER(DAYS,90)*(0.3-(0.01*((29.0/60.0)*(DAYS-90))))',
 
             :duration => 5,
           },
@@ -9363,9 +9394,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'a',
-          :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/0',
-          :image_url    => 'https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
-          :see_also_url => 'https://gs04.wack-a-doo.de',
+          :url          => 'https://gs05.wack-a-doo.de/game_server/en/facebook/object_types/0',
+          :image_url    => 'https://gs05.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
+          :see_also_url => 'https://gs05.wack-a-doo.de',
         },              #   END OF battle
         {              #   next_rank
           :id          => 1,
@@ -9387,9 +9418,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'the',
-          :url          => 'https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/1',
-          :image_url    => 'https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
-          :see_also_url => 'https://gs04.wack-a-doo.de',
+          :url          => 'https://gs05.wack-a-doo.de/game_server/en/facebook/object_types/1',
+          :image_url    => 'https://gs05.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
+          :see_also_url => 'https://gs05.wack-a-doo.de',
         },              #   END OF next_rank
       ],                # END OF FACEBOOK USER STORIES
 

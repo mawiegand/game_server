@@ -73,11 +73,14 @@ defaults: &defaults
   moving_disable_time_after_region_takeover: 12 #hours to disable moving to region after region was taken over
 
   battle_xp_winner_bonus_factor:         3.0
+  alliance_fight_xp_penalty:             0.25
 
   max_home_bases_in_region_for_geo:                     3
   max_home_bases_in_region_for_alliance_invitation:     3
 
   description_max_length:               1000 # character
+  
+  settler_start_quest_id: 135
 
 development:
   <<: *defaults
@@ -144,28 +147,37 @@ staging:
 production:
   <<: *defaults
 
+#  jabber:
+#    debug:     true
+#    host:      jabber6.wack-a-doo.com
+#    muc:       conference.jabber6.wack-a-doo.com
+#    bot_jid:   service@jabber6.wack-a-doo.com
+#    password:  P5Dda5eZmvCLFTw2
+#    name:      service
+#    admin_jid: shadow-dragon@jabber6.wack-a-doo.com
+
   jabber:
     debug:     true
-    host:      jabber5.wack-a-doo.com
-    muc:       conference.jabber5.wack-a-doo.com
-    bot_jid:   service@jabber5.wack-a-doo.com
+    host:      jabber3.wack-a-doo.com
+    muc:       conference.jabber3.wack-a-doo.com
+    bot_jid:   service@jabber3.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
-    admin_jid: shadow-dragon@jabber5.wack-a-doo.com
-  
-  scope: 'wackadoo-round4'
+    admin_jid: shadow-dragon@jabber3.wack-a-doo.com
+
+  scope: 'wackadoo-round5'
 
   default_character_name: 'WackyUser'
   identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
-  game_server_base_url:       'https://gs04.wack-a-doo.de/game_server'
-  geo_server_base_url:        'https://gs04.wack-a-doo.de/geo_server'
+  game_server_base_url:       'https://gs05.wack-a-doo.de/game_server'
+  geo_server_base_url:        'https://gs05.wack-a-doo.de/geo_server'
 
   settlement_recalc_probability:    0.2
   resource_pool_recalc_probability: 0.05
   character_recalc_probability:     0.2
   queue_speed_recalc_probability:   0.2
   
-  cookie_name: 'wackadoo_r2_remember_token'  
+  cookie_name: 'wackadoo_r5_remember_token'
 
   
   

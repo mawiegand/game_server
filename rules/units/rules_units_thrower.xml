@@ -5,7 +5,7 @@
     <Name>Gravel Stone Thrower</Name>
     <Name lang="de_DE">Kieselsteinwerfer</Name>
     <Description lang="de_DE">
-      <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle, solange er sie jemandem an den Kopf werfen kann. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p>
+      <p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p>
       <p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter, die diesen bringen.</p>
     </Description>
     <Description lang="en_US">
@@ -15,7 +15,7 @@
       <p>These ranged combatants couldn't hit a target board at ten paces, but luckily massed enemy phalanxes generally make a nice big target that's hard to miss. </p>
     </Flavour>
     <Flavour lang="de_DE">
-      <p>Treffen keine Zielscheibe aus zehn Meter Entfernung treffen! Zum Glück sind Schlachtreihen größere Ziele.</p>
+      <p>Treffen keine Zielscheibe aus zehn Metern Entfernung! Zum Glück sind Schlachtreihen größere Ziele.</p>
     </Flavour>
     <Cost id="resource_stone" round="true">75</Cost>
     <Cost id="resource_wood" round="true">75</Cost>

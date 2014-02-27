@@ -5,7 +5,7 @@
       <Name>Target Thrower</Name>
       <Name lang="de_DE"> Zielwerfer</Name>
       <Description lang="de_DE">
-        <p>Ein sicherer Wurf führt zu besseren Treffern. Nicht dass der Unterschied bemerkbar wäre, meist sind eh genug gegnerische Nahkämpfer da, aber es führt doch zu ein oder zwei kritischen Treffern.</p>
+        <p>Ein sicherer Wurf führt zu besseren Treffern. Aufgrund der Masse an gegnerischen Nahkämpfern macht sich dies zwar nicht wirklich bemerkbar, aber es führt doch zu ein oder zwei kritischen Treffern mehr.</p>
         <p>Ein bewegliches Ziel wie einen Straußenreiter zu treffen, ist eine große Leistung und der Unterschied zwischen Leben und Tod für einen Fernkämpfer.</p>
       </Description>
       <Description lang="en_US">
@@ -15,7 +15,7 @@
         <p>Hitting a target at fifty meters with a stone is pretty impressive. Unfortunately, the enemy is mostly further away than that.</p>
       </Flavour>
       <Flavour lang="de_DE">
-        <p>Diese Jungs können zielen, naja, zumindest fliegt der Stein in die richtige Richtung.</p>
+        <p>Diese Jungs können zielen! Naja- zumindest fliegt der Stein in die richtige Richtung.</p>
       </Flavour>
       <Cost id="resource_stone" round="true">112</Cost>
       <Cost id="resource_wood" round="true">112</Cost>

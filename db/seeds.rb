@@ -2,7 +2,7 @@
 
 require 'mapping/global_mercator'
 
-exit(1)  if Rails.env.production?
+#exit(1)  if Rails.env.production?
 
 
 # This file seeds the database after its creation (or a reset)
@@ -20,7 +20,7 @@ user.save
 
 NUM_FULL_LEVELS   =  3
 NUM_SPARSE_LEVELS =  2
-MAX_LEVEL         = 11
+MAX_LEVEL         =  5
 
 ROUND_NAME   = "Stars"
 ROUND_NUMBER =  4
@@ -91,7 +91,7 @@ Fundamental::RoundInfo.create({
 # ############################################################################
 
 @npc = [
-  Fundamental::Character.create_new_character('npc_1', 'Neandertaler', 1.0, true),
+  Fundamental::Character.create_new_character('npc_1', 'Neandertaler', args = {npc: true}),
 ]
 
 # ############################################################################

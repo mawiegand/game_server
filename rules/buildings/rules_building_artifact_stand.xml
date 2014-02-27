@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_artifact_stand" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="true" demolishable="false" experienceFactor="12">
+<Building id="building_artifact_stand" advisor="chef" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="true" demolishable="false" experienceFactor="12">
   <Name lang="de_DE">Tüftler-Werkstatt</Name>
   <Name lang="en_US">Workshop</Name>
   <Description lang="de_DE"><p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p>

@@ -31,7 +31,7 @@ identifiers.each do |identifier|
 
   start_resources = {
     start_resources: {
-      client_identifier: 'wackadoo-round4',
+      client_identifier: 'wackadoo-round5',
       resources: [
         {resource_type_id: 0, amount: 2000},
         {resource_type_id: 1, amount: 2000},

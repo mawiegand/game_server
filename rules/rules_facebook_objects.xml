@@ -8,9 +8,9 @@
     <Description lang="de_DE">Ich habe einen großen Kampf gewonnen und reichlich Erfahrung gesammelt. Ein weiterer Schritt auf dem Weg zur Weltherrschaft meiner Allianz.</Description>
     <Description lang="en_US">I have won a great battle and earned much expierience. A further step to world domination of my alliance.</Description>
     <Determiner>a</Determiner>
-    <Url>https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/0</Url>
-    <ImageUrl>https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png</ImageUrl>
-    <SeeAlsoUrl>https://gs04.wack-a-doo.de</SeeAlsoUrl>
+    <Url>https://gs05.wack-a-doo.de/game_server/en/facebook/object_types/0</Url>
+    <ImageUrl>https://gs05.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png</ImageUrl>
+    <SeeAlsoUrl>https://gs05.wack-a-doo.de</SeeAlsoUrl>
   </FacebookUserStory>
   <FacebookUserStory id="user_story_reached_next_level" type="next_rank" action="reach">
     <Name lang="de_DE">Nächster Rang</Name>
@@ -18,8 +18,8 @@
     <Description lang="de_DE">Hurray! Ich habe genug Erfahrung gesammelt und bin einen Rank aufgestiegen.</Description>
     <Description lang="en_US">Hurray! I have earned enough experience and reached a new rank.</Description>
     <Determiner>the</Determiner>
-    <Url>https://gs04.wack-a-doo.de/game_server/en/facebook/object_types/1</Url>
-    <ImageUrl>https://gs04.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png</ImageUrl>
-    <SeeAlsoUrl>https://gs04.wack-a-doo.de</SeeAlsoUrl>
+    <Url>https://gs05.wack-a-doo.de/game_server/en/facebook/object_types/1</Url>
+    <ImageUrl>https://gs05.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png</ImageUrl>
+    <SeeAlsoUrl>https://gs05.wack-a-doo.de</SeeAlsoUrl>
   </FacebookUserStory>
 </FacebookUserStories>

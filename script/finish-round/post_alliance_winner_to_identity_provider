@@ -27,7 +27,7 @@ alliance.members.each do |character|
     start_xp_bonus = {
       start_xp_bonus: {
         bonus: 0.1,
-        client_identifier: 'wackadoo-round4'
+        client_identifier: 'wackadoo-round5'
       }
     }
 

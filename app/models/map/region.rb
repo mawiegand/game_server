@@ -24,12 +24,12 @@ class Map::Region < ActiveRecord::Base
   after_destroy :propagate_regions_count_to_round_info
   
   scope :non_occupied, where(owner_id: 1)
-  
+
   def recount_settlements
     self.count_settlements = self.locations.where('settlement_type_id = 2').count
     self.save
   end
-  
+
   def non_fortress_locations_owned_by(character)
     self.locations.owned_by(character).excluding_fortress_slots
   end

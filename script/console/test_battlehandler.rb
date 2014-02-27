@@ -7,6 +7,8 @@ end
 end
 bh = Ticker::BattleHandler.new
 bh.runloop = DummyRunloop.new
+bh.process_event( Event::Event.find(29102891) )
+
 bh.process_event(Event::Event.last)
 
 

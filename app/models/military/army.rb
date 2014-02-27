@@ -52,6 +52,8 @@ class Military::Army < ActiveRecord::Base
   scope :non_npc,       where('(npc is null OR npc = ?)', false)
   scope :garrison,      where('(garrison = ?)', true)
   scope :non_garrison,  where('(garrison is null OR garrison = ?)', false)
+  scope :visible,       where('invisible = ?', false)
+  scope :visible_to_character, lambda { |character| where('owner_id = ? or invisible = ?', character.id, false) }
 
   def self.create_garrison_at(settlement)
     logger.debug "Creating a second garrison army for settlement ID#{settlement.id}." unless settlement.garrison_army.nil? || settlement.garrison_army.frozen?
@@ -97,7 +99,7 @@ class Military::Army < ActiveRecord::Base
     
     army = location.armies.build({
       region_id:      location.region_id,  
-      name:           settler_unit_type.name[character.locale],
+      name:           settler_unit_type[:name][character.locale],
       owner_id:       character.id,
       owner_name:     character.name,
       npc:            character.npc,
@@ -120,19 +122,22 @@ class Military::Army < ActiveRecord::Base
       stance:       0,
     })
     
+    logger.debug "Creating the following army: #{ army.inspect }."
+    
     if army.save 
       details = army.create_details({
         settler_unit_type[:db_field] => 1
       })
       return true 
     else
+      logger.debug "Saving the amry did fail."
       return false
     end
   end
   
   def self.default_settler_unit_type
     GameRules::Rules.the_rules.unit_types.each do |t|
-      if !t[:can_create].nil? && t[:can_create] == 2
+      if !t[:can_create].nil? && t[:can_create].include?(2)
         return t
       end
     end
@@ -245,16 +250,71 @@ class Military::Army < ActiveRecord::Base
     
     founder = nil
     GameRules::Rules.the_rules.unit_types.each do |unit_type|
-      founder = unit_type   if !unit_type[:can_create].nil? && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+      founder = unit_type   if !unit_type[:can_create].nil? && unit_type[:can_create].include?(3)  && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
     end
     
     !founder.nil?
   end
 
+  def can_found_home_base?
+    return false    if self.details.nil?
+        
+    founder = nil
+    GameRules::Rules.the_rules.unit_types.each do |unit_type|
+      founder = unit_type   if !unit_type[:can_create].nil? && unit_type[:can_create].include?(2) && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+    end
+    
+    !founder.nil?
+  end
+
+
   def move_to_location(target_location)
     self.location = target_location
     self.region = target_location.region
     self.save
+  end
+
+
+  def found_home_base!(client_id = nil)
+    return   if owner.nil? || location.nil?    
+    owner.update_settlement_points_used
+    return   unless owner.can_found_home_base?
+    return   unless location.can_found_home_base_here?
+    return   unless can_found_home_base?
+    
+    settlement = Settlement::Settlement.create_settlement_at_location(location, 2, owner)    
+    raise InternalServerError.new('Could not found home_base.') if settlement.nil?
+
+    # update character's base location
+    owner.base_location_id = location.id              # TODO is this the home_location_id?
+    owner.base_region_id = location.region_id
+    owner.base_node_id = location.region.node_id
+
+    owner.create_ranking({
+      character_name: owner.name,
+    })
+
+
+    # get character properties and place resources inside the resource pool
+    character_properties = owner.fetch_identity_properties
+    owner.resource_pool.fill_with_start_resources_transaction(character_properties[:start_resource_modificator])
+    character_properties[:start_resources].each do |start_resource|
+      owner.redeem_start_resources(start_resource)
+    end
+
+
+
+    unless client_id.nil?  # fetch gift
+      gift = owner.fetch_signup_gift_for_client(client_id)
+      unless gift.nil?
+        owner.redeem_startup_gift(gift)
+      end
+    end
+
+    consume_ap
+    consume_one_settlement_founder!(2)
+    
+    settlement
   end
   
   def found_outpost!
@@ -266,20 +326,20 @@ class Military::Army < ActiveRecord::Base
     
     settlement = Settlement::Settlement.create_settlement_at_location(location, 3, owner)    
     raise InternalServerError.new('Could not found outpost.') if settlement.nil?
-
+    
     consume_ap
-    consume_one_settlement_founder!
+    consume_one_settlement_founder!(3)
     
     settlement
   end
   
-  def consume_one_settlement_founder!
+  def consume_one_settlement_founder!(settlement_type = 3)
     raise InternalServerError.new("no army details")   if self.details.nil?
       
     consume_type = nil
   
     GameRules::Rules.the_rules.unit_types.each do |unit_type|
-      consume_type = unit_type   if !unit_type[:can_create].nil? && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
+      consume_type = unit_type   if !unit_type[:can_create].nil? && unit_type[:can_create].include?(settlement_type) && !self.details[unit_type[:db_field]].nil? && self.details[unit_type[:db_field]] > 0
     end
     
     raise InternalServerError.new("no settlement founder in army")   if consume_type.nil?
@@ -673,7 +733,7 @@ class Military::Army < ActiveRecord::Base
   end
 
   def check_and_repair_name
-    if self.home.name != self.home_settlement_name
+    if !self.home.nil? && self.home.name != self.home_settlement_name
       logger.warn(">>>ARMY NAME DIFFERS. Old: #{self.home_settlement_name} Corrected: #{self.home.name}.")
       self.home_settlement_name = self.home.name
     end
