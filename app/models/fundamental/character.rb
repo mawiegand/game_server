@@ -933,7 +933,7 @@ class Fundamental::Character < ActiveRecord::Base
     alliance_change       = self.changes[:alliance_id]
     
     if !alliance_change.blank?
-      Fundamental::AllianceLeaderVote.delete_all("voter_id = ? OR candidate_id = ?", self.id, self.id)
+      Fundamental::AllianceLeaderVote.delete_all(["voter_id = ? OR candidate_id = ?", self.id, self.id])
     end
     true
   end
