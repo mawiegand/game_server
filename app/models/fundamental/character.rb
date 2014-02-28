@@ -341,6 +341,11 @@ class Fundamental::Character < ActiveRecord::Base
   end  
   
   
+  def voted_for_candidate_id
+    return nil     if self.alliance_leader_vote.nil?
+      
+    self.alliance_leader_vote.candidate_id
+  end
   
   def self.fetch_identity_for_identifier(identifier)
     identity_provider_access = IdentityProvider::Access.new({

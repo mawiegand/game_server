@@ -25,7 +25,13 @@ class Fundamental::AlliancesController < ApplicationController
       format.html # show.html.erb
       format.json do
         role = determine_access_role(@fundamental_alliance.leader_id, @fundamental_alliance.id)
-        render json: include_root(@fundamental_alliance.sanitized_hash(role), :alliance)
+        alliance_hash = @fundamental_alliance.sanitized_hash(role)
+        
+        if !current_character.nil? && !@fundamental_alliance.nil? && !alliance_hash.nil? && current_character.alliance == @fundamental_alliance
+          alliance_hash[:vote_candidate_id] = current_character.voted_for_candidate_id
+        end
+        
+        render json: include_root(alliance_hash, :alliance)
       end
     end
   end

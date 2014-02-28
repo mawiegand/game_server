@@ -12,7 +12,7 @@ class Action::Fundamental::AllianceLeaderVoteActionsController < ApplicationCont
     raise ForbiddenError.new('tried to change setting on wrong alliance') unless current_character.alliance_id == params[:alliance_leader_vote_action][:alliance_id].to_i
     
     # Currently returns list and the first entry is choosen, maybe there is a better way (Could be improved!)
-    vote = Fundamental::AllianceLeaderVote.where(alliance_id: current_character.alliance_id, voter_id: current_character.id).first
+    vote = current_character.alliance_leader_vote
     vote.candidate_id = params[:alliance_leader_vote_action][:candidate_id]
     raise BadRequestError.new('saving new vote failed')  unless vote.save
     alliance = current_character.alliance
