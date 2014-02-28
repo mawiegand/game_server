@@ -5202,6 +5202,7 @@
         <UIMarker>mark_found_settlement</UIMarker>
       </Quest -->
       
+          <!-- 601 -->
       <Quest id="quest_fortress_2" advisor="warrior">
         <Name>2nd Fortress</Name>
         <Name locale="de_DE">2te Festung</Name>
@@ -5229,6 +5230,7 @@
         </RewardTests>
       </Quest>
       
+          <!-- 602 -->
       <Quest id="quest_fortress_3" advisor="chef">
         <Name>3rd Fortress</Name>
         <Name locale="de_DE">3te Festung</Name>
@@ -5256,6 +5258,7 @@
         </RewardTests>
       </Quest>
       
+          <!-- 603 -->
       <Quest id="quest_fortress_4" advisor="warrior">
         <Name>4th Fortress</Name>
         <Name locale="de_DE">4te Festung</Name>
@@ -5283,6 +5286,7 @@
         </RewardTests>
       </Quest>
       
+          <!-- 604 -->
       <Quest id="quest_fortress_5" advisor="chef">
         <Name>5th Fortress</Name>
         <Name locale="de_DE">5te Festung</Name>
@@ -5310,6 +5314,7 @@
         </RewardTests>
       </Quest>
       
+          <!-- 605 -->
       <Quest id="quest_fortress_6" advisor="warrior">
         <Name>6th Fortress</Name>
         <Name locale="de_DE">6te Festung</Name>
@@ -5337,6 +5342,7 @@
         </RewardTests>
       </Quest>
       
+          <!-- 606 -->
       <Quest id="quest_fortress_7" advisor="chef">
         <Name>7th Fortress</Name>
         <Name locale="de_DE">7te Festung</Name>
@@ -5364,6 +5370,7 @@
         </RewardTests>
       </Quest>
       
+          <!-- 607 -->
       <Quest id="quest_fortress_8" advisor="warrior">
         <Name>8th Fortress</Name>
         <Name locale="de_DE">8te Festung</Name>
@@ -5391,6 +5398,7 @@
         </RewardTests>
       </Quest>
       
+          <!-- 608 -->
       <Quest id="quest_fortress_9" advisor="chef">
         <Name>9th Fortress</Name>
         <Name locale="de_DE">9te Festung</Name>
@@ -5418,6 +5426,7 @@
         </RewardTests>
       </Quest>
       
+          <!-- 609 -->
       <Quest id="quest_fortress_10" advisor="warrior">
         <Name>10th Fortress</Name>
         <Name locale="de_DE">10te Festung</Name>
@@ -5445,6 +5454,7 @@
         </RewardTests>
       </Quest>
       
+          <!-- 610 -->
       <Quest id="quest_fortress_12" advisor="chef">
         <Name>12th Fortress</Name>
         <Name locale="de_DE">12te Festung</Name>
@@ -5472,6 +5482,7 @@
         </RewardTests>
       </Quest>
       
+          <!-- 611 -->
       <Quest id="quest_fortress_15" advisor="warrior">
         <Name>15th Fortress</Name>
         <Name locale="de_DE">15te Festung</Name>
@@ -5498,9 +5509,6 @@
           <SettlementTest type="settlement_fortress" min_count="15" />
         </RewardTests>
       </Quest>
-
-
-
 
   </Quests>
 </Tutorial>
