@@ -118,8 +118,9 @@ class Fundamental::Alliance < ActiveRecord::Base
   # calculate new leader with highest votes
   def calculate_new_leader
     new_leader_id = self.leader_id
+    vote_results = {}
     self.leader_votes.each do |v|
-      vote_results[v.candidate_id] = (vote_results[v.candidate_id] + 1) || 1 
+      vote_results[v.candidate_id] = vote_results[v.candidate_id].nil? ? 1 : (vote_results[v.candidate_id] + 1)
       if vote_results[v.candidate_id] > (vote_results[new_leader_id] || 0)
         new_leader_id = v.candidate_id
       elsif vote_results[v.candidate_id] == (vote_results[new_leader_id] || 0)
