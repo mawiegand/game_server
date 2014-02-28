@@ -465,8 +465,8 @@ class Fundamental::Alliance < ActiveRecord::Base
     end 
     
     def delete_all_leader_votes
-      if !self.changes[:members_count].blank? && self.member_count == 0
-        Fundamental::AllianceLeaderVote.delete_all("id = ?", self.id)
+      if !self.changes[:members_count].blank? && self.members_count == 0
+        Fundamental::AllianceLeaderVote.delete_all("alliance_id = ?", self.id)
       end
       true
     end
