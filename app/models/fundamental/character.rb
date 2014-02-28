@@ -82,6 +82,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_alliance_membership_changes_to_resource_pool
   after_save  :propagate_alliance_membership_changes_to_artifact
   after_save  :propagate_alliance_membership_changes
+  after_save  :propagate_alliance_membership_changes_to_alliance_leader_vote
   after_save  :propagate_name_changes
   after_save  :propagate_avatar_changes
   after_save  :propagate_score_changes
