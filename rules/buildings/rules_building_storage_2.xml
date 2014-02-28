@@ -26,7 +26,8 @@
   <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*8.05+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5*8.05+0.5)</Cost>
     <Cost id="resource_cash" round="true">MAX(LEVEL-19,0)</Cost> 
-  <ProductionTime shortenable="true">EQUAL(LEVEL,1)*FLOOR(5*2.5*1.5)+EQUAL(LEVEL,2)*FLOOR(15*2.5*1.5)+EQUAL(LEVEL,3)*FLOOR(60*2.5*1.5)+EQUAL(LEVEL,4)*FLOOR(180*2.5*1.5)+EQUAL(LEVEL,5)*FLOOR(900*2.5*1.5)+EQUAL(LEVEL,6)*FLOOR(3600*2.5*1.5)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*2.5*1.5)+GREATER(LEVEL,10)*FLOOR((25200+(LEVEL-10)*1800)*2.5*1.5)</ProductionTime>             
+    <ProductionTime shortenable="true">(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR(25200+(LEVEL-10)*3600))*2.5*1.5
+    </ProductionTime>
   <Capacity id="resource_stone">FLOOR(EQUAL(LEVEL,1)*140+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03))*1.75)</Capacity>
   <Capacity id="resource_wood">FLOOR(EQUAL(LEVEL,1)*140+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03))*1.75)</Capacity>
   <Capacity id="resource_fur">FLOOR(EQUAL(LEVEL,1)*140+(POW(LEVEL,2)*100)*MIN(1.5,MAX(1.2,1.2+(LEVEL-10)*0.03))*1.75)</Capacity>
