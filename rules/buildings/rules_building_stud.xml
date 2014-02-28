@@ -27,7 +27,7 @@
   <Cost id="resource_stone" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)</Cost>
   <Cost id="resource_cash" round="true">2*MAX(LEVEL-19,0)</Cost> 
-  <ProductionTime shortenable="true">EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3)+GREATER(LEVEL,10)*FLOOR((25200+(LEVEL-10)*1800)*3)
+  <ProductionTime shortenable="true">(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)+GREATER(LEVEL,10)*FLOOR(25200+(LEVEL-10)*1800))*3
 </ProductionTime>
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_cavalry" />
