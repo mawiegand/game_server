@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.5
+# Version: 1.6.6
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -123,14 +123,14 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 6,
-                    :build => 5,
+                    :build => 6,
       },
       :app_control => {
         :debug_tracking                         => 1,
         :startscreen                            => 'map',
-        :special_offer_dialog                   => 0,
+        :special_offer_dialog                   => 1,
         :special_offer_required_finished_quests => 24,
-        :facebook_user_stories                  => 1,
+        :facebook_user_stories                  => 0,
       },
       :battle => {
         :calculation => {
