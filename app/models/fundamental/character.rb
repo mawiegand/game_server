@@ -57,6 +57,9 @@ class Fundamental::Character < ActiveRecord::Base
 
   has_many :send_dislikes,     :class_name => "LikeSystem::Dislike",        :foreign_key => "sender_id", :inverse_of => :sender
   has_many :received_dislikes, :class_name => "LikeSystem::Dislike",        :foreign_key => "receiver_id", :inverse_of => :receiver
+  
+  has_one  :alliance_leader_candidate, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "candidate_id", :inverse_of => :candidate
+  has_one  :alliance_leader_vote, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "voter_id", :inverse_of => :voter
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
@@ -79,6 +82,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_alliance_membership_changes_to_resource_pool
   after_save  :propagate_alliance_membership_changes_to_artifact
   after_save  :propagate_alliance_membership_changes
+  after_save  :propagate_alliance_membership_changes_to_alliance_leader_vote
   after_save  :propagate_name_changes
   after_save  :propagate_avatar_changes
   after_save  :propagate_score_changes
@@ -861,11 +865,11 @@ class Fundamental::Character < ActiveRecord::Base
   # ##########################################################################
   
   def leave_alliance(alliance)
-    alliance.add_character(self)
+    alliance.remove_character(self)
   end
   
   def join_alliance(alliance)
-    alliance.remove_character(self)
+    alliance.add_character(self)
   end
 
   def sync_alliance_tag
@@ -921,6 +925,15 @@ class Fundamental::Character < ActiveRecord::Base
           entry[:model].update_all(set_clause, where_clause) 
         end
       end
+    end
+    true
+  end
+  
+  def propagate_alliance_membership_changes_to_alliance_leader_vote
+    alliance_change       = self.changes[:alliance_id]
+    
+    if !alliance_change.blank?
+      Fundamental::AllianceLeaderVote.delete_all(["voter_id = ? OR candidate_id = ?", self.id, self.id])
     end
     true
   end

@@ -1,0 +1,27 @@
+<h1>Listing fundamental_alliance_leader_votes</h1>
+
+<table>
+  <tr>
+    <th>Alliance</th>
+    <th>Voter</th>
+    <th>Candidate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_alliance_leader_votes.each do |fundamental_alliance_leader_vote| %>
+  <tr>
+    <td><%= fundamental_alliance_leader_vote.alliance_id %></td>
+    <td><%= fundamental_alliance_leader_vote.voter_id %></td>
+    <td><%= fundamental_alliance_leader_vote.candidate_id %></td>
+    <td><%= link_to 'Show', fundamental_alliance_leader_vote %></td>
+    <td><%= link_to 'Edit', edit_fundamental_alliance_leader_vote_path(fundamental_alliance_leader_vote) %></td>
+    <td><%= link_to 'Destroy', fundamental_alliance_leader_vote, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Alliance leader vote', new_fundamental_alliance_leader_vote_path %>

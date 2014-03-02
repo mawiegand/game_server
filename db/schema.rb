@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140224143603) do
+ActiveRecord::Schema.define(:version => 20140227134752) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1726,6 +1726,14 @@ ActiveRecord::Schema.define(:version => 20140224143603) do
     t.string   "determiner"
     t.string   "restrictions"
     t.string   "see_also"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fundamental_alliance_leader_votes", :force => true do |t|
+    t.integer  "alliance_id"
+    t.integer  "voter_id"
+    t.integer  "candidate_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

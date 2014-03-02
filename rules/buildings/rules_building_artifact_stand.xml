@@ -20,7 +20,7 @@
   <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(FLOOR(7500*POW(LEVEL,0.4)))</Cost>
   <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(FLOOR(10000*POW(LEVEL,0.4)))</Cost>
   <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(FLOOR(12500*POW(LEVEL,0.4)))</Cost>
-  <ProductionTime shortenable="true">LESS(LEVEL,11)*(FLOOR(11*3600+3600*POW(LEVEL,0.7)))</ProductionTime>
+  <ProductionTime shortenable="true">LESS(LEVEL,11)*(36000+(7200*LEVEL))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <UnlockArtifactInitiation>LEVEL</UnlockArtifactInitiation>
   </Abilities>

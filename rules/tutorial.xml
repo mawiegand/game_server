@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="5" build="0" />
+    <Version major="0" minor="5" build="1" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -5201,5 +5201,314 @@
         <UIMarker>mark_select_own_army</UIMarker>
         <UIMarker>mark_found_settlement</UIMarker>
       </Quest -->
+      
+          <!-- 601 -->
+      <Quest id="quest_fortress_2" advisor="warrior">
+        <Name>2nd Fortress</Name>
+        <Name locale="de_DE">2te Festung</Name>
+        <Task>Conquer your 2nd fortress.</Task>
+        <Task locale="de_DE">Erobere Deine 2te Festung.</Task>
+        <Description locale="de_DE">
+          <p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+        </Description>
+        <Flavor locale="de_DE">Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!</Flavor>
+        <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+        <RewardText locale="de_DE">Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.</RewardText>
+        <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+        <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?</RewardFlavor>
+        <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+        <Requirement quest="quest_fortress" />
+        <Rewards>
+          <ResourceReward resource="resource_cash">2</ResourceReward>
+          <ExperienceReward>750</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest type="settlement_fortress" min_count="2" />
+        </RewardTests>
+      </Quest>
+      
+          <!-- 602 -->
+      <Quest id="quest_fortress_3" advisor="chef">
+        <Name>3rd Fortress</Name>
+        <Name locale="de_DE">3te Festung</Name>
+        <Task>Conquer your 3rd fortress.</Task>
+        <Task locale="de_DE">Erobere Deine 3te Festung.</Task>
+        <Description locale="de_DE">
+          <p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+        </Description>
+        <Flavor locale="de_DE">Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.</Flavor>
+        <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+        <RewardText locale="de_DE">Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.</RewardText>
+        <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+        <RewardFlavor locale="de_DE">Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.</RewardFlavor>
+        <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+        <Requirement quest="quest_fortress_2" />
+        <Rewards>
+          <ResourceReward resource="resource_cash">4</ResourceReward>
+          <ExperienceReward>1000</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest type="settlement_fortress" min_count="3" />
+        </RewardTests>
+      </Quest>
+      
+          <!-- 603 -->
+      <Quest id="quest_fortress_4" advisor="warrior">
+        <Name>4th Fortress</Name>
+        <Name locale="de_DE">4te Festung</Name>
+        <Task>Conquer your 4th fortress.</Task>
+        <Task locale="de_DE">Erobere Deine 4te Festung.</Task>
+        <Description locale="de_DE">
+          <p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+        </Description>
+        <Flavor locale="de_DE">Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!</Flavor>
+        <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+        <RewardText locale="de_DE">Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.</RewardText>
+        <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+        <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Sieg des Kriegers', oder?</RewardFlavor>
+        <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+        <Requirement quest="quest_fortress_3" />
+        <Rewards>
+          <ResourceReward resource="resource_cash">6</ResourceReward>
+          <ExperienceReward>1250</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest type="settlement_fortress" min_count="4" />
+        </RewardTests>
+      </Quest>
+      
+          <!-- 604 -->
+      <Quest id="quest_fortress_5" advisor="chef">
+        <Name>5th Fortress</Name>
+        <Name locale="de_DE">5te Festung</Name>
+        <Task>Conquer your 5th fortress.</Task>
+        <Task locale="de_DE">Erobere Deine 5te Festung.</Task>
+        <Description locale="de_DE">
+          <p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+        </Description>
+        <Flavor locale="de_DE">Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.</Flavor>
+        <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+        <RewardText locale="de_DE">Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.</RewardText>
+        <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+        <RewardFlavor locale="de_DE">Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Regentschaft der Weisheit'.</RewardFlavor>
+        <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+        <Requirement quest="quest_fortress_4" />
+        <Rewards>
+          <ResourceReward resource="resource_cash">8</ResourceReward>
+          <ExperienceReward>1500</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest type="settlement_fortress" min_count="5" />
+        </RewardTests>
+      </Quest>
+      
+          <!-- 605 -->
+      <Quest id="quest_fortress_6" advisor="warrior">
+        <Name>6th Fortress</Name>
+        <Name locale="de_DE">6te Festung</Name>
+        <Task>Conquer your 6th fortress.</Task>
+        <Task locale="de_DE">Erobere Deine 6te Festung.</Task>
+        <Description locale="de_DE">
+          <p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+        </Description>
+        <Flavor locale="de_DE">Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!</Flavor>
+        <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+        <RewardText locale="de_DE">Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.</RewardText>
+        <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+        <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Monument der Muskeln', oder?</RewardFlavor>
+        <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+        <Requirement quest="quest_fortress_5" />
+        <Rewards>
+          <ResourceReward resource="resource_cash">10</ResourceReward>
+          <ExperienceReward>1750</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest type="settlement_fortress" min_count="6" />
+        </RewardTests>
+      </Quest>
+      
+          <!-- 606 -->
+      <Quest id="quest_fortress_7" advisor="chef">
+        <Name>7th Fortress</Name>
+        <Name locale="de_DE">7te Festung</Name>
+        <Task>Conquer your 7th fortress.</Task>
+        <Task locale="de_DE">Erobere Deine 7te Festung.</Task>
+        <Description locale="de_DE">
+          <p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+        </Description>
+        <Flavor locale="de_DE">Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.</Flavor>
+        <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+        <RewardText locale="de_DE">Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.</RewardText>
+        <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+        <RewardFlavor locale="de_DE">Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Das gelobte Land'.</RewardFlavor>
+        <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+        <Requirement quest="quest_fortress_6" />
+        <Rewards>
+          <ResourceReward resource="resource_cash">12</ResourceReward>
+          <ExperienceReward>2000</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest type="settlement_fortress" min_count="7" />
+        </RewardTests>
+      </Quest>
+      
+          <!-- 607 -->
+      <Quest id="quest_fortress_8" advisor="warrior">
+        <Name>8th Fortress</Name>
+        <Name locale="de_DE">8te Festung</Name>
+        <Task>Conquer your 8th fortress.</Task>
+        <Task locale="de_DE">Erobere Deine 8te Festung.</Task>
+        <Description locale="de_DE">
+          <p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+        </Description>
+        <Flavor locale="de_DE">Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!</Flavor>
+        <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+        <RewardText locale="de_DE">Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.</RewardText>
+        <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+        <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Monument der Muskeln', oder?</RewardFlavor>
+        <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+        <Requirement quest="quest_fortress_7" />
+        <Rewards>
+          <ResourceReward resource="resource_cash">14</ResourceReward>
+          <ExperienceReward>2250</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest type="settlement_fortress" min_count="8" />
+        </RewardTests>
+      </Quest>
+      
+          <!-- 608 -->
+      <Quest id="quest_fortress_9" advisor="chef">
+        <Name>9th Fortress</Name>
+        <Name locale="de_DE">9te Festung</Name>
+        <Task>Conquer your 9th fortress.</Task>
+        <Task locale="de_DE">Erobere Deine 9te Festung.</Task>
+        <Description locale="de_DE">
+          <p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+        </Description>
+        <Flavor locale="de_DE">Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.</Flavor>
+        <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+        <RewardText locale="de_DE">Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.</RewardText>
+        <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+        <RewardFlavor locale="de_DE">Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Paradies der Sinne'.</RewardFlavor>
+        <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+        <Requirement quest="quest_fortress_6" />
+        <Rewards>
+          <ResourceReward resource="resource_cash">16</ResourceReward>
+          <ExperienceReward>2500</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest type="settlement_fortress" min_count="9" />
+        </RewardTests>
+      </Quest>
+      
+          <!-- 609 -->
+      <Quest id="quest_fortress_10" advisor="warrior">
+        <Name>10th Fortress</Name>
+        <Name locale="de_DE">10te Festung</Name>
+        <Task>Conquer your 10th fortress.</Task>
+        <Task locale="de_DE">Erobere Deine 10te Festung.</Task>
+        <Description locale="de_DE">
+          <p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+        </Description>
+        <Flavor locale="de_DE">Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!</Flavor>
+        <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+        <RewardText locale="de_DE">Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.</RewardText>
+        <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+        <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Die ewige Feste', oder?</RewardFlavor>
+        <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+        <Requirement quest="quest_fortress_9" />
+        <Rewards>
+          <ResourceReward resource="resource_cash">20</ResourceReward>
+          <ExperienceReward>3000</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest type="settlement_fortress" min_count="10" />
+        </RewardTests>
+      </Quest>
+      
+          <!-- 610 -->
+      <Quest id="quest_fortress_12" advisor="chef">
+        <Name>12th Fortress</Name>
+        <Name locale="de_DE">12te Festung</Name>
+        <Task>Conquer your 12th fortress.</Task>
+        <Task locale="de_DE">Erobere Deine 12te Festung.</Task>
+        <Description locale="de_DE">
+          <p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+        </Description>
+        <Flavor locale="de_DE">Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.</Flavor>
+        <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+        <RewardText locale="de_DE">Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.</RewardText>
+        <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+        <RewardFlavor locale="de_DE">Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Glorreicher Garten'.</RewardFlavor>
+        <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+        <Requirement quest="quest_fortress_10" />
+        <Rewards>
+          <ResourceReward resource="resource_cash">25</ResourceReward>
+          <ExperienceReward>4000</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest type="settlement_fortress" min_count="12" />
+        </RewardTests>
+      </Quest>
+      
+          <!-- 611 -->
+      <Quest id="quest_fortress_15" advisor="warrior">
+        <Name>15th Fortress</Name>
+        <Name locale="de_DE">15te Festung</Name>
+        <Task>Conquer your 15th fortress.</Task>
+        <Task locale="de_DE">Erobere Deine 15te Festung.</Task>
+        <Description locale="de_DE">
+          <p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>
+        </Description>
+        <Description locale="en_US">
+          <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+        </Description>
+        <Flavor locale="de_DE">Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!</Flavor>
+        <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+        <RewardText locale="de_DE">Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.</RewardText>
+        <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+        <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Bröckeliger Steinhaufen'...ach, denk Dir selber was aus!</RewardFlavor>
+        <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+        <Requirement quest="quest_fortress_15" />
+        <Rewards>
+          <ResourceReward resource="resource_cash">30</ResourceReward>
+          <ExperienceReward>5000</ExperienceReward>
+        </Rewards>
+        <RewardTests>
+          <SettlementTest type="settlement_fortress" min_count="15" />
+        </RewardTests>
+      </Quest>
+
   </Quests>
 </Tutorial>
