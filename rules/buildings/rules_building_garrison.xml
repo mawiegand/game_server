@@ -29,7 +29,7 @@
   <Cost id="resource_wood" round="true">EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL</Cost>
     <Cost id="resource_fur" round="true">(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(180*POW(LEVEL,2)))+GREATER(LEVEL,10)*2300*LEVEL)*0.5</Cost>
   <Cost id="resource_cash" round="true">EQUAL(LEVEL,10)+MAX(LEVEL-19,0)*2</Cost> 
-  <ProductionTime shortenable="false">((3600*15)+(3600*LEVEL))*2</ProductionTime>
+  <ProductionTime shortenable="false">((3600*15)+(3600*LEVEL))*1.5</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <GarrisonSizeBonus>25*LEVEL</GarrisonSizeBonus>
     <ArmySizeBonus>25*LEVEL</ArmySizeBonus>
