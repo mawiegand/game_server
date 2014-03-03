@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="5" build="1" />
+    <Version major="0" minor="5" build="2" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -4972,7 +4972,7 @@
       <Name>First Assignment</Name>
       <Name locale="de_DE">Der erste Auftrag</Name>
       <Task>Start your first Assignment.</Task>
-      <Task locale="de_DE">Beginne deinen ersten Auftrag.</Task>
+      <Task locale="de_DE">Beginne Deinen ersten Auftrag.</Task>
       <Description locale="de_DE">
         <p>In der Taverne gibt es jede Menge Leute, die Aufträge zu vergeben haben. Betritt sie und beginne einen Auftrag.</p>
       </Description>

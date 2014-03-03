@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.5.1
+# Version: 0.5.2
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 5, 
-        :build => 1, 
+        :build => 2, 
       },
       
       :production_test_weights => {
@@ -12616,7 +12616,7 @@ class Tutorial::Tutorial
             
             :en_US => "Start your first Assignment.",
   
-            :de_DE => "Beginne deinen ersten Auftrag.",
+            :de_DE => "Beginne Deinen ersten Auftrag.",
                 
           },
           :flavour => {
