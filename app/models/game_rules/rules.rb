@@ -1827,7 +1827,7 @@ class GameRules::Rules
           :critical_hit_damage => 7,
           :critical_hit_chance => 0.05,
 
-          :production_time => '1000',
+          :production_time => '2000',
 
           :costs      => {
             0 => '168',
