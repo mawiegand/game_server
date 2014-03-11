@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.14
+# Version: 1.6.15
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -123,7 +123,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 6,
-                    :build => 14,
+                    :build => 15,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -1174,7 +1174,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Keulenkrieger stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zwar zähe Burschen, finden allerdings allzu zu oft den Tod durch feindliche Fernkämpfer.</p>",
+            :de_DE => "<p>Keulenkrieger stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zwar zähe Burschen, finden allerdings allzu oft den Tod durch feindliche Fernkämpfer.</p>",
   
             :en_US => "<p>Club warriors are the basic units of any Stone Age army. They fight on the front line and protect the ranged combatants from cavalry attack. They're tough and difficult to beat, but unfortunately they all too often take a hit from enemy ranged combatants.</p>",
                 
@@ -1788,7 +1788,7 @@ class GameRules::Rules
             
             :en_US => "<p>The stone thowers have a simple motto - the further you can throw the stone, the better!</p>",
   
-            :de_DE => "<p>Das Motto der Steinschleuderer: 'Je weiterer der Stein geworfen wird, desto besser!'</p>",
+            :de_DE => "<p>Das Motto der Steinschleuderer: 'Je weiter der Stein geworfen wird, desto besser!'</p>",
                 
           },
           :description => {
@@ -2325,7 +2325,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Füßen, Schwanz und Zähnen werden die hilflosen Gegner niedergemäht.</p>",
+            :de_DE => "<p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Klauen, Schwanz und Reißzähnen werden die hilflosen Gegner niedergemäht.</p>",
   
             :en_US => "<p>A dinosaur rider has only two jobs: the first is not to get thrown off, and the second is to keep steering his dinosaur back to the battlefield once it's broken through enemy ranks. The hapless enemy is mowed down by the dinosaur's feet, tail and teeth.</p>",
                 
