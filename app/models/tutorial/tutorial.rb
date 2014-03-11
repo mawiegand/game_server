@@ -13275,28 +13275,28 @@ class Tutorial::Tutorial
             
             :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
                 
           },
           :description => {
             
             :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
                 
           },
           :reward_text => {
             
             :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
   
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
 
@@ -13365,28 +13365,28 @@ class Tutorial::Tutorial
             
             :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "What are you sitting around for? Go conquer a fortress to make me more powerfull and we can all be happy.",
                 
           },
           :description => {
             
             :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p>Fortresses reign over regions and collect taxes. By controling a region you also improve your supply routes in it, increasing your armies movement speed and regeneration.</p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "That's what I'm talking about! Lets call this one 'Chief rules'.",
                 
           },
           :reward_text => {
             
             :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
   
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
 
@@ -13455,28 +13455,28 @@ class Tutorial::Tutorial
             
             :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
                 
           },
           :description => {
             
             :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Sieg des Kriegers', oder?",
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
                 
           },
           :reward_text => {
             
             :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
   
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
 
@@ -13545,28 +13545,28 @@ class Tutorial::Tutorial
             
             :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "What are you sitting around for? Go conquer a fortress to make me more powerfull and we can all be happy.",
                 
           },
           :description => {
             
             :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p>Fortresses reign over regions and collect taxes. By controling a region you also improve your supply routes in it, increasing your armies movement speed and regeneration.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Regentschaft der Weisheit'.",
+            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "That's what I'm talking about! Lets call this one 'Chief rules'.",
                 
           },
           :reward_text => {
             
             :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
   
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
 
@@ -13635,28 +13635,28 @@ class Tutorial::Tutorial
             
             :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
                 
           },
           :description => {
             
             :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Monument der Muskeln', oder?",
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
                 
           },
           :reward_text => {
             
             :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
   
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
 
@@ -13725,28 +13725,28 @@ class Tutorial::Tutorial
             
             :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "What are you sitting around for? Go conquer a fortress to make me more powerfull and we can all be happy.",
                 
           },
           :description => {
             
             :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p>Fortresses reign over regions and collect taxes. By controling a region you also improve your supply routes in it, increasing your armies movement speed and regeneration.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Das gelobte Land'.",
+            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "That's what I'm talking about! Lets call this one 'Chief rules'.",
                 
           },
           :reward_text => {
             
             :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
   
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
 
@@ -13815,28 +13815,28 @@ class Tutorial::Tutorial
             
             :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
                 
           },
           :description => {
             
             :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Monument der Muskeln', oder?",
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
                 
           },
           :reward_text => {
             
             :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
   
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
 
@@ -13905,28 +13905,28 @@ class Tutorial::Tutorial
             
             :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "What are you sitting around for? Go conquer a fortress to make me more powerfull and we can all be happy.",
                 
           },
           :description => {
             
             :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p>Fortresses reign over regions and collect taxes. By controling a region you also improve your supply routes in it, increasing your armies movement speed and regeneration.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Paradies der Sinne'.",
+            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "That's what I'm talking about! Lets call this one 'Chief rules'.",
                 
           },
           :reward_text => {
             
             :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
   
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
 
@@ -13995,28 +13995,28 @@ class Tutorial::Tutorial
             
             :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
                 
           },
           :description => {
             
             :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Die ewige Feste', oder?",
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
                 
           },
           :reward_text => {
             
             :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
   
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
 
@@ -14085,28 +14085,28 @@ class Tutorial::Tutorial
             
             :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "What are you sitting around for? Go conquer a fortress to make me more powerfull and we can all be happy.",
                 
           },
           :description => {
             
             :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p>Fortresses reign over regions and collect taxes. By controling a region you also improve your supply routes in it, increasing your armies movement speed and regeneration.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Glorreicher Garten'.",
+            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "That's what I'm talking about! Lets call this one 'Chief rules'.",
                 
           },
           :reward_text => {
             
             :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
   
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
 
@@ -14175,28 +14175,28 @@ class Tutorial::Tutorial
             
             :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
                 
           },
           :description => {
             
             :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Bröckeliger Steinhaufen'...ach, denk Dir selber was aus!",
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
                 
           },
           :reward_text => {
             
             :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
   
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
 
