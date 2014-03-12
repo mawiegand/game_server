@@ -32,6 +32,8 @@ class Ticker::BattleHandler
       #runloop.say "Process battle round #{ battle.battle_rounds_count || 0} for battle #{ battle.id } at loc #{ battle.location_id} in reg #{ battle.region_id }."
     
       if !battle.battle_done?
+        battle.update_alliance_fight
+
         ## create and fill the AWE battle
         awe_battle = Battle::Battle.new
         raise InternalServerError.new('Could not create an instance of Battle::Battle (awe_native_extension).') if awe_battle.nil?
@@ -54,7 +56,7 @@ class Ticker::BattleHandler
 
         runloop.say "finished extracting results from awe_battle object"      
       end
-
+      
       ## check if the battle is over
       if battle.battle_done?
 
