@@ -14,12 +14,12 @@
         <p>The stone thowers have a simple motto - the further you can throw the stone, the better!</p>
       </Flavour>
       <Flavour lang="de_DE">
-        <p>Das Motto der Steinschleuderer: 'Je weiterer der Stein geworfen wird, desto besser!'</p>
+        <p>Das Motto der Steinschleuderer: 'Je weiter der Stein geworfen wird, desto besser!'</p>
       </Flavour>
       <Cost id="resource_stone" round="true">168</Cost>
       <Cost id="resource_wood" round="true">168</Cost>
       <Cost id="resource_fur" round="true">480</Cost>
-      <ProductionTime shortenable="true">3000</ProductionTime>
+      <ProductionTime shortenable="true">2000</ProductionTime>
       <Velocity>1</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>8</Initiative>

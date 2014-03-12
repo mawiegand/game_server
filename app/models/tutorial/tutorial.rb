@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.5.0
+# Version: 0.5.2
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 5, 
-        :build => 0, 
+        :build => 2, 
       },
       
       :production_test_weights => {
@@ -2977,7 +2977,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [],
+          :successor_quests => [135, ],
 
           :rewards => {
             
@@ -12616,7 +12616,7 @@ class Tutorial::Tutorial
             
             :en_US => "Start your first Assignment.",
   
-            :de_DE => "Beginne deinen ersten Auftrag.",
+            :de_DE => "Beginne Deinen ersten Auftrag.",
                 
           },
           :flavour => {
@@ -13247,6 +13247,996 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_crossplatform
+        {               #   quest_fortress_2
+          :id                => 135,
+          :symbolic_id       => :quest_fortress_2,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "2nd Fortress",
+  
+            :de_DE => "2te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 2nd fortress.",
+  
+            :de_DE => "Erobere Deine 2te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
+  
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
+  
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
+  
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress',
+
+          },
+
+          :successor_quests => [136, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+            ],
+
+            :experience_reward => 750,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 2,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_2
+        {               #   quest_fortress_3
+          :id                => 136,
+          :symbolic_id       => :quest_fortress_3,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "3rd Fortress",
+  
+            :de_DE => "3te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 3rd fortress.",
+  
+            :de_DE => "Erobere Deine 3te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
+  
+            :en_US => "What are you sitting around for? Go conquer a fortress to make me more powerfull and we can all be happy.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
+  
+            :en_US => "<p>Fortresses reign over regions and collect taxes. By controling a region you also improve your supply routes in it, increasing your armies movement speed and regeneration.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.",
+  
+            :en_US => "That's what I'm talking about! Lets call this one 'Chief rules'.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress_2',
+
+          },
+
+          :successor_quests => [137, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 4,
+              },
+
+            ],
+
+            :experience_reward => 1000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 3,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_3
+        {               #   quest_fortress_4
+          :id                => 137,
+          :symbolic_id       => :quest_fortress_4,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "4th Fortress",
+  
+            :de_DE => "4te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 4th fortress.",
+  
+            :de_DE => "Erobere Deine 4te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
+  
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
+  
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
+  
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress_3',
+
+          },
+
+          :successor_quests => [138, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 6,
+              },
+
+            ],
+
+            :experience_reward => 1250,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 4,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_4
+        {               #   quest_fortress_5
+          :id                => 138,
+          :symbolic_id       => :quest_fortress_5,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "5th Fortress",
+  
+            :de_DE => "5te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 5th fortress.",
+  
+            :de_DE => "Erobere Deine 5te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
+  
+            :en_US => "What are you sitting around for? Go conquer a fortress to make me more powerfull and we can all be happy.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
+  
+            :en_US => "<p>Fortresses reign over regions and collect taxes. By controling a region you also improve your supply routes in it, increasing your armies movement speed and regeneration.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.",
+  
+            :en_US => "That's what I'm talking about! Lets call this one 'Chief rules'.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress_4',
+
+          },
+
+          :successor_quests => [139, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 8,
+              },
+
+            ],
+
+            :experience_reward => 1500,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 5,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_5
+        {               #   quest_fortress_6
+          :id                => 139,
+          :symbolic_id       => :quest_fortress_6,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "6th Fortress",
+  
+            :de_DE => "6te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 6th fortress.",
+  
+            :de_DE => "Erobere Deine 6te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
+  
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
+  
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
+  
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress_5',
+
+          },
+
+          :successor_quests => [140, 142, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 10,
+              },
+
+            ],
+
+            :experience_reward => 1750,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 6,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_6
+        {               #   quest_fortress_7
+          :id                => 140,
+          :symbolic_id       => :quest_fortress_7,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "7th Fortress",
+  
+            :de_DE => "7te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 7th fortress.",
+  
+            :de_DE => "Erobere Deine 7te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
+  
+            :en_US => "What are you sitting around for? Go conquer a fortress to make me more powerfull and we can all be happy.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
+  
+            :en_US => "<p>Fortresses reign over regions and collect taxes. By controling a region you also improve your supply routes in it, increasing your armies movement speed and regeneration.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.",
+  
+            :en_US => "That's what I'm talking about! Lets call this one 'Chief rules'.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress_6',
+
+          },
+
+          :successor_quests => [141, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 12,
+              },
+
+            ],
+
+            :experience_reward => 2000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 7,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_7
+        {               #   quest_fortress_8
+          :id                => 141,
+          :symbolic_id       => :quest_fortress_8,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "8th Fortress",
+  
+            :de_DE => "8te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 8th fortress.",
+  
+            :de_DE => "Erobere Deine 8te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
+  
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
+  
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
+  
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress_7',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 14,
+              },
+
+            ],
+
+            :experience_reward => 2250,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 8,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_8
+        {               #   quest_fortress_9
+          :id                => 142,
+          :symbolic_id       => :quest_fortress_9,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "9th Fortress",
+  
+            :de_DE => "9te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 9th fortress.",
+  
+            :de_DE => "Erobere Deine 9te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
+  
+            :en_US => "What are you sitting around for? Go conquer a fortress to make me more powerfull and we can all be happy.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
+  
+            :en_US => "<p>Fortresses reign over regions and collect taxes. By controling a region you also improve your supply routes in it, increasing your armies movement speed and regeneration.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.",
+  
+            :en_US => "That's what I'm talking about! Lets call this one 'Chief rules'.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress_6',
+
+          },
+
+          :successor_quests => [143, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 16,
+              },
+
+            ],
+
+            :experience_reward => 2500,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 9,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_9
+        {               #   quest_fortress_10
+          :id                => 143,
+          :symbolic_id       => :quest_fortress_10,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "10th Fortress",
+  
+            :de_DE => "10te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 10th fortress.",
+  
+            :de_DE => "Erobere Deine 10te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
+  
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
+  
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
+  
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress_9',
+
+          },
+
+          :successor_quests => [144, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 20,
+              },
+
+            ],
+
+            :experience_reward => 3000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 10,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_10
+        {               #   quest_fortress_12
+          :id                => 144,
+          :symbolic_id       => :quest_fortress_12,
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "12th Fortress",
+  
+            :de_DE => "12te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 12th fortress.",
+  
+            :de_DE => "Erobere Deine 12te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Was sitzt Du da so faul rum? Erobere eine Festung, verschaff mir mehr Macht und alle sind glücklich.",
+  
+            :en_US => "What are you sitting around for? Go conquer a fortress to make me more powerfull and we can all be happy.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Festungen kontrollieren Regionen und erhalten Steuereinnahmen. Auch die Geschwindigkeit und die Regeneration der Aktionspunkte wird für den Festungsbesitzer verbessert.</p>",
+  
+            :en_US => "<p>Fortresses reign over regions and collect taxes. By controling a region you also improve your supply routes in it, increasing your armies movement speed and regeneration.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.",
+  
+            :en_US => "That's what I'm talking about! Lets call this one 'Chief rules'.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress_10',
+
+          },
+
+          :successor_quests => [],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 25,
+              },
+
+            ],
+
+            :experience_reward => 4000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 12,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_12
+        {               #   quest_fortress_15
+          :id                => 145,
+          :symbolic_id       => :quest_fortress_15,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "15th Fortress",
+  
+            :de_DE => "15te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 15th fortress.",
+  
+            :de_DE => "Erobere Deine 15te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
+  
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
+  
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
+  
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :requirement => {
+            
+            :quest => 'quest_fortress_15',
+
+          },
+
+          :successor_quests => [145, ],
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 30,
+              },
+
+            ],
+
+            :experience_reward => 5000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 15,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_15
       ],                # END OF QUESTS
 
     )

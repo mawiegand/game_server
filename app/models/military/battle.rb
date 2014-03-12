@@ -470,7 +470,7 @@ class Military::Battle < ActiveRecord::Base
           
           divisor = winner_units_count_per_round < 0.01 ? 1 : winner_units_count_per_round
           
-          character_result.experience_gained = (character_result.experience_gained || 0) + (k || 0) * (GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] || 0) * (participant_units_per_round || 0) * (loser_lost_units_count_per_round || 0) / divisor
+          character_result.experience_gained = (character_result.experience_gained || 0) + alliance_fight_winner_bonus_penalty * (k || 0) * (GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] || 0) * (participant_units_per_round || 0) * (loser_lost_units_count_per_round || 0) / divisor
           character_result.winner = true
           character_result.save
         end

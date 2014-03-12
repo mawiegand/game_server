@@ -5,7 +5,7 @@
       <Name>Dinosaur Rider</Name>
       <Name lang="de_DE">Dinoreiter</Name>
       <Description lang="de_DE">
-        <p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Füßen, Schwanz und Zähnen werden die hilflosen Gegner niedergemäht.</p> 
+        <p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Klauen, Schwanz und Reißzähnen werden die hilflosen Gegner niedergemäht.</p>
       </Description>
       <Description lang="en_US">
         <p>A dinosaur rider has only two jobs: the first is not to get thrown off, and the second is to keep steering his dinosaur back to the battlefield once it's broken through enemy ranks. The hapless enemy is mowed down by the dinosaur's feet, tail and teeth.</p>
@@ -19,7 +19,7 @@
       <Cost id="resource_stone" round="true">200</Cost>
       <Cost id="resource_wood" round="true">135</Cost>
       <Cost id="resource_fur" round="true">505</Cost>
-      <ProductionTime shortenable="true">3000</ProductionTime>
+      <ProductionTime shortenable="true">2000</ProductionTime>
       <Velocity>1.5</Velocity>
       <ActionPoints>4</ActionPoints>
       <Initiative>26</Initiative>

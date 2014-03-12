@@ -10,6 +10,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   has_many   :fortresses,:class_name => "Settlement::Settlement",     :foreign_key => "alliance_id", :conditions => ["type_id = ?", 1]
   has_many   :victory_progresses, :class_name => "Fundamental::VictoryProgress", :foreign_key => "alliance_id", :inverse_of => :alliance, :dependent => :destroy
   has_many   :artifacts, :class_name => "Fundamental::Artifact",      :foreign_key => "alliance_id", :inverse_of => :alliance
+  has_many   :leader_votes, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "alliance_id", :inverse_of => :alliance
 
   has_many   :resource_effects,     :class_name => "Effect::AllianceResourceEffect",     :foreign_key => "alliance_id", :inverse_of => :alliance
   has_many   :construction_effects, :class_name => "Effect::AllianceConstructionEffect", :foreign_key => "alliance_id", :inverse_of => :alliance
@@ -40,6 +41,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   after_save    :propagate_name_change
   after_save    :propagate_color_change
   after_save    :propagate_to_ranking
+  after_save    :delete_all_leader_votes
 
 
   scope :auto_join_enabled,  where(auto_join_disabled: false)
@@ -107,10 +109,29 @@ class Fundamental::Alliance < ActiveRecord::Base
 
   def determine_new_leader
     if self.members.count > 0
-      self.leader_id = self.members.first.id # TODO choose member who's first in ranking
+      self.leader_id = calculate_new_leader
     else
       self.leader_id = nil
     end
+  end
+  
+  # calculate new leader with highest votes
+  def calculate_new_leader
+    new_leader_id = self.leader_id
+    vote_results = {}
+    self.leader_votes.each do |v|
+      vote_results[v.candidate_id] = vote_results[v.candidate_id].nil? ? 1 : (vote_results[v.candidate_id] + 1)
+      if vote_results[v.candidate_id] > (vote_results[new_leader_id] || 0)
+        new_leader_id = v.candidate_id
+      elsif vote_results[v.candidate_id] == (vote_results[new_leader_id] || 0)
+        if v.candidate_id == self.leader_id || new_leader_id == self.leader_id # if votes are equal and one is current leader choose the current leader first 
+          new_leader_id = self.leader_id
+        else # if votes are equal but none is current leader, choose leader with highest score
+          new_leader_id = (Fundamental::Character.find(new_leader_id).score >= v.candidate.score) ? new_leader_id : v.candidate_id
+        end
+      end
+    end
+    return new_leader_id
   end
   
   def add_character(character)
@@ -121,6 +142,7 @@ class Fundamental::Alliance < ActiveRecord::Base
     character.save
     
     self.recalculate_size_bonus
+    Fundamental::AllianceLeaderVote.create(alliance: self, voter: character, candidate: self.leader)
     
     cmd = Messaging::JabberCommand.grant_access(character, self.tag) 
     cmd.character_id = character.id
@@ -141,9 +163,8 @@ class Fundamental::Alliance < ActiveRecord::Base
     self.decrement!(:members_count)
     character.save
     
-    if self.leader_id == character.id
-      determine_new_leader
-    end
+    determine_new_leader
+    
     self.save
     self.recalculate_size_bonus
     
@@ -443,6 +464,13 @@ class Fundamental::Alliance < ActiveRecord::Base
       chars = ('a'..'z').to_a + ('A'..'Z').to_a
       (0..(len-1)).collect { chars[Kernel.rand(chars.length)] }.join
     end 
+    
+    def delete_all_leader_votes
+      if !self.changes[:members_count].blank? && self.members_count == 0
+        Fundamental::AllianceLeaderVote.delete_all(["alliance_id = ?", self.id])
+      end
+      true
+    end
     
     def propagate_to_ranking 
       if !self.changes[:members_count].blank? && !self.ranking.nil?

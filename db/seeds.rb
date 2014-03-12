@@ -91,7 +91,7 @@ Fundamental::RoundInfo.create({
 # ############################################################################
 
 @npc = [
-  Fundamental::Character.create_new_character('npc_1', 'Neandertaler', 1.0, true),
+  Fundamental::Character.create_new_character('npc_1', 'Neandertaler', args = {npc: true}),
 ]
 
 # ############################################################################

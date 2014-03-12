@@ -55,7 +55,7 @@ class Fundamental::CharactersController < ApplicationController
     request_url       = request.env["HTTP_X_ALT_REQUEST"]
     
     is_ios_client     = use_restkit_api? # improve this! should use client-id or other mechanism
-    use_settler_start = !is_ios_client
+    use_settler_start = false # !is_ios_client  -> temporarely disabled
     
     # ########################################################################
     #

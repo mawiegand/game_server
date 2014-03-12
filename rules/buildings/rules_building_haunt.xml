@@ -25,11 +25,12 @@
   <Cost id="resource_wood" round="true">(EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*700+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))</Cost>
   <Cost id="resource_fur" round="true">(EQUAL(LEVEL,2)*250+EQUAL(LEVEL,3)*400+EQUAL(LEVEL,4)*700+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))</Cost>
   <Cost id="resource_cash" round="true">EQUAL(LEVEL,20)*1</Cost>
-  <ProductionTime shortenable="false">GREATER(LEVEL,1)*(EQUAL(LEVEL,2)*3600+LESS(LEVEL,11)*(3600*FLOOR(POW(LEVEL,1.5)-1))+GREATER(LEVEL,10)*(3600*(FLOOR(POW(LEVEL,0.8)-MAX(LEVEL-5,0)))+29*3600))</ProductionTime>
+  <ProductionTime shortenable="false">EQUAL(LEVEL,1)*3600+FLOOR(7200*(LEVEL-1))
+</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="2" />
-    <GarrisonSizeBonus>LESS(LEVEL,20)*300+EQUAL(LEVEL,20)*400</GarrisonSizeBonus>
-    <ArmySizeBonus>LESS(LEVEL,20)*300+EQUAL(LEVEL,20)*400</ArmySizeBonus>
+    <GarrisonSizeBonus>LESS(LEVEL,20)*200</GarrisonSizeBonus>
+    <ArmySizeBonus>LESS(LEVEL,20)*200</ArmySizeBonus>
     <CommandPoints>GREATER(LEVEL,1)</CommandPoints>
     <UnlockQueue queue="queue_buildings" />
     <DefenseBonus>0.2*LEVEL</DefenseBonus>
