@@ -432,7 +432,7 @@ class Fundamental::Character < ActiveRecord::Base
       scopes:                     ['5dentity'],
     })
   
-    response = identity_provider_access.fetch_signup_gift(request_access_token.identifier, client_id)
+    response = identity_provider_access.fetch_signup_gift(identifier, client_id)
     logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
 
     if response.code == 200
