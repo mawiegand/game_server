@@ -20,7 +20,7 @@ user.save
 
 NUM_FULL_LEVELS   =  3
 NUM_SPARSE_LEVELS =  2
-MAX_LEVEL         =  6
+MAX_LEVEL         =  8
 
 ROUND_NAME   = "Stars"
 ROUND_NUMBER =  4
