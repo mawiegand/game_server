@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.15
+# Version: 1.6.16
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -123,7 +123,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 6,
-                    :build => 15,
+                    :build => 16,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -3902,7 +3902,7 @@ class GameRules::Rules
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "EQUAL(LEVEL,1)*FLOOR(5*1.75)+EQUAL(LEVEL,2)*FLOOR(15*1.75)+EQUAL(LEVEL,3)*FLOOR(60*1.75)+EQUAL(LEVEL,4)*FLOOR(180*1.75)+EQUAL(LEVEL,5)*FLOOR(900*1.75)+EQUAL(LEVEL,6)*FLOOR(3600*1.75)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*1.75)+GREATER(LEVEL,10)*FLOOR((25200+(LEVEL-10)*1800)*1.75)",
+                :formula            => "EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100)",
               },
             
           ],
