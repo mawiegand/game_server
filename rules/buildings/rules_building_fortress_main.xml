@@ -18,11 +18,11 @@
     <p>Die Festung beherrscht die Region. Hier werden Krieger ausgebildet und Steuern erhoben.</p>
   </Flavour>  
   <Population>(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3+250)</Population>
-  <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
-  <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
-  <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*200+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
-  <Cost id="resource_cash" round="true">LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)</Cost>
-  <ProductionTime shortenable="false">LESS(LEVEL,11)*(79200+(7200*LEVEL))</ProductionTime>
+  <Cost id="resource_stone" round="true">(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
+  <Cost id="resource_wood" round="true">(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
+  <Cost id="resource_fur" round="true">(EQUAL(LEVEL,2)*200+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
+  <Cost id="resource_cash" round="true">(EQUAL(LEVEL,10)*2)</Cost>
+  <ProductionTime shortenable="false">GREATER(LEVEL,1)*(79200+(7200*(LEVEL-1)))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="1" />
     <GarrisonSizeBonus>1000</GarrisonSizeBonus>

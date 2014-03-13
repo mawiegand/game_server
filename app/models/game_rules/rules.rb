@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.18
+# Version: 1.6.19
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -123,7 +123,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 6,
-                    :build => 18,
+                    :build => 19,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -5481,8 +5481,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'EQUAL(LEVEL,1)*3600+FLOOR(7200*(LEVEL-1))
-',
+          :production_time => 'FLOOR(7200*(LEVEL-1))',
           :production  => [
             
           ],
@@ -5744,14 +5743,14 @@ class GameRules::Rules
           :experience_factor => 8,
 
           :costs      => {
-            0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
-            1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
-            2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*200+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
-            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)',
+            0 => '(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
+            1 => '(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
+            2 => '(EQUAL(LEVEL,2)*200+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
+            3 => '(EQUAL(LEVEL,10)*2)',
             
           },
 
-          :production_time => 'LESS(LEVEL,11)*(79200+(7200*LEVEL))',
+          :production_time => 'GREATER(LEVEL,1)*(79200+(7200*(LEVEL-1)))',
           :production  => [
             
           ],
