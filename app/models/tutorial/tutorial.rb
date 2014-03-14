@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.5.2
+# Version: 0.5.3
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 5, 
-        :build => 2, 
+        :build => 3, 
       },
       
       :production_test_weights => {
@@ -13314,12 +13314,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 2,
+                :amount => 4,
               },
 
             ],
 
-            :experience_reward => 750,
+            :experience_reward => 1000,
 
           },          
 
@@ -13404,12 +13404,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 4,
+                :amount => 6,
               },
 
             ],
 
-            :experience_reward => 1000,
+            :experience_reward => 2000,
 
           },          
 
@@ -13494,12 +13494,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 6,
+                :amount => 8,
               },
 
             ],
 
-            :experience_reward => 1250,
+            :experience_reward => 3000,
 
           },          
 
@@ -13584,12 +13584,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 8,
+                :amount => 10,
               },
 
             ],
 
-            :experience_reward => 1500,
+            :experience_reward => 4000,
 
           },          
 
@@ -13674,12 +13674,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 10,
+                :amount => 12,
               },
 
             ],
 
-            :experience_reward => 1750,
+            :experience_reward => 5000,
 
           },          
 
@@ -13764,12 +13764,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 12,
+                :amount => 14,
               },
 
             ],
 
-            :experience_reward => 2000,
+            :experience_reward => 6000,
 
           },          
 
@@ -13854,12 +13854,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 14,
+                :amount => 16,
               },
 
             ],
 
-            :experience_reward => 2250,
+            :experience_reward => 7000,
 
           },          
 
@@ -13944,12 +13944,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 16,
+                :amount => 18,
               },
 
             ],
 
-            :experience_reward => 2500,
+            :experience_reward => 8000,
 
           },          
 
@@ -14039,7 +14039,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 3000,
+            :experience_reward => 10000,
 
           },          
 
@@ -14129,7 +14129,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 4000,
+            :experience_reward => 15000,
 
           },          
 
@@ -14214,12 +14214,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 30,
+                :amount => 35,
               },
 
             ],
 
-            :experience_reward => 5000,
+            :experience_reward => 20000,
 
           },          
 

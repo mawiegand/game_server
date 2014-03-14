@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="5" build="2" />
+    <Version major="0" minor="5" build="3" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -5222,8 +5222,8 @@
         <RewardFlavor locale="en_US">Now this is fighting! Let's give this one a fancy name.</RewardFlavor>
         <Requirement quest="quest_fortress" />
         <Rewards>
-          <ResourceReward resource="resource_cash">2</ResourceReward>
-          <ExperienceReward>750</ExperienceReward>
+          <ResourceReward resource="resource_cash">4</ResourceReward>
+          <ExperienceReward>1000</ExperienceReward>
         </Rewards>
         <RewardTests>
           <SettlementTest type="settlement_fortress" min_count="2" />
@@ -5250,8 +5250,8 @@
         <RewardFlavor locale="en_US">That's what I'm talking about! Lets call this one 'Chief rules'.</RewardFlavor>
         <Requirement quest="quest_fortress_2" />
         <Rewards>
-          <ResourceReward resource="resource_cash">4</ResourceReward>
-          <ExperienceReward>1000</ExperienceReward>
+          <ResourceReward resource="resource_cash">6</ResourceReward>
+          <ExperienceReward>2000</ExperienceReward>
         </Rewards>
         <RewardTests>
           <SettlementTest type="settlement_fortress" min_count="3" />
@@ -5278,8 +5278,8 @@
         <RewardFlavor locale="en_US">Now this is fighting! Let's give this one a fancy name.</RewardFlavor>
         <Requirement quest="quest_fortress_3" />
         <Rewards>
-          <ResourceReward resource="resource_cash">6</ResourceReward>
-          <ExperienceReward>1250</ExperienceReward>
+          <ResourceReward resource="resource_cash">8</ResourceReward>
+          <ExperienceReward>3000</ExperienceReward>
         </Rewards>
         <RewardTests>
           <SettlementTest type="settlement_fortress" min_count="4" />
@@ -5306,8 +5306,8 @@
         <RewardFlavor locale="en_US">That's what I'm talking about! Lets call this one 'Chief rules'.</RewardFlavor>
         <Requirement quest="quest_fortress_4" />
         <Rewards>
-          <ResourceReward resource="resource_cash">8</ResourceReward>
-          <ExperienceReward>1500</ExperienceReward>
+          <ResourceReward resource="resource_cash">10</ResourceReward>
+          <ExperienceReward>4000</ExperienceReward>
         </Rewards>
         <RewardTests>
           <SettlementTest type="settlement_fortress" min_count="5" />
@@ -5334,8 +5334,8 @@
         <RewardFlavor locale="en_US">Now this is fighting! Let's give this one a fancy name.</RewardFlavor>
         <Requirement quest="quest_fortress_5" />
         <Rewards>
-          <ResourceReward resource="resource_cash">10</ResourceReward>
-          <ExperienceReward>1750</ExperienceReward>
+          <ResourceReward resource="resource_cash">12</ResourceReward>
+          <ExperienceReward>5000</ExperienceReward>
         </Rewards>
         <RewardTests>
           <SettlementTest type="settlement_fortress" min_count="6" />
@@ -5362,8 +5362,8 @@
         <RewardFlavor locale="en_US">That's what I'm talking about! Lets call this one 'Chief rules'.</RewardFlavor>
         <Requirement quest="quest_fortress_6" />
         <Rewards>
-          <ResourceReward resource="resource_cash">12</ResourceReward>
-          <ExperienceReward>2000</ExperienceReward>
+          <ResourceReward resource="resource_cash">14</ResourceReward>
+          <ExperienceReward>6000</ExperienceReward>
         </Rewards>
         <RewardTests>
           <SettlementTest type="settlement_fortress" min_count="7" />
@@ -5390,8 +5390,8 @@
         <RewardFlavor locale="en_US">Now this is fighting! Let's give this one a fancy name.</RewardFlavor>
         <Requirement quest="quest_fortress_7" />
         <Rewards>
-          <ResourceReward resource="resource_cash">14</ResourceReward>
-          <ExperienceReward>2250</ExperienceReward>
+          <ResourceReward resource="resource_cash">16</ResourceReward>
+          <ExperienceReward>7000</ExperienceReward>
         </Rewards>
         <RewardTests>
           <SettlementTest type="settlement_fortress" min_count="8" />
@@ -5418,8 +5418,8 @@
         <RewardFlavor locale="en_US">That's what I'm talking about! Lets call this one 'Chief rules'.</RewardFlavor>
         <Requirement quest="quest_fortress_6" />
         <Rewards>
-          <ResourceReward resource="resource_cash">16</ResourceReward>
-          <ExperienceReward>2500</ExperienceReward>
+          <ResourceReward resource="resource_cash">18</ResourceReward>
+          <ExperienceReward>8000</ExperienceReward>
         </Rewards>
         <RewardTests>
           <SettlementTest type="settlement_fortress" min_count="9" />
@@ -5447,7 +5447,7 @@
         <Requirement quest="quest_fortress_9" />
         <Rewards>
           <ResourceReward resource="resource_cash">20</ResourceReward>
-          <ExperienceReward>3000</ExperienceReward>
+          <ExperienceReward>10000</ExperienceReward>
         </Rewards>
         <RewardTests>
           <SettlementTest type="settlement_fortress" min_count="10" />
@@ -5475,7 +5475,7 @@
         <Requirement quest="quest_fortress_10" />
         <Rewards>
           <ResourceReward resource="resource_cash">25</ResourceReward>
-          <ExperienceReward>4000</ExperienceReward>
+          <ExperienceReward>15000</ExperienceReward>
         </Rewards>
         <RewardTests>
           <SettlementTest type="settlement_fortress" min_count="12" />
@@ -5502,8 +5502,8 @@
         <RewardFlavor locale="en_US">Now this is fighting! Let's give this one a fancy name.</RewardFlavor>
         <Requirement quest="quest_fortress_15" />
         <Rewards>
-          <ResourceReward resource="resource_cash">30</ResourceReward>
-          <ExperienceReward>5000</ExperienceReward>
+          <ResourceReward resource="resource_cash">35</ResourceReward>
+          <ExperienceReward>20000</ExperienceReward>
         </Rewards>
         <RewardTests>
           <SettlementTest type="settlement_fortress" min_count="15" />
