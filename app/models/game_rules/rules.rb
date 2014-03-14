@@ -4513,9 +4513,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => '25000*POW(LEVEL,1.25)',
-            1 => '25000*POW(LEVEL,1.25)',
-            2 => '25000*POW(LEVEL,1.25)',
+            0 => '20000*POW(LEVEL,1.25)',
+            1 => '20000*POW(LEVEL,1.25)',
+            2 => '20000*POW(LEVEL,1.25)',
             
           },
 
@@ -4529,7 +4529,7 @@ class GameRules::Rules
 
           :abilities   => {
 
-            :alliance_size_bonus => "MAX(LEVEL,0)",
+            :alliance_size_bonus => "1+GREATER(LEVEL,4)+EQUAL(LEVEL,10)",
 
           },
 
