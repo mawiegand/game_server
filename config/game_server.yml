@@ -125,11 +125,11 @@ staging:
   jabber:
     debug:     true
     host:      gs99.wack-a-doo.com
-    muc:       conference.jabber3.wack-a-doo.com
-    bot_jid:   service@jabber3.wack-a-doo.com
+    muc:       conference.gs99.wack-a-doo.com
+    bot_jid:   service@gs99.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
-    admin_jid: shadow-dragon@jabber3.wack-a-doo.com
+    admin_jid: shadow-dragon@gs99.wack-a-doo.com
   
   base_url: 'https://test1.wack-a-doo.com'
   geo_server_base_url:  'https://test1.wack-a-doo.de/geo_server'
