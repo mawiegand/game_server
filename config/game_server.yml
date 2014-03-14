@@ -124,7 +124,7 @@ staging:
 
   jabber:
     debug:     true
-    host:      gs99.wack-a-doo.com
+    host:      jabber.wack-a-doo.com
     muc:       conference.gs99.wack-a-doo.com
     bot_jid:   service@gs99.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
