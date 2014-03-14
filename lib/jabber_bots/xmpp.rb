@@ -12,7 +12,7 @@ module JabberBots
         @runloop = runloop
         Jabber::debug = GAME_SERVER_CONFIG['jabber']['debug']
         @client = Jabber::Client::new(Jabber::JID::new(GAME_SERVER_CONFIG['jabber']['bot_jid']))
-        @client.connect
+        @client.connect(GAME_SERVER_CONFIG['jabber']['host'])
         @client.auth(GAME_SERVER_CONFIG['jabber']['password'])
         @client.send(Jabber::Presence.new.set_show(:away))
         runloop.say "Verbindung zum JabberServer hergestellt"
