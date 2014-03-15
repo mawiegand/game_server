@@ -125,9 +125,9 @@ staging:
   jabber:
     debug:     true
     server:    jabber.wack-a-doo.com
-    domain:    jabber3.wack-a-doo.com
-    muc:       conference.jabber3.wack-a-doo.com
-    bot_jid:   service@jabber3.wack-a-doo.com
+    domain:    gs99.wack-a-doo.com
+    muc:       conference.gs99.wack-a-doo.com
+    bot_jid:   service@gs99.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
 
