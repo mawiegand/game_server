@@ -147,24 +147,14 @@ staging:
 production:
   <<: *defaults
 
-#  jabber:
-#    debug:     true
-#    host:      jabber6.wack-a-doo.com
-#    muc:       conference.jabber6.wack-a-doo.com
-#    bot_jid:   service@jabber6.wack-a-doo.com
-#    password:  P5Dda5eZmvCLFTw2
-#    name:      service
-#    admin_jid: shadow-dragon@jabber6.wack-a-doo.com
-
   jabber:
     debug:     true
-    host:      jabber3.wack-a-doo.com
-    muc:       conference.jabber3.wack-a-doo.com
-    bot_jid:   service@jabber3.wack-a-doo.com
+    host:      jabber.wack-a-doo.com
+    muc:       conference.gs05.wack-a-doo.com
+    bot_jid:   service@gs05.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
-    admin_jid: shadow-dragon@jabber3.wack-a-doo.com
-
+    admin_jid: shadow-dragon@gs05.wack-a-doo.com
   scope: 'wackadoo-round5'
 
   default_character_name: 'WackyUser'
