@@ -135,7 +135,7 @@ module JabberBots
           runloop.say "Fehlerhafte Berechtigung beim Rechte hinzufuegen von #{command.character.name} im Raume #{command.room}."
         end
       rescue Exception => e
-        runloop.say "Die Berechtigungen von #{command.character.name} konnten beim Raum #{command.room} nicht hinzugefuegt werden!"
+        runloop.say "Die Berechtigungen von #{command.character.name} konnten beim Raum #{command.room} nicht hinzugefuegt werden!. jid: #{useritem.jid}."
         runloop.say "Error message: #{e.message}"
         runloop.say "Error backtrace: #{e.backtrace.inspect}"
       end
@@ -152,16 +152,16 @@ module JabberBots
 
           useritem= Jabber::MUC::IqQueryMUCAdminItem.new()
           useritem.affiliation= :none
-          useritem.jid = "#{command.data}@#{GAME_SERVER_CONFIG['jabber']['host']}"
+          useritem.jid = "#{command.data}@#{GAME_SERVER_CONFIG['jabber']['domain']}"
           muc.send_affiliations([useritem])  # wrap this in an array because the code in the gem xmpp / muc / helper / mucclient.rb is broken for non-arrays!!!!
           muc.exit
 
-          runloop.say "Userrechte fuer #{comamnd.character.name} bei Raum #{command.room} entfernt"
+          runloop.say "Userrechte fuer #{command.character.name} bei Raum #{command.room} entfernt. jid: #{useritem.jid}."
         else
-          runloop.say "Fehlerhafte Berechtigung beim Rechte entfernen von #{command.character.name} im Raume #{command.room}"
+          runloop.say "Fehlerhafte Berechtigung beim Rechte entfernen von #{command.character.name} im Raume #{command.room}. jid: #{useritem.jid}."
         end
       rescue Exception => e
-        runloop.say "Die Berechtigungen von #{command.character.name} konnten beim Raum #{command.room} nicht entfernt werden!"
+        runloop.say "Die Berechtigungen von #{command.data}@#{GAME_SERVER_CONFIG['jabber']['domain']} konnten beim Raum #{command.room} nicht entfernt werden!. jid: #{useritem.jid}."
         runloop.say "Error message: #{e.message}"
         runloop.say "Error backtrace: #{e.backtrace.inspect}"
       end
