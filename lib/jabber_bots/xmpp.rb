@@ -12,7 +12,7 @@ module JabberBots
         @runloop = runloop
         Jabber::debug = GAME_SERVER_CONFIG['jabber']['debug']
         @client = Jabber::Client::new(Jabber::JID::new(GAME_SERVER_CONFIG['jabber']['bot_jid']))
-        @client.connect(GAME_SERVER_CONFIG['jabber']['host'])
+        @client.connect(GAME_SERVER_CONFIG['jabber']['server'])
         @client.auth(GAME_SERVER_CONFIG['jabber']['password'])
         @client.send(Jabber::Presence.new.set_show(:away))
         runloop.say "Verbindung zum JabberServer hergestellt"
@@ -26,12 +26,6 @@ module JabberBots
 
     def self.close
       @client.close if @client
-    end
-
-    def self.message(text)
-      message = Jabber::Message::new(GAME_SERVER_CONFIG['jabber']['admin_jid'], "#{text}")
-      message.set_type(:chat)
-      @client.send message
     end
 
     def self.muc_create(command)
@@ -129,7 +123,7 @@ module JabberBots
 
           useritem= Jabber::MUC::IqQueryMUCAdminItem.new()
           useritem.affiliation= :member
-          useritem.jid = "#{command.data}@#{GAME_SERVER_CONFIG['jabber']['host']}"
+          useritem.jid = "#{command.data}@#{GAME_SERVER_CONFIG['jabber']['domain']}"
 
           runloop.say "JID: #{ useritem.jid }"
           muc.send_affiliations([useritem])  # wrap this in an array because the code in the gem xmpp / muc / helper / mucclient.rb is broken for non-arrays!!!!
