@@ -30,8 +30,8 @@ production:   # use the postgres on the database server
   adapter: postgresql
   encoding: UTF8
   database: game_server
-#  host: gs04.wack-a-doo.de
-  port: 5686
+  host: gs04.wack-a-doo.de
+  port: 5432
   username: run-gs
 # password:
 
