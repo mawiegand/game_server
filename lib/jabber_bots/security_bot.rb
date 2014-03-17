@@ -77,6 +77,9 @@ class JabberBots::SecurityBot
         "plauderhöhle@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
                 "help@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
               "handel@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
+            "beginner@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
+             "insider@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
+    "whisperingcavern@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
       ]
       runloop.say "6"
 
