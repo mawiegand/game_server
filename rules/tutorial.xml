@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="5" build="3" />
+    <Version major="0" minor="5" build="4" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -5118,8 +5118,8 @@
     <Quest id="quest_alliance_members3" advisor="chef">
       <Name>Alliance Members</Name>
       <Name locale="de_DE">Allianzmitglieder</Name>
-      <Task>Be a Member of an alliance with atleast 22 others.</Task>
-      <Task locale="de_DE">Sei Mitglied in einer Allianz mit mindestens 23 Mitgliedern.</Task>
+      <Task>Be a Member of an alliance with atleast 15 others.</Task>
+      <Task locale="de_DE">Sei Mitglied in einer Allianz mit mindestens 16 Mitgliedern.</Task>
       <Description locale="de_DE">
         <p>Deine Allianz muss wachsen, wenn ihr euch in dieser grausamen Welt durchsetzten wollt. Sucht nach geeigneten Mitgliedern und nehmt sie bei euch auf, dann könnt ihr bald schon bei den Mächtigen mitmischen.</p>
       </Description>
@@ -5139,7 +5139,7 @@
         <ExperienceReward>1100</ExperienceReward>
       </Rewards>
       <RewardTests>
-        <AllianceMembersTest min_count="23" />
+        <AllianceMembersTest min_count="16" />
       </RewardTests>
     </Quest>
 
@@ -5202,7 +5202,7 @@
         <UIMarker>mark_found_settlement</UIMarker>
       </Quest -->
       
-          <!-- 601 -->
+        <!-- 601 -->
       <Quest id="quest_fortress_2" advisor="warrior">
         <Name>2nd Fortress</Name>
         <Name locale="de_DE">2te Festung</Name>
@@ -5220,7 +5220,6 @@
         <RewardText locale="en_US">Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.</RewardText>
         <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?</RewardFlavor>
         <RewardFlavor locale="en_US">Now this is fighting! Let's give this one a fancy name.</RewardFlavor>
-        <Requirement quest="quest_fortress" />
         <Rewards>
           <ResourceReward resource="resource_cash">4</ResourceReward>
           <ExperienceReward>1000</ExperienceReward>
@@ -5248,7 +5247,6 @@
         <RewardText locale="en_US">Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.</RewardText>
         <RewardFlavor locale="de_DE">Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.</RewardFlavor>
         <RewardFlavor locale="en_US">That's what I'm talking about! Lets call this one 'Chief rules'.</RewardFlavor>
-        <Requirement quest="quest_fortress_2" />
         <Rewards>
           <ResourceReward resource="resource_cash">6</ResourceReward>
           <ExperienceReward>2000</ExperienceReward>
