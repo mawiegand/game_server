@@ -99,7 +99,7 @@ namespace :deploy do
   desc "Start Notification Ticker"
   task :start_notification_ticker do
     if stage != 'staging_test'
-      run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker start"
+      #run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker start"
     end
   end
 
