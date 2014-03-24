@@ -171,7 +171,6 @@ class Military::Army < ActiveRecord::Base
       (GAME_SERVER_CONFIG['ap_regeneration_home_region_factor']   || 0.75)
     end
       1.0
-    end
   end 
   
   def regeneration_duration 
