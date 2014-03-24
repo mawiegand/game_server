@@ -19,8 +19,8 @@ class Map::Location < ActiveRecord::Base
   scope :settled,                   where("settlement_type_id != ?", Settlement::Settlement::TYPE_NONE)
   scope :empty,                     where("settlement_type_id = ? AND claimed_by IS NULL", Settlement::Settlement::TYPE_NONE)
   scope :non_empty,                 where("settlement_type_id != ? OR claimed_by IS NOT NULL", Settlement::Settlement::TYPE_NONE)
-  scope :claimed,                   where("claimed_by IS NULL")
-  scope :non_claimed,               where("claimed_by IS NOT NULL")
+  scope :claimed,                   where("claimed_by IS NOT NULL")
+  scope :non_claimed,               where("claimed_by IS NULL")
   scope :home_bases,                where("settlement_type_id = ?", Settlement::Settlement::TYPE_HOME_BASE)
 
   def self.find_empty

@@ -150,12 +150,11 @@ production:
   jabber:
     debug:     true
     server:    jabber.wack-a-doo.com
-    domain:    gs05.wack-a-doo.com
-    muc:       conference.gs05.wack-a-doo.com
-    bot_jid:   service@gs05.wack-a-doo.com
+    domain:    jabber5.wack-a-doo.com
+    muc:       conference.jabber5.wack-a-doo.com
+    bot_jid:   service@jabber5.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
-    admin_jid: shadow-dragon@gs05.wack-a-doo.com
   scope: 'wackadoo-round5'
 
   default_character_name: 'WackyUser'

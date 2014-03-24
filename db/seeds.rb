@@ -20,10 +20,10 @@ user.save
 
 NUM_FULL_LEVELS   =  3
 NUM_SPARSE_LEVELS =  2
-MAX_LEVEL         =  9
+MAX_LEVEL         =  8
 
-ROUND_NAME   = "Stars"
-ROUND_NUMBER =  4
+ROUND_NAME   = "Life"
+ROUND_NUMBER =  5
 
 NPC_MIN_UNITS = 60
 NPC_MAX_UNITS = 120

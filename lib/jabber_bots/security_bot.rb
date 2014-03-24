@@ -77,6 +77,9 @@ class JabberBots::SecurityBot
         "plauderhöhle@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
                 "help@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
               "handel@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
+            "beginner@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
+             "insider@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
+    "whisperingcavern@#{GAME_SERVER_CONFIG['jabber']['muc']}/Wächter | 5D",
       ]
       runloop.say "6"
 
@@ -101,10 +104,10 @@ class JabberBots::SecurityBot
     default from: Rails.env.production? ?  "watchguard@gs05.wack-a-doo.com" : "watchguard@test1.wack-a-doo.com"
 
     def breach_report(uid, domain, nickname, presence)
-      mail(:to => GAME_SERVER_CONFIG['status_email_recipient'],
-           :subject => "CHAT BOT: possible security breach by #{uid}.",
-           :body => "#{uid}@#{domain} tried to access the chat as #{nickname}.\n\n#{presence}"
-      )
+      #mail(:to => GAME_SERVER_CONFIG['status_email_recipient'],
+      #     :subject => "CHAT BOT: possible security breach by #{uid}.",
+      #     :body => "#{uid}@#{domain} tried to access the chat as #{nickname}.\n\n#{presence}"
+      #)
     end
 
     def missing_report(presence)
