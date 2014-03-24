@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.5.3
+# Version: 0.5.4
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 5, 
-        :build => 3, 
+        :build => 4, 
       },
       
       :production_test_weights => {
@@ -2977,7 +2977,7 @@ class Tutorial::Tutorial
 
           },
 
-          :successor_quests => [135, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -13089,9 +13089,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Be a Member of an alliance with atleast 22 others.",
+            :en_US => "Be a Member of an alliance with atleast 15 others.",
   
-            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 23 Mitgliedern.",
+            :de_DE => "Sei Mitglied in einer Allianz mit mindestens 16 Mitgliedern.",
                 
           },
           :flavour => {
@@ -13158,7 +13158,7 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :alliance_members_test => {
-              :min_count => 23,
+              :min_count => 16,
             },
 
           },          
@@ -13300,13 +13300,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
-            
-            :quest => 'quest_fortress',
-
-          },
-
-          :successor_quests => [136, ],
+          :successor_quests => [],
 
           :rewards => {
             
@@ -13388,12 +13382,6 @@ class Tutorial::Tutorial
   
             :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_fortress_2',
-
           },
 
           :successor_quests => [137, ],
