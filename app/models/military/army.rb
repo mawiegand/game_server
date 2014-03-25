@@ -706,6 +706,7 @@ class Military::Army < ActiveRecord::Base
     army.alliance = army.owner.alliance
     army.alliance_tag = army.owner.alliance_tag
     army.alliance_color = army.owner.alliance_color
+    army.ap_next = DateTime.now.advance(:seconds =>  army.regeneration_duration)
 
     details = army.build_details()
     
