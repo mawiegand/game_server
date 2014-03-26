@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.21
+# Version: 1.6.22
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -123,7 +123,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 6,
-                    :build => 21,
+                    :build => 22,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -3966,7 +3966,7 @@ class GameRules::Rules
           :takeover_destroy  => false,
           :experience_factor => 8,
 
-          :experience_production => '(CEIL((((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))/12.5)*1.5)))',
+          :experience_production => '(CEIL((((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))/12.5)*1.5)))+EQUAL(LEVEL,10)',
 
           :requirementGroups=> [
 
@@ -7427,14 +7427,14 @@ class GameRules::Rules
 
 
         },              #   END OF Expedition
-        {              #   Mushrooms
+        {              #   Mushroom gathering
           :id          => 8,
           :symbolic_id => :assignment_mushrooms,
           :level       => 6,
           :advisor     => "girl",
           :name        => {
             
-            :en_US => "Mushrooms",
+            :en_US => "Mushroom gathering",
   
             :de_DE => "Pilze sammeln",
   
@@ -7443,14 +7443,14 @@ class GameRules::Rules
             
             :de_DE => "Was für ein schöner Tag zum Pilze sammeln.",
   
-            :en_US => "We will loot a bunch of resources for sure!",
+            :en_US => "What a nice day for gathering mushrooms.",
   
           },
           :description => {
             
             :de_DE => "<p>Der Sammler lädt die Dicken Keulen zum Pilze sammeln ein. Bei einem lauschigen Spaziergang erklärt der Sammler den Unterschied zwischen essbaren und giftigen Pilzen. Auf dem Rückweg wird noch ein wenig Feuerholz für das Lagerfeuer gesammelt, wobei auch die ein oder andere Kröte entdeckt wird.</p>",
   
-            :en_US => "<p>The world is square! At least, that's what one of the bar's late night patrons keeps telling whoever is in his immediate vicinity. After someone tells him that every child knows that the world is an egg, he suddenly gets rather agitated and yells that he needs to find more people to join him on his expedition to find the corners of the world and loot their riches. And it must be said, you've never been one to  say no to riches.</p>",
+            :en_US => "<p>Your gatherers and thick clubs are out for a walk through the woods. On the way back they bring some especially nice branches and golden frogs with them.</p>",
   
           },
 
@@ -7458,7 +7458,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Geh mit dem Sammler in den Wald.</p>",
   
-            :en_US => "<p>Undertake an expedition</p>",
+            :en_US => "<p>Take a stroll through the woods.</p>",
   
           },
 
@@ -7489,7 +7489,7 @@ class GameRules::Rules
           },
 
 
-        },              #   END OF Mushrooms
+        },              #   END OF Mushroom gathering
         {              #   Gone fishing
           :id          => 9,
           :symbolic_id => :assignment_fishing,
@@ -7506,14 +7506,14 @@ class GameRules::Rules
             
             :de_DE => "Lecker Fisch.",
   
-            :en_US => "We will loot a bunch of resources for sure!",
+            :en_US => "Yummy fish!",
   
           },
           :description => {
             
             :de_DE => "<p>Der Chef liebt Fisch. Gegrillt, in Fett gebraten oder im Holzofen gegart. Regelmäßig schickt er seine Zielwerfer aus, um ihm am Fluss ein paar Fische zu fangen. Die Zielwerfer suchen sich natürlich feinste Kieselsteine für ihre Schleudern und finden dabei auch immer wieder ein paar Kröten.</p>",
   
-            :en_US => "<p>The world is square! At least, that's what one of the bar's late night patrons keeps telling whoever is in his immediate vicinity. After someone tells him that every child knows that the world is an egg, he suddenly gets rather agitated and yells that he needs to find more people to join him on his expedition to find the corners of the world and loot their riches. And it must be said, you've never been one to  say no to riches.</p>",
+            :en_US => "<p>The bigwigs love fish. Grilled, fried, boiled there is no kind they dont enjoy. They often send out their throwers to hunt some, and occasionaly they will even bring back something other than their throwing stones.</p>",
   
           },
 
@@ -7521,7 +7521,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Der Chef schickt die Zielwerfer zum Fische fangen.</p>",
   
-            :en_US => "<p>Undertake an expedition</p>",
+            :en_US => "<p>The chief tells some troops to go fish.</p>",
   
           },
 
