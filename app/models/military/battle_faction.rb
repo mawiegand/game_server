@@ -78,12 +78,12 @@ class Military::BattleFaction < ActiveRecord::Base
     owner_of_largest_army
   end
 
-  def takeover_candidate_with_largest_army
+  def takeover_candidate_with_largest_army(target_settlement)
     owner_of_largest_army = nil
     participants.each do |participant|
-      if (owner_of_largest_army.nil? &&  !participant.army.nil? && !participant.army.empty? && participant.army.owner.can_takeover_settlement? && (battle.location.fortress? || battle.location.region.settleable_by?(participant.army.owner)))
+      if (owner_of_largest_army.nil? &&  !participant.army.nil? && !participant.army.empty? && target_settlement.can_be_taken_over_by?(participant.army.owner) && (battle.location.fortress? || battle.location.region.settleable_by?(participant.army.owner)))
         owner_of_largest_army = participant
-      elsif (!owner_of_largest_army.nil? &&  !participant.army.nil? && !participant.army.empty? && participant.army.strength > owner_of_largest_army.army.strength && participant.army.owner.can_takeover_settlement? && (battle.location.fortress? || battle.location.region.settleable_by?(participant.army.owner)))  
+      elsif (!owner_of_largest_army.nil? &&  !participant.army.nil? && !participant.army.empty? && participant.army.strength > owner_of_largest_army.army.strength && target_settlement.can_be_taken_over_by?(participant.army.owner) && (battle.location.fortress? || battle.location.region.settleable_by?(participant.army.owner)))  
         owner_of_largest_army = participant
       end
     end
