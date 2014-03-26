@@ -257,24 +257,24 @@
   </AssignmentType>
   
   <AssignmentType id="assignment_mushrooms" advisor="girl" level="6">
-    <Name>Mushrooms</Name>
+    <Name>Mushroom gathering</Name>
     <Name lang="de_DE">Pilze sammeln</Name>
     
     <Flavour lang="de_DE">Was für ein schöner Tag zum Pilze sammeln.</Flavour>
-    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
+    <Flavour lang="en_US">What a nice day for gathering mushrooms.</Flavour>
     
     <ShortDescription lang="de_DE">
       <p>Geh mit dem Sammler in den Wald.</p>
     </ShortDescription>
     <ShortDescription lang="en_US">
-      <p>Undertake an expedition</p>
+      <p>Take a stroll through the woods.</p>
     </ShortDescription>
     
     <Description lang="de_DE">
       <p>Der Sammler lädt die Dicken Keulen zum Pilze sammeln ein. Bei einem lauschigen Spaziergang erklärt der Sammler den Unterschied zwischen essbaren und giftigen Pilzen. Auf dem Rückweg wird noch ein wenig Feuerholz für das Lagerfeuer gesammelt, wobei auch die ein oder andere Kröte entdeckt wird.</p>
     </Description>
     <Description lang="en_US">
-      <p>The world is square! At least, that's what one of the bar's late night patrons keeps telling whoever is in his immediate vicinity. After someone tells him that every child knows that the world is an egg, he suddenly gets rather agitated and yells that he needs to find more people to join him on his expedition to find the corners of the world and loot their riches. And it must be said, you've never been one to  say no to riches.</p>
+      <p>Your gatherers and thick clubs are out for a walk through the woods. On the way back they bring some especially nice branches and golden frogs with them.</p>
     </Description>
     
     <UnitDeposit id="clubbers_2">50</UnitDeposit>
@@ -292,20 +292,20 @@
     <Name lang="de_DE">Fische fangen</Name>
     
     <Flavour lang="de_DE">Lecker Fisch.</Flavour>
-    <Flavour lang="en_US">We will loot a bunch of resources for sure!</Flavour>
+    <Flavour lang="en_US">Yummy fish!</Flavour>
     
     <ShortDescription lang="de_DE">
       <p>Der Chef schickt die Zielwerfer zum Fische fangen.</p>
     </ShortDescription>
     <ShortDescription lang="en_US">
-      <p>Undertake an expedition</p>
+      <p>The chief tells some troops to go fish.</p>
     </ShortDescription>
     
     <Description lang="de_DE">
       <p>Der Chef liebt Fisch. Gegrillt, in Fett gebraten oder im Holzofen gegart. Regelmäßig schickt er seine Zielwerfer aus, um ihm am Fluss ein paar Fische zu fangen. Die Zielwerfer suchen sich natürlich feinste Kieselsteine für ihre Schleudern und finden dabei auch immer wieder ein paar Kröten.</p>
     </Description>
     <Description lang="en_US">
-      <p>The world is square! At least, that's what one of the bar's late night patrons keeps telling whoever is in his immediate vicinity. After someone tells him that every child knows that the world is an egg, he suddenly gets rather agitated and yells that he needs to find more people to join him on his expedition to find the corners of the world and loot their riches. And it must be said, you've never been one to  say no to riches.</p>
+      <p>The bigwigs love fish. Grilled, fried, boiled there is no kind they dont enjoy. They often send out their throwers to hunt some, and occasionaly they will even bring back something other than their throwing stones.</p>
     </Description>
     
     <UnitDeposit id="thrower_2">50</UnitDeposit>
