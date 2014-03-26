@@ -28,8 +28,8 @@
   <ProductionTime shortenable="false">FLOOR(7200*(LEVEL-1))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="2" />
-    <GarrisonSizeBonus>LESS(LEVEL,20)*200</GarrisonSizeBonus>
-    <ArmySizeBonus>LESS(LEVEL,20)*200</ArmySizeBonus>
+    <GarrisonSizeBonus>300</GarrisonSizeBonus>
+    <ArmySizeBonus>300</ArmySizeBonus>
     <CommandPoints>GREATER(LEVEL,1)</CommandPoints>
     <UnlockQueue queue="queue_buildings" />
     <DefenseBonus>0.2*LEVEL</DefenseBonus>

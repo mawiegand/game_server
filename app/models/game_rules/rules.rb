@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.19
+# Version: 1.6.20
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -123,7 +123,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 6,
-                    :build => 19,
+                    :build => 20,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -5509,9 +5509,9 @@ class GameRules::Rules
 
             :unlock_building_slots => "MIN(1+MIN(LEVEL,10),11)",
 
-            :garrison_size_bonus => "LESS(LEVEL,20)*200",
+            :garrison_size_bonus => "300",
 
-            :army_size_bonus => "LESS(LEVEL,20)*200",
+            :army_size_bonus => "300",
 
           },
 
@@ -5538,9 +5538,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 100 Einheiten plus 50 pro Level auf Level 1-10 und 20 pro Level auf Level 11-20. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>",
+            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 50 pro Level auf Level 1-10 und 20 pro Level auf Level 11-20. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>",
   
-            :en_US => "<p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 100 plus 50 per level at Levels 1-10 and 20 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>",
+            :en_US => "<p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 50 per level at Levels 1-10 and 20 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>",
                 
           },
 
@@ -5606,7 +5606,7 @@ class GameRules::Rules
 
             :garrison_size_bonus => "100+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
 
-            :army_size_bonus => "100+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
+            :army_size_bonus => "50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
 
           },
 
@@ -7250,7 +7250,7 @@ class GameRules::Rules
           },
 
           :unit_deposits => {
-            0 => '100',
+            1 => '100',
             
           },
 
@@ -7268,7 +7268,7 @@ class GameRules::Rules
 
           ],
 
-            :experience_reward => 250,
+            :experience_reward => 400,
 
           },
 
@@ -7278,7 +7278,7 @@ class GameRules::Rules
           :id          => 6,
           :symbolic_id => :assignment_caravan,
           :level       => 9,
-          :advisor     => "chief",
+          :advisor     => "chef",
           :name        => {
             
             :en_US => "Caravan",
@@ -7354,7 +7354,7 @@ class GameRules::Rules
           :id          => 7,
           :symbolic_id => :assignment_expedition,
           :level       => 10,
-          :advisor     => "chief",
+          :advisor     => "chef",
           :name        => {
             
             :en_US => "Expedition",
@@ -7427,6 +7427,132 @@ class GameRules::Rules
 
 
         },              #   END OF Expedition
+        {              #   Mushrooms
+          :id          => 8,
+          :symbolic_id => :assignment_mushrooms,
+          :level       => 6,
+          :advisor     => "girl",
+          :name        => {
+            
+            :en_US => "Mushrooms",
+  
+            :de_DE => "Pilze sammeln",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Was für ein schöner Tag zum Pilze sammeln.",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Sammler lädt die Dicken Keulen zum Pilze sammeln ein. Bei einem lauschigen Spaziergang erklärt der Sammler den Unterschied zwischen essbaren und giftigen Pilzen. Auf dem Rückweg wird noch ein wenig Feuerholz für das Lagerfeuer gesammelt, wobei auch die ein oder andere Kröte entdeckt wird.</p>",
+  
+            :en_US => "<p>The world is square! At least, that's what one of the bar's late night patrons keeps telling whoever is in his immediate vicinity. After someone tells him that every child knows that the world is an egg, he suddenly gets rather agitated and yells that he needs to find more people to join him on his expedition to find the corners of the world and loot their riches. And it must be said, you've never been one to  say no to riches.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Geh mit dem Sammler in den Wald.</p>",
+  
+            :en_US => "<p>Undertake an expedition</p>",
+  
+          },
+
+          :unit_deposits => {
+            2 => '50',
+            
+          },
+
+          :duration => 86400,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_wood,
+                :amount => 5000,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Mushrooms
+        {              #   Gone fishing
+          :id          => 9,
+          :symbolic_id => :assignment_fishing,
+          :level       => 8,
+          :advisor     => "chef",
+          :name        => {
+            
+            :en_US => "Gone fishing",
+  
+            :de_DE => "Fische fangen",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Lecker Fisch.",
+  
+            :en_US => "We will loot a bunch of resources for sure!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Chef liebt Fisch. Gegrillt, in Fett gebraten oder im Holzofen gegart. Regelmäßig schickt er seine Zielwerfer aus, um ihm am Fluss ein paar Fische zu fangen. Die Zielwerfer suchen sich natürlich feinste Kieselsteine für ihre Schleudern und finden dabei auch immer wieder ein paar Kröten.</p>",
+  
+            :en_US => "<p>The world is square! At least, that's what one of the bar's late night patrons keeps telling whoever is in his immediate vicinity. After someone tells him that every child knows that the world is an egg, he suddenly gets rather agitated and yells that he needs to find more people to join him on his expedition to find the corners of the world and loot their riches. And it must be said, you've never been one to  say no to riches.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Der Chef schickt die Zielwerfer zum Fische fangen.</p>",
+  
+            :en_US => "<p>Undertake an expedition</p>",
+  
+          },
+
+          :unit_deposits => {
+            6 => '50',
+            
+          },
+
+          :duration => 115200,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Gone fishing
       ],                # END OF ASSIGNMENT TYPES
 
 # ## SPECIAL ASSIGNMENT TYPES ##########################################################
@@ -7620,7 +7746,7 @@ class GameRules::Rules
           :id          => 2,
           :symbolic_id => :special_assignment_hobbits,
           :level       => 9,
-          :advisor     => "chief",
+          :advisor     => "chef",
           :probability_factor => 4,
           :name        => {
             
@@ -7657,7 +7783,7 @@ class GameRules::Rules
             :training_queue_tests => [
               
             {
-              :unit => 'unit_little_chief',
+              :unit => 'unit_little_chef',
               :min_count => 1,
             },
 
