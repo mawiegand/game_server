@@ -105,7 +105,7 @@
     </Description>
     
     <AssignmentTests>
-      <TrainingQueueTest unit="unit_little_chef" min_count="1" />
+      <TrainingQueueTest unit="unit_little_chief" min_count="1" />
     </AssignmentTests>
       
     <SpecialAssignmentRewards>
