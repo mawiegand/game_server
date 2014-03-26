@@ -83,7 +83,7 @@
 
   </SpecialAssignmentType>
   
-  <SpecialAssignmentType id="special_assignment_hobbits" advisor="chief" level="9" probability_factor="4">
+  <SpecialAssignmentType id="special_assignment_hobbits" advisor="chef" level="9" probability_factor="4">
     <Name>Escortmission</Name>
     <Name lang="de_DE">Die Eskorte</Name>
     
@@ -105,7 +105,7 @@
     </Description>
     
     <AssignmentTests>
-      <TrainingQueueTest unit="unit_little_chief" min_count="1" />
+      <TrainingQueueTest unit="unit_little_chef" min_count="1" />
     </AssignmentTests>
       
     <SpecialAssignmentRewards>
