@@ -74,6 +74,7 @@ GameServer::Application.routes.draw do
         end
         
         resources :alliance_leader_votes
+        resources :diplomacy_relations
         
         resources :victory_progresses 
         resources :victory_progress_leaders, :only => [ :index ]

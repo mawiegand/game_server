@@ -11,6 +11,8 @@ class Fundamental::Alliance < ActiveRecord::Base
   has_many   :victory_progresses, :class_name => "Fundamental::VictoryProgress", :foreign_key => "alliance_id", :inverse_of => :alliance, :dependent => :destroy
   has_many   :artifacts, :class_name => "Fundamental::Artifact",      :foreign_key => "alliance_id", :inverse_of => :alliance
   has_many   :leader_votes, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "alliance_id", :inverse_of => :alliance
+  has_many   :diplomacy_source_relations, :class_name => "Fundamental::DiplomacyRelation", :foreign_key => "source_alliance_id", :inverse_of => :source_alliance
+  has_many   :diplomacy_target_relations, :class_name => "Fundamental::DiplomacyRelation", :foreign_key => "target_alliance_id", :inverse_of => :target_alliance
 
   has_many   :resource_effects,     :class_name => "Effect::AllianceResourceEffect",     :foreign_key => "alliance_id", :inverse_of => :alliance
   has_many   :construction_effects, :class_name => "Effect::AllianceConstructionEffect", :foreign_key => "alliance_id", :inverse_of => :alliance
