@@ -487,7 +487,7 @@ class Settlement::Settlement < ActiveRecord::Base
   end
 
   def can_be_taken_over_by?(character)
-    can_be_taken_over? && character.can_takeover_settlement? && (self.owner.npc? || self.alliance.nil? || self.alliance == character.alliance)
+    can_be_taken_over? && character.can_takeover_settlement? && (self.owner.npc? || self.alliance.nil? || self.alliance == character.alliance || self.alliance.is_at_war_with?(character.alliance))
   end
   
   ############################################################################

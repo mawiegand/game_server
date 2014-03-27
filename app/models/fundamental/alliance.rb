@@ -183,6 +183,10 @@ class Fundamental::Alliance < ActiveRecord::Base
     GameRules::Rules.the_rules.alliance_max_members + self.size_bonus
   end
   
+  def is_at_war_with?(alliance)
+    self.diplomacy_source_relations.where(target_alliance_id: alliance.id).war.present?
+  end
+  
   def add_unique_invitation_code
     begin
       self.invitation_code = Util.make_random_string(16, true)
