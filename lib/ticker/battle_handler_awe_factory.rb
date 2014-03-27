@@ -128,7 +128,7 @@ module Ticker
       awe_unit.baseDamage = 0
       awe_unit.criticalDamage = 0
     else
-      awe_unit.baseDamage = unit_type[:attack]                     
+      awe_unit.baseDamage = unit_type[:attack]                     * army.ap_attack_factor # effectiveness due to few aps                    
       awe_unit.criticalDamage = unit_type[:critical_hit_damage]    + army.critical_damage_bonus
     end
     awe_unit.criticalProbability = unit_type[:critical_hit_chance] * (1.0+army.critical_hit_chance_modifier)     # critical hit chance is multiplied with the rank

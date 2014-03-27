@@ -72,7 +72,7 @@ class Military::Army < ActiveRecord::Base
       home_settlement_id:   settlement.id,
       ap_max:       4,
       ap_present:   0,
-      ap_seconds_per_point: Military::Army.regeneration_duration,
+      ap_seconds_per_point: Military::Army.regeneration_base_duration,
       mode:         MODE_IDLE,
       kills:        0,
       victories:    0,
@@ -110,7 +110,7 @@ class Military::Army < ActiveRecord::Base
       home_settlement_id:   nil,
       ap_max:       4,
       ap_present:   4,
-      ap_seconds_per_point: Military::Army.regeneration_duration,
+      ap_seconds_per_point: Military::Army.regeneration_base_duration,
       mode:         MODE_IDLE,
       kills:        0,
       victories:    0,
@@ -144,11 +144,39 @@ class Military::Army < ActiveRecord::Base
     nil
   end
 
-  
-  def self.regeneration_duration
+
+  def self.regeneration_base_duration
     GAME_SERVER_CONFIG['ap_regeneration_duration'] * GAME_SERVER_CONFIG['base_time_factor']
   end
+
+  def in_allied_region?
+    relation = relation_to(self.region) 
+    relation == Fundamental::Relation::RELATION_TYPE_SELF || relation == Fundamental::Relation::RELATION_TYPE_SAME_ALLIANCE
+  end
+
+  def at_home_base?
+    !self.home.nil? && self.location == self.home.location
+  end
   
+  def in_home_region?
+    !self.home.nil? && self.region == self.home.region
+  end
+
+  def regeneration_factor
+    if at_home_base?
+      (GAME_SERVER_CONFIG['ap_regeneration_home_base_factor']     || 0.25)
+    elsif in_allied_region?
+      (GAME_SERVER_CONFIG['ap_regeneration_allied_region_factor'] || 0.50)
+    elsif in_home_region?
+      (GAME_SERVER_CONFIG['ap_regeneration_home_region_factor']   || 0.75)
+    else
+      1.0
+    end
+  end 
+  
+  def regeneration_duration 
+    Military::Army.regeneration_base_duration * self.regeneration_factor
+  end
   
   # returns whether an action point update is overdue
   def needs_ap_update?
@@ -164,7 +192,7 @@ class Military::Army < ActiveRecord::Base
       self.ap_next = nil
       self.save
     elsif ap_present < ap_max && ap_next.nil?
-      self.ap_next = Time.now.advance(:seconds => Military::Army.regeneration_duration)     # regeneration time
+      self.ap_next = Time.now.advance(:seconds => self.regeneration_duration)     # regeneration time
       logger.error("inconsistent state in database: #{ ap_present } of #{ ap_max } action points, but not set ap_next. FIXED THIS BY SETTING AP_NEXT TO: #{ ap_next }.")
       self.save
     elsif ap_present < ap_max && !ap_next.nil?
@@ -173,7 +201,7 @@ class Military::Army < ActiveRecord::Base
         changed = true
         logger.error("Regenerate one AP: #{ ap_present }+1 of #{ ap_max } should have been regenerated at #{ ap_next }, was regenerated at #{ Time.now }.")        
         self.ap_present += 1
-        self.ap_next = self.ap_present < self.ap_max ? self.ap_next.advance(:seconds => Military::Army.regeneration_duration) : nil    # add regeneration time or nil, in case it's fully regenerated
+        self.ap_next = self.ap_present < self.ap_max ? self.ap_next.advance(:seconds => self.regeneration_duration) : nil    # add regeneration time or nil, in case it's fully regenerated
       end 
       self.save if changed
     end
@@ -211,7 +239,7 @@ class Military::Army < ActiveRecord::Base
     raise BadRequestError.new('Should consume more AP than available.') if n > self.ap_present   # NOT beautiful: USE A NOT-HTTP-RELATED EXCEPTION
     self.ap_present -= n
     if self.ap_next.blank?
-      self.ap_next = Time.now.advance(:seconds => Military::Army.regeneration_duration)     # regeneration time
+      self.ap_next = Time.now.advance(:seconds => self.regeneration_duration)     # regeneration time
     end
   end
     
@@ -351,6 +379,13 @@ class Military::Army < ActiveRecord::Base
     if self.empty?
       self.destroy
     end
+  end
+  
+  def ap_attack_factor
+    max  = [self.ap_max-2, 1].max  # two below max is ok!
+    step = 0.5 / max
+    
+    [self.ap_present * step + 0.5, 1].min
   end
   
   def critical_damage_bonus
@@ -599,13 +634,13 @@ class Military::Army < ActiveRecord::Base
       name: I18n.translate('application.military.neanderthal'),
       ap_max: 4,
       ap_present: 4,
-      ap_seconds_per_point: Military::Army.regeneration_duration,
+      ap_seconds_per_point: Military::Army.regeneration_base_duration,
       mode: Military::Army::MODE_IDLE,
       stance: 0, 
       size_max: 2000,
       exp: 0,
       rank: 0,
-      ap_next: DateTime.now.advance(:seconds => Military::Army.regeneration_duration),
+      ap_next: DateTime.now.advance(:seconds => Military::Army.regeneration_base_duration),
       garrison: false,
       kills: 0,
       victories: 0,
@@ -651,13 +686,13 @@ class Military::Army < ActiveRecord::Base
       home_settlement_name: location.settlement.name,
       ap_max: 4,
       ap_present: 2,
-      ap_seconds_per_point:  Military::Army.regeneration_duration,
+      ap_seconds_per_point:  Military::Army.regeneration_base_duration,
       mode: Military::Army::MODE_IDLE,
       stance: 0, 
       size_max: location.settlement.army_size_max || 1000,  # 1000 is default size
       exp: 0,
       rank: 0,
-      ap_next: DateTime.now.advance(:seconds =>  Military::Army.regeneration_duration),
+      ap_next: DateTime.now.advance(:seconds =>  Military::Army.regeneration_base_duration),
       garrison: false,
       kills: 0,
       victories: 0,
@@ -671,6 +706,7 @@ class Military::Army < ActiveRecord::Base
     army.alliance = army.owner.alliance
     army.alliance_tag = army.owner.alliance_tag
     army.alliance_color = army.owner.alliance_color
+    army.ap_next = DateTime.now.advance(:seconds =>  army.regeneration_duration)
 
     details = army.build_details()
     
