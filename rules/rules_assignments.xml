@@ -173,17 +173,17 @@
     
     <Cost id="resource_stone">600</Cost>
     <Cost id="resource_wood">400</Cost>
-    <UnitDeposit id="warrior">100</UnitDeposit>
+    <UnitDeposit id="clubbers">100</UnitDeposit>
     
     <Rewards>
       <ResourceReward resource="resource_fur">3000</ResourceReward>
-      <ExperienceReward>250</ExperienceReward>
+      <ExperienceReward>400</ExperienceReward>
     </Rewards>
     
     <Duration>21600</Duration>
   </AssignmentType>
   
-  <AssignmentType id="assignment_caravan" advisor="chief" level="9">
+  <AssignmentType id="assignment_caravan" advisor="chef" level="9">
     <Name>Caravan</Name>
     <Name lang="de_DE">Karavane</Name>
     
@@ -219,7 +219,7 @@
     <Duration>86400</Duration>
   </AssignmentType>
   
-  <AssignmentType id="assignment_expedition" advisor="chief" level="10">
+  <AssignmentType id="assignment_expedition" advisor="chef" level="10">
     <Name>Expedition</Name>
     <Name lang="de_DE">Expedition</Name>
     
@@ -255,4 +255,68 @@
     
     <Duration>604800</Duration>
   </AssignmentType>
+  
+  <AssignmentType id="assignment_mushrooms" advisor="girl" level="6">
+    <Name>Mushroom gathering</Name>
+    <Name lang="de_DE">Pilze sammeln</Name>
+    
+    <Flavour lang="de_DE">Was für ein schöner Tag zum Pilze sammeln.</Flavour>
+    <Flavour lang="en_US">What a nice day for gathering mushrooms.</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Geh mit dem Sammler in den Wald.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Take a stroll through the woods.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Der Sammler lädt die Dicken Keulen zum Pilze sammeln ein. Bei einem lauschigen Spaziergang erklärt der Sammler den Unterschied zwischen essbaren und giftigen Pilzen. Auf dem Rückweg wird noch ein wenig Feuerholz für das Lagerfeuer gesammelt, wobei auch die ein oder andere Kröte entdeckt wird.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Your gatherers and thick clubs are out for a walk through the woods. On the way back they bring some especially nice branches and golden frogs with them.</p>
+    </Description>
+    
+    <UnitDeposit id="clubbers_2">50</UnitDeposit>
+    
+    <Rewards>
+      <ResourceReward resource="resource_wood">5000</ResourceReward>
+      <ResourceReward resource="resource_cash">1</ResourceReward>
+    </Rewards>
+    
+    <Duration>86400</Duration>
+  </AssignmentType>
+  
+  <AssignmentType id="assignment_fishing" advisor="chef" level="8">
+    <Name>Gone fishing</Name>
+    <Name lang="de_DE">Fische fangen</Name>
+    
+    <Flavour lang="de_DE">Lecker Fisch.</Flavour>
+    <Flavour lang="en_US">Yummy fish!</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Der Chef schickt die Zielwerfer zum Fische fangen.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>The chief tells some troops to go fish.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Der Chef liebt Fisch. Gegrillt, in Fett gebraten oder im Holzofen gegart. Regelmäßig schickt er seine Zielwerfer aus, um ihm am Fluss ein paar Fische zu fangen. Die Zielwerfer suchen sich natürlich feinste Kieselsteine für ihre Schleudern und finden dabei auch immer wieder ein paar Kröten.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>The bigwigs love fish. Grilled, fried, boiled there is no kind they dont enjoy. They often send out their throwers to hunt some, and occasionaly they will even bring back something other than their throwing stones.</p>
+    </Description>
+    
+    <UnitDeposit id="thrower_2">50</UnitDeposit>
+    
+    <Rewards>
+      <ResourceReward resource="resource_stone">7500</ResourceReward>
+      <ResourceReward resource="resource_cash">2</ResourceReward>
+    </Rewards>
+    
+    <Duration>115200</Duration>
+  </AssignmentType>
+  
+  
 </AssignmentTypes>

@@ -83,7 +83,7 @@
 
   </SpecialAssignmentType>
   
-  <SpecialAssignmentType id="special_assignment_hobbits" advisor="chief" level="9" probability_factor="4">
+  <SpecialAssignmentType id="special_assignment_hobbits" advisor="chef" level="9" probability_factor="4">
     <Name>Escortmission</Name>
     <Name lang="de_DE">Die Eskorte</Name>
     
@@ -151,7 +151,7 @@
     
     <SpecialAssignmentRewards>
       <SpecialAssignmentUnitReward unit="unit_clubbers">0.01*PRODUCTION</SpecialAssignmentUnitReward>
-      <SpecialAssignmentUnitReward unit="unit_throwers">0.0075*PRODUCTION</SpecialAssignmentUnitReward>
+      <SpecialAssignmentUnitReward unit="unit_thrower">0.0075*PRODUCTION</SpecialAssignmentUnitReward>
       <SpecialAssignmentExperienceReward>0.001*PRODUCTION</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 

@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.19
+# Version: 1.6.23
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -123,7 +123,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 6,
-                    :build => 19,
+                    :build => 23,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -3966,7 +3966,7 @@ class GameRules::Rules
           :takeover_destroy  => false,
           :experience_factor => 8,
 
-          :experience_production => '(CEIL((((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))/12.5)*1.5)))',
+          :experience_production => '(CEIL((((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))/12.5)*1.5)))+EQUAL(LEVEL,10)',
 
           :requirementGroups=> [
 
@@ -5509,9 +5509,9 @@ class GameRules::Rules
 
             :unlock_building_slots => "MIN(1+MIN(LEVEL,10),11)",
 
-            :garrison_size_bonus => "LESS(LEVEL,20)*200",
+            :garrison_size_bonus => "300",
 
-            :army_size_bonus => "LESS(LEVEL,20)*200",
+            :army_size_bonus => "300",
 
           },
 
@@ -5538,9 +5538,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 100 Einheiten plus 50 pro Level auf Level 1-10 und 20 pro Level auf Level 11-20. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>",
+            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 50 pro Level auf Level 1-10 und 20 pro Level auf Level 11-20. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>",
   
-            :en_US => "<p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 100 plus 50 per level at Levels 1-10 and 20 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>",
+            :en_US => "<p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 50 per level at Levels 1-10 and 20 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>",
                 
           },
 
@@ -5606,7 +5606,7 @@ class GameRules::Rules
 
             :garrison_size_bonus => "100+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
 
-            :army_size_bonus => "100+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
+            :army_size_bonus => "50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
 
           },
 
@@ -7250,7 +7250,7 @@ class GameRules::Rules
           },
 
           :unit_deposits => {
-            0 => '100',
+            1 => '100',
             
           },
 
@@ -7268,7 +7268,7 @@ class GameRules::Rules
 
           ],
 
-            :experience_reward => 250,
+            :experience_reward => 400,
 
           },
 
@@ -7278,7 +7278,7 @@ class GameRules::Rules
           :id          => 6,
           :symbolic_id => :assignment_caravan,
           :level       => 9,
-          :advisor     => "chief",
+          :advisor     => "chef",
           :name        => {
             
             :en_US => "Caravan",
@@ -7354,7 +7354,7 @@ class GameRules::Rules
           :id          => 7,
           :symbolic_id => :assignment_expedition,
           :level       => 10,
-          :advisor     => "chief",
+          :advisor     => "chef",
           :name        => {
             
             :en_US => "Expedition",
@@ -7427,6 +7427,132 @@ class GameRules::Rules
 
 
         },              #   END OF Expedition
+        {              #   Mushroom gathering
+          :id          => 8,
+          :symbolic_id => :assignment_mushrooms,
+          :level       => 6,
+          :advisor     => "girl",
+          :name        => {
+            
+            :en_US => "Mushroom gathering",
+  
+            :de_DE => "Pilze sammeln",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Was für ein schöner Tag zum Pilze sammeln.",
+  
+            :en_US => "What a nice day for gathering mushrooms.",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Sammler lädt die Dicken Keulen zum Pilze sammeln ein. Bei einem lauschigen Spaziergang erklärt der Sammler den Unterschied zwischen essbaren und giftigen Pilzen. Auf dem Rückweg wird noch ein wenig Feuerholz für das Lagerfeuer gesammelt, wobei auch die ein oder andere Kröte entdeckt wird.</p>",
+  
+            :en_US => "<p>Your gatherers and thick clubs are out for a walk through the woods. On the way back they bring some especially nice branches and golden frogs with them.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Geh mit dem Sammler in den Wald.</p>",
+  
+            :en_US => "<p>Take a stroll through the woods.</p>",
+  
+          },
+
+          :unit_deposits => {
+            2 => '50',
+            
+          },
+
+          :duration => 86400,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_wood,
+                :amount => 5000,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Mushroom gathering
+        {              #   Gone fishing
+          :id          => 9,
+          :symbolic_id => :assignment_fishing,
+          :level       => 8,
+          :advisor     => "chef",
+          :name        => {
+            
+            :en_US => "Gone fishing",
+  
+            :de_DE => "Fische fangen",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Lecker Fisch.",
+  
+            :en_US => "Yummy fish!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Chef liebt Fisch. Gegrillt, in Fett gebraten oder im Holzofen gegart. Regelmäßig schickt er seine Zielwerfer aus, um ihm am Fluss ein paar Fische zu fangen. Die Zielwerfer suchen sich natürlich feinste Kieselsteine für ihre Schleudern und finden dabei auch immer wieder ein paar Kröten.</p>",
+  
+            :en_US => "<p>The bigwigs love fish. Grilled, fried, boiled there is no kind they dont enjoy. They often send out their throwers to hunt some, and occasionaly they will even bring back something other than their throwing stones.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Der Chef schickt die Zielwerfer zum Fische fangen.</p>",
+  
+            :en_US => "<p>The chief tells some troops to go fish.</p>",
+  
+          },
+
+          :unit_deposits => {
+            6 => '50',
+            
+          },
+
+          :duration => 115200,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Gone fishing
       ],                # END OF ASSIGNMENT TYPES
 
 # ## SPECIAL ASSIGNMENT TYPES ##########################################################
@@ -7620,7 +7746,7 @@ class GameRules::Rules
           :id          => 2,
           :symbolic_id => :special_assignment_hobbits,
           :level       => 9,
-          :advisor     => "chief",
+          :advisor     => "chef",
           :probability_factor => 4,
           :name        => {
             
@@ -7766,7 +7892,7 @@ class GameRules::Rules
               },
 
               {
-                :unit => :unit_throwers,
+                :unit => :unit_thrower,
                 :amount => '0.0075*PRODUCTION',
               },
 
