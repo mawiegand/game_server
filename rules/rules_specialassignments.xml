@@ -151,7 +151,7 @@
     
     <SpecialAssignmentRewards>
       <SpecialAssignmentUnitReward unit="unit_clubbers">0.01*PRODUCTION</SpecialAssignmentUnitReward>
-      <SpecialAssignmentUnitReward unit="unit_throwers">0.0075*PRODUCTION</SpecialAssignmentUnitReward>
+      <SpecialAssignmentUnitReward unit="unit_thrower">0.0075*PRODUCTION</SpecialAssignmentUnitReward>
       <SpecialAssignmentExperienceReward>0.001*PRODUCTION</SpecialAssignmentExperienceReward>
     </SpecialAssignmentRewards>
 
