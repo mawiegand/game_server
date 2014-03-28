@@ -37,6 +37,7 @@ module Ticker
   Ticker.add_handler_class(Ticker::ConstructionEffectHandler)
   Ticker.add_handler_class(Ticker::TradingCartsActionHandler)
   Ticker.add_handler_class(Ticker::ArtifactInitiationHandler)
+  Ticker.add_handler_class(Ticker::DiplomacyRelationHandler)
   Ticker.add_handler_class(Ticker::StandardAssignmentHandler)
   Ticker.add_handler_class(Ticker::SpecialAssignmentHandler)
 
