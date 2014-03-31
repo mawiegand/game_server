@@ -8585,7 +8585,7 @@ class GameRules::Rules
             :en_US => "Neutral",
   
           },
-          :duration => "60*60*72",
+          :duration => 60*60*72,
           :min => false,
           :next_relations => [ 
           1,
@@ -8602,7 +8602,7 @@ class GameRules::Rules
             :en_US => "Ultimatum",
   
           },
-          :duration => "60*60*24",
+          :duration => 60*60*24,
           :min => false,
           :next_relations => [ 
           2,
@@ -8619,7 +8619,7 @@ class GameRules::Rules
             :en_US => "War",
   
           },
-          :duration => "60*60*72",
+          :duration => 60*60*72,
           :min => true,
           :next_relations => [ 
           3,
@@ -8637,7 +8637,7 @@ class GameRules::Rules
             :en_US => "Surrender",
   
           },
-          :duration => "60*60*72",
+          :duration => 60*60*72,
           :min => false,
           :next_relations => [ 
           1,
@@ -8654,7 +8654,7 @@ class GameRules::Rules
             :en_US => "Occupation",
   
           },
-          :duration => "60*60*72",
+          :duration => 60*60*72,
           :min => false,
           :next_relations => [ 
           1,

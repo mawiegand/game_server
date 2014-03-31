@@ -1261,7 +1261,7 @@ end
           :name        => {
             <xsl:apply-templates select="Name" />
           },
-          :duration => "<xsl:apply-templates select="DiplomacyDuration" />",
+          :duration => <xsl:apply-templates select="DiplomacyDuration" />,
           :min => <xsl:apply-templates select="DiplomacyDuration/@min" />,
           :next_relations => [ 
           <xsl:for-each select="NextRelationTypes/NextRelation">
