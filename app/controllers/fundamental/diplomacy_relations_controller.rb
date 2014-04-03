@@ -46,9 +46,13 @@ class Fundamental::DiplomacyRelationsController < ApplicationController
   # POST /fundamental/diplomacy_relations.json
   def create
     @fundamental_diplomacy_relation = Fundamental::DiplomacyRelation.new(params[:fundamental_diplomacy_relation])
+#    fundamental_diplomacy_relation_copy = Fundamental::DiplomacyRelation.new(params[:fundamental_diplomacy_relation])
+#    fundamental_diplomacy_relation_copy.source_alliance = @fundamental_diplomacy_relation.target_alliance
+#    fundamental_diplomacy_relation_copy.target_alliance = @fundamental_diplomacy_relation.source_alliance
+#    fundamental_diplomacy_relation_copy.initiator = !@fundamental_diplomacy_relation.initiator
 
     respond_to do |format|
-      if @fundamental_diplomacy_relation.save
+      if @fundamental_diplomacy_relation.save #&& fundamental_diplomacy_relation_copy.save
         format.html { redirect_to @fundamental_diplomacy_relation, notice: 'Diplomacy relation was successfully created.' }
         format.json { render json: @fundamental_diplomacy_relation, status: :created, location: @fundamental_diplomacy_relation }
       else
@@ -78,6 +82,7 @@ class Fundamental::DiplomacyRelationsController < ApplicationController
   # DELETE /fundamental/diplomacy_relations/1.json
   def destroy
     @fundamental_diplomacy_relation = Fundamental::DiplomacyRelation.find(params[:id])
+    #Fundamental::DiplomacyRelation.destroy_relations_between(@fundamental_diplomacy_relation.source_alliance, @fundamental_diplomacy_relation.target_alliance)
     @fundamental_diplomacy_relation.destroy
 
     respond_to do |format|
