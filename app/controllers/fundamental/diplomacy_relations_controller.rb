@@ -2,16 +2,43 @@ class Fundamental::DiplomacyRelationsController < ApplicationController
   layout 'fundamental'
   
   before_filter :authenticate
-  before_filter :deny_api, :except => [:show, :edit]
+  before_filter :deny_api, :except => [:show, :index, :edit]
   
   # GET /fundamental/diplomacy_relations
   # GET /fundamental/diplomacy_relations.json
   def index
-    @fundamental_diplomacy_relations = Fundamental::DiplomacyRelation.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @fundamental_diplomacy_relations }
+    last_modified = nil 
+
+    if params.has_key?(:alliance_id)  
+      @alliance = Fundamental::Alliance.find(params[:alliance_id])
+      raise NotFoundError.new('Page Not Found') if @alliance.nil?
+      @fundamental_diplomacy_relations = @alliance.diplomacy_source_relations
+      # TODO: Calculate last_modifed
+      # last_modified = 
+      
+      raise ForbiddenError.new "Access Fobidden." unless staff? || admin? || current_character.alliance_id == @alliance.id
+    else
+      @fundamental_diplomacy_relations = Fundamental::DiplomacyRelation.all
+    end   
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          raise ForbiddenError.new "Access denied. User not authorized."  unless staff? || admin?
+          if @fundamental_diplomacy_relations.nil?
+            @fundamental_diplomacy_relations =  Fundamental::DiplomacyRelation.paginate(:page => params[:page], :per_page => 50)    
+            @paginate = true   
+          end 
+        end
+        format.json do
+          if @asked_for_index 
+            raise ForbiddenError.new('Access Forbidden')        
+          end
+          @fundamental_diplomacy_relations = [] if @fundamental_diplomacy_relations.nil?  # necessary? or ok to send 'null' ?
+          render json: @fundamental_diplomacy_relations
+        end
+      end
     end
   end
 
