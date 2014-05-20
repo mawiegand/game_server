@@ -43,11 +43,13 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
   
   def next_status
     #Fundamental::DiplomacyRelation.destroy_relations_between(self.source_alliance, self.target_alliance)
-    Fundamental::DiplomacyRelation.create(source_alliance: self.source_alliance,
-                                          target_alliance: self.target_alliance,
-                                          diplomacy_status: self.relation_status[:next_relations][0],
-                                          initiator: self.initiator
-                                         )
+    if self.relation_status[:next_relations].present?
+      Fundamental::DiplomacyRelation.create(source_alliance: self.source_alliance,
+                                            target_alliance: self.target_alliance,
+                                            diplomacy_status: self.relation_status[:next_relations][0],
+                                            initiator: self.initiator
+                                           )
+    end
     self.destroy
   end
   
