@@ -45,9 +45,11 @@ class Military::BattleFaction < ActiveRecord::Base
   # Returns false if participants are from different alliance or contains only NPCs
   def is_only_one_alliance_involved?
     only_npcs = true
-    first_army = participants.first.army
+    first_army = first_none_npc_participant.army
+    return false   if first_army.nil?  # only NPCs
+    
     participants.each do |p|
-      if !(p.army.owned_by_npc?)
+      if !p.army.nil? && !p.army.empty? && !p.army.owned_by_npc?
         if !(first_army.same_alliance_as?(p.army))
           return false # Different alliances are involved
         end
@@ -58,9 +60,10 @@ class Military::BattleFaction < ActiveRecord::Base
     return true # only one alliance is involved
   end
 
+  # only selects LIVING armies.
   def first_none_npc_participant
     participants.each do |p|
-      return p if !(p.army.owned_by_npc?)
+      return p   if !p.army.nil? && !p.army.empty? && !p.army.owned_by_npc?
     end
     return nil
   end
