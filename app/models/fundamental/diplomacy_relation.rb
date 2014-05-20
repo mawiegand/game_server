@@ -11,7 +11,7 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
   belongs_to :target_alliance, :class_name => "Fundamental::Alliance", :foreign_key => "target_alliance_id", :inverse_of => :diplomacy_target_relations
   
   after_create :create_event
-  after_create :create_copy
+#  after_create :create_copy
   
   scope :neutral, where(diplomacy_status: RELATION_TYPE_NEUTRAL)
   scope :ultimatum, where(diplomacy_status: RELATION_TYPE_ULTIMATUM)
@@ -42,15 +42,16 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
   end
   
   def next_status
-    #Fundamental::DiplomacyRelation.destroy_relations_between(self.source_alliance, self.target_alliance)
+    Fundamental::DiplomacyRelation.destroy_relations_between(self.source_alliance, self.target_alliance)
     if self.relation_status[:next_relations].present?
-      Fundamental::DiplomacyRelation.create(source_alliance: self.source_alliance,
-                                            target_alliance: self.target_alliance,
-                                            diplomacy_status: self.relation_status[:next_relations][0],
-                                            initiator: self.initiator
-                                           )
+      new_relation = Fundamental::DiplomacyRelation.create(source_alliance: self.source_alliance,
+                                                           target_alliance: self.target_alliance,
+                                                           diplomacy_status: self.relation_status[:next_relations][0],
+                                                           initiator: self.initiator
+                                                          )
+      new_relation.create_copy
     end
-    self.destroy
+#    self.destroy
   end
   
   def create_event
@@ -58,11 +59,11 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
   end
   
   def create_copy
-#    copy = self.dup
-#    copy.source_alliance = self.target_alliance
-#    copy.target_alliance = self.source_alliance
-#    copy.diplomacy_status = self.diplomacy_status
-#    copy.initiator = !self.initiator
-#    copy.save
+    copy = self.dup
+    copy.source_alliance = self.target_alliance
+    copy.target_alliance = self.source_alliance
+    copy.diplomacy_status = self.diplomacy_status
+    copy.initiator = !self.initiator
+    copy.save
   end
 end
