@@ -8585,7 +8585,7 @@ class GameRules::Rules
             :en_US => "Neutral",
   
           },
-          :duration => 60*60*72,
+          :duration => 60,
           :min => false,
           :next_relations => [ 
           1,
@@ -8602,7 +8602,7 @@ class GameRules::Rules
             :en_US => "Ultimatum",
   
           },
-          :duration => 60*60*24,
+          :duration => 60,
           :min => false,
           :next_relations => [ 
           2,
@@ -8619,7 +8619,7 @@ class GameRules::Rules
             :en_US => "War",
   
           },
-          :duration => 60*60*72,
+          :duration => 60,
           :min => true,
           :next_relations => [ 
           3,
@@ -8627,23 +8627,22 @@ class GameRules::Rules
           
           ],
         },              #   END OF Krieg
-        {               #   Ultimatum
+        {               #   Kapitulation
           :id          => 3, 
           :symbolic_id => :diplomacy_relation_3,
           :name        => {
             
-            :de_DE => "Ultimatum",
+            :de_DE => "Kapitulation",
   
             :en_US => "Surrender",
   
           },
-          :duration => 60*60*72,
+          :duration => 60,
           :min => false,
           :next_relations => [ 
-          1,
           
           ],
-        },              #   END OF Ultimatum
+        },              #   END OF Kapitulation
         {               #   Besatzung
           :id          => 4, 
           :symbolic_id => :diplomacy_relation_4,
@@ -8654,10 +8653,9 @@ class GameRules::Rules
             :en_US => "Occupation",
   
           },
-          :duration => 60*60*72,
+          :duration => 60,
           :min => false,
           :next_relations => [ 
-          1,
           
           ],
         },              #   END OF Besatzung
