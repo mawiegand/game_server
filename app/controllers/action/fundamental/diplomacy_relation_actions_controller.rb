@@ -16,7 +16,7 @@ class Action::Fundamental::DiplomacyRelationActionsController < ApplicationContr
     target_alliance = Fundamental::Alliance.find_by_name(params[:diplomacy_relation_action][:target_alliance_name])
     
     if target_alliance.nil?
-      raise BadRequestError.new('Could not find target alliance!')
+      raise NotFoundError.new('Could not find target alliance!')
     else
       raise ForbiddenError.new('tried to create diplomacy relation with own alliance') if current_character.alliance_id == target_alliance.id.to_i
       diplomacy_relations = current_character.alliance.diplomacy_source_relations.where(target_alliance_id: target_alliance.id)
