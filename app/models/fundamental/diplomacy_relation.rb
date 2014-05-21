@@ -11,7 +11,6 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
   belongs_to :target_alliance, :class_name => "Fundamental::Alliance", :foreign_key => "target_alliance_id", :inverse_of => :diplomacy_target_relations
   
   after_create :create_event
-#  after_create :create_copy
   
   scope :neutral, where(diplomacy_status: RELATION_TYPE_NEUTRAL)
   scope :ultimatum, where(diplomacy_status: RELATION_TYPE_ULTIMATUM)
@@ -49,20 +48,25 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
                                                            diplomacy_status: self.relation_status[:next_relations][0],
                                                            initiator: self.initiator
                                                           )
-      new_relation.create_copy
+      
+      # TODO: Define opposite in rules to do this dynamically
+      if new_relation.diplomacy_status == RELATION_TYPE_SURRENDER
+        new_relation.create_copy(RELATION_TYPE_OCCUPATION)
+      else
+        new_relation.create_copy(self.relation_status[:next_relations][0])
+      end
     end
-#    self.destroy
   end
   
   def create_event
     self.create_ticker_event if !self.relation_status[:min] && self.initiator
   end
   
-  def create_copy
+  def create_copy(diplomacy_status)
     copy = self.dup
     copy.source_alliance = self.target_alliance
     copy.target_alliance = self.source_alliance
-    copy.diplomacy_status = self.diplomacy_status
+    copy.diplomacy_status = diplomacy_status
     copy.initiator = !self.initiator
     copy.save
   end

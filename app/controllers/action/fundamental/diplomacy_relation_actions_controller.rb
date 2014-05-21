@@ -29,7 +29,7 @@ class Action::Fundamental::DiplomacyRelationActionsController < ApplicationContr
                                              initiator: true
                                              )
         raise BadRequestError.new('creating diplomacy relation failed') unless relation.save
-        raise BadRequestError.new('creating diplomacy relation copy failed') unless relation.create_copy
+        raise BadRequestError.new('creating diplomacy relation copy failed') unless relation.create_copy(relation.diplomacy_status)
       end
     end
 
