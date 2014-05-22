@@ -13,7 +13,7 @@ class Action::Fundamental::DiplomacyRelationActionsController < ApplicationContr
     raise ForbiddenError.new('tried to do an alliance action although not even in an alliance') if current_character.alliance_id.blank?
     raise ForbiddenError.new('tried to change setting on wrong alliance') unless current_character.alliance_id == params[:diplomacy_relation_action][:source_alliance_id].to_i
     
-    target_alliance = Fundamental::Alliance.find_by_name(params[:diplomacy_relation_action][:target_alliance_name])
+    target_alliance = Fundamental::Alliance.find_by_tag_or_name(params[:diplomacy_relation_action][:target_alliance_name])
     
     if target_alliance.nil?
       raise NotFoundError.new('Could not find target alliance!')

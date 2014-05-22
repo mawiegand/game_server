@@ -104,6 +104,12 @@ class Fundamental::Alliance < ActiveRecord::Base
     tag.length < 6 && /[^A-Za-z0-9]/.match(tag).nil?
   end
   
+  def self.find_by_tag_or_name(alliance_identifier)
+    alliance = Fundamental::Alliance.find_by_tag(alliance_identifier) if Fundamental::Alliance.tag_is_valid?(alliance_identifier)
+    alliance = Fundamental::Alliance.find_by_name(alliance_identifier) if alliance.nil?
+    alliance
+  end
+  
   def auto_joinable
     return self if !auto_join_disabled and self.members.count > 0 and !self.full?
 		nil
