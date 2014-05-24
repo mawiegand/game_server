@@ -169,7 +169,7 @@ module Ticker
         participant[:total_experience_gained] = (participant[:total_experience_gained] || 0) + experience_gained
         participant.save
         
-        Ticker::Runloop::logger.add Ticker::Runloop::logger::INFO, "--> EXP GAINED #{experience_gained} | #{awe_army.sumNewExp}" if !Ticker::Runloop::logger.nil?
+        Ticker::Runloop::logger.add Logger::INFO, "--> EXP GAINED #{experience_gained} | #{awe_army.sumNewExp}" if !Ticker::Runloop::logger.nil?
 
         if !participant_results.save
           raise InternalServerError.new('Server could not create a new result for a battle participant in persistant storage.')
@@ -213,14 +213,14 @@ module Ticker
       unit_reduction_hash = participant_results.get_unit_reduce_hash
       experience = Military::Army.experience_value_of(unit_reduction_hash) * battle.alliance_fight_penalty
     
-      Ticker::Runloop::logger.add Ticker::Runloop::logger::INFO, "--> EXP BEFORE #{participant.army.owner.name}: #{participant.army.owner.exp}" if !Ticker::Runloop::logger.nil?
+      Ticker::Runloop::logger.add Logger::logger::INFO, "--> EXP BEFORE #{participant.army.owner.name}: #{participant.army.owner.exp}" if !Ticker::Runloop::logger.nil?
       
       participant.army.reduce_units(unit_reduction_hash)
       participant.army.exp   += experience                  # this is directly propagated to the character
       participant.army.kills += participant_results.kills   # this is directly propagated to the character 
       participant.army.save
 
-      Ticker::Runloop::logger.add Ticker::Runloop::logger::INFO, "--> EXP AFTER #{participant.army.owner.name}: #{participant.army.owner.exp}" if !Ticker::Runloop::logger.nil?
+      Ticker::Runloop::logger.add Logger::logger::INFO, "--> EXP AFTER #{participant.army.owner.name}: #{participant.army.owner.exp}" if !Ticker::Runloop::logger.nil?
     
       experience
     end
