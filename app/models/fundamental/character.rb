@@ -1378,6 +1378,13 @@ class Fundamental::Character < ActiveRecord::Base
     self.increment(:exp, (points * (1 + (self.exp_bonus_total || 0))).floor)
     self.save    
   end
+  
+  def increment_with_sql!(attribute, by = 1)
+    raise ArgumentError("Invalid attribute: #{attribute}") unless attribute_names.include?(attribute.to_s)
+    original_value_sql = "CASE WHEN #{attribute} IS NULL THEN 0 ELSE #{attribute} END"
+    self.class.update_all("#{attribute} = #{original_value_sql} + #{by.to_i}", "id = #{id}")
+    self.reload
+  end
 
   def update_exp_production(old_mundane_rank, new_mundane_rank)
     if !self.artifact.nil? && self.artifact.initiated

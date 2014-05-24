@@ -846,15 +846,15 @@ class Military::Army < ActiveRecord::Base
     
       if !self.changes[:exp].blank?
         delta = (self.exp_change[1] || 0)-(self.exp_change[0] || 0)
-        self.owner.increment(:exp, (delta * (1 + (self.owner.exp_bonus_total || 0))).floor)
+        self.owner.increment_with_sql!(:exp, (delta * (1 + (self.owner.exp_bonus_total || 0))).floor)
       end
 
       if !self.changes[:kills].blank?
         delta = (self.kills_change[1] || 0)-(self.kills_change[0] || 0)
-        self.owner.increment(:kills, delta)
+        self.owner.increment_with_sql!(:kills, delta)
       end
       
-      self.owner.save # saves only in case something has actually changed.
+      # self.owner.save # saves only in case something has actually changed.
 
       true
     end    
