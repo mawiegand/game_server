@@ -166,8 +166,10 @@ module Ticker
         experience_gained = extract_results_from_awe_participant(battle, awe_army, participant, participant_results)
       
         participant_results.experience_gained = experience_gained
-        participant[:total_experience_gained] = participant[:total_experience_gained] + experience_gained
+        participant[:total_experience_gained] = (participant[:total_experience_gained] || 0) + experience_gained
         participant.save
+        
+        Ticker::Runloop::logger.add Ticker::Runloop::logger::INFO, "--> EXP GAINED #{experience_gained} | #{awe_army.sumNewExp}" if !Ticker::Runloop::logger.nil?
 
         if !participant_results.save
           raise InternalServerError.new('Server could not create a new result for a battle participant in persistant storage.')
@@ -206,14 +208,19 @@ module Ticker
         participant_results[(unit_type[:db_field].to_s+'_damage_inflicted').to_sym] = awe_unit.damageInflicted
 
       end
-
+      
       # update survivors on army
-      experience = Military::Army.experience_value_of(participant_results.get_unit_reduce_hash) * battle.alliance_fight_penalty
+      unit_reduction_hash = participant_results.get_unit_reduce_hash
+      experience = Military::Army.experience_value_of(unit_reduction_hash) * battle.alliance_fight_penalty
     
-      participant.army.reduce_units(participant_results.get_unit_reduce_hash)
+      Ticker::Runloop::logger.add Ticker::Runloop::logger::INFO, "--> EXP BEFORE #{participant.army.owner.name}: #{participant.army.owner.exp}" if !Ticker::Runloop::logger.nil?
+      
+      participant.army.reduce_units(unit_reduction_hash)
       participant.army.exp   += experience                  # this is directly propagated to the character
       participant.army.kills += participant_results.kills   # this is directly propagated to the character 
       participant.army.save
+
+      Ticker::Runloop::logger.add Ticker::Runloop::logger::INFO, "--> EXP AFTER #{participant.army.owner.name}: #{participant.army.owner.exp}" if !Ticker::Runloop::logger.nil?
     
       experience
     end
