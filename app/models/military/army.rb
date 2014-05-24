@@ -844,7 +844,7 @@ class Military::Army < ActiveRecord::Base
     def update_experience_and_kills_character
       return true    if self.owner.blank?
       
-      self.owner.reload
+      self.owner.reload # necessary, because it may have been previously loaded and updated meanwhile
     
       if !self.changes[:exp].blank?
         delta = (self.exp_change[1] || 0)-(self.exp_change[0] || 0)

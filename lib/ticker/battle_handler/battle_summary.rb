@@ -166,8 +166,12 @@ class Ticker::BattleHandler::BattleSummary
 	end
 
 	def render_unit_summary(unit_summary, character)
-		rules = GameRules::Rules.the_rules
-		@unit_summary_template.result(binding)
+	  if !unit_summary.nil?
+		  rules = GameRules::Rules.the_rules
+		  return @unit_summary_template.result(binding)
+		else
+		  nil
+	  end
 	end
 
 	def get_own_faction_summary(character)
