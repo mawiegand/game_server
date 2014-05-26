@@ -54,15 +54,24 @@ GameServer::Application.routes.draw do
         resources :persistent_character_properties
         
         match '/characters/self', :to => 'characters#self'
-        
+
+
+
         resources :characters do
+
           resources :alliance_shouts
           resource  :account,         :module => "shop",       :only => [ :show ]
           resource  :resource_pool,                            :only => [ :show ]
           resource  :artifact,                                 :only => [ :show ]
           resource  :setting
           resources :history_events,                           :only => [ :index ]
+        
+          
+          get 'livesearch',  :on => :collection
+          get :autocomplete_character_identifier, :on => :collection
+
         end
+
 
         resources :resource_pools
 
@@ -159,6 +168,7 @@ GameServer::Application.routes.draw do
       namespace :military do 
         resources :armies do
           resources :army_details
+           get 'livesearch',  :on => :collection
         end
         resources :army_details
         resources :battles do
