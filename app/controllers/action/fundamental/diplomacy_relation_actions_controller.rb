@@ -12,7 +12,7 @@ class Action::Fundamental::DiplomacyRelationActionsController < ApplicationContr
 
     raise ForbiddenError.new('tried to do an alliance action although not even in an alliance') if current_character.alliance_id.blank?
     raise ForbiddenError.new('tried to change setting on wrong alliance') unless current_character.alliance_id == params[:diplomacy_relation_action][:source_alliance_id].to_i
-    raise ForbiddenError.new('only leader can change auto join setting') unless current_character.alliance_leader?
+    raise ForbiddenError.new('only leader can change diplomacy relations') unless current_character.alliance_leader?
     
     target_alliance = Fundamental::Alliance.find_by_tag_or_name(params[:diplomacy_relation_action][:target_alliance_name])
     
