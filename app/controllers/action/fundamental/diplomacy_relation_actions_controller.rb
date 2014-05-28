@@ -22,7 +22,11 @@ class Action::Fundamental::DiplomacyRelationActionsController < ApplicationContr
       raise ForbiddenError.new('tried to create diplomacy relation with own alliance') if current_character.alliance_id == target_alliance.id.to_i
       diplomacy_relations = current_character.alliance.diplomacy_source_relations.where(target_alliance_id: target_alliance.id)
       if diplomacy_relations.present?
-        diplomacy_relations.first.next_status
+        if diplomacy_relations.first.is_manual_status_change_allowed?
+          diplomacy_relations.first.next_status
+        else
+          raise ForbiddenError.new('manual status change of diplomacy relation is not allowed')
+        end
       else
         relation = Fundamental::DiplomacyRelation.new(source_alliance_id: current_character.alliance_id,
                                              target_alliance_id: target_alliance.id,

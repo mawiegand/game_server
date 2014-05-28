@@ -58,6 +58,10 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
     end
   end
   
+  def is_manual_status_change_allowed?
+    self.relation_status[:min] && (Time.now >= (self.created_at + self.relation_status[:duration].seconds))
+  end
+
   def create_event
     self.create_ticker_event if !self.relation_status[:min] && self.initiator
   end
