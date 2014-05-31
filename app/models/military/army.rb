@@ -55,6 +55,16 @@ class Military::Army < ActiveRecord::Base
   scope :visible,       where('invisible = ?', false)
   scope :visible_to_character, lambda { |character| where('owner_id = ? or invisible = ?', character.id, false) }
 
+
+  def self.search(search)
+    if search
+      where('name LIKE :var or owner_name LIKE :var', :var => "%#{search}%" )
+    else
+      scoped
+    end
+  end
+
+
   def self.create_garrison_at(settlement)
     logger.debug "Creating a second garrison army for settlement ID#{settlement.id}." unless settlement.garrison_army.nil? || settlement.garrison_army.frozen?
     

@@ -5,6 +5,7 @@ require 'game_state/avatars'
 
 class Fundamental::Character < ActiveRecord::Base
 
+
   validates :identifier,  :uniqueness   => { :case_sensitive => true, :allow_blank => false }
 
   belongs_to :alliance,        :class_name => "Fundamental::Alliance",      :foreign_key => "alliance_id",  :inverse_of => :members
@@ -161,6 +162,24 @@ class Fundamental::Character < ActiveRecord::Base
   ])
 
   @identifier_regex = /[a-z]{16}/i
+  
+  def self.search(search)
+    if search
+      where('identifier LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
+  def lastactiv
+    if( (Time.now - last_login_at) < 24.hours)   
+              "green" # ActionController::Base.helpers.image_tag("Green.png") 
+            elsif  ((Time.now - last_login_at) > 24.hours && (Time.now - last_login_at) < 96.hours )
+              "yellow" # ActionController::Base.helpers.image_tag("Yellow.png")
+             else 
+              "red" #ActionController::Base.helpers.image_tag("Red.png")
+             end
+  end
 
   def self.find_by_id_or_identifier(user_identifier)
     identity = Fundamental::Character.find_by_id(user_identifier) if Fundamental::Character.valid_id?(user_identifier)
@@ -1695,6 +1714,7 @@ class Fundamental::Character < ActiveRecord::Base
   def serializable_hash(options={})
     options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
     options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker']
+    options[:methods].push('lastactiv')  if options[:role] === :owner || options[:role] === :ally
     super(options)
   end
 
@@ -1786,6 +1806,8 @@ class Fundamental::Character < ActiveRecord::Base
       self.skill_points            = (self.skill_points || 0)            + skill_points_per_rank
       self.settlement_points_total = (self.settlement_points_total || 0) + new_settlement_points
     end
+    
+    
 end
 
 

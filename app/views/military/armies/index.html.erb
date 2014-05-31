@@ -1,102 +1,16 @@
 <h1>Listing military_armies</h1>
 
-<%= if (@paginate) 
-  will_paginate @military_armies 
-end %>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Home settlement</th>
-    <th>Home settlement name</th>
-    <th>Location</th>
-    <th>Region</th>
-    <th>Owner</th>
-    <th>NPC</th>
-    <th>Alliance</th>
-    <th>Alliance tag</th>
-    <th>Ap max</th>
-    <th>Ap present</th>
-    <th>Ap next</th>
-    <th>Mode</th>
-    <th>Kills</th>
-    <th>Victories</th>
-    <th>Stance</th>
-    <th>Size max</th>
-    <th>Size present</th>
-    <th>Velocity</th>
-    <th>Strength</th>
-<% Military::Army.new.attributes.each do |attribute, value| 
-  if attribute.start_with? 'unitcategory_' %>
-    <th><%= attribute %></th>
-<%end
-end %>
-    <th>Exp</th>
-    <th>Rank</th>
-    <th>Target region</th>
-    <th>Target location</th>
-    <th>Target reached at</th>
-    <th>Battle retreat</th>
-    <th>Battle</th>
-    <th>Suspension End</th>
-    <th>Attack Protection End</th>
-    <th>Removed</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= form_tag military_armies_path, :method => 'get', :id => "armies_search_form" %>
+<p>
+    <%= text_field_tag :search, params[:search], :id => "armies_search_field" %>
+    <%= submit_tag "Name search", :name => nil %> 
+</p>
 
-<% @military_armies.each do |military_army| %>
-  <tr>
-    <td><%= military_army.id %></td>
-    <td><%= military_army.name %></td>
-    <td><%= military_army.home_settlement_id %></td>
-    <td><%= military_army.home_settlement_name %></td>
-    <td><%= military_army.location_id %></td>
-    <td><%= military_army.region_id %></td>
-    <td><%= military_army.owner_name %> (<%= military_army.owner_id %>)</td>
-    <td><%= military_army.npc %></td>
-    <td><%= military_army.alliance_id %></td>
-    <td><%= military_army.alliance_tag %></td>
-    <td><%= military_army.ap_max %></td>
-    <td><%= military_army.ap_present %></td>
-    <td><%= military_army.ap_next %></td>
-    <td><%= military_army.mode %></td>
-    <td><%= military_army.kills %></td>
-    <td><%= military_army.victories %></td>
-    <td><%= military_army.stance %></td>
-    <td><%= military_army.size_max %></td>
-    <td><%= military_army.size_present %></td>
-    <td><%= military_army.velocity %></td>
-    <td><%= military_army.strength %></td>
-<% military_army.attributes.each do |attribute, value| 
-  if attribute.start_with? 'unitcategory_' %>
-    <td><%= value %></td>
-<%end
-end %>
-    <td><%= military_army.exp %></td>
-    <td><%= military_army.rank %></td>
-    <td><%= military_army.target_region_id %></td>
-    <td><%= military_army.target_location_id %></td>
-    <td><%= military_army.target_reached_at %></td>
-    <td><%= military_army.battle_retreat %></td>
-    <td><%= military_army.battle_id %></td>
-    <td><%= military_army.suspension_ends_at %></td>
-    <td><%= military_army.attack_protection_ends_at %></td>
-    <td><%= military_army.removed %></td>
-    <td><%= link_to 'Show', military_army %></td>
-    <td><%= link_to 'Show Details', military_army.details %></td>
-    <td><%= link_to 'Edit', edit_military_army_path(military_army) %></td>
-    <td><% if military_army.details.nil? %>no details<% else %> <%= link_to 'Edit Details', edit_military_army_detail_path(military_army.details) %> <% end %></td>
-    <td><%= link_to 'Destroy', military_army, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
 
-<%= if (@paginate) 
-  will_paginate @military_armies 
-end %>
+<div id="armies_partial"><%= render 'armies' %></div>
+
+
 
 <br />
 

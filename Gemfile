@@ -73,3 +73,10 @@ group :test do
   gem 'turn', '~> 0.8.3', :require => false
   gem 'test-unit', '~> 2.0.0'
 end
+
+gem 'jquery-ui-rails'
+
+gem 'rails3-jquery-autocomplete', git: 'https://github.com/francisd/rails3-jquery-autocomplete'
+
+
+
