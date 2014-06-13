@@ -5,6 +5,9 @@ module GeoServer
   class GeoIp
     
     def self.fetch_coords_for_ip(ip)
+      
+      return nil # presently the geo server is down!
+      
       unless ip.nil?
         
         begin
