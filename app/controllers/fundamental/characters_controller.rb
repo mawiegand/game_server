@@ -33,7 +33,7 @@ class Fundamental::CharactersController < ApplicationController
         format.html do
           raise ForbiddenError.new('Access forbidden.') unless (admin? || staff? || developer?) 
           if @fundamental_characters.nil?
-            @fundamental_characters =  Fundamental::Character.search(params[:search]).paginate(:order => 'lower(identifier)', :page => params[:page], :per_page => 50)
+            @fundamental_characters =  Fundamental::Character.search(params[:search]).paginate(:order => 'name', :page => params[:page], :per_page => 50)
             @paginate = true   
           end 
         end
