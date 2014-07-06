@@ -81,7 +81,7 @@ class GameRules::Rules
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
-    :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup, :facebook_user_stories,
+    :queue_types, :settlement_types, :artifact_types, :diplomacy_relation_types, :victory_types, :construction_speedup, :training_speedup, :facebook_user_stories,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles, :special_offer,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
@@ -115,7 +115,8 @@ class GameRules::Rules
       'slot_bubbles'                => slot_bubbles,
       'special_offer'               => special_offer,
       'settlement_types'            => settlement_types,
-      'artifact_types'              => artifact_types,  
+      'artifact_types'              => artifact_types,
+      'diplomacy_relation_types'    => diplomacy_relation_types,
       'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
       'character_ranks'             => character_ranks,
@@ -232,6 +233,7 @@ class GameRules::Rules
   <xsl:apply-templates select="SpecialAssignmentTypes" />
   <xsl:apply-templates select="TreasureTypes" />
   <xsl:apply-templates select="ArtifactTypes" />
+  <xsl:apply-templates select="DiplomacyRelationTypes" />
   <xsl:apply-templates select="VictoryTypes" />
   <xsl:apply-templates select="QueueTypes" />
       :character_ranks => {
@@ -1245,6 +1247,32 @@ end
 <xsl:template match="InitiationCost">
             <xsl:value-of select="count(id(@id)/preceding-sibling::*)" /> => '<xsl:apply-templates/>',
             </xsl:template>
+
+
+
+<xsl:template match="DiplomacyRelationTypes">
+# ## DIPLOMACY RELATION TYPES ########################################################
+  
+      :diplomacy_relation_types => [  # ALL DIPLOMACY RELATION TYPES
+<xsl:for-each select="DiplomacyRelation">
+        {               #   <xsl:value-of select="Name"/>
+          :id          => <xsl:value-of select="position()-1"/>, 
+          :symbolic_id => :<xsl:value-of select="@id"/>,
+          :name        => {
+            <xsl:apply-templates select="Name" />
+          },
+          :duration => <xsl:apply-templates select="DiplomacyDuration" />,
+          :min => <xsl:apply-templates select="DiplomacyDuration/@min" />,
+          :next_relations => [ 
+          <xsl:for-each select="NextRelationTypes/NextRelation">
+            <xsl:apply-templates />,
+          </xsl:for-each>
+          ],
+        },              #   END OF <xsl:value-of select="Name"/>
+</xsl:for-each>
+      ],                # END OF DIPLOMACY RELATION TYPES
+</xsl:template>
+
 
 
 

@@ -1,0 +1,126 @@
+
+<%= will_paginate @fundamental_characters, :params => {:controller => :characters, :action => 'index'} %>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Identifier</th>
+    <th>Lang</th>
+    <th>Platinum</th>
+    <th>P-Lifetime</th>
+    <th>Insider</th>
+    <th>Divine Supporter</th>
+    <th>1st Round</th>
+    <th>Image Set</th>
+    <th>Staff</th>
+    <th>Name</th>
+    <th>Login</th>
+<% if staff? || admin? %>
+    <th>Activity</th>
+    <th>Playtime</th>
+<% end %>
+    <th><span title="Max Completed Quest">Quest</span></th>
+    <th>Conversion</th>
+<% if staff? || admin? %>
+    <th>Gross</th>
+<% end %>
+    <th>Ranks</th>
+    <th>SP</th>
+    <th>Banned</th>
+    <th>Base</th>
+    <th>Ally</th>
+<% if staff? || admin? %>
+    <th>Referrer</th>
+<% end %>
+    <th>Last Retention Mail</th>
+    <th>Mail sent at</th>
+    <th>V/D</th>
+    <th>Deleted</th>
+    <th>Same IP Users</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+<% @fundamental_characters.each do |fundamental_character| %>
+  <tr>
+    <td><%= fundamental_character.id %></td>
+    <td><%= link_to fundamental_character.identifier, GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/#{fundamental_character.identifier}" %></td>
+    <td><%= fundamental_character.lang %></td>
+    <td><span class="green"><b>
+      <%= fundamental_character.platinum_account? ? 'X' : "" %>
+    </b></span></td>
+    <td><span class="green"><b>
+      <%= fundamental_character.platinum_lifetime ? 'X' : "" %>
+    </b></span></td>
+    <td><span class="green"><b>
+      <%= fundamental_character.insider ? 'X' : "" %>
+    </b></span></td>
+    <td><span class="green"><b>
+      <%= fundamental_character.divine_supporter ? 'X' : "" %>
+    </b></span></td>
+    <td><span class="green"><b>
+      <%= fundamental_character.first_round? ? 'X' : "" %>
+    </b></span></td>
+    <td><%= fundamental_character.image_set_id %></td>
+    <td><%= fundamental_character.staff_roles %></td>
+    <td><%= fundamental_character.name %> 
+        <%if !fundamental_character.alliance_tag.blank? %>
+          | <%= fundamental_character.alliance_tag %>
+        <%end%></td>
+    <td><% if !fundamental_character.last_login_at.nil? %>
+
+       <% vara = fundamental_character.lastactiv %> 
+       <% if vara == "green" %>
+            <%= image_tag("Green.png")  %>
+        <% elsif vara == "yellow" %>
+            <%= image_tag("Yellow.png")  %>
+        <% else %>
+            <%= image_tag("Red.png")  %>
+       <% end %>
+
+        <%else%>
+          never
+        <%end%>
+    </td>
+<% if staff? || admin? %>
+    <td><% if !fundamental_character.last_request_at.nil? %>          
+          <%= time_ago_in_words(fundamental_character.last_request_at) %> ago
+        <%else%>
+          never
+        <%end%>
+    </td>
+    <td><%= ((fundamental_character.playtime || 0.0) / 60.0).ceil %> m</td>
+<% end %>
+    <td><%= fundamental_character.max_finished_quest %></td>
+    <td><%= fundamental_character.max_conversion_state %></td>
+<% if staff? || admin? %>
+    <td><%= fundamental_character.gross.nil? || fundamental_character.gross <= 0.1 ? "--" : "#{fundamental_character.gross } EUR" %></td>
+<% end %>
+    <td><%= fundamental_character.mundane_rank %> (XP: <%= fundamental_character.exp %>) / 
+        <%= fundamental_character.sacred_rank %></td>
+    <td><%= fundamental_character.settlement_points_used %> / 
+        <%= fundamental_character.settlement_points_total %></td>
+    <td><%= fundamental_character.banned %> <%= fundamental_character.ban_reason %></td>
+    <td><%= link_to(fundamental_character.base_location_id, map_location_path(fundamental_character.base_location_id))  unless fundamental_character.base_location_id.nil? %></td>
+    <td><%= fundamental_character.alliance_id %></td>
+    <% if staff? || admin? %>
+    <td><%= fundamental_character.referer %></td>
+    <% end %>
+    <td><%= fundamental_character.last_retention_mail.nil? ? '-' : link_to(fundamental_character.last_retention_mail.mail_type, fundamental_character.last_retention_mail) %></td>
+    <td><%= fundamental_character.last_retention_mail_sent_at %></td>
+    <td><%= fundamental_character.victories %>/<%= fundamental_character.defeats %></td>
+    <td style="text-align: center; color: red;"><b><%= fundamental_character.deleted_from_game? ? 'X' : '' %></b></td>
+    <td><%= fundamental_character.same_ip %></td>
+    <td><%= link_to 'Show', fundamental_character %></td>
+    <td><%= link_to 'Properties', fundamental_persistent_character_property_path(fundamental_character.id) %></td>
+    <td><%= link_to 'History', fundamental_character_history_events_path(fundamental_character.id) %></td>
+    <td><%= link_to 'Edit', edit_fundamental_character_path(fundamental_character) %></td>
+    <td><%= link_to 'Destroy', fundamental_character, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+

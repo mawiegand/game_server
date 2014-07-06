@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.25
+# Version: 1.7.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -34,7 +34,7 @@ class GameRules::Rules
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
-    :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup, :facebook_user_stories,
+    :queue_types, :settlement_types, :artifact_types, :diplomacy_relation_types, :victory_types, :construction_speedup, :training_speedup, :facebook_user_stories,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles, :special_offer,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
@@ -68,7 +68,8 @@ class GameRules::Rules
       'slot_bubbles'                => slot_bubbles,
       'special_offer'               => special_offer,
       'settlement_types'            => settlement_types,
-      'artifact_types'              => artifact_types,  
+      'artifact_types'              => artifact_types,
+      'diplomacy_relation_types'    => diplomacy_relation_types,
       'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
       'character_ranks'             => character_ranks,
@@ -122,8 +123,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 1,
-                    :minor => 6,
-                    :build => 25,
+                    :minor => 7,
+                    :build => 0,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -8569,6 +8570,96 @@ class GameRules::Rules
 
         },              #   END OF Steinbrösler
       ],                # END OF ARTIFACT TYPES
+
+# ## DIPLOMACY RELATION TYPES ########################################################
+  
+      :diplomacy_relation_types => [  # ALL DIPLOMACY RELATION TYPES
+
+        {               #   Neutral
+          :id          => 0, 
+          :symbolic_id => :diplomacy_relation_0,
+          :name        => {
+            
+            :de_DE => "Neutral",
+  
+            :en_US => "Neutral",
+  
+          },
+          :duration => 60*60*72,
+          :min => false,
+          :next_relations => [ 
+          1,
+          
+          ],
+        },              #   END OF Neutral
+        {               #   Ultimatum
+          :id          => 1, 
+          :symbolic_id => :diplomacy_relation_1,
+          :name        => {
+            
+            :de_DE => "Ultimatum",
+  
+            :en_US => "Ultimatum",
+  
+          },
+          :duration => 60*60*24/24,
+          :min => false,
+          :next_relations => [ 
+          2,
+          
+          ],
+        },              #   END OF Ultimatum
+        {               #   Krieg
+          :id          => 2, 
+          :symbolic_id => :diplomacy_relation_2,
+          :name        => {
+            
+            :de_DE => "Krieg",
+  
+            :en_US => "War",
+  
+          },
+          :duration => 60*60*72/72,
+          :min => true,
+          :next_relations => [ 
+          3,
+          4,
+          
+          ],
+        },              #   END OF Krieg
+        {               #   Kapitulation
+          :id          => 3, 
+          :symbolic_id => :diplomacy_relation_3,
+          :name        => {
+            
+            :de_DE => "Kapitulation",
+  
+            :en_US => "Surrender",
+  
+          },
+          :duration => 60*60*72/72,
+          :min => false,
+          :next_relations => [ 
+          
+          ],
+        },              #   END OF Kapitulation
+        {               #   Besatzung
+          :id          => 4, 
+          :symbolic_id => :diplomacy_relation_4,
+          :name        => {
+            
+            :de_DE => "Besatzung",
+  
+            :en_US => "Occupation",
+  
+          },
+          :duration => 60*60*72/72,
+          :min => false,
+          :next_relations => [ 
+          
+          ],
+        },              #   END OF Besatzung
+      ],                # END OF DIPLOMACY RELATION TYPES
 
 # ## VICTORY TYPES ########################################################
   

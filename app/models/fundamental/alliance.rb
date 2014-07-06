@@ -11,6 +11,8 @@ class Fundamental::Alliance < ActiveRecord::Base
   has_many   :victory_progresses, :class_name => "Fundamental::VictoryProgress", :foreign_key => "alliance_id", :inverse_of => :alliance, :dependent => :destroy
   has_many   :artifacts, :class_name => "Fundamental::Artifact",      :foreign_key => "alliance_id", :inverse_of => :alliance
   has_many   :leader_votes, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "alliance_id", :inverse_of => :alliance
+  has_many   :diplomacy_source_relations, :class_name => "Fundamental::DiplomacyRelation", :foreign_key => "source_alliance_id", :inverse_of => :source_alliance
+  has_many   :diplomacy_target_relations, :class_name => "Fundamental::DiplomacyRelation", :foreign_key => "target_alliance_id", :inverse_of => :target_alliance
 
   has_many   :resource_effects,     :class_name => "Effect::AllianceResourceEffect",     :foreign_key => "alliance_id", :inverse_of => :alliance
   has_many   :construction_effects, :class_name => "Effect::AllianceConstructionEffect", :foreign_key => "alliance_id", :inverse_of => :alliance
@@ -102,6 +104,12 @@ class Fundamental::Alliance < ActiveRecord::Base
     tag.length < 6 && /[^A-Za-z0-9]/.match(tag).nil?
   end
   
+  def self.find_by_tag_or_name(alliance_identifier)
+    alliance = Fundamental::Alliance.find_by_tag(alliance_identifier) if Fundamental::Alliance.tag_is_valid?(alliance_identifier)
+    alliance = Fundamental::Alliance.find_by_name(alliance_identifier) if alliance.nil?
+    alliance
+  end
+  
   def auto_joinable
     return self if !auto_join_disabled and self.members.count > 0 and !self.full?
 		nil
@@ -179,6 +187,10 @@ class Fundamental::Alliance < ActiveRecord::Base
   
   def size_max
     GameRules::Rules.the_rules.alliance_max_members + self.size_bonus
+  end
+  
+  def is_at_war_with?(alliance)
+    self.diplomacy_source_relations.where(target_alliance_id: alliance.id).war.present?
   end
   
   def add_unique_invitation_code

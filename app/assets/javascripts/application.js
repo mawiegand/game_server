@@ -6,8 +6,25 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require autocomplete-rails
 //= require_tree .
 
 //= require dygraph-combined
+
+
+
+/*
+
+
+  $(function() {
+    var availableTags = @fundamental_characters 
+      
+    $("#auto_field").autocomplete({
+      source: availableTags
+    });
+  });
+
+
+*/
 
 
