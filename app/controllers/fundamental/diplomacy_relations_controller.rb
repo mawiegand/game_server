@@ -17,7 +17,7 @@ class Fundamental::DiplomacyRelationsController < ApplicationController
       # TODO: Calculate last_modifed
       # last_modified = 
       
-      raise ForbiddenError.new "Access Fobidden." unless staff? || admin? || current_character.alliance_id == @alliance.id
+      raise ForbiddenError.new "Access Fobidden." unless staff? || admin? || !current_character.nil?
     else
       @fundamental_diplomacy_relations = Fundamental::DiplomacyRelation.all
     end   
