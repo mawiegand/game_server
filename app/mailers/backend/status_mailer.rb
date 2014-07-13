@@ -1,5 +1,5 @@
 class Backend::StatusMailer < ActionMailer::Base
-  default from: Rails.env.production? ?  "status@gs05.wack-a-doo.de" : "status@test1.wack-a-doo.de"
+  default from: Rails.env.production? ?  "status@gs06.wack-a-doo.de" : "status@test1.wack-a-doo.de"
   
   def sent_chargeback_alert(transaction)
     @transaction = transaction

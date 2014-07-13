@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  source_alliance_id: 1
+  target_alliance_id: 1
+  diplomacy_status: 1
+  initiator: false
+
+two:
+  source_alliance_id: 1
+  target_alliance_id: 1
+  diplomacy_status: 1
+  initiator: false

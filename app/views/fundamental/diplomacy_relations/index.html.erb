@@ -1,0 +1,29 @@
+<h1>Listing fundamental_diplomacy_relations</h1>
+
+<table>
+  <tr>
+    <th>Source alliance</th>
+    <th>Target alliance</th>
+    <th>Diplomacy status</th>
+    <th>Initiator</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_diplomacy_relations.each do |fundamental_diplomacy_relation| %>
+  <tr>
+    <td><%= fundamental_diplomacy_relation.source_alliance_id %></td>
+    <td><%= fundamental_diplomacy_relation.target_alliance_id %></td>
+    <td><%= fundamental_diplomacy_relation.diplomacy_status %></td>
+    <td><%= fundamental_diplomacy_relation.initiator %></td>
+    <td><%= link_to 'Show', fundamental_diplomacy_relation %></td>
+    <td><%= link_to 'Edit', edit_fundamental_diplomacy_relation_path(fundamental_diplomacy_relation) %></td>
+    <td><%= link_to 'Destroy', fundamental_diplomacy_relation, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Diplomacy relation', new_fundamental_diplomacy_relation_path %>

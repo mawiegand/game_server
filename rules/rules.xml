@@ -64,7 +64,8 @@
               Patrick Fox <patrick@5dlab.com>,
               Hajo Runne <hajo@5dlab.com>,
               Max Buck <max@5dlab.com>,
-              Jan Kegel <jan@5dlab.com>
+              Jan Kegel <jan@5dlab.com>,
+              Marcel Wiegand <marcel@5dlab.com>
      
      All rights reserved, (c) 5D Lab GmbH, 2012,2013. 
      
@@ -72,7 +73,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="6" build="25" />
+    <Version major="1" minor="7" build="1" />
     <AppControl debugTracking="1" startscreen="map">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="24" />
       <Facebook userStoriesEnabled="0" />
@@ -254,6 +255,7 @@
   </General>
   <xi:include href="rules_victories.xml" />
   <xi:include href="rules_artifacts.xml" />
+  <xi:include href="rules_diplomacy_relation.xml" />
   <xi:include href="rules_settlements.xml" />
   <xi:include href="rules_resources.xml" />
   <xi:include href="rules_units.xml" />

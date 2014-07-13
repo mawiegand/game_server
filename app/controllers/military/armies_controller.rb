@@ -29,6 +29,10 @@ class Military::ArmiesController < ApplicationController
   #  GET /map/locations/:location_id/armies
   #  GET /map/locations/:location_id/armies.json
   #  GET /military/armies
+
+
+
+
   def index
 
     last_modified = nil
@@ -89,7 +93,7 @@ class Military::ArmiesController < ApplicationController
       respond_to do |format|
         format.html do
           if @military_armies.nil?
-            @military_armies = Military::Army.paginate(:page => params[:page], :per_page => 50)
+            @military_armies = Military::Army.search(params[:search]).paginate(:page => params[:page], :per_page => 50)
             @paginate = true   
           end 
         end
@@ -104,6 +108,16 @@ class Military::ArmiesController < ApplicationController
             render json: @military_armies.select { |army| !army.removed? }.map { |army| army.as_json(:role => determine_access_role(army.owner_id, army.alliance_id)) }
           end
         end
+      end
+    end
+  end
+
+   def livesearch
+    respond_to do |format|
+      format.html { render :layout => false, :partial => "armies"}
+      if @military_armies.nil?
+        @military_armies = Military::Army.search(params[:search]).paginate(:page => params[:page], :per_page => 50)
+        @paginate = true
       end
     end
   end
