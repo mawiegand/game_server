@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140326141322) do
+ActiveRecord::Schema.define(:version => 20140722091142) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1921,6 +1921,7 @@ ActiveRecord::Schema.define(:version => 20140326141322) do
     t.datetime "gc_player_id_connected_at"
     t.datetime "gc_rejected_at"
     t.integer  "start_variant",                            :default => 1,     :null => false
+    t.integer  "random"
   end
 
   create_table "fundamental_diplomacy_relations", :force => true do |t|
@@ -2247,7 +2248,6 @@ ActiveRecord::Schema.define(:version => 20140326141322) do
     t.string   "avatar_string"
     t.integer  "alliance_color"
     t.boolean  "invisible",                       :default => false
-    t.boolean  "selected",                        :default => false
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"

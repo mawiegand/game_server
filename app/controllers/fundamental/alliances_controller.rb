@@ -1,8 +1,8 @@
 class Fundamental::AlliancesController < ApplicationController
   layout 'fundamental'
   
-  before_filter :authenticate
-  before_filter :deny_api, :except => [:show, :update]
+  #before_filter :authenticate
+  #before_filter :deny_api, :except => [:show, :update]
 
   
   # GET /fundamental/alliances

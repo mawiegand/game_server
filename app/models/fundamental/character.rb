@@ -62,9 +62,9 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :alliance_leader_candidate, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "candidate_id", :inverse_of => :candidate
   has_one  :alliance_leader_vote, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "voter_id", :inverse_of => :voter
 
-  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
+  attr_readable :id, :identifier, :name, :vote, :lvel, :exp, :random, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :start_variant, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :divine_supporter, :image_set_id, :platinum_lifetime, :moved_at, :gc_player_id, :gc_rejected_at, :gc_player_id_connected_at, :fb_player_id, :fb_rejected_at, :fb_player_id_connected_at, :as => :owner
+  attr_readable *readable_attributes(:ally), :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :start_variant, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :divine_supporter, :image_set_id, :platinum_lifetime, :moved_at, :gc_player_id, :gc_rejected_at, :gc_player_id_connected_at, :fb_player_id, :fb_rejected_at, :fb_player_id_connected_at, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -77,6 +77,7 @@ class Fundamental::Character < ActiveRecord::Base
   before_save :update_experience_on_bonus_changes
   before_save :update_construction_bonus_total
   before_save :update_experience_bonus_total
+  before_save :set_random
 
   after_save  :propagate_insider_since_changes_to_chat
 
@@ -99,6 +100,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_divine_supporter_changes
   after_save  :propagate_image_set_changes
   after_save  :manage_assignments_on_level_change
+  
 
   after_commit :check_consistency_sometimes
   
@@ -490,7 +492,7 @@ class Fundamental::Character < ActiveRecord::Base
       exp:  0,
       start_variant: 1,
       gender: gender,
-      lang: lang,
+      lang: lang
     })
     
     avatar = GameState::Avatars.new
@@ -562,7 +564,7 @@ class Fundamental::Character < ActiveRecord::Base
     end
     
     character 
-  end
+  end  
   
   # creates a character and a settler unit, not a settlement
   def self.create_new_character_and_settler(identifier, name, args = {})
@@ -578,7 +580,7 @@ class Fundamental::Character < ActiveRecord::Base
       exp:  0,
       start_variant: 2,
       gender: gender,
-      lang: lang,
+      lang: lang
     })
     
     avatar = GameState::Avatars.new
@@ -642,8 +644,7 @@ class Fundamental::Character < ActiveRecord::Base
     end
     
     character 
-  end
-  
+  end 
   
   def completed_tutorial?
     tutorial_state = self.tutorial_state
@@ -880,6 +881,10 @@ class Fundamental::Character < ActiveRecord::Base
       return
     end
     self.max_conversion_state = "registered"
+  end
+  
+  def set_random
+    self.random = Random.new.rand(0..10) if self.random.nil?
   end
   
   # ##########################################################################
@@ -1720,8 +1725,9 @@ class Fundamental::Character < ActiveRecord::Base
 
   def serializable_hash(options={})
     options[:only] = self.class.readable_attributes(options[:role]) unless options[:role].nil?
-    options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker']
+    options[:methods] = ['first_start', 'beginner', 'insider', 'chat_beginner', 'open_chat_pane', 'show_base_marker', 'voted_for_candidate_id']
     options[:methods].push('lastactiv')  if options[:role] === :owner || options[:role] === :ally
+    options[:methods].push()
     super(options)
   end
 
