@@ -70,6 +70,7 @@ namespace :deploy do
   task :stop_all do
     stop
     stop_ticker
+    stop_jabber_bots
     stop_notification_ticker
     stop_jabber_bots
   end
