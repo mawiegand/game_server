@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140326141322) do
+ActiveRecord::Schema.define(:version => 20140811190643) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2780,6 +2780,8 @@ ActiveRecord::Schema.define(:version => 20140326141322) do
     t.datetime "updated_at"
     t.boolean  "sent_mail_alert",          :default => false
     t.boolean  "sent_special_offer_alert"
+    t.boolean  "tracked",                  :default => false, :null => false
+    t.boolean  "chargeback_tracked",       :default => false, :null => false
   end
 
   add_index "shop_money_transactions", ["uid"], :name => "index_shop_money_transactions_on_uid", :unique => true

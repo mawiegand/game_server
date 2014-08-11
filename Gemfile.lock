@@ -66,7 +66,7 @@ GEM
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
     choice (0.1.6)
-    ci_reporter (2.0.0)
+    ci_reporter (1.9.0)
       builder (>= 2.1.2)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
@@ -197,7 +197,7 @@ PLATFORMS
 DEPENDENCIES
   awe_native_extensions (>= 0.0.16)!
   capistrano (~> 2.14.0)
-  ci_reporter
+  ci_reporter (~> 1.9.0)
   coffee-rails (~> 3.1.1)
   gravatar_image_tag
   highline (>= 1.6.12)

@@ -65,8 +65,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem 'ci_reporter'
-
+gem 'ci_reporter', '~> 1.9.0'
 
 group :test do
   # Pretty printed test output
