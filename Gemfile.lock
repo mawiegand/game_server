@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: git@github.com:wackadoo/sampl.rb.git
-  revision: 6b512a8b0b43d4382ecffe1440e490f230ecf1e4
+  revision: 300fa94a054d97a97051e1c473178c00d84200ab
   specs:
     sampl (0.0.1)
       httparty (~> 0.13)
