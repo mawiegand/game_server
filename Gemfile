@@ -22,7 +22,7 @@ gem 'xmpp4r'
 gem 'xmpp4r-simple', '>= 0.3.2', :git => "git@github.com:blaine/xmpp4r-simple.git"
 gem 'jabber-bot'
 
-gem 'sampl', '~> 0.0.1', :git => "git@github.com:wackadoo/sampl.rb.git"
+gem 'sampl', '~> 0.0.2'
 
 
 group :production do

@@ -12,13 +12,6 @@ GIT
     awe_native_extensions (0.0.16)
 
 GIT
-  remote: git@github.com:wackadoo/sampl.rb.git
-  revision: 300fa94a054d97a97051e1c473178c00d84200ab
-  specs:
-    sampl (0.0.1)
-      httparty (~> 0.13)
-
-GIT
   remote: https://github.com/francisd/rails3-jquery-autocomplete
   revision: 9884a40f2bb1a8fa3ffab445e6d2c74c3ee99a0d
   specs:
@@ -150,6 +143,8 @@ GEM
       json (~> 1.4)
     ref (1.0.5)
     ruby-graphviz (1.0.9)
+    sampl (0.0.2)
+      httparty (~> 0.13)
     sass (3.3.14)
     sass-rails (3.1.4)
       actionpack (~> 3.1.0)
@@ -212,7 +207,7 @@ DEPENDENCIES
   rails-erd
   rails3-jquery-autocomplete!
   rb-readline (= 0.4.2)
-  sampl (~> 0.0.1)!
+  sampl (~> 0.0.2)
   sass-rails (= 3.1.4)
   simplecov
   simplecov-rcov
