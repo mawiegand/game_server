@@ -2247,7 +2247,6 @@ ActiveRecord::Schema.define(:version => 20140326141322) do
     t.string   "avatar_string"
     t.integer  "alliance_color"
     t.boolean  "invisible",                       :default => false
-    t.boolean  "selected",                        :default => false
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
