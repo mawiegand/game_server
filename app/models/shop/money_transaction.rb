@@ -59,7 +59,9 @@ class Shop::MoneyTransaction < ActiveRecord::Base
       country:          self.country,
       earnings:         self.earnings,
       product_sku:      self.offer_id,
-      product_category: self.offer_category
+      product_category: self.offer_category,
+      invoice_id:       self.invoice_id,
+      timestamp:        self.tstamp || DateTime.now
     });
     
     self.tracked = true
@@ -81,7 +83,9 @@ class Shop::MoneyTransaction < ActiveRecord::Base
       country:          self.country,
       earnings:         self.earnings,
       product_sku:      self.offer_id,
-      product_category: self.offer_category
+      product_category: self.offer_category,
+      invoice_id:       self.invoice_id,
+      timestamp:        self.tstamp || DateTime.now
     });
     
     self.chargeback_tracked = true
