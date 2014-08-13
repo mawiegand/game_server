@@ -254,6 +254,8 @@
 <!ELEMENT DiplomacyDuration (#PCDATA)>
 <!ATTLIST DiplomacyDuration
   min (true | false) "false"
+  decreaseDurationForVictim (true | false) "false"
+  victimDuration CDATA "0"
 >
 
 <!ELEMENT NextRelationTypes (NextRelation*)>
