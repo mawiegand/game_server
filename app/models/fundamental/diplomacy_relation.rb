@@ -58,7 +58,7 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
     end
   end
   
-  def is_manual_status_change_allowed?(caller_alliance)
+  def is_manual_status_change_allowed?
     victim_bonus = self.relation_status[:min] && self.initiator && self.relation_status[:decrease_duration_for_victim] && (Time.now >= (self.created_at + self.relation_status[:victim_duration].seconds))
     min_duration = self.relation_status[:min] && (Time.now >= (self.created_at + self.relation_status[:duration].seconds))
     victim_bonus || min_duration
