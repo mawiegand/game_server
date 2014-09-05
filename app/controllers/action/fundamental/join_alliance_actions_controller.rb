@@ -9,6 +9,8 @@ class Action::Fundamental::JoinAllianceActionsController < ApplicationController
     raise BadRequestError.new('no current character') if current_character.nil?
     raise BadRequestError.new('tried to join an alliance although character is already in an alliance') unless current_character.alliance.nil?
     raise UnauthorizedError.new('no alliance password given') if params[:alliance][:password].nil?
+    raise ForbiddenError.new('joining new alliance not allowed') if !current_character.can_join_alliance?
+
 
     alliance = Fundamental::Alliance.find_by_tag(params[:alliance][:tag])
 

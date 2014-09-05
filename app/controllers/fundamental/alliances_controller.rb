@@ -30,6 +30,8 @@ class Fundamental::AlliancesController < ApplicationController
         if !current_character.nil? && !@fundamental_alliance.nil? && !alliance_hash.nil? && current_character.alliance == @fundamental_alliance
           alliance_hash[:vote_candidate_id] = current_character.voted_for_candidate_id
         end
+
+        alliance_hash[:is_at_war] = @fundamental_alliance.is_at_war?
         
         render json: include_root(alliance_hash, :alliance)
       end

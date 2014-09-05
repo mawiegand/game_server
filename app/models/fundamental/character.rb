@@ -64,7 +64,7 @@ class Fundamental::Character < ActiveRecord::Base
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at,    :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
-  attr_readable *readable_attributes(:ally),  :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :start_variant, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :divine_supporter, :image_set_id, :platinum_lifetime, :moved_at, :gc_player_id, :gc_rejected_at, :gc_player_id_connected_at, :fb_player_id, :fb_rejected_at, :fb_player_id_connected_at, :as => :owner
+  attr_readable *readable_attributes(:ally), :cannot_join_alliance_until, :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :start_variant, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :divine_supporter, :image_set_id, :platinum_lifetime, :moved_at, :gc_player_id, :gc_rejected_at, :gc_player_id_connected_at, :fb_player_id, :fb_rejected_at, :fb_player_id_connected_at, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -77,6 +77,7 @@ class Fundamental::Character < ActiveRecord::Base
   before_save :update_experience_on_bonus_changes
   before_save :update_construction_bonus_total
   before_save :update_experience_bonus_total
+  before_save :join_alliance_check
 
   after_save  :propagate_insider_since_changes_to_chat
 
@@ -1203,6 +1204,23 @@ class Fundamental::Character < ActiveRecord::Base
     Assignment::StandardAssignment.manage_on_level_change(self, assignment_level_change[0], assignment_level_change[1])
   end
   
+  def set_cannot_join_alliance_until
+    if self.created_at > 20.days.ago
+      self.cannot_join_alliance_until = Time.now
+    elsif self.created_at <= 20.days.ago && !self.alliance.is_at_war?
+      self.cannot_join_alliance_until = 12.hours.from_now
+    elsif self.created_at <= 20.days.ago && self.alliance.is_at_war?
+      self.cannot_join_alliance_until = 24.hours.from_now
+    end        
+  end
+
+  def join_alliance_check
+    return false if self.alliance_id_changed? && self.alliance_id_was.nil? && !can_join_alliance?
+  end
+
+  def can_join_alliance?
+    self.cannot_join_alliance_until < Time.now
+  end
   ############################################################################
   #
   #  C O N S I S T E N C Y   C H E C K S
