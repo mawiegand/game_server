@@ -23,4 +23,6 @@
       <%= f.submit 'Unblock'%>
     <% end %>
   </td>
+  <td><%= link_to "Logfile", backend_log_inspector_path("ticker", event.execute_at)%></td>
+  
 </tr>

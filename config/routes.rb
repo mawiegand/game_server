@@ -25,7 +25,7 @@ GameServer::Application.routes.draw do
 
 
       namespace :backend do 
-        resource  :dashboard, :controller => 'dashboard', :only => [:show, :create]
+        resource  :dashboard,     :controller => 'dashboard',     :only => [:show, :create]
         resources :users 
         resources :partner_sites
         resources :stats
@@ -35,7 +35,11 @@ GameServer::Application.routes.draw do
         resources :system_messages
         resources :trade_log_entries, :only => [ :index ]
         resources :user_content_reports
+
+        get '/log_inspector/:log/:regex',  :module => 'backend', :controller => 'log_inspector', :action => :show, :as => 'log_inspector'
+        get '/log_inspector/:log',         :module => 'backend', :controller => 'log_inspector', :action => :show
       end
+      
 
       namespace :effect do 
         resources :alliance_construction_effects
