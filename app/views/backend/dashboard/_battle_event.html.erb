@@ -1,0 +1,16 @@
+<tr>
+  <td>event.id</td>
+  <td>event.executed_at</td>
+  <td>event.locked_at</td>
+  <td>event.locked_by</td>
+  <td>event.blocked</td>
+  <td>event.blocked_by</td>
+  <td>event.local_event_id</td>
+<% unless battle.nil? %>
+  <td>battle.battle_rounds_count</td>
+  <td>battle.next_round_at</td>
+<% else %>
+  <td></td>
+  <td></td>
+<% end %>
+</tr>
