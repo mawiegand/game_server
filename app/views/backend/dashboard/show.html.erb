@@ -14,7 +14,7 @@
     
     <table>
       <% @blocked_battle_events.each do |battle_event| %>
-        <%= render :partial => "backend/dashboard/battle_event", :locals => { :event => battle_event.event, :battle => battle_event.battle } %>
+        <%= render :partial => "backend/dashboard/battle_event", :locals => { :event => battle_event[:event], :battle => battle_event[:battle] } %>
       <% end %>
     </table>
     
