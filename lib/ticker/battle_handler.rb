@@ -106,12 +106,19 @@ class Ticker::BattleHandler
                 
                 #do the takeover
                 old_owner = target_settlement.owner
+                runloop.say "Old owner #{ old_owner }."
+                
                 new_owner = if target_settlement.can_be_taken_over_by?(winner_leader) && (battle.location.fortress? || battle.location.region.takeoverable_by?(winner_leader))
+                              runloop.say "Winner factions's leader will get it: #{ winner_leader }."
                               winner_leader
                             else
+                              runloop.say "Largest army will get it."
                               candidate = winner_faction.takeover_candidate_with_largest_army(target_settlement)
+                              runloop.say "Largest army: #{ candidate }."
                               candidate.nil?  ? nil : candidate.army.owner
                             end
+                            
+                runloop.say "New owner: #{ new_owner }."
 
                 if !new_owner.nil?
                   runloop.say "Execute takeover of settlement ID #{ battle.location.settlement.id }."
