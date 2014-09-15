@@ -16,15 +16,19 @@ class Backend::LogInspectorController < ApplicationController
     @string = params[:regex] || "ERROR"
     @lines  = []
     @hits   = 0
+    
+    first_line = nil
 
     if File.exist?(@path)
     
       logfile = File.open(@path, "r")
       regex   = Regexp.new(@string)
       counter = 0
-      after_lines = params[:after].to_i || 5
+      after_lines = (params[:after] || "5").to_i
     
       logfile.each_line do |line|
+        first_line = first_line || line
+        
         if line =~ regex
           @lines << line.gsub(regex){|x| "<b>#{x}</b>" }
           counter = after_lines
@@ -39,6 +43,12 @@ class Backend::LogInspectorController < ApplicationController
       end
       
       logfile.close
+      
+      if @hits == 0
+        @lines << "Logfile starts with:" << first_line
+      end
+    else
+      @lines << "File does not exist."
     end
         
     respond_to do |format|
