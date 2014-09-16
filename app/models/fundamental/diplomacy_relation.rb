@@ -12,10 +12,10 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
   
   after_create :create_event
   
-  scope :neutral, where(diplomacy_status: RELATION_TYPE_NEUTRAL)
-  scope :ultimatum, where(diplomacy_status: RELATION_TYPE_ULTIMATUM)
-  scope :war, where(diplomacy_status: RELATION_TYPE_WAR)
-  scope :surrender, where(diplomacy_status: RELATION_TYPE_SURRENDER)
+  scope :neutral,    where(diplomacy_status: RELATION_TYPE_NEUTRAL)
+  scope :ultimatum,  where(diplomacy_status: RELATION_TYPE_ULTIMATUM)
+  scope :war,        where(diplomacy_status: RELATION_TYPE_WAR)
+  scope :surrender,  where(diplomacy_status: RELATION_TYPE_SURRENDER)
   scope :occupation, where(diplomacy_status: RELATION_TYPE_OCCUPATION)
   
   def relation_status
@@ -36,7 +36,8 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
   end
     
   def self.destroy_relations_between(alliance1, alliance2)
-    relations = Fundamental::DiplomacyRelation.where("source_alliance_id = ? OR target_alliance_id = ? OR source_alliance_id = ? OR target_alliance_id = ?", alliance1.id, alliance1.id, alliance2.id, alliance2.id)
+    return true if alliance1.nil? || alliance2.nil?
+    relations = Fundamental::DiplomacyRelation.where("(source_alliance_id = ? AND target_alliance_id = ?) OR (source_alliance_id = ? AND target_alliance_id = ?)", alliance1.id, alliance2.id, alliance2.id, alliance1.id)
     relations.destroy_all
   end
   
@@ -51,22 +52,22 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
       
       # TODO: Define opposite in rules to do this dynamically
       if new_relation.diplomacy_status == RELATION_TYPE_SURRENDER
-        new_relation.create_copy(RELATION_TYPE_OCCUPATION)
+        new_relation.create_inverse_relation(RELATION_TYPE_OCCUPATION)
       else
-        new_relation.create_copy(self.relation_status[:next_relations][0])
+        new_relation.create_inverse_relation(self.relation_status[:next_relations][0])
       end
     end
   end
   
   def is_manual_status_change_allowed?
-    self.relation_status[:min] && (Time.now >= (self.created_at + self.relation_status[:duration].seconds))
+    self.relation_status[:min] && (Time.now >= (self.created_at + (self.relation_status[:duration] || 0).seconds))
   end
 
   def create_event
     self.create_ticker_event if !self.relation_status[:min] && self.initiator
   end
   
-  def create_copy(diplomacy_status)
+  def create_inverse_relation(diplomacy_status)
     copy = self.dup
     copy.source_alliance = self.target_alliance
     copy.target_alliance = self.source_alliance
