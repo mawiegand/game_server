@@ -190,6 +190,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   end
   
   def is_at_war_with?(alliance)
+    return false    if alliance.nil?
     self.diplomacy_source_relations.where(target_alliance_id: alliance.id).war.present?
   end
 

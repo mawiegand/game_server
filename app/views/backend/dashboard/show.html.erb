@@ -8,7 +8,17 @@
       <p>Your role: <%= (backend_admin? ? '<span class="red">admin</span>' : backend_staff? ? '<span class="orange">staff</span>' : backend_developer? ? 'developer' : backend_parnter? ? "partner" : "none").html_safe %>.
     </div>
   </div>
-  
+
+  <% if !@blocked_battle_events.empty? %>
+    <h1>Blocked Battle Events</h1>
+    
+    <table>
+      <% @blocked_battle_events.each do |battle_event| %>
+        <%= render :partial => "backend/dashboard/battle_event", :locals => { :event => battle_event[:event], :battle => battle_event[:battle] } %>
+      <% end %>
+    </table>
+    
+  <% end %>  
   
   <h1>World Stats</h1>
   <% unless @world_stats[:winner].nil? %>

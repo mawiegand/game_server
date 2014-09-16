@@ -1,5 +1,5 @@
 class Backend::MessageDeletionMailer < ActionMailer::Base
-  default from: Rails.env.production? ?  "messagedeletion@gs05.wack-a-doo.de" : "messagedeletion@test1.wack-a-doo.de"
+  default from: Rails.env.production? ?  "messagedeletion@gs06.wack-a-doo.de" : "messagedeletion@test1.wack-a-doo.de"
   
   def message_deletion_report(report)
     @report = report

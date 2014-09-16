@@ -853,15 +853,17 @@ class Military::Army < ActiveRecord::Base
     
     def update_experience_and_kills_character
       return true    if self.owner.blank?
+      
+      self.owner.reload # necessary, because it may have been previously loaded and updated meanwhile
     
       if !self.changes[:exp].blank?
         delta = (self.exp_change[1] || 0)-(self.exp_change[0] || 0)
-        self.owner.increment(:exp, (delta * (1 + (self.owner.exp_bonus_total || 0))).floor)
+        self.owner.exp = (self.owner.exp || 0) + (delta * (1 + (self.owner.exp_bonus_total || 0))).floor
       end
 
       if !self.changes[:kills].blank?
         delta = (self.kills_change[1] || 0)-(self.kills_change[0] || 0)
-        self.owner.increment(:kills, delta)
+        self.owner.kills = (self.owner.kills || 0) + delta
       end
       
       self.owner.save # saves only in case something has actually changed.

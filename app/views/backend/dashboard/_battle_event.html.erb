@@ -1,0 +1,27 @@
+<tr>
+  <td><%= link_to "#{event.id}", event_event_path(event) %>, <%= time_ago_in_words event.execute_at %> late</td>
+<% unless battle.nil? %>
+  <td><b><%= "#{battle.initiator.name} | #{battle.initiator.alliance_tag}"%></b> attacked <b><%= "#{battle.opponent.name} | #{battle.opponent.alliance_tag}"%>
+<% else %>
+  <td>-</td>
+<% end %>
+  <td><%= event.locked_at %></td>
+  <td><%= event.locked_by %></td>
+<% unless battle.nil? %>
+  <td><%= link_to "#{battle.id}", military_battle_path(battle) %></td>
+  <td><%= battle.battle_rounds_count %></td>
+<% else %>
+  <td colspan="2">No battle associated.</td>
+<% end %>
+  <td>
+    <% event.locked_by = nil
+       event.locked_at = nil # attention: this changes the event (without saving, but duoh..)  %>  
+    <%= form_for(event) do |f| %>
+      <%= f.hidden_field :id %>
+      <%= f.hidden_field :locked_by %>
+      <%= f.hidden_field :locked_at %>
+      <%= f.submit 'Unblock'%>
+    <% end %>
+  </td>
+  <td><%= link_to "Logfile", backend_log_inspector_path("ticker", event.execute_at, :after => 25)%></td>
+</tr>

@@ -9625,9 +9625,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'a',
-          :url          => 'https://gs05.wack-a-doo.de/game_server/en/facebook/object_types/0',
-          :image_url    => 'https://gs05.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
-          :see_also_url => 'https://gs05.wack-a-doo.de',
+          :url          => 'https://gs06.wack-a-doo.de/game_server/en/facebook/object_types/0',
+          :image_url    => 'https://gs06.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
+          :see_also_url => 'https://gs06.wack-a-doo.de',
         },              #   END OF battle
         {              #   next_rank
           :id          => 1,
@@ -9649,9 +9649,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'the',
-          :url          => 'https://gs05.wack-a-doo.de/game_server/en/facebook/object_types/1',
-          :image_url    => 'https://gs05.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
-          :see_also_url => 'https://gs05.wack-a-doo.de',
+          :url          => 'https://gs06.wack-a-doo.de/game_server/en/facebook/object_types/1',
+          :image_url    => 'https://gs06.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
+          :see_also_url => 'https://gs06.wack-a-doo.de',
         },              #   END OF next_rank
       ],                # END OF FACEBOOK USER STORIES
 

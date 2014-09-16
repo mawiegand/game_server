@@ -63,13 +63,16 @@ namespace :deploy do
     start
     start_ticker
     start_notification_ticker
+    start_jabber_bots
   end
 
   desc "Stop Thin and Tickers"
   task :stop_all do
     stop
     stop_ticker
+    stop_jabber_bots
     stop_notification_ticker
+    stop_jabber_bots
   end
 
   desc "Restart Ticker"

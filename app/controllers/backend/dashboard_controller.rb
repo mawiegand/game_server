@@ -14,6 +14,9 @@ class Backend::DashboardController < ApplicationController
     
     @user_groups = []
     
+    @blocked_battle_events = []
+    
+    # calculate stats
     if staff? || developer?
       user_group = {}
       user_group[:user_stats] = {
@@ -36,6 +39,19 @@ class Backend::DashboardController < ApplicationController
       user_group[:new_characters] = Fundamental::Character.non_npc.not_deleted.paginate(:order => 'created_at DESC', :page => params[:page], :per_page => 25)
       
       @user_groups << user_group
+    end
+
+    # find blocked events
+    if staff? || developer?
+      battle_events = Event::Event.blocked.battle.executed_before(DateTime.now - 5.seconds)
+      
+      battle_events.each do |event|
+        battle = Military::Battle.find_by_id(event.local_event_id)
+        @blocked_battle_events << {
+          event:  event,
+          battle: battle
+        }
+      end
     end
     
     @world_stats = {
