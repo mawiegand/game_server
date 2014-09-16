@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140811190643) do
+ActiveRecord::Schema.define(:version => 20140904073047) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1921,6 +1921,7 @@ ActiveRecord::Schema.define(:version => 20140811190643) do
     t.datetime "gc_player_id_connected_at"
     t.datetime "gc_rejected_at"
     t.integer  "start_variant",                            :default => 1,     :null => false
+    t.datetime "cannot_join_alliance_until"
   end
 
   create_table "fundamental_diplomacy_relations", :force => true do |t|
@@ -2642,10 +2643,10 @@ ActiveRecord::Schema.define(:version => 20140811190643) do
     t.integer  "name_change_count",                              :default => 0
     t.integer  "alliance_size_bonus",                            :default => 0
     t.integer  "assignment_level",                               :default => 0,            :null => false
-    t.integer  "alliance_color"
     t.integer  "battle_id"
     t.decimal  "condition",                                      :default => 1.0,          :null => false
     t.datetime "condition_updated_at"
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_slots", :force => true do |t|
