@@ -485,9 +485,15 @@ class Settlement::Settlement < ActiveRecord::Base
     save_by_building = (self.settlement_unlock_prevent_takeover_count || 0) >= 1
     self.type_id != base_type[:id] && settlement_types[self.type_id][:conquerable] == true && !save_by_building
   end
-
+  
+  # a fortress can be taken over if at least one of the following is true:
+  # - it's not owned by anybody (bug)
+  # - the present owner is a npc
+  # - the present owner is in no alliance
+  # - the present owner is in the same alliance as character (this is to easily allow for correcting a wrong player taking over a fortress in a war)
+  # - the present owner is in an alliance that is at war with the character's alliance
   def can_be_taken_over_by?(character)
-    can_be_taken_over? && character.can_takeover_settlement? && (self.owner.npc? || self.alliance.nil? || self.alliance.is_at_war_with?(character.alliance))
+    can_be_taken_over? && character.can_takeover_settlement? && (self.owner.nil? || self.owner.npc? || self.alliance.nil? || self.alliance == character.alliance || self.alliance.is_at_war_with?(character.alliance))
   end
   
   ############################################################################
