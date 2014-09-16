@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.9.0
+# Version: 1.10.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -123,7 +123,7 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 1,
-                    :minor => 9,
+                    :minor => 10,
                     :build => 0,
       },
       :app_control => {
@@ -8587,6 +8587,8 @@ class GameRules::Rules
           },
           :duration => 60*60*24*3,
           :min => false,
+          :decrease_duration_for_victim => false,
+          :victim_duration => 0,
           :next_relations => [ 
           1,
           
@@ -8604,6 +8606,8 @@ class GameRules::Rules
           },
           :duration => 60*60*24*1,
           :min => false,
+          :decrease_duration_for_victim => false,
+          :victim_duration => 0,
           :next_relations => [ 
           2,
           
@@ -8619,8 +8623,10 @@ class GameRules::Rules
             :en_US => "War",
   
           },
-          :duration => 60*60*24*7,
+          :duration => 60*60*24*6,
           :min => true,
+          :decrease_duration_for_victim => true,
+          :victim_duration => 60*60*24*3,
           :next_relations => [ 
           3,
           4,
@@ -8639,6 +8645,8 @@ class GameRules::Rules
           },
           :duration => 60*60*24*3,
           :min => false,
+          :decrease_duration_for_victim => false,
+          :victim_duration => 0,
           :next_relations => [ 
           
           ],
@@ -8655,6 +8663,8 @@ class GameRules::Rules
           },
           :duration => 60*60*24*3,
           :min => false,
+          :decrease_duration_for_victim => false,
+          :victim_duration => 0,
           :next_relations => [ 
           
           ],

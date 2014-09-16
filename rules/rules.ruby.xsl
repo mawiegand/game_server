@@ -1263,6 +1263,8 @@ end
           },
           :duration => <xsl:apply-templates select="DiplomacyDuration" />,
           :min => <xsl:apply-templates select="DiplomacyDuration/@min" />,
+          :decrease_duration_for_victim => <xsl:apply-templates select="DiplomacyDuration/@decreaseDurationForVictim" />,
+          :victim_duration => <xsl:apply-templates select="DiplomacyDuration/@victimDuration" />,
           :next_relations => [ 
           <xsl:for-each select="NextRelationTypes/NextRelation">
             <xsl:apply-templates />,

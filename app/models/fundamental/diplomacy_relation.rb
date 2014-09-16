@@ -60,7 +60,9 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
   end
   
   def is_manual_status_change_allowed?
-    self.relation_status[:min] && (Time.now >= (self.created_at + (self.relation_status[:duration] || 0).seconds))
+    victim_bonus = self.relation_status[:min] && !self.initiator && self.relation_status[:decrease_duration_for_victim] && (Time.now >= (self.created_at + (self.relation_status[:victim_duration] ||0).seconds))
+    min_duration = self.relation_status[:min] && (Time.now >= (self.created_at + self.relation_status[:duration].seconds))
+    victim_bonus || min_duration
   end
 
   def create_event

@@ -193,6 +193,10 @@ class Fundamental::Alliance < ActiveRecord::Base
     return false    if alliance.nil?
     self.diplomacy_source_relations.where(target_alliance_id: alliance.id).war.present?
   end
+
+  def is_at_war?
+    (self.diplomacy_source_relations.war + self.diplomacy_target_relations.war).any?
+  end
   
   def add_unique_invitation_code
     begin
