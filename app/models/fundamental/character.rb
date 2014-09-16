@@ -1219,7 +1219,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def can_join_alliance?
-    self.cannot_join_alliance_until < Time.now
+    self.cannot_join_alliance_until.nil? || self.cannot_join_alliance_until < Time.now
   end
   ############################################################################
   #
