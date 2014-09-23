@@ -5,16 +5,16 @@
   <Name lang="de_DE">Großes Rohstofflager</Name>
   <Name lang="en_US">Great Store</Name>
   <Description lang="de_DE">
-    <p>Kupferkarren! DAS Statussymbol für den Häuptling. Neben den Karren gibt es auch größeren Lagerraum, aber wen interessiert das neben in der Sonne blinkenden Kupferkarren.</p>
+    <p>Ein Großes Rohstofflager erhöht die maximale Lagerkapazität und die Anzahl der Karren deutlich.</p>
    </Description>
   <Description lang="en_US">
     <p>Copper carts! THE status symbol for a chieftain. There is also a bigger store room, but who cares when you see those shiny copper carts gleaming in the sunlight.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Stone containers, dinosaur cranes, and - more recently - copper carts. At last, raw materials can be transported in style.</p>
+    <p></p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Steincontainer, Saurierkräne und, seit neuestem, Kupferkarren. Endlich können Rohstoffe mit Stil transportiert werden.</p>
+    <p></p>
   </Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)</Population>
   <RequirementGroup>

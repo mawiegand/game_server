@@ -5,18 +5,17 @@
   <Name lang="de_DE">Kupferschmelze</Name>
   <Name lang="en_US">Copper Smelter</Name>
   <Description lang="de_DE">
-    <p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen. Die Kupferschmelze ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude.</p>
-    <p>Dieses Gebäude kann nicht abgerissen werden.</p>
+    <p>Die Kupferschmelze ermöglicht den Bau bzw. die Umwandlung von Gebäuden der Kupferzeit.</p>
    </Description>
   <Description lang="en_US">
     <p>Copper is THE discovery that moved the Stone Age forward into… yes, you guessed it, the Copper-Stone Age. Its discovery leads to not only the creation of some very attractive jewellery, but also to more deadly weapons and progress in making many kinds of implements and tools.</p>
     <p>This building can not be torn down.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Copper shines even in its unprocessed state, but it can only be made into jewellery once it's been smelted. It can also be used to make the occasional implement.</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Ah Kupfer, ich mag diesen rot-goldenen Schimmer. Sogar die Werkzeuge und Waffen lass sich damit verbessern, auch wenn mir Schmuck lieber ist.</p>
+    <p></p>
    </Flavour> 
  <Population>LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1))</Population>
   <RequirementGroup>

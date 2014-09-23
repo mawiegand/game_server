@@ -5,16 +5,16 @@
   <Name lang="de_DE">Verrückter Kürschner</Name>
   <Name lang="en_US">Crazy Furrier</Name>
   <Description lang="de_DE">
-    <p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>
+    <p>Der Verrückte Kürschner erhöht die Fellproduktion deutlich.</p>
   </Description>
   <Description lang="en_US">
     <p>The copper knife was a gift from the gods. At least, that's what the furriers who use their copper knives to create gorgeous clothes like to believe. Sadly, members of this group suffer from the usual side effects of a life in haute couture - vigorous fanning, a high-pitched and nasal voice, and generally crazy conduct - all in the name of art, of course. They may be mad, but they set a great example for other furriers.</p>
   </Description>
   <Flavour lang="en_US">
-	<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>
+	<p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>
+    <p></p>
   </Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)</Population>
   <RequirementGroup>

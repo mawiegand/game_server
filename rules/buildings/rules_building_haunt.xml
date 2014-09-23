@@ -5,16 +5,16 @@
   <Name lang="de_DE">Versammlungsplatz</Name>
   <Name lang="en_US">Meeting Place</Name>
   <Description lang="de_DE">
-    <p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein paar gemütliche Baumstümpfe.</p>
+    <p>Der Versammlungsplatz schaltet in der Lagerstätte die Gebäude frei und erhöht den Kampfbonus.</p>
   </Description>
   <Description lang="en_US">
     <p>The meeting place is in the middle of the compound. It's an area that has been left vacant by chance, and it has just enough space for a few raw materials and the dwellers' cosy evening gatherings.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>This is where all the important people in the compound meet every evening to discuss important issues. Like, for instance, how to solve the troubling shortage of beer they've been experiencing lately...</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Thema für die Versammlung heute: 'Wie lösen wir die Bierflaute?'</p>  
+    <p></p>  
 	</Flavour> 
   <Population>(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*0.5))</Population>
   <RequirementGroup>

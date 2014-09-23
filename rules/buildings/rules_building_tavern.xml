@@ -5,17 +5,17 @@
   <Name lang="de_DE">Taverne</Name>
   <Name lang="en_US">Tavern</Name>
   <Description lang="de_DE">
-    <p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Vielleicht findet ihr auch weitere Verdienstmöglichkeiten.</p>
+    <p>In der Taverne können Aufträge entgegengenommen werden.</p>
    </Description>
   <Description lang="en_US">
     <p>There is no more wretched a hive of scum and villainy than the tavern. So, it's an ideal place to relax, have a drink, and laze around during your day off. And who knows, a job may even turn up if you stick around long enough.</p>
     <p>This building can not be torn down.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>A quiet seat, a cool beer, and some reasonably friendly company. What more could anyone want from life?</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Ein ruhiger Sitz, ein kühles Bier in mehr oder weniger angenehmer Gesellschaft - was könnte man sich mehr wünschen?</p>
+    <p></p>
    </Flavour> 
  <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)</Population>
   <RequirementGroup>

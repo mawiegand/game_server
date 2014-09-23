@@ -5,16 +5,16 @@
   <Name lang="de_DE">Turm der Knüppelei</Name>
   <Name lang="en_US">Infantry Tower</Name>
   <Description lang="de_DE">
-    <p>In dem Turm der Knüppelei werden die Nahkämpfer in der Kunst des Nahkampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin. Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen.</p>
+    <p>In dem Turm der Knüppelei werden die Nahkämpfer in der Kunst des Nahkampfes unterwiesen.</p>
   </Description>
   <Description lang="en_US">
     <p>In the infantry tower, infantry troops are instructed in the art of fighting. Their extremely sadistic trainer sets great store by obedience and discipline. If someone doesn't obey orders or is even more stupid than everyone else during training, he has to clean the stables in the cavalry tower.</p>
   </Description>
   <Flavour lang="en_US">
-	<p>This is no place for thinkers! Infantry members need strength and stamina - nothing else.</p>
+	<p></p>
   </Flavour>
     <Flavour lang="de_DE">
-   <p>Hier ist kein Platz für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, sonst nix!</p>
+   <p></p>
   </Flavour>
   <Population>LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))+(EQUAL(LEVEL,10)*39)</Population>
   <RequirementGroup>

@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.9.0
+# Version: 1.9.1
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
   
       :version => { :major => 1,
                     :minor => 9,
-                    :build => 0,
+                    :build => 1,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -2827,14 +2827,14 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>Show me your chieftain's hut and I'll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Zeig mir Deine Häuptlingshütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 2, 6 und 20.</p>",
+            :de_DE => "<p>Die Häuptlingshütte schaltet weitere Gebäude frei, erhöht die Lagermenge und liefert Kommandopunkte.</p>",
   
             :en_US => "<p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6 and 20.</p>",
                 
@@ -2968,16 +2968,16 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
+            :en_US => "<p></p>",
   
             :de_DE => "<p>Holz und Steine, ein paar Kaninchen oder andere Nager und ganz selten auch mal eine Kröte. Das sind die Schätze des Sammlers.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Primitivster aller Steinzeitbewohner. Er jagt und sammelt einfach alles was ihm vor die Flinte - äh Steinschleuder - kommt. Neben vielen völlig unbrauchbaren Sachen finden die Jäger und Sammler alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>",
+            :de_DE => "<p>Der Jäger und Sammler liefert geringe Mengen Stein, Holz und Fell.</p>",
   
-            :en_US => "<p>The most primitive of all Stone Age folk, the Hunter Gatherer collects all kinds of stuff, from branches and stones to roots, and even a couple of Golden Frogs, if the area is big enough. Basically, he hunts and gathers anything that comes into his sights - er... into the reach of his slingshot. All his treasures are set out neatly on display in his compound. </p><p>Apart from all kinds of useless stuff, hunter gatherers find everything – from branches and stones to roots and, if the area is big enough, even a couple of golden frogs.</p>",
+            :en_US => "<p>The most primitive of all Stone Age folk, the Hunter Gatherer collects all kinds of stuff, from branches and stones to roots, and even a couple of Golden Frogs, if the area is big enough. Basically, he hunts and gathers anything that comes into his sights - er... into the reach of his slingshot. All his treasures are set out neatly on display in his compound. </p><p></p>",
                 
           },
 
@@ -3083,14 +3083,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Der Gottesfürchtige Sammler steht nur den Göttlichen Supporten zur Verfügung.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Gottesgläubige Sammler folgt nur den Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p><p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p>",
+            :de_DE => "<p>Der Gottesgläubige Sammler folgt nur den Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p>",
   
             :en_US => "<p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p><p>Through his devotion he can find ressources and even golden frogs at a much higher rate than their peers.</p>",
                 
@@ -3197,14 +3197,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Looking for a little fight? Haven't been bashed up for a while? The barracks are the place to go for anyone wanting to jump into the fray.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Auf der Suche nach einem kleinen Kampf? Lange nicht mehr verprügelt worden?</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Der Ausbau beschleunigt die Ausbildung und ermöglicht die Rekrutierung höherwertiger Kämpfer. Mehrere Ausbildungsgelände beschleunigen die Rekrutierung zusätzlich.</p>",
+            :de_DE => "<p>Im Ausbildungsgelände werden in der Heimatsiedlung und in Lagerstätten Nahkämpfer ausgebildet.</p>",
   
             :en_US => "<p>These are the training grounds where all kinds of close combat fighters are trained. Big clubs, roasting spits, or even bare fists - anything goes. Would-be combatants compete in numerous contests to toughen themselves up for duelling, and once in a moon a public tournament is held. The winner gets the lot - glory, food, a day off and as many men as they want. Yes, that's right - men! Because the tournaments are usually won by women. How With a woman's deadliest weapons, of course...</p>",
                 
@@ -3309,16 +3309,16 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>Your subjects live in small huts. The more subjects there are, the faster you can build other buildings.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ein Dach über dem Kopf. Mehr ist das wirklich nicht!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In den kleinen Hütten sind Eure Untertanen vor Sonne und Regen geschützt. Hauptsache, sie sind fleißig und beschweren sich nicht. Je mehr Hütten, desto mehr Untertanen habt ihr, die wiederum schneller arbeiten und Eure Siedlung schneller ausbauen. Wenn Chef sein immer so einfach wäre!</p>",
+            :de_DE => "<p>Die Kleinen Hütten erhöhen die Baugeschwindigkeit und verkürzen somit die Bauzeit von Gebäuden.</p>",
   
-            :en_US => "<p>A little hut can only protect your subjects from sun and rain. The main thing is that they work hard and don't complain. The more huts you have, the more subjects you have and the faster they'll work and the quicker the settlement will be upgraded. If only being the boss was always this easy!</p>",
+            :en_US => "<p></p>",
                 
           },
 
@@ -3416,14 +3416,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>A quiet seat, a cool beer, and some reasonably friendly company. What more could anyone want from life?</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ein ruhiger Sitz, ein kühles Bier in mehr oder weniger angenehmer Gesellschaft - was könnte man sich mehr wünschen?</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Vielleicht findet ihr auch weitere Verdienstmöglichkeiten.</p>",
+            :de_DE => "<p>In der Taverne können Aufträge entgegengenommen werden.</p>",
   
             :en_US => "<p>There is no more wretched a hive of scum and villainy than the tavern. So, it's an ideal place to relax, have a drink, and laze around during your day off. And who knows, a job may even turn up if you stick around long enough.</p><p>This building can not be torn down.</p>",
                 
@@ -3506,14 +3506,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>Stone containers, dinosaur cranes and, more recently, carts. A little style is classy! </p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Steincontainer, Saurierkräne und seit neuestem, Karren. Soviel Stil muss sein!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Das steinzeitliches Logistikzentrum erhöht die maximale Lagermenge und ermöglicht den Handel mit anderen Spielern. Mehrere Rohstofflager wirken kumulativ und erhöhen sowohl die Lagermenge als auch die Anzahl der Karren.</p>",
+            :de_DE => "<p>Das Rohstofflager erhöht die maximale Lagermenge und ermöglicht den Handel mit Karren.</p>",
   
             :en_US => "<p>This is a Stone Age logistics center in which raw materials are stored and dispatched. The bigger the store, the more carts can be dispatched.</p>",
                 
@@ -3627,16 +3627,16 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>The place where alliance members hold diplomatic exchanges or discussions. It takes at least two to have a good conversation, even though often only one of them does the talking. Talk? A little chief can do that better than anyone else.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Gutes Essen, leckere Getränke und ein paar Lieder. Ein würdiger Rahmen für Verhandlungen!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Am Lagerfeuer dient zur Kontaktaufnahme mit Allianzen und zur Ausbildung des Kleinen Häuptlings.</p>",
   
-            :en_US => "<p>At the campfire, inhabitants gather in sociable groups to discuss important arrangements. Guests are either selected to join the campfire group, or arranged around it on stakes. It's also where the career of a little chief begins. A couple of flattering words here, a bit of scheming there, taking credit for someone else's bravery, and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p>At the campfire, inhabitants gather in sociable groups to discuss important arrangements. Guests are either selected to join the campfire group, or arranged around it on stakes. It's also where the career of a little chief begins. A couple of flattering words here, a bit of scheming there, taking credit for someone else's bravery, and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p>",
                 
           },
 
@@ -3728,14 +3728,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>Stones – nothing but stones, everywhere! Sweaty labourers and the monotonous thwack of heavy tools.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Steine, nichts als Steine! Verschwitzte Arbeiter und der monotone Schlag der schweren Werkzeuge.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Durch eine aus Sicht der Steinzeit komplizierte Kette von Arbeitsvorgängen werden im Steinbruch Steine gewonnen.</p><p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für noch schnelleren Abbau auch bei den anderen Steinbrüchen.</p>",
+            :de_DE => "<p>Im Steinbruch werden Steine für den Steinvorrat gewonnen.</p>",
   
             :en_US => "<p>Stones are quarried using a complicated - well, for the Stone Age! - series of working processes. A really large quarry stimulates competition among the its workers, which speeds up the quarrying quite a bit - even in other quarries.</p>",
                 
@@ -3835,14 +3835,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>A man and his stone axe! Apart from firewood, he occasionally even brings a tree he managed to fell back to the compound.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller, mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p><p>Große Holzfäller lassen nur die kleinen Bäume übrig und reduzieren so die Frustration der kleineren Holzfäller, was sich sehr positiv auf ihren Ertrag auswirkt.</p>",
+            :de_DE => "<p>Der Holzfäller fällt Bäume für den Holzvorrat.</p>",
   
             :en_US => "<p>Using a combination of brute force and up-to-date stone tools, a logger can chop down quite large tree trunks and process them into valuable raw materials. Tall loggers only leave small trees behind, reducing the frustration of smaller loggers. This has a very positive effect on their output!</p>",
                 
@@ -3942,14 +3942,14 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :de_DE => "<p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p>",
+            :en_US => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth, Spiegel, in denen man sich herrlich erschrecken kann, und natürlich die ein oder andere Ratte, die eingefangen werden will.</p>",
+            :de_DE => "<p>In der Trainingshöhle wird laufend Erfahrung gesammelt.</p>",
   
             :en_US => "<p>The Training Cave offers multiple training possibilities to would-be Demigods. Huge stones to lift, an almost endless labyrinth, mirrors that can scare you witless, and of course, a few rats to catch.</p><p>This building can not be torn down.</p>",
                 
@@ -4043,16 +4043,16 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :de_DE => "<p>Die Tüftler warten bereits auf die Artefakte. Hol Dir eins!</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Those Tinkers are insane! Enter at your own risk.</p>",
+            :en_US => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>In der Tüftler-Werkstatt können Artefakte eingeweiht werden.</p>",
   
-            :en_US => "<p>Thinkers and Tinkers get together at the workshop. They examine whatever unknown materials there are - artifacts, as the simple-minded call them - and attempt to bring about a technological revolution.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p>Thinkers and Tinkers get together at the workshop. They examine whatever unknown materials there are - artifacts, as the simple-minded call them - and attempt to bring about a technological revolution.</p>",
                 
           },
 
@@ -4133,14 +4133,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>A furrier know there are many ways to skin a creature. They have lovely furs and quality leatherwear that appeals to sophisticated ladies, and of course, there's usually something tasty roasting over the fire too.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Der Kürschner zieht dem Tier das Fell über die Ohren.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Kürschner verarbeitet Häute zu Leder und macht selbst aus den kleinsten Nagern noch ein brauchbares Fell. Wenn ein Säbelzahntiger erlegt wird, dann zaubert der Kürschner etwas für die Dame von Welt.</p>",
+            :de_DE => "<p>Der Kürschner liefert Felle.</p>",
   
             :en_US => "<p>The furrier's job is to turn skins into leather - he can make a useful hide out of even the smallest of rodents. And if a sabre-toothed tiger should be killed, he can also conjure up something for a sophisticated lady. The waste from larger furriers' businesses can be processed by smaller furriers with lower overheads, giving a noticeable boost to fur production.</p>",
                 
@@ -4241,14 +4241,14 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>Copper shines even in its unprocessed state, but it can only be made into jewellery once it's been smelted. It can also be used to make the occasional implement.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ah Kupfer, ich mag diesen rot-goldenen Schimmer. Sogar die Werkzeuge und Waffen lass sich damit verbessern, auch wenn mir Schmuck lieber ist.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen. Die Kupferschmelze ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Die Kupferschmelze ermöglicht den Bau bzw. die Umwandlung von Gebäuden der Kupferzeit.</p>",
   
             :en_US => "<p>Copper is THE discovery that moved the Stone Age forward into… yes, you guessed it, the Copper-Stone Age. Its discovery leads to not only the creation of some very attractive jewellery, but also to more deadly weapons and progress in making many kinds of implements and tools.</p><p>This building can not be torn down.</p>",
                 
@@ -4330,14 +4330,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Don't feel like brawling or getting up close and personal with stinky animals? Prefer to kill your enemy from a safe distance? Then ranged combat is right up your alley.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Keine Lust auf Prügeleien oder stinkende Tiere? Du willst Deinen Gegner am liebsten aus sicherer Entfernung töten? Dann ist Fernkampf Dein Ding!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Steine, Speere und alles, was man werfen oder schießen kann, fliegt auf dem Ausbildungsgelände für Fernkämpfer durch die Luft.</p>",
+            :de_DE => "<p>Auf dem Schießstand werden in der Heimatsiedlung und in Lagerstätten Fernkämpfer ausgebildet.</p>",
   
             :en_US => "<p>Stones, spears and anything else that can be thrown or shot flies through the air at the long-range combat training ground. The larger the grounds, the faster the training – as well as the development of completely new techniques which, in turn, form the basis of the training of new units.</p>",
                 
@@ -4442,16 +4442,16 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Gutes Essen, leckere Getränke und viel Platz. Ein würdiger Rahmen für große Verhandlungen!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen. Oder zum Bowling, wenn die Halle denn lang genug ist.</p><p>Mit jedem Ausbau der Stammeshalle kann die Allianz weitere Mitglieder aufnehmen.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Mit der Stammeshalle kann die maximale Anzahl an Mitgliedern der Allianz erhöht werden.</p>",
   
-            :en_US => "<p>In the Tribes Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. More developed halls make it possible to accept more alliance members into the meeting.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p>In the Tribes Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. More developed halls make it possible to accept more alliance members into the meeting.</p>",
                 
           },
 
@@ -4550,14 +4550,14 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>A fireplace, a neatly fenced front lawn and a front doormat. Living the dream!</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ein Feuerplatz, eingezäunter Vorgarten und eine Fußmatte vor der Tür. Ein Traum!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der fortschrittlichen winddichten Hütten wohnen die verdienten sprich fleißigen Bewohner. Diese Hütte hat neben Wände, die diesen Namen auch verdienen, sogar einen Feuerplatz, wodurch die Bewohner noch zufriedener werden. Und sie ist natürlich größer, denn seien wir mal ehrlich, zwei Arbeiter sind immer besser als ein zufriedener.</p>",
+            :de_DE => "<p>Die Winddichten Hütten erhöhen die Baugeschwindigkeit deutlich.</p>",
   
             :en_US => "<p>These modern, windproof huts are where the deserving - that is, hard-working - residents live. Apart from walls that can actually be called walls, there's also a fireplace, which makes the people who live there considerable more satisfied. And, of course, windproof huts are bigger because, let's be honest, two grumpy workers are still better than one happy one.</p>",
                 
@@ -4652,14 +4652,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>Stone containers, dinosaur cranes, and - more recently - copper carts. At last, raw materials can be transported in style.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Steincontainer, Saurierkräne und, seit neuestem, Kupferkarren. Endlich können Rohstoffe mit Stil transportiert werden.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Kupferkarren! DAS Statussymbol für den Häuptling. Neben den Karren gibt es auch größeren Lagerraum, aber wen interessiert das neben in der Sonne blinkenden Kupferkarren.</p>",
+            :de_DE => "<p>Ein Großes Rohstofflager erhöht die maximale Lagerkapazität und die Anzahl der Karren deutlich.</p>",
   
             :en_US => "<p>Copper carts! THE status symbol for a chieftain. There is also a bigger store room, but who cares when you see those shiny copper carts gleaming in the sunlight.</p>",
                 
@@ -4769,14 +4769,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>In the Copper-Stone Age, you'd expect workers to have copper pickaxes - but the workers actually preferred to invest their copper in jewellery for their wives. The fact they chose this option suggests their grateful wives gave them some pretty lavish rewards...</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Der Fortschritt ist eindeutig ablesbar. Starke muskulöse Arbeiter im Steinbruch, behangen mit schönstem Kupferschmuck.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Wie in Steinbrüchen mit Beginn der Kupferzeit mehr Steine abgebaut worden konnten, bleibt rätselhaft. Denn nur hier wurden keine Kupferwerkzeuge benutzt. Aber trotzdem ging der Abbau spürbar schneller.</p><p>Ab Level 11 werden die Arbeiter noch schneller und treiben sogar Arbeiter in anderen Steinbrüchen zu schnellerer Arbeit an.</p>",
+            :de_DE => "<p>Ein Altehrwühriger Steinbruch liefert eine große Anzahl an hochwertigen Steinen.</p>",
   
             :en_US => "<p>How workers managed to excavate so much stone from the quarries of the Copper-Stone Age is a mystery, considering that they still weren't using copper implements. Despite this, excavation was noticeably faster at this time. Workers above a certain size were even faster still, encouraging workers in other quarries to work faster as well.</p>",
                 
@@ -4871,14 +4871,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>A man and his copper axe! Although copper axes always bend, this worker can still bring home the trees he's felled himself as well as some brushwood.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ein Mann und seine Kupferaxt! Stoff einiger Gesänge und mancher Träume.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Kupferäxte fällen einen Baum deutlich schneller. Leider sind Kupferäxte auch sehr reparaturbedürftig. Dennoch sind Holzfäller effektiver und leiten ab einer bestimmten Größe auch die normalen Holzfäller zu erhöhtem Bäume fällen an.</p>",
+            :de_DE => "<p>Der Holzfäller mit Kupferaxt liefert große Mengen Holz.</p>",
   
             :en_US => "<p>Copper axes fell trees much more quickly - unfortunately they need a lot of repairing as well. However, the loggers who use them are more efficient and can motivate ordinary loggers to fell more trees, generally of the smaller variety.</p>",
                 
@@ -4973,14 +4973,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Smelly animals and a kitty cat to play with. Life on the stud farm couldn't be better.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Stinkende Tiere und eine kleine Katze. Ein Leben auf dem Ponyhof könnte nicht schöner sein.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich, werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und als Maskottchen eine Katze gehalten. Die Ausbildung der Reiter umfasst nur den Umgang mit den Tieren. Waffen führen die Reiter nicht, sie reiten auf einer!</p><p>Größere Ställe stinken noch stärker, beschleunigen aber auch die Ausbildung und können noch stärkere Tiere abrichten.</p>",
+            :de_DE => "<p>Im Stinkenden Stall werden Berittene Einheiten gezüchtet und ausgebildet.</p>",
   
             :en_US => "<p>The barn smells like no other building in the settlement. Not surprisingly, given that it's where ostriches, sabre-toothed tigers and little dinosaurs are kept - as well as a kitty cat as a mascot. The animals are trained here and the riders are taught how to handle them. Very few riders carry their weapons into battle, as they have to concentrate on riding. Their mount is their weapon! Big barns smell even worse - but having them does speed up the training and they can also drill bigger animals.</p>",
                 
@@ -5085,14 +5085,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Coordinating armies is the art of war. Even if all armies are dispatched in the same direction with the order to “hit 'em hard”.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Die Koordination von Armeen ist die hohe Kunst des Krieges -jaja- und dann schreien alle 'immer feste druff' und rennen los..</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Taktik und Befehl ist immer der gleiche: 'Haut sie feste!'</p><p>Der Kommandoposten erhöht auf den Leveln 1 und 20 die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>",
+            :de_DE => "<p>Die Kommandozentrale liefert zusätzliche Kommandopunkte in der Hauptsiedlung.</p>",
   
             :en_US => "<p>A couple of branches stretched between three trees, a bit of bark and some leaves, and there's your awning. A nice big seat for the chief, and hey presto, you've got your command post. This is where tactics are decided and orders are given. Mostly the same order: “Hit 'em hard!” Having a command post increases a settlement's command points at Levels 1 and 20. It also decreases the time spent on training new units.</p>",
                 
@@ -5212,14 +5212,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
+            :de_DE => "<p>Der Verrückte Kürschner erhöht die Fellproduktion deutlich.</p>",
   
             :en_US => "<p>The copper knife was a gift from the gods. At least, that's what the furriers who use their copper knives to create gorgeous clothes like to believe. Sadly, members of this group suffer from the usual side effects of a life in haute couture - vigorous fanning, a high-pitched and nasal voice, and generally crazy conduct - all in the name of art, of course. They may be mad, but they set a great example for other furriers.</p>",
                 
@@ -5315,16 +5315,16 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Warriors or soldiers of any kind should be kept apart from the ordinary working population. In the garrison they can bash each others' heads in and leave the poor settlement dwellers in peace.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Aus Sicherheitsgründen werden die Krieger getrennt von der arbeitenden Bevölkerung gehalten. Nicht, dass den Kriegern noch was zustößt!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Das Garnionsgebäude dient zur Unterbringung und Versorgung der Einheiten und Armeen. Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Das Garnisonsgebäude erhöht die Armeegröße jeder Armee der Hauptsiedlung.</p>",
   
-            :en_US => "<p>Well, who would have thought it? Field armies also benefit from the increased discipline that having a garrison provides. And that means that bigger armies can be deployed in the field.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p></p>",
                 
           },
 
@@ -5419,14 +5419,14 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>This is where all the important people in the compound meet every evening to discuss important issues. Like, for instance, how to solve the troubling shortage of beer they've been experiencing lately...</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Thema für die Versammlung heute: 'Wie lösen wir die Bierflaute?'</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein paar gemütliche Baumstümpfe.</p>",
+            :de_DE => "<p>Der Versammlungsplatz schaltet in der Lagerstätte die Gebäude frei und erhöht den Kampfbonus.</p>",
   
             :en_US => "<p>The meeting place is in the middle of the compound. It's an area that has been left vacant by chance, and it has just enough space for a few raw materials and the dwellers' cosy evening gatherings.</p>",
                 
@@ -5532,14 +5532,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Field camps turn encampments into military support units. Despite all the talk about the safety and storage that field camps offer, they seem to have a magical attraction for enemies.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Mit dem Feldlager verwandeln wir Lagerstätten in militärische Stützpunkte. Größere Armeen und gleich zwei davon!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 50 pro Level auf Level 1-10 und 20 pro Level auf Level 11-20. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>",
+            :de_DE => "<p>Das Feldlager erhöht die Armeegröße und liefert auf Level 10 einen zusätzlichen Kommandopunkt.</p>",
   
             :en_US => "<p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 50 per level at Levels 1-10 and 20 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>",
                 
@@ -5627,14 +5627,14 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>The ceremonies and regular sacrifices carried out on the altar are intended to appease the gods. An encampment blessed by the gods cannot be conquered by enemies.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Die auf dem Ritualstein durchgeführten Zeremonien und regelmäßigen Opfergaben besänftigen die Götter, so dass eine Lagerstätte nicht von Feinden erobert werden kann.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Ritualstein ist ein von Fackeln umringter von blutigen Opfergaben verschmierter und mit den Gaben der Felder und den Köpfen der Feinde dekorierter Steintisch. Dieser Steintisch begeistert auch die Götter. Zumindest ist die Lagerstätte mit einem Ritualstein vor einer feindlichen Übernahme sicher. Wenn das kein Wink der Götter ist!</p>",
+            :de_DE => "<p>Der Ritualstein schützt eine Lagerstätte vor der Übernahme durch gegnerische Spieler.</p>",
   
             :en_US => "<p>The altar is a stone table surrounded by torches, smeared with blood from sacrificial offerings and decorated with gifts from the field and the heads of enemies. This stone table also impresses the gods. An encampment with an altar is safe from being conquered by enemies. If that isn't a sign from the gods, then what is?</p>",
                 
@@ -5718,14 +5718,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>The fortress rules the region. Troops are deployed to collect taxes from the settlements and protect the fortress from attacks.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Die Festung beherrscht die Region. Hier werden Krieger ausgebildet und Steuern erhoben.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p><p>Die Festungsanlagen liefern einen zusätzlichen Kommandopunkt auf Level 10.</p>",
+            :de_DE => "<p>Die Festungsanlagen erhöhen den Kampfbonus der Festung. Die Türme der Ballistik und Reitmeisterei benötigen höhere Festungsanlagen.</p>",
   
             :en_US => "<p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p>",
                 
@@ -5812,14 +5812,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>This is no place for thinkers! Infantry members need strength and stamina - nothing else.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Hier ist kein Platz für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, sonst nix!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In dem Turm der Knüppelei werden die Nahkämpfer in der Kunst des Nahkampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin. Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen.</p>",
+            :de_DE => "<p>In dem Turm der Knüppelei werden die Nahkämpfer in der Kunst des Nahkampfes unterwiesen.</p>",
   
             :en_US => "<p>In the infantry tower, infantry troops are instructed in the art of fighting. Their extremely sadistic trainer sets great store by obedience and discipline. If someone doesn't obey orders or is even more stupid than everyone else during training, he has to clean the stables in the cavalry tower.</p>",
                 
@@ -5911,14 +5911,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>You'd better duck! Ranged combatant training is in full swing!</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Kopf runter! Die Ausbildung der Fernkämpfer ist in vollem Gang.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Achtung Helmpflicht! Die Ausbilder und Auszubildenden haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steiner oder Splitter halbwegs überstehen. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>",
+            :de_DE => "<p>Im Turm der Ballistik werden in einer Festung Fernkämpfer ausgebildet.</p>",
   
             :en_US => "<p>It's hardly surprising that helmets are compulsory in the artillery tower. Trainers and trainees both wear thick animal skins around their heads so that they can survive being hit by small stones and gravel. On command, all kinds of missiles are sent flying through the air. Unfortunately, no one really knows which command they should be obeying.</p>",
                 
@@ -6010,14 +6010,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>This place is home to countless animals and sweaty men. Beware of the dung and pungent smell!</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Hier werden die berittenen Einheiten ausgebildet. Vorsicht vor Dung und penetrantem Geruch!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzeitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein, um die Mädchen zu beeindrucken. Die wenigsten Jungen kommen allerdings noch in den Genuß sich in der Aufmerksamkeit zu sonnen.</p>",
+            :de_DE => "<p>In einer Festung werden im Turm der Reitmeisterei die Berittenen Einheiten ausgebildet.</p>",
   
             :en_US => "<p>Entrance is strictly limited to trained riders and animal keepers. If the gate is left open – even briefly – inquisitive, spotty teenage boys tend to sneak in. It impresses the girls no end, but the lads rarely get a chance to bathe in their admiration afterwards. The animal keepers generally deal with their bloody remains unceremoniously.</p>",
                 

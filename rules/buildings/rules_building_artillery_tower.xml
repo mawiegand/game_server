@@ -5,17 +5,13 @@
   <Name lang="de_DE">Turm der Ballistik</Name>
   <Name lang="en_US">Artillery Tower</Name>
   <Description lang="de_DE">
-    <p>Achtung Helmpflicht! Die Ausbilder und Auszubildenden haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steiner oder Splitter halbwegs überstehen. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>
+    <p>Im Turm der Ballistik werden in einer Festung Fernkämpfer ausgebildet.</p>
 	</Description>
   <Description lang="en_US">
     <p>It's hardly surprising that helmets are compulsory in the artillery tower. Trainers and trainees both wear thick animal skins around their heads so that they can survive being hit by small stones and gravel. On command, all kinds of missiles are sent flying through the air. Unfortunately, no one really knows which command they should be obeying.</p>
   </Description>
-  <Flavour lang="en_US">
-    <p>You'd better duck! Ranged combatant training is in full swing!</p>
-  </Flavour>
-    <Flavour lang="de_DE">
-    <p>Kopf runter! Die Ausbildung der Fernkämpfer ist in vollem Gang.</p>
-  </Flavour>
+  <Flavour lang="en_US"> <p></p></Flavour>
+    <Flavour lang="de_DE"><p></p></Flavour>
   <Population>LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))+(EQUAL(LEVEL,10)*39)</Population>
   <RequirementGroup>
     <Requirement id="building_fortress_fortification" min_level="5" />  

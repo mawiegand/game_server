@@ -5,17 +5,16 @@
   <Name lang="de_DE">Festungsanlagen</Name>
   <Name lang="en_US">Fortification</Name>
   <Description lang="de_DE">
-    <p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p>
-    <p>Die Festungsanlagen liefern einen zusätzlichen Kommandopunkt auf Level 10.</p>
+    <p>Die Festungsanlagen erhöhen den Kampfbonus der Festung. Die Türme der Ballistik und Reitmeisterei benötigen höhere Festungsanlagen.</p>
   </Description>
   <Description lang="en_US">
     <p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p> 
   </Description>
     <Flavour lang="en_US">
-    <p>The fortress rules the region. Troops are deployed to collect taxes from the settlements and protect the fortress from attacks.</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Die Festung beherrscht die Region. Hier werden Krieger ausgebildet und Steuern erhoben.</p>
+    <p></p>
   </Flavour>  
   <Population>(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5)*3+250)</Population>
   <Cost id="resource_stone" round="true">(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>

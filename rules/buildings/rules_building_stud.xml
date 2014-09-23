@@ -5,17 +5,16 @@
   <Name lang="de_DE">Stinkender Stall</Name>
   <Name lang="en_US">Smelly Barn</Name>
   <Description lang="de_DE">
-    <p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich, werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und als Maskottchen eine Katze gehalten. Die Ausbildung der Reiter umfasst nur den Umgang mit den Tieren. Waffen führen die Reiter nicht, sie reiten auf einer!</p>
-  <p>Größere Ställe stinken noch stärker, beschleunigen aber auch die Ausbildung und können noch stärkere Tiere abrichten.</p>
+    <p>Im Stinkenden Stall werden Berittene Einheiten gezüchtet und ausgebildet.</p>
   </Description>
   <Description lang="en_US">
     <p>The barn smells like no other building in the settlement. Not surprisingly, given that it's where ostriches, sabre-toothed tigers and little dinosaurs are kept - as well as a kitty cat as a mascot. The animals are trained here and the riders are taught how to handle them. Very few riders carry their weapons into battle, as they have to concentrate on riding. Their mount is their weapon! Big barns smell even worse - but having them does speed up the training and they can also drill bigger animals.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Smelly animals and a kitty cat to play with. Life on the stud farm couldn't be better.</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Stinkende Tiere und eine kleine Katze. Ein Leben auf dem Ponyhof könnte nicht schöner sein.</p>
+    <p></p>
   </Flavour>
 <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)</Population>
   <RequirementGroup>

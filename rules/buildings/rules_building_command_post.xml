@@ -5,17 +5,16 @@
   <Name lang="de_DE">Kommandozentrale</Name>
   <Name lang="en_US">Central Command Post</Name>
   <Description lang="de_DE">
-    <p>Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Taktik und Befehl ist immer der gleiche: 'Haut sie feste!'</p> 
-    <p>Der Kommandoposten erhöht auf den Leveln 1 und 20 die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>  
+    <p>Die Kommandozentrale liefert zusätzliche Kommandopunkte in der Hauptsiedlung.</p>  
   </Description>
   <Description lang="en_US">
     <p>A couple of branches stretched between three trees, a bit of bark and some leaves, and there's your awning. A nice big seat for the chief, and hey presto, you've got your command post. This is where tactics are decided and orders are given. Mostly the same order: “Hit 'em hard!” Having a command post increases a settlement's command points at Levels 1 and 20. It also decreases the time spent on training new units.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Coordinating armies is the art of war. Even if all armies are dispatched in the same direction with the order to “hit 'em hard”.</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Die Koordination von Armeen ist die hohe Kunst des Krieges -jaja- und dann schreien alle 'immer feste druff' und rennen los..</p>  
+    <p></p>  
 	</Flavour> 
  <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)</Population>
   <RequirementGroup>

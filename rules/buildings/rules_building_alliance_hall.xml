@@ -5,19 +5,16 @@
   <Name lang="de_DE">Stammeshalle</Name>
   <Name lang="en_US">Tribes Hall</Name>
   <Description lang="de_DE">
-    <p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen. Oder zum Bowling, wenn die Halle denn lang genug ist.</p>
-    <p>Mit jedem Ausbau der Stammeshalle kann die Allianz weitere Mitglieder aufnehmen.</p>
-    <p>Dieses Gebäude kann nicht abgerissen werden.</p>
+    <p>Mit der Stammeshalle kann die maximale Anzahl an Mitgliedern der Allianz erhöht werden.</p>
   </Description>
   <Description lang="en_US">
     <p>In the Tribes Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. More developed halls make it possible to accept more alliance members into the meeting.</p>
-    <p>This building can not be torn down.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Gutes Essen, leckere Getränke und viel Platz. Ein würdiger Rahmen für große Verhandlungen!</p>
+    <p></p>
   </Flavour> 
 <Population>100+20*LEVEL</Population>
   <RequirementGroup>

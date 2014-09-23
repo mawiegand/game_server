@@ -5,16 +5,16 @@
   <Name lang="de_DE">Winddichte Hütte</Name>
   <Name lang="en_US">Windproof Hut</Name>
   <Description lang="de_DE">
-    <p>In der fortschrittlichen winddichten Hütten wohnen die verdienten sprich fleißigen Bewohner. Diese Hütte hat neben Wände, die diesen Namen auch verdienen, sogar einen Feuerplatz, wodurch die Bewohner noch zufriedener werden. Und sie ist natürlich größer, denn seien wir mal ehrlich, zwei Arbeiter sind immer besser als ein zufriedener.</p>
+    <p>Die Winddichten Hütten erhöhen die Baugeschwindigkeit deutlich.</p>
   </Description>
   <Description lang="en_US">
     <p>These modern, windproof huts are where the deserving - that is, hard-working - residents live. Apart from walls that can actually be called walls, there's also a fireplace, which makes the people who live there considerable more satisfied. And, of course, windproof huts are bigger because, let's be honest, two grumpy workers are still better than one happy one.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>A fireplace, a neatly fenced front lawn and a front doormat. Living the dream!</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Ein Feuerplatz, eingezäunter Vorgarten und eine Fußmatte vor der Tür. Ein Traum!</p>  
+    <p></p>  
 	</Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)</Population>
   <RequirementGroup>

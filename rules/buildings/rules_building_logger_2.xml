@@ -5,16 +5,16 @@
   <Name lang="de_DE">Holzfäller mit Kupferaxt</Name>
   <Name lang="en_US">Logger with Copper Axe</Name>
   <Description lang="de_DE">
-    <p>Kupferäxte fällen einen Baum deutlich schneller. Leider sind Kupferäxte auch sehr reparaturbedürftig. Dennoch sind Holzfäller effektiver und leiten ab einer bestimmten Größe auch die normalen Holzfäller zu erhöhtem Bäume fällen an.</p>
+    <p>Der Holzfäller mit Kupferaxt liefert große Mengen Holz.</p>
   </Description>
   <Description lang="en_US">
     <p>Copper axes fell trees much more quickly - unfortunately they need a lot of repairing as well. However, the loggers who use them are more efficient and can motivate ordinary loggers to fell more trees, generally of the smaller variety.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>A man and his copper axe! Although copper axes always bend, this worker can still bring home the trees he's felled himself as well as some brushwood.</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Ein Mann und seine Kupferaxt! Stoff einiger Gesänge und mancher Träume.</p>
+    <p></p>
   </Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)</Population>
   <RequirementGroup>
