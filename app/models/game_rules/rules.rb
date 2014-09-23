@@ -7582,7 +7582,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Deine Sammler werden in letzter Zeit von einem Rudel wilder Velociraptoren heimgesucht. Jetzt verlangen Deine Sammler Schutz, andernfalls können sie nicht garantieren weiterhin effektiv arbeiten zu können.</p>",
+            :de_DE => "<p>Schütze Deine Sammler vor Angriffen von einem Rudel wilder Velociraptoren.</p>",
   
             :en_US => "<p>Your gatherers are beeing stalked by a group of fierce velociraptors. They demand your protection, otherwise they wont be able to work at full capacity.</p>",
   
@@ -7671,7 +7671,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Das Große Spiel steht bevor! Die Fans Deiner Mannschaft sammeln sich schon in der Taverne und trinken sich auf Deine Kosten Mut an, um den gegnerischen Fans eine ordentliche Abreibung zu verpassen. Sollten sie auch, immerhin hast Du eine ordentliche Summe gewettet.</p>",
+            :de_DE => "<p>Im Großen Spiel gegen Deine Nachbarn bedeutet eine Niederlage eine große Schmach.</p>",
   
             :en_US => "<p>Tonight's the big game! The fans are already gathered, getting some liquid courage before showing the oppositions supporters who's boss. They can't loose with this much drunken power behind them. Atleast they better dont, afterall you bet quite the sum on this game.</p>",
   
@@ -7765,7 +7765,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Während Du in der Taverne sitzt bemerkst Du vier kleine Häuptlinge. Sie singen und tanzen und sind das Zentrum der Gesellschaft. Bei soviel Trubel bist Du sogar der Meinung, dass sich einer von ihnen kurz in Luft auflöst. Du schiebst es auf Deinen Konsum von Gerstensaft und bist sehr verwundert, als Dich die vier kleinen Häuptlinge als Führer durch die Wildnis anwerben wollen.</p>",
+            :de_DE => "<p>Eskortiere einige Kleine Häuptlinge auf ihrer Reise.</p>",
   
             :en_US => "<p>While you sit in the tavern and have a sip of ale you spot four little chiefs entering. They seem to be quite cheery fellows as they are soon the center of the crowd, leading them in song.You could swear one of them even disapears into thin air, but to be honest you have been drinking heavily. Later that evening you are aproached by them. They ask you to lead them to their next Destination.</p>",
   
@@ -7845,7 +7845,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Von den Mauern Deiner Festung erblicken Deine Späher eine Gruppe von wilden Menschen. Es scheint sich allerdings nicht um einen Schlachtzug, sondern einer Gruppe von Auswanderern zu handeln. Vielleicht kannst Du sie mit ein paar Rohstoffen überzeugen bei Dir zu bleiben und zukünftig für Dich zu kämpfen.</p>",
+            :de_DE => "<p>Beschütze einen Trupp wilder Menschen und gewähre Ihnen Unterschlupf.</p>",
   
             :en_US => "<p>The lookouts in your fortress spot a huge group of people marching through your lands. But rather than an army they apear to be a band of wanderers, looking for greener pastures. Maybe you can support them with a few ressources. You may convince a few of them to stay here that way.</p>",
   
@@ -7927,7 +7927,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Lange schon ranken sich Legenden darum, was sich im Zentrum des dunklen Waldes befinden könnte. Nur selten wagen sich die Jäger und Sammler bis in die nähe seines Zentrums und seltener noch kehren sie zurück. Sogar ein paar Holzfäller sollen dort schon verschollen sein. Schon länger hörst Du das munkeln in der Taverne. Vielleicht beschließt Du ja dem ganzen nach zu gehen.</p>",
+            :de_DE => "<p>Begib dich auf Reise und erkunde die Geheimnisse des finsteren Waldes.</p>",
   
             :en_US => "<p>For the longest  time there have been legends about the center of the dark forest. Not often do the hunters and gatherers dare come close to it and hardly any of them return. You have heared the stories about that place a hundred times. Maybe its time to check it ouut for yourself.</p>",
   
