@@ -4,9 +4,8 @@
 <Unit id="great_chief" category="unitcategory_special" experienceFactor="0.0" trainable="false">
   <Name>Great Chief</Name>
   <Name lang="de_DE">Großer Häuptling</Name>
-  
   <Description lang="de_DE">
-    <p>Als intriganter, karrieresüchtiger, aalglatter Möchtegern ist der Große Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Einziger Trost für seine Untergebenen: so groß ist er gar nicht.</p>
+    <p>Der Große Häuptling kann einen Heimatsiedlung gründen und ernennt sich dann selber zum Chef.</p>
   </Description>
   <Description lang="en_US">
     <p>As a scheming, workaholic, slick wannabe, the great chief is a role model for entire generations of snobs. At least, he isn't that tall. Actually, he's rather small. But please, don't let him know.</p>

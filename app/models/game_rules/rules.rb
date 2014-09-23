@@ -787,7 +787,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz. Als Rohstoff spielt Holz eine wichtige Rolle bei der Konstruktion von Gebäuden und Belagerungswaffen.</p>",
+            :de_DE => "<p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz.</p>",
   
             :en_US => "<p>Even in the Stone Age, wood was used for various important purposes, including the construction of buildings and siege weapons.</p>",
                 
@@ -1079,7 +1079,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die stärksten, draufgängerischsten und dümmsten Männer des Stammes werden zu Kriegern ausgebildet. In Ermangelung von tauglichen Waffen werden sie ausgiebig im Nahkampf geschult und erwehren sich der Gegner mit purer Muskelkraft und Willensstärke - oder versuchen es zumindest.</p><p>Sind in einer Siedlung bewaffnete Nahkampfeinheiten verfügbar, können keine unbewaffneten Einheiten rekrutiert werden. Krieger sind sehr schwach gegen alle anderen Einheitentypen außer Nahkämpfer.</p>",
+            :de_DE => "<p>Der Krieger ist eine schwache Nahkampfeinheit zur Verteidigung einer jungen Heimatsiedlung.</p>",
   
             :en_US => "<p>The strongest, toughest and most stupid men of your tribe are trained as warriors. Having no effective weapons at their disposal, unarmed warriors overwhelm their opponents by pure muscle power and their strong will - or at least they try for a while. They can be trained as long as there are no armed melee units available in the same settlement. Very weak against all unit types apart from melee fighters.</p><p>Can only be trained as long as there are no armed melee units available in the same settlement. Very weak against any other unit type but melee units.</p>",
                 
@@ -1175,7 +1175,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Keulenkrieger stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zwar zähe Burschen, finden allerdings allzu oft den Tod durch feindliche Fernkämpfer.</p>",
+            :de_DE => "<p>Die Keulenkrieger sind die ersten ernstzunehmenden Nahkämpfer.</p>",
   
             :en_US => "<p>Club warriors are the basic units of any Stone Age army. They fight on the front line and protect the ranged combatants from cavalry attack. They're tough and difficult to beat, but unfortunately they all too often take a hit from enemy ranged combatants.</p>",
                 
@@ -1271,7 +1271,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>'Dicke Keule' ist die Abkürzung von 'Dickhäutigen Keulenkrieger' und bezieht sich sowohl auf die Keule als auch auf die Widerstandskraft. Dank der dicken Haut muss die Zeitspanne bis zur Bewusstlosigkeit nicht in Schmerzen durchstanden werden.</p>",
+            :de_DE => "<p>Die Dicken Keulen sind das Rückrat einer fortgeschrittenen Armee.</p>",
   
             :en_US => "<p>Their thick skin protects them against blows from enemy clubs, but it doesn't help so much against the sharp stones of the ranged combatants. Although thanks to their thick skin, they don't feel a lot of pain before they pass out.</p>",
                 
@@ -1376,7 +1376,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit Ausdruck und gutem Aussehen. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs wird nichts dem Zufall überlassen. Ihr größter Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>",
+            :de_DE => "<p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit Ausdruck und gutem Aussehen.</p>",
   
             :en_US => "<p>Haymakers unite the lethal arts of fighting with good looks and charisma. Everything from the carving of the bludgeon to the position of one's left toe when striking someone hard will receive ratings, and nothing will be left to chance. The greatest danger here is not the enemy - it's their own vanity.</p>",
                 
@@ -1490,7 +1490,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Groß, stark, sauber rasierter Bart. Ein Baum-Brutalo legt sehr großen Wert auf sein Äußeres.</p><p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschenden Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säbelzahntiger, der sich den Schwanz geklemmt hat. Nicht den flauschigen, den anderen...</p>",
+            :de_DE => "<p>Der Baumbrutalo ist der gefürchtete Anführer der Nahkämpfer.</p>",
   
             :en_US => "<p>Big, strong, clean-shaven… Tree-huggers set great store by their appearance. In battle, the tree-hugger is a strange sight. Surrounded by the rustling leaves of his fighting tree, he whirls through enemy ranks like a sabre-toothed tiger with a trapped tail. And probably other sensitive extremities too.</p><p>In battle, the tree-hugger is a strange sight. Surrounded by the rustling leaves of his fighting tree, the tree-hugger whirls through enemy ranks like a sabre-toothed tiger with a trapped tail. And probably other sensitive extremities too … </p>",
                 
@@ -1593,7 +1593,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p><p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter, die diesen bringen.</p>",
+            :de_DE => "<p>Der Kieselsteinwerfer ist der erste Fernkämpfer.</p>",
   
             :en_US => "<p>Big stones, little stones – stone throwers like them all as long as they can throw them at someone's head. Well, OK – they do prefer the smaller ones. Stone throwers don't actually aim, but their stones can hit you in the eye quite easily. Gravel stone throwers aren't afraid of death as such – they're more afraid of the ostrich riders who cause it.</p>",
                 
@@ -1689,7 +1689,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ein sicherer Wurf führt zu besseren Treffern. Aufgrund der Masse an gegnerischen Nahkämpfern macht sich dies zwar nicht wirklich bemerkbar, aber es führt doch zu ein oder zwei kritischen Treffern mehr.</p><p>Ein bewegliches Ziel wie einen Straußenreiter zu treffen, ist eine große Leistung und der Unterschied zwischen Leben und Tod für einen Fernkämpfer.</p>",
+            :de_DE => "<p>Der Zielwerfer ist ein beeindruckender Fernkämpfer der fortgeschrittenen Armeen.</p>",
   
             :en_US => "<p>A sure throw means better strikes. Not that you'd notice the difference – there are usually enough enemy melee fighters around, but it can mean a couple of good tactical strikes. Hitting a moving target like an ostrich rider is quite an achievement and can mean the difference between life and death for a stone thrower.</p>",
                 
@@ -1794,7 +1794,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Mit der Schleuder können auch größere Steine weiter geworfen werden. Treffer bei unvorbereiteten Kämpfern in der zweiten Reihe erzielen eine deutlich höhere Wirkung. Je nach der Seite des Kampfes auf der man gerade steht, ist das zu bejubeln oder zu beklagen. Was durchaus nicht immer eindeutig ist.</p>",
+            :de_DE => "<p>Der Steinschleuderer ist ein sehr durchschlagkräftiger Fernkämpfer.</p>",
   
             :en_US => "<p>You can throw bigger stones even further if you use a catapult. Stone throwers often hit unsuspecting warriors in the second row, leading to a much higher number of overall casualties that are either suffered or celebrated, depending on which side of the battle you happen to be. Which isn't always obvious.</p>",
                 
@@ -1908,7 +1908,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ein Speer ist auch im Nahkampf, vor allem gegen Reiter, effektiv. Dumm nur, wenn man schon alle Speere weggeworfen hat, bevor ein Reiter angreift. Im Leitfaden für Speerwerfer steht, dass man immer einen Speer weniger werfen sollte, als man hat. Leider kann kein Speerwerfer zählen, geschweige denn lesen.</p>",
+            :de_DE => "<p>Der Speerwerfer ist der gefürchtete Anführer der Fernkämpfer.</p>",
   
             :en_US => "<p>A spear is also effective at close range - especially against riders. The only difficulty is when you've already thrown all your spears before you're attacked by a rider. The field manual for spear throwers clearly states, 'Always throw one spear less than you have'. The trouble is, spear throwers can't read, let alone count.</p>",
                 
@@ -2011,7 +2011,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Strauße sind nicht nur lecker, sondern auch gute und schnelle Reittiere. Straußenreiter sind schnell genug, um an den Nahkämpfern vorbeizukommen, so dass den Fernkämpfern nur die Hoffnung bleibt, dass die Sträuße den Kopf in den Sand stecken.</p>",
+            :de_DE => "<p>Der Straßenreiter ist die einfachste Berittene Einheit.</p>",
   
             :en_US => "<p>Ostriches don't just taste delicious! They're also exceptionally good and speedy mounts. Ostrich riders are the bane of all stone throwers. Fast enough to get past the infantry, their enemies can only hope that the ostriches will stick their heads in the sand or that their riders will fall off.</p>",
                 
@@ -2107,7 +2107,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Der Reiter sitzt auf einem abgerichteten äußerst hungrigen Strauß. Wenn der Reiter nicht selbst gebissen wird, ist der hungrige Strauß eine wild pickende Kampfmaschine, die ungeschützte Fernkämpfer zerreißen kann.</p>",
+            :de_DE => "<p>Der Hungrige Strauß ist die Standardwaffe der Reiterei einer fortschrittlichen Armee.</p>",
   
             :en_US => "<p>The rider sits on a trained and very hungry ostrich. As long as the rider doesn't get bitten himself, the hungry ostrich stays a wild, pecking battle machine, able to destroy unprotected rangers.</p>",
                 
@@ -2212,7 +2212,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Rasende Strauße sind spezialisiert auf blitzschnelle Angriffe. Gegnerische Reittiere blockieren als Spielverderber leider den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p>",
+            :de_DE => "<p>Rasende Strauße sind spezialisiert auf blitzschnelle Angriffe.</p>",
   
             :en_US => "<p>Frantic ostriches are specialized in lightning attacks. Enemy mounts are spoilsports though, blocking the access to sitting targets that could otherwise be picked off easily.</p>",
                 
@@ -2326,7 +2326,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Klauen, Schwanz und Reißzähnen werden die hilflosen Gegner niedergemäht.</p>",
+            :de_DE => "<p>Der Dinoreiter ist der Anführer der Berittenen Einheiten.</p>",
   
             :en_US => "<p>A dinosaur rider has only two jobs: the first is not to get thrown off, and the second is to keep steering his dinosaur back to the battlefield once it's broken through enemy ranks. The hapless enemy is mowed down by the dinosaur's feet, tail and teeth.</p>",
                 
@@ -2429,7 +2429,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die Neandertaler sind ein wilder Stamm prähistorischer Menschen.</p><p>Sie sind zwar ziemlich beeindruckende Kämpfer, haben aber keine Ahnung von Taktik. Wenn Schreien und Zuschlagen nicht mehr ausreichen, ist es meist schon zu spät für den Neandertaler.</p>",
+            :de_DE => "<p>Die Neandertaler sind ein wilder Stamm prähistorischer Menschen.</p>",
   
             :en_US => "<p>Neanderthals are a wild tribe of prehistoric people. They are quite impressive fighters, but they haven't got a clue about tactics. When shouting and hitting fail to fend off the enemy, that's usually the end for Neanderthals.</p>",
                 
@@ -2512,7 +2512,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Als intriganter, karrieresüchtiger, aalglatter Möchtegern ist der Kleine Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Zum Glück kann der Kleine Häuptling unter dem Vorwand der Gründung einer Lagerstätte aus der Siedlung verbannt werden.</p>",
+            :de_DE => "<p>Der Kleine Häuptling kann Lagerstätten gründen.</p>",
   
             :en_US => "<p>A little chief is about as popular as an encounter with a hungry dinosaur. As a scheming, workaholic, slick wannabe, the little chief is a role model for entire generations of snobs. Luckily, a little chief can be banished from a settlement under the pretext of founding a new encampment.</p>",
                 
@@ -2600,7 +2600,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Als intriganter, karrieresüchtiger, aalglatter Möchtegern ist der Große Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Einziger Trost für seine Untergebenen: so groß ist er gar nicht.</p>",
+            :de_DE => "<p>Der Große Häuptling kann einen Heimatsiedlung gründen und ernennt sich dann selber zum Chef.</p>",
   
             :en_US => "<p>As a scheming, workaholic, slick wannabe, the great chief is a role model for entire generations of snobs. At least, he isn't that tall. Actually, he's rather small. But please, don't let him know.</p>",
                 
