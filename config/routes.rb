@@ -301,6 +301,7 @@ GameServer::Application.routes.draw do
         namespace :shop do
           resources :redeem_purchase_actions,                :only => [ :create ]
           resources :fb_verify_order_actions,                :only => [ :create ]
+          resources :google_verify_order_actions,            :only => [ :create ]
           resources :special_offer_dialog_displayed_actions, :only =>[:create]
         end
         namespace :geo_treasure do
