@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  identifier: MyString
+  google_product_id: MyString
+  google_payment_token: MyString
+  credits: 1
+  test: 1
+
+two:
+  identifier: MyString
+  google_product_id: MyString
+  google_payment_token: MyString
+  credits: 1
+  test: 1

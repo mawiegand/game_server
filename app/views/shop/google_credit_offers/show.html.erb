@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Google product:</b>
+  <%= @shop_google_credit_offer.google_product_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @shop_google_credit_offer.title %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @shop_google_credit_offer.amount %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @shop_google_credit_offer.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_shop_google_credit_offer_path(@shop_google_credit_offer) %> |
+<%= link_to 'Back', shop_google_credit_offers_path %>

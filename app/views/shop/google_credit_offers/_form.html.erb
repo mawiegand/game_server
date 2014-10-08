@@ -1,0 +1,33 @@
+<%= form_for(@shop_google_credit_offer) do |f| %>
+  <% if @shop_google_credit_offer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shop_google_credit_offer.errors.count, "error") %> prohibited this shop_google_credit_offer from being saved:</h2>
+
+      <ul>
+      <% @shop_google_credit_offer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :google_product_id %><br />
+    <%= f.text_field :google_product_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

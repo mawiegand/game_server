@@ -322,8 +322,10 @@ GameServer::Application.routes.draw do
         resources :platinum_offers
         resources :special_offers
         resources :fb_credit_offers
+        resources :google_credit_offers
         resources :transactions
         resources :fb_money_transactions
+        resources :google_money_transactions
         resources :money_transactions
         resources :credit_transactions
         resources :special_offers_transactions

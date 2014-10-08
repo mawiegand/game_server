@@ -1,0 +1,31 @@
+<h1>Listing shop_google_money_transactions</h1>
+
+<table>
+  <tr>
+    <th>Identifier</th>
+    <th>Google product</th>
+    <th>Google payment token</th>
+    <th>Credits</th>
+    <th>Test</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shop_google_money_transactions.each do |shop_google_money_transaction| %>
+  <tr>
+    <td><%= shop_google_money_transaction.identifier %></td>
+    <td><%= shop_google_money_transaction.google_product_id %></td>
+    <td><%= shop_google_money_transaction.google_payment_token %></td>
+    <td><%= shop_google_money_transaction.credits %></td>
+    <td><%= shop_google_money_transaction.test %></td>
+    <td><%= link_to 'Show', shop_google_money_transaction %></td>
+    <td><%= link_to 'Edit', edit_shop_google_money_transaction_path(shop_google_money_transaction) %></td>
+    <td><%= link_to 'Destroy', shop_google_money_transaction, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Google money transaction', new_shop_google_money_transaction_path %>
