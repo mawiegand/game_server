@@ -121,12 +121,14 @@ en:
         bonus_offers: Bonus Offers
         platinum_offers: Platinum Offers
         fb_credit_offers: Facebook Credit Offers
+        google_credit_offers: Google Credit Offers
         transactions: Ingame Transactions
         special_offers: Special Offers
         special_offers_transactions: Special Offers Transactions
         credit_transactions: Bytro Credit Transactions
         money_transactions: Bytro Money Transactions
         fb_money_transactions: Facebook Money Transactions
+        google_money_transactions: Google Money Transactions
       tutorial:
         category: Tutorial
         tutorial: Tutorial

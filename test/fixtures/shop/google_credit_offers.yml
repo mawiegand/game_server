@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  google_product_id: MyString
+  title: MyString
+  amount: 1
+  price: 9.99
+
+two:
+  google_product_id: MyString
+  title: MyString
+  amount: 1
+  price: 9.99

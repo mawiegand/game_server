@@ -1,0 +1,29 @@
+<h1>Listing shop_google_credit_offers</h1>
+
+<table>
+  <tr>
+    <th>Google product</th>
+    <th>Title</th>
+    <th>Amount</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shop_google_credit_offers.each do |shop_google_credit_offer| %>
+  <tr>
+    <td><%= shop_google_credit_offer.google_product_id %></td>
+    <td><%= shop_google_credit_offer.title %></td>
+    <td><%= shop_google_credit_offer.amount %></td>
+    <td><%= shop_google_credit_offer.price %></td>
+    <td><%= link_to 'Show', shop_google_credit_offer %></td>
+    <td><%= link_to 'Edit', edit_shop_google_credit_offer_path(shop_google_credit_offer) %></td>
+    <td><%= link_to 'Destroy', shop_google_credit_offer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Google credit offer', new_shop_google_credit_offer_path %>

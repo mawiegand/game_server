@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140904073047) do
+ActiveRecord::Schema.define(:version => 20141008214634) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2248,6 +2248,7 @@ ActiveRecord::Schema.define(:version => 20140904073047) do
     t.string   "avatar_string"
     t.integer  "alliance_color"
     t.boolean  "invisible",                       :default => false
+    t.boolean  "selected",                        :default => false
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2727,6 +2728,25 @@ ActiveRecord::Schema.define(:version => 20140904073047) do
     t.string   "currency"
     t.string   "country"
     t.decimal  "payout_foreign_exchange_rate"
+    t.integer  "test"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_google_credit_offers", :force => true do |t|
+    t.string   "google_product_id"
+    t.string   "title"
+    t.integer  "amount"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shop_google_money_transactions", :force => true do |t|
+    t.string   "identifier"
+    t.string   "google_product_id"
+    t.string   "google_payment_token"
+    t.integer  "credits"
     t.integer  "test"
     t.datetime "created_at"
     t.datetime "updated_at"

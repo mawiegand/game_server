@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Identifier:</b>
+  <%= @shop_google_money_transaction.identifier %>
+</p>
+
+<p>
+  <b>Google product:</b>
+  <%= @shop_google_money_transaction.google_product_id %>
+</p>
+
+<p>
+  <b>Google payment token:</b>
+  <%= @shop_google_money_transaction.google_payment_token %>
+</p>
+
+<p>
+  <b>Credits:</b>
+  <%= @shop_google_money_transaction.credits %>
+</p>
+
+<p>
+  <b>Test:</b>
+  <%= @shop_google_money_transaction.test %>
+</p>
+
+
+<%= link_to 'Edit', edit_shop_google_money_transaction_path(@shop_google_money_transaction) %> |
+<%= link_to 'Back', shop_google_money_transactions_path %>
