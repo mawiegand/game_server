@@ -4,6 +4,8 @@ class Facebook::AppConfigsController < ApplicationController
   layout 'facebook'
 
   before_filter :deny_api
+  before_filter :authenticate
+  before_filter :authorize_staff
 
   # GET /facebook/app_configs/1
   # GET /facebook/app_configs/1.json
