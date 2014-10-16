@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  client_id: MyString
+  client_secret: MyString
+  code: MyString
+  access_token: MyString
+  refresh_token: MyString
+  expires_at: 2014-10-15 22:32:51
+
+two:
+  client_id: MyString
+  client_secret: MyString
+  code: MyString
+  access_token: MyString
+  refresh_token: MyString
+  expires_at: 2014-10-15 22:32:51

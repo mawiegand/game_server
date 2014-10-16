@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141008214634) do
+ActiveRecord::Schema.define(:version => 20141015212922) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2035,6 +2035,18 @@ ActiveRecord::Schema.define(:version => 20141008214634) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "victory_gained"
+  end
+
+  create_table "google_app_configs", :force => true do |t|
+    t.string   "client_id"
+    t.string   "client_secret"
+    t.string   "code"
+    t.string   "access_token"
+    t.string   "refresh_token"
+    t.datetime "expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "redirect_uri"
   end
 
   create_table "like_system_dislikes", :force => true do |t|
