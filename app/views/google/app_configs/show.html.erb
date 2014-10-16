@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Client Id:</b>
+  <%= @google_app_config.client_id %>
+</p>
+
+<p>
+  <b>Client secret:</b>
+  <%= @google_app_config.client_secret %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @google_app_config.code %>
+</p>
+
+<p>
+  <b>Access token:</b>
+  <%= @google_app_config.access_token %>
+</p>
+
+<p>
+  <b>Refresh token:</b>
+  <%= @google_app_config.refresh_token %>
+</p>
+
+<p>
+  <b>Expires at:</b>
+  <%= @google_app_config.expires_at %>
+</p>
+
+<p>
+  <b>Redirect URI:</b>
+  <%= @google_app_config.redirect_uri %>
+</p>
+
+
+<%= link_to 'Edit', edit_google_app_config_path(@google_app_config) %> |
+<%= link_to 'Back', google_app_config_path %><br><br>
+
+
+<%= link_to 'Refresh App Code', @google_app_config.app_code_url %> |
+<%= link_to 'Refresh Auth Tokens', google_app_config_path(:refresh_auth_tokens => true) %>
+

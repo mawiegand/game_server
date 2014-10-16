@@ -1,0 +1,11 @@
+<% content_for :google_links do %>
+  <ul class="submenue">
+    <li><%= link_to I18n.translate("application.layout.google.app_config"), google_app_config_path %></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <%= content_for?(:google_content) ? yield(:google_content) : yield %>
+<% end %>
+
+<%= render :template => 'layouts/application' %>

@@ -114,6 +114,9 @@ en:
         category: Facebook
         object_types: Object Types
         app_config: App Config
+      google:
+        category: Google
+        app_config: App Config
       shop:
         category: Shop
         purchases: Purchases

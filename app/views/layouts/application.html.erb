@@ -49,7 +49,8 @@
       <li><%= link_to I18n.translate("application.layout.shop.category"), shop_money_transactions_path %></li>
 <% end %>
       <li><%= link_to I18n.translate("application.layout.tutorial.category"), tutorial_tutorial_path %></li>
-      <li><%= link_to I18n.translate("application.layout.facebook.category"), facebook_app_config_path %></li>
+	  <li><%= link_to I18n.translate("application.layout.facebook.category"), facebook_app_config_path %></li>
+	  <li><%= link_to I18n.translate("application.layout.google.category"), google_app_config_path %></li>
     </ul>
   <% end %>
   </nav>
@@ -74,7 +75,8 @@
       <%= yield :like_system_links %>
       <%= yield :shop_links %>
       <%= yield :tutorial_links %>
-      <%= yield :facebook_links %>
+	  <%= yield :facebook_links %>
+	  <%= yield :google_links %>
       <%= yield :treasure_links %>
     </ul>
   <% end %>
