@@ -8,7 +8,7 @@ class Shop::GoogleMoneyTransactionsController < ApplicationController
   # GET /shop/google_money_transactions
   # GET /shop/google_money_transactions.json
   def index
-    @shop_google_money_transactions = Shop::GoogleMoneyTransaction.all
+    @shop_google_money_transactions = Shop::GoogleMoneyTransaction.paginate(:order => 'created_at desc', :page => params[:page], :per_page => 20)
     @paginate = true
 
     respond_to do |format|

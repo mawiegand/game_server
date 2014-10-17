@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141015212922) do
+ActiveRecord::Schema.define(:version => 20141017175618) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2762,6 +2762,8 @@ ActiveRecord::Schema.define(:version => 20141015212922) do
     t.integer  "test"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "processed_at"
+    t.string   "google_order_id"
   end
 
   create_table "shop_money_transactions", :force => true do |t|
