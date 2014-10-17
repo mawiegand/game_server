@@ -12,45 +12,61 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
     payment_token  = params['google_verify_order_action'] && params['google_verify_order_action']['payment_token']
 
     if !order_id.blank? && !product_id.blank? && !payment_token.blank?
-
       offer = Shop::GoogleCreditOffer.find_by_google_product_id(product_id)
 
-      # call to google
+      if !offer.nil?
+        config = Google::AppConfig.the_app_config
+        package_name = 'com.wackadoo.wackadoo_client'
+        response = HTTParty.get(
+            "https://www.googleapis.com/androidpublisher/v2/applications/#{package_name}/purchases/products/#{product_id}/tokens/#{payment_token}?access_token=#{config.access_token}",
+            verify: false,
+        )
 
-      if !offer.nil?  # check google call
+        logger.debug "googe api response: #{response}"
 
-        transaction_data = {
-            userID:      current_character.identifier,
-            method:      'bytro',
-            offerID:     '249',
-            scaleFactor: offer.amount.to_s,
-            tstamp:      Time.now.to_i.to_s,
-            comment:     '1',
-        }
+        if response.code === 200
+          response = response.parsed_response
+          response = JSON.parse(response) if response.is_a?(String)
 
-        query = {
-            eID:    'api',
-            key:    CreditShop::BytroShop::KEY,
-            action: 'processPayment',
-            data:   CreditShop::BytroShop.encoded_data(transaction_data),
-        }
+          if response['purchaseState'] === 0
+            transaction_data = {
+                userID:      current_character.identifier,
+                method:      'bytro',
+                offerID:     '249',
+                scaleFactor: offer.amount.to_s,
+                tstamp:      Time.now.to_i.to_s,
+                comment:     '1',
+            }
 
-        query = CreditShop::BytroShop.add_hash(query)
-        http_response = HTTParty.post(CreditShop::BytroShop::URL_BASE, :query => query, :verify => false)
+            query = {
+                eID:    'api',
+                key:    CreditShop::BytroShop::KEY,
+                action: 'processPayment',
+                data:   CreditShop::BytroShop.encoded_data(transaction_data),
+            }
 
-        if http_response.code === 200
-          api_response = http_response.parsed_response
-          api_response = JSON.parse(api_response) if api_response.is_a?(String)
-          if api_response['resultCode'] === 0
+            query = CreditShop::BytroShop.add_hash(query)
+            http_response = HTTParty.post(CreditShop::BytroShop::URL_BASE, :query => query, :verify => false)
 
-            Shop::GoogleMoneyTransaction.create({
-                                                identifier:           current_character.identifier,
-                                                google_payment_token: payment_token,
-                                                google_product_id:    product_id,
-                                                credits:              offer.amount,
-                                            })
+            if http_response.code === 200
+              api_response = http_response.parsed_response
+              api_response = JSON.parse(api_response) if api_response.is_a?(String)
+              if api_response['resultCode'] === 0
 
-            status = :ok
+                Shop::GoogleMoneyTransaction.create({
+                                                    identifier:           current_character.identifier,
+                                                    google_payment_token: payment_token,
+                                                    google_product_id:    product_id,
+                                                    credits:              offer.amount,
+                                                })
+
+                status = :ok
+              else
+                status = :unprocessable_entity
+              end
+            else
+              status = :unprocessable_entity
+            end
           else
             status = :unprocessable_entity
           end
