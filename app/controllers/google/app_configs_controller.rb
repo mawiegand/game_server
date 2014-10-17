@@ -10,14 +10,17 @@ class Google::AppConfigsController < ApplicationController
   # GET /google/app_configs/1
   # GET /google/app_configs/1.json
   def show
-
-    logger.debug "Start"
-
-    if params.has_key? :refresh_auth_tokens
-      if Util::GoogleManager.refresh_auth_tokens(logger)
-        flash[:notice] = 'Auth Tokens successfully refreshed.'
+    if params.has_key? :fetch_auth_tokens
+      if Util::GoogleManager.fetch_auth_tokens
+        flash[:notice] = 'Auth tokens successfully refreshed.'
       else
         flash[:notice] = 'Could not refresh auth tokens. Try to refresh the app code.'
+      end
+    elsif params.has_key? :refresh_access_token
+      if Util::GoogleManager.refresh_access_token
+        flash[:notice] = 'Access token successfully refreshed.'
+      else
+        flash[:notice] = 'Could not refresh access token. Try to refresh the app code and refresh token.'
       end
     end
 

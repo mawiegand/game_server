@@ -4,7 +4,7 @@ class Google::AppConfig < ActiveRecord::Base
     Google::AppConfig.find(1)
   end
 
-  def app_code_url
+  def fetch_app_code_url
     "https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/androidpublisher&response_type=code&access_type=offline&redirect_uri=#{redirect_uri}&client_id=#{client_id}"
   end
 

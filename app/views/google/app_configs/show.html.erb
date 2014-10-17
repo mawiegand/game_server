@@ -40,6 +40,7 @@
 <%= link_to 'Back', google_app_config_path %><br><br>
 
 
-<%= link_to 'Refresh App Code', @google_app_config.app_code_url %> |
-<%= link_to 'Refresh Auth Tokens', google_app_config_path(:refresh_auth_tokens => true) %>
+<%= link_to 'Fetch App Code', @google_app_config.fetch_app_code_url %> |
+<%= link_to 'Fetch Auth Tokens', google_app_config_path(:fetch_auth_tokens => true) %> |
+<%= link_to 'Refresh Access Token', google_app_config_path(:refresh_access_token => true) %>
 
