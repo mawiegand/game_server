@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <b>Google order id:</b>
+  <%= @shop_google_money_transaction.google_order_id %>
+</p>
+
+<p>
   <b>Google product:</b>
   <%= @shop_google_money_transaction.google_product_id %>
 </p>
@@ -21,8 +26,13 @@
 </p>
 
 <p>
-  <b>Test:</b>
-  <%= @shop_google_money_transaction.test %>
+  <b>Processed by Google:</b>
+  <%= @shop_google_money_transaction.processed_at %>
+</p>
+
+<p>
+  <b>Booked by Bytro:</b>
+  <%= @shop_google_money_transaction.created_at %>
 </p>
 
 

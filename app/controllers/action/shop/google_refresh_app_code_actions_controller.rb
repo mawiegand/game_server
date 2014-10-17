@@ -4,16 +4,12 @@ class Action::Shop::GoogleRefreshAppCodeActionsController < ApplicationControlle
   def index
     code = params['code']
 
-    if !code.nil? && !code.blank?
-      config = Google::AppConfig.the_app_config
-      config.code = code
-      config.access_token = nil
-      config.expires_at = nil
-      notice = 'App Code successfully refreshed.' if config.save
+    if code.present?
+      notice = 'App Code successfully refreshed.' if Google::AppConfig.set_app_code code
     end
 
     respond_to do |format|
-      format.html { redirect_to google_app_config_path, notice: notice }
+      format.html { redirect_to google_app_config_path(show_notice: true), notice: notice }
       format.json { render json: {}, status: :ok }
     end
   end
