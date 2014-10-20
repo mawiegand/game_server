@@ -20,10 +20,11 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
         config.refresh_token_if_expired
 
         if config.access_token_valid?
-          google_response = HTTParty.get(
-              "https://www.googleapis.com/androidpublisher/v2/applications/#{Google::AppConfig::PACKAGE_NAME}/purchases/products/#{product_id}/tokens/#{payment_token}?access_token=#{config.access_token}",
-              verify: false,
-          )
+
+          google_request = "https://www.googleapis.com/androidpublisher/v2/applications/#{Google::AppConfig::PACKAGE_NAME}/purchases/products/#{product_id}/tokens/#{payment_token}?access_token=#{config.access_token}"
+          logger.debug "googe api request: #{google_request}"
+
+          google_response = HTTParty.get(google_request, verify: false)
           logger.debug "googe api response: #{google_response}"
 
           if google_response.code === 200
