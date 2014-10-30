@@ -197,19 +197,19 @@ module IdentityProvider
       def post(path, body = {})
         add_auth_token(body)
         HTTParty.post(@attributes[:identity_provider_base_url] + path,
-                      :body => body, :headers => { 'Accept' => 'application/json'})
+                      :body => body, :headers => { 'Accept' => 'application/json'}, :verify => false)
       end
   
       def put(path, body = {})
         add_auth_token(body)
         HTTParty.put(@attributes[:identity_provider_base_url] + path,
-                     :body => body, :headers => { 'Accept' => 'application/json'})
+                     :body => body, :headers => { 'Accept' => 'application/json'}, :verify => false)
       end
   
       def get(path, query = {})
         add_auth_token(query)
         HTTParty.get(@attributes[:identity_provider_base_url] + path,
-                     :query => query, :headers => { 'Accept' => 'application/json'})
+                     :query => query, :headers => { 'Accept' => 'application/json'}, :verify => false)
       end
       
       def add_auth_token(query)
