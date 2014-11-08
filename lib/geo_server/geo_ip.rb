@@ -12,7 +12,11 @@ module GeoServer
           response = HTTParty.get("http://geoip.psiori.com/api/v01/ip/#{ip}.json", {timeout: 3})
           Rails.logger.debug "Code: #{response.code}."
           if response.code == 200
-            return response.parsed_response
+            hash = response.parsed_response
+            return {
+              "latitude"  : (hash['latitude']  || "0").to_f,
+              "longitude" : (hash['longitude'] || "0").to_f,
+            }
           end
         
         rescue Timeout::Error => e
