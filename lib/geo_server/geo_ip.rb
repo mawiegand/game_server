@@ -14,8 +14,8 @@ module GeoServer
           if response.code == 200
             hash = response.parsed_response
             return {
-              "latitude"  : (hash['latitude']  || "0").to_f,
-              "longitude" : (hash['longitude'] || "0").to_f,
+              "latitude"  => (hash['latitude']  || "0").to_f,
+              "longitude" => (hash['longitude'] || "0").to_f,
             }
           end
         
