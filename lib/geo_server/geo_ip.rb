@@ -11,7 +11,7 @@ module GeoServer
       unless ip.nil?
         
         begin
-          response = HTTParty.get("http://freegeoip.net/json/#{ip}", {timeout: 3})
+          response = HTTParty.get("http://geoip.psiori.com/api/v01/ip/#{ip}", {timeout: 3})
           if response.code == 200
             return response.parsed_response
           end
