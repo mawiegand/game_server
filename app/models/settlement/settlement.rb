@@ -153,16 +153,18 @@ class Settlement::Settlement < ActiveRecord::Base
       end
     end
 
-    spec.each do |number, details|
-      slot = self.slots.with_num(number).first
-      
-      if !details[:building].blank? && !slot.nil?
-        slot.create_building(details[:building])
-        logger.debug "Created building with id #{details[:building]} in slot #{slot.inspect}."
+    spec.each do |number, details|      
+      if !details[:building].blank?
+        slot = self.slots.with_num(number).first
+        
+        if !slot.nil?
+          slot.create_building(details[:building])
+          logger.debug "Created building with id #{details[:building]} in slot #{slot.inspect}."
 
-        if !details[:level].blank?
-          while slot.level < details[:level]
-            slot.upgrade_building
+          if !details[:level].blank?
+            while slot.level < details[:level]
+              slot.upgrade_building
+            end
           end
         end
       end
