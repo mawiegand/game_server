@@ -145,7 +145,9 @@ class Settlement::Settlement < ActiveRecord::Base
   # pass the corresponding array from the game rules to this method.
   def create_building_slots_according_to(spec)
     
-    ActiveRecord::Base.transaction do
+    ActiveRecord::Base.transaction do  
+      # this transaction is here for the purpose of speeding-up the creation 
+      # by writing all slots with one shared commit.
       spec.each do |number, details|
         slot = self.slots.create({
           :slot_num => number,

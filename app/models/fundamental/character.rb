@@ -542,24 +542,26 @@ class Fundamental::Character < ActiveRecord::Base
       character.create_tutorial_state
       character.tutorial_state.create_start_quest_state
 
-      cmd = Messaging::JabberCommand.grant_access(character, 'global')
-      cmd.character_id = character.id
-      cmd.save
-      cmd = Messaging::JabberCommand.grant_access(character, 'handel')
-      cmd.character_id = character.id
-      cmd.save
-      cmd = Messaging::JabberCommand.grant_access(character, 'plauderhöhle')
-      cmd.character_id = character.id
-      cmd.save
-      cmd = Messaging::JabberCommand.grant_access(character, 'help')
-      cmd.character_id = character.id
-      cmd.save
-      cmd = Messaging::JabberCommand.grant_access(character, 'whisperingcavern')
-      cmd.character_id = character.id
-      cmd.save
-      cmd = Messaging::JabberCommand.grant_access(character, 'beginner')
-      cmd.character_id = character.id
-      cmd.save
+      ActiveRecord::Base.transaction do  
+        cmd = Messaging::JabberCommand.grant_access(character, 'global')
+        cmd.character_id = character.id
+        cmd.save
+        cmd = Messaging::JabberCommand.grant_access(character, 'handel')
+        cmd.character_id = character.id
+        cmd.save
+        cmd = Messaging::JabberCommand.grant_access(character, 'plauderhöhle')
+        cmd.character_id = character.id
+        cmd.save
+        cmd = Messaging::JabberCommand.grant_access(character, 'help')
+        cmd.character_id = character.id
+        cmd.save
+        cmd = Messaging::JabberCommand.grant_access(character, 'whisperingcavern')
+        cmd.character_id = character.id
+        cmd.save
+        cmd = Messaging::JabberCommand.grant_access(character, 'beginner')
+        cmd.character_id = character.id
+        cmd.save
+      end
     end
     
     character 
