@@ -1,0 +1,2 @@
+module Google::ProxyHelper
+end

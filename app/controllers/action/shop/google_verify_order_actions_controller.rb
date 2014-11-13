@@ -15,16 +15,37 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
       transaction = Shop::GoogleMoneyTransaction.find_by_google_order_id(order_id)
       offer = Shop::GoogleCreditOffer.find_by_google_product_id(product_id)
 
+
       if transaction.blank? && offer.present?
         config = Google::AppConfig.the_app_config
         config.refresh_token_if_expired
 
         if config.access_token_valid?
-          google_response = HTTParty.get(
-              "https://www.googleapis.com/androidpublisher/v2/applications/#{Google::AppConfig::PACKAGE_NAME}/purchases/products/#{product_id}/tokens/#{payment_token}?access_token=#{config.access_token}",
-              verify: false,
-          )
-          logger.debug "googe api response: #{google_response}"
+          # Hack
+          if Rails.env.production?
+            query = {
+                package_name: Google::AppConfig::PACKAGE_NAME,
+                product_id: product_id,
+                payment_token: payment_token,
+                google_access_token: config.access_token,
+                access_token: request_access_token.token
+            }
+
+            google_response = HTTParty.get(
+                'https://test1.wack-a-doo.de/game_server/google/proxy/verify_order',
+                :query => query,
+                :headers => { 'Accept' => 'application/json'},
+                :verify => false
+            )
+
+            logger.debug "googe api response (via proxy): #{google_response}"
+          else
+            google_response = HTTParty.get(
+                "https://www.googleapis.com/androidpublisher/v2/applications/#{Google::AppConfig::PACKAGE_NAME}/purchases/products/#{product_id}/tokens/#{payment_token}?access_token=#{config.access_token}",
+                verify: false,
+            )
+            logger.debug "googe api response: #{google_response}"
+          end
 
           if google_response.code === 200
             google_response = google_response.parsed_response
