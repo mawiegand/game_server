@@ -368,6 +368,7 @@ GameServer::Application.routes.draw do
 
       namespace :google do
         resource  :app_config,    :only => [:show, :edit, :update]
+        get "proxy/verify_order", :controller => :proxy, :action => :verify_order
       end
 
       resource :action, :only => [ :show ]
