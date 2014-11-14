@@ -51,7 +51,7 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
             google_response = google_response.parsed_response
             google_response = JSON.parse(google_response) if google_response.is_a?(String)
 
-            if google_response['kind'] === Google::AppConfig::RESPONSE_KIND && google_response['purchaseState'] === 0 && google_response['consumptionState'] === 1
+            if google_response['kind'] === Google::AppConfig::RESPONSE_KIND && google_response['purchaseState'] === 0 && google_response['consumptionState'] === 0
               transaction_data = {
                   userID:      current_character.identifier,
                   method:      'bytro',
