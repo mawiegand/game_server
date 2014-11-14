@@ -29,7 +29,6 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
                 product_id: product_id,
                 payment_token: payment_token,
                 google_access_token: config.access_token,
-                access_token: request_access_token.token
             }
 
             google_response = HTTParty.get(
