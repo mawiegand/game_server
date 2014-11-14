@@ -1,7 +1,7 @@
 class Google::ProxyController < ApplicationController
   layout 'google'
 
-  before_filter :authenticate
+  # before_filter :authenticate
 
   def verify_order
 
