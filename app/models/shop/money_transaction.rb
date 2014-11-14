@@ -56,7 +56,7 @@ class Shop::MoneyTransaction < ActiveRecord::Base
       pur_provider:         self.carrier,
       pur_gross:            self.gross,
       pur_currency:         self.gross_currency,
-      pur_country:          self.country,
+      pur_country_code:     self.country,
       pur_earnings:         self.earnings,
       pur_product_sku:      self.offer_id,
       pur_product_category: self.offer_category,
