@@ -7,6 +7,8 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
 
   def create
 
+    logger.debug "----- 1"
+
     order_id       = params['google_verify_order_action'] && params['google_verify_order_action']['order_id']
     product_id     = params['google_verify_order_action'] && params['google_verify_order_action']['product_id']
     payment_token  = params['google_verify_order_action'] && params['google_verify_order_action']['payment_token']
@@ -15,21 +17,31 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
       transaction = Shop::GoogleMoneyTransaction.find_by_google_order_id(order_id)
       offer = Shop::GoogleCreditOffer.find_by_google_product_id(product_id)
 
+      logger.debug "----- 2"
 
       if transaction.blank? && offer.present?
         config = Google::AppConfig.the_app_config
         config.refresh_token_if_expired
 
+        logger.debug "----- 3"
+
         if config.access_token_valid?
+
+          logger.debug "----- 4"
 
           # Hack
           if Rails.env.production?
+
+            logger.debug "----- 5"
+
             query = {
                 package_name: Google::AppConfig::PACKAGE_NAME,
                 product_id: product_id,
                 payment_token: payment_token,
                 google_access_token: config.access_token,
             }
+
+            logger.debug "----- 6"
 
             google_response = HTTParty.get(
                 'https://test1.wack-a-doo.de/game_server/google/proxy/verify_order',
@@ -40,6 +52,9 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
 
             logger.debug "googe api response (via proxy): #{google_response}"
           else
+
+            logger.debug "----- 7"
+
             google_response = HTTParty.get(
                 "https://www.googleapis.com/androidpublisher/v2/applications/#{Google::AppConfig::PACKAGE_NAME}/purchases/products/#{product_id}/tokens/#{payment_token}?access_token=#{config.access_token}",
                 verify: false,
@@ -47,11 +62,18 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
             logger.debug "googe api response: #{google_response}"
           end
 
+          logger.debug "----- 8"
+
           if google_response.code === 200
             google_response = google_response.parsed_response
             google_response = JSON.parse(google_response) if google_response.is_a?(String)
 
+            logger.debug "----- 9"
+
             if google_response['kind'] === Google::AppConfig::RESPONSE_KIND && google_response['purchaseState'] === 0 && google_response['consumptionState'] === 0
+
+              logger.debug "----- 10"
+
               transaction_data = {
                   userID:      current_character.identifier,
                   method:      'bytro',
@@ -72,10 +94,16 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
               http_response = HTTParty.post(CreditShop::BytroShop::URL_BASE, :query => query, :verify => false)
 
               if http_response.code === 200
+
+                logger.debug "----- 11"
+
                 api_response = http_response.parsed_response
                 api_response = JSON.parse(api_response) if api_response.is_a?(String)
 
                 if api_response['resultCode'] === 0
+
+                  logger.debug "----- 12"
+
                   Shop::GoogleMoneyTransaction.create({
                       identifier:           current_character.identifier,
                       google_order_id:      order_id,
