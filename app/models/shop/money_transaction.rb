@@ -8,9 +8,6 @@ class Shop::MoneyTransaction < ActiveRecord::Base
   scope :no_charge_back, where('chargeback < 0.5')
   scope :charge_back,    where('chargeback >= 0.5')
 
-  before_save   :track_purchase
-  before_save   :track_chargeback
-
   def completed?
     return transaction_state == 'completed'
   end
@@ -43,11 +40,14 @@ class Shop::MoneyTransaction < ActiveRecord::Base
     self.offer_category == "1" && self.chargeback < 0.5 && !self.sent_special_offer_alert?
   end
 
-
+  # track purchases with prisori
+  # attention: tracking is presently done in a central place at the identity provider
   def track_purchase
     return true   if tracked?
     return true   if chargeback?
     return true   unless completed?
+    return true   if sandbox?
+    
 
     tracker = FiveD::EventTracker.new
 
@@ -69,9 +69,13 @@ class Shop::MoneyTransaction < ActiveRecord::Base
     true
   end
 
+  # track purchases with prisori
+  # attention: tracking is presently done in a central place at the identity provider
   def track_chargeback
     return true   if chargeback_tracked?
     return true   unless chargeback?
+    return true   if sandbox?
+    
 
     tracker = FiveD::EventTracker.new
 
