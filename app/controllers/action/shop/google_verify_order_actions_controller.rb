@@ -3,8 +3,6 @@ require 'credit_shop'
 class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
   layout 'action'
 
-  before_filter :authenticate
-
   def create
 
     order_id       = params['google_verify_order_action'] && params['google_verify_order_action']['order_id']
