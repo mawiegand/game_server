@@ -68,8 +68,7 @@ class Military::Army < ActiveRecord::Base
   def self.create_garrison_at(settlement)
     logger.debug "Creating a second garrison army for settlement ID#{settlement.id}." unless settlement.garrison_army.nil? || settlement.garrison_army.frozen?
     
-    army = Military::Army.new({
-      garrison_id:  settlement.id,
+    army = settlement.build_garrison_army({
       location_id:  settlement.location_id,
       region_id:    settlement.region_id,  
       name:         'Garrison',
