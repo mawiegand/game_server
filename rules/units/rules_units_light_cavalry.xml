@@ -39,4 +39,7 @@
       <RequirementGroup>
         <Requirement id="building_stud" min_level="1" />
       </RequirementGroup>
+      <RequirementGroup>
+        <Requirement id="building_stud_2" min_level="1" />
+      </RequirementGroup>
     </Unit>

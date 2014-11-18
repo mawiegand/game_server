@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_training_cave" advisor="chef" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="true" demolishable="true" experienceFactor="8">
+<Building id="building_training_cave" advisor="chef" group="miscellaneous" category="building_category_unique_building" buyable="true" destructable="true" demolishable="true" experienceFactor="8">
   <Name lang="de_DE">Trainingshöhle</Name>
   <Name lang="en_US">Training Cave</Name>
   <Description lang="de_DE">

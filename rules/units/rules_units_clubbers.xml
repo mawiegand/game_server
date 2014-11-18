@@ -40,5 +40,7 @@
   <RequirementGroup>
     <Requirement id="building_barracks" min_level="5" />
   </RequirementGroup>
-  
+  <RequirementGroup>
+    <Requirement id="building_barracks_2" min_level="1" />
+  </RequirementGroup>
 </Unit>

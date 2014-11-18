@@ -23,7 +23,6 @@
   <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*900+GREATER(LEVEL,1)*(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5+0.5-3)))</Cost>
   <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*900+GREATER(LEVEL,1)*(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5+0.5-2)))</Cost>
   <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,2)*300+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5+0.5))</Cost>
- <Cost id="resource_cash" round="true">LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)</Cost>
   <ProductionTime shortenable="false">LESS(LEVEL,11)*(36000+(7200*LEVEL))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_infantry" />

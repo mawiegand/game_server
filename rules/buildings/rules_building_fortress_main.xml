@@ -21,7 +21,6 @@
   <Cost id="resource_stone" round="true">(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
   <Cost id="resource_wood" round="true">(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
   <Cost id="resource_fur" round="true">(EQUAL(LEVEL,2)*200+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))</Cost>
-  <Cost id="resource_cash" round="true">(EQUAL(LEVEL,10)*2)</Cost>
   <ProductionTime shortenable="false">GREATER(LEVEL,1)*(79200+(7200*(LEVEL-1)))</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <UnlockGarrison level="1" />

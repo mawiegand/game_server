@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_copper_smelter" advisor="chef" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="false" demolishable="false" tier="2" experienceFactor="12">
+<Building id="building_copper_smelter" advisor="chef" group="miscellaneous" category="building_category_unique_building" buyable="true" destructable="false" demolishable="false" tier="2" experienceFactor="12">
   <Name lang="de_DE">Kupferschmelze</Name>
   <Name lang="en_US">Copper Smelter</Name>
   <Description lang="de_DE">
@@ -26,7 +26,6 @@
   <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost>  
   <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost>   
   <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost> 
-  <Cost id="resource_cash" round="true">LESS(LEVEL,11)*MAX(LEVEL-8,0)</Cost>  
   <ProductionTime shortenable="false">(36000+(7200*LEVEL))</ProductionTime>
   <Abilities> <!-- just for grouping -->
   </Abilities>

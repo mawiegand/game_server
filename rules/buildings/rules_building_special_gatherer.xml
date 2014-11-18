@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_special_gatherer" advisor="girl" group="resource" category="building_category_special_building" buyable="true" destructable="true" demolishable="true" experienceFactor="0.49" divine_supporters_only="true">
+<Building id="building_special_gatherer" advisor="girl" group="resource" category="building_category_unique_building" buyable="true" destructable="true" demolishable="true" experienceFactor="0.49" divine_supporters_only="true">
   <Name lang="de_DE">Gottesgläubiger Sammler</Name>
   <Name lang="en_US">God-Fearing Gatherer</Name>
   <Description lang="de_DE">
@@ -26,7 +26,6 @@
   <Cost id="resource_stone" round="true">(EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5))*2</Cost>
   <Cost id="resource_wood" round="true">(EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5))*2</Cost>
   <Cost id="resource_fur" round="true">(FLOOR((EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5))*0.5))*2</Cost>
-  <Cost id="resource_cash" round="true">MAX(LEVEL-7,0)</Cost>
   <ProductionTime shortenable="true">(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400))*2
 </ProductionTime>
   <Production id="resource_stone">(FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))+0.5))</Production>

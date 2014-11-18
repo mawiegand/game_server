@@ -38,7 +38,6 @@
         <Requirement id="building_fortress_fortification" min_level="9" />  
       </RequirementGroup>
       <RequirementGroup>
-        <Requirement id="building_stud" min_level="15" />
-        <Requirement id="building_copper_smelter" min_level="1" />
-      </RequirementGroup> 
+        <Requirement id="building_stud_2" min_level="5" />
+      </RequirementGroup>
     </Unit>
