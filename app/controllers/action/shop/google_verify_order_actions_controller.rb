@@ -3,8 +3,6 @@ require 'credit_shop'
 class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
   layout 'action'
 
-  before_filter :authenticate
-
   def create
 
     order_id       = params['google_verify_order_action'] && params['google_verify_order_action']['order_id']
@@ -50,7 +48,7 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
             google_response = google_response.parsed_response
             google_response = JSON.parse(google_response) if google_response.is_a?(String)
 
-            if google_response['kind'] === Google::AppConfig::RESPONSE_KIND && google_response['purchaseState'] === 0 && google_response['consumptionState'] === 1
+            if google_response['kind'] === Google::AppConfig::RESPONSE_KIND && google_response['purchaseState'] === 0 && google_response['consumptionState'] === 0
 
               transaction_data = {
                   userID:      current_character.identifier,
@@ -104,7 +102,7 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
           status = :unprocessable_entity
         end
       else
-        status = :bad_request
+        status = :forbidden
       end
     else
       status = :bad_request
