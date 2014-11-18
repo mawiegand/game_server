@@ -22,7 +22,7 @@ gem 'xmpp4r'
 gem 'xmpp4r-simple', '>= 0.3.2', :git => "git@github.com:blaine/xmpp4r-simple.git"
 gem 'jabber-bot'
 
-gem 'sampl', '~> 0.0.2'
+gem 'sampl', '~> 0.0.2'     # PSIORI event tracking
 
 
 group :production do
@@ -41,7 +41,7 @@ group :development do
 end
 
 gem 'therubyracer', '>= 0.11.0'          # missing javascript runtime
-gem 'libv8'
+gem 'libv8', '~> 3.16.14.7'
 
 gem 'will_paginate'
 

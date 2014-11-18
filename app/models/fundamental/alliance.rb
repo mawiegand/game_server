@@ -52,7 +52,7 @@ class Fundamental::Alliance < ActiveRecord::Base
   scope :auto_join_selectable, not_full.auto_join_enabled.non_empty
 
   def self.create_alliance(tag, name, leader, role = :creator)
-    raise ConflictError.new("this alliance tag is already used") unless Fundamental::Alliance.where("lower(tag) like lower(?)", tag)
+    raise ConflictError.new("this alliance tag is already used") unless Fundamental::Alliance.where("lower(tag) like lower(?)", tag).blank?
     raise InternalServerError.new('no leader specified') if leader.nil? || leader.id.nil?
     
     alliance = Fundamental::Alliance.new({

@@ -144,18 +144,29 @@ class Settlement::Settlement < ActiveRecord::Base
   # spec. The spec is an array of building options. Usually, you would like to
   # pass the corresponding array from the game rules to this method.
   def create_building_slots_according_to(spec)
-    spec.each do |number, details|
-      slot = self.slots.create({
-        :slot_num => number,
-      })
+    
+    ActiveRecord::Base.transaction do  
+      # this transaction is here for the purpose of speeding-up the creation 
+      # by writing all slots with one shared commit.
+      spec.each do |number, details|
+        slot = self.slots.create({
+          :slot_num => number,
+        })
+      end
+    end
 
+    spec.each do |number, details|      
       if !details[:building].blank?
-        slot.create_building(details[:building])
-        logger.debug "Created building with id #{details[:building]} in slot #{slot.inspect}."
+        slot = self.slots.with_num(number).first
+        
+        if !slot.nil?
+          slot.create_building(details[:building])
+          logger.debug "Created building with id #{details[:building]} in slot #{slot.inspect}."
 
-        if !details[:level].blank?
-          while slot.level < details[:level]
-            slot.upgrade_building
+          if !details[:level].blank?
+            while slot.level < details[:level]
+              slot.upgrade_building
+            end
           end
         end
       end

@@ -15,7 +15,6 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
       transaction = Shop::GoogleMoneyTransaction.find_by_google_order_id(order_id)
       offer = Shop::GoogleCreditOffer.find_by_google_product_id(product_id)
 
-
       if transaction.blank? && offer.present?
         config = Google::AppConfig.the_app_config
         config.refresh_token_if_expired
@@ -52,6 +51,7 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
             google_response = JSON.parse(google_response) if google_response.is_a?(String)
 
             if google_response['kind'] === Google::AppConfig::RESPONSE_KIND && google_response['purchaseState'] === 0 && google_response['consumptionState'] === 1
+
               transaction_data = {
                   userID:      current_character.identifier,
                   method:      'bytro',
@@ -72,10 +72,12 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
               http_response = HTTParty.post(CreditShop::BytroShop::URL_BASE, :query => query, :verify => false)
 
               if http_response.code === 200
+
                 api_response = http_response.parsed_response
                 api_response = JSON.parse(api_response) if api_response.is_a?(String)
 
                 if api_response['resultCode'] === 0
+
                   Shop::GoogleMoneyTransaction.create({
                       identifier:           current_character.identifier,
                       google_order_id:      order_id,
