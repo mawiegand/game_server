@@ -25,6 +25,7 @@
     <Requirement id="building_copper_smelter" min_level="1" />
     <Requirement id="building_campfire" min_level="10" />
     <Requirement id="building_alliance_hall"  max_level="0" />
+    <Requirement id="building_fortress_fortification" max_level="0" />
   </RequirementGroup>
     <Cost id="resource_stone" round="true">20000*POW(LEVEL,1.25)</Cost>
     <Cost id="resource_wood" round="true">20000*POW(LEVEL,1.25)</Cost>

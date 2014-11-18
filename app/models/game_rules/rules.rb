@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.0.1
+# Version: 2.0.2
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 0,
-                    :build => 1,
+                    :build => 2,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -3200,6 +3200,17 @@ class GameRules::Rules
 
             },
 
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ],
 
           ],          
@@ -3530,6 +3541,17 @@ class GameRules::Rules
 
             },
 
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ],
 
           ],          
@@ -3732,6 +3754,17 @@ class GameRules::Rules
             {
               :symbolic_id => 'building_campfire',
               :id => 7,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 30,
               :type => 'building',
 
               :min_level => 0,
@@ -4173,6 +4206,17 @@ class GameRules::Rules
 
             },
 
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ],
 
           ],          
@@ -4253,6 +4297,17 @@ class GameRules::Rules
             {
               :symbolic_id => 'building_artifact_stand',
               :id => 12,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 30,
               :type => 'building',
 
               :min_level => 0,
@@ -4343,6 +4398,17 @@ class GameRules::Rules
             {
               :symbolic_id => 'building_copper_smelter',
               :id => 13,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 30,
               :type => 'building',
 
               :min_level => 0,
@@ -4560,6 +4626,17 @@ class GameRules::Rules
             {
               :symbolic_id => 'building_alliance_hall',
               :id => 15,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 30,
               :type => 'building',
 
               :min_level => 0,

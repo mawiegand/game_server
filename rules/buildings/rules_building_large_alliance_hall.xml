@@ -23,6 +23,7 @@
   <RequirementGroup>
     <Requirement id="building_alliance_hall"  max_level="10" />
     <Requirement id="building_large_alliance_hall" max_level="0" />
+    <Requirement id="building_fortress_fortification" max_level="0" />
   </RequirementGroup>
     <Cost id="resource_stone" round="true">LESS(LEVEL,11)*25000*POW(LEVEL,1.25)</Cost>
     <Cost id="resource_wood" round="true">LESS(LEVEL,11)*25000*POW(LEVEL,1.25)</Cost>
