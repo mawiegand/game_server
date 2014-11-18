@@ -18,7 +18,6 @@
       <BuildingOption category="building_category_wall" />
     </BuildingSlot>
     <BuildingSlot number="1" max-level="10">
-      <BuildingOption category="building_category_fortress_tower" />
       <BuildingOption category="building_category_unique_building" />
     </BuildingSlot>
     <BuildingSlot number="2" max-level="10">
