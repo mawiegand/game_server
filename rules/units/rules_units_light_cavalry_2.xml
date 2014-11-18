@@ -5,10 +5,10 @@
       <Name>Hungry Ostrich</Name>
       <Name lang="de_DE">Hungriger Strauß</Name>
       <Description lang="de_DE">
-        <p>Der Reiter sitzt auf einem abgerichteten äußerst hungrigen Strauß. Wenn der Reiter nicht selbst gebissen wird, ist der hungrige Strauß eine wild pickende Kampfmaschine, die ungeschützte Fernkämpfer zerreißen kann.</p>
+        <p>Der Hungrige Strauß ist die Standardwaffe der Reiterei einer fortschrittlichen Armee.</p>
       </Description>
       <Description lang="en_US">
-        <p>The rider sits on a trained and very hungry ostrich. As long as the rider doesn't get bitten himself, the hungry ostrich stays a wild, pecking battle machine, able to destroy unprotected rangers.</p>
+        <p>The Hungry Ostrich is the standard mounted unit of advanced armies. </p>
       </Description>
       <Flavour lang="en_US">
         <p> Eyes are especially delicious treats to a hungry and dangerous ostrich.</p>
@@ -39,5 +39,8 @@
       </RequirementGroup>
       <RequirementGroup>
         <Requirement id="building_stud" min_level="10" />  
-      </RequirementGroup> 
+      </RequirementGroup>
+      <RequirementGroup>
+          <Requirement id="building_stud_2" min_level="1" />
+      </RequirementGroup>
     </Unit>

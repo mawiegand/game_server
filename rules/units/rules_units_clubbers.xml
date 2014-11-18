@@ -6,13 +6,13 @@
   <Name lang="de_DE">Keulenkrieger</Name>
   
   <Description lang="de_DE">
-    <p>Keulenkrieger stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zwar zähe Burschen, finden allerdings allzu oft den Tod durch feindliche Fernkämpfer.</p>		
+    <p>Die Keulenkrieger sind die ersten ernstzunehmenden Nahkämpfer.</p>		
   </Description>
   <Description lang="en_US">
-    <p>Club warriors are the basic units of any Stone Age army. They fight on the front line and protect the ranged combatants from cavalry attack. They're tough and difficult to beat, but unfortunately they all too often take a hit from enemy ranged combatants.</p>
+    <p>Clubbers are the first type of melee unit to be reckoned with.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Holds a club and is always at the front of battle lines.</p>
+    <p>Wields a club and is always at the front of the battle lines.</p>
   </Flavour>
   <Flavour lang="de_DE">
     <p>Eine Keule in der Hand und immer an vorderster Front.</p>
@@ -39,6 +39,9 @@
   </RequirementGroup>
   <RequirementGroup>
     <Requirement id="building_barracks" min_level="5" />
+  </RequirementGroup>
+  <RequirementGroup>
+      <Requirement id="building_barracks_2" min_level="1" />
   </RequirementGroup>
   
 </Unit>

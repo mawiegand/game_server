@@ -5,13 +5,13 @@
   <Name>Thick-Skinned Clubber</Name>
   <Name lang="de_DE">Dicke Keule</Name>
   <Description lang="de_DE">
-    <p>'Dicke Keule' ist die Abkürzung von 'Dickhäutigen Keulenkrieger' und bezieht sich sowohl auf die Keule als auch auf die Widerstandskraft. Dank der dicken Haut muss die Zeitspanne bis zur Bewusstlosigkeit nicht in Schmerzen durchstanden werden.</p>		
+    <p>Die Dicken Keulen sind das Rückrat einer fortgeschrittenen Armee.</p>		
   </Description>
   <Description lang="en_US">
-    <p>Their thick skin protects them against blows from enemy clubs, but it doesn't help so much against the sharp stones of the ranged combatants. Although thanks to their thick skin, they don't feel a lot of pain before they pass out.</p>
+    <p>Thick-skinned clubbers are the backbone of any advanced army.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>“You two? Go and fetch three more of you so you can give me a halfway fair fight!”</p>
+    <p>“You two? Go and fetch three more of you so you can give me a halfway decent fight!”</p>
   </Flavour>
   <Flavour lang="de_DE">
     <p>„Ihr zwei? Holt euch noch drei dazu, dann wird es ein halbwegs fairer Kampf!“</p>
@@ -39,5 +39,8 @@
   </RequirementGroup>
   <RequirementGroup>
     <Requirement id="building_barracks" min_level="10" />
+  </RequirementGroup>
+  <RequirementGroup>
+    <Requirement id="building_barracks_2" min_level="1" />
   </RequirementGroup>
 </Unit>

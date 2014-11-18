@@ -1,7 +1,5 @@
-<h1>Listing military_armies</h1>
-
 <%= if (@paginate) 
-  will_paginate @military_armies 
+  will_paginate @military_armies, :params => {:controller => :armies, :action => 'index'} 
 end %>
 
 <table>
@@ -95,9 +93,5 @@ end %>
 </table>
 
 <%= if (@paginate) 
-  will_paginate @military_armies 
+  will_paginate @military_armies , :params => {:controller => :armies, :action => 'index'} 
 end %>
-
-<br />
-
-<%= link_to 'New Army', new_military_army_path %>

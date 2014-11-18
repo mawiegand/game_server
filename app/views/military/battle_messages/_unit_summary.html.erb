@@ -10,7 +10,7 @@
 						<td colspan="2"><hr></td>
 					</tr>
 				<% end %>
-
+			<% if !unit_summary.nil? && !unit_summary.unit_stats.nil? %>
 				<% if unit_summary.unit_stats.empty? %>
 					<% unless  unit_summary.methods.include?(:participant) && !unit_summary.participant.nil? %>
 						<tr>
@@ -36,6 +36,7 @@
 						</td>
 					</tr>
 				<% end %>
+			<% end %>	
 				<tr>
 					<td colspan="2"><hr></td>
 				</tr>

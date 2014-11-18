@@ -5,17 +5,16 @@
   <Name lang="de_DE">Häuptlingshütte</Name>
   <Name lang="en_US">Chieftain's Hut</Name>
   <Description lang="de_DE">
-    <p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p>
-    <p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 2, 6 und 20.</p>
+    <p>Die Häuptlingshütte schaltet weitere Gebäude frei, erhöht die Lagermenge und liefert Kommandopunkte.</p>
   </Description>
   <Description lang="en_US">
     <p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6 and 20.</p>
    </Description>
   <Flavour lang="en_US">
-    <p>Show me your chieftain's hut and I'll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Zeig mir Deine Häuptlingshütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>  
+    <p></p>  
 	</Flavour>
   <Population>1+GREATER(LEVEL,2)+GREATER(LEVEL,5)+GREATER(LEVEL,9)+GREATER(LEVEL,14)+EQUAL(LEVEL,20)*5</Population>
   <RequirementGroup>

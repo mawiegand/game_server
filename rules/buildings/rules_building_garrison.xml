@@ -5,18 +5,16 @@
   <Name lang="de_DE">Garnisonsgebäude</Name>
   <Name lang="en_US">Garrison</Name>
   <Description lang="de_DE">
-    <p>Das Garnionsgebäude dient zur Unterbringung und Versorgung der Einheiten und Armeen. Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p>
-    <p>Dieses Gebäude kann nicht abgerissen werden.</p>
+    <p>Das Garnisonsgebäude erhöht die Armeegröße jeder Armee der Hauptsiedlung.</p>
   </Description>
   <Description lang="en_US">
-    <p>Well, who would have thought it? Field armies also benefit from the increased discipline that having a garrison provides. And that means that bigger armies can be deployed in the field.</p>
-    <p>This building can not be torn down.</p>
+    <p></p>
   </Description>
   <Flavour lang="en_US">
-    <p>Warriors or soldiers of any kind should be kept apart from the ordinary working population. In the garrison they can bash each others' heads in and leave the poor settlement dwellers in peace.</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Aus Sicherheitsgründen werden die Krieger getrennt von der arbeitenden Bevölkerung gehalten. Nicht, dass den Kriegern noch was zustößt!</p>
+    <p></p>
   </Flavour> 
 <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)</Population>
   <RequirementGroup>

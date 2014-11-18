@@ -6,36 +6,36 @@
     <Name lang="de_DE">Stein</Name>
     <Name lang="en_US">Stone</Name>
     <Flavour lang="de_DE">Grau, hart, überall zu finden.</Flavour>
-    <Flavour lang="en_US">Gray, hard, found everywhere.</Flavour>
+    <Flavour lang="en_US">Gray, hard, can be found everywhere.</Flavour>
     <Description lang="de_DE">
       <p>Steine -- in der STEINzeit DER Rohstoff schlechthin. Kann gesammelt, gestapelt, geschärft und geworfen werden. Mehr muss man nicht sagen.</p>
     </Description>
     <Description lang="en_US">
-      <p>Ah, stones. The most vital raw material of the Stone Age. Can't think why they called it that... Stones can be gathered, stacked, sharpened and thrown. Not a lot more to say about them.</p>
+      <p>Ah, stones. The most vital raw material of the Stone Age. Hence the name, duh. Stones can be gathered, stacked, sharpened and thrown. Not a lot more to say about them.</p>
     </Description>
   </Resource>
   <Resource id="resource_wood" stealable="false">  
     <Name lang="de_DE">Holz</Name>
     <Name lang="en_US">Wood</Name>
     <Flavour lang="de_DE">Ein Brett in Ehren kann niemand verwehren.</Flavour>
-    <Flavour lang="en_US">It's not for nothing that we say 'touch wood' when we hope for good luck!</Flavour>
+    <Flavour lang="en_US">You're not out of the woods until you've found some wood.</Flavour>
     <Description lang="de_DE">
-      <p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz. Als Rohstoff spielt Holz eine wichtige Rolle bei der Konstruktion von Gebäuden und Belagerungswaffen.</p>
+      <p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz.</p>
     </Description>
     <Description lang="en_US">
-      <p>Even in the Stone Age, wood was used for various important purposes, including the construction of buildings and siege weapons.</p>
+      <p>Even in the Stone Age, wood was used for various important purposes, such as the construction of buildings and siege weapons.</p>
     </Description>
   </Resource>
   <Resource id="resource_fur" stealable="false">
     <Name lang="de_DE">Fell</Name>
     <Name lang="en_US">Fur</Name>
     <Flavour lang="de_DE">In der gesamten Steinzeit wurden Kunstfelle verwendet, es kamen keine Tiere zu schaden. Natürlich!</Flavour>
-    <Flavour lang="en_US">Naturally, throughout the entire stone age they only used artificial fur – so no animals were harmed, of course!  </Flavour>
+    <Flavour lang="en_US">Naturally, throughout the entire stone age they only used artificial fur – no animals were harmed, of course!  </Flavour>
     <Description lang="de_DE">
       <p>Hält warm, hält Wasser ab, verhängt Löcher und taugt im Notfall auch als rudimentäre Dachbedeckung.</p>
     </Description>
     <Description lang="en_US">
-      <p>Fur, sweet fur. It keeps you warm, it's water resistant, it can cover up holes in buildings, and it can be used as emergency roofing.</p>
+      <p>Aah, fur. It keeps you warm, it's water resistant, it can cover up holes in buildings, and it can be used as emergency roofing.</p>
     </Description>
   </Resource>
   <Resource id="resource_cash" stealable="false" ratingValue="0" taxable="false" tradable="false"> <!-- used for monetarization, cannot be stolen, is not considered in ranking -->  

@@ -5,16 +5,16 @@
   <Name lang="de_DE">Rohstofflager</Name>
   <Name lang="en_US">Raw Materials Store</Name>
   <Description lang="de_DE">
-        <p>Das steinzeitliches Logistikzentrum erhöht die maximale Lagermenge und ermöglicht den Handel mit anderen Spielern. Mehrere Rohstofflager wirken kumulativ und erhöhen sowohl die Lagermenge als auch die Anzahl der Karren.</p>
+        <p>Das Rohstofflager erhöht die maximale Lagermenge und ermöglicht den Handel mit Karren.</p>
    </Description>
   <Description lang="en_US">
     <p>This is a Stone Age logistics center in which raw materials are stored and dispatched. The bigger the store, the more carts can be dispatched.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Stone containers, dinosaur cranes and, more recently, carts. A little style is classy! </p>
+    <p></p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Steincontainer, Saurierkräne und seit neuestem, Karren. Soviel Stil muss sein!</p>
+    <p></p>
   </Flavour> 
   <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)</Population>  
   <RequirementGroup>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140227134752) do
+ActiveRecord::Schema.define(:version => 20140811190643) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1923,6 +1923,15 @@ ActiveRecord::Schema.define(:version => 20140227134752) do
     t.integer  "start_variant",                            :default => 1,     :null => false
   end
 
+  create_table "fundamental_diplomacy_relations", :force => true do |t|
+    t.integer  "source_alliance_id"
+    t.integer  "target_alliance_id"
+    t.integer  "diplomacy_status"
+    t.boolean  "initiator",          :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "fundamental_gossips", :force => true do |t|
     t.string   "content_type"
     t.datetime "ended_at"
@@ -2633,10 +2642,10 @@ ActiveRecord::Schema.define(:version => 20140227134752) do
     t.integer  "name_change_count",                              :default => 0
     t.integer  "alliance_size_bonus",                            :default => 0
     t.integer  "assignment_level",                               :default => 0,            :null => false
-    t.integer  "alliance_color"
     t.integer  "battle_id"
     t.decimal  "condition",                                      :default => 1.0,          :null => false
     t.datetime "condition_updated_at"
+    t.integer  "alliance_color"
   end
 
   create_table "settlement_slots", :force => true do |t|
@@ -2771,6 +2780,8 @@ ActiveRecord::Schema.define(:version => 20140227134752) do
     t.datetime "updated_at"
     t.boolean  "sent_mail_alert",          :default => false
     t.boolean  "sent_special_offer_alert"
+    t.boolean  "tracked",                  :default => false, :null => false
+    t.boolean  "chargeback_tracked",       :default => false, :null => false
   end
 
   add_index "shop_money_transactions", ["uid"], :name => "index_shop_money_transactions_on_uid", :unique => true

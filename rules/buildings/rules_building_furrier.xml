@@ -5,16 +5,16 @@
   <Name lang="de_DE">Kürschner</Name>
   <Name lang="en_US">Furrier</Name>
   <Description lang="de_DE">
-    <p>Der Kürschner verarbeitet Häute zu Leder und macht selbst aus den kleinsten Nagern noch ein brauchbares Fell. Wenn ein Säbelzahntiger erlegt wird, dann zaubert der Kürschner etwas für die Dame von Welt.</p>
+    <p>Der Kürschner liefert Felle.</p>
   </Description>
   <Description lang="en_US">
     <p>The furrier's job is to turn skins into leather - he can make a useful hide out of even the smallest of rodents. And if a sabre-toothed tiger should be killed, he can also conjure up something for a sophisticated lady. The waste from larger furriers' businesses can be processed by smaller furriers with lower overheads, giving a noticeable boost to fur production.</p>
   </Description>
   <Flavour lang="en_US">
-	<p>A furrier know there are many ways to skin a creature. They have lovely furs and quality leatherwear that appeals to sophisticated ladies, and of course, there's usually something tasty roasting over the fire too.</p>
+	<p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Der Kürschner zieht dem Tier das Fell über die Ohren.</p>
+    <p></p>
   </Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)</Population>
   <RequirementGroup>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT Rules (General, VictoryTypes?, ArtifactTypes?, SettlementTypes?, ResourceTypes?, UnitTypes?, UnitCategories?, BuildingTypes?, BuildingCategories?, BuildingGroups?, QueueCategories?, QueueTypes?, ScienceTypes?, ScienceCategories?, MundaneRanks?, SacredRanks?, AssignmentTypes?, SpecialAssignmentTypes?, TreasureTypes?, FacebookUserStories?)>
+<!ELEMENT Rules (General, VictoryTypes?, ArtifactTypes?, DiplomacyRelationTypes?, SettlementTypes?, ResourceTypes?, UnitTypes?, UnitCategories?, BuildingTypes?, BuildingCategories?, BuildingGroups?, QueueCategories?, QueueTypes?, ScienceTypes?, ScienceCategories?, MundaneRanks?, SacredRanks?, AssignmentTypes?, SpecialAssignmentTypes?, TreasureTypes?, FacebookUserStories?)>
 <!ATTLIST Rules
   xmlns:xi CDATA #REQUIRED
 >
@@ -242,6 +242,22 @@
 >
 
 <!ELEMENT RequiredRegionsRatio (#PCDATA)>
+
+<!--Diplomacy Relations-->
+<!ELEMENT DiplomacyRelationTypes (DiplomacyRelation*)>
+<!ELEMENT DiplomacyRelation (Name+, DiplomacyDuration*, NextRelationTypes*)>
+
+<!ATTLIST DiplomacyRelation
+  id ID #REQUIRED
+>
+
+<!ELEMENT DiplomacyDuration (#PCDATA)>
+<!ATTLIST DiplomacyDuration
+  min (true | false) "false"
+>
+
+<!ELEMENT NextRelationTypes (NextRelation*)>
+<!ELEMENT NextRelation (#PCDATA)>
 
 <!--Abilities of Buildings, Sciences-->
 <!ELEMENT Abilities (UnlockGarrison*, GarrisonSizeBonus*, ArmySizeBonus*, CommandPoints*, UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover?, UnlockBuildingSlots?, UnlockArtifactInitiation?, AllianceExtension?, AssignmentLevel?)>

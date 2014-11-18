@@ -2,19 +2,19 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_cavalry_tower" advisor="warrior" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishable="true" experienceFactor="6">
-  <Name lang="de_DE">Turm der Reitmeisterei</Name>
-  <Name lang="en_US">Cavalry Tower</Name>
+  <Name lang="de_DE">Reiteranlage</Name>
+  <Name lang="en_US">Cavalry Grounds</Name>
   <Description lang="de_DE">
-    <p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzeitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein, um die Mädchen zu beeindrucken. Die wenigsten Jungen kommen allerdings noch in den Genuß sich in der Aufmerksamkeit zu sonnen.</p>
+    <p>In einer Festung werden in der Reitereianlage die Berittenen Einheiten ausgebildet.</p>
  </Description>
   <Description lang="en_US">
     <p>Entrance is strictly limited to trained riders and animal keepers. If the gate is left open – even briefly – inquisitive, spotty teenage boys tend to sneak in. It impresses the girls no end, but the lads rarely get a chance to bathe in their admiration afterwards. The animal keepers generally deal with their bloody remains unceremoniously.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>This place is home to countless animals and sweaty men. Beware of the dung and pungent smell!</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Hier werden die berittenen Einheiten ausgebildet. Vorsicht vor Dung und penetrantem Geruch!</p>
+    <p></p>
   </Flavour>
   <Population>LESS(LEVEL,11)*(FLOOR(40+(2.45*POW(LEVEL,2.3)-1.5*LEVEL)*1.5*2))+(EQUAL(LEVEL,10)*39)</Population>
   <RequirementGroup>
@@ -23,7 +23,6 @@
   <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-832)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5*2.5+0.5)))</Cost>
   <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-416)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5*2.5+0.5)))</Cost>
   <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-944)+FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*2.5+0.5))</Cost>
- <Cost id="resource_cash" round="true">LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)</Cost>
   <ProductionTime shortenable="false">LESS(LEVEL,11)*(36000+(7200*LEVEL))</ProductionTime>        
   <Abilities> <!-- just for grouping -->
     <UnlockQueue  queue="queue_cavalry" />

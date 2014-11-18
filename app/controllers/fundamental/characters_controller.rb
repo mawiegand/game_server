@@ -9,8 +9,11 @@ class Fundamental::CharactersController < ApplicationController
 #  before_filter :authenticate, :except => [:show, :self]   # presently, show must be excluded to be able to fetch self on startup (because safari looses auth-header on redirect from self to show)
   before_filter :deny_api,     :except => [:show, :index, :self]
   
+  autocomplete :character, :identifier
+
+
   include Fundamental::CharactersHelper
-  
+
   def index
 
     last_modified = nil 
@@ -30,7 +33,7 @@ class Fundamental::CharactersController < ApplicationController
         format.html do
           raise ForbiddenError.new('Access forbidden.') unless (admin? || staff? || developer?) 
           if @fundamental_characters.nil?
-            @fundamental_characters =  Fundamental::Character.paginate(:order => 'name', :page => params[:page], :per_page => 50)    
+            @fundamental_characters =  Fundamental::Character.search(params[:search]).paginate(:order => 'name', :page => params[:page], :per_page => 50)
             @paginate = true   
           end 
         end
@@ -46,9 +49,24 @@ class Fundamental::CharactersController < ApplicationController
           end
           render json: sanitized
         end
+        format.js {render :layout => false}
       end
     end
   end
+
+
+  def livesearch
+    
+      respond_to do |format|
+        format.html  { render :layout => false, :partial => "characters"}   
+          if @fundamental_characters.nil?
+            @fundamental_characters =  Fundamental::Character.search(params[:search]).paginate(:order => 'lower(identifier)', :page => params[:page], :per_page => 50)
+            @paginate = true   
+          end         
+      end    
+  end
+
+
 
   def self
     external_referer  = request.env["HTTP_X_ALT_REFERER"] || params[:referer]
@@ -387,4 +405,5 @@ class Fundamental::CharactersController < ApplicationController
       format.json { head :ok }
     end
   end
+  
 end

@@ -63,13 +63,13 @@
     </Description>
   </BuildingCategory>
   <BuildingCategory id="building_category_special_building">
-    <Name>Special Buildings</Name>
-    <Name lang="de_DE">Spezialgebäude</Name>
+    <Name>Unique Buildings</Name>
+    <Name lang="de_DE">Einzigartige Gebäude</Name>
     <Description lang="de_DE">
-      <p>Spezielle Gebäude die nur auf kleinen Bauplätzen gebaut werden können.</p> 
+      <p>Spezielle Gebäude die nur auf ein mal pro Siedlung gebaut werden können.</p>
     </Description>
     <Description lang="en_US">
-      <p>Special buildings that can only be built on small building slots.</p>
+      <p>Special buildings that can only be built once per settlement.</p>
     </Description>
   </BuildingCategory>
 </BuildingCategories>

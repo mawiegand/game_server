@@ -4,12 +4,11 @@
 <Unit id="little_chief" category="unitcategory_special" experienceFactor="0.0">
   <Name>Little Chief</Name>
   <Name lang="de_DE">Kleiner Häuptling</Name>
-  
   <Description lang="de_DE">
-    <p>Als intriganter, karrieresüchtiger, aalglatter Möchtegern ist der Kleine Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Zum Glück kann der Kleine Häuptling unter dem Vorwand der Gründung einer Lagerstätte aus der Siedlung verbannt werden.</p>
+    <p>Der Kleine Häuptling kann Lagerstätten gründen.</p>
   </Description>
   <Description lang="en_US">
-    <p>A little chief is about as popular as an encounter with a hungry dinosaur. As a scheming, workaholic, slick wannabe, the little chief is a role model for entire generations of snobs. Luckily, a little chief can be banished from a settlement under the pretext of founding a new encampment.</p>
+    <p>The small chief can set up an encampment.</p>
   </Description>
   <Flavour lang="en_US">
     <p>A little chief is allowed to set up an encampment in the name of the actual chieftain.</p>

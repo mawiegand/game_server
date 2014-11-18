@@ -5,19 +5,17 @@
   <Name lang="de_DE">Große Stammeshalle</Name>
   <Name lang="en_US">Tribe's Large Hall</Name>
   <Description lang="de_DE">
-    <p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen. Oder zum Bowling, wenn die Halle denn lang genug ist.</p>
-    <p>Mit jedem Ausbau der Großen Stammeshalle kann die Allianz weitere Mitglieder aufnehmen.</p>
-    <p>Dieses Gebäude kann nicht abgerissen werden.</p>
+    <p>In der Großen Stammeshalle kann die maximale Allianzgröße weiter erhöht werden.</p>
    </Description>
   <Description lang="en_US">
     <p>In the Large Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. Very large halls make it possible to accept more alliance members into the meeting.</p>
     <p>This building can not be torn down.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Gutes Essen, leckere Getränke und viel Platz. Ein würdiger Rahmen für große Verhandlungen!</p>
+    <p></p>
   </Flavour> 
 <Population>200+20*LEVEL</Population>
   <RequirementGroup>

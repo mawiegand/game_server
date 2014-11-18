@@ -51,5 +51,8 @@
   <xi:include href="buildings/rules_building_artillery_tower.xml" />    
   <xi:include href="buildings/rules_building_cavalry_tower.xml" />    
 
+  <xi:include href="buildings/rules_building_barracks_2.xml" />
+  <xi:include href="buildings/rules_building_firing_range_2.xml" />
+  <xi:include href="buildings/rules_building_stud_2.xml" />
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
 </BuildingTypes>

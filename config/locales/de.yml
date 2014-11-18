@@ -95,7 +95,7 @@ de:
           </table>\n
           <p>Deine Einheiten haben alle überlebt, Dein Gegner hat alle Einheiten verloren. Für diesen Sieg erlangst Du keine Erfahrung.</p>\n"
       overrun_loser_message:
-        subject: Deine Armee ist in %{name} überrant worden
+        subject: Deine Armee ist in %{name} überrannt worden
         body: "<h2>Deine Armee ist überrannt worden in %{settlement_name}</h2>\n
           <p>Deine Armee <b>%{loser_name}</b> ist in <b>%{settlement_name}</b> von der Armee <b>%{winner_name}</b> von <b>%{winner_owner_name}</b> überrannt worden.</p>\n
           <table>\n

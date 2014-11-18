@@ -55,6 +55,16 @@ class Military::Army < ActiveRecord::Base
   scope :visible,       where('invisible = ?', false)
   scope :visible_to_character, lambda { |character| where('owner_id = ? or invisible = ?', character.id, false) }
 
+
+  def self.search(search)
+    if search
+      where('name LIKE :var or owner_name LIKE :var', :var => "%#{search}%" )
+    else
+      scoped
+    end
+  end
+
+
   def self.create_garrison_at(settlement)
     logger.debug "Creating a second garrison army for settlement ID#{settlement.id}." unless settlement.garrison_army.nil? || settlement.garrison_army.frozen?
     
@@ -843,15 +853,17 @@ class Military::Army < ActiveRecord::Base
     
     def update_experience_and_kills_character
       return true    if self.owner.blank?
+      
+      self.owner.reload # necessary, because it may have been previously loaded and updated meanwhile
     
       if !self.changes[:exp].blank?
         delta = (self.exp_change[1] || 0)-(self.exp_change[0] || 0)
-        self.owner.increment(:exp, (delta * (1 + (self.owner.exp_bonus_total || 0))).floor)
+        self.owner.exp = (self.owner.exp || 0) + (delta * (1 + (self.owner.exp_bonus_total || 0))).floor
       end
 
       if !self.changes[:kills].blank?
         delta = (self.kills_change[1] || 0)-(self.kills_change[0] || 0)
-        self.owner.increment(:kills, delta)
+        self.owner.kills = (self.owner.kills || 0) + delta
       end
       
       self.owner.save # saves only in case something has actually changed.

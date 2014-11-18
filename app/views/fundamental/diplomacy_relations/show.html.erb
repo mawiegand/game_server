@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Source alliance:</b>
+  <%= @fundamental_diplomacy_relation.source_alliance_id %>
+</p>
+
+<p>
+  <b>Target alliance:</b>
+  <%= @fundamental_diplomacy_relation.target_alliance_id %>
+</p>
+
+<p>
+  <b>Diplomacy status:</b>
+  <%= @fundamental_diplomacy_relation.diplomacy_status %>
+</p>
+
+<p>
+  <b>Initiator:</b>
+  <%= @fundamental_diplomacy_relation.initiator %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_diplomacy_relation_path(@fundamental_diplomacy_relation) %> |
+<%= link_to 'Back', fundamental_diplomacy_relations_path %>

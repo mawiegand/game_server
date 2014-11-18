@@ -21,7 +21,7 @@ end
 
 output_filename = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'rules', 'alliance', 'reservations.yml'))
 
-File.open(output_filename, 'w') do |out|
+File.open(output_filename, 'wb') do |out|
   YAML.dump reservations, out
 end
 

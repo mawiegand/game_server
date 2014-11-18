@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.6.23
+# Version: 1.12.1
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -34,7 +34,7 @@ class GameRules::Rules
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
-    :queue_types, :settlement_types, :artifact_types, :victory_types, :construction_speedup, :training_speedup, :facebook_user_stories,
+    :queue_types, :settlement_types, :artifact_types, :diplomacy_relation_types, :victory_types, :construction_speedup, :training_speedup, :facebook_user_stories,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles, :special_offer,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
@@ -68,7 +68,8 @@ class GameRules::Rules
       'slot_bubbles'                => slot_bubbles,
       'special_offer'               => special_offer,
       'settlement_types'            => settlement_types,
-      'artifact_types'              => artifact_types,  
+      'artifact_types'              => artifact_types,
+      'diplomacy_relation_types'    => diplomacy_relation_types,
       'victory_types'               => victory_types,  
       'queue_types'                 => queue_types,  
       'character_ranks'             => character_ranks,
@@ -122,8 +123,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 1,
-                    :minor => 6,
-                    :build => 23,
+                    :minor => 12,
+                    :build => 1,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -751,14 +752,14 @@ class GameRules::Rules
             
             :de_DE => "Grau, hart, überall zu finden.",
   
-            :en_US => "Gray, hard, found everywhere.",
+            :en_US => "Gray, hard, can be found everywhere.",
                 
           },
           :description => {
             
             :de_DE => "<p>Steine -- in der STEINzeit DER Rohstoff schlechthin. Kann gesammelt, gestapelt, geschärft und geworfen werden. Mehr muss man nicht sagen.</p>",
   
-            :en_US => "<p>Ah, stones. The most vital raw material of the Stone Age. Can't think why they called it that... Stones can be gathered, stacked, sharpened and thrown. Not a lot more to say about them.</p>",
+            :en_US => "<p>Ah, stones. The most vital raw material of the Stone Age. Hence the name, duh. Stones can be gathered, stacked, sharpened and thrown. Not a lot more to say about them.</p>",
                 
           },
 
@@ -781,14 +782,14 @@ class GameRules::Rules
             
             :de_DE => "Ein Brett in Ehren kann niemand verwehren.",
   
-            :en_US => "It's not for nothing that we say 'touch wood' when we hope for good luck!",
+            :en_US => "You're not out of the woods until you've found some wood.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz. Als Rohstoff spielt Holz eine wichtige Rolle bei der Konstruktion von Gebäuden und Belagerungswaffen.</p>",
+            :de_DE => "<p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz.</p>",
   
-            :en_US => "<p>Even in the Stone Age, wood was used for various important purposes, including the construction of buildings and siege weapons.</p>",
+            :en_US => "<p>Even in the Stone Age, wood was used for various important purposes, such as the construction of buildings and siege weapons.</p>",
                 
           },
 
@@ -811,14 +812,14 @@ class GameRules::Rules
             
             :de_DE => "In der gesamten Steinzeit wurden Kunstfelle verwendet, es kamen keine Tiere zu schaden. Natürlich!",
   
-            :en_US => "Naturally, throughout the entire stone age they only used artificial fur – so no animals were harmed, of course!  ",
+            :en_US => "Naturally, throughout the entire stone age they only used artificial fur – no animals were harmed, of course!  ",
                 
           },
           :description => {
             
             :de_DE => "<p>Hält warm, hält Wasser ab, verhängt Löcher und taugt im Notfall auch als rudimentäre Dachbedeckung.</p>",
   
-            :en_US => "<p>Fur, sweet fur. It keeps you warm, it's water resistant, it can cover up holes in buildings, and it can be used as emergency roofing.</p>",
+            :en_US => "<p>Aah, fur. It keeps you warm, it's water resistant, it can cover up holes in buildings, and it can be used as emergency roofing.</p>",
                 
           },
 
@@ -1078,7 +1079,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die stärksten, draufgängerischsten und dümmsten Männer des Stammes werden zu Kriegern ausgebildet. In Ermangelung von tauglichen Waffen werden sie ausgiebig im Nahkampf geschult und erwehren sich der Gegner mit purer Muskelkraft und Willensstärke - oder versuchen es zumindest.</p><p>Sind in einer Siedlung bewaffnete Nahkampfeinheiten verfügbar, können keine unbewaffneten Einheiten rekrutiert werden. Krieger sind sehr schwach gegen alle anderen Einheitentypen außer Nahkämpfer.</p>",
+            :de_DE => "<p>Der Krieger ist eine schwache Nahkampfeinheit zur Verteidigung einer jungen Heimatsiedlung.</p>",
   
             :en_US => "<p>The strongest, toughest and most stupid men of your tribe are trained as warriors. Having no effective weapons at their disposal, unarmed warriors overwhelm their opponents by pure muscle power and their strong will - or at least they try for a while. They can be trained as long as there are no armed melee units available in the same settlement. Very weak against all unit types apart from melee fighters.</p><p>Can only be trained as long as there are no armed melee units available in the same settlement. Very weak against any other unit type but melee units.</p>",
                 
@@ -1167,16 +1168,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>Holds a club and is always at the front of battle lines.</p>",
+            :en_US => "<p>Wields a club and is always at the front of the battle lines.</p>",
   
             :de_DE => "<p>Eine Keule in der Hand und immer an vorderster Front.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Keulenkrieger stehen an der Front und beschützen die Fernkämpfer vor der Kavallerie. Keulenkrieger sind zwar zähe Burschen, finden allerdings allzu oft den Tod durch feindliche Fernkämpfer.</p>",
+            :de_DE => "<p>Die Keulenkrieger sind die ersten ernstzunehmenden Nahkämpfer.</p>",
   
-            :en_US => "<p>Club warriors are the basic units of any Stone Age army. They fight on the front line and protect the ranged combatants from cavalry attack. They're tough and difficult to beat, but unfortunately they all too often take a hit from enemy ranged combatants.</p>",
+            :en_US => "<p>Clubbers are the first type of melee unit to be reckoned with.</p>",
                 
           },
 
@@ -1245,6 +1246,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_barracks_2',
+              :id => 31,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
           ],          
 
 
@@ -1263,16 +1277,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>“You two? Go and fetch three more of you so you can give me a halfway fair fight!”</p>",
+            :en_US => "<p>“You two? Go and fetch three more of you so you can give me a halfway decent fight!”</p>",
   
             :de_DE => "<p>„Ihr zwei? Holt euch noch drei dazu, dann wird es ein halbwegs fairer Kampf!“</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>'Dicke Keule' ist die Abkürzung von 'Dickhäutigen Keulenkrieger' und bezieht sich sowohl auf die Keule als auch auf die Widerstandskraft. Dank der dicken Haut muss die Zeitspanne bis zur Bewusstlosigkeit nicht in Schmerzen durchstanden werden.</p>",
+            :de_DE => "<p>Die Dicken Keulen sind das Rückrat einer fortgeschrittenen Armee.</p>",
   
-            :en_US => "<p>Their thick skin protects them against blows from enemy clubs, but it doesn't help so much against the sharp stones of the ranged combatants. Although thanks to their thick skin, they don't feel a lot of pain before they pass out.</p>",
+            :en_US => "<p>Thick-skinned clubbers are the backbone of any advanced army.</p>",
                 
           },
 
@@ -1350,6 +1364,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_barracks_2',
+              :id => 31,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
           ],          
 
 
@@ -1368,16 +1395,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>The art of expressive battle! Here, haymakers give marks to each other based on the finesse of their fighting style.</p>",
+            :en_US => "<p>Self-expression through combat- what an exquisite art. Haymakers even comment and critique each other's style over a nice cup of tea.</p>",
   
             :de_DE => "<p>Die Kunst des Ausdruckkampfes! Knüppel-Schwinger geben sich sogar untereinander Noten für ihre Kampfstil.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit Ausdruck und gutem Aussehen. Vom geschnitzten Knüppel bis hin zur Haltung des linken Zehs wird nichts dem Zufall überlassen. Ihr größter Feind ist nicht der Gegner, sondern ihre Eitelkeit.</p>",
+            :de_DE => "<p>Die Knüppel-Schwinger vereinen tödliche Kampfkunst mit Ausdruck und gutem Aussehen.</p>",
   
-            :en_US => "<p>Haymakers unite the lethal arts of fighting with good looks and charisma. Everything from the carving of the bludgeon to the position of one's left toe when striking someone hard will receive ratings, and nothing will be left to chance. The greatest danger here is not the enemy - it's their own vanity.</p>",
+            :en_US => "<p>Haymakers combine the lethal art of fighting with charisma and smashing good looks.</p>",
                 
           },
 
@@ -1445,20 +1472,11 @@ class GameRules::Rules
             [
               
             {
-              :symbolic_id => 'building_barracks',
-              :id => 3,
+              :symbolic_id => 'building_barracks_2',
+              :id => 31,
               :type => 'building',
 
-              :min_level => 15,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 1,
+              :min_level => 5,
 
             },
 
@@ -1489,7 +1507,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Groß, stark, sauber rasierter Bart. Ein Baum-Brutalo legt sehr großen Wert auf sein Äußeres.</p><p>In der Schlacht bietet der Baum-Brutalo ein seltsames Schauspiel. Umhüllt von den rauschenden Blättern seines Kampfbaumes wirbelt der Baum-Brutalo durch die gegnerischen Reihen wie ein Säbelzahntiger, der sich den Schwanz geklemmt hat. Nicht den flauschigen, den anderen...</p>",
+            :de_DE => "<p>Der Baumbrutalo ist der gefürchtete Anführer der Nahkämpfer.</p>",
   
             :en_US => "<p>Big, strong, clean-shaven… Tree-huggers set great store by their appearance. In battle, the tree-hugger is a strange sight. Surrounded by the rustling leaves of his fighting tree, he whirls through enemy ranks like a sabre-toothed tiger with a trapped tail. And probably other sensitive extremities too.</p><p>In battle, the tree-hugger is a strange sight. Surrounded by the rustling leaves of his fighting tree, the tree-hugger whirls through enemy ranks like a sabre-toothed tiger with a trapped tail. And probably other sensitive extremities too … </p>",
                 
@@ -1537,11 +1555,11 @@ class GameRules::Rules
             [
               
             {
-              :symbolic_id => 'building_barracks',
-              :id => 3,
+              :symbolic_id => 'building_barracks_2',
+              :id => 31,
               :type => 'building',
 
-              :min_level => 20,
+              :min_level => 10,
 
             },
 
@@ -1592,7 +1610,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Große Steine, kleine Steine, ein Kieselsteinwerfer mag sie alle. Ok, zugegeben, die kleinen mag er ein bisschen lieber. Zwar zielt ein Kieselsteinwerfer nicht, aber sowas kann schnell ins Auge gehen.</p><p>Kieselsteinwerfer fürchten nicht den Tod an sich, nur die Straußenreiter, die diesen bringen.</p>",
+            :de_DE => "<p>Der Kieselsteinwerfer ist der erste Fernkämpfer.</p>",
   
             :en_US => "<p>Big stones, little stones – stone throwers like them all as long as they can throw them at someone's head. Well, OK – they do prefer the smaller ones. Stone throwers don't actually aim, but their stones can hit you in the eye quite easily. Gravel stone throwers aren't afraid of death as such – they're more afraid of the ostrich riders who cause it.</p>",
                 
@@ -1663,6 +1681,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_firing_range_2',
+              :id => 32,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
           ],          
 
 
@@ -1688,7 +1719,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ein sicherer Wurf führt zu besseren Treffern. Aufgrund der Masse an gegnerischen Nahkämpfern macht sich dies zwar nicht wirklich bemerkbar, aber es führt doch zu ein oder zwei kritischen Treffern mehr.</p><p>Ein bewegliches Ziel wie einen Straußenreiter zu treffen, ist eine große Leistung und der Unterschied zwischen Leben und Tod für einen Fernkämpfer.</p>",
+            :de_DE => "<p>Der Zielwerfer ist ein beeindruckender Fernkämpfer der fortgeschrittenen Armeen.</p>",
   
             :en_US => "<p>A sure throw means better strikes. Not that you'd notice the difference – there are usually enough enemy melee fighters around, but it can mean a couple of good tactical strikes. Hitting a moving target like an ostrich rider is quite an achievement and can mean the difference between life and death for a stone thrower.</p>",
                 
@@ -1768,6 +1799,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_firing_range_2',
+              :id => 32,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
           ],          
 
 
@@ -1793,7 +1837,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Mit der Schleuder können auch größere Steine weiter geworfen werden. Treffer bei unvorbereiteten Kämpfern in der zweiten Reihe erzielen eine deutlich höhere Wirkung. Je nach der Seite des Kampfes auf der man gerade steht, ist das zu bejubeln oder zu beklagen. Was durchaus nicht immer eindeutig ist.</p>",
+            :de_DE => "<p>Der Steinschleuderer ist ein sehr durchschlagkräftiger Fernkämpfer.</p>",
   
             :en_US => "<p>You can throw bigger stones even further if you use a catapult. Stone throwers often hit unsuspecting warriors in the second row, leading to a much higher number of overall casualties that are either suffered or celebrated, depending on which side of the battle you happen to be. Which isn't always obvious.</p>",
                 
@@ -1863,20 +1907,11 @@ class GameRules::Rules
             [
               
             {
-              :symbolic_id => 'building_firing_range',
-              :id => 14,
+              :symbolic_id => 'building_firing_range_2',
+              :id => 32,
               :type => 'building',
 
-              :min_level => 15,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 1,
+              :min_level => 5,
 
             },
 
@@ -1907,7 +1942,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ein Speer ist auch im Nahkampf, vor allem gegen Reiter, effektiv. Dumm nur, wenn man schon alle Speere weggeworfen hat, bevor ein Reiter angreift. Im Leitfaden für Speerwerfer steht, dass man immer einen Speer weniger werfen sollte, als man hat. Leider kann kein Speerwerfer zählen, geschweige denn lesen.</p>",
+            :de_DE => "<p>Der Speerwerfer ist der gefürchtete Anführer der Fernkämpfer.</p>",
   
             :en_US => "<p>A spear is also effective at close range - especially against riders. The only difficulty is when you've already thrown all your spears before you're attacked by a rider. The field manual for spear throwers clearly states, 'Always throw one spear less than you have'. The trouble is, spear throwers can't read, let alone count.</p>",
                 
@@ -1955,11 +1990,11 @@ class GameRules::Rules
             [
               
             {
-              :symbolic_id => 'building_firing_range',
-              :id => 14,
+              :symbolic_id => 'building_firing_range_2',
+              :id => 32,
               :type => 'building',
 
-              :min_level => 20,
+              :min_level => 10,
 
             },
 
@@ -2003,16 +2038,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>The two-handed ostrich riders are totally focused on controlling their mounts. As they themselves are unarmed, the beaks and claws of their ostriches pose more of a threat than they do.</p>",
+            :en_US => "<p>Ostritch riders are fast, that's it. This is why the riders have to focus all their concentration on controlling their mount.'</p>",
   
             :de_DE => "<p>Straußenreiter sind schnell, sonst nichts. Deshalb müssen die Reiter ihre ganze Konzentration auf das Führen ihres Reittieres legen.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Strauße sind nicht nur lecker, sondern auch gute und schnelle Reittiere. Straußenreiter sind schnell genug, um an den Nahkämpfern vorbeizukommen, so dass den Fernkämpfern nur die Hoffnung bleibt, dass die Sträuße den Kopf in den Sand stecken.</p>",
+            :de_DE => "<p>Der Straßenreiter ist die einfachste Berittene Einheit.</p>",
   
-            :en_US => "<p>Ostriches don't just taste delicious! They're also exceptionally good and speedy mounts. Ostrich riders are the bane of all stone throwers. Fast enough to get past the infantry, their enemies can only hope that the ostriches will stick their heads in the sand or that their riders will fall off.</p>",
+            :en_US => "<p>Ostritch riders are the simplest type of cavalry units.</p>",
                 
           },
 
@@ -2081,6 +2116,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_stud_2',
+              :id => 33,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
           ],          
 
 
@@ -2106,9 +2154,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Der Reiter sitzt auf einem abgerichteten äußerst hungrigen Strauß. Wenn der Reiter nicht selbst gebissen wird, ist der hungrige Strauß eine wild pickende Kampfmaschine, die ungeschützte Fernkämpfer zerreißen kann.</p>",
+            :de_DE => "<p>Der Hungrige Strauß ist die Standardwaffe der Reiterei einer fortschrittlichen Armee.</p>",
   
-            :en_US => "<p>The rider sits on a trained and very hungry ostrich. As long as the rider doesn't get bitten himself, the hungry ostrich stays a wild, pecking battle machine, able to destroy unprotected rangers.</p>",
+            :en_US => "<p>The Hungry Ostrich is the standard mounted unit of advanced armies. </p>",
                 
           },
 
@@ -2186,6 +2234,19 @@ class GameRules::Rules
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_stud_2',
+              :id => 33,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            ],
+
           ],          
 
 
@@ -2211,7 +2272,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Rasende Strauße sind spezialisiert auf blitzschnelle Angriffe. Gegnerische Reittiere blockieren als Spielverderber leider den Weg zu den leichten Zielen, sprichwörtlich auch Fleischtöpfe genannt.</p>",
+            :de_DE => "<p>Rasende Strauße sind spezialisiert auf blitzschnelle Angriffe.</p>",
   
             :en_US => "<p>Frantic ostriches are specialized in lightning attacks. Enemy mounts are spoilsports though, blocking the access to sitting targets that could otherwise be picked off easily.</p>",
                 
@@ -2281,20 +2342,11 @@ class GameRules::Rules
             [
               
             {
-              :symbolic_id => 'building_stud',
-              :id => 20,
+              :symbolic_id => 'building_stud_2',
+              :id => 33,
               :type => 'building',
 
-              :min_level => 15,
-
-            },
-
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 1,
+              :min_level => 5,
 
             },
 
@@ -2325,7 +2377,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Klauen, Schwanz und Reißzähnen werden die hilflosen Gegner niedergemäht.</p>",
+            :de_DE => "<p>Der Dinoreiter ist der Anführer der Berittenen Einheiten.</p>",
   
             :en_US => "<p>A dinosaur rider has only two jobs: the first is not to get thrown off, and the second is to keep steering his dinosaur back to the battlefield once it's broken through enemy ranks. The hapless enemy is mowed down by the dinosaur's feet, tail and teeth.</p>",
                 
@@ -2373,11 +2425,11 @@ class GameRules::Rules
             [
               
             {
-              :symbolic_id => 'building_stud',
-              :id => 20,
+              :symbolic_id => 'building_stud_2',
+              :id => 33,
               :type => 'building',
 
-              :min_level => 20,
+              :min_level => 10,
 
             },
 
@@ -2428,7 +2480,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die Neandertaler sind ein wilder Stamm prähistorischer Menschen.</p><p>Sie sind zwar ziemlich beeindruckende Kämpfer, haben aber keine Ahnung von Taktik. Wenn Schreien und Zuschlagen nicht mehr ausreichen, ist es meist schon zu spät für den Neandertaler.</p>",
+            :de_DE => "<p>Die Neandertaler sind ein wilder Stamm prähistorischer Menschen.</p>",
   
             :en_US => "<p>Neanderthals are a wild tribe of prehistoric people. They are quite impressive fighters, but they haven't got a clue about tactics. When shouting and hitting fail to fend off the enemy, that's usually the end for Neanderthals.</p>",
                 
@@ -2511,9 +2563,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Als intriganter, karrieresüchtiger, aalglatter Möchtegern ist der Kleine Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Zum Glück kann der Kleine Häuptling unter dem Vorwand der Gründung einer Lagerstätte aus der Siedlung verbannt werden.</p>",
+            :de_DE => "<p>Der Kleine Häuptling kann Lagerstätten gründen.</p>",
   
-            :en_US => "<p>A little chief is about as popular as an encounter with a hungry dinosaur. As a scheming, workaholic, slick wannabe, the little chief is a role model for entire generations of snobs. Luckily, a little chief can be banished from a settlement under the pretext of founding a new encampment.</p>",
+            :en_US => "<p>The small chief can set up an encampment.</p>",
                 
           },
 
@@ -2592,16 +2644,16 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :en_US => "<p>The great chief is allowed to set up a new home settlement and found a tribe.</p>",
+            :en_US => "<p>The great chief can set up a new home settlement and found a tribe.</p>",
   
             :de_DE => "<p>Der Große Häuptling kann eine Heimatsiedlung und damit einen neuen Stamm gründen.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Als intriganter, karrieresüchtiger, aalglatter Möchtegern ist der Große Häuptling das Rollenvorbild für ganze Generationen an Wichtigtuern. Einziger Trost für seine Untergebenen: so groß ist er gar nicht.</p>",
+            :de_DE => "<p>Der Große Häuptling kann einen Heimatsiedlung gründen und ernennt sich dann selber zum Chef.</p>",
   
-            :en_US => "<p>As a scheming, workaholic, slick wannabe, the great chief is a role model for entire generations of snobs. At least, he isn't that tall. Actually, he's rather small. But please, don't let him know.</p>",
+            :en_US => "<p>The Great Chief can found a new settlement after which he puts himself in charge. </p>",
                 
           },
 
@@ -2786,25 +2838,25 @@ class GameRules::Rules
           },
 
         },              #   END OF Standard Buildings
-        {               #   Special Buildings
+        {               #   Unique Buildings
           :id          => 6, 
           :symbolic_id => :building_category_special_building,
           :name        => {
             
-            :en_US => "Special Buildings",
+            :en_US => "Unique Buildings",
   
-            :de_DE => "Spezialgebäude",
+            :de_DE => "Einzigartige Gebäude",
                 
           },
           :description => {
             
-            :de_DE => "<p>Spezielle Gebäude die nur auf kleinen Bauplätzen gebaut werden können.</p>",
+            :de_DE => "<p>Spezielle Gebäude die nur auf ein mal pro Siedlung gebaut werden können.</p>",
   
-            :en_US => "<p>Special buildings that can only be built on small building slots.</p>",
+            :en_US => "<p>Special buildings that can only be built once per settlement.</p>",
                 
           },
 
-        },              #   END OF Special Buildings
+        },              #   END OF Unique Buildings
       ],                # END OF BUILDING CATEGORIES
 
 # ## BUILDING TYPES ##########################################################
@@ -2826,14 +2878,14 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>Show me your chieftain's hut and I'll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Zeig mir Deine Häuptlingshütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 2, 6 und 20.</p>",
+            :de_DE => "<p>Die Häuptlingshütte schaltet weitere Gebäude frei, erhöht die Lagermenge und liefert Kommandopunkte.</p>",
   
             :en_US => "<p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6 and 20.</p>",
                 
@@ -2967,16 +3019,16 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
+            :en_US => "<p></p>",
   
             :de_DE => "<p>Holz und Steine, ein paar Kaninchen oder andere Nager und ganz selten auch mal eine Kröte. Das sind die Schätze des Sammlers.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Primitivster aller Steinzeitbewohner. Er jagt und sammelt einfach alles was ihm vor die Flinte - äh Steinschleuder - kommt. Neben vielen völlig unbrauchbaren Sachen finden die Jäger und Sammler alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>",
+            :de_DE => "<p>Der Jäger und Sammler liefert geringe Mengen Stein, Holz und Fell.</p>",
   
-            :en_US => "<p>The most primitive of all Stone Age folk, the Hunter Gatherer collects all kinds of stuff, from branches and stones to roots, and even a couple of Golden Frogs, if the area is big enough. Basically, he hunts and gathers anything that comes into his sights - er... into the reach of his slingshot. All his treasures are set out neatly on display in his compound. </p><p>Apart from all kinds of useless stuff, hunter gatherers find everything – from branches and stones to roots and, if the area is big enough, even a couple of golden frogs.</p>",
+            :en_US => "<p>The most primitive of all Stone Age folk, the Hunter Gatherer collects all kinds of stuff, from branches and stones to roots, and even a couple of Golden Frogs, if the area is big enough. Basically, he hunts and gathers anything that comes into his sights - er... into the reach of his slingshot. All his treasures are set out neatly on display in his compound. </p><p></p>",
                 
           },
 
@@ -3082,14 +3134,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Der Gottesfürchtige Sammler steht nur den Göttlichen Supporten zur Verfügung.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Gottesgläubige Sammler folgt nur den Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p><p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p>",
+            :de_DE => "<p>Der Gottesgläubige Sammler folgt nur den Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p>",
   
             :en_US => "<p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p><p>Through his devotion he can find ressources and even golden frogs at a much higher rate than their peers.</p>",
                 
@@ -3196,14 +3248,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Looking for a little fight? Haven't been bashed up for a while? The barracks are the place to go for anyone wanting to jump into the fray.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Auf der Suche nach einem kleinen Kampf? Lange nicht mehr verprügelt worden?</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Der Ausbau beschleunigt die Ausbildung und ermöglicht die Rekrutierung höherwertiger Kämpfer. Mehrere Ausbildungsgelände beschleunigen die Rekrutierung zusätzlich.</p>",
+            :de_DE => "<p>Im Ausbildungsgelände werden in der Heimatsiedlung und in Lagerstätten Nahkämpfer ausgebildet.</p>",
   
             :en_US => "<p>These are the training grounds where all kinds of close combat fighters are trained. Big clubs, roasting spits, or even bare fists - anything goes. Would-be combatants compete in numerous contests to toughen themselves up for duelling, and once in a moon a public tournament is held. The winner gets the lot - glory, food, a day off and as many men as they want. Yes, that's right - men! Because the tournaments are usually won by women. How With a woman's deadliest weapons, of course...</p>",
                 
@@ -3292,6 +3344,11 @@ class GameRules::Rules
 
           },
 
+          :conversion_option => {
+            :building              => :building_barracks_2,
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,5)-GREATER(LEVEL,9)-GREATER(LEVEL,12)-GREATER(LEVEL,15)-GREATER(LEVEL,18)", 
+          },
+
         },              #   END OF Ausbildungsgelände
         {               #   Kleine Hütte
           :id          => 4, 
@@ -3308,16 +3365,16 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>Your subjects live in small huts. The more subjects there are, the faster you can build other buildings.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ein Dach über dem Kopf. Mehr ist das wirklich nicht!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In den kleinen Hütten sind Eure Untertanen vor Sonne und Regen geschützt. Hauptsache, sie sind fleißig und beschweren sich nicht. Je mehr Hütten, desto mehr Untertanen habt ihr, die wiederum schneller arbeiten und Eure Siedlung schneller ausbauen. Wenn Chef sein immer so einfach wäre!</p>",
+            :de_DE => "<p>Die Kleinen Hütten erhöhen die Baugeschwindigkeit und verkürzen somit die Bauzeit von Gebäuden.</p>",
   
-            :en_US => "<p>A little hut can only protect your subjects from sun and rain. The main thing is that they work hard and don't complain. The more huts you have, the more subjects you have and the faster they'll work and the quicker the settlement will be upgraded. If only being the boss was always this easy!</p>",
+            :en_US => "<p></p>",
                 
           },
 
@@ -3415,14 +3472,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>A quiet seat, a cool beer, and some reasonably friendly company. What more could anyone want from life?</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ein ruhiger Sitz, ein kühles Bier in mehr oder weniger angenehmer Gesellschaft - was könnte man sich mehr wünschen?</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Vielleicht findet ihr auch weitere Verdienstmöglichkeiten.</p>",
+            :de_DE => "<p>In der Taverne können Aufträge entgegengenommen werden.</p>",
   
             :en_US => "<p>There is no more wretched a hive of scum and villainy than the tavern. So, it's an ideal place to relax, have a drink, and laze around during your day off. And who knows, a job may even turn up if you stick around long enough.</p><p>This building can not be torn down.</p>",
                 
@@ -3505,14 +3562,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>Stone containers, dinosaur cranes and, more recently, carts. A little style is classy! </p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Steincontainer, Saurierkräne und seit neuestem, Karren. Soviel Stil muss sein!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Das steinzeitliches Logistikzentrum erhöht die maximale Lagermenge und ermöglicht den Handel mit anderen Spielern. Mehrere Rohstofflager wirken kumulativ und erhöhen sowohl die Lagermenge als auch die Anzahl der Karren.</p>",
+            :de_DE => "<p>Das Rohstofflager erhöht die maximale Lagermenge und ermöglicht den Handel mit Karren.</p>",
   
             :en_US => "<p>This is a Stone Age logistics center in which raw materials are stored and dispatched. The bigger the store, the more carts can be dispatched.</p>",
                 
@@ -3626,16 +3683,16 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>The place where alliance members hold diplomatic exchanges or discussions. It takes at least two to have a good conversation, even though often only one of them does the talking. Talk? A little chief can do that better than anyone else.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Gutes Essen, leckere Getränke und ein paar Lieder. Ein würdiger Rahmen für Verhandlungen!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Am Lagerfeuer dient zur Kontaktaufnahme mit Allianzen und zur Ausbildung des Kleinen Häuptlings.</p>",
   
-            :en_US => "<p>At the campfire, inhabitants gather in sociable groups to discuss important arrangements. Guests are either selected to join the campfire group, or arranged around it on stakes. It's also where the career of a little chief begins. A couple of flattering words here, a bit of scheming there, taking credit for someone else's bravery, and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p>At the campfire, inhabitants gather in sociable groups to discuss important arrangements. Guests are either selected to join the campfire group, or arranged around it on stakes. It's also where the career of a little chief begins. A couple of flattering words here, a bit of scheming there, taking credit for someone else's bravery, and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p>",
                 
           },
 
@@ -3727,14 +3784,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>Stones – nothing but stones, everywhere! Sweaty labourers and the monotonous thwack of heavy tools.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Steine, nichts als Steine! Verschwitzte Arbeiter und der monotone Schlag der schweren Werkzeuge.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Durch eine aus Sicht der Steinzeit komplizierte Kette von Arbeitsvorgängen werden im Steinbruch Steine gewonnen.</p><p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für noch schnelleren Abbau auch bei den anderen Steinbrüchen.</p>",
+            :de_DE => "<p>Im Steinbruch werden Steine für den Steinvorrat gewonnen.</p>",
   
             :en_US => "<p>Stones are quarried using a complicated - well, for the Stone Age! - series of working processes. A really large quarry stimulates competition among the its workers, which speeds up the quarrying quite a bit - even in other quarries.</p>",
                 
@@ -3834,14 +3891,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>A man and his stone axe! Apart from firewood, he occasionally even brings a tree he managed to fell back to the compound.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller, mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p><p>Große Holzfäller lassen nur die kleinen Bäume übrig und reduzieren so die Frustration der kleineren Holzfäller, was sich sehr positiv auf ihren Ertrag auswirkt.</p>",
+            :de_DE => "<p>Der Holzfäller fällt Bäume für den Holzvorrat.</p>",
   
             :en_US => "<p>Using a combination of brute force and up-to-date stone tools, a logger can chop down quite large tree trunks and process them into valuable raw materials. Tall loggers only leave small trees behind, reducing the frustration of smaller loggers. This has a very positive effect on their output!</p>",
                 
@@ -3941,14 +3998,14 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :de_DE => "<p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p>",
+            :en_US => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth, Spiegel, in denen man sich herrlich erschrecken kann, und natürlich die ein oder andere Ratte, die eingefangen werden will.</p>",
+            :de_DE => "<p>In der Trainingshöhle wird laufend Erfahrung gesammelt.</p>",
   
             :en_US => "<p>The Training Cave offers multiple training possibilities to would-be Demigods. Huge stones to lift, an almost endless labyrinth, mirrors that can scare you witless, and of course, a few rats to catch.</p><p>This building can not be torn down.</p>",
                 
@@ -4042,16 +4099,16 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :de_DE => "<p>Die Tüftler warten bereits auf die Artefakte. Hol Dir eins!</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Those Tinkers are insane! Enter at your own risk.</p>",
+            :en_US => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>In der Tüftler-Werkstatt können Artefakte eingeweiht werden.</p>",
   
-            :en_US => "<p>Thinkers and Tinkers get together at the workshop. They examine whatever unknown materials there are - artifacts, as the simple-minded call them - and attempt to bring about a technological revolution.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p>Thinkers and Tinkers get together at the workshop. They examine whatever unknown materials there are - artifacts, as the simple-minded call them - and attempt to bring about a technological revolution.</p>",
                 
           },
 
@@ -4132,14 +4189,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>A furrier know there are many ways to skin a creature. They have lovely furs and quality leatherwear that appeals to sophisticated ladies, and of course, there's usually something tasty roasting over the fire too.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Der Kürschner zieht dem Tier das Fell über die Ohren.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Kürschner verarbeitet Häute zu Leder und macht selbst aus den kleinsten Nagern noch ein brauchbares Fell. Wenn ein Säbelzahntiger erlegt wird, dann zaubert der Kürschner etwas für die Dame von Welt.</p>",
+            :de_DE => "<p>Der Kürschner liefert Felle.</p>",
   
             :en_US => "<p>The furrier's job is to turn skins into leather - he can make a useful hide out of even the smallest of rodents. And if a sabre-toothed tiger should be killed, he can also conjure up something for a sophisticated lady. The waste from larger furriers' businesses can be processed by smaller furriers with lower overheads, giving a noticeable boost to fur production.</p>",
                 
@@ -4240,14 +4297,14 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>Copper shines even in its unprocessed state, but it can only be made into jewellery once it's been smelted. It can also be used to make the occasional implement.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ah Kupfer, ich mag diesen rot-goldenen Schimmer. Sogar die Werkzeuge und Waffen lass sich damit verbessern, auch wenn mir Schmuck lieber ist.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Kupfer ist DIE Entdeckung der Steinzeit und führte zu schönerem Schmuck und tödlicheren Waffen und auch dem ein oder anderen Fortschritt bei Werkzeugen. Die Kupferschmelze ermöglicht den Fortschritt in die Kupferzeit und den Zugriff auf neue fortschrittlichere Gebäude.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Die Kupferschmelze ermöglicht den Bau bzw. die Umwandlung von Gebäuden der Kupferzeit.</p>",
   
             :en_US => "<p>Copper is THE discovery that moved the Stone Age forward into… yes, you guessed it, the Copper-Stone Age. Its discovery leads to not only the creation of some very attractive jewellery, but also to more deadly weapons and progress in making many kinds of implements and tools.</p><p>This building can not be torn down.</p>",
                 
@@ -4297,7 +4354,6 @@ class GameRules::Rules
             0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
             1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
             2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))',
-            3 => 'LESS(LEVEL,11)*MAX(LEVEL-8,0)',
             
           },
 
@@ -4329,14 +4385,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Don't feel like brawling or getting up close and personal with stinky animals? Prefer to kill your enemy from a safe distance? Then ranged combat is right up your alley.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Keine Lust auf Prügeleien oder stinkende Tiere? Du willst Deinen Gegner am liebsten aus sicherer Entfernung töten? Dann ist Fernkampf Dein Ding!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Steine, Speere und alles, was man werfen oder schießen kann, fliegt auf dem Ausbildungsgelände für Fernkämpfer durch die Luft.</p>",
+            :de_DE => "<p>Auf dem Schießstand werden in der Heimatsiedlung und in Lagerstätten Fernkämpfer ausgebildet.</p>",
   
             :en_US => "<p>Stones, spears and anything else that can be thrown or shot flies through the air at the long-range combat training ground. The larger the grounds, the faster the training – as well as the development of completely new techniques which, in turn, form the basis of the training of new units.</p>",
                 
@@ -4425,6 +4481,11 @@ class GameRules::Rules
 
           },
 
+          :conversion_option => {
+            :building              => :building_firing_range_2,
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,5)-GREATER(LEVEL,9)-GREATER(LEVEL,12)-GREATER(LEVEL,15)-GREATER(LEVEL,18)", 
+          },
+
         },              #   END OF Schießstand
         {               #   Stammeshalle
           :id          => 15, 
@@ -4441,16 +4502,16 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>Very large place where alliance members hold diplomatic exchanges or discussions.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Gutes Essen, leckere Getränke und viel Platz. Ein würdiger Rahmen für große Verhandlungen!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der Stammeshalle versammeln sich die hochrangigen Vertreter alliierter Stämme zu langwierigen und oftmals feucht-fröhlichen Verhandlungen. Oder zum Bowling, wenn die Halle denn lang genug ist.</p><p>Mit jedem Ausbau der Stammeshalle kann die Allianz weitere Mitglieder aufnehmen.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Mit der Stammeshalle kann die maximale Anzahl an Mitgliedern der Allianz erhöht werden.</p>",
   
-            :en_US => "<p>In the Tribes Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. More developed halls make it possible to accept more alliance members into the meeting.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p>In the Tribes Hall, leaders of allied tribes gather together in sociable groups and discuss important arrangements. Or bowl, if the room is long enough. More developed halls make it possible to accept more alliance members into the meeting.</p>",
                 
           },
 
@@ -4475,7 +4536,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 11,
+              :min_level => 10,
 
             },
 
@@ -4549,14 +4610,14 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>A fireplace, a neatly fenced front lawn and a front doormat. Living the dream!</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ein Feuerplatz, eingezäunter Vorgarten und eine Fußmatte vor der Tür. Ein Traum!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der fortschrittlichen winddichten Hütten wohnen die verdienten sprich fleißigen Bewohner. Diese Hütte hat neben Wände, die diesen Namen auch verdienen, sogar einen Feuerplatz, wodurch die Bewohner noch zufriedener werden. Und sie ist natürlich größer, denn seien wir mal ehrlich, zwei Arbeiter sind immer besser als ein zufriedener.</p>",
+            :de_DE => "<p>Die Winddichten Hütten erhöhen die Baugeschwindigkeit deutlich.</p>",
   
             :en_US => "<p>These modern, windproof huts are where the deserving - that is, hard-working - residents live. Apart from walls that can actually be called walls, there's also a fireplace, which makes the people who live there considerable more satisfied. And, of course, windproof huts are bigger because, let's be honest, two grumpy workers are still better than one happy one.</p>",
                 
@@ -4651,14 +4712,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>Stone containers, dinosaur cranes, and - more recently - copper carts. At last, raw materials can be transported in style.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Steincontainer, Saurierkräne und, seit neuestem, Kupferkarren. Endlich können Rohstoffe mit Stil transportiert werden.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Kupferkarren! DAS Statussymbol für den Häuptling. Neben den Karren gibt es auch größeren Lagerraum, aber wen interessiert das neben in der Sonne blinkenden Kupferkarren.</p>",
+            :de_DE => "<p>Ein Großes Rohstofflager erhöht die maximale Lagerkapazität und die Anzahl der Karren deutlich.</p>",
   
             :en_US => "<p>Copper carts! THE status symbol for a chieftain. There is also a bigger store room, but who cares when you see those shiny copper carts gleaming in the sunlight.</p>",
                 
@@ -4768,14 +4829,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>In the Copper-Stone Age, you'd expect workers to have copper pickaxes - but the workers actually preferred to invest their copper in jewellery for their wives. The fact they chose this option suggests their grateful wives gave them some pretty lavish rewards...</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Der Fortschritt ist eindeutig ablesbar. Starke muskulöse Arbeiter im Steinbruch, behangen mit schönstem Kupferschmuck.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Wie in Steinbrüchen mit Beginn der Kupferzeit mehr Steine abgebaut worden konnten, bleibt rätselhaft. Denn nur hier wurden keine Kupferwerkzeuge benutzt. Aber trotzdem ging der Abbau spürbar schneller.</p><p>Ab Level 11 werden die Arbeiter noch schneller und treiben sogar Arbeiter in anderen Steinbrüchen zu schnellerer Arbeit an.</p>",
+            :de_DE => "<p>Ein Altehrwühriger Steinbruch liefert eine große Anzahl an hochwertigen Steinen.</p>",
   
             :en_US => "<p>How workers managed to excavate so much stone from the quarries of the Copper-Stone Age is a mystery, considering that they still weren't using copper implements. Despite this, excavation was noticeably faster at this time. Workers above a certain size were even faster still, encouraging workers in other quarries to work faster as well.</p>",
                 
@@ -4870,14 +4931,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>A man and his copper axe! Although copper axes always bend, this worker can still bring home the trees he's felled himself as well as some brushwood.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Ein Mann und seine Kupferaxt! Stoff einiger Gesänge und mancher Träume.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Kupferäxte fällen einen Baum deutlich schneller. Leider sind Kupferäxte auch sehr reparaturbedürftig. Dennoch sind Holzfäller effektiver und leiten ab einer bestimmten Größe auch die normalen Holzfäller zu erhöhtem Bäume fällen an.</p>",
+            :de_DE => "<p>Der Holzfäller mit Kupferaxt liefert große Mengen Holz.</p>",
   
             :en_US => "<p>Copper axes fell trees much more quickly - unfortunately they need a lot of repairing as well. However, the loggers who use them are more efficient and can motivate ordinary loggers to fell more trees, generally of the smaller variety.</p>",
                 
@@ -4972,14 +5033,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Smelly animals and a kitty cat to play with. Life on the stud farm couldn't be better.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Stinkende Tiere und eine kleine Katze. Ein Leben auf dem Ponyhof könnte nicht schöner sein.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich, werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und als Maskottchen eine Katze gehalten. Die Ausbildung der Reiter umfasst nur den Umgang mit den Tieren. Waffen führen die Reiter nicht, sie reiten auf einer!</p><p>Größere Ställe stinken noch stärker, beschleunigen aber auch die Ausbildung und können noch stärkere Tiere abrichten.</p>",
+            :de_DE => "<p>Im Stinkenden Stall werden Berittene Einheiten gezüchtet und ausgebildet.</p>",
   
             :en_US => "<p>The barn smells like no other building in the settlement. Not surprisingly, given that it's where ostriches, sabre-toothed tigers and little dinosaurs are kept - as well as a kitty cat as a mascot. The animals are trained here and the riders are taught how to handle them. Very few riders carry their weapons into battle, as they have to concentrate on riding. Their mount is their weapon! Big barns smell even worse - but having them does speed up the training and they can also drill bigger animals.</p>",
                 
@@ -5068,11 +5129,16 @@ class GameRules::Rules
 
           },
 
+          :conversion_option => {
+            :building              => :building_stud_2,
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,5)-GREATER(LEVEL,9)-GREATER(LEVEL,12)-GREATER(LEVEL,15)-GREATER(LEVEL,18)", 
+          },
+
         },              #   END OF Stinkender Stall
         {               #   Kommandozentrale
           :id          => 21, 
           :symbolic_id => :building_command_post,
-					:category    => 4,
+					:category    => 6,
           :db_field    => :building_command_post,
           :name        => {
             
@@ -5084,14 +5150,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Coordinating armies is the art of war. Even if all armies are dispatched in the same direction with the order to “hit 'em hard”.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Die Koordination von Armeen ist die hohe Kunst des Krieges -jaja- und dann schreien alle 'immer feste druff' und rennen los..</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Taktik und Befehl ist immer der gleiche: 'Haut sie feste!'</p><p>Der Kommandoposten erhöht auf den Leveln 1 und 20 die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>",
+            :de_DE => "<p>Die Kommandozentrale liefert zusätzliche Kommandopunkte in der Hauptsiedlung.</p>",
   
             :en_US => "<p>A couple of branches stretched between three trees, a bit of bark and some leaves, and there's your awning. A nice big seat for the chief, and hey presto, you've got your command post. This is where tactics are decided and orders are given. Mostly the same order: “Hit 'em hard!” Having a command post increases a settlement's command points at Levels 1 and 20. It also decreases the time spent on training new units.</p>",
                 
@@ -5211,14 +5277,14 @@ class GameRules::Rules
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
+            :de_DE => "<p>Der Verrückte Kürschner erhöht die Fellproduktion deutlich.</p>",
   
             :en_US => "<p>The copper knife was a gift from the gods. At least, that's what the furriers who use their copper knives to create gorgeous clothes like to believe. Sadly, members of this group suffer from the usual side effects of a life in haute couture - vigorous fanning, a high-pitched and nasal voice, and generally crazy conduct - all in the name of art, of course. They may be mad, but they set a great example for other furriers.</p>",
                 
@@ -5314,16 +5380,16 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Warriors or soldiers of any kind should be kept apart from the ordinary working population. In the garrison they can bash each others' heads in and leave the poor settlement dwellers in peace.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Aus Sicherheitsgründen werden die Krieger getrennt von der arbeitenden Bevölkerung gehalten. Nicht, dass den Kriegern noch was zustößt!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Das Garnionsgebäude dient zur Unterbringung und Versorgung der Einheiten und Armeen. Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Das Garnisonsgebäude erhöht die Armeegröße jeder Armee der Hauptsiedlung.</p>",
   
-            :en_US => "<p>Well, who would have thought it? Field armies also benefit from the increased discipline that having a garrison provides. And that means that bigger armies can be deployed in the field.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p></p>",
                 
           },
 
@@ -5418,14 +5484,14 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>This is where all the important people in the compound meet every evening to discuss important issues. Like, for instance, how to solve the troubling shortage of beer they've been experiencing lately...</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Thema für die Versammlung heute: 'Wie lösen wir die Bierflaute?'</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Versammlungsplatz ist der zentrale Ort einer neu gegründeten Lagerstätte. Ein großer Pfahl mit den Insignien der Macht sowie ein paar gemütliche Baumstümpfe.</p>",
+            :de_DE => "<p>Der Versammlungsplatz schaltet in der Lagerstätte die Gebäude frei und erhöht den Kampfbonus.</p>",
   
             :en_US => "<p>The meeting place is in the middle of the compound. It's an area that has been left vacant by chance, and it has just enough space for a few raw materials and the dwellers' cosy evening gatherings.</p>",
                 
@@ -5519,7 +5585,7 @@ class GameRules::Rules
         {               #   Feldlager
           :id          => 25, 
           :symbolic_id => :building_field_camp,
-					:category    => 4,
+					:category    => 6,
           :db_field    => :building_field_camp,
           :name        => {
             
@@ -5531,16 +5597,16 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>Field camps turn encampments into military support units. Despite all the talk about the safety and storage that field camps offer, they seem to have a magical attraction for enemies.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Mit dem Feldlager verwandeln wir Lagerstätten in militärische Stützpunkte. Größere Armeen und gleich zwei davon!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 50 pro Level auf Level 1-10 und 20 pro Level auf Level 11-20. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>",
+            :de_DE => "<p>Spezialisierungsgebäude, spezalisiert die Lagerstätte für militärische Zwecke. Nur ein Spezialisierungsgebäude pro Lagerstätte. Das Feldlager erhöht die Armeegröße und liefert auf Level 10 einen zusätzlichen Kommandopunkt.</p>",
   
-            :en_US => "<p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 50 per level at Levels 1-10 and 20 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>",
+            :en_US => "<p>Specialization building, specializes your camp for military purposes. Only one specialization building per camp is possible. Having a field camp means that more fighters can be deployed: 50 per level at Levels 1-10. At Level 10, a field camp also increases a settlement's command points by one.</p>",
                 
           },
 
@@ -5580,6 +5646,17 @@ class GameRules::Rules
 
             },
 
+            {
+              :symbolic_id => 'building_altar',
+              :id => 26,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ],
 
           ],          
@@ -5588,7 +5665,6 @@ class GameRules::Rules
             0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
             1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
             2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            3 => '2*MAX(LEVEL-19,0)',
             
           },
 
@@ -5614,7 +5690,7 @@ class GameRules::Rules
         {               #   Ritualstein
           :id          => 26, 
           :symbolic_id => :building_altar,
-					:category    => 4,
+					:category    => 6,
           :db_field    => :building_altar,
           :name        => {
             
@@ -5626,16 +5702,16 @@ class GameRules::Rules
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>The ceremonies and regular sacrifices carried out on the altar are intended to appease the gods. An encampment blessed by the gods cannot be conquered by enemies.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Die auf dem Ritualstein durchgeführten Zeremonien und regelmäßigen Opfergaben besänftigen die Götter, so dass eine Lagerstätte nicht von Feinden erobert werden kann.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Ritualstein ist ein von Fackeln umringter von blutigen Opfergaben verschmierter und mit den Gaben der Felder und den Köpfen der Feinde dekorierter Steintisch. Dieser Steintisch begeistert auch die Götter. Zumindest ist die Lagerstätte mit einem Ritualstein vor einer feindlichen Übernahme sicher. Wenn das kein Wink der Götter ist!</p>",
+            :de_DE => "<p>Spezialisierungsgebäude, spezalisiert die Lagerstätte, so dass sie nicht mehr übernommen werden kann. Nur ein Spezialisierungsgebäude pro Lagerstätte. Der Ritualstein schützt eine Lagerstätte vor der Übernahme durch gegnerische Spieler.</p>",
   
-            :en_US => "<p>The altar is a stone table surrounded by torches, smeared with blood from sacrificial offerings and decorated with gifts from the field and the heads of enemies. This stone table also impresses the gods. An encampment with an altar is safe from being conquered by enemies. If that isn't a sign from the gods, then what is?</p>",
+            :en_US => "<p>Specialization building, specializes your camp, making it impossible to be overtaken. Only one specialization building per camp is possible. An Altar makes it impossible for your enemies to take over your camp.</p>",
                 
           },
 
@@ -5675,6 +5751,17 @@ class GameRules::Rules
 
             },
 
+            {
+              :symbolic_id => 'building_field_camp',
+              :id => 25,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ],
 
           ],          
@@ -5683,7 +5770,6 @@ class GameRules::Rules
             0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
             1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
             2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            3 => '2*MAX(LEVEL-19,0)',
             
           },
 
@@ -5717,14 +5803,14 @@ class GameRules::Rules
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>The fortress rules the region. Troops are deployed to collect taxes from the settlements and protect the fortress from attacks.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Die Festung beherrscht die Region. Hier werden Krieger ausgebildet und Steuern erhoben.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p><p>Die Festungsanlagen liefern einen zusätzlichen Kommandopunkt auf Level 10.</p>",
+            :de_DE => "<p>Die Festungsanlagen erhöhen den Kampfbonus der Festung. Die Türme der Ballistik und Reitmeisterei benötigen höhere Festungsanlagen.</p>",
   
             :en_US => "<p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p>",
                 
@@ -5746,7 +5832,6 @@ class GameRules::Rules
             0 => '(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
             1 => '(EQUAL(LEVEL,2)*2000+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
             2 => '(EQUAL(LEVEL,2)*200+GREATER(LEVEL,2)*FLOOR((POW(MAX(LEVEL-2,1),1.6)*4000)+0.5))',
-            3 => '(EQUAL(LEVEL,10)*2)',
             
           },
 
@@ -5796,31 +5881,31 @@ class GameRules::Rules
           },
 
         },              #   END OF Festungsanlagen
-        {               #   Turm der Knüppelei
+        {               #   Knüppler Gelände
           :id          => 28, 
           :symbolic_id => :building_infantry_tower,
 					:category    => 1,
           :db_field    => :building_infantry_tower,
           :name        => {
             
-            :de_DE => "Turm der Knüppelei",
+            :de_DE => "Knüppler Gelände",
   
-            :en_US => "Infantry Tower",
+            :en_US => "Clubber Grounds",
                 
           },
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>This is no place for thinkers! Infantry members need strength and stamina - nothing else.</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Hier ist kein Platz für Denker! Kraft und Ausdauer braucht ein Nahkämpfer, sonst nix!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>In dem Turm der Knüppelei werden die Nahkämpfer in der Kunst des Nahkampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin. Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen.</p>",
+            :de_DE => "<p>Im Knüppler Gelännde werden die Nahkämpfer in der Kunst des Nahkampfes unterwiesen.</p>",
   
-            :en_US => "<p>In the infantry tower, infantry troops are instructed in the art of fighting. Their extremely sadistic trainer sets great store by obedience and discipline. If someone doesn't obey orders or is even more stupid than everyone else during training, he has to clean the stables in the cavalry tower.</p>",
+            :en_US => "<p>In the Clubber Grounds, infantry troops are instructed in the art of fighting. Their extremely sadistic trainer sets great store by obedience and discipline. If someone doesn't obey orders or is even more stupid than everyone else during training, he has to clean the stables in the cavalry tower.</p>",
                 
           },
 
@@ -5857,7 +5942,6 @@ class GameRules::Rules
             0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*900+GREATER(LEVEL,1)*(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5+0.5-3)))',
             1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*900+GREATER(LEVEL,1)*(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5+0.5-2)))',
             2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,2)*300+(MIN(LEVEL,3)-MIN(LEVEL,2))*FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5+0.5))',
-            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)',
             
           },
 
@@ -5894,32 +5978,32 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Turm der Knüppelei
-        {               #   Turm der Ballistik
+        },              #   END OF Knüppler Gelände
+        {               #   Werfer Gelände
           :id          => 29, 
           :symbolic_id => :building_artillery_tower,
 					:category    => 1,
           :db_field    => :building_artillery_tower,
           :name        => {
             
-            :de_DE => "Turm der Ballistik",
+            :de_DE => "Werfer Gelände",
   
-            :en_US => "Artillery Tower",
+            :en_US => "Throwing Grounds",
                 
           },
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>You'd better duck! Ranged combatant training is in full swing!</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Kopf runter! Die Ausbildung der Fernkämpfer ist in vollem Gang.</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Achtung Helmpflicht! Die Ausbilder und Auszubildenden haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steiner oder Splitter halbwegs überstehen. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>",
+            :de_DE => "<p>Im Werfer Gelände werden in einer Festung Fernkämpfer ausgebildet.</p>",
   
-            :en_US => "<p>It's hardly surprising that helmets are compulsory in the artillery tower. Trainers and trainees both wear thick animal skins around their heads so that they can survive being hit by small stones and gravel. On command, all kinds of missiles are sent flying through the air. Unfortunately, no one really knows which command they should be obeying.</p>",
+            :en_US => "<p>It's hardly surprising that helmets are compulsory in the Throwing Grounds. Trainers and trainees both wear thick animal skins around their heads so that they can survive being hit by small stones and gravel. On command, all kinds of missiles are sent flying through the air. Unfortunately, no one really knows which command they should be obeying.</p>",
                 
           },
 
@@ -5956,7 +6040,6 @@ class GameRules::Rules
             0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-416)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5*2.5+0.5)))',
             1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-829)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5*2.5+0.5-3)))',
             2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-944)+FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*2.5+0.5))',
-            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)',
             
           },
 
@@ -5993,30 +6076,30 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Turm der Ballistik
-        {               #   Turm der Reitmeisterei
+        },              #   END OF Werfer Gelände
+        {               #   Reiteranlage
           :id          => 30, 
           :symbolic_id => :building_cavalry_tower,
 					:category    => 1,
           :db_field    => :building_cavalry_tower,
           :name        => {
             
-            :de_DE => "Turm der Reitmeisterei",
+            :de_DE => "Reiteranlage",
   
-            :en_US => "Cavalry Tower",
+            :en_US => "Cavalry Grounds",
                 
           },
           :advisor     => "warrior",
           :flavour     => {
             
-            :en_US => "<p>This place is home to countless animals and sweaty men. Beware of the dung and pungent smell!</p>",
+            :en_US => "<p></p>",
   
-            :de_DE => "<p>Hier werden die berittenen Einheiten ausgebildet. Vorsicht vor Dung und penetrantem Geruch!</p>",
+            :de_DE => "<p></p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzeitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein, um die Mädchen zu beeindrucken. Die wenigsten Jungen kommen allerdings noch in den Genuß sich in der Aufmerksamkeit zu sonnen.</p>",
+            :de_DE => "<p>In einer Festung werden in der Reitereianlage die Berittenen Einheiten ausgebildet.</p>",
   
             :en_US => "<p>Entrance is strictly limited to trained riders and animal keepers. If the gate is left open – even briefly – inquisitive, spotty teenage boys tend to sneak in. It impresses the girls no end, but the lads rarely get a chance to bathe in their admiration afterwards. The animal keepers generally deal with their bloody remains unceremoniously.</p>",
                 
@@ -6055,7 +6138,6 @@ class GameRules::Rules
             0 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-832)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*3*1.5*2.5+0.5)))',
             1 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-416)+(FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*1.5*2.5+0.5)))',
             2 => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*(-944)+FLOOR(((0.9*POW(MIN(LEVEL+6,10),4)-9.7*POW(MIN(LEVEL+6,10),3)+49.25*POW(MIN(LEVEL+6,10),2)-76*MIN(LEVEL+6,10)+70)*((MIN(LEVEL+7,11)-MIN(LEVEL+6,11))*0.02+(0.06*(MAX(LEVEL-4,0))+0.98)))*1.5*2.5+0.5))',
-            3 => 'LESS(LEVEL,11)*(GREATER(LEVEL,9)*1)',
             
           },
 
@@ -6092,7 +6174,330 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Turm der Reitmeisterei
+        },              #   END OF Reiteranlage
+        {               #   Fortschrittliches Ausbildungsgelände
+          :id          => 31, 
+          :symbolic_id => :building_barracks_2,
+					:category    => 5,
+          :db_field    => :building_barracks_2,
+          :name        => {
+            
+            :de_DE => "Fortschrittliches Ausbildungsgelände",
+  
+            :en_US => "Advanced Training Grounds",
+                
+          },
+          :advisor     => "warrior",
+          :flavour     => {
+            
+            :en_US => "<p></p>",
+  
+            :de_DE => "<p></p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Im Fortschrittlichen Ausbildungsgelände werden in der Heimatsiedlung und in Lagerstätten Nahkämpfer mit modernen Waffen ausgebildet.</p>",
+  
+            :en_US => "<p>At the Advanced Training Grounds your infantry units are instructed in the  use of state of the art weaponry.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 6.5,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 2,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => '(EQUAL(LEVEL,1)*50+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))*1.5',
+            1 => '(EQUAL(LEVEL,1)*25+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5))*1.5',
+            3 => '2*MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3*1.75
+',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.33*1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :level             => 1,
+              },
+
+            ],
+
+          },
+
+        },              #   END OF Fortschrittliches Ausbildungsgelände
+        {               #   Schießanlage
+          :id          => 32, 
+          :symbolic_id => :building_firing_range_2,
+					:category    => 5,
+          :db_field    => :building_firing_range_2,
+          :name        => {
+            
+            :de_DE => "Schießanlage",
+  
+            :en_US => "Advanced Firing Range",
+                
+          },
+          :advisor     => "warrior",
+          :flavour     => {
+            
+            :en_US => "<p></p>",
+  
+            :de_DE => "<p></p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Schießanlage werden in der Heimatsiedlung und in Lagerstätten Fernkämpfer an modernen Waffen ausgebildet.</p>",
+  
+            :en_US => "<p>At the Advanced Firing Range modern weapons are employed to produce the best ranged combatants.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 6.5,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 7,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)*1.5)',
+            1 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)*1.5)',
+            3 => '2*MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3*1.75
+',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.33*1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
+                :level             => 1,
+              },
+
+            ],
+
+          },
+
+        },              #   END OF Schießanlage
+        {               #   Sauberer Stall
+          :id          => 33, 
+          :symbolic_id => :building_stud_2,
+					:category    => 5,
+          :db_field    => :building_stud_2,
+          :name        => {
+            
+            :de_DE => "Sauberer Stall",
+  
+            :en_US => "Clean Barn",
+                
+          },
+          :advisor     => "warrior",
+          :flavour     => {
+            
+            :en_US => "<p></p>",
+  
+            :de_DE => "<p></p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Im Sauberen Stall können größere Berittene Einheiten gezüchtet und ausgebildet werden.</p>",
+  
+            :en_US => "<p>Now that the Barn has been cleaned it can house larger animals.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 6.5,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)*1.5)',
+            1 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)*1.5)',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3*1.75
+',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 4,
+                :queue_type_id_sym => :queue_cavalry,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.33*1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 4,
+                :queue_type_id_sym => :queue_cavalry,
+                :level             => 1,
+              },
+
+            ],
+
+          },
+
+        },              #   END OF Sauberer Stall
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -6260,7 +6665,7 @@ class GameRules::Rules
               ],
             },
             2 => {
-              :max_level => 20,
+              :max_level => 10,
               
               :level  => 0,
               
@@ -6268,11 +6673,12 @@ class GameRules::Rules
               :options   => [
               4,
               5,
+              6,
               
               ],
             },
             3 => {
-              :max_level => 20,
+              :max_level => 10,
               
               :level  => 0,
               
@@ -6280,11 +6686,12 @@ class GameRules::Rules
               :options   => [
               4,
               5,
+              6,
               
               ],
             },
             4 => {
-              :max_level => 20,
+              :max_level => 10,
               
               :level  => 0,
               
@@ -6292,6 +6699,7 @@ class GameRules::Rules
               :options   => [
               4,
               5,
+              6,
               
               ],
             },
@@ -6715,18 +7123,6 @@ class GameRules::Rules
               
               ],
             },
-            40 => {
-              :max_level => 10,
-              
-              :level  => 0,
-              
-              :takeover_level_factor  => 1,
-              :options   => [
-              5,
-              6,
-              
-              ],
-            },
             
           },
 
@@ -6788,7 +7184,7 @@ class GameRules::Rules
               ],
             },
             2 => {
-              :max_level => 20,
+              :max_level => 10,
               
               :level  => 0,
               
@@ -6796,6 +7192,7 @@ class GameRules::Rules
               :options   => [
               4,
               5,
+              6,
               
               ],
             },
@@ -6807,6 +7204,7 @@ class GameRules::Rules
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -6818,6 +7216,7 @@ class GameRules::Rules
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -6829,6 +7228,7 @@ class GameRules::Rules
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -6840,6 +7240,7 @@ class GameRules::Rules
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -6851,6 +7252,7 @@ class GameRules::Rules
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -6862,6 +7264,7 @@ class GameRules::Rules
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -6873,6 +7276,7 @@ class GameRules::Rules
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -6884,6 +7288,7 @@ class GameRules::Rules
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -6895,6 +7300,7 @@ class GameRules::Rules
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -6906,6 +7312,7 @@ class GameRules::Rules
               :takeover_level_factor  => 1,
               :options   => [
               5,
+              6,
               
               ],
             },
@@ -7581,9 +7988,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Deine Sammler werden in letzter Zeit von einem Rudel wilder Velociraptoren heimgesucht. Jetzt verlangen Deine Sammler Schutz, andernfalls können sie nicht garantieren weiterhin effektiv arbeiten zu können.</p>",
+            :de_DE => "<p>Schütze Deine Sammler vor Angriffen von einem Rudel wilder Velociraptoren.</p>",
   
-            :en_US => "<p>Your gatherers are beeing stalked by a group of fierce velociraptors. They demand your protection, otherwise they wont be able to work at full capacity.</p>",
+            :en_US => "<p>Protect your gatherers from the attacks of a pack of fierce velociraptors.</p>",
   
           },
 
@@ -7665,14 +8072,14 @@ class GameRules::Rules
             
             :de_DE => "Ich persönlich bevorzuge ja klassisches Ballet.",
   
-            :en_US => "Personally I prefer classic ballet.",
+            :en_US => "Well, I for one prefer traditional ballet.",
   
           },
           :description => {
             
-            :de_DE => "<p>Das Große Spiel steht bevor! Die Fans Deiner Mannschaft sammeln sich schon in der Taverne und trinken sich auf Deine Kosten Mut an, um den gegnerischen Fans eine ordentliche Abreibung zu verpassen. Sollten sie auch, immerhin hast Du eine ordentliche Summe gewettet.</p>",
+            :de_DE => "<p>Im Großen Spiel gegen Deine Nachbarn bedeutet eine Niederlage eine große Schmach.</p>",
   
-            :en_US => "<p>Tonight's the big game! The fans are already gathered, getting some liquid courage before showing the oppositions supporters who's boss. They can't loose with this much drunken power behind them. Atleast they better dont, afterall you bet quite the sum on this game.</p>",
+            :en_US => "In the grand battle for supremacy with your neighbors, defeat is the ultimate disgrace.<p></p>",
   
           },
 
@@ -7759,14 +8166,14 @@ class GameRules::Rules
             
             :de_DE => "Lustige kleine Kerle diese Jungs.",
   
-            :en_US => "Funny little guys, kinda hairy around the feet tho.",
+            :en_US => "Peculiar little buddies!.",
   
           },
           :description => {
             
-            :de_DE => "<p>Während Du in der Taverne sitzt bemerkst Du vier kleine Häuptlinge. Sie singen und tanzen und sind das Zentrum der Gesellschaft. Bei soviel Trubel bist Du sogar der Meinung, dass sich einer von ihnen kurz in Luft auflöst. Du schiebst es auf Deinen Konsum von Gerstensaft und bist sehr verwundert, als Dich die vier kleinen Häuptlinge als Führer durch die Wildnis anwerben wollen.</p>",
+            :de_DE => "<p>Eskortiere einige Kleine Häuptlinge auf ihrer Reise.</p>",
   
-            :en_US => "<p>While you sit in the tavern and have a sip of ale you spot four little chiefs entering. They seem to be quite cheery fellows as they are soon the center of the crowd, leading them in song.You could swear one of them even disapears into thin air, but to be honest you have been drinking heavily. Later that evening you are aproached by them. They ask you to lead them to their next Destination.</p>",
+            :en_US => "<p>Escort a few little chieftains on their journey.</p>",
   
           },
 
@@ -7774,7 +8181,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Hilf den kleinen Häuptlingen bei ihrer Reise.</p>",
   
-            :en_US => "<p>Help the little chiefs on their journey.</p>",
+            :en_US => "<p>Help the little chieftains on their journey.</p>",
   
           },
 
@@ -7839,14 +8246,14 @@ class GameRules::Rules
             
             :de_DE => "Diese wilde Krieger sollten wir besser auf unserer Seite wissen.",
   
-            :en_US => "Those people are fierce warriors. Just right for the meatgrinder.",
+            :en_US => "These people are fierce warriors. They would make great allies.",
   
           },
           :description => {
             
-            :de_DE => "<p>Von den Mauern Deiner Festung erblicken Deine Späher eine Gruppe von wilden Menschen. Es scheint sich allerdings nicht um einen Schlachtzug, sondern einer Gruppe von Auswanderern zu handeln. Vielleicht kannst Du sie mit ein paar Rohstoffen überzeugen bei Dir zu bleiben und zukünftig für Dich zu kämpfen.</p>",
+            :de_DE => "<p>Beschütze einen Trupp wilder Menschen und gewähre Ihnen Unterschlupf.</p>",
   
-            :en_US => "<p>The lookouts in your fortress spot a huge group of people marching through your lands. But rather than an army they apear to be a band of wanderers, looking for greener pastures. Maybe you can support them with a few ressources. You may convince a few of them to stay here that way.</p>",
+            :en_US => "<p>Protect a band of wildlings and give them shelter.</p>",
   
           },
 
@@ -7926,9 +8333,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Lange schon ranken sich Legenden darum, was sich im Zentrum des dunklen Waldes befinden könnte. Nur selten wagen sich die Jäger und Sammler bis in die nähe seines Zentrums und seltener noch kehren sie zurück. Sogar ein paar Holzfäller sollen dort schon verschollen sein. Schon länger hörst Du das munkeln in der Taverne. Vielleicht beschließt Du ja dem ganzen nach zu gehen.</p>",
+            :de_DE => "<p>Begib dich auf Reise und erkunde die Geheimnisse des finsteren Waldes.</p>",
   
-            :en_US => "<p>For the longest  time there have been legends about the center of the dark forest. Not often do the hunters and gatherers dare come close to it and hardly any of them return. You have heared the stories about that place a hundred times. Maybe its time to check it ouut for yourself.</p>",
+            :en_US => "<p>Enter the dark forest and learn its mysteries.</p>",
   
           },
 
@@ -8569,6 +8976,96 @@ class GameRules::Rules
 
         },              #   END OF Steinbrösler
       ],                # END OF ARTIFACT TYPES
+
+# ## DIPLOMACY RELATION TYPES ########################################################
+  
+      :diplomacy_relation_types => [  # ALL DIPLOMACY RELATION TYPES
+
+        {               #   Neutral
+          :id          => 0, 
+          :symbolic_id => :diplomacy_relation_0,
+          :name        => {
+            
+            :de_DE => "Neutral",
+  
+            :en_US => "Neutral",
+  
+          },
+          :duration => 60*60*24*3,
+          :min => false,
+          :next_relations => [ 
+          1,
+          
+          ],
+        },              #   END OF Neutral
+        {               #   Ultimatum
+          :id          => 1, 
+          :symbolic_id => :diplomacy_relation_1,
+          :name        => {
+            
+            :de_DE => "Ultimatum",
+  
+            :en_US => "Ultimatum",
+  
+          },
+          :duration => 60*60*24*1,
+          :min => false,
+          :next_relations => [ 
+          2,
+          
+          ],
+        },              #   END OF Ultimatum
+        {               #   Krieg
+          :id          => 2, 
+          :symbolic_id => :diplomacy_relation_2,
+          :name        => {
+            
+            :de_DE => "Krieg",
+  
+            :en_US => "War",
+  
+          },
+          :duration => 60*60*24*7,
+          :min => true,
+          :next_relations => [ 
+          3,
+          4,
+          
+          ],
+        },              #   END OF Krieg
+        {               #   Kapitulation
+          :id          => 3, 
+          :symbolic_id => :diplomacy_relation_3,
+          :name        => {
+            
+            :de_DE => "Kapitulation",
+  
+            :en_US => "Surrender",
+  
+          },
+          :duration => 60*60*24*3,
+          :min => false,
+          :next_relations => [ 
+          
+          ],
+        },              #   END OF Kapitulation
+        {               #   Besatzung
+          :id          => 4, 
+          :symbolic_id => :diplomacy_relation_4,
+          :name        => {
+            
+            :de_DE => "Besatzung",
+  
+            :en_US => "Occupation",
+  
+          },
+          :duration => 60*60*24*3,
+          :min => false,
+          :next_relations => [ 
+          
+          ],
+        },              #   END OF Besatzung
+      ],                # END OF DIPLOMACY RELATION TYPES
 
 # ## VICTORY TYPES ########################################################
   
@@ -9524,9 +10021,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'a',
-          :url          => 'https://gs05.wack-a-doo.de/game_server/en/facebook/object_types/0',
-          :image_url    => 'https://gs05.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
-          :see_also_url => 'https://gs05.wack-a-doo.de',
+          :url          => 'https://gs06.wack-a-doo.de/game_server/en/facebook/object_types/0',
+          :image_url    => 'https://gs06.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
+          :see_also_url => 'https://gs06.wack-a-doo.de',
         },              #   END OF battle
         {              #   next_rank
           :id          => 1,
@@ -9548,9 +10045,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'the',
-          :url          => 'https://gs05.wack-a-doo.de/game_server/en/facebook/object_types/1',
-          :image_url    => 'https://gs05.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
-          :see_also_url => 'https://gs05.wack-a-doo.de',
+          :url          => 'https://gs06.wack-a-doo.de/game_server/en/facebook/object_types/1',
+          :image_url    => 'https://gs06.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
+          :see_also_url => 'https://gs06.wack-a-doo.de',
         },              #   END OF next_rank
       ],                # END OF FACEBOOK USER STORIES
 

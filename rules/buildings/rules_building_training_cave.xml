@@ -5,17 +5,17 @@
   <Name lang="de_DE">Trainingshöhle</Name>
   <Name lang="en_US">Training Cave</Name>
   <Description lang="de_DE">
-    <p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth, Spiegel, in denen man sich herrlich erschrecken kann, und natürlich die ein oder andere Ratte, die eingefangen werden will.</p>
+    <p>In der Trainingshöhle wird laufend Erfahrung gesammelt.</p>
   </Description>
   <Description lang="en_US">
     <p>The Training Cave offers multiple training possibilities to would-be Demigods. Huge stones to lift, an almost endless labyrinth, mirrors that can scare you witless, and of course, a few rats to catch.</p>
     <p>This building can not be torn down.</p>
   </Description>
   <Flavour lang="de_DE">
-    <p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p>
+    <p></p>
   </Flavour>
   <Flavour lang="en_US">
-    <p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p>
+    <p></p>
   </Flavour>
   <Population>LESS(LEVEL,11)*FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5))</Population>
   <RequirementGroup>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "rules.dtd">
+
+<DiplomacyRelationTypes>
+  <!-- Current implementation doesn't need and uses status 0 (neutral)
+       It's neutral if no relation exists => If relation is created,
+       it is initiated with status 1 (ultimatum) -->
+  <DiplomacyRelation id="diplomacy_relation_0">
+    <Name lang="de_DE">Neutral</Name>
+    <Name lang="en_US">Neutral</Name>
+    <DiplomacyDuration>60*60*24*3</DiplomacyDuration>
+    <NextRelationTypes>
+      <NextRelation>1</NextRelation>
+    </NextRelationTypes>
+  </DiplomacyRelation>
+  <DiplomacyRelation id="diplomacy_relation_1">
+    <Name lang="de_DE">Ultimatum</Name>
+    <Name lang="en_US">Ultimatum</Name>
+    <DiplomacyDuration>60*60*24*1</DiplomacyDuration>
+    <NextRelationTypes>
+      <NextRelation>2</NextRelation>
+    </NextRelationTypes>
+  </DiplomacyRelation>
+  <DiplomacyRelation id="diplomacy_relation_2">
+    <Name lang="de_DE">Krieg</Name>
+    <Name lang="en_US">War</Name>
+    <DiplomacyDuration min="true">60*60*24*7</DiplomacyDuration>
+    <NextRelationTypes>
+      <NextRelation>3</NextRelation>
+      <NextRelation>4</NextRelation>
+    </NextRelationTypes>
+  </DiplomacyRelation>
+  <DiplomacyRelation id="diplomacy_relation_3">
+    <Name lang="de_DE">Kapitulation</Name>
+    <Name lang="en_US">Surrender</Name>
+    <DiplomacyDuration>60*60*24*3</DiplomacyDuration>
+    <NextRelationTypes>
+      <!--<NextRelation>1</NextRelation>-->
+    </NextRelationTypes>
+  </DiplomacyRelation>
+  <DiplomacyRelation id="diplomacy_relation_4">
+    <Name lang="de_DE">Besatzung</Name>
+    <Name lang="en_US">Occupation</Name>
+    <DiplomacyDuration>60*60*24*3</DiplomacyDuration>
+    <NextRelationTypes>
+      <!--<NextRelation>1</NextRelation>-->
+    </NextRelationTypes>
+  </DiplomacyRelation>
+</DiplomacyRelationTypes>

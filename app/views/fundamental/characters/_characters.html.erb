@@ -1,7 +1,5 @@
-<h1>Listing fundamental_characters</h1>
 
-<%= will_paginate @fundamental_characters %>
-
+<%= will_paginate @fundamental_characters, :params => {:controller => :characters, :action => 'index'} %>
 
 <table>
   <tr>
@@ -46,6 +44,7 @@
     <th></th>
   </tr>
 
+
 <% @fundamental_characters.each do |fundamental_character| %>
   <tr>
     <td><%= fundamental_character.id %></td>
@@ -73,8 +72,16 @@
           | <%= fundamental_character.alliance_tag %>
         <%end%></td>
     <td><% if !fundamental_character.last_login_at.nil? %>
-          
-          <span class="<%= fundamental_character.last_login_at > Time.now - Backend::Stat.activity_period ? 'green' : (fundamental_character.last_login_at > Time.now -  (2*Backend::Stat.activity_period) ? 'red' : 'black') %>"><%= time_ago_in_words(fundamental_character.last_login_at) %></span> ago (#<%= fundamental_character.login_count %>)
+
+       <% vara = fundamental_character.lastactiv %> 
+       <% if vara == "green" %>
+            <%= image_tag("Green.png")  %>
+        <% elsif vara == "yellow" %>
+            <%= image_tag("Yellow.png")  %>
+        <% else %>
+            <%= image_tag("Red.png")  %>
+       <% end %>
+
         <%else%>
           never
         <%end%>
@@ -117,9 +124,3 @@
 <% end %>
 </table>
 
-<%= will_paginate @fundamental_characters %>
-
-
-<br />
-
-<%= link_to 'New Character', new_fundamental_character_path %>

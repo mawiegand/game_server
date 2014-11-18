@@ -6,17 +6,16 @@
   <Name lang="en_US">God-Fearing Gatherer</Name>
   <Description lang="de_DE">
     <p>Der Gottesgläubige Sammler folgt nur den Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p>
-    <p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p>
   </Description>
   <Description lang="en_US">
     <p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p>
     <p>Through his devotion he can find ressources and even golden frogs at a much higher rate than their peers.</p>
   </Description>
   <Flavour lang="en_US">
-    <p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>
+    <p></p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Der Gottesfürchtige Sammler steht nur den Göttlichen Supporten zur Verfügung.</p>
+    <p></p>
   </Flavour>
   <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)</Population>  
   <RequirementGroup>

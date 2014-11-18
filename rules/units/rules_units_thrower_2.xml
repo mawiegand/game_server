@@ -5,8 +5,7 @@
       <Name>Target Thrower</Name>
       <Name lang="de_DE"> Zielwerfer</Name>
       <Description lang="de_DE">
-        <p>Ein sicherer Wurf führt zu besseren Treffern. Aufgrund der Masse an gegnerischen Nahkämpfern macht sich dies zwar nicht wirklich bemerkbar, aber es führt doch zu ein oder zwei kritischen Treffern mehr.</p>
-        <p>Ein bewegliches Ziel wie einen Straußenreiter zu treffen, ist eine große Leistung und der Unterschied zwischen Leben und Tod für einen Fernkämpfer.</p>
+        <p>Der Zielwerfer ist ein beeindruckender Fernkämpfer der fortgeschrittenen Armeen.</p>
       </Description>
       <Description lang="en_US">
         <p>A sure throw means better strikes. Not that you'd notice the difference – there are usually enough enemy melee fighters around, but it can mean a couple of good tactical strikes. Hitting a moving target like an ostrich rider is quite an achievement and can mean the difference between life and death for a stone thrower.</p>
@@ -40,5 +39,8 @@
       </RequirementGroup>
       <RequirementGroup>
         <Requirement id="building_firing_range" min_level="10" />
+      </RequirementGroup>
+      <RequirementGroup>
+          <Requirement id="building_firing_range_2" min_level="1" />
       </RequirementGroup>
     </Unit>

@@ -5,7 +5,7 @@
       <Name>Spear Thrower</Name>
       <Name lang="de_DE">Speerwerfer</Name>
       <Description lang="de_DE">
-        <p>Ein Speer ist auch im Nahkampf, vor allem gegen Reiter, effektiv. Dumm nur, wenn man schon alle Speere weggeworfen hat, bevor ein Reiter angreift. Im Leitfaden für Speerwerfer steht, dass man immer einen Speer weniger werfen sollte, als man hat. Leider kann kein Speerwerfer zählen, geschweige denn lesen.</p> 
+        <p>Der Speerwerfer ist der gefürchtete Anführer der Fernkämpfer.</p> 
       </Description>
       <Description lang="en_US">
         <p>A spear is also effective at close range - especially against riders. The only difficulty is when you've already thrown all your spears before you're attacked by a rider. The field manual for spear throwers clearly states, 'Always throw one spear less than you have'. The trouble is, spear throwers can't read, let alone count.</p>
@@ -34,7 +34,7 @@
       <Effectiveness category="unitcategory_siege">0.8</Effectiveness>  
       <Effectiveness category="unitcategory_special">1</Effectiveness>   
       <RequirementGroup>
-        <Requirement id="building_firing_range" min_level="20" />
+        <Requirement id="building_firing_range_2" min_level="10" />
         <Requirement id="building_copper_smelter" min_level="10" />
         <Requirement id="building_haunt" max_level="0" />
       </RequirementGroup>

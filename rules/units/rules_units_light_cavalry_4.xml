@@ -5,7 +5,7 @@
       <Name>Dinosaur Rider</Name>
       <Name lang="de_DE">Dinoreiter</Name>
       <Description lang="de_DE">
-        <p>Als Reiter eines Dinos hat man genau zwei Aufgaben. Erstens nicht abgeworfen zu werden und zweitens den Dino immer wieder auf das Schlachtfeld zurückzulenken, wenn er erstmal durch die Schlachtreihen durchgebrochen ist. Mit Klauen, Schwanz und Reißzähnen werden die hilflosen Gegner niedergemäht.</p>
+        <p>Der Dinoreiter ist der Anführer der Berittenen Einheiten.</p>
       </Description>
       <Description lang="en_US">
         <p>A dinosaur rider has only two jobs: the first is not to get thrown off, and the second is to keep steering his dinosaur back to the battlefield once it's broken through enemy ranks. The hapless enemy is mowed down by the dinosaur's feet, tail and teeth.</p>
@@ -34,7 +34,7 @@
       <Effectiveness category="unitcategory_siege">0.8</Effectiveness>   
       <Effectiveness category="unitcategory_special">1</Effectiveness>
       <RequirementGroup>
-        <Requirement id="building_stud" min_level="20" />
+        <Requirement id="building_stud_2" min_level="10" />
         <Requirement id="building_copper_smelter" min_level="10" />
         <Requirement id="building_haunt" max_level="0" />
       </RequirementGroup>

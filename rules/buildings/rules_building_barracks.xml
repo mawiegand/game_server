@@ -5,17 +5,13 @@
   <Name lang="de_DE">Ausbildungsgelände</Name>
   <Name lang="en_US">Training Grounds</Name>
   <Description lang="de_DE">
-    <p>Auf dem Ausbildungsgelände werden alle Arten von Nahkämpfern ausgebildet. Der Ausbau beschleunigt die Ausbildung und ermöglicht die Rekrutierung höherwertiger Kämpfer. Mehrere Ausbildungsgelände beschleunigen die Rekrutierung zusätzlich.</p>
+    <p>Im Ausbildungsgelände werden in der Heimatsiedlung und in Lagerstätten Nahkämpfer ausgebildet.</p>
   </Description>
   <Description lang="en_US">
     <p>These are the training grounds where all kinds of close combat fighters are trained. Big clubs, roasting spits, or even bare fists - anything goes. Would-be combatants compete in numerous contests to toughen themselves up for duelling, and once in a moon a public tournament is held. The winner gets the lot - glory, food, a day off and as many men as they want. Yes, that's right - men! Because the tournaments are usually won by women. How With a woman's deadliest weapons, of course...</p>
   </Description>
-  <Flavour lang="en_US">
-    <p>Looking for a little fight? Haven't been bashed up for a while? The barracks are the place to go for anyone wanting to jump into the fray.</p>
-  </Flavour>
-    <Flavour lang="de_DE">
-    <p>Auf der Suche nach einem kleinen Kampf? Lange nicht mehr verprügelt worden?</p>
-  </Flavour>
+  <Flavour lang="en_US"><p></p></Flavour>
+    <Flavour lang="de_DE"><p></p></Flavour>
 <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)</Population>
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="2" />
@@ -32,4 +28,5 @@
     <UnlockQueue  queue="queue_infantry" />
     <SpeedupQueue queue="queue_infantry" domain="settlement">LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0</SpeedupQueue>
   </Abilities>
+  <ConversionOption building="building_barracks_2" level="LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,5)-GREATER(LEVEL,9)-GREATER(LEVEL,12)-GREATER(LEVEL,15)-GREATER(LEVEL,18)"/>
 </Building>

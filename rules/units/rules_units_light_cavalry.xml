@@ -5,13 +5,13 @@
       <Name>Ostrich Rider</Name>
       <Name lang="de_DE">Straußenreiter</Name>
       <Description lang="de_DE">
-        <p>Strauße sind nicht nur lecker, sondern auch gute und schnelle Reittiere. Straußenreiter sind schnell genug, um an den Nahkämpfern vorbeizukommen, so dass den Fernkämpfern nur die Hoffnung bleibt, dass die Sträuße den Kopf in den Sand stecken.</p> 
+        <p>Der Straßenreiter ist die einfachste Berittene Einheit.</p> 
       </Description>
       <Description lang="en_US">
-        <p>Ostriches don't just taste delicious! They're also exceptionally good and speedy mounts. Ostrich riders are the bane of all stone throwers. Fast enough to get past the infantry, their enemies can only hope that the ostriches will stick their heads in the sand or that their riders will fall off.</p>
+        <p>Ostritch riders are the simplest type of cavalry units.</p>
       </Description>
       <Flavour lang="en_US">
-        <p>The two-handed ostrich riders are totally focused on controlling their mounts. As they themselves are unarmed, the beaks and claws of their ostriches pose more of a threat than they do.</p>
+        <p>Ostritch riders are fast, that's it. This is why the riders have to focus all their concentration on controlling their mount.'</p>
       </Flavour>
       <Flavour lang="de_DE">
         <p>Straußenreiter sind schnell, sonst nichts. Deshalb müssen die Reiter ihre ganze Konzentration auf das Führen ihres Reittieres legen.</p>
@@ -38,5 +38,8 @@
       </RequirementGroup>
       <RequirementGroup>
         <Requirement id="building_stud" min_level="1" />
+      </RequirementGroup>
+      <RequirementGroup>
+          <Requirement id="building_stud_2" min_level="1" />
       </RequirementGroup>
     </Unit>

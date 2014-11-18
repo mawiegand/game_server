@@ -1,3 +1,5 @@
+<!-- Not IN
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
@@ -5,27 +7,24 @@
   <Name lang="de_DE">Festungsgarnison</Name>
   <Name lang="en_US">Fortress Garrison</Name>
   <Description lang="de_DE">
-    <p>Die Häuptlingshütte spiegelt die Größe des Dorfes wieder. Jede Erweiterung der Häuptlingshütte ermöglicht neue Arten und eine größere Anzahl von Gebäuden zu bauen.
-Hinter der Häuptlingshütte ist ein kleiner Lagerplatz, auf dem Rohstoffe zwischengelagert werden können, so lange es kein Lager gibt.</p>
-  <p>Außerdem ermöglicht die Häuptlingshütte Armeen aufzustellen.</p>
-  <p>Eine prunkvolle, mit Trophäen der Feinde geschmückte Hütte verringert die Moral möglicher Angreifer und erhöht die Moral der Verteidiger.</p> 
+    <p></p>
   </Description>
   <Description lang="en_US">
-    <p>The chieftan's hut reflects the size of the village. Upgrading the chieftan's hut means that new types of buildings become available - and that more of them can be built. Behind the chieftan's hut is a little storage area in which raw materials can be kept for a short time if there is no storehouse available. The chieftan's hut also makes it possible to deploy armies. A luxurious hut decorated with enemy trophies lowers the morale of possible attackers, whilst also raising the morale of the defenders.</p>
+    <p></p>
   </Description>
   <Flavour lang="en_US">
-    <p>This is where decisions are made! The larger the chieftan's hut, the bigger and more complex the settlement and the greater the number of armies that can be sent into battle.</p>
+    <p></p>
   </Flavour>
   <Flavour lang="de_DE">
-    <p>Hier werden die Entscheidungen getroffen! Je größer die Häuptlingshütte desto größer und vielfältiger die Siedlung und die Anzahl der Armeen, die ins Feld geführt werden können.</p>  
+    <p></p>
   </Flavour>
   <Population>FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(5*POW(LEVEL,2)+3*LEVEL+43.3)+(MIN(LEVEL,11)-MIN(LEVEL,10))*20+0.5)</Population>
   <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*1*1.5+0.5)</Cost>  
   <Cost id="resource_wood" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*MAX((MIN(LEVEL+1,3)-MIN(LEVEL,3))*5.6+(3-LEVEL*0.3),1.2)*2*1.5+0.5)</Cost>    
   <Cost id="resource_cash" round="true">MAX(LEVEL-14,0)</Cost> 
   <ProductionTime shortenable="true">(3600*15)+(3600*LEVEL)</ProductionTime>  
-  <Abilities> <!-- just for grouping -->
+  <Abilities> 
     <GarrisonSizeBonus>20*LEVEL</GarrisonSizeBonus>
     <ArmySizeBonus>10*LEVEL</ArmySizeBonus>
   </Abilities> 
-</Building>
+</Building>-->

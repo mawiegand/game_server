@@ -40,17 +40,20 @@
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
     </BuildingSlot>
-    <BuildingSlot number="2" max-level="20">
+    <BuildingSlot number="2" max-level="10">
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
-    <BuildingSlot number="3" max-level="20">
+    <BuildingSlot number="3" max-level="10">
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
-    <BuildingSlot number="4" max-level="20">
+    <BuildingSlot number="4" max-level="10">
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="5" max-level="10">
       <BuildingOption category="building_category_small_building" />
@@ -192,10 +195,10 @@
       <BuildingOption category="building_category_small_building" />
       <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
-    <BuildingSlot number="40" max-level="10">
+    <!--><BuildingSlot number="40" max-level="10">
       <BuildingOption category="building_category_small_building" />
       <BuildingOption category="building_category_special_building" />
-    </BuildingSlot>
+    </BuildingSlot>< -->
   </Settlement>
   <Settlement id="settlement_outpost" conquerable="true" destroyable="true">
     <Name lang="de_DE">Lagerstätte</Name>
@@ -210,39 +213,50 @@
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
     </BuildingSlot>
-    <BuildingSlot number="2" max-level="20">
+    <BuildingSlot number="2" max-level="10">
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
+      <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="3" max-level="10">
-      <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="4" max-level="10">
-      <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="5" max-level="10">
-      <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="6" max-level="10">
-      <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="7" max-level="10">
-      <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="8" max-level="10">
-      <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="9" max-level="10">
-      <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="10" max-level="10">
-      <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="11" max-level="10">
-      <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
     <BuildingSlot number="12" max-level="10">
-      <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_small_building" />
+        <BuildingOption category="building_category_special_building" />
     </BuildingSlot>
   </Settlement>
 </SettlementTypes>

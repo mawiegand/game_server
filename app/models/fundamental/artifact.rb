@@ -46,8 +46,7 @@ class Fundamental::Artifact < ActiveRecord::Base
   end
 
   def capture_by_character(character)
-    return false if !character.moved_at.nil? && character.moved_at >= GAME_SERVER_CONFIG['artifact_capture_disable_time'].hours.ago
-    if Random.rand(1.0) < GAME_SERVER_CONFIG['artifact_jump_probability']
+    if (!character.moved_at.nil? && character.moved_at >= GAME_SERVER_CONFIG['artifact_capture_disable_time'].hours.ago) || (Random.rand(1.0) < GAME_SERVER_CONFIG['artifact_jump_probability'])
       self.jump_to_neighbor_location
       false
     else
