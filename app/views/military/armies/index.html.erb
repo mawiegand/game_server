@@ -1,0 +1,17 @@
+<h1>Listing military_armies</h1>
+
+
+<%= form_tag military_armies_path, :method => 'get', :id => "armies_search_form" %>
+<p>
+    <%= text_field_tag :search, params[:search], :id => "armies_search_field" %>
+    <%= submit_tag "Name search", :name => nil %> 
+</p>
+
+
+<div id="armies_partial"><%= render 'armies' %></div>
+
+
+
+<br />
+
+<%= link_to 'New Army', new_military_army_path %>

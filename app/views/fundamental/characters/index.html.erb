@@ -1,0 +1,22 @@
+<h1>Listing fundamental_characters</h1>
+
+
+<form action=" <%= GAME_SERVER_CONFIG['identity_provider_base_url'] + "/identities/" %>" , method="get">
+  <%= text_field_tag :search , params[:search] ,:id => "character_search_field" %>
+  
+</form>
+
+
+
+<% [*('A'..'Z')].each do |ch| %> 
+<%= link_to ch, fundamental_characters_path(page: character_paginate(ch)) %>
+<% end %>
+
+
+
+<div id="characters"><%= render 'characters' %></div>  
+
+
+<br />
+
+<%= link_to 'New Character', new_fundamental_character_path %>
