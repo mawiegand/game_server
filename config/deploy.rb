@@ -43,9 +43,9 @@ namespace :deploy do
     #
     # security advice: don't forget to comment out after use, don't commit it uncommented!!!
     #
-    #run "cd #{current_path}; bundle exec rake RAILS_ENV=\"#{stage}\" db:reset"
-    #restart
-    #exit
+    run "cd #{current_path}; bundle exec rake RAILS_ENV=\"#{stage}\" db:reset"
+    restart
+    exit
   end
 
   desc "Start Thin"
