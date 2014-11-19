@@ -2,13 +2,13 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_infantry_tower" advisor="warrior" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishable="true" experienceFactor="6">
-  <Name lang="de_DE">Turm der Knüppelei</Name>
-  <Name lang="en_US">Infantry Tower</Name>
+  <Name lang="de_DE">Knüppler Gelände</Name>
+  <Name lang="en_US">Clubber Grounds</Name>
   <Description lang="de_DE">
-    <p>In dem Turm der Knüppelei werden die Nahkämpfer in der Kunst des Nahkampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin. Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen.</p>
+    <p>Im Knüppler Gelännde werden die Nahkämpfer in der Kunst des Nahkampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin. Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen.</p>
   </Description>
   <Description lang="en_US">
-    <p>In the infantry tower, infantry troops are instructed in the art of fighting. Their extremely sadistic trainer sets great store by obedience and discipline. If someone doesn't obey orders or is even more stupid than everyone else during training, he has to clean the stables in the cavalry tower.</p>
+    <p>In the Clubber Grounds, infantry troops are instructed in the art of fighting. Their extremely sadistic trainer sets great store by obedience and discipline. If someone doesn't obey orders or is even more stupid than everyone else during training, he has to clean the stables in the cavalry tower.</p>
   </Description>
   <Flavour lang="en_US">
 	<p>This is no place for thinkers! Infantry members need strength and stamina - nothing else.</p>

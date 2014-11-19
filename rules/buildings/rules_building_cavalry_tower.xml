@@ -2,8 +2,8 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_cavalry_tower" advisor="warrior" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishable="true" experienceFactor="6">
-  <Name lang="de_DE">Turm der Reitmeisterei</Name>
-  <Name lang="en_US">Cavalry Tower</Name>
+  <Name lang="de_DE">Reiteranlage</Name>
+  <Name lang="en_US">Cavalry Grounds</Name>
   <Description lang="de_DE">
     <p>Der Zutritt ist streng begrenzt auf ausgebildete Reiter und Tierpfleger. Wenn das Tor der Reitmeisterei kurzzeitig offen steht, schleichen sich oftmals neugierige halbstarke Jungs hinein, um die Mädchen zu beeindrucken. Die wenigsten Jungen kommen allerdings noch in den Genuß sich in der Aufmerksamkeit zu sonnen.</p>
  </Description>

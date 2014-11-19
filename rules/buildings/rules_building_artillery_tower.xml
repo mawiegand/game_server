@@ -2,8 +2,8 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_artillery_tower" advisor="warrior" group="military" category="building_category_fortress_tower" buyable="true" destructable="true" demolishable="true" experienceFactor="6">
-  <Name lang="de_DE">Turm der Ballistik</Name>
-  <Name lang="en_US">Artillery Tower</Name>
+  <Name lang="de_DE">Werfer Gelände</Name>
+  <Name lang="en_US">Throwing Grounds</Name>
   <Description lang="de_DE">
     <p>Achtung Helmpflicht! Die Ausbilder und Auszubildenden haben sich feste Tierhäute um den Kopf gebunden, damit sie den Aufprall kleiner Steiner oder Splitter halbwegs überstehen. Auf ein Kommando werden alle Arten von Wurfgeschossen in die Luft gesandt. Nur leider wissen die Wenigsten, auf welches Kommando sie eigentlich gerade achten sollen.</p>
 	</Description>

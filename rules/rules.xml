@@ -73,7 +73,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="2" minor="0" build="3" />
+    <Version major="2" minor="0" build="4" />
     <AppControl debugTracking="1" startscreen="map">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="24" />
       <Facebook userStoriesEnabled="0" />
