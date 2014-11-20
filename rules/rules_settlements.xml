@@ -209,7 +209,7 @@
       <BuildingOption category="building_category_large_building" />
       <BuildingOption category="building_category_small_building" />
     </BuildingSlot>
-    <BuildingSlot number="3" max-level="10">
+    <BuildingSlot number="2" max-level="10">
       <BuildingOption category="building_category_small_building" />
       <BuildingOption category="building_category_specialization_building" />
     </BuildingSlot>
