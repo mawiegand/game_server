@@ -18,15 +18,14 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
         config.refresh_token_if_expired
 
         if config.access_token_valid?
-
           # Hack
           if Rails.env.production?
-
             query = {
                 package_name: Google::AppConfig::PACKAGE_NAME,
                 product_id: product_id,
                 payment_token: payment_token,
                 google_access_token: config.access_token,
+                access_token: request_access_token.token
             }
 
             google_response = HTTParty.get(

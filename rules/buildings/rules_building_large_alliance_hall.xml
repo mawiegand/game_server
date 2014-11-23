@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_large_alliance_hall" advisor="chef" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="false" demolishable="false" experienceFactor="1.5">
+<Building id="building_large_alliance_hall" advisor="chef" group="miscellaneous" category="building_category_unique_building" buyable="true" destructable="false" demolishable="false" experienceFactor="1.5">
   <Name lang="de_DE">Große Stammeshalle</Name>
   <Name lang="en_US">Tribe's Large Hall</Name>
   <Description lang="de_DE">
@@ -23,6 +23,7 @@
   <RequirementGroup>
     <Requirement id="building_alliance_hall"  max_level="10" />
     <Requirement id="building_large_alliance_hall" max_level="0" />
+    <Requirement id="building_fortress_fortification" max_level="0" />
   </RequirementGroup>
     <Cost id="resource_stone" round="true">LESS(LEVEL,11)*25000*POW(LEVEL,1.25)</Cost>
     <Cost id="resource_wood" round="true">LESS(LEVEL,11)*25000*POW(LEVEL,1.25)</Cost>

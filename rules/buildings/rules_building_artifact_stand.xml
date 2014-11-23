@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_artifact_stand" advisor="chef" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="true" demolishable="false" experienceFactor="12">
+<Building id="building_artifact_stand" advisor="chef" group="miscellaneous" category="building_category_unique_building" buyable="true" destructable="true" demolishable="false" experienceFactor="12">
   <Name lang="de_DE">Tüftler-Werkstatt</Name>
   <Name lang="en_US">Workshop</Name>
   <Description lang="de_DE"><p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p>
@@ -15,7 +15,8 @@
  <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)</Population>
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="7" />
-    <Requirement id="building_artifact_stand" max_level="0" /> 
+    <Requirement id="building_artifact_stand" max_level="0" />
+    <Requirement id="building_fortress_fortification" max_level="0" />
   </RequirementGroup>
   <Cost id="resource_stone" round="true">(FLOOR(7500*POW(LEVEL,0.4)))</Cost>
   <Cost id="resource_wood" round="true">(FLOOR(10000*POW(LEVEL,0.4)))</Cost>

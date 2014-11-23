@@ -10,7 +10,8 @@
     <ProductionCategory category="building_category_fortress_special" />
     <ProductionCategory category="building_category_large_building" />
     <ProductionCategory category="building_category_small_building" />
-    <ProductionCategory category="building_category_special_building" />
+    <ProductionCategory category="building_category_unique_building" />
+    <ProductionCategory category="building_category_specialization_building" />
   </Queue>
   <Queue id="queue_fortifications" category="queue_category_construction" domain="settlement" base_threads="1" base_slots="2">
     <Name>Construction of Fortifications</Name>

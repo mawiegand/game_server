@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_alliance_hall" advisor="chef" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="false" demolishable="false" experienceFactor="1.5">
+<Building id="building_alliance_hall" advisor="chef" group="miscellaneous" category="building_category_unique_building" buyable="true" destructable="false" demolishable="false" experienceFactor="1.5">
   <Name lang="de_DE">Stammeshalle</Name>
   <Name lang="en_US">Tribes Hall</Name>
   <Description lang="de_DE">
@@ -25,6 +25,7 @@
     <Requirement id="building_copper_smelter" min_level="1" />
     <Requirement id="building_campfire" min_level="10" />
     <Requirement id="building_alliance_hall"  max_level="0" />
+    <Requirement id="building_fortress_fortification" max_level="0" />
   </RequirementGroup>
     <Cost id="resource_stone" round="true">20000*POW(LEVEL,1.25)</Cost>
     <Cost id="resource_wood" round="true">20000*POW(LEVEL,1.25)</Cost>

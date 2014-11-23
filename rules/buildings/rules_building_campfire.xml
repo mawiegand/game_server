@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_campfire" advisor="chef" group="miscellaneous" category="building_category_special_building" buyable="true" destructable="false" demolishable="false" experienceFactor="1.5">
+<Building id="building_campfire" advisor="chef" group="miscellaneous" category="building_category_unique_building" buyable="true" destructable="false" demolishable="false" experienceFactor="1.5">
   <Name lang="de_DE">Lagerfeuer</Name>
   <Name lang="en_US">Campfire</Name>
   <Description lang="de_DE">
+    <p>Das Lagerfeuer dient zur Kontaktaufnahme mit Allianzen und zur Ausbildung des Kleinen Häuptlings.</p>
     <p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p>
     <p>Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p>
     <p>Dieses Gebäude kann nicht abgerissen werden.</p>
@@ -23,6 +24,7 @@
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="4" />
     <Requirement id="building_campfire" max_level="0" />
+    <Requirement id="building_fortress_fortification" max_level="0" />
   </RequirementGroup>
   <Cost id="resource_stone" round="true">LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)</Cost>  
   <Cost id="resource_wood" round="true">LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)</Cost>

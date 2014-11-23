@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_altar" advisor="chef" group="miscellaneous" category="building_category_large_building" buyable="false" destructable="false" demolishable="true" experienceFactor="8" takeoverDestroy="true">
+<Building id="building_altar" advisor="chef" group="miscellaneous" category="building_category_specialization_building" buyable="false" destructable="false" demolishable="true" experienceFactor="8" takeoverDestroy="true">
   <Name lang="de_DE">Ritualstein</Name>
   <Name lang="en_US">Altar</Name>
   <Description lang="de_DE">
+    <p>Spezialisierungsgebäude, spezalisiert die Lagerstätte, so dass sie nicht mehr übernommen werden kann. Nur ein Spezialisierungsgebäude pro Lagerstätte.</p>
     <p>Der Ritualstein ist ein von Fackeln umringter von blutigen Opfergaben verschmierter und mit den Gaben der Felder und den Köpfen der Feinde dekorierter Steintisch. Dieser Steintisch begeistert auch die Götter. Zumindest ist die Lagerstätte mit einem Ritualstein vor einer feindlichen Übernahme sicher. Wenn das kein Wink der Götter ist!</p>
    </Description>
   <Description lang="en_US">
+    <p>Specialization building, specializes your camp, making it impossible to be overtaken. Only one specialization building per camp is possible. </p>
     <p>The altar is a stone table surrounded by torches, smeared with blood from sacrificial offerings and decorated with gifts from the field and the heads of enemies. This stone table also impresses the gods. An encampment with an altar is safe from being conquered by enemies. If that isn't a sign from the gods, then what is?</p>
   </Description>
   <Flavour lang="en_US">
@@ -24,7 +26,6 @@
   <Cost id="resource_stone"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)</Cost>
   <Cost id="resource_wood"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)</Cost>
   <Cost id="resource_fur"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)</Cost>
-    <Cost id="resource_cash" round="true">2*MAX(LEVEL-19,0)</Cost>
 	  <ProductionTime shortenable="true">EQUAL(LEVEL,1)*36*3600+GREATER(LEVEL,1)*(3600*LEVEL)</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <PreventTakeover level="1" />
