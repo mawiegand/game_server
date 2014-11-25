@@ -18,3 +18,5 @@
 
 <%= link_to 'Edit', edit_facebook_app_config_path(@facebook_app_config) %> |
 <%= link_to 'Back', facebook_app_config_path %>
+
+<%= link_to 'Refresh Access Token', google_app_config_path(:refresh_app_token => true) %>
