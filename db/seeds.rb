@@ -560,8 +560,7 @@ Shop::FbCreditOffer.create({
 
 Facebook::AppConfig.create({
   app_id: "127037377498922",
-  app_secret: "f88034e6df205b5aa3854e0b92638754",
-  app_token: "127037377498922|edJm__Jp9jLIjvUW2eu0W-sPLz8"
+  app_secret: "f88034e6df205b5aa3854e0b92638754"
 })
 
 
