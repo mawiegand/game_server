@@ -19,8 +19,8 @@ user.deleted = false
 user.save
 
 NUM_FULL_LEVELS   =  5
-NUM_SPARSE_LEVELS =  2
-MAX_LEVEL         =  9
+NUM_SPARSE_LEVELS =  3
+MAX_LEVEL         =  10
 
 ROUND_NAME   = "Round 7"
 ROUND_NUMBER =  7
