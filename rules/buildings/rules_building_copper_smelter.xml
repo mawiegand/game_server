@@ -24,9 +24,9 @@
     <Requirement id="building_copper_smelter" max_level="0" />
     <Requirement id="building_fortress_fortification" max_level="0" />
   </RequirementGroup>
-  <Cost id="resource_stone" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost>  
-  <Cost id="resource_wood" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost>   
-  <Cost id="resource_fur" round="true">LESS(LEVEL,11)*(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost> 
+  <Cost id="resource_stone" round="true">(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost>
+  <Cost id="resource_wood" round="true">(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost>
+  <Cost id="resource_fur" round="true">(EQUAL(LEVEL,1)*12000+GREATER(LEVEL,1)*(12000+FLOOR(125*POW(LEVEL,2))))</Cost> 
   <ProductionTime shortenable="false">(36000+(7200*LEVEL))</ProductionTime>
   <Abilities> <!-- just for grouping -->
   </Abilities>
