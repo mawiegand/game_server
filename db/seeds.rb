@@ -507,8 +507,8 @@ Shop::FbCreditOffer.create({
   amount: 13,
   title: "13 5D Platinum Credits",
   description: "13 5D Platinum Credits",
-  url: "https://gs07.wack-a-doo.de/game_server/shop/fb_credit_offers/1",
-  image_url: "https://gs07.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/1",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":0.99}]'
 })
 
@@ -516,8 +516,8 @@ Shop::FbCreditOffer.create({
   amount: 30,
   title: "30 5D Platinum Credits",
   description: "30 5D Platinum Credits",
-  url: "https://gs07.wack-a-doo.de/game_server/shop/fb_credit_offers/2",
-  image_url: "https://gs07.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/2",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":1.99}]'
 })
 
@@ -525,8 +525,8 @@ Shop::FbCreditOffer.create({
   amount: 100,
   title: "100 5D Platinum Credits",
   description: "100 5D Platinum Credits",
-  url: "https://gs07.wack-a-doo.de/game_server/shop/fb_credit_offers/3",
-  image_url: "https://gs07.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/3",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":4.99}]'
 })
 
@@ -534,8 +534,8 @@ Shop::FbCreditOffer.create({
   amount: 250,
   title: "250 5D Platinum Credits",
   description: "250 5D Platinum Credits",
-  url: "https://gs07.wack-a-doo.de/game_server/shop/fb_credit_offers/4",
-  image_url: "https://gs07.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/4",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":9.99}]'
 })
 
@@ -543,8 +543,8 @@ Shop::FbCreditOffer.create({
   amount: 600,
   title: "600 5D Platinum Credits",
   description: "600 5D Platinum Credits",
-  url: "https://gs07.wack-a-doo.de/game_server/shop/fb_credit_offers/5",
-  image_url: "https://gs07.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/5",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":19.99}]'
 })
 
@@ -552,8 +552,8 @@ Shop::FbCreditOffer.create({
   amount: 1600,
   title: "1600 5D Platinum Credits",
   description: "1600 5D Platinum Credits",
-  url: "https://gs07.wack-a-doo.de/game_server/shop/fb_credit_offers/6",
-  image_url: "https://gs07.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/6",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":49.99}]'
 })
 
