@@ -313,9 +313,7 @@ nodes = Map::Node.find_all_by_leaf true
 def create_fortress(location)
   owner = @npc[rand(@npc.length)] # TODO: NPCs
   Settlement::Settlement.create_settlement_at_location(location, 1, owner)   # 1: fortress
-  
-  puts "INFO: settlement #{ location.settlement.id } created with garrison size #{ location.settlement.garrison_size_max }"
-  
+    
   details = location.settlement.garrison_army.details
   if details.has_attribute? 'unit_neanderthal'
     details.increment('unit_neanderthal', NPC_MIN_UNITS + rand(NPC_MAX_UNITS - NPC_MIN_UNITS))

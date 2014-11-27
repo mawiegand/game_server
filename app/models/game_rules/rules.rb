@@ -128,7 +128,7 @@ class GameRules::Rules
       },
       :app_control => {
         :debug_tracking                         => 1,
-        :startscreen                            => 'map',
+        :startscreen                            => 'settlement',
         :special_offer_dialog                   => 1,
         :special_offer_required_finished_quests => 24,
         :facebook_user_stories                  => 0,
