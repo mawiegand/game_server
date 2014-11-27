@@ -123,7 +123,7 @@ class Shop::TransactionsController < ApplicationController
           @shop_transaction.credit_amount_booked = offer.price
           @shop_transaction.save
 
-          ActiveRecord::Base.transaction do
+          ActiveRecord::Base.transaction(:requires_new => true) do
             if !purchase.redeemed? && !shop_special_offers_transaction.redeemed?
               purchase.special_offer.credit_to(current_character)
               purchase.redeemed_at = Time.now

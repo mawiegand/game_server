@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.0.3
+# Version: 2.0.5
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 0,
-                    :build => 3,
+                    :build => 5,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -191,27 +191,27 @@ class GameRules::Rules
         :outpost => {
 1 => {
             :id          => 27,
-            :level       => 5,
+            :level       => 6,
           },
 2 => {
-            :id          => 29,
-            :level       => 1,
-          },
-3 => {
             :id          => 1,
             :level       => 4,
           },
-4 => {
+3 => {
             :id          => 1,
             :level       => 5,
           },
-5 => {
+4 => {
             :id          => 1,
             :level       => 6,
           },
-6 => {
+5 => {
             :id          => 1,
             :level       => 7,
+          },
+7 => {
+            :id          => 29,
+            :level       => 1,
           },
 
         },
@@ -3011,7 +3011,7 @@ class GameRules::Rules
 
             :unlock_garrison => 2,            
 
-            :command_points => "GREATER(LEVEL,1)+GREATER(LEVEL,5)+EQUAL(LEVEL,15)+EQUAL(LEVEL,20)",
+            :command_points => "GREATER(LEVEL,1)+GREATER(LEVEL,5)+GREATER(LEVEL,15)+EQUAL(LEVEL,20)",
 
             :unlock_building_slots => "MIN(LEVEL,10)*4-1",
 
@@ -6200,9 +6200,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ein paar aufgetürmte Steinbrocken, zusammengebundene Baumstämme, ein provisorisches Tor. Die Festungsanlagen bestehen aus einen Hauptgebäude, einem kleinen Versammlungsplatz und Mauern zur Verteidigung.</p><p>Die Festungsanlagen liefern einen zusätzlichen Kommandopunkt auf Level 10.</p>",
+            :de_DE => "<p>Von der Festungsanlage aus kann die gesammte Region überblickt werden. Das macht die Festung ideal für millitärische Aktionen und das eintreiben von Steuern.</p><p>Die Festungsanlagen liefern einen zusätzlichen Kommandopunkt auf Level 10.</p>",
   
-            :en_US => "<p>A couple of stacked-up stones, some tree-trunks tied together, a makeshift gate. Fortress compounds consist of a main building, a small meeting place and walls for defence.</p>",
+            :en_US => "<p>The Fortification is the center of any region. This makes it ideal for military purposes as well as collecting taxes.</p><p>At level 10 you gain an additional command point.</p>",
                 
           },
 
@@ -6271,16 +6271,16 @@ class GameRules::Rules
           },
 
         },              #   END OF Festungsanlagen
-        {               #   Turm der Knüppelei
+        {               #   Knüppler Gelände
           :id          => 31, 
           :symbolic_id => :building_infantry_tower,
 					:category    => 1,
           :db_field    => :building_infantry_tower,
           :name        => {
             
-            :de_DE => "Turm der Knüppelei",
+            :de_DE => "Knüppler Gelände",
   
-            :en_US => "Infantry Tower",
+            :en_US => "Clubber Grounds",
                 
           },
           :advisor     => "warrior",
@@ -6293,9 +6293,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>In dem Turm der Knüppelei werden die Nahkämpfer in der Kunst des Nahkampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin. Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen.</p>",
+            :de_DE => "<p>Im Knüppler Gelännde werden die Nahkämpfer in der Kunst des Nahkampfes unterwiesen. Der überaus sadistische Ausbilder legt höchsten Wert auf Gehorsam und Disziplin. Wer den Befehlen nicht gehorcht oder sich im Training noch dümmer anstellt als die anderen, der muss im Turm der Reitmeisterei putzen.</p>",
   
-            :en_US => "<p>In the infantry tower, infantry troops are instructed in the art of fighting. Their extremely sadistic trainer sets great store by obedience and discipline. If someone doesn't obey orders or is even more stupid than everyone else during training, he has to clean the stables in the cavalry tower.</p>",
+            :en_US => "<p>In the Clubber Grounds, infantry troops are instructed in the art of fighting. Their extremely sadistic trainer sets great store by obedience and discipline. If someone doesn't obey orders or is even more stupid than everyone else during training, he has to clean the stables in the cavalry tower.</p>",
                 
           },
 
@@ -6368,17 +6368,17 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Turm der Knüppelei
-        {               #   Turm der Ballistik
+        },              #   END OF Knüppler Gelände
+        {               #   Werfer Gelände
           :id          => 32, 
           :symbolic_id => :building_artillery_tower,
 					:category    => 1,
           :db_field    => :building_artillery_tower,
           :name        => {
             
-            :de_DE => "Turm der Ballistik",
+            :de_DE => "Werfer Gelände",
   
-            :en_US => "Artillery Tower",
+            :en_US => "Throwing Grounds",
                 
           },
           :advisor     => "warrior",
@@ -6466,17 +6466,17 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Turm der Ballistik
-        {               #   Turm der Reitmeisterei
+        },              #   END OF Werfer Gelände
+        {               #   Reiteranlage
           :id          => 33, 
           :symbolic_id => :building_cavalry_tower,
 					:category    => 1,
           :db_field    => :building_cavalry_tower,
           :name        => {
             
-            :de_DE => "Turm der Reitmeisterei",
+            :de_DE => "Reiteranlage",
   
-            :en_US => "Cavalry Tower",
+            :en_US => "Cavalry Grounds",
                 
           },
           :advisor     => "warrior",
@@ -6564,7 +6564,7 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Turm der Reitmeisterei
+        },              #   END OF Reiteranlage
       ],                # END OF BUILDING TYPES
 
 # ## SETTLEMENT TYPES ########################################################
@@ -7258,7 +7258,7 @@ class GameRules::Rules
               
               ],
             },
-            3 => {
+            2 => {
               :max_level => 10,
               
               :level  => 0,
