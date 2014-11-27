@@ -1,5 +1,5 @@
 class Backend::NpcMailer < ActionMailer::Base
-  default from: Rails.env.production? ?  "npcjob@gs06.wack-a-doo.de" : "npcjob@test1.wack-a-doo.de"
+  default from: Rails.env.production? ?  "npcjob@gs07.wack-a-doo.de" : "npcjob@test1.wack-a-doo.de"
   
   def npc_placement_report(report)
     @report = report
