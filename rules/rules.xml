@@ -74,7 +74,7 @@
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
     <Version major="2" minor="0" build="5" />
-    <AppControl debugTracking="1" startscreen="map">
+    <AppControl debugTracking="1" startscreen="settlement">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="24" />
       <Facebook userStoriesEnabled="0" />
     </AppControl>
