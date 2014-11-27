@@ -31,4 +31,5 @@
     <UnlockQueue  queue="queue_infantry" />
     <SpeedupQueue queue="queue_infantry" domain="settlement">LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0</SpeedupQueue>
   </Abilities>
+  <ConversionOption building="building_barracks_2" level="LEVEL-GREATER(LEVEL,3)-GREATER(LEVEL,8)-GREATER(LEVEL,13)-GREATER(LEVEL,18)"/>
 </Building>

@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.0.5
+# Version: 2.0.6
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 0,
-                    :build => 5,
+                    :build => 6,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -3370,6 +3370,11 @@ class GameRules::Rules
 
           },
 
+          :conversion_option => {
+            :building              => :building_barracks_2,
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,3)-GREATER(LEVEL,8)-GREATER(LEVEL,13)-GREATER(LEVEL,18)", 
+          },
+
         },              #   END OF Ausbildungsgelände
         {               #   Kleine Hütte
           :id          => 4, 
@@ -4551,6 +4556,11 @@ class GameRules::Rules
 
           },
 
+          :conversion_option => {
+            :building              => :building_firing_range_2,
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,3)-GREATER(LEVEL,8)-GREATER(LEVEL,13)-GREATER(LEVEL,18)", 
+          },
+
         },              #   END OF Schießstand
         {               #   Stammeshalle
           :id          => 15, 
@@ -5408,6 +5418,11 @@ class GameRules::Rules
 
             ],
 
+          },
+
+          :conversion_option => {
+            :building              => :building_stud_2,
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,3)-GREATER(LEVEL,8)-GREATER(LEVEL,13)-GREATER(LEVEL,18)", 
           },
 
         },              #   END OF Stinkender Stall
