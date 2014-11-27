@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.0.5
+# Version: 2.0.6
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 0,
-                    :build => 5,
+                    :build => 6,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -10106,9 +10106,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'a',
-          :url          => 'https://gs06.wack-a-doo.de/game_server/en/facebook/object_types/0',
-          :image_url    => 'https://gs06.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
-          :see_also_url => 'https://gs06.wack-a-doo.de',
+          :url          => 'https://gs07.wack-a-doo.de/game_server/en/facebook/object_types/0',
+          :image_url    => 'https://gs07.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
+          :see_also_url => 'https://gs07.wack-a-doo.de',
         },              #   END OF battle
         {              #   next_rank
           :id          => 1,
@@ -10130,9 +10130,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'the',
-          :url          => 'https://gs06.wack-a-doo.de/game_server/en/facebook/object_types/1',
-          :image_url    => 'https://gs06.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
-          :see_also_url => 'https://gs06.wack-a-doo.de',
+          :url          => 'https://gs07.wack-a-doo.de/game_server/en/facebook/object_types/1',
+          :image_url    => 'https://gs07.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
+          :see_also_url => 'https://gs07.wack-a-doo.de',
         },              #   END OF next_rank
       ],                # END OF FACEBOOK USER STORIES
 

@@ -18,15 +18,15 @@ user.partner = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   =  2
-NUM_SPARSE_LEVELS =  1
-MAX_LEVEL         =  3
+NUM_FULL_LEVELS   =  5
+NUM_SPARSE_LEVELS =  3
+MAX_LEVEL         =  10
 
 ROUND_NAME   = "Round 7"
 ROUND_NUMBER =  7
 
-NPC_MIN_UNITS = 6
-NPC_MAX_UNITS = 20
+NPC_MIN_UNITS = 12
+NPC_MAX_UNITS = 120
 
 
 
@@ -505,8 +505,8 @@ Shop::FbCreditOffer.create({
   amount: 13,
   title: "13 5D Platinum Credits",
   description: "13 5D Platinum Credits",
-  url: "https://gs06.wack-a-doo.de/game_server/shop/fb_credit_offers/1",
-  image_url: "https://gs06.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/1",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":0.99}]'
 })
 
@@ -514,8 +514,8 @@ Shop::FbCreditOffer.create({
   amount: 30,
   title: "30 5D Platinum Credits",
   description: "30 5D Platinum Credits",
-  url: "https://gs06.wack-a-doo.de/game_server/shop/fb_credit_offers/2",
-  image_url: "https://gs06.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/2",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":1.99}]'
 })
 
@@ -523,8 +523,8 @@ Shop::FbCreditOffer.create({
   amount: 100,
   title: "100 5D Platinum Credits",
   description: "100 5D Platinum Credits",
-  url: "https://gs06.wack-a-doo.de/game_server/shop/fb_credit_offers/3",
-  image_url: "https://gs06.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/3",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":4.99}]'
 })
 
@@ -532,8 +532,8 @@ Shop::FbCreditOffer.create({
   amount: 250,
   title: "250 5D Platinum Credits",
   description: "250 5D Platinum Credits",
-  url: "https://gs06.wack-a-doo.de/game_server/shop/fb_credit_offers/4",
-  image_url: "https://gs06.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/4",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":9.99}]'
 })
 
@@ -541,8 +541,8 @@ Shop::FbCreditOffer.create({
   amount: 600,
   title: "600 5D Platinum Credits",
   description: "600 5D Platinum Credits",
-  url: "https://gs06.wack-a-doo.de/game_server/shop/fb_credit_offers/5",
-  image_url: "https://gs06.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/5",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":19.99}]'
 })
 
@@ -550,14 +550,66 @@ Shop::FbCreditOffer.create({
   amount: 1600,
   title: "1600 5D Platinum Credits",
   description: "1600 5D Platinum Credits",
-  url: "https://gs06.wack-a-doo.de/game_server/shop/fb_credit_offers/6",
-  image_url: "https://gs06.wack-a-doo.de/game_server/assets/fb_payments/credits.png",
+  url: GAME_SERVER_CONFIG['game_server_base_url'] + "/shop/fb_credit_offers/6",
+  image_url: GAME_SERVER_CONFIG['game_server_base_url'] + "/assets/fb_payments/credits.png",
   prices: '[{"EUR":49.99}]'
 })
 
 
 Facebook::AppConfig.create({
   app_id: "127037377498922",
-  app_secret: "f88034e6df205b5aa3854e0b92638754",
-  app_token: "127037377498922|edJm__Jp9jLIjvUW2eu0W-sPLz8"
+  app_secret: "f88034e6df205b5aa3854e0b92638754"
 })
+
+
+Shop::GoogleCreditOffer.create({
+    google_product_id: 'platinum_credits_13',
+    amount: 13,
+    title: "13 5D Platinum Credits",
+    price: ''
+})
+
+Shop::GoogleCreditOffer.create({
+    google_product_id: 'platinum_credits_30',
+    amount: 30,
+    title: "30 5D Platinum Credits",
+    price: ''
+})
+
+Shop::GoogleCreditOffer.create({
+    google_product_id: 'platinum_credits_100',
+    amount: 100,
+    title: "100 5D Platinum Credits",
+    price: ''
+})
+
+Shop::GoogleCreditOffer.create({
+    google_product_id: 'platinum_credits_250',
+    amount: 250,
+    title: "250 5D Platinum Credits",
+    price: ''
+})
+
+Shop::GoogleCreditOffer.create({
+    google_product_id: 'platinum_credits_600',
+    amount: 600,
+    title: "600 5D Platinum Credits",
+    price: ''
+})
+
+Shop::GoogleCreditOffer.create({
+    google_product_id: 'platinum_credits_1600',
+    amount: 1600,
+    title: "1600 5D Platinum Credits",
+    price: ''
+})
+
+Shop::GoogleCreditOffer.create({
+    google_product_id: 'platinum_credits_4000',
+    amount: 4000,
+    title: "4000 5D Platinum Credits",
+    price: ''
+})
+
+Google::AppConfig.create
+
