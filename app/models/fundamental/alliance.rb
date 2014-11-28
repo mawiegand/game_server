@@ -40,7 +40,6 @@ class Fundamental::Alliance < ActiveRecord::Base
   before_save   :update_size_bonus
 
   after_save    :propagate_tag_change
-  after_save    :propagate_name_change
   after_save    :propagate_color_change
   after_save    :propagate_to_ranking
   after_save    :delete_all_leader_votes
@@ -509,16 +508,6 @@ class Fundamental::Alliance < ActiveRecord::Base
           self.ranking.alliance_tag = self.tag
           self.ranking.save
         end
-      end
-      true
-    end
-
-    def propagate_name_change
-      alliance_name_change = self.changes[:name]
-
-      if !alliance_name_change.blank? && !self.ranking.nil?
-        self.ranking.alliance_name = self.name
-        self.ranking.save
       end
       true
     end
