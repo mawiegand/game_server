@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.0.8
+# Version: 2.0.9
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 0,
-                    :build => 8,
+                    :build => 9,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -2845,7 +2845,7 @@ class GameRules::Rules
             
             :en_US => "Unique Buildings",
   
-            :de_DE => "Einzigartiges GEbäude",
+            :de_DE => "Einzigartige Gebäude",
                 
           },
           :description => {
@@ -3398,9 +3398,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>In den kleinen Hütten sind Eure Untertanen vor Sonne und Regen geschützt. Hauptsache, sie sind fleißig und beschweren sich nicht. Je mehr Hütten, desto mehr Untertanen habt ihr, die wiederum schneller arbeiten und Eure Siedlung schneller ausbauen. Wenn Chef sein immer so einfach wäre!</p>",
+            :de_DE => "<p>In den kleinen Hütten sind Eure Untertanen vor Sonne und Regen geschützt. Hauptsache, sie sind fleißig und beschweren sich nicht.</p>",
   
-            :en_US => "<p>A little hut can only protect your subjects from sun and rain. The main thing is that they work hard and don't complain. The more huts you have, the more subjects you have and the faster they'll work and the quicker the settlement will be upgraded. If only being the boss was always this easy!</p>",
+            :en_US => "<p>A little hut can only protect your subjects from sun and rain. The main thing is that they work hard and don't complain. If only being the boss was always this easy!</p>",
                 
           },
 
@@ -6073,6 +6073,28 @@ class GameRules::Rules
 
             },
 
+            {
+              :symbolic_id => 'building_altar',
+              :id => 29,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_field_camp',
+              :id => 28,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ],
 
           ],          
@@ -6159,6 +6181,28 @@ class GameRules::Rules
             {
               :symbolic_id => 'building_chief_cottage',
               :id => 0,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_altar',
+              :id => 29,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_field_camp',
+              :id => 28,
               :type => 'building',
 
               :min_level => 0,

@@ -23,8 +23,8 @@
  <RequirementGroup>
     <Requirement id="building_haunt" min_level="6" />
     <Requirement id="building_chief_cottage" max_level="0" />
-    <Requirement id="building_building_altar" max_level="0" />
-    <Requirement id="building_building_field_camp" max_level="0" />
+    <Requirement id="building_altar" max_level="0" />
+    <Requirement id="building_field_camp" max_level="0" />
   </RequirementGroup>
   <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)</Cost>  
   <Cost id="resource_wood"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)</Cost>
