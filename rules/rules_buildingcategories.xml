@@ -64,7 +64,7 @@
   </BuildingCategory>
   <BuildingCategory id="building_category_unique_building">
     <Name>Unique Buildings</Name>
-    <Name lang="de_DE">Einzigartiges GEbäude</Name>
+    <Name lang="de_DE">Einzigartige Gebäude</Name>
     <Description lang="de_DE">
       <p>Spezielle Gebäude die je Siedlung nur einmal gebaut werden können.</p>
     </Description>
