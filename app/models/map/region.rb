@@ -23,11 +23,23 @@ class Map::Region < ActiveRecord::Base
   after_create  :propagate_regions_count_to_round_info
   after_destroy :propagate_regions_count_to_round_info
   
-  scope :non_occupied, where(owner_id: 1)
+  scope :non_occupied,       where(owner_id: 1)
+  scope :inhabited,          where("count_settlements+count_outposts > 0")
+  scope :inhabited_or_owned, where("count_settlements+count_outposts > 0 OR owner_id <> 1")
+  scope :with_free_location, where("count_settlements+count_outposts < 8")
 
   def recount_settlements
-    self.count_settlements = self.locations.where('settlement_type_id = 2').count
+    self.count_settlements = self.locations.where(['settlement_type_id = ?', Settlement::Settlement::TYPE_HOME_BASE]).count
     self.save
+  end
+  
+  def recount_outposts
+    self.count_outposts = self.locations.where(['settlement_type_id = ?', Settlement::Settlement::TYPE_OUTPOST).count
+    self.save
+  end
+  
+  def random_empty_location
+    self.locations.empty.offset(Random.rand(self.locations.empty.count)).first
   end
 
   def non_fortress_locations_owned_by(character)

@@ -13,7 +13,7 @@ require 'util/formula'
 
 Rails.logger.info "NPC PLACEMENT: Start creating NPC armies..."
 
-region_factor     = 1.00   # at least num_regions * region_factor npc armies
+region_factor     = 0.80   # at least num_regions * region_factor npc armies
 max_region_factor = 1.25   # controlls the number of npcs in the case where there are more armies than regions*region_factor
 
 num_armies        = Military::Army.non_npc.non_garrison.count
@@ -38,7 +38,7 @@ min_npc_placed   = nil
 # more than nr*nf armies, place as many npcs, but not more than there
 # are regions (in average: one per region).
 desired_number_of_npcs = if num_armies < (num_regions * region_factor).ceil
-  [num_characters * 2, (num_regions * region_factor).ceil].min
+  [num_characters * 4, (num_regions * region_factor).ceil].min
 else
   [num_armies, (num_regions * max_region_factor)].min
 end
@@ -52,7 +52,12 @@ while num_npcs < desired_number_of_npcs
     size = Random.rand(1..avg_size_armies.ceil)    
   end
   
-  location = Map::Location.find_empty
+  location = nil
+  
+  if rand(2) == 0
+    location = Map::Region.find_empty_in_inhabited
+  end
+  location = Map::Location.find_empty                                 if location.nil?
   raise InternalServerError.new('Could not claim an empty location.') if location.nil?
   
   Military::Army.create_npc(location, size)
