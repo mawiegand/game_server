@@ -34,7 +34,7 @@ class Map::Region < ActiveRecord::Base
   end
   
   def recount_outposts
-    self.count_outposts = self.locations.where(['settlement_type_id = ?', Settlement::Settlement::TYPE_OUTPOST).count
+    self.count_outposts = self.locations.where(['settlement_type_id = ?', Settlement::Settlement::TYPE_OUTPOST]).count
     self.save
   end
   

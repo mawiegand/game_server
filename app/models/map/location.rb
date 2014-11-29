@@ -29,7 +29,7 @@ class Map::Location < ActiveRecord::Base
   end
   
   def self.find_empty_in_inhabited
-    region = Map::Region.inhabited_or_owned.with_free_location.offset(Random.rand(Map::Region.inhabited_or_owned.with_free_location.count)).first)
+    region = Map::Region.inhabited_or_owned.with_free_location.offset(Random.rand(Map::Region.inhabited_or_owned.with_free_location.count)).first
     region ? region.random_empty_location : nil
   end
 
