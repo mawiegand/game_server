@@ -48,17 +48,17 @@ class Military::Army < ActiveRecord::Base
   STANCE_DEFENDING_NONE = 0
   STANCE_DEFENDING_FORTRESS = 1
 
-  scope :npc,           where('(npc = ?)', true)
-  scope :non_npc,       where('(npc is null OR npc = ?)', false)
-  scope :garrison,      where('(garrison = ?)', true)
-  scope :non_garrison,  where('(garrison is null OR garrison = ?)', false)
-  scope :visible,       where('invisible = ?', false)
+  scope :npc,                  where('(npc = ?)', true)
+  scope :non_npc,              where('(npc is null OR npc = ?)', false)
+  scope :garrison,             where('(garrison = ?)', true)
+  scope :non_garrison,         where('(garrison is null OR garrison = ?)', false)
+  scope :visible,              where('invisible = ?', false)
   scope :visible_to_character, lambda { |character| where('owner_id = ? or invisible = ?', character.id, false) }
-  scope :idle,          where(mode: MODE_IDLE)
-  scope :moving,        where(mode: MODE_MOVING)
-  scope :at_least_ap,   lambda { |ap| where(["ap_present >= ?", ap]) }
-  scope :without_artifact, joins('LEFT OUTER JOIN fundamental_artifacts ON fundamental_artifacts.army_id = military_armies.id').where("fundamental_artifacts.id IS NULL")
-  
+  scope :idle,                 where(mode: MODE_IDLE)
+  scope :moving,               where(mode: MODE_MOVING)
+  scope :at_least_ap,          lambda { |ap| where(["ap_present >= ?", ap]) }
+  scope :at_least_units,       lambda { |num| where(["size_present >= ?", num]) }
+  scope :without_artifact,     joins('LEFT OUTER JOIN fundamental_artifacts ON fundamental_artifacts.army_id = military_armies.id').where("fundamental_artifacts.id IS NULL")
 
 
   def self.search(search)
@@ -68,12 +68,14 @@ class Military::Army < ActiveRecord::Base
       scoped
     end
   end
-  
     
-  def self.ai_action_candidates(limit=1)
-    Military::Army.without_artifact.non_garrison.npc.idle.at_least_ap(1).order("updated_at ASC").limit(limit)
+  def self.ai_action_candidates_with_limit(limit=1)
+    Military::Army.ai_action_candidates.limit(limit)
   end
 
+  def self.ai_action_candidates
+    Military::Army.without_artifact.non_garrison.npc.idle.at_least_ap(1).at_least_units(20).order("updated_at ASC")
+  end
 
   def self.create_garrison_at(settlement)
     logger.debug "Creating a second garrison army for settlement ID#{settlement.id}." unless settlement.garrison_army.nil? || settlement.garrison_army.frozen?
