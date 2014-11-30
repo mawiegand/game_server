@@ -850,7 +850,7 @@ class Military::Army < ActiveRecord::Base
 
       self.save!
 
-      action = self.movement_command_build({
+      action = self.build_movement_command({
         starting_location_id: self.location_id,
         starting_region_id:   self.region_id,
         target_location_id:   target_location.id,
