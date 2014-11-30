@@ -9,6 +9,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'envi
 STDOUT.sync = true
 
 num_frogs = 25
+RESOURCE_ID_CASH = 3
 
 puts
 puts "This script books #{ num_frogs } golden frogs to all characters."
