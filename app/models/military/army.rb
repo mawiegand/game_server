@@ -56,6 +56,9 @@ class Military::Army < ActiveRecord::Base
   scope :visible_to_character, lambda { |character| where('owner_id = ? or invisible = ?', character.id, false) }
   scope :idle,          where(mode: MODE_IDLE)
   scope :moving,        where(mode: MODE_MOVING)
+  scope :at_least_ap,   lambda { |ap| where(["ap_present >= ?", ap]) }
+  scope :without_artifact, joins('LEFT OUTER JOIN fundamental_artifacts ON fundamental_artifacts.army_id = military_armies.id').where("fundamental_artifacts.id IS NULL")
+  
 
 
   def self.search(search)
@@ -64,6 +67,11 @@ class Military::Army < ActiveRecord::Base
     else
       scoped
     end
+  end
+  
+    
+  def self.ai_action_candidates(limit=1)
+    Military::Army.without_artifact.non_garrison.npc.idle.at_least_ap(1).order("updated_at ASC").limit(limit)
   end
 
 
