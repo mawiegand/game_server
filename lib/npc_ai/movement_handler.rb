@@ -50,6 +50,8 @@ class NpcAi::MovementHandler
       
         armies = Military::Army.ai_action_candidates_with_limit([max_batch_size, num_start_to_move].min)
         armies.each do |army|
+          army = Military::Army.find_by_id(army.id)               # have to reload it befor manipulating it; army is the result of a join!
+          
           if !army.nil? && army.owned_by_npc? && !army.garrison?  # just to protect against buggy selector. never move player armies.
             army.ai_act   
             runloop.say "NPC AI: move army with id #{ army.id }."
