@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+require 'npc_ai/command'
+require 'npc_ai'
+
+NpcAi::Command.new(ARGV).daemonize
+

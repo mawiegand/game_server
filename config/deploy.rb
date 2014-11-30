@@ -36,6 +36,7 @@ namespace :deploy do
     restart_ticker
     restart_jabber_bots
     restart_notification_ticker
+    restart_npc_ai
   end
 
   desc "Reset DB"
@@ -64,6 +65,7 @@ namespace :deploy do
     start_ticker
     start_notification_ticker
     start_jabber_bots
+    start_npc_ai
   end
 
   desc "Stop Thin and Tickers"
@@ -73,6 +75,7 @@ namespace :deploy do
     stop_jabber_bots
     stop_notification_ticker
     stop_jabber_bots
+    stop_npc_ai
   end
 
   desc "Restart Ticker"
@@ -109,6 +112,22 @@ namespace :deploy do
     if stage != 'staging_test'
       run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/notification_ticker stop"
     end
+  end
+  
+  desc "Restart NPC AI"
+  task :restart_npc_ai do
+    stop_npc_ai
+    start_npc_ai
+  end
+
+  desc "Start NPC AI"
+  task :start_npc_ai do
+    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/npc_ai start"
+  end
+
+  desc "Stop NPC AI"
+  task :stop_npc_ai do
+    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec script/npc_ai stop"
   end
   
   desc "Check Consistency"
