@@ -55,7 +55,7 @@ while num_npcs < desired_number_of_npcs
   location = nil
   
   if rand(2) == 0
-    location = Map::Region.find_empty_in_inhabited
+    location = Map::Location.find_empty_in_inhabited
   end
   location = Map::Location.find_empty                                 if location.nil?
   raise InternalServerError.new('Could not claim an empty location.') if location.nil?
