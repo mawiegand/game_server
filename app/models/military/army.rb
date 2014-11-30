@@ -836,27 +836,39 @@ class Military::Army < ActiveRecord::Base
     return    if     target_location.nil?
   
     Action::Military::MoveArmyAction.transaction do
-      self.lock!  # lock this army now in order to prevent another action to be executed in parallel
-  
-      self.consume_ap(1)  # consume one action point
+      self.lock!              # lock this army now in order to prevent 
+                              # another action to be executed in parallel
+
+      self.consume_ap(1)      # consume one action point
       self.target_location_id = target_location.id
       self.target_region_id   = target_location.region_id
-    
+
       move_duration = self.move_duration_to_target
-    
-      self.mode              = Military::Army::MODE_MOVING # 1: moving?
-      self.target_reached_at = DateTime.now.advance(:seconds => move_duration)
+
+      self.mode               = Military::Army::MODE_MOVING # 1: moving?
+      self.target_reached_at  = DateTime.now.advance(:seconds => move_duration)
 
       self.save!
+
+      action = self.movement_command_build({
+        starting_location_id: self.location_id,
+        starting_region_id:   self.region_id,
+        target_location_id:   target_location.id,
+        target_region_id:     target_location.region_id,
+        character_id:         self.owner_id,
+        target_reached_at:    self.target_reached_at,
+      })
+
+      action.save!
 
       #create entry for event table
       event = Event::Event.new(
         character_id:   owner_id,
-        execute_at:     target_reached_at,
+        execute_at:     self.target_reached_at,
         event_type:     "action_military_move_army_action",
-        local_event_id: id,
+        local_event_id: action.id,
       )
-            
+
       event.save!
     end
   end
