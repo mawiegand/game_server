@@ -74,7 +74,7 @@ class Military::Army < ActiveRecord::Base
   end
 
   def self.ai_action_candidates
-    Military::Army.without_artifact.non_garrison.npc.idle.at_least_ap(1).at_least_units(20).order("updated_at ASC")
+    Military::Army.without_artifact.non_garrison.npc.idle.at_least_ap(1).at_least_units(25).order("updated_at ASC")
   end
 
   def self.create_garrison_at(settlement)
@@ -832,7 +832,7 @@ class Military::Army < ActiveRecord::Base
   end
   
   def ai_movement_to_location(target_location)
-    return    unless target_location.valid_movement_target_for_army?(army)
+    return    unless target_location.valid_movement_target_for_army?(self)
     return    if     target_location.nil?
   
     Action::Military::MoveArmyAction.transaction do
