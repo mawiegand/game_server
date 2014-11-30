@@ -32,7 +32,7 @@ class NpcAi::MovementHandler
   def process
     runloop.say "NPC AI submodule movement handler started"
     
-    if true || daytime?(DateTime.now)
+    if daytime?(DateTime.now)
 
       days_since_start  = Fundamental::RoundInfo.the_round_info.age
       max_movement      = 0.1  # maximum percentage of neanderthals moving at the same time
