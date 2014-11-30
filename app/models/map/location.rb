@@ -235,8 +235,8 @@ class Map::Location < ActiveRecord::Base
       self.region == army.region
     end
   end
-
-
+  
+  
   def garrison_army
     self.armies.each do |army|
       if army.garrison 

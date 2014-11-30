@@ -381,6 +381,13 @@ class Military::Battle < ActiveRecord::Base
     nil
   end
   
+  def any_npc_army
+    self.armies.each do |army|
+      return army if army.owned_by_npc?
+    end
+    nil
+  end
+  
   def check_for_artifact_stealing(artifact)
     return nil if artifact.nil?
 

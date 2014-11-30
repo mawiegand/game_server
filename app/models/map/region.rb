@@ -41,6 +41,14 @@ class Map::Region < ActiveRecord::Base
   def random_empty_location
     self.locations.empty.offset(Random.rand(self.locations.empty.count)).first
   end
+  
+  def random_location
+    self.locations.offset(Random.rand(self.locations.count)).first
+  end
+  
+  def random_non_fortress_location
+    self.locations.excluding_fortress_slots.offset(Random.rand(self.locations.excluding_fortress_slots.count)).first
+  end
 
   def non_fortress_locations_owned_by(character)
     self.locations.owned_by(character).excluding_fortress_slots

@@ -129,6 +129,13 @@ class Military::BattleFaction < ActiveRecord::Base
     nil
   end
   
+  def contains_npc?
+    participants.each do |participant|
+      return true if participant.character_id == 1
+    end
+    false
+  end
+  
   def contains_garrison?
     participants.each do |participant|
       return true if !participant.army.nil? && participant.army.garrison

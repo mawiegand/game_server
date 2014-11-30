@@ -54,6 +54,8 @@ class Military::Army < ActiveRecord::Base
   scope :non_garrison,  where('(garrison is null OR garrison = ?)', false)
   scope :visible,       where('invisible = ?', false)
   scope :visible_to_character, lambda { |character| where('owner_id = ? or invisible = ?', character.id, false) }
+  scope :idle,          where(mode: MODE_IDLE)
+  scope :moving,        where(mode: MODE_MOVING)
 
 
   def self.search(search)
@@ -265,6 +267,10 @@ class Military::Army < ActiveRecord::Base
     self.mode === MODE_MOVING # 1 : moving?!
   end
   
+  def idle?
+    self.mode === MODE_IDLE # 1 : moving?!
+  end
+  
   def fighting?
     !self.battle_id.nil? && self.battle_id > 0
   end
@@ -311,8 +317,8 @@ class Military::Army < ActiveRecord::Base
     self.region = target_location.region
     self.save
   end
-
-
+  
+  
   def found_home_base!(client_id = nil)
     return   if owner.nil? || location.nil?    
     owner.update_settlement_points_used
@@ -752,6 +758,111 @@ class Military::Army < ActiveRecord::Base
   end
   
   
+  # ##########################################################################
+  #
+  #   NPC AI Actions
+  #
+  # ##########################################################################
+
+  def ai_act
+    return   unless owned_by_npc?
+    return   unless idle? && !fighting?   # already busy
+    return   unless ap_present > 0        # no action points
+    return   unless self.artifact.nil?    # has an artifact --> don't move
+    
+    attack_prob = 0.1
+
+    if self.location.fortress?
+      garrison = self.location.garrison_army
+      
+      if !garrison.nil? && garrison.valid_attack_target_for_npc?
+        prob = garrison.figthing? ? 0.9 : attack_prob
+        if rand(1.0) < prob               # join a battle or start a new one
+          ai_attack_army(garrison)
+        else
+          ai_move_from_fortress
+        end
+      else
+        ai_move_from_fortress
+      end
+    else
+      ai_movement_to_location(self.region.fortress_location)
+    end
+  end
+  
+  # NPC is allowed to attack players, if they are not already fighting
+  # or if the battle was started by the npc
+  def ai_valid_attack_target?
+    !owned_by_npc? && (battle.nil? || (!battle.initiator.nil? && battle.initiator.npc?))
+  end
+  
+  def ai_move_from_fortress
+    location_prob = 0.40
+    if rand(1.0) < location_prob
+      ai_movement_to_location(region.random_non_fortress_location)
+    else
+      ai_move_to_random_neighbour_region
+    end
+  end
+  
+  def ai_move_to_random_neighbour_region
+    nodes    = region.node.neighbor_nodes
+    weighted = nodes.map do |node|  
+      if node.region.owned_by_npc?               # npc fortresses are the least likely to be chosen
+        node.region
+      elsif node.region.alliance_id.nil?         # players are more likelies to be chosen than npcs
+        [node.region, node.region]
+      else
+        [node.region, node.region, node.region]  # alliance members are the most likely to be chosen
+      end
+    end
+    region = weighted.flatten.sample
+    
+    ai_movement_to_location(region.location) unless region.nil?
+  end
+  
+  def ai_movement_to_location(target_location)
+    return    unless target_location.valid_movement_target_for_army?(army)
+    return    if     target_location.nil?
+  
+    Action::Military::MoveArmyAction.transaction do
+      self.lock!  # lock this army now in order to prevent another action to be executed in parallel
+  
+      self.consume_ap(1)  # consume one action point
+      self.target_location_id = target_location.id
+      self.target_region_id   = target_location.region_id
+    
+      move_duration = self.move_duration_to_target
+    
+      self.mode              = Military::Army::MODE_MOVING # 1: moving?
+      self.target_reached_at = DateTime.now.advance(:seconds => move_duration)
+
+      self.save!
+
+      #create entry for event table
+      event = Event::Event.new(
+        character_id:   owner_id,
+        execute_at:     target_reached_at,
+        event_type:     "action_military_move_army_action",
+        local_event_id: id,
+      )
+            
+      event.save!
+    end
+  end
+  
+  def ai_attack_army(defender)
+    Military::Army.transaction do  
+      
+      self.lock!
+      defender.lock!
+    
+      self.consume_ap 
+      Military::Battle.start_fight_between(self, defender)     # creates and returns battle, or returns nil, if army was overrun
+    end
+  end
+  
+  
   # Only serialize the visible fields according to the user's role, if specified as an option.
   # The rules are as follows:
   # If nothing is specified, the details are included. If only is specified, but does not include
@@ -966,4 +1077,8 @@ class Military::Army < ActiveRecord::Base
       
       true
     end
+    
+    
+    
+    
 end
