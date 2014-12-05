@@ -785,7 +785,7 @@ class Military::Army < ActiveRecord::Base
     if self.location.fortress?
       garrison = self.location.garrison_army
       
-      if !garrison.nil? && garrison.valid_attack_target_for_npc?
+      if !garrison.nil? && garrison.ai_valid_attack_target?
         prob = garrison.figthing? ? 0.9 : attack_prob
         if rand(1.0) < prob               # join a battle or start a new one
           ai_attack_army(garrison)
@@ -801,9 +801,11 @@ class Military::Army < ActiveRecord::Base
   end
   
   # NPC is allowed to attack players, if they are not already fighting
-  # or if the battle was started by the npc
+  # or if the battle was started by the npc. With a small probability,
+  # they might even join a fight that was started by a human player.
   def ai_valid_attack_target?
-    !owned_by_npc? && (battle.nil? || (!battle.initiator.nil? && battle.initiator.npc?))
+    join_prob = 0.10  # percentage to join a battle started by a human player
+    !owned_by_npc? && (battle.nil? || (!battle.initiator.nil? && battle.initiator.npc?) || rand(1.0) < join_prob)
   end
   
   def ai_move_from_fortress
