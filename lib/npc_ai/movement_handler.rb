@@ -15,6 +15,7 @@ class NpcAi::MovementHandler
   end
   
   def daytime?(date)
+    return true    # testing!
     return false       if date.nil?
     
     beginning_of_night = date.end_of_day       - 1.hours
