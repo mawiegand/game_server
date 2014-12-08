@@ -2,6 +2,7 @@ require 'httparty'
 require 'identity_provider/access'
 require 'geo_server/geo_ip'
 require 'credit_shop'
+require 'five_d'
 
 class Fundamental::CharactersController < ApplicationController
   layout 'fundamental'
@@ -136,6 +137,7 @@ class Fundamental::CharactersController < ApplicationController
         remote_ip:          request.remote_ip,
         sign_up:            true,
       })
+      
 
       if !identity['platinum_lifetime_since'].nil? && Time.parse(identity['platinum_lifetime_since']) < Time.now
         character.set_platinum_lifetime
@@ -158,6 +160,20 @@ class Fundamental::CharactersController < ApplicationController
       character.last_login_at = DateTime.now
       character.increment(:login_count)
       character.save
+      
+      if character.referer == "itunes.com" 
+        tracker = FiveD::EventTracker.new
+
+        event = {
+          user_id:              character.identifier,
+          platform:             "ios",
+          timestamp:            DateTime.now
+        }
+
+        event[:facebook_id]  = character.fb_player_id   unless character.fb_player_id.nil?
+
+        tracker.track('registration', 'account', event)
+      end
       
       if !use_settler_start && params.has_key?(:client_id)   # fetch gift
         gift = Fundamental::Character.fetch_signup_gift_for_identifier_and_client(request_access_token.identifier, params[:client_id])
