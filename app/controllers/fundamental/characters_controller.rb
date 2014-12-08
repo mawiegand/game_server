@@ -161,18 +161,21 @@ class Fundamental::CharactersController < ApplicationController
       character.increment(:login_count)
       character.save
       
-      if character.referer == "itunes.com" 
-        tracker = FiveD::EventTracker.new
+      begin
+        if character.referer == "itunes.com" 
+          tracker = FiveD::EventTracker.new
 
-        event = {
-          user_id:              character.identifier,
-          platform:             "ios",
-          timestamp:            DateTime.now
-        }
+          event = {
+            user_id:              character.identifier,
+            platform:             "ios",
+            timestamp:            DateTime.now
+          }
 
-        event[:facebook_id]  = character.fb_player_id   unless character.fb_player_id.nil?
+          event[:facebook_id]  = character.fb_player_id   unless character.fb_player_id.nil?
 
-        tracker.track('registration', 'account', event)
+          tracker.track('registration', 'account', event)
+        end
+      rescue 
       end
       
       if !use_settler_start && params.has_key?(:client_id)   # fetch gift
