@@ -103,6 +103,8 @@ class Fundamental::Character < ActiveRecord::Base
 
   after_commit :check_consistency_sometimes
   
+  after_create :track_ios_registration
+  
   after_find  :update_experience_if_necessary
   
   scope :npc,        where(['(npc = ?)', true])
@@ -1819,7 +1821,29 @@ class Fundamental::Character < ActiveRecord::Base
     self.exp_bonus_total = self.exp_bonus_effects + self.exp_bonus_alliance
   end
 
+
+  def track_ios_registration
+
+    if self.referer == "itunes.com" 
+      tracker = FiveD::EventTracker.new
+
+      event = {
+        user_id:              self.identifier,
+        platform:             "ios",
+        timestamp:            self.tstamp || DateTime.now
+      }
+      
+      event[:facebook_id]  = self.fb_player_id   unless self.fb_player_id.nil?
+
+      tracker.track('registration', 'account', event);
+    end
+
+    true
+  end
+
+
   protected
+
   
     def advance_to_next_mundane_rank
       character_ranks              = GameRules::Rules.the_rules.character_ranks
