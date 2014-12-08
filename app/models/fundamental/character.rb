@@ -1830,7 +1830,7 @@ class Fundamental::Character < ActiveRecord::Base
       event = {
         user_id:              self.identifier,
         platform:             "ios",
-        timestamp:            self.tstamp || DateTime.now
+        timestamp:            DateTime.now
       }
       
       event[:facebook_id]  = self.fb_player_id   unless self.fb_player_id.nil?
