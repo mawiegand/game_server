@@ -37,7 +37,7 @@ end
 
 group :development do
   gem 'rails-erd'
-  gem 'rails-dev-tweaks', '~> 0.6.1'
+#  gem 'rails-dev-tweaks', '~> 0.6.1'
 end
 
 gem 'therubyracer', '>= 0.11.0'          # missing javascript runtime
