@@ -12,6 +12,7 @@ class Map::Location < ActiveRecord::Base
   has_one    :artifact,   :class_name => "Fundamental::Artifact",  :foreign_key => "location_id", :inverse_of => :location
 
   before_save :move_artifact_if_necessary
+  after_save  :recount_settlements
 
   scope :excluding_fortress_slots,  where(['slot <> ?', 0])
   scope :owned_by,                  lambda { |character| where(:owner_id => character.id) }
@@ -25,6 +26,11 @@ class Map::Location < ActiveRecord::Base
 
   def self.find_empty
     Map::Location.empty.offset(Random.rand(Map::Location.empty.count)).first
+  end
+  
+  def self.find_empty_in_inhabited
+    region = Map::Region.inhabited_or_owned.with_free_location.offset(Random.rand(Map::Region.inhabited_or_owned.with_free_location.count)).first
+    region ? region.random_empty_location : nil
   end
 
   def self.find_empty_with_neighbors
@@ -229,8 +235,8 @@ class Map::Location < ActiveRecord::Base
       self.region == army.region
     end
   end
-
-
+  
+  
   def garrison_army
     self.armies.each do |army|
       if army.garrison 
@@ -313,6 +319,19 @@ class Map::Location < ActiveRecord::Base
   end
 
   protected
+
+    # update settlement count at region.
+    def recount_settlements
+      if self.settlement_type_id_changed?
+        if settlement_type_id == Settlement::Settlement::TYPE_HOME_BASE
+          self.region.recount_settlements
+        elsif settlement_type_id == Settlement::Settlement::TYPE_OUTPOST
+          self.region.recount_outposts
+        end
+      end
+      
+      true
+    end
 
     def move_artifact_if_necessary
       if !artifact.nil? && artifact.owner.npc? && !settlement_type_id_change.nil? && settlement_type_id_change[0] == Settlement::Settlement::TYPE_NONE

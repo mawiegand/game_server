@@ -6,10 +6,10 @@
   <Name lang="en_US">Chieftain's Hut</Name>
   <Description lang="de_DE">
     <p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p>
-    <p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 2, 6 und 20.</p>
+    <p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 2, 6, 16 und 20.</p>
   </Description>
   <Description lang="en_US">
-    <p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6 and 20.</p>
+    <p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6, 16 and 20.</p>
    </Description>
   <Flavour lang="en_US">
     <p>Show me your chieftain's hut and I'll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>
@@ -37,7 +37,7 @@
     <CommandPoints>GREATER(LEVEL,1)+GREATER(LEVEL,5)+GREATER(LEVEL,15)+EQUAL(LEVEL,20)</CommandPoints>
     <UnlockQueue  queue="queue_buildings" />
     <DefenseBonus>0.5*LEVEL</DefenseBonus>
-    <UnlockBuildingSlots>MIN(LEVEL,10)*4-1</UnlockBuildingSlots>
+    <UnlockBuildingSlots>MIN(MIN(LEVEL,10)*4-1,39)</UnlockBuildingSlots>
   </Abilities>
 </Building>
   

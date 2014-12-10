@@ -1820,6 +1820,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   protected
+
   
     def advance_to_next_mundane_rank
       character_ranks              = GameRules::Rules.the_rules.character_ranks

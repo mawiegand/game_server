@@ -18,8 +18,8 @@
   </Flavour>
 <Population>FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)</Population>
 <RequirementGroup>
-    <Requirement id="building_chief_cottage" min_level="10" />
     <Requirement id="building_copper_smelter" min_level="10" />
+    <Requirement id="building_haunt" max_level="0" />
   </RequirementGroup>
   <Cost id="resource_stone" round="true">FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)*1.5)</Cost>
   <Cost id="resource_wood" round="true">FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)*1.5)</Cost>

@@ -191,6 +191,7 @@ class Map::Node < ActiveRecord::Base
     if self.leaf?
       if (recursive) 
         self.region.recount_settlements
+        self.region.recount_outposts
       end
       self.count_settlements = self.region.count_settlements
     else

@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.0.9
+# Version: 2.0.11
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 0,
-                    :build => 9,
+                    :build => 11,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -2904,9 +2904,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 2, 6 und 20.</p>",
+            :de_DE => "<p>Lange Zeit ist die Häuptlingshütte das einzig halbwegs befestigte Gebäude der Siedlung. Jeder Ausbau erhöht die Kampfkraft und das Lager der Siedlung.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 2, 6, 16 und 20.</p>",
   
-            :en_US => "<p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6 and 20.</p>",
+            :en_US => "<p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6, 16 and 20.</p>",
                 
           },
 
@@ -3013,7 +3013,7 @@ class GameRules::Rules
 
             :command_points => "GREATER(LEVEL,1)+GREATER(LEVEL,5)+GREATER(LEVEL,15)+EQUAL(LEVEL,20)",
 
-            :unlock_building_slots => "MIN(LEVEL,10)*4-1",
+            :unlock_building_slots => "MIN(MIN(LEVEL,10)*4-1,39)",
 
             :garrison_size_bonus => "1000",
 
@@ -4726,20 +4726,22 @@ class GameRules::Rules
             [
               
             {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
               :symbolic_id => 'building_copper_smelter',
               :id => 13,
               :type => 'building',
 
               :min_level => 2,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
@@ -5088,7 +5090,7 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75*1.1+0.5)",
+                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)",
               },
             
           ],
@@ -5189,7 +5191,7 @@ class GameRules::Rules
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75*1.1+0.5)",
+                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)",
               },
             
           ],
@@ -5291,7 +5293,7 @@ class GameRules::Rules
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*1.75*1.1+0.5)",
+                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)",
               },
             
           ],
@@ -5471,20 +5473,22 @@ class GameRules::Rules
             [
               
             {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
               :symbolic_id => 'building_copper_smelter',
               :id => 13,
               :type => 'building',
 
               :min_level => 7,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
@@ -5556,7 +5560,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Taktik und Befehl ist immer der gleiche: 'Haut sie feste!'</p><p>Der Kommandoposten erhöht auf den Leveln 1 und 20 die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>",
+            :de_DE => "<p>Ein schöner großer Sitz für den Häuptling und fertig ist der Kommandoposten. Taktik und Befehl ist immer der gleiche: 'Haut sie feste!'</p><p>Der Kommandoposten erhöht die maximale Anzahl an Armeen. Zudem wird die Produktionszeit aller Einheiten gesenkt.</p>",
   
             :en_US => "<p>A couple of branches stretched between three trees, a bit of bark and some leaves, and there's your awning. A nice big seat for the chief, and hey presto, you've got your command post. This is where tactics are decided and orders are given. Mostly the same order: “Hit 'em hard!” Having a command post increases a settlement's command points at Levels 1 and 20. It also decreases the time spent on training new units.</p>",
                 
@@ -5696,7 +5700,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Das Garnionsgebäude dient zur Unterbringung und Versorgung der Einheiten und Armeen. Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 25.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Das Garnionsgebäude dient zur Unterbringung und Versorgung der Einheiten und Armeen. Jedes Level der Garnison erhöht die maximale Anzahl der Einheiten in der Garnison und in den Armeen um 50.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
   
             :en_US => "<p>Well, who would have thought it? Field armies also benefit from the increased discipline that having a garrison provides. And that means that bigger armies can be deployed in the field.</p><p>This building can not be torn down.</p>",
                 
@@ -5835,8 +5839,8 @@ class GameRules::Rules
             [
               
             {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
               :type => 'building',
 
               :min_level => 10,
@@ -5844,11 +5848,13 @@ class GameRules::Rules
             },
 
             {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
+              :symbolic_id => 'building_haunt',
+              :id => 27,
               :type => 'building',
 
-              :min_level => 10,
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
@@ -6031,7 +6037,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Spezialisierungsgebäude, spezalisiert die Lagerstätte für militärische Zwecke. Nur ein Spezialisierungsgebäude pro Lagerstätte.</p><p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 50 pro Level auf Level 1-10 und 20 pro Level auf Level 11-20. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>",
+            :de_DE => "<p>Spezialisierungsgebäude, spezalisiert die Lagerstätte für militärische Zwecke. Nur ein Spezialisierungsgebäude pro Lagerstätte.</p><p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 50 pro Level. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>",
   
             :en_US => "<p>Specialization building, specializes your camp for military purposes. Only one specialization building per camp is possible. </p><p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 50 per level at Levels 1-10 and 20 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>",
                 

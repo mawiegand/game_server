@@ -2114,8 +2114,8 @@ ActiveRecord::Schema.define(:version => 20141210193335) do
     t.string   "owner_name"
     t.integer  "alliance_id"
     t.string   "alliance_tag"
-    t.integer  "count_outposts"
-    t.integer  "count_settlements"
+    t.integer  "count_outposts",     :default => 0, :null => false
+    t.integer  "count_settlements",  :default => 0, :null => false
     t.integer  "terrain_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -2743,6 +2743,7 @@ ActiveRecord::Schema.define(:version => 20141210193335) do
     t.integer  "test"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "tracked",                      :default => false, :null => false
   end
 
   create_table "shop_google_credit_offers", :force => true do |t|
@@ -2766,6 +2767,7 @@ ActiveRecord::Schema.define(:version => 20141210193335) do
     t.string   "google_order_id"
     t.decimal  "price"
     t.string   "currency"
+    t.boolean  "tracked",              :default => false, :null => false
   end
 
   create_table "shop_money_transactions", :force => true do |t|
