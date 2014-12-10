@@ -785,7 +785,7 @@ class Military::Army < ActiveRecord::Base
     if self.location.fortress?
       garrison = self.location.garrison_army
       
-      if !garrison.nil? && garrison.valid_attack_target_for_npc?
+      if !garrison.nil? && garrison.ai_valid_attack_target?
         prob = garrison.figthing? ? 0.9 : attack_prob
         if rand(1.0) < prob               # join a battle or start a new one
           ai_attack_army(garrison)
@@ -801,9 +801,11 @@ class Military::Army < ActiveRecord::Base
   end
   
   # NPC is allowed to attack players, if they are not already fighting
-  # or if the battle was started by the npc
+  # or if the battle was started by the npc. With a small probability,
+  # they might even join a fight that was started by a human player.
   def ai_valid_attack_target?
-    !owned_by_npc? && (battle.nil? || (!battle.initiator.nil? && battle.initiator.npc?))
+    join_prob = 0.10  # percentage to join a battle started by a human player
+    !owned_by_npc? && (battle.nil? || (!battle.initiator.nil? && battle.initiator.npc?) || rand(1.0) < join_prob)
   end
   
   def ai_move_from_fortress
@@ -836,27 +838,39 @@ class Military::Army < ActiveRecord::Base
     return    if     target_location.nil?
   
     Action::Military::MoveArmyAction.transaction do
-      self.lock!  # lock this army now in order to prevent another action to be executed in parallel
-  
-      self.consume_ap(1)  # consume one action point
+      self.lock!              # lock this army now in order to prevent 
+                              # another action to be executed in parallel
+
+      self.consume_ap(1)      # consume one action point
       self.target_location_id = target_location.id
       self.target_region_id   = target_location.region_id
-    
+
       move_duration = self.move_duration_to_target
-    
-      self.mode              = Military::Army::MODE_MOVING # 1: moving?
-      self.target_reached_at = DateTime.now.advance(:seconds => move_duration)
+
+      self.mode               = Military::Army::MODE_MOVING # 1: moving?
+      self.target_reached_at  = DateTime.now.advance(:seconds => move_duration)
 
       self.save!
+
+      action = self.build_movement_command({
+        starting_location_id: self.location_id,
+        starting_region_id:   self.region_id,
+        target_location_id:   target_location.id,
+        target_region_id:     target_location.region_id,
+        character_id:         self.owner_id,
+        target_reached_at:    self.target_reached_at,
+      })
+
+      action.save!
 
       #create entry for event table
       event = Event::Event.new(
         character_id:   owner_id,
-        execute_at:     target_reached_at,
+        execute_at:     self.target_reached_at,
         event_type:     "action_military_move_army_action",
-        local_event_id: id,
+        local_event_id: action.id,
       )
-            
+
       event.save!
     end
   end

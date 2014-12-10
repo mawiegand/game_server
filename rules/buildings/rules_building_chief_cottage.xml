@@ -37,7 +37,7 @@
     <CommandPoints>GREATER(LEVEL,1)+GREATER(LEVEL,5)+GREATER(LEVEL,15)+EQUAL(LEVEL,20)</CommandPoints>
     <UnlockQueue  queue="queue_buildings" />
     <DefenseBonus>0.5*LEVEL</DefenseBonus>
-    <UnlockBuildingSlots>MIN(LEVEL,10)*4-1</UnlockBuildingSlots>
+    <UnlockBuildingSlots>MIN(MIN(LEVEL,10)*4-1,39)</UnlockBuildingSlots>
   </Abilities>
 </Building>
   
