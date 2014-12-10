@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.0.10
+# Version: 2.0.11
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 0,
-                    :build => 10,
+                    :build => 11,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -1145,6 +1145,17 @@ class GameRules::Rules
               :min_level => 1,
 
               :max_level => 4,
+
+            },
+
+            {
+              :symbolic_id => 'building_barracks_2',
+              :id => 16,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
@@ -6037,9 +6048,9 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Spezialisierungsgebäude, spezalisiert die Lagerstätte für militärische Zwecke. Nur ein Spezialisierungsgebäude pro Lagerstätte.</p><p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 50 pro Level. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>",
+            :de_DE => "<p>Spezialisierungsgebäude, spezalisiert die Lagerstätte für militärische Zwecke. Nur ein Spezialisierungsgebäude pro Lagerstätte.</p><p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p><p>Das Feldlager erhöht die Garnison und die Armee um 70 pro Level. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>",
   
-            :en_US => "<p>Specialization building, specializes your camp for military purposes. Only one specialization building per camp is possible. </p><p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 50 per level at Levels 1-10 and 20 per level at Levels 11-20. At Level 10, a field camp also increases a settlement's command points by one.</p>",
+            :en_US => "<p>Specialization building, specializes your camp for military purposes. Only one specialization building per camp is possible. </p><p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 50 per level. At Level 10, a field camp also increases a settlement's command points by one.</p>",
                 
           },
 
@@ -6124,9 +6135,9 @@ class GameRules::Rules
 
             :command_points => "GREATER(LEVEL,9)",
 
-            :garrison_size_bonus => "100+50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
+            :garrison_size_bonus => "70*LEVEL",
 
-            :army_size_bonus => "50*LEVEL-GREATER(LEVEL,10)*(LEVEL-10)*30",
+            :army_size_bonus => "70*LEVEL",
 
           },
 
