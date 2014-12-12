@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141210075920) do
+ActiveRecord::Schema.define(:version => 20141210193335) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2765,6 +2765,8 @@ ActiveRecord::Schema.define(:version => 20141210075920) do
     t.datetime "updated_at"
     t.datetime "processed_at"
     t.string   "google_order_id"
+    t.decimal  "price"
+    t.string   "currency"
     t.boolean  "tracked",              :default => false, :null => false
   end
 

@@ -5,9 +5,11 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
 
   def create
 
-    order_id       = params['google_verify_order_action'] && params['google_verify_order_action']['order_id']
-    product_id     = params['google_verify_order_action'] && params['google_verify_order_action']['product_id']
-    payment_token  = params['google_verify_order_action'] && params['google_verify_order_action']['payment_token']
+    order_id            = params['google_verify_order_action'] && params['google_verify_order_action']['order_id']
+    product_id          = params['google_verify_order_action'] && params['google_verify_order_action']['product_id']
+    payment_token       = params['google_verify_order_action'] && params['google_verify_order_action']['payment_token']
+    price               = params['google_verify_order_action'] && params['google_verify_order_action']['price']
+    price_currency_code = params['google_verify_order_action'] && params['google_verify_order_action']['price_currency_code']
 
     if order_id.present? && product_id.present? && payment_token.present?
       transaction = Shop::GoogleMoneyTransaction.find_by_google_order_id(order_id)
@@ -82,7 +84,9 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
                       google_payment_token: payment_token,
                       google_product_id:    product_id,
                       credits:              offer.amount,
-                      processed_at:         Time.at(google_response['purchaseTimeMillis'].to_f/1000)
+                      processed_at:         Time.at(google_response['purchaseTimeMillis'].to_f/1000),
+                      price:                price,
+                      currency:             price_currency_code,
                   })
 
                   status = :ok
