@@ -5,6 +5,7 @@ class Effect::ConstructionEffect < ActiveRecord::Base
 
   CONSTRUCTION_EFFECT_TYPE_SHOP     = 0
   CONSTRUCTION_EFFECT_TYPE_ARTIFACT = 1
+  CONSTRUCTION_EFFECT_TYPE_CUSTOM   = 2 #
 
   after_create   :propagate_effect_creation
   before_destroy :propagate_effect_removal
@@ -45,6 +46,23 @@ class Effect::ConstructionEffect < ActiveRecord::Base
     end
 
     effect
+  end
+
+  def self.create_temporary_custom_effect(character, bonus, duration)
+    effect = Effect::ConstructionEffect.create({
+        bonus: bonus,
+        character_id: character.id,
+        type_id: Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_CUSTOM,
+        finished_at: Time.now + (duration * 3600),
+    })
+
+    # event for effect
+    effect.create_event(
+        character: character,
+        execute_at: effect.finished_at,
+        event_type: "construction_effect",
+        local_event_id: effect.id,
+    )
   end
 
   protected
