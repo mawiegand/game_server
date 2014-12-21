@@ -2514,9 +2514,9 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Logger Level 2",
+            :en_US => "Logger",
   
-            :de_DE => "Holzfäller Level 2",
+            :de_DE => "Holzfäller",
                 
           },
           :task => {
