@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.0.12
+# Version: 2.0.13
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 0,
-                    :build => 12,
+                    :build => 13,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -9493,7 +9493,7 @@ class GameRules::Rules
           {              #  0
             :id          => 0,
             :exp         => 0,
-            :settlement_points   => 1,
+            :settlement_points   => 9999,
             :minimum_sacred_rank => 0,
             :name        => {
               
