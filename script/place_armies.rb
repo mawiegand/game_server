@@ -34,13 +34,13 @@ armies_count.times do
     home_settlement_name: character.home_location.settlement.name,
     ap_max: 4,
     ap_present: 4,
-    ap_seconds_per_point:  Military::Army.regeneration_duration,
+    ap_seconds_per_point:  Military::Army.regeneration_base_duration,
     mode: Military::Army::MODE_IDLE,
     stance: 0,
     size_max: location.settlement.army_size_max || 1000,  # 1000 is default size
     exp: 0,
     rank: 0,
-    ap_next: DateTime.now.advance(:seconds =>  Military::Army.regeneration_duration),
+    ap_next: DateTime.now.advance(:seconds =>  Military::Army.regeneration_base_duration),
     garrison: false,
     kills: 0,
 	  victories: 0,
@@ -55,14 +55,16 @@ armies_count.times do
   army.alliance_color = character.alliance_color
   
   details = army.build_details()
-  
-  details['unit_clubbers'] = 500
+
+  puts 'Enter army size for army ' + counter.to_s + ':'
+  army_size = gets.chomp.to_i
+  details['unit_clubbers'] = army_size
   
   army.update_from_details
   
-  puts "Created army number " + counter.to_s if army.save
+  puts 'Created army number ' + counter.to_s if army.save
 
   counter += 1
 end
 
-puts "Finished."
+puts 'Finished.'
