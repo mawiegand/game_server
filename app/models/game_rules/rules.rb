@@ -9003,7 +9003,7 @@ class GameRules::Rules
   
           },
 
-          :amount      => '0',
+          :amount      => '1',
 
           :experience_production => '15*(MRANK+1)',
 
