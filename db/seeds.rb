@@ -18,8 +18,8 @@ user.partner = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   =  5
-NUM_SPARSE_LEVELS =  3
+NUM_FULL_LEVELS   =  3
+NUM_SPARSE_LEVELS =  2
 MAX_LEVEL         =  7
 
 ROUND_NAME   = "Round 8"
