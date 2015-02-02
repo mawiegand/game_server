@@ -449,7 +449,27 @@ class Military::Battle < ActiveRecord::Base
 
     return if loser_units_count == 0 || winner_units_count == 0
 
-    k = 1.0 * loser_units_count / winner_units_count
+    # calculate the proportion between starting size of loser and winner.
+    # if there were equally many units on both sides, this would be 1.
+    # if there were more units on the loser's side, it would be larger than
+    # one.
+    #
+    # the problem with the original implementation of k is, that if a garrison army 
+    # participated in the fight,
+    # k could be going to the thousands as in a settlement, you could continuously
+    # produce units and win the fight over time, although your army was much smaller
+    # in the beginning.
+    #
+    # we did two things to solve this issue:
+    # -- k cannot grow larger than max_k
+    # -- bonus experience for a victory cannot be larger than minimum of 1000 and 
+    #    max_bonus_factor * experience gained from losses.
+    #
+    max_k            = 4.0
+    safe_bonus       = 1000
+    max_bonus_factor = 5.0
+    
+    k = [loser_units_count / winner_units_count, max_k].min
 
     rounds.each do |round|
       winner_units_count_per_round = 0
@@ -475,15 +495,20 @@ class Military::Battle < ActiveRecord::Base
 
           logger.debug("calculate_character_results: winner_units_count = #{ winner_units_count }  winner_units_count_per_round = #{ winner_units_count_per_round } participant_units_per_round = #{ participant_units_per_round} loser_lost_units_count_per_round = #{ loser_lost_units_count_per_round } ")
           
-          divisor = winner_units_count_per_round < 0.01 ? 1 : winner_units_count_per_round
+          divisor = winner_units_count_per_round < 1 ? 1 : winner_units_count_per_round  # divisor will not make bonus larger --> was 0.01 before, which was conceptually wrong.
           
-          character_result.experience_gained = (character_result.experience_gained || 0) + alliance_fight_winner_bonus_penalty * (k || 0) * (GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] || 0) * (participant_units_per_round || 0) * (loser_lost_units_count_per_round || 0) / divisor
-          character_result.winner = true
+          bonus_experience = alliance_fight_winner_bonus_penalty * (k || 0) * (GAME_SERVER_CONFIG['battle_xp_winner_bonus_factor'] || 0) * (participant_units_per_round || 0) * (loser_lost_units_count_per_round || 0) / divisor
+          bonus_experience = if bonus_experience < safe_bonus
+            bonus_experience
+          else
+            [(character_result.experience_gained || 0) * max_bonus_factor, bonus_experience].min
+          end
+          
+          character_result.experience_gained = (character_result.experience_gained || 0) + bonus_experience
           character_result.save
         end
       end
       
-      # where's the xp of the loser calculated?
     end
   end
 
