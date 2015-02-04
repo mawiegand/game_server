@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 0.5.4
+# Version: 0.5.5
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 0, 
         :minor => 5, 
-        :build => 4, 
+        :build => 5, 
       },
       
       :production_test_weights => {
@@ -124,7 +124,7 @@ class Tutorial::Tutorial
             
             :en_US => "Give an order to a Level 1 Hunter Gatherer.",
   
-            :de_DE => "Gib einen Jäger und Sammler Level 1 in Auftrag.",
+            :de_DE => "Gib einen Jäger und Sammler in Auftrag.",
                 
           },
           :flavour => {
@@ -357,7 +357,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese, wenn Du Dich besser auskennst.",
+            :de_DE => "Nutze zu Beginn alle freien Bauplätze zur Produktion von Rohstoffen.",
   
             :en_US => "At the moment you should build your building at the small building slots.",
                 
@@ -579,7 +579,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen.",
+            :de_DE => "Im Profil kannst Du Deinen Fortschritt sehen und Dein Avatar gestalten.",
   
             :en_US => "In your profile you can see your progress and make other changes.",
                 
@@ -669,7 +669,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Nahkampfeinheiten.",
+            :de_DE => "Ausbildungsgelände verkürzen mit jedem Level die Rekrutierungszeit der Nahkampfeinheiten.",
   
             :en_US => "Having a Training Grounds speeds up the time it takes to recruit melee fighters.
       ",
@@ -750,7 +750,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a warrior.",
   
-            :de_DE => "Baue einen Krieger.",
+            :de_DE => "Rekrutiere einen Krieger.",
                 
           },
           :flavour => {
@@ -776,7 +776,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du kannst mehrere Einheiten gleichzeitig trainieren, gib einfach die gewünschte Anzahl an.",
+            :de_DE => "Du kannst mehrere Einheiten gleichzeitig trainieren. Gib einfach die gewünschte Anzahl an.",
   
             :en_US => "You can train several units at the same time. Just select the number of units you want.",
                 
@@ -955,7 +955,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern. Jeder Handelskarren kann zehn Ressourcen befördern.",
+            :de_DE => "Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern.",
   
             :en_US => "The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.",
                 
@@ -1061,7 +1061,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Deine Armeen generieren alle 3 Stunden einen Aktionspunkt.",
+            :de_DE => "Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt.",
   
             :en_US => "Below your army you'll see your available action points. Movements and attacks cost one action point and your army regenerates one action point every three hours.",
                 
@@ -1290,7 +1290,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Alle Deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und 'Betreten' klickst.",
+            :de_DE => "Alle Deine Siedlungen und Festungen kannst Du über das Gebäudesymbol betreten.",
   
             :en_US => "You can enter all of your settlements and fortresses by selecting them and clicking Enter.",
                 
@@ -1353,7 +1353,7 @@ class Tutorial::Tutorial
             
             :en_US => "Upgrade your chieftan's hut to level 3",
   
-            :de_DE => "Baue Deine Häuptlingshütte auf Level 3 aus, um neue Gebäude freizuschalten.",
+            :de_DE => "Baue Deine Häuptlingshütte auf Level 3 aus.",
                 
           },
           :flavour => {
@@ -1459,7 +1459,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a small hut.",
   
-            :de_DE => "Baue eine kleine Hütte.",
+            :de_DE => "Baue eine Kleine Hütte.",
                 
           },
           :flavour => {
@@ -1485,7 +1485,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Wenn Dir die Bauaufträge zu lange dauern, kannst Du mehr kleine Hütten bauen und weiter ausbauen.",
+            :de_DE => "Kleine Hütten verringern die Bauzeit aller Ausbauten.",
   
             :en_US => "choose a Hunter Gatherer. A window will open showing the current status of your development, including the next upgrade level. Press Upgrade to get started.",
                 
@@ -1900,7 +1900,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. und  Sie kann auch nur an ihrer Heimatsiedlung verstärkt werden.",
+            :de_DE => "Jede Armee benötigt einen Kommandopunkt in ihrer Heimatsiedlung, aus der sie erstellt wird.",
   
             :en_US => "Every army needs a command point in the settlement - that's where they receive their commands from. You can only reinforce your army at their home settlement.",
                 
@@ -2244,7 +2244,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.",
+            :de_DE => "Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.",
   
             :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
                 
@@ -2514,9 +2514,9 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Logger Level 2",
+            :en_US => "Logger",
   
-            :de_DE => "Holzfäller Level 2",
+            :de_DE => "Holzfäller",
                 
           },
           :task => {
@@ -3352,14 +3352,14 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Jetzt hast Du bereits 32 Deiner maximal 40 Bauplätze freigeschaltet.",
+            :de_DE => "Jetzt hast Du bereits 32 Deiner maximal 39 Bauplätze freigeschaltet.",
   
-            :en_US => "You've now got 32 of your 40 building slots.",
+            :en_US => "You've now got 32 of your 39 building slots.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Häuptlingshütte ausbauen bringt Dir weitere 4 Bauplätze.</p>",
+            :de_DE => "<p>Die Häuptlingshütte ausbauen bringt Dir weitere 3 Bauplätze.</p>",
   
             :en_US => "<p>At this level you'll get four new building slots.</p>",
                 
@@ -3558,14 +3558,14 @@ class Tutorial::Tutorial
             
             :de_DE => "Jetzt hat Deine Hauptsiedlung die volle Größe!",
   
-            :en_US => "You've got all 40 building slots now. Great job!",
+            :en_US => "You've got all 39 building slots now. Great job!",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mit Level 10 der Häuptlingshütte wirst Du alle 40 Bauplätze Deiner Hauptsiedlung freigeschaltet haben.</p>",
+            :de_DE => "<p>Mit Level 10 der Häuptlingshütte wirst Du alle 39 Bauplätze Deiner Hauptsiedlung freigeschaltet haben.</p>",
   
-            :en_US => "<p>When your chieftan's hut gets to Level 10, all 40 building slots will be unlocked.</p>",
+            :en_US => "<p>When your chieftan's hut gets to Level 10, all 39 building slots will be unlocked.</p>",
                 
           },          
           :reward_flavour => {
@@ -10252,7 +10252,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -10347,7 +10347,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -10442,7 +10442,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -10537,7 +10537,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -10632,7 +10632,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -10727,7 +10727,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -10822,7 +10822,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -10917,7 +10917,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -11012,7 +11012,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -11107,7 +11107,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -11202,7 +11202,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -11297,7 +11297,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -11392,7 +11392,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -11487,7 +11487,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -11582,7 +11582,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -11677,7 +11677,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -11772,7 +11772,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -11867,7 +11867,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -11962,7 +11962,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -12057,7 +12057,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -12152,7 +12152,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -12247,7 +12247,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
   
             :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
                 
@@ -12642,7 +12642,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Je größer die Taverne wird, desto mehr Aufträge werden verfügbar. Schau regelmäßig rein um zu sehen, was es zu tun gibt.",
+            :de_DE => "Je größer die Taverne ausgebaut wird, desto mehr Aufträge werden verfügbar.",
   
             :en_US => "The bigger the tavern becomes the more jobs you can do. Check it out regularly to see what's new.'",
                 
@@ -12825,7 +12825,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Ab jetzt kannst Du eine eigene Allianzen gründen. Lade Deine Freunde und benachbarte Spieler in Deine Allianz ein.",
+            :de_DE => "Spiele mit Deinen Freunden und benachbarte Spieler in einer Allianz.",
   
             :en_US => "From now on you can found your own alliance. Try getting other players and your friends to join you.",
                 
@@ -13185,7 +13185,7 @@ class Tutorial::Tutorial
             
             :en_US => "Log into the HTML version of Wack-A-Doo at https://wack-a-doo.com or into the facebook-App.",
   
-            :de_DE => "Logge Dich in die HTML-Version von Wack-A-Doo unter https://wack-a-doo.de oder in die Facebook-App von Wack-A-Doo ein.",
+            :de_DE => "Logge Dich unter https://wack-a-doo.de oder in die Facebook-App von Wack-A-Doo ein.",
                 
           },
           :flavour => {

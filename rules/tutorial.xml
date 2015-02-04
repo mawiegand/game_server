@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="0" minor="5" build="4" />
+    <Version major="0" minor="5" build="5" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -34,7 +34,7 @@
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
       <Task>Give an order to a Level 1 Hunter Gatherer.</Task>
-      <Task locale="de_DE">Gib einen Jäger und Sammler Level 1 in Auftrag.</Task>
+      <Task locale="de_DE">Gib einen Jäger und Sammler in Auftrag.</Task>
       <Description locale="de_DE">
         <p>Um einen Jäger und Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Jäger und Sammler.</p>
       </Description>
@@ -109,7 +109,7 @@
       </Description>
       <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort!</Flavor>
       <Flavor locale="en_US">Demigod?! I don´t think so. Look at my chieftan´s hut! You think I´m going to live in that? Ha! Change it immediately!</Flavor>
-      <RewardText locale="de_DE">Baue zunächst nur auf den kleinen Bauplätzen und spare Dir die großen Bauplätze in der Mitte. Nutze diese, wenn Du Dich besser auskennst.</RewardText>
+      <RewardText locale="de_DE">Nutze zu Beginn alle freien Bauplätze zur Produktion von Rohstoffen.</RewardText>
       <RewardText locale="en_US">At the moment you should build your building at the small building slots.</RewardText>
       <RewardFlavor locale="de_DE">Endlich fertig, hm? Hat ja ewig gedauert. Wie Belohnung?</RewardFlavor>
       <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn't it enough that your settlement is bigger and you can build a new building?
@@ -208,7 +208,7 @@
       </Flavor>
       <Flavor locale="en_US">We've gone through so much together already, but I still don't know who you are! What's your name?
       </Flavor>
-      <RewardText locale="de_DE">Im Profil kannst Du Deinen Fortschritt sehen und weitere Änderungen vornehmen.</RewardText>
+      <RewardText locale="de_DE">Im Profil kannst Du Deinen Fortschritt sehen und Dein Avatar gestalten.</RewardText>
       <RewardText locale="en_US">In your profile you can see your progress and make other changes.</RewardText>
       <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spaß miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US">Thanks. I think we're going to have loads of fun together!</RewardFlavor>
@@ -240,7 +240,7 @@
       </Flavor>
       <Flavor locale="en_US">You can build a Training Grounds but you're not doing it? If you build one now, I´ll give you something from my treasure chest.
       </Flavor>
-      <RewardText locale="de_DE">Das Ausbildungsgelände verkürzt auch die Rekrutierungszeit der Nahkampfeinheiten.</RewardText>
+      <RewardText locale="de_DE">Ausbildungsgelände verkürzen mit jedem Level die Rekrutierungszeit der Nahkampfeinheiten.</RewardText>
       <RewardText locale="en_US">Having a Training Grounds speeds up the time it takes to recruit melee fighters.
       </RewardText>
       <RewardFlavor locale="de_DE">Fertig? Na endlich! Da, Deine Belohnung, mehr gibt's nicht. Verschwinde.
@@ -266,7 +266,7 @@
       <Name>Your first unit</Name>
       <Name locale="de_DE">Deine erste Einheit</Name>
       <Task>Build a warrior.</Task>
-      <Task locale="de_DE">Baue einen Krieger.</Task>
+      <Task locale="de_DE">Rekrutiere einen Krieger.</Task>
       <Description locale="de_DE">
         <p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger aus und drücke auf 'Rekrutiere Krieger'.</p>
       </Description>
@@ -275,7 +275,7 @@
       </Description>
       <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
       <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
-      <RewardText locale="de_DE">Du kannst mehrere Einheiten gleichzeitig trainieren, gib einfach die gewünschte Anzahl an.</RewardText>
+      <RewardText locale="de_DE">Du kannst mehrere Einheiten gleichzeitig trainieren. Gib einfach die gewünschte Anzahl an.</RewardText>
       <RewardText locale="en_US">You can train several units at the same time. Just select the number of units you want.</RewardText>
       <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
       <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
@@ -338,7 +338,7 @@
       </Description>
       <Flavor locale="de_DE">Noch mag der Lagerplatz ausreichen, doch bald wirst Du mehr brauchen. Baue doch bitte ein Rohstofflager, damit wir mehr Platz haben.</Flavor>
       <Flavor locale="en_US">Doesn't it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!</Flavor>
-      <RewardText locale="de_DE">Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern. Jeder Handelskarren kann zehn Ressourcen befördern.</RewardText>
+      <RewardText locale="de_DE">Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern.</RewardText>
       <RewardText locale="en_US">The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.</RewardText>
       <RewardFlavor locale="de_DE">Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
       <RewardFlavor locale="en_US">At last I have enough space for all my shoe…er, things!</RewardFlavor>
@@ -371,7 +371,7 @@
       </Description>
       <Flavor locale="de_DE">Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten.</Flavor>
       <Flavor locale="en_US">An army can do more than just stand around, you know. It´s there to destroy the enemies of the tribe!</Flavor>
-      <RewardText locale="de_DE">Unter Deiner Armee siehst Du die verfügbaren Aktionspunkte. Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt. Deine Armeen generieren alle 3 Stunden einen Aktionspunkt.</RewardText>
+      <RewardText locale="de_DE">Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt.</RewardText>
       <RewardText locale="en_US">Below your army you'll see your available action points. Movements and attacks cost one action point and your army regenerates one action point every three hours.</RewardText>
       <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja.</RewardFlavor>
       <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you.</RewardFlavor>
@@ -461,7 +461,7 @@
       </Description>
       <Flavor locale="de_DE">Du findest Deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.</Flavor>
       <Flavor locale="en_US">Can't find your settlement? It's quite easy, if you'll let me explain.</Flavor>
-      <RewardText locale="de_DE">Alle Deine Siedlungen und Festungen kannst Du betreten, indem Du sie auswählst und 'Betreten' klickst.</RewardText>
+      <RewardText locale="de_DE">Alle Deine Siedlungen und Festungen kannst Du über das Gebäudesymbol betreten.</RewardText>
       <RewardText locale="en_US">You can enter all of your settlements and fortresses by selecting them and clicking Enter.</RewardText>
       <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">See? How easy was that.</RewardFlavor>
@@ -482,7 +482,7 @@
       <Name>An even bigger chieftain's hut</Name>
       <Name locale="de_DE">Eine noch größere Häuptlingshütte</Name>
       <Task>Upgrade your chieftan's hut to level 3</Task>
-      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 3 aus, um neue Gebäude freizuschalten.</Task>
+      <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 3 aus.</Task>
       <Description locale="de_DE">
         <p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>
       </Description>
@@ -515,7 +515,7 @@
       <Name>The small huts</Name>
       <Name locale="de_DE">Die kleinen Hütten</Name>
       <Task>Build a small hut.</Task>
-      <Task locale="de_DE">Baue eine kleine Hütte.</Task>
+      <Task locale="de_DE">Baue eine Kleine Hütte.</Task>
       <Description locale="de_DE">
         <p>Kleine Hütten verkürzen die Bauzeit von Gebäuden. Du kannst mehrere bauen, um die Bauzeit deutlich zu senken.</p>
       </Description>
@@ -524,7 +524,7 @@
       </Description>
       <Flavor locale="de_DE">Diese kleinen Hütten sind wirklich nützlich. Mehr Einwohner bedeuten auch mehr helfende Hände.</Flavor>
       <Flavor locale="en_US">Did you know that you can give your workers two orders at the same time? They can only work on one of them, but they'll keep the other order in mind. Why don't you try it? The happier your workers are, the faster they'll build things for you.</Flavor>
-      <RewardText locale="de_DE">Wenn Dir die Bauaufträge zu lange dauern, kannst Du mehr kleine Hütten bauen und weiter ausbauen.</RewardText>
+      <RewardText locale="de_DE">Kleine Hütten verringern die Bauzeit aller Ausbauten.</RewardText>
       <RewardText locale="en_US">choose a Hunter Gatherer. A window will open showing the current status of your development, including the next upgrade level. Press Upgrade to get started.</RewardText>
       <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done! Your workers are happy and they're building things faster because of it.</RewardFlavor>
@@ -655,7 +655,7 @@
       </Description>
       <Flavor locale="de_DE">Um Einheiten zu bewegen, müssen sie aus der Garnison in eine Armee verschoben werden.</Flavor>
       <Flavor locale="en_US">You can't move units that are in the garrison. To move units, you first have to relocate them from the garrison into an army.</Flavor>
-      <RewardText locale="de_DE">Jede Armee benötigt einen Kommandopunkt in der Siedlung, aus der sie erstellt wird. und  Sie kann auch nur an ihrer Heimatsiedlung verstärkt werden.</RewardText>
+      <RewardText locale="de_DE">Jede Armee benötigt einen Kommandopunkt in ihrer Heimatsiedlung, aus der sie erstellt wird.</RewardText>
       <RewardText locale="en_US">Every army needs a command point in the settlement - that's where they receive their commands from. You can only reinforce your army at their home settlement.</RewardText>
       <RewardFlavor locale="de_DE">Das soll eine Armee sein? Ziemlich klein, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">Call that an army? Rather small, don't you think?</RewardFlavor>
@@ -785,7 +785,7 @@
       </Description>
       <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut, wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
       <Flavor locale="en_US">Hey, your settlements are looking fine, but it would be even better if they produced more resources. Could you do something about that?</Flavor>
-      <RewardText locale="de_DE">Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</RewardText>
+      <RewardText locale="de_DE">Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert.</RewardText>
       <RewardText locale="en_US">The fortress takes up to 15% tax on the resource production of each settlement in the region.</RewardText>
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
@@ -1108,13 +1108,13 @@
       <Task>Upgrade of the chieftan's hut to level 9.</Task>
       <Task locale="de_DE">Erweitere die Häuptlingshütte auf Level 9.</Task>
       <Description locale="de_DE">
-        <p>Die Häuptlingshütte ausbauen bringt Dir weitere 4 Bauplätze.</p>
+        <p>Die Häuptlingshütte ausbauen bringt Dir weitere 3 Bauplätze.</p>
       </Description>
       <Description locale="en_US">
         <p>At this level you'll get four new building slots.</p>
       </Description>
-      <Flavor locale="de_DE">Jetzt hast Du bereits 32 Deiner maximal 40 Bauplätze freigeschaltet.</Flavor>
-      <Flavor locale="en_US">You've now got 32 of your 40 building slots.</Flavor>
+      <Flavor locale="de_DE">Jetzt hast Du bereits 32 Deiner maximal 39 Bauplätze freigeschaltet.</Flavor>
+      <Flavor locale="en_US">You've now got 32 of your 39 building slots.</Flavor>
       <RewardText locale="de_DE">Jetzt hast Du den Kürschner freigeschaltet.</RewardText>
       <RewardText locale="en_US">You've now got a furrier.</RewardText>
       <RewardFlavor locale="de_DE">Wunderbar, selbst der Chef ist fast zufrieden.</RewardFlavor>
@@ -1170,13 +1170,13 @@
       <Task>Upgrade of the chieftan's hut to level 10.</Task>
       <Task locale="de_DE">Erweitere die Häuptlingshütte auf Level 10.</Task>
       <Description locale="de_DE">
-        <p>Mit Level 10 der Häuptlingshütte wirst Du alle 40 Bauplätze Deiner Hauptsiedlung freigeschaltet haben.</p>
+        <p>Mit Level 10 der Häuptlingshütte wirst Du alle 39 Bauplätze Deiner Hauptsiedlung freigeschaltet haben.</p>
       </Description>
       <Description locale="en_US">
-        <p>When your chieftan's hut gets to Level 10, all 40 building slots will be unlocked.</p>
+        <p>When your chieftan's hut gets to Level 10, all 39 building slots will be unlocked.</p>
       </Description>
       <Flavor locale="de_DE">Jetzt hat Deine Hauptsiedlung die volle Größe!</Flavor>
-      <Flavor locale="en_US">You've got all 40 building slots now. Great job!</Flavor>
+      <Flavor locale="en_US">You've got all 39 building slots now. Great job!</Flavor>
       <RewardText locale="de_DE"><p>Die Häuptlingshütte kann bis Level 20 ausgebaut werden. Jeder Level steigert den Kampfbonus.</p>
         <p>Auf Level 20 bekommst Du einen weiteren Kommandopunkt für eine zusätzliche Armee.</p></RewardText>
       <RewardText locale="en_US"><p>The maximum level for a chieftan's hut is Level 20. Each level increases the battle bonus you can get. At 20 you'll receive a command point for another army.</p></RewardText>
@@ -3274,7 +3274,7 @@
       <Task>Increase the resource production of one settlement to 120 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 120 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3304,7 +3304,7 @@
       <Task>Increase the resource production of one settlement to 210 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Rohstoffproduktion einer Siedlung auf 210 Rohstoffpunkte nach Steuern. </Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3334,7 +3334,7 @@
       <Task>Increase the resource production of one settlement to 420 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 420 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3364,7 +3364,7 @@
       <Task>Increase the resource production of one settlement to 750 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 750 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3394,7 +3394,7 @@
       <Task>Increase the resource production of one settlement to 1,300 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 1.300 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3424,7 +3424,7 @@
       <Task>Increase the resource production of one settlement to 1,900 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 1.900 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3454,7 +3454,7 @@
       <Task>Increase the resource production of one settlement to 2,720 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 2.720 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3484,7 +3484,7 @@
       <Task>Increase the resource production of one settlement to 3,500 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 3.500 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3514,7 +3514,7 @@
       <Task>Increase the resource production of one settlement to 4,340 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 4.340 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3544,7 +3544,7 @@
       <Task>Increase the resource production of one settlement to 5,540 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 5.540 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3574,7 +3574,7 @@
       <Task>Increase the resource production of one settlement to 6,900 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 6.900 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3604,7 +3604,7 @@
       <Task>Increase the resource production of one settlement to 8,420 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 8.420 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3634,7 +3634,7 @@
       <Task>Increase the resource production of one settlement to 10,100 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 10.100 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3664,7 +3664,7 @@
       <Task>Increase the resource production of one settlement to 11,940 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 11.940 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3694,7 +3694,7 @@
       <Task>Increase the resource production of one settlement to 13,940 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 13.940 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3724,7 +3724,7 @@
       <Task>Increase the resource production of one settlement to 16,100 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 16.100 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3754,7 +3754,7 @@
       <Task>Increase the resource production of one settlement to 18,420 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 18.420 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3784,7 +3784,7 @@
       <Task>Increase the resource production of one settlement to 20,900 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 20.900 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3814,7 +3814,7 @@
       <Task>Increase the resource production of one settlement to 23,540 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 23.540 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3844,7 +3844,7 @@
       <Task>Increase the resource production of one settlement to 26,340 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 26.340 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3874,7 +3874,7 @@
       <Task>Increase the resource production of one settlement to 29,300 resource points after taxes.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 29.300 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -3904,7 +3904,7 @@
       <Task>Increase the resource production of one settlement to 32,400 resource points.</Task>
       <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 32.420 Rohstoffpunkte nach Steuern.</Task>
       <Description locale="de_DE">
-        <p>Alle drei Rohstoffe Stein, Holz und Fell sind je einen Rohstoffpunkt wert. Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+        <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
       </Description>
       <Description locale="en_US">
         <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
@@ -4981,7 +4981,7 @@
       </Description>
       <Flavor locale="de_DE">Krempel die Ärmel hoch, wir haben Arbeit zu verrichten.</Flavor>
       <Flavor locale="en_US">Pull up those sleeves, looks like we got work to do.</Flavor>
-      <RewardText locale="de_DE">Je größer die Taverne wird, desto mehr Aufträge werden verfügbar. Schau regelmäßig rein um zu sehen, was es zu tun gibt.</RewardText>
+      <RewardText locale="de_DE">Je größer die Taverne ausgebaut wird, desto mehr Aufträge werden verfügbar.</RewardText>
       <RewardText locale="en_US">The bigger the tavern becomes the more jobs you can do. Check it out regularly to see what's new.'</RewardText>
       <RewardFlavor locale="de_DE">Nach einem Auftrag gibt es doch nichts besseres als ein kühles Bier.</RewardFlavor>
       <RewardFlavor locale="en_US">After we finish that assignment, let's go back to the tavern for a drink.</RewardFlavor>
@@ -5043,7 +5043,7 @@
       <Flavor locale="de_DE">Das Lagerfeuer brennt. Aber mal ehrlich, was sollen denn die anderen Halbgöttern von so einem kleinen Feuer halten?</Flavor>
       <Flavor locale="en_US">This fire is nice and all, but not nearly big enough, dont you think?
       </Flavor>
-      <RewardText locale="de_DE">Ab jetzt kannst Du eine eigene Allianzen gründen. Lade Deine Freunde und benachbarte Spieler in Deine Allianz ein.</RewardText>
+      <RewardText locale="de_DE">Spiele mit Deinen Freunden und benachbarte Spieler in einer Allianz.</RewardText>
       <RewardText locale="en_US">From now on you can found your own alliance. Try getting other players and your friends to join you.</RewardText>
       <RewardFlavor locale="de_DE">Schau nur wie es lodert, das nenn ich mal ein Feuer.</RewardFlavor>
       <RewardFlavor locale="en_US">Now thats what I call a fire!</RewardFlavor>
@@ -5147,7 +5147,7 @@
       <Name>Cross-Platform</Name>
       <Name locale="de_DE">Cross-Platform</Name>
       <Task>Log into the HTML version of Wack-A-Doo at https://wack-a-doo.com or into the facebook-App.</Task>
-      <Task locale="de_DE">Logge Dich in die HTML-Version von Wack-A-Doo unter https://wack-a-doo.de oder in die Facebook-App von Wack-A-Doo ein.</Task>
+      <Task locale="de_DE">Logge Dich unter https://wack-a-doo.de oder in die Facebook-App von Wack-A-Doo ein.</Task>
       <Description locale="de_DE">
         <p>Du kannst den selben Wack-A-Doo Account auch über Deinen Webbrowser oder im Spiel anmelden und dort das selbe Spiel spielen!</p>
       </Description>
