@@ -5,6 +5,7 @@
   <Name lang="de_DE">Stinkender Stall</Name>
   <Name lang="en_US">Smelly Barn</Name>
   <Description lang="de_DE">
+      <p>Ermöglicht Rekrutierung von Berittenen Einheiten in der Heimatsiedlung und in Lagerstätten.</p>
     <p>Kein Ort in der Siedlung stinkt so sehr wie der Stall. Nicht weiter verwunderlich, werden hier doch Straußen, Säbelzahntiger, kleine Dinosaurier und als Maskottchen eine Katze gehalten. Die Ausbildung der Reiter umfasst nur den Umgang mit den Tieren. Waffen führen die Reiter nicht, sie reiten auf einer!</p>
   <p>Größere Ställe stinken noch stärker, beschleunigen aber auch die Ausbildung und können noch stärkere Tiere abrichten.</p>
   </Description>

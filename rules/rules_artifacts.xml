@@ -54,7 +54,7 @@
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>15</ArtifactAmount>
+    <ArtifactAmount>5</ArtifactAmount>
     <Effects>
       <ProductionBonus id="resource_wood" domain="character">0.15</ProductionBonus>
       <ProductionBonus id="resource_wood" domain="alliance">0.05</ProductionBonus>
@@ -83,7 +83,7 @@
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>2</ArtifactAmount>
+    <ArtifactAmount>5</ArtifactAmount>
     <Effects>
       <ProductionBonus id="resource_fur" domain="character">0.15</ProductionBonus>
       <ProductionBonus id="resource_fur" domain="alliance">0.05</ProductionBonus>
@@ -112,7 +112,7 @@
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>1</ArtifactAmount>
+    <ArtifactAmount>0</ArtifactAmount>
     <ExperienceProduction>15*(MRANK+1)</ExperienceProduction>
     <Effects>
     </Effects>
@@ -141,7 +141,7 @@
       <InitiationTime shortenable="true">FLOOR((168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))/2)</InitiationTime>
     </Initiation>
     <ArtifactAmount>5</ArtifactAmount>
-    <ExperienceProduction>MRANK</ExperienceProduction>
+    <ExperienceProduction>MRANK+1</ExperienceProduction>
     <Effects>
     </Effects>
   </Artifact>
@@ -168,10 +168,67 @@
       <InitiationCost id="resource_fur" round="true">1000*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))</InitiationTime>
     </Initiation>
-    <ArtifactAmount>10</ArtifactAmount>
+    <ArtifactAmount>5</ArtifactAmount>
     <Effects>
       <ConstructionBonus domain="character">0.5</ConstructionBonus>
       <ConstructionBonus domain="alliance">0.15</ConstructionBonus>
     </Effects>
   </Artifact>
+  <Artifact id="artifact_6">
+    <Name lang="de_DE">Abrissbirne</Name>
+    <Name lang="en_US">Demolition Ball</Name>
+    <Description lang="de_DE">
+      <p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf zur Tüftler-Werkstatt!'</p>
+    </Description>
+    <Description lang="en_US">
+      <p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>
+    </Description>
+    <Flavour lang="de_DE">Haben die Götter diese Kugel verloren? Ich liebe Rätsel!</Flavour>
+    <Flavour lang="en_US">Harder than stone and what are those strange red signs painted on it? It's a mystery.</Flavour>
+    <Initiation>
+      <Description lang="de_DE">
+        <p>Die Tüftler der Werksatt haben das Artefakt entschlüsselt und eine großartige Apparatur gebaut. Mit der sogenannten Abrissbirne kann Stein deutlich schneller abgebrochen werden, davon profitiert sogar die gesamte Allianz.</p>
+      </Description>
+      <Description>
+        <p>The Tinkers figured it out! With this new construction we can smash rocks more easily thank before, surely this technology will spread to our allies as well.</p>
+      </Description>
+      <InitiationCost id="resource_stone" round="true">1500*LEVEL</InitiationCost>
+      <InitiationCost id="resource_wood" round="true">1500*LEVEL</InitiationCost>
+      <InitiationCost id="resource_fur" round="true">1500*LEVEL</InitiationCost>
+      <InitiationTime shortenable="true">(FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5))))*1.5</InitiationTime>
+    </Initiation>
+    <ArtifactAmount>0</ArtifactAmount>
+    <Effects>
+      <ProductionBonus id="resource_stone" domain="character">0.5</ProductionBonus>
+      <ConstructionBonus domain="alliance">0.25</ConstructionBonus>
+    </Effects>
+    </Artifact>
+    <Artifact id="artifact_7">
+      <Name lang="de_DE">Abrissbirne</Name>
+      <Name lang="en_US">Demolition Ball</Name>
+      <Description lang="de_DE">
+        <p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf zur Tüftler-Werkstatt!'</p>
+      </Description>
+      <Description lang="en_US">
+        <p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>
+      </Description>
+      <Flavour lang="de_DE">Haben die Götter diese Kugel verloren? Ich liebe Rätsel!</Flavour>
+      <Flavour lang="en_US">Harder than stone and what are those strange red signs painted on it? It's a mystery.</Flavour>
+      <Initiation>
+        <Description lang="de_DE">
+          <p>Die Tüftler der Werksatt haben das Artefakt entschlüsselt und eine großartige Apparatur gebaut. Mit der sogenannten Abrissbirne kann Stein deutlich schneller abgebrochen werden, davon profitiert sogar die gesamte Allianz.</p>
+        </Description>
+        <Description>
+          <p>The Tinkers figured it out! With this new construction we can smash rocks more easily thank before, surely this technology will spread to our allies as well.</p>
+        </Description>
+        <InitiationCost id="resource_stone" round="true">1500*LEVEL</InitiationCost>
+        <InitiationCost id="resource_wood" round="true">1500*LEVEL</InitiationCost>
+        <InitiationCost id="resource_fur" round="true">1500*LEVEL</InitiationCost>
+        <InitiationTime shortenable="true">(FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5))))*1.5</InitiationTime>
+      </Initiation>
+      <ArtifactAmount>0</ArtifactAmount>
+      <Effects>
+        <ConstructionBonus domain="character">0.6</ConstructionBonus>
+      </Effects>
+    </Artifact>
 </ArtifactTypes>

@@ -16,7 +16,7 @@
     <p> lustiger Flavour Text hier </p>
   </Flavour>
     <Flavour lang="de_DE">
-    <pFür Tüftler zählt keine Muskelkraft, unglaubliche Kriegsmaschine werden nur von unglaublichen Nerds erdacht. Ab und zu sind die Belagerungsmaschinen sogar brauchbar.</p>
+    <p>Für Tüftler zählt keine Muskelkraft, unglaubliche Kriegsmaschine werden nur von unglaublichen Nerds erdacht. Ab und zu sind die Belagerungsmaschinen sogar brauchbar.</p>
   </Flavour>
   <Population>2.5*POW(LEVEL,2)-2.5*LEVEL+5</Population>
   <Requirement id="building_fortress_fortification" min_level="21" />  

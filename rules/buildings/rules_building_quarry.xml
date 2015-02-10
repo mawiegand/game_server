@@ -5,6 +5,7 @@
   <Name lang="de_DE">Steinbruch</Name>
   <Name lang="en_US">Quarry</Name>
   <Description lang="de_DE">
+        <p>Ermöglicht den Steinabbau.</p>
     <p>Durch eine aus Sicht der Steinzeit komplizierte Kette von Arbeitsvorgängen werden im Steinbruch Steine gewonnen.</p>
     <p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für noch schnelleren Abbau auch bei den anderen Steinbrüchen.</p>
   </Description>
