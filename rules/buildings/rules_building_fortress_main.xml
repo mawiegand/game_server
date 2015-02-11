@@ -5,6 +5,7 @@
   <Name lang="de_DE">Festungsanlagen</Name>
   <Name lang="en_US">Fortification</Name>
   <Description lang="de_DE">
+    <p>Die Festungsanlagen erhöhen den Verteidigungsbonus der Festung.</p>
     <p>Von der Festungsanlage aus kann die gesammte Region überblickt werden. Das macht die Festung ideal für millitärische Aktionen und das eintreiben von Steuern.</p>
     <p>Die Festungsanlagen liefern einen zusätzlichen Kommandopunkt auf Level 10.</p>
   </Description>

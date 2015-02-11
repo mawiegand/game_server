@@ -25,7 +25,7 @@
   <ActionPoints>4</ActionPoints>
   <Initiative>16</Initiative>
   <Attack>5</Attack>
-  <CriticalDamage chance="0.01">1</CriticalDamage>
+  <CriticalDamage chance="0.02">2</CriticalDamage>
   <Armor>3</Armor>
   <Overrunnable>true</Overrunnable>
   <Hitpoints>70</Hitpoints>
