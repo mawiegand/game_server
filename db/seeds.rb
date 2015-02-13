@@ -18,12 +18,12 @@ user.partner = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   =  5
-NUM_SPARSE_LEVELS =  3
-MAX_LEVEL         =  10
+NUM_FULL_LEVELS   =  4
+NUM_SPARSE_LEVELS =  2
+MAX_LEVEL         =  8
 
-ROUND_NAME   = "Round 7"
-ROUND_NUMBER =  7
+ROUND_NAME   = "Round 8"
+ROUND_NUMBER =  8
 
 NPC_MIN_UNITS = 12
 NPC_MAX_UNITS = 120

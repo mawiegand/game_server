@@ -25,12 +25,7 @@ gem 'jabber-bot'
 gem 'sampl', '~> 0.0.2'     # PSIORI event tracking
 
 
-group :production do
-  gem 'pg'
-	gem 'awe_native_extensions', '>= 0.0.16', :git => "git@github.com:wackadoo/awe_native_extensions.git"
-end
-
-group :ticker_development do
+group :production, :ticker_development do
   gem 'pg'
 	gem 'awe_native_extensions', '>= 0.0.16', :git => "git@github.com:wackadoo/awe_native_extensions.git"
 end
