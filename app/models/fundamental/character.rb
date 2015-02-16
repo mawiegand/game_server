@@ -236,24 +236,24 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def redeem_xp_start_bonus(xp_bonus)
-    bonus = xp_bonus
-   # if bonus['client_identifier'] == GAME_SERVER_CONFIG['scope']    # <--- this has changed meaning; doesn't make sense anymore.
+    bonus = ActiveSupport::JSON.decode(xp_bonus)
+   # if bonus['client_identifier'] == GAME_SERVER_CONFIG['scope']
       logger.info "REDEEM XP GIFT FOR CHARACTER #{self.identifier}: #{bonus['bonus'].to_f}"
       self.experience_effects.create({
         type_id:      Effect::ExperienceEffect::EXPERIENCE_EFFECT_TYPE_START_GIFT,
         bonus:        bonus['bonus'].to_f,
         origin_id:    self.id,
       })
-   #  end
+  #  end
   end
 
   def redeem_start_resources(start_resources)
-    list = start_resources
-  #  if list['client_identifier'] == GAME_SERVER_CONFIG['scope']   # <--- this has changed meaning; doesn't make sense anymore.
+    list = ActiveSupport::JSON.decode(start_resources)
+    #if list['client_identifier'] == GAME_SERVER_CONFIG['scope']
       (list['resources'] || []).each do |resource|
         self.resource_pool.add_resource_atomically(resource['resource_type_id'].to_i, resource['amount'].to_f)
       end
-  #  end
+    #end
   end
   
   def identity_provider_access
@@ -421,15 +421,15 @@ class Fundamental::Character < ActiveRecord::Base
               logger.info "START RESOURCE MODIFICATOR #{ parsed_properties[:start_resource_modificator] }."
             end
             unless character_property['data']['start_resource_bonus'].blank?
-              parsed_properties[:start_resource_bonuses] << character_property['data']['start_resource_bonus'] # start_resource_bonus is saved as serialized hash, not as string
+              parsed_properties[:start_resource_bonuses] << character_property['data']['start_resource_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
               logger.info "START RESOURCE BONUS #{ parsed_properties[:start_resource_bonuses].inspect }."
             end
             unless character_property['data']['start_resources'].blank?
-              parsed_properties[:start_resources] << character_property['data']['start_resources'] # start_resource_bonus is saved as serialized hash, not as string
+              parsed_properties[:start_resources] << character_property['data']['start_resources'].to_json # start_resource_bonus is saved as serialized hash, not as string
               logger.info "START RESOURCES #{ parsed_properties[:start_resources].inspect }."
             end
             unless character_property['data']['start_xp_bonus'].blank?
-              parsed_properties[:start_xp_bonuses] << character_property['data']['start_xp_bonus'] # start_resource_bonus is saved as serialized hash, not as string
+              parsed_properties[:start_xp_bonuses] << character_property['data']['start_xp_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
               logger.info "START XP BONUS #{ parsed_properties[:start_xp_bonuses].inspect }."
             end
           end
