@@ -22,7 +22,7 @@ NUM_FULL_LEVELS   =  4
 NUM_SPARSE_LEVELS =  2
 MAX_LEVEL         =  8
 
-ROUND_NAME   = "Round 8"
+ROUND_NAME   = "Sunrise"
 ROUND_NUMBER =  8
 
 NPC_MIN_UNITS = 12
