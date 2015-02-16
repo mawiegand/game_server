@@ -242,40 +242,10 @@ class Fundamental::CharactersController < ApplicationController
       
       # set character properties to default values
       start_resource_modificator = 1.0
-      start_resource_bonuses = []
-      start_xp_bonuses = []
 
       # fetch persistent character properties from identity provider
-      response = identity_provider_access.fetch_identity_properties(request_access_token.identifier)
-      logger.info "START RESPONSE #{ response.blank? ? 'BLANK' : response.inspect }."
-      
-      if response.code == 200
-        properties = response.parsed_response
-        logger.info "START PROPERTIES #{ properties.blank? ? 'BLANK' : properties.inspect }."
-
-        unless properties.empty?
-          properties.each do |character_property|
-            if !character_property.nil? && !character_property['data'].blank?
-              unless character_property['data']['start_resource_modificator'].blank?
-                property_value = character_property['data']['start_resource_modificator'].to_f
-                logger.info "START PROPERTY_VALUE #{ property_value }."
-                start_resource_modificator = property_value if property_value > 0
-                logger.info "START RESOURCE MODIFICATOR #{ start_resource_modificator }."
-              end
-              unless character_property['data']['start_resource_bonus'].blank?
-                start_resource_bonuses << character_property['data']['start_resource_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
-                logger.info "START RESOURCE BONUS #{ start_resource_bonuses.inspect }."
-              end
-              unless character_property['data']['start_xp_bonus'].blank?
-                start_xp_bonuses << character_property['data']['start_xp_bonus'].to_json # start_resource_bonus is saved as serialized hash, not as string
-                logger.info "START XP BONUS #{ start_xp_bonuses.inspect }."
-              end
-            end
-          end
-        end
-      end
-
-      logger.info "START RESOURCE MODIFICATOR FINAL #{ start_resource_modificator }."
+      character_properties = Fundamental::Character.fetch_identity_properties_for_identifier(request_access_token.identifier)
+      logger.info "START RESPONSE #{ character_properties.blank? ? 'BLANK' : character_properties.inspect }."
       
       if !current_character.save
         # raise InternalServerError.new('Could not create new character.') 
@@ -299,6 +269,11 @@ class Fundamental::CharactersController < ApplicationController
       current_character.base_location_id = location.id              # TODO is this the home_location_id?
       current_character.base_region_id = location.region_id
       current_character.base_node_id = location.region.node_id
+
+      start_resource_modificator = (character_properties[:start_resource_modificator] || "0").to_f
+      start_resource_modificator = start_resource_modificator > 0 ? start_resource_modificator : 0
+      
+      logger.info "START RESOURCE MODIFICATOR FINAL #{ start_resource_modificator }."
 
       current_character.resource_pool.fill_with_start_resources_transaction(start_resource_modificator)
       
