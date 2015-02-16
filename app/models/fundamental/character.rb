@@ -236,7 +236,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def redeem_xp_start_bonus(xp_bonus)
-    bonus = ActiveSupport::JSON.decode(xp_bonus)
+    bonus = xp_bonus
    # if bonus['client_identifier'] == GAME_SERVER_CONFIG['scope']    # <--- this has changed meaning; doesn't make sense anymore.
       logger.info "REDEEM XP GIFT FOR CHARACTER #{self.identifier}: #{bonus['bonus'].to_f}"
       self.experience_effects.create({
@@ -248,7 +248,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def redeem_start_resources(start_resources)
-    list = ActiveSupport::JSON.decode(start_resources)
+    list = start_resources
   #  if list['client_identifier'] == GAME_SERVER_CONFIG['scope']   # <--- this has changed meaning; doesn't make sense anymore.
       (list['resources'] || []).each do |resource|
         self.resource_pool.add_resource_atomically(resource['resource_type_id'].to_i, resource['amount'].to_f)
