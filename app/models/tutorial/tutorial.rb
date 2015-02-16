@@ -419,14 +419,13 @@ class Tutorial::Tutorial
             
             :en => {
               :subject => 'Welcome to Wack-A-Doo!',
-              :body => "<h2>Welcome to Round 3 of Wack-A-Doo's Public Beta.</h2>
-          <p>Wack-A-Doo has finished the first rounds of its Public Beta, but the game is still in development.<br/>
-          As before, we will be adding lots of new content and mechanics during this round of public Beta, trying to improve your game experience. <br/>
-          Prepare to be surprised!</p>
+              :body => "<h2>Welcome to the Wack-A-Doo community!</h2>
+          <p>Prepare to be surprised!</p>
           <p>We suggest that you follow the tutorial and complete the subsequent quests in order to learn the basics of Wack-A-Doo. Other players will also be happy to answer your questions, both in general chat and in your alliances.</p>
           <p>You can find detailed instructions and on overview of the game mechanics in our in-game encyclopedia an in our wiki:</p>
           <p style='margin-left: 32px;'><a href='http://wiki.wack-a-doo.com/Main_Page' target='_blank'>Wack-A-Doo Wiki</a> (under construction!); <a href='http://wiki.wack-a-doo.com/Tech_Tree' target='_blank'>Tech-Tree</a> ; <a href='http://wiki.wack-a-doo.com/Unit_Tech_Tree' target='_blank'>Unit Overview</a></p>
           <p>We invite you to register and help keep our Wiki up to date.</p>
+          <p>Wack-A-Doo can be played on a wide variety of devices, iOS, browser and Android. We invite you to try all versions for yourself.</p>
           <p>Please report all bugs you find and give us feedback. We want to hear your opinion on the game, in items of both what works and what works and what could be improved. Please use our forum if you want to give feedback:</p>
           <p style='margin-left: 32px;'><a href='http://forum.uga-agga.de' target='_blank'>Wack-A-Doo at the Uga Agga Forum</a></p>
           <p>We hope you have lots of fun with Wack-A-Doo.</p>
@@ -449,7 +448,7 @@ class Tutorial::Tutorial
           </ul></p>
           <p>
           Du kannst Wack-A-Doo im Browser unter <a href='https://wack-a-doo.de' target='_blank'>https://wack-a-doo.de</a> und auf Deinem
-          iPhone, iPad und iPod touch mit unserer App spielen. Eine Anleitung, wie Du Deinen Account portabel machst, findest Du hier:
+          iPhone, iPad und iPod touch oder deinem Android Gerät mit unserer App spielen. Eine Anleitung, wie Du Deinen Account portabel machst, findest Du hier:
           <a href='https://ios.wack-a-doo.com/de/encyclopedia/account' target='_blank'>Account portabel machen</a>.</p>
           <p>Wir wünschen Dir viel Spaß bei Wack-A-Doo.</p>
           <p>Das Wack-A-Doo Team</p>",
