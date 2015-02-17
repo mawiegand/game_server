@@ -14,7 +14,7 @@ require 'util/formula'
 Rails.logger.info "NPC PLACEMENT: Start creating NPC armies..."
 
 region_factor     = 0.25   # at least num_regions * region_factor npc armies
-max_region_factor = 1.00   # controlls the number of npcs in the case where there are more armies than regions*region_factor
+max_region_factor = 1.00   # controls the number of npcs in the case where there are more armies than regions*region_factor
 
 num_armies        = Military::Army.non_npc.non_garrison.count
 avg_size_armies   = Military::Army.non_npc.non_garrison.average(:size_present)  || 1.0
