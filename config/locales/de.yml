@@ -41,7 +41,9 @@ de:
           <p>Wir wünschen Dir viel Spass an Wack-a-Doo.</p>\n
           <p>Das Wack-a-Doo Team</p>\n"
       battle_report:
-        subject: "Kampfbericht: <%= @battle.region.name %>"
+        winner: "gewannst"
+        loser: "verlorst"
+        subject: "Du <%= @winner_or_loser %> in <%= @battle.region.name %>"
         title: Kampfbericht
         initial_sentance: Ein Kampf ist ausgebrochen durch einen Angriff von <%= get_character_name(@battle.initiator) %> auf <%= get_character_name(@battle.opponent) %> zum Zeitpunkt <%= @battle.started_at %>
         no_rounds: Da es keine Gegenwehr gab, fanden keine Kampfrunden statt.

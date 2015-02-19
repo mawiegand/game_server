@@ -141,6 +141,9 @@ class Ticker::BattleHandler::BattleSummary
 		@message_template = ERB.new(File.open("app/views/military/battle_messages/report.html.erb", "rb:UTF-8").read)
 		@unit_summary_template = ERB.new(File.open("app/views/military/battle_messages/_unit_summary.html.erb", "rb:UTF-8").read)
 
+		@winner_or_loser = ((!my_faction_summary.nil? && my_faction_summary.faction.winner) ?
+				                  I18n.translate('application.messaging.battle_report.winner') : I18n.translate('application.messaging.battle_report.loser'))
+		
 		Messaging::Message.generate_battle_report_message(character, render(I18n.translate('application.messaging.battle_report.subject')), @message_template.result(binding))
 	
 		#reset the local the old one  
