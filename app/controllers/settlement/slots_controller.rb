@@ -20,15 +20,19 @@ class Settlement::SlotsController < ApplicationController
       raise NotFoundError.new('Page Not Found') if @settlement_settlement.nil?
       raise ForbiddenError.new('Access forbidden.') unless staff? || (!current_character.nil? && current_character.id == @settlement_settlement.owner_id)
 
-      logger.debug "Fall!"
-
       if !request.env['HTTP_IF_MODIFIED_SINCE'].blank? && !use_restkit_api?
-        if_modified_since = Time.parse(request.env['HTTP_IF_MODIFIED_SINCE'])    
-        @settlement_slots = Settlement::Slot.where("(updated_at > ? OR (bubble_next_test_at < ? AND building_id is not null AND level > 0)) AND settlement_id = ?", if_modified_since, Time.now, params[:settlement_id])
+        if_modified_since = Time.parse(request.env['HTTP_IF_MODIFIED_SINCE'])
+        if GAME_SERVER_CONFIG['slot_bubbles_enabled']
+          @settlement_slots = Settlement::Slot.where("(updated_at > ? OR (bubble_next_test_at < ? AND building_id is not null AND level > 0)) AND settlement_id = ?", if_modified_since, Time.now, params[:settlement_id])
+        else
+          @settlement_slots = Settlement::Slot.where("updated_at > ? AND settlement_id = ?", if_modified_since, params[:settlement_id])
+        end
         updated_bubble = false
-        @settlement_slots.each do |slot|
-          updated_bubble = slot.update_bubble_if_needed || updated_bubble
-          slot.save
+        if GAME_SERVER_CONFIG['slot_bubbles_enabled']
+          @settlement_slots.each do |slot|
+            updated_bubble = slot.update_bubble_if_needed || updated_bubble
+            slot.save
+          end
         end
         unless updated_bubble
           @max_settlement_slot = Settlement::Slot.maximum(:updated_at, :conditions => ['settlement_id = ?', params[:settlement_id]])
@@ -36,9 +40,11 @@ class Settlement::SlotsController < ApplicationController
         end
       else
         @settlement_slots = Settlement::Slot.where(settlement_id: params[:settlement_id])
-        @settlement_slots.each do |slot|
-          slot.update_bubble_if_needed
-          slot.save
+        if GAME_SERVER_CONFIG['slot_bubbles_enabled']
+          @settlement_slots.each do |slot|
+            slot.update_bubble_if_needed
+            slot.save
+          end
         end
       end
     else 

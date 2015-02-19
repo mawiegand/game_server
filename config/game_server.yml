@@ -82,6 +82,8 @@ defaults: &defaults
   
   settler_start_quest_id: 135
 
+  slot_bubbles_enabled: false # enable creating and updating slot bubbles (also enables redeem action)
+
 development:
   <<: *defaults
 

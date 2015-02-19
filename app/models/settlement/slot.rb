@@ -277,7 +277,7 @@ class Settlement::Slot < ActiveRecord::Base
     raise BadRequestError.new('Tried to construct a building in a slot that is not empty.') unless self.empty?
     self.building_id = building_id_to_build
     self.level = 1
-    self.generate_new_bubble(Time.now)
+    self.generate_new_bubble(Time.now) if GAME_SERVER_CONFIG['slot_bubbles_enabled']
     propagate_change(building_id_to_build, 0, 1)
     propagate_experience(building_id_to_build, building_id_to_build, 0, 1)
     self.save    
@@ -295,7 +295,7 @@ class Settlement::Slot < ActiveRecord::Base
   def upgrade_building
     raise BadRequestError.new('Tried to upgrade a non-existend building.') if self.building_id.nil?
     self.level = self.level + 1
-    self.generate_new_bubble(Time.now)
+    self.generate_new_bubble(Time.now) if GAME_SERVER_CONFIG['slot_bubbles_enabled']
     propagate_change(self.building_id, self.level - 1, self.level)
     propagate_experience(self.building_id, self.building_id, self.level - 1, self.level)
     self.save
@@ -435,7 +435,7 @@ class Settlement::Slot < ActiveRecord::Base
   def redeem_bubble
 
     # check for resource id
-    if !self.bubble_resource_id.nil?
+    if !self.bubble_resource_id.nil? && GAME_SERVER_CONFIG['slot_bubbles_enabled']
       # redeem resources
       resources = []
       resources[self.bubble_resource_id] = self.bubble_amount
