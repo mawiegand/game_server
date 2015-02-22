@@ -523,6 +523,8 @@ class Fundamental::Character < ActiveRecord::Base
       character.base_node_id = location.region.node_id
 
       character.resource_pool.fill_with_start_resources_transaction(resource_modificator)   
+      
+      character.set_can_redeem_retention_bonus_at
 
       character
     end
@@ -534,7 +536,7 @@ class Fundamental::Character < ActiveRecord::Base
     unless npc
       character.create_inbox
       character.create_outbox
-      character.create_archive
+      character.create_archive            
 
       # sending of welcome message is now triggered by a tutorial quest
       # Messaging::Message.create_welcome_message(character)
@@ -605,6 +607,8 @@ class Fundamental::Character < ActiveRecord::Base
       end
 
       Military::Army.create_settler_at_location(location, character)
+      
+      character.set_can_redeem_retention_bonus_at
 
       character
     end
@@ -616,7 +620,7 @@ class Fundamental::Character < ActiveRecord::Base
     unless npc
       character.create_inbox
       character.create_outbox
-      character.create_archive
+      character.create_archive            
 
       # sending of welcome message is now triggered by a tutorial quest
       # Messaging::Message.create_welcome_message(character)
@@ -661,6 +665,54 @@ class Fundamental::Character < ActiveRecord::Base
     displayed_at   = self.tutorial_state.displayed_tutorial_completion_notice_at
     return false     if displayed_at.nil?
     return displayed_at < self.created_at + 1.days
+  end
+  
+  def set_can_redeem_retention_bonus_at
+    self.can_redeem_retention_bonus_at = (self.created_at + 1.days).change({ hour: 21, min: 0, sec: 0 })
+  end
+  
+  def can_redeem_retention_bonus?
+    return false if self.can_redeem_retention_bonus_at.nil? || self.can_redeem_retention_bonus_at == 0
+    return Time.now > self.can_redeem_retention_bonus_at
+  end
+  
+  def redeem_retention_bonus
+    #rewards = quest[:rewards] || {} # TODO
+    rewards = { :resource_rewards => [ {:amount => 100, :resource => 'resource_stone'} ] }
+    raise BadRequestError.new('no rewards found in for retention bonus') if rewards.nil?
+    resource_rewards = rewards[:resource_rewards]
+
+    # calc resources
+    resources = {}
+    unless resource_rewards.nil?
+      resource_rewards.each do |resource_reward|
+        raise BadRequestError.new('no resource_reward given') if resource_reward.nil?
+        
+        amount = resource_reward[:amount]
+        raise BadRequestError.new('no amount given') if amount.nil?
+        raise BadRequestError.new('amount is negative') if amount < 0
+        
+        resource_symbolic_id = resource_reward[:resource]
+        raise BadRequestError.new('no resource id given') if resource_symbolic_id.nil?
+        
+        resource_type = nil
+        GameRules::Rules.the_rules().resource_types.each do |type|
+          logger.debug "grant_resources: #{type[:symbolic_id]} #{resource_symbolic_id}" 
+          if type[:symbolic_id].to_s == resource_symbolic_id.to_s
+            resource_type = type
+            break
+          end
+        end
+        raise BadRequestError.new("no resource type found for resource symbolic id #{resource_symbolic_id}") if resource_type.nil?
+        
+        resources[resource_type[:id]] = (resources[resource_type[:id]] || 0) + amount
+      end
+    end
+                
+    # reward resources
+    self.resource_pool.add_resources_transaction(resources)        
+    
+    self.can_redeem_retention_bonus_at = 0
   end
   
   
