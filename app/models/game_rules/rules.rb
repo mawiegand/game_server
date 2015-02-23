@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.0.17
+# Version: 2.0.18
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 0,
-                    :build => 17,
+                    :build => 18,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -9139,7 +9139,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Die Entdeckung des Kessels sorgte für ebenso große Begeisterung wie Verwunderung. Alle wußten was mit dem Gegenstand zu tun war, nichtmal die Tüftler fanden sinnvolle Ausreden den Kessel für sich zu vereinnahmen.</p>",
   
-            :en_US => "<p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>",
+            :en_US => "<p>The cauldrons discovery led to general enthusiasm among the people. After all, everyone knew what this one was good for.</p>",
   
           },
           :flavour => {
@@ -9189,7 +9189,7 @@ class GameRules::Rules
 
             :de_DE => "<p>Es ist noch Suppe da! Ein deftiges Essen beschleunigt die Produktion und den Ausbau.</p>",
   
-            :en_US => "<p>The Tinkers figured it out! With this new construction we can smash rocks more easily thank before, surely this technology will spread to our allies as well.</p>",
+            :en_US => "<p>Soup's up! A hearty meal helps gathering and building.</p>",
   
           },
           :initiation_costs => {
@@ -9215,7 +9215,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Als Oscar den Neandertaler endlich besiegt hatte, viel ihm diese staubige Ding vor die Füße. Oscar wußte nichts damit anzufangen und brachte das Teil direkt in die Tüftler-Werkstatt.</p>",
   
-            :en_US => "<p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>",
+            :en_US => "<p>After Oscar had finaly slain the neandertal he discovered this amongst his belongings. Not knowing what it was good for he gave it to the tinkerers.</p>",
   
           },
           :flavour => {
