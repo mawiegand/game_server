@@ -21,7 +21,7 @@ class Action::Shop::GoogleVerifyOrderActionsController < ApplicationController
 
         if config.access_token_valid?
           # Hack
-          if Rails.env.production?
+          if false # && Rails.env.production?
             query = {
                 package_name: Google::AppConfig::PACKAGE_NAME,
                 product_id: product_id,
