@@ -264,6 +264,7 @@ GameServer::Application.routes.draw do
           resources :displayed_premium_expiration_actions,      :only => [ :create ]
           resources :user_content_report_actions,               :only => [ :create ]
           resources :connect_facebook_actions,                  :only => [ :create ]    
+          resources :redeem_retention_bonus_actions,            :only => [ :create ]    
         end
         namespace :construction do
           resources :finish_job_actions    
