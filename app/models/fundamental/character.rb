@@ -671,6 +671,10 @@ class Fundamental::Character < ActiveRecord::Base
     self.can_redeem_retention_bonus_at = (self.created_at + 1.days).change({ hour: 21, min: 0, sec: 0 })
   end
   
+  def set_can_redeem_retention_bonus_at_login
+    self.can_redeem_retention_bonus_at = (Time.now + 1.days).change({ hour: 21, min: 0, sec: 0 })
+  end
+  
   def can_redeem_retention_bonus?
     return false if self.can_redeem_retention_bonus_at.nil? || self.can_redeem_retention_bonus_at == 0
     return Time.now > self.can_redeem_retention_bonus_at
