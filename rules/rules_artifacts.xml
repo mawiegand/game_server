@@ -175,10 +175,10 @@
     </Effects>
   </Artifact>
   <Artifact id="artifact_6">
-    <Name lang="de_DE">Abrissbirne</Name>
-    <Name lang="en_US">Demolition Ball</Name>
+    <Name lang="de_DE">Kessel Buntes</Name>
+    <Name lang="en_US">Coloured Caldron</Name>
     <Description lang="de_DE">
-      <p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf zur Tüftler-Werkstatt!'</p>
+      <p>Die Entdeckung des Kessels sorgte für ebenso große Begeisterung wie Verwunderung. Alle wußten was mit dem Gegenstand zu tun war, nichtmal die Tüftler fanden sinnvolle Ausreden den Kessel für sich zu vereinnahmen.</p>
     </Description>
     <Description lang="en_US">
       <p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>
@@ -187,7 +187,7 @@
     <Flavour lang="en_US">Harder than stone and what are those strange red signs painted on it? It's a mystery.</Flavour>
     <Initiation>
       <Description lang="de_DE">
-        <p>Die Tüftler der Werksatt haben das Artefakt entschlüsselt und eine großartige Apparatur gebaut. Mit der sogenannten Abrissbirne kann Stein deutlich schneller abgebrochen werden, davon profitiert sogar die gesamte Allianz.</p>
+        <p>Es ist noch Suppe da! Ein deftiges Essen beschleunigt die Produktion und den Ausbau.</p>
       </Description>
       <Description>
         <p>The Tinkers figured it out! With this new construction we can smash rocks more easily thank before, surely this technology will spread to our allies as well.</p>
@@ -198,16 +198,19 @@
       <InitiationTime shortenable="true">(FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5))))*1.5</InitiationTime>
     </Initiation>
     <ArtifactAmount>0</ArtifactAmount>
+    <ExperienceProduction>0.75*(MRANK+1)</ExperienceProduction>
     <Effects>
       <ProductionBonus id="resource_stone" domain="character">0.5</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="character">0.5</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="character">0.5</ProductionBonus>
       <ConstructionBonus domain="alliance">0.25</ConstructionBonus>
     </Effects>
     </Artifact>
     <Artifact id="artifact_7">
-      <Name lang="de_DE">Abrissbirne</Name>
-      <Name lang="en_US">Demolition Ball</Name>
+      <Name lang="de_DE">Staubfänger</Name>
+      <Name lang="en_US">Dust Catcher</Name>
       <Description lang="de_DE">
-        <p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf zur Tüftler-Werkstatt!'</p>
+        <p>Als Oscar den Neandertaler endlich besiegt hatte, viel ihm diese staubige Ding vor die Füße. Oscar wußte nichts damit anzufangen und brachte das Teil direkt in die Tüftler-Werkstatt.</p>
       </Description>
       <Description lang="en_US">
         <p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>
@@ -216,10 +219,10 @@
       <Flavour lang="en_US">Harder than stone and what are those strange red signs painted on it? It's a mystery.</Flavour>
       <Initiation>
         <Description lang="de_DE">
-          <p>Die Tüftler der Werksatt haben das Artefakt entschlüsselt und eine großartige Apparatur gebaut. Mit der sogenannten Abrissbirne kann Stein deutlich schneller abgebrochen werden, davon profitiert sogar die gesamte Allianz.</p>
+          <p>Die Tüftler haben tagelang an dem Ding rumgefummelt. Jetzt glänzt das Ding immerhin. Da es offensichtlich keinen Nutzen hat, wurde es nach seinem nutzlosem Finder 'Oscar' benannt.</p>
         </Description>
         <Description>
-          <p>The Tinkers figured it out! With this new construction we can smash rocks more easily thank before, surely this technology will spread to our allies as well.</p>
+          <p>The Tinkers figured it out! The thing glitters in gold.</p>
         </Description>
         <InitiationCost id="resource_stone" round="true">1500*LEVEL</InitiationCost>
         <InitiationCost id="resource_wood" round="true">1500*LEVEL</InitiationCost>
@@ -227,7 +230,11 @@
         <InitiationTime shortenable="true">(FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5))))*1.5</InitiationTime>
       </Initiation>
       <ArtifactAmount>0</ArtifactAmount>
+      <ExperienceProduction>0.5*(MRANK+1)</ExperienceProduction>
       <Effects>
+        <ProductionBonus id="resource_stone" domain="alliance">0.5</ProductionBonus>
+        <ProductionBonus id="resource_wood" domain="alliance">0.5</ProductionBonus>
+        <ProductionBonus id="resource_fur" domain="alliance">0.5</ProductionBonus>
         <ConstructionBonus domain="character">0.6</ConstructionBonus>
       </Effects>
     </Artifact>

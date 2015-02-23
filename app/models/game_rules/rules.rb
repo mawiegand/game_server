@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.0.16
+# Version: 2.0.17
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 0,
-                    :build => 16,
+                    :build => 17,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -9125,19 +9125,19 @@ class GameRules::Rules
           :initiation_time => "FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5)))",
 
         },              #   END OF Steinbrösler
-        {               #   Abrissbirne
+        {               #   Kessel Buntes
           :id          => 6, 
           :symbolic_id => :artifact_6,
           :name        => {
             
-            :de_DE => "Abrissbirne",
+            :de_DE => "Kessel Buntes",
   
-            :en_US => "Demolition Ball",
+            :en_US => "Coloured Caldron",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf zur Tüftler-Werkstatt!'</p>",
+            :de_DE => "<p>Die Entdeckung des Kessels sorgte für ebenso große Begeisterung wie Verwunderung. Alle wußten was mit dem Gegenstand zu tun war, nichtmal die Tüftler fanden sinnvolle Ausreden den Kessel für sich zu vereinnahmen.</p>",
   
             :en_US => "<p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>",
   
@@ -9152,10 +9152,24 @@ class GameRules::Rules
 
           :amount      => '0',
 
+          :experience_production => '0.75*(MRANK+1)',
+
           :production_bonus  => [
 
             {
               :resource_id        => 0,
+              :domain_id          => 0,
+              :bonus              => 0.5,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 0,
+              :bonus              => 0.5,
+            },
+
+            {
+              :resource_id        => 2,
               :domain_id          => 0,
               :bonus              => 0.5,
             },
@@ -9173,7 +9187,7 @@ class GameRules::Rules
 
           :description_initiated => {
 
-            :de_DE => "<p>Die Tüftler der Werksatt haben das Artefakt entschlüsselt und eine großartige Apparatur gebaut. Mit der sogenannten Abrissbirne kann Stein deutlich schneller abgebrochen werden, davon profitiert sogar die gesamte Allianz.</p>",
+            :de_DE => "<p>Es ist noch Suppe da! Ein deftiges Essen beschleunigt die Produktion und den Ausbau.</p>",
   
             :en_US => "<p>The Tinkers figured it out! With this new construction we can smash rocks more easily thank before, surely this technology will spread to our allies as well.</p>",
   
@@ -9186,20 +9200,20 @@ class GameRules::Rules
           },
           :initiation_time => "(FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5))))*1.5",
 
-        },              #   END OF Abrissbirne
-        {               #   Abrissbirne
+        },              #   END OF Kessel Buntes
+        {               #   Staubfänger
           :id          => 7, 
           :symbolic_id => :artifact_7,
           :name        => {
             
-            :de_DE => "Abrissbirne",
+            :de_DE => "Staubfänger",
   
-            :en_US => "Demolition Ball",
+            :en_US => "Dust Catcher",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mammut-Knut war sehr überrascht als er den Neandertalern eine große schwarze Kugel mit komischer Bemalung und lockeren Schnur entreißen konnte. Nach einer kurzen Untersuchung mit seiner Fackel bei der die Schnur kurzzeitig Feuer fing wurde Knut seinem Ruf als kluger Kopf gerecht: 'Auf zur Tüftler-Werkstatt!'</p>",
+            :de_DE => "<p>Als Oscar den Neandertaler endlich besiegt hatte, viel ihm diese staubige Ding vor die Füße. Oscar wußte nichts damit anzufangen und brachte das Teil direkt in die Tüftler-Werkstatt.</p>",
   
             :en_US => "<p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>",
   
@@ -9214,6 +9228,30 @@ class GameRules::Rules
 
           :amount      => '0',
 
+          :experience_production => '0.5*(MRANK+1)',
+
+          :production_bonus  => [
+
+            {
+              :resource_id        => 0,
+              :domain_id          => 2,
+              :bonus              => 0.5,
+            },
+
+            {
+              :resource_id        => 1,
+              :domain_id          => 2,
+              :bonus              => 0.5,
+            },
+
+            {
+              :resource_id        => 2,
+              :domain_id          => 2,
+              :bonus              => 0.5,
+            },
+
+          ],
+
           :construction_bonus  => [
 
             {
@@ -9225,9 +9263,9 @@ class GameRules::Rules
 
           :description_initiated => {
 
-            :de_DE => "<p>Die Tüftler der Werksatt haben das Artefakt entschlüsselt und eine großartige Apparatur gebaut. Mit der sogenannten Abrissbirne kann Stein deutlich schneller abgebrochen werden, davon profitiert sogar die gesamte Allianz.</p>",
+            :de_DE => "<p>Die Tüftler haben tagelang an dem Ding rumgefummelt. Jetzt glänzt das Ding immerhin. Da es offensichtlich keinen Nutzen hat, wurde es nach seinem nutzlosem Finder 'Oscar' benannt.</p>",
   
-            :en_US => "<p>The Tinkers figured it out! With this new construction we can smash rocks more easily thank before, surely this technology will spread to our allies as well.</p>",
+            :en_US => "<p>The Tinkers figured it out! The thing glitters in gold.</p>",
   
           },
           :initiation_costs => {
@@ -9238,7 +9276,7 @@ class GameRules::Rules
           },
           :initiation_time => "(FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5))))*1.5",
 
-        },              #   END OF Abrissbirne
+        },              #   END OF Staubfänger
       ],                # END OF ARTIFACT TYPES
 
 # ## DIPLOMACY RELATION TYPES ########################################################
