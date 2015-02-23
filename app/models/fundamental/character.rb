@@ -677,8 +677,8 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def redeem_retention_bonus
-    #rewards = quest[:rewards] || {} # TODO
-    rewards = { :resource_rewards => [ {:amount => 100, :resource => 'resource_stone'} ] }
+    # TODO: fetch from rules / XML
+    rewards = { :resource_rewards => [ {:amount => 8000, :resource => 'resource_stone'} ] }
     raise BadRequestError.new('no rewards found in for retention bonus') if rewards.nil?
     resource_rewards = rewards[:resource_rewards]
 
