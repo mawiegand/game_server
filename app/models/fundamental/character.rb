@@ -62,7 +62,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :alliance_leader_candidate, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "candidate_id", :inverse_of => :candidate
   has_one  :alliance_leader_vote, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "voter_id", :inverse_of => :voter
 
-  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at, :can_redeem_retention_bonus_at,    :as => :default
+  attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at, :can_redeem_retention_bonus_at, :can_redeem_retention_bonus_start_time,    :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
   attr_readable *readable_attributes(:ally), :cannot_join_alliance_until, :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :start_variant, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :divine_supporter, :image_set_id, :platinum_lifetime, :moved_at, :gc_player_id, :gc_rejected_at, :gc_player_id_connected_at, :fb_player_id, :fb_rejected_at, :fb_player_id_connected_at, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
@@ -668,11 +668,13 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def set_can_redeem_retention_bonus_at
-    self.can_redeem_retention_bonus_at = (self.created_at + 1.days).change({ hour: 21, min: 0, sec: 0 })
+    self.can_redeem_retention_bonus_start_time = self.created_at
+    self.can_redeem_retention_bonus_at = (self.created_at + 1.days).change({ hour: 20, min: 0, sec: 0 })
   end
   
   def set_can_redeem_retention_bonus_at_login
-    self.can_redeem_retention_bonus_at = (Time.now + 1.days).change({ hour: 21, min: 0, sec: 0 })
+    self.can_redeem_retention_bonus_start_time = Time.now
+    self.can_redeem_retention_bonus_at = (Time.now + 1.days).change({ hour: 20, min: 0, sec: 0 })
   end
   
   def can_redeem_retention_bonus?
