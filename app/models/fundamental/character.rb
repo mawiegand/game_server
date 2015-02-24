@@ -719,7 +719,7 @@ class Fundamental::Character < ActiveRecord::Base
     # reward resources
     self.resource_pool.add_resources_transaction(resources)        
     
-    self.can_redeem_retention_bonus_at = nil
+    self.can_redeem_retention_bonus_start_time = nil
     self.save
   end
   
