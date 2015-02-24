@@ -668,8 +668,7 @@ class Fundamental::Character < ActiveRecord::Base
   def init_retention_bonus
     if !self.npc? && self.can_redeem_retention_bonus_at.nil?
       self.can_redeem_retention_bonus_start_time = DateTime.now
-      #self.can_redeem_retention_bonus_at = (DateTime.now + 1.days).change({ hour: 20, min: 0, sec: 0 })
-      self.can_redeem_retention_bonus_at = DateTime.now + 2.minutes
+      self.can_redeem_retention_bonus_at = (DateTime.now + 1.days).change({ hour: 20, min: 0, sec: 0 }) 
     end
   end
   
@@ -680,8 +679,8 @@ class Fundamental::Character < ActiveRecord::Base
   
   def redeem_retention_bonus
     # TODO: fetch from rules / XML
-    rewards = { :resource_rewards => [ {:amount => 4000, :resource => 'resource_stone'},
-    {:amount => 4000, :resource => 'resource_wood'}, {:amount => 2000, :resource => 'resource_fur'} ] }
+    rewards = { :resource_rewards => [ {:amount => 8000, :resource => 'resource_stone'},
+    {:amount => 8000, :resource => 'resource_wood'}, {:amount => 8000, :resource => 'resource_fur'} ] }
     raise BadRequestError.new('no rewards found in for retention bonus') if rewards.nil?
     resource_rewards = rewards[:resource_rewards]
 
