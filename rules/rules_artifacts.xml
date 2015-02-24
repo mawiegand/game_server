@@ -181,7 +181,7 @@
       <p>Die Entdeckung des Kessels sorgte für ebenso große Begeisterung wie Verwunderung. Alle wußten was mit dem Gegenstand zu tun war, nichtmal die Tüftler fanden sinnvolle Ausreden den Kessel für sich zu vereinnahmen.</p>
     </Description>
     <Description lang="en_US">
-      <p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>
+      <p>The cauldrons discovery led to general enthusiasm among the people. After all, everyone knew what this one was good for.</p>
     </Description>
     <Flavour lang="de_DE">Haben die Götter diese Kugel verloren? Ich liebe Rätsel!</Flavour>
     <Flavour lang="en_US">Harder than stone and what are those strange red signs painted on it? It's a mystery.</Flavour>
@@ -190,7 +190,7 @@
         <p>Es ist noch Suppe da! Ein deftiges Essen beschleunigt die Produktion und den Ausbau.</p>
       </Description>
       <Description>
-        <p>The Tinkers figured it out! With this new construction we can smash rocks more easily thank before, surely this technology will spread to our allies as well.</p>
+        <p>Soup's up! A hearty meal helps gathering and building.</p>
       </Description>
       <InitiationCost id="resource_stone" round="true">1500*LEVEL</InitiationCost>
       <InitiationCost id="resource_wood" round="true">1500*LEVEL</InitiationCost>
@@ -213,7 +213,7 @@
         <p>Als Oscar den Neandertaler endlich besiegt hatte, viel ihm diese staubige Ding vor die Füße. Oscar wußte nichts damit anzufangen und brachte das Teil direkt in die Tüftler-Werkstatt.</p>
       </Description>
       <Description lang="en_US">
-        <p>A smooth black boulder with a piece of string growing out of it. Noone knows what its supposed to be good for. Maybe the Tinkers can make sense of it</p>
+        <p>After Oscar had finaly slain the neandertal he discovered this amongst his belongings. Not knowing what it was good for he gave it to the tinkerers.</p>
       </Description>
       <Flavour lang="de_DE">Haben die Götter diese Kugel verloren? Ich liebe Rätsel!</Flavour>
       <Flavour lang="en_US">Harder than stone and what are those strange red signs painted on it? It's a mystery.</Flavour>
