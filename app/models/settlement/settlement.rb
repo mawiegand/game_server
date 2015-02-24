@@ -494,7 +494,7 @@ class Settlement::Settlement < ActiveRecord::Base
   # - the present owner is in the same alliance as character (this is to easily allow for correcting a wrong player taking over a fortress in a war)
   # - the present owner is in an alliance that is at war with the character's alliance
   def can_be_taken_over_by?(character)
-    can_be_taken_over? && character.can_takeover_settlement? && (self.owner.nil? || self.owner.npc? || self.alliance.nil? || self.alliance == character.alliance || self.alliance.is_at_war_with?(character.alliance))
+    can_be_taken_over? && character.can_takeover_settlement? && (self.owner.nil? || self.owner.npc? || self.alliance.nil? || character.alliance.nil? || self.alliance == character.alliance || self.alliance.is_at_war_with?(character.alliance))
   end
   
   ############################################################################

@@ -669,7 +669,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   def set_can_redeem_retention_bonus_at
     self.can_redeem_retention_bonus_start_time = self.created_at
-    #self.can_redeem_retention_bonus_at = (self.created_at + 1.days).change({ hour: 20, min: 0, sec: 0 })
+    #self.can_redeem_retention_bonus_at = (self.created_at + 1.days).change({ hour: 20, min: 0, sec: 0 })    
     self.can_redeem_retention_bonus_at = self.created_at + 2.minutes
   end
   
@@ -680,13 +680,14 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def can_redeem_retention_bonus?
-    return false if self.can_redeem_retention_bonus_at.nil? || self.can_redeem_retention_bonus_at == 0
+    return false if self.can_redeem_retention_bonus_at.nil?
     return Time.now > self.can_redeem_retention_bonus_at
   end
   
   def redeem_retention_bonus
     # TODO: fetch from rules / XML
-    rewards = { :resource_rewards => [ {:amount => 8000, :resource => 'resource_stone'} ] }
+    rewards = { :resource_rewards => [ {:amount => 4000, :resource => 'resource_stone'},
+    {:amount => 4000, :resource => 'resource_wood'}, {:amount => 2000, :resource => 'resource_fur'} ] }
     raise BadRequestError.new('no rewards found in for retention bonus') if rewards.nil?
     resource_rewards = rewards[:resource_rewards]
 
@@ -720,7 +721,8 @@ class Fundamental::Character < ActiveRecord::Base
     # reward resources
     self.resource_pool.add_resources_transaction(resources)        
     
-    self.can_redeem_retention_bonus_at = 0
+    self.can_redeem_retention_bonus_start_time = nil
+    self.save
   end
   
   
