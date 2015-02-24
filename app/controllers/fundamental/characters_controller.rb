@@ -324,7 +324,7 @@ class Fundamental::CharactersController < ApplicationController
       current_character.last_login_at = DateTime.now
       current_character.increment(:login_count)
       if current_character.can_redeem_retention_bonus_at.nil?
-        current_character.set_can_redeem_retention_bonus_at_login
+        current_character.set_can_redeem_retention_bonus_at
       end
       current_character.save
       
