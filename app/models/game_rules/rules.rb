@@ -422,6 +422,28 @@ class GameRules::Rules
   
             :de_DE => "Beschreibung des RetentionBonus.",
                 
+        },
+        :rewards => {
+          
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 8000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 8000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 8000,
+              },
+
+          ],
+
         }
       },
 
