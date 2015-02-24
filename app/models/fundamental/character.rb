@@ -667,15 +667,15 @@ class Fundamental::Character < ActiveRecord::Base
     
   def init_retention_bonus
     if !self.npc? && self.can_redeem_retention_bonus_at.nil?
-      self.can_redeem_retention_bonus_start_time = Time.now
-      #self.can_redeem_retention_bonus_at = (Time.now + 1.days).change({ hour: 20, min: 0, sec: 0 })
-      self.can_redeem_retention_bonus_at = Time.now + 2.minutes
+      self.can_redeem_retention_bonus_start_time = DateTime.now
+      #self.can_redeem_retention_bonus_at = (DateTime.now + 1.days).change({ hour: 20, min: 0, sec: 0 })
+      self.can_redeem_retention_bonus_at = DateTime.now + 2.minutes
     end
   end
   
   def can_redeem_retention_bonus?
-    return false if self.can_redeem_retention_bonus_at.nil?
-    return Time.now > self.can_redeem_retention_bonus_at
+    return false if self.can_redeem_retention_bonus_at.nil? || can_redeem_retention_bonus_start_time.nil?
+    return DateTime.now > self.can_redeem_retention_bonus_at
   end
   
   def redeem_retention_bonus
@@ -711,12 +711,12 @@ class Fundamental::Character < ActiveRecord::Base
         resources[resource_type[:id]] = (resources[resource_type[:id]] || 0) + amount
       end
     end
+
+    self.can_redeem_retention_bonus_start_time = nil
+    self.save
                 
     # reward resources
     self.resource_pool.add_resources_transaction(resources)        
-    
-    self.can_redeem_retention_bonus_start_time = nil
-    self.save
   end
   
   
