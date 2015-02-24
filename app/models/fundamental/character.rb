@@ -669,14 +669,12 @@ class Fundamental::Character < ActiveRecord::Base
   
   def set_can_redeem_retention_bonus_at
     self.can_redeem_retention_bonus_start_time = self.created_at
-    #self.can_redeem_retention_bonus_at = (self.created_at + 1.days).change({ hour: 20, min: 0, sec: 0 })
-    self.can_redeem_retention_bonus_at = self.created_at + 2.minutes
+    self.can_redeem_retention_bonus_at = (self.created_at + 1.days).change({ hour: 20, min: 0, sec: 0 })    
   end
   
   def set_can_redeem_retention_bonus_at_login
     self.can_redeem_retention_bonus_start_time = Time.now
-    #self.can_redeem_retention_bonus_at = (Time.now + 1.days).change({ hour: 20, min: 0, sec: 0 })
-    self.can_redeem_retention_bonus_at = Time.now + 2.minutes
+    self.can_redeem_retention_bonus_at = (Time.now + 1.days).change({ hour: 20, min: 0, sec: 0 })
   end
   
   def can_redeem_retention_bonus?
@@ -722,6 +720,7 @@ class Fundamental::Character < ActiveRecord::Base
     self.resource_pool.add_resources_transaction(resources)        
     
     self.can_redeem_retention_bonus_at = nil
+    self.save
   end
   
   
