@@ -100,6 +100,8 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_divine_supporter_changes
   after_save  :propagate_image_set_changes
   after_save  :manage_assignments_on_level_change
+  
+  before_create :init_retention_bonus
 
   after_commit :check_consistency_sometimes
   
@@ -524,8 +526,6 @@ class Fundamental::Character < ActiveRecord::Base
 
       character.resource_pool.fill_with_start_resources_transaction(resource_modificator)   
       
-      character.set_can_redeem_retention_bonus_at
-
       character
     end
     
@@ -608,8 +608,6 @@ class Fundamental::Character < ActiveRecord::Base
 
       Military::Army.create_settler_at_location(location, character)
       
-      character.set_can_redeem_retention_bonus_at
-
       character
     end
     
@@ -667,10 +665,12 @@ class Fundamental::Character < ActiveRecord::Base
     return displayed_at < self.created_at + 1.days
   end
     
-  def set_can_redeem_retention_bonus_at
-    self.can_redeem_retention_bonus_start_time = Time.now
-    #self.can_redeem_retention_bonus_at = (Time.now + 1.days).change({ hour: 20, min: 0, sec: 0 })
-    self.can_redeem_retention_bonus_at = Time.now + 2.minutes
+  def init_retention_bonus
+    if !self.npc? && self.can_redeem_retention_bonus_at.nil?
+      self.can_redeem_retention_bonus_start_time = Time.now
+      #self.can_redeem_retention_bonus_at = (Time.now + 1.days).change({ hour: 20, min: 0, sec: 0 })
+      self.can_redeem_retention_bonus_at = Time.now + 2.minutes
+    end
   end
   
   def can_redeem_retention_bonus?
