@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141210193335) do
+ActiveRecord::Schema.define(:version => 20150223164657) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1922,6 +1922,8 @@ ActiveRecord::Schema.define(:version => 20141210193335) do
     t.datetime "gc_rejected_at"
     t.integer  "start_variant",                            :default => 1,     :null => false
     t.datetime "cannot_join_alliance_until"
+    t.datetime "can_redeem_retention_bonus_at"
+    t.datetime "can_redeem_retention_bonus_start_time"
   end
 
   create_table "fundamental_diplomacy_relations", :force => true do |t|
@@ -2260,7 +2262,6 @@ ActiveRecord::Schema.define(:version => 20141210193335) do
     t.string   "avatar_string"
     t.integer  "alliance_color"
     t.boolean  "invisible",                       :default => false
-    t.boolean  "selected",                        :default => false
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2765,9 +2766,9 @@ ActiveRecord::Schema.define(:version => 20141210193335) do
     t.datetime "updated_at"
     t.datetime "processed_at"
     t.string   "google_order_id"
+    t.boolean  "tracked",              :default => false, :null => false
     t.decimal  "price"
     t.string   "currency"
-    t.boolean  "tracked",              :default => false, :null => false
   end
 
   create_table "shop_money_transactions", :force => true do |t|
