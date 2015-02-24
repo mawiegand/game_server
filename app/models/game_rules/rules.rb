@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.0.18
+# Version: 2.1.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -34,7 +34,7 @@ class GameRules::Rules
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
-    :queue_types, :settlement_types, :artifact_types, :diplomacy_relation_types, :victory_types, :construction_speedup, :training_speedup, :facebook_user_stories,
+    :queue_types, :settlement_types, :artifact_types, :diplomacy_relation_types, :victory_types, :construction_speedup, :training_speedup, :retention_bonus, :facebook_user_stories,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles, :special_offer,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
@@ -47,6 +47,7 @@ class GameRules::Rules
       'character_creation'          => character_creation,
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
+      'retention_bonus'             => retention_bonus,
       'trading_speedup'             => trading_speedup,
       'avatar_config'               => avatar_config,
       'change_character_name'       => change_character_name,
@@ -123,8 +124,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 2,
-                    :minor => 0,
-                    :build => 18,
+                    :minor => 1,
+                    :build => 0,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -411,6 +412,18 @@ class GameRules::Rules
         },              #   END OF 9999 hours
 
       ],                # END OF TRAINING SPEEDUP
+
+# ## RETENTION BONUS ##########################################################
+
+      :retention_bonus => { 
+        :description => {
+          
+            :en_US => "Description of RetentionBonus.",
+  
+            :de_DE => "Beschreibung des RetentionBonus.",
+                
+        }
+      },
 
 # ## ARTIFACT INITIATION SPEEDUP #############################################
 

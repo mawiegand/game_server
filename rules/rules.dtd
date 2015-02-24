@@ -4,7 +4,7 @@
   xmlns:xi CDATA #REQUIRED
 >
 
-<!ELEMENT General (Game, Version, AppControl, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, ArtifactInitiationSpeedup, TradingSpeedupCost, AvatarConfigs, ChangeCharacterName, ChangeCharacterGender, ResourceExchange, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers, SpecialAssignments, SlotBubbles, SpecialOffer)>
+<!ELEMENT General (Game, Version, AppControl, Languages, Domains, Battle, CharacterCreation, ConstructionSpeedup, TrainingSpeedup, RetentionBonus, ArtifactInitiationSpeedup, TradingSpeedupCost, AvatarConfigs, ChangeCharacterName, ChangeCharacterGender, ResourceExchange, BuildingConversion, BuildingExperienceFormula, AllianceMaxMembers, SpecialAssignments, SlotBubbles, SpecialOffer)>
 
 
 <!ELEMENT Game (#PCDATA)>
@@ -634,6 +634,8 @@
 
 <!ELEMENT object EMPTY>
 <!ATTLIST object id IDREF #REQUIRED>
+
+<!ELEMENT RetentionBonus (Description+)>
 
 <!ELEMENT TrainingSpeedup (SpeedupCost+)>
 <!ELEMENT ConstructionSpeedup (SpeedupCost+)>

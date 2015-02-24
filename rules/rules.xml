@@ -73,7 +73,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="2" minor="0" build="18" />
+    <Version major="2" minor="1" build="0" />
     <AppControl debugTracking="1" startscreen="settlement">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="24" />
       <Facebook userStoriesEnabled="0" />
@@ -120,6 +120,10 @@
       <SpeedupCost resource="resource_cash" amount="40" hours="192" />
       <SpeedupCost resource="resource_cash" amount="60" hours="9999" />
     </TrainingSpeedup>
+    <RetentionBonus>
+      <Description>Description of RetentionBonus.</Description>
+      <Description lang="de_DE">Beschreibung des RetentionBonus.</Description>
+    </RetentionBonus>
     <ArtifactInitiationSpeedup>
       <SpeedupCost resource="resource_cash" amount="1"  hours="3" />
       <SpeedupCost resource="resource_cash" amount="2"  hours="6" />

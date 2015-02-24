@@ -81,7 +81,7 @@ class GameRules::Rules
 
   attr_accessor :version, :app_control, :battle, :domains, :character_creation, :building_conversion, :building_experience_formula,
     :resource_types, :unit_types, :building_types, :science_types, :assignment_types, :special_assignment_types, :special_assignments, :unit_categories, :building_categories,
-    :queue_types, :settlement_types, :artifact_types, :diplomacy_relation_types, :victory_types, :construction_speedup, :training_speedup, :facebook_user_stories,
+    :queue_types, :settlement_types, :artifact_types, :diplomacy_relation_types, :victory_types, :construction_speedup, :training_speedup, :retention_bonus, :facebook_user_stories,
     :artifact_initiation_speedup, :character_ranks, :alliance_max_members, :artifact_count, :trading_speedup, :slot_bubbles, :special_offer,
     :avatar_config, :change_character_name, :change_character_gender, :change_settlement_name, :resource_exchange, :treasure_types
   
@@ -94,6 +94,7 @@ class GameRules::Rules
       'character_creation'          => character_creation,
       'construction_speedup'        => construction_speedup,
       'training_speedup'            => training_speedup,
+      'retention_bonus'             => retention_bonus,
       'trading_speedup'             => trading_speedup,
       'avatar_config'               => avatar_config,
       'change_character_name'       => change_character_name,
@@ -216,6 +217,7 @@ class GameRules::Rules
       :artifact_count => <xsl:value-of select="count(//ArtifactTypes/Artifact)" />,
   <xsl:apply-templates select="//General/ConstructionSpeedup" />
   <xsl:apply-templates select="//General/TrainingSpeedup" />
+  <xsl:apply-templates select="//General/RetentionBonus" />
   <xsl:apply-templates select="//General/ArtifactInitiationSpeedup" />
   <xsl:apply-templates select="//General/TradingSpeedupCost" />
   <xsl:apply-templates select="//General/AvatarConfigs" />
@@ -357,6 +359,16 @@ end
       ],                # END OF TRAINING SPEEDUP
 </xsl:template>
 
+
+<xsl:template match="RetentionBonus">
+# ## RETENTION BONUS ##########################################################
+
+      :retention_bonus => { 
+        :description => {
+          <xsl:apply-templates select="Description" />              
+        }
+      },
+</xsl:template>
 
   <xsl:template match="ArtifactInitiationSpeedup">
 # ## ARTIFACT INITIATION SPEEDUP #############################################
