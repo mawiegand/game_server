@@ -366,6 +366,9 @@ end
       :retention_bonus => { 
         :description => {
           <xsl:apply-templates select="Description" />              
+        },
+        :rewards => {
+          <xsl:apply-templates select="Rewards" />
         }
       },
 </xsl:template>

@@ -123,6 +123,11 @@
     <RetentionBonus>
       <Description>Description of RetentionBonus.</Description>
       <Description lang="de_DE">Beschreibung des RetentionBonus.</Description>
+      <Rewards>
+        <ResourceReward resource="resource_stone">8000</ResourceReward>
+        <ResourceReward resource="resource_wood">8000</ResourceReward>
+        <ResourceReward resource="resource_fur">8000</ResourceReward>
+      </Rewards>
     </RetentionBonus>
     <ArtifactInitiationSpeedup>
       <SpeedupCost resource="resource_cash" amount="1"  hours="3" />
