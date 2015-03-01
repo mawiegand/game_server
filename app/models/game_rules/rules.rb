@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.1.0
+# Version: 2.1.1
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -125,7 +125,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 1,
-                    :build => 0,
+                    :build => 1,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -7753,7 +7753,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die wilden Neandertaler dringen immer wieder in die Gebiete Deines Stammes vor. Um ihnen nun endlich Einhalt zu gebieten wurde ein cleverer Plan gefasst. Man lockt ein paar Krieger in die Taverne. Nach ein paar runden fängt man an Fackeln und Mistgabeln zu verteilen. Schon löst sich das Problem wie von selbst. Und was man so plündert, kann man auch noch behalten.</p>",
+            :de_DE => "<p>Die wilden Neandertaler dringen immer wieder in die Gebiete Deines Stammes vor. Um ihnen nun endlich Einhalt zu gebieten wurde ein cleverer Plan gefasst. Man lockt ein paar Krieger in die Taverne. Nach ein paar Runden fängt man an Fackeln und Mistgabeln zu verteilen. Schon löst sich das Problem wie von selbst. Und was man so plündert, kann man auch noch behalten.</p>",
   
             :en_US => "<p>Wild neanderthals are advancing more into our land every day. To stop this a clever plan is needed. You gather a bunch of thirsty warriors in the tavern. After a few rounds you start distributing torches and pitchforks. And finally the problem almost solves itself and you can even keep any loot they find.</p>",
   
@@ -9185,7 +9185,7 @@ class GameRules::Rules
   
           },
 
-          :amount      => '0',
+          :amount      => '2',
 
           :experience_production => '0.75*(MRANK+1)',
 
@@ -9261,7 +9261,7 @@ class GameRules::Rules
   
           },
 
-          :amount      => '0',
+          :amount      => '2',
 
           :experience_production => '0.5*(MRANK+1)',
 
