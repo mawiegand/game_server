@@ -635,7 +635,7 @@
 <!ELEMENT object EMPTY>
 <!ATTLIST object id IDREF #REQUIRED>
 
-<!ELEMENT RetentionBonus (Description+)>
+<!ELEMENT RetentionBonus (Description+, Rewards)>
 
 <!ELEMENT TrainingSpeedup (SpeedupCost+)>
 <!ELEMENT ConstructionSpeedup (SpeedupCost+)>

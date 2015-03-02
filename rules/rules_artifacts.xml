@@ -197,7 +197,7 @@
       <InitiationCost id="resource_fur" round="true">1500*LEVEL</InitiationCost>
       <InitiationTime shortenable="true">(FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5))))*1.5</InitiationTime>
     </Initiation>
-    <ArtifactAmount>0</ArtifactAmount>
+    <ArtifactAmount>2</ArtifactAmount>
     <ExperienceProduction>0.75*(MRANK+1)</ExperienceProduction>
     <Effects>
       <ProductionBonus id="resource_stone" domain="character">0.5</ProductionBonus>
@@ -229,7 +229,7 @@
         <InitiationCost id="resource_fur" round="true">1500*LEVEL</InitiationCost>
         <InitiationTime shortenable="true">(FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5))))*1.5</InitiationTime>
       </Initiation>
-      <ArtifactAmount>0</ArtifactAmount>
+      <ArtifactAmount>2</ArtifactAmount>
       <ExperienceProduction>0.5*(MRANK+1)</ExperienceProduction>
       <Effects>
         <ProductionBonus id="resource_stone" domain="alliance">0.5</ProductionBonus>

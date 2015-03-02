@@ -73,11 +73,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-<<<<<<< HEAD
-    <Version major="2" minor="1" build="0" />
-=======
-    <Version major="2" minor="0" build="16" />
->>>>>>> master
+    <Version major="2" minor="1" build="1" />
     <AppControl debugTracking="1" startscreen="settlement">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="24" />
       <Facebook userStoriesEnabled="0" />
@@ -127,6 +123,11 @@
     <RetentionBonus>
       <Description>Description of RetentionBonus.</Description>
       <Description lang="de_DE">Beschreibung des RetentionBonus.</Description>
+      <Rewards>
+        <ResourceReward resource="resource_stone">8000</ResourceReward>
+        <ResourceReward resource="resource_wood">8000</ResourceReward>
+        <ResourceReward resource="resource_fur">8000</ResourceReward>
+      </Rewards>
     </RetentionBonus>
     <ArtifactInitiationSpeedup>
       <SpeedupCost resource="resource_cash" amount="1"  hours="3" />
