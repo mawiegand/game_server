@@ -239,23 +239,23 @@ class Fundamental::Character < ActiveRecord::Base
 
   def redeem_xp_start_bonus(xp_bonus)
     bonus = ActiveSupport::JSON.decode(xp_bonus)
-    if bonus['client_identifier'] == GAME_SERVER_CONFIG['scope']
+   # if bonus['client_identifier'] == GAME_SERVER_CONFIG['scope']
       logger.info "REDEEM XP GIFT FOR CHARACTER #{self.identifier}: #{bonus['bonus'].to_f}"
       self.experience_effects.create({
         type_id:      Effect::ExperienceEffect::EXPERIENCE_EFFECT_TYPE_START_GIFT,
         bonus:        bonus['bonus'].to_f,
         origin_id:    self.id,
       })
-    end
+  #  end
   end
 
   def redeem_start_resources(start_resources)
     list = ActiveSupport::JSON.decode(start_resources)
-    if list['client_identifier'] == GAME_SERVER_CONFIG['scope']
+    #if list['client_identifier'] == GAME_SERVER_CONFIG['scope']
       (list['resources'] || []).each do |resource|
         self.resource_pool.add_resource_atomically(resource['resource_type_id'].to_i, resource['amount'].to_f)
       end
-    end
+    #end
   end
   
   def identity_provider_access

@@ -12,16 +12,26 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
     payment_id     = params['fb_verify_order_action'] && params['fb_verify_order_action']['payment_id']
     signed_request = params['fb_verify_order_action'] && params['fb_verify_order_action']['signed_request']
 
+    logger.debug "1"
+
     if !offer_id.blank? && !payment_id.blank? && !signed_request.blank?
+
+      logger.debug "2"
 
       response = HTTParty.get("https://graph.facebook.com/#{payment_id}", :query => {access_token: "#{Facebook::AppConfig.the_app_config.app_id}|#{Facebook::AppConfig.the_app_config.app_secret}"})
 
+      logger.debug "3"
+
       if response.code == 200
+
+        logger.debug "4"
 
         parsed_response = response.parsed_response
         data = Util::FacebookManager.parse_signed_request(signed_request, Facebook::AppConfig.the_app_config.app_secret)
 
         if !data.nil?
+
+          logger.debug "5"
 
           action   = parsed_response['actions'] && parsed_response['actions'][0]
           item_url = parsed_response['items'] && parsed_response['items'][0] && parsed_response['items'][0]['product']
@@ -31,6 +41,8 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
               data['status'] == 'completed' &&
               !offer.nil? &&
               offer.url == item_url
+
+            logger.debug "6"
 
             transaction_data = {
                 userID:      current_character.identifier,
@@ -52,6 +64,8 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
             http_response = HTTParty.post(CreditShop::BytroShop::URL_BASE, :query => query)
 
             if http_response.code === 200
+              logger.debug "7"
+
               api_response = http_response.parsed_response
               api_response = JSON.parse(api_response) if api_response.is_a?(String)
               if api_response['resultCode'] === 0
