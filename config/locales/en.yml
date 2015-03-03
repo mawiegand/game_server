@@ -161,9 +161,9 @@ en:
           <p>We wish you a pleasent time in Wack-a-Doo.</p>\n
           <p>The Wack-a-Doo Team</p>\n"
       battle_report:
-        winner_subject: "won"
-        loser_subject: "lost"
-        subject: "You <%= @winner_or_loser %> at <%= @battle.region.name %>"
+        winner_subject: "Victory"
+        loser_subject: "Defeat"
+        subject: "<%= @winner_or_loser %> in Region <%= @battle.region.name %>"
         title: "The battle at <%= @battle.region.name %>"
         initial_sentance: This conflict was initiated by an attack of <%= get_character_name(@battle.initiator) %> on <%= get_character_name(@battle.opponent) %> on <%= @battle.started_at %>
         winner_message: Your faction won the battle. 
