@@ -198,7 +198,6 @@
       <InitiationTime shortenable="true">(FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5))))*1.5</InitiationTime>
     </Initiation>
     <ArtifactAmount>2</ArtifactAmount>
-    <ExperienceProduction>0.75*(MRANK+1)</ExperienceProduction>
     <Effects>
       <ProductionBonus id="resource_stone" domain="character">0.5</ProductionBonus>
       <ProductionBonus id="resource_wood" domain="character">0.5</ProductionBonus>
@@ -230,7 +229,6 @@
         <InitiationTime shortenable="true">(FLOOR(168*3600-2*1.7779*3600*(POW((LEVEL-1),1.5))))*1.5</InitiationTime>
       </Initiation>
       <ArtifactAmount>2</ArtifactAmount>
-      <ExperienceProduction>0.5*(MRANK+1)</ExperienceProduction>
       <Effects>
         <ProductionBonus id="resource_stone" domain="alliance">0.5</ProductionBonus>
         <ProductionBonus id="resource_wood" domain="alliance">0.5</ProductionBonus>
