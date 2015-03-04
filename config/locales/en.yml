@@ -200,7 +200,7 @@ en:
         body3: <p>Your trading carts have returned from %{name} (%{owner_name}), carrying the following goods:</p>
         subject: Return of %{num_carts} Handelskarren
       overrun_winner_message:
-        subject: Overrun! Victory in %{name}
+        subject: Victory in Region %{name}
         body: "<h2>Your army has overrun the enemy near the settlement %{settlement_name}</h2>\n
           <p>Your army <b>%{winner_name}</b>, stationed near the settlement <b>%{settlement_name}</b>, has overrun the army <b>%{loser_name}</b> of <b>%{loser_owner_name}</b>.</p>\n
           <table>\n
@@ -216,7 +216,7 @@ en:
           </table>\n
           <p>All of your units survived, and all of your enemy's units perished. You will not gain experience from this victory.</p>\n"
       overrun_loser_message:
-        subject: Overrun! Defeat in %{name}
+        subject: Defeat in Region %{name}
         body: "<h2>Your army has been overrun at %{settlement_name}</h2>\n
           <p>Your army <b>%{loser_name}</b>has been overrun at <b>%{settlement_name}</b> by the army <b>%{winner_name}</b> led by <b>%{winner_owner_name}</b>.</p>\n
           <table>\n
