@@ -81,7 +81,7 @@ de:
         body3: <p>Deine Handelskarren sind von ihrer Reise nach %{name} (%{owner_name}) zurück gekommen. Sie brachten folgende Ladung mit:</p>
         subject: Rückkehr von %{num_carts} Handelskarren
       overrun_winner_message:
-        subject: Du hast die Armee an der Siedlung %{name} überrannt
+        subject: Überannt! Sieg in %{name}
         body: "<h2>Deine Armee hat eine andere Armee an der Siedlung %{settlement_name} überrannt</h2>\n
           <p>Deine Armee <b>%{winner_name}</b>, stationiert an der Siedlung <b>%{settlement_name}</b>, hat die Armee <b>%{loser_name}</b> von <b>%{loser_owner_name}</b> überrannt.</p>\n
           <table>\n
@@ -97,7 +97,7 @@ de:
           </table>\n
           <p>Deine Einheiten haben alle überlebt, Dein Gegner hat alle Einheiten verloren. Für diesen Sieg erlangst Du keine Erfahrung.</p>\n"
       overrun_loser_message:
-        subject: Deine Armee ist in %{name} überrannt worden
+        subject: Überrant! Niederlage in %{name}
         body: "<h2>Deine Armee ist überrannt worden in %{settlement_name}</h2>\n
           <p>Deine Armee <b>%{loser_name}</b> ist in <b>%{settlement_name}</b> von der Armee <b>%{winner_name}</b> von <b>%{winner_owner_name}</b> überrannt worden.</p>\n
           <table>\n
