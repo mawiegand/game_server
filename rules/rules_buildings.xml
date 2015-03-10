@@ -55,4 +55,7 @@
   <xi:include href="buildings/rules_building_cavalry_tower.xml" />    
 
   <!-- ADD NEW BUILDING DIRECTLY ABOVE THIS LINE -->
+  
+  <xi:include href="buildings/rules_building_trade_center.xml" />  
+  
 </BuildingTypes>

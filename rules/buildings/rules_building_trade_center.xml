@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
-<Building id="building_field_camp" advisor="warrior" group="military" category="building_category_specialization_building" buyable="false" destructable="false" demolishable="true"  experienceFactor="8" takeoverDestroy="true">
-  <Name lang="de_DE">Feldlager</Name>
-  <Name lang="en_US">Field Camp</Name>
+<Building id="building_trade_center" advisor="girl" group="military" category="building_category_specialization_building" buyable="false" destructable="false" demolishable="true"  experienceFactor="8" takeoverDestroy="true">
+  <Name lang="de_DE">Handelsplatz</Name>
+  <Name lang="en_US">Trade Center</Name>
   <Description lang="de_DE">
-    <p>Spezialisierungsgebäude, spezalisiert die Lagerstätte für militärische Zwecke. Nur ein Spezialisierungsgebäude pro Lagerstätte.</p>
-    <p>Mit Bau des Feldlagers ist es endgültig klar: „Wir sind nicht zum Spass hier, wir wollen kämpfen!“</p> 
-    <p>Das Feldlager erhöht die Garnison und die Armee um 70 pro Level. Auf Level 10 ermöglicht dem Feldlager einen zweiten Kommandopunkt.</p>
+    <p>Spezialisierungsgebäude, spezalisiert die Lagerstätte für wirtschaftliche Zwecke. Nur ein Spezialisierungsgebäude pro Lagerstätte.</p>
+    <p>Auf dem Handelsplatz lassen sich neben den ganzen Rohstoffen in den feuchten dunklen Ecken auch ab und zu Kröten finden.</p>
   </Description>
   <Description lang="en_US">
     <p>Specialization building, specializes your camp for military purposes. Only one specialization building per camp is possible. </p>
@@ -17,7 +16,7 @@
     <p>Field camps turn encampments into military support units. Despite all the talk about the safety and storage that field camps offer, they seem to have a magical attraction for enemies.</p>
   </Flavour>
     <Flavour lang="de_DE">
-    <p>Mit dem Feldlager verwandeln wir Lagerstätten in militärische Stützpunkte. Größere Armeen und gleich zwei davon!</p>
+    <p> Mehr Rohstoffe! Mit dem Handelsplatz verwandeln wir Lagerstätten in Wirtschaftsstützpunkte.</p>
   </Flavour>
 <Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)</Population>
  <RequirementGroup>
@@ -30,10 +29,12 @@
   <Cost id="resource_stone" round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*4*1.5+0.5)</Cost>
   <Cost id="resource_wood"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*4*1.5+0.5)</Cost>
   <Cost id="resource_fur"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*4*1.5+0.5)</Cost>
-  <ProductionTime shortenable="true">5400*LEVEL</ProductionTime>
+    <ProductionTime shortenable="true">5400*LEVEL</ProductionTime>
+    <Production id="resource_cash">GREATER(LEVEL,9)*1/48.0</Production>
+    <ProductionBonus id="resource_stone">0.01*LEVEL</ProductionBonus>
+    <ProductionBonus id="resource_wood">0.01*LEVEL</ProductionBonus>
+  <ProductionBonus id="resource_fur">0.01*LEVEL</ProductionBonus>
   <Abilities> <!-- just for grouping -->
-    <GarrisonSizeBonus>70*LEVEL</GarrisonSizeBonus>
-    <ArmySizeBonus>70*LEVEL</ArmySizeBonus>
-    <CommandPoints>GREATER(LEVEL,9)</CommandPoints>
+    <TradingCarts>5*LEVEL*LEVEL</TradingCarts>
   </Abilities>
 </Building>

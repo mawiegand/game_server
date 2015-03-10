@@ -44,7 +44,7 @@
   </BuildingCategory>
   <BuildingCategory id="building_category_large_building">
     <Name>Large Buildings</Name>
-    <Name lang="de_DE">Große Gebäude</Name>
+    <Name lang="de_DE">Hauptgebäude</Name>
     <Description lang="de_DE">
       <p>Wichtige Gebäude, die eine große Grundfläche benötigen.</p> 
     </Description>
