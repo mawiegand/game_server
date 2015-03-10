@@ -199,9 +199,9 @@
     </Initiation>
     <ArtifactAmount>2</ArtifactAmount>
     <Effects>
-      <ProductionBonus id="resource_stone" domain="character">0.5</ProductionBonus>
-      <ProductionBonus id="resource_wood" domain="character">0.5</ProductionBonus>
-      <ProductionBonus id="resource_fur" domain="character">0.5</ProductionBonus>
+      <ProductionBonus id="resource_stone" domain="character">0.05</ProductionBonus>
+      <ProductionBonus id="resource_wood" domain="character">0.05</ProductionBonus>
+      <ProductionBonus id="resource_fur" domain="character">0.05</ProductionBonus>
       <ConstructionBonus domain="alliance">0.25</ConstructionBonus>
     </Effects>
     </Artifact>
@@ -209,7 +209,7 @@
       <Name lang="de_DE">Staubfänger</Name>
       <Name lang="en_US">Dust Catcher</Name>
       <Description lang="de_DE">
-        <p>Als Oscar den Neandertaler endlich besiegt hatte, viel ihm diese staubige Ding vor die Füße. Oscar wußte nichts damit anzufangen und brachte das Teil direkt in die Tüftler-Werkstatt.</p>
+        <p>Als Oscar den Neandertaler endlich besiegt hatte, viel ihm dieses staubige Ding vor die Füße. Oscar wußte nichts damit anzufangen und brachte das Teil direkt in die Tüftler-Werkstatt.</p>
       </Description>
       <Description lang="en_US">
         <p>After Oscar had finaly slain the neandertal he discovered this amongst his belongings. Not knowing what it was good for he gave it to the tinkerers.</p>
@@ -230,9 +230,9 @@
       </Initiation>
       <ArtifactAmount>2</ArtifactAmount>
       <Effects>
-        <ProductionBonus id="resource_stone" domain="alliance">0.5</ProductionBonus>
-        <ProductionBonus id="resource_wood" domain="alliance">0.5</ProductionBonus>
-        <ProductionBonus id="resource_fur" domain="alliance">0.5</ProductionBonus>
+        <ProductionBonus id="resource_stone" domain="alliance">0.05</ProductionBonus>
+        <ProductionBonus id="resource_wood" domain="alliance">0.05</ProductionBonus>
+        <ProductionBonus id="resource_fur" domain="alliance">0.05</ProductionBonus>
         <ConstructionBonus domain="character">0.6</ConstructionBonus>
       </Effects>
     </Artifact>
