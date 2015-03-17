@@ -75,6 +75,7 @@ class Fundamental::CharactersController < ApplicationController
     
     is_ios_client     = use_restkit_api? # improve this! should use client-id or other mechanism
     use_settler_start = false # !is_ios_client  -> temporarely disabled
+    count_login       = !params.has_key?(:no_login)
     
     # ########################################################################
     #
@@ -158,7 +159,7 @@ class Fundamental::CharactersController < ApplicationController
       character.insider_since = identity['insider_since']
       character.first_round   = identity['created_at'].nil? ? false : Time.parse(identity['created_at']) > Time.now.advance(:hours => -1)
       character.last_login_at = DateTime.now
-      character.increment(:login_count)
+      character.increment(:login_count)      if count_login
       character.save
       
       if !use_settler_start && params.has_key?(:client_id)   # fetch gift
@@ -272,7 +273,7 @@ class Fundamental::CharactersController < ApplicationController
       })
       
       current_character.last_login_at = DateTime.now
-      current_character.increment(:login_count)
+      current_character.increment(:login_count)    if count_login
       
       current_character.check_consistency
       current_character.save
@@ -280,7 +281,7 @@ class Fundamental::CharactersController < ApplicationController
       redirect_to fundamental_character_path(current_character.id)
     else
       current_character.last_login_at = DateTime.now
-      current_character.increment(:login_count)
+      current_character.increment(:login_count)    if count_login
       if current_character.can_redeem_retention_bonus_at.nil?
         current_character.set_can_redeem_retention_bonus_at
       end
