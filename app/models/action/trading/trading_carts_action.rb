@@ -57,6 +57,10 @@ class Action::Trading::TradingCartsAction < ActiveRecord::Base
   def return 
     return false if self.returning
 #   self.returned_at       = self.reached_target_at + (self.reached_target_at - self.created_at)
+    old_starting_settlement = self.starting_settlement
+    old_target_settlement = self.target_settlement
+    self.starting_settlement = old_target_settlement
+    self.target_settlement = old_starting_settlement
     self.returning         = true
   end
   
@@ -127,7 +131,7 @@ class Action::Trading::TradingCartsAction < ActiveRecord::Base
   end
   
   def unload_resources_at_origin
-    self.starting_settlement.owner.resource_pool.add_resources_transaction(self.resources)
+    self.target_settlement.owner.resource_pool.add_resources_transaction(self.resources)
     reset_resources
   end  
   
@@ -139,8 +143,8 @@ class Action::Trading::TradingCartsAction < ActiveRecord::Base
   private  
   
     def release_carts
-      return true  if self.starting_settlement_id.blank? || self.num_carts.blank?
-      Settlement::Settlement.update_all(["trading_carts_used = trading_carts_used - ?, updated_at = ?", self.num_carts, Time.now], id: self.starting_settlement_id )   # atomic update, no lock necessary
+      return true  if self.target_settlement_id.blank? || self.num_carts.blank?
+      Settlement::Settlement.update_all(["trading_carts_used = trading_carts_used - ?, updated_at = ?", self.num_carts, Time.now], id: self.target_settlement_id )   # atomic update, no lock necessary
     end
 
   

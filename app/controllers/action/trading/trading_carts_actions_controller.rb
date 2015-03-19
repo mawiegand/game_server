@@ -27,7 +27,7 @@ class Action::Trading::TradingCartsActionsController < ApplicationController
     if backend_request?
       raise ForbiddenError.new('Only staff is authorized to see trades in backend.')   unless staff?
     else
-      raise ForbiddenError.new('Access to trade forbidden.') unless @action_trading_trading_carts_action.sender_id == current_character.id || (@action_trading_trading_carts_action.recipient_id == current_character.id && !@action_trading_trading_carts_action.returning)
+      raise ForbiddenError.new('Access to trade forbidden.') unless @action_trading_trading_carts_action.sender_id == current_character.id || (@action_trading_trading_carts_action.recipient_id == current_character.id)
     end
 
     last_modified = @action_trading_trading_carts_action.updated_at
