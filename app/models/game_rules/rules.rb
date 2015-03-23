@@ -9192,19 +9192,19 @@ class GameRules::Rules
             {
               :resource_id        => 0,
               :domain_id          => 0,
-              :bonus              => 0.5,
+              :bonus              => 0.05,
             },
 
             {
               :resource_id        => 1,
               :domain_id          => 0,
-              :bonus              => 0.5,
+              :bonus              => 0.05,
             },
 
             {
               :resource_id        => 2,
               :domain_id          => 0,
-              :bonus              => 0.5,
+              :bonus              => 0.05,
             },
 
           ],
@@ -9246,7 +9246,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Als Oscar den Neandertaler endlich besiegt hatte, viel ihm diese staubige Ding vor die Füße. Oscar wußte nichts damit anzufangen und brachte das Teil direkt in die Tüftler-Werkstatt.</p>",
+            :de_DE => "<p>Als Oscar den Neandertaler endlich besiegt hatte, viel ihm dieses staubige Ding vor die Füße. Oscar wußte nichts damit anzufangen und brachte das Teil direkt in die Tüftler-Werkstatt.</p>",
   
             :en_US => "<p>After Oscar had finaly slain the neandertal he discovered this amongst his belongings. Not knowing what it was good for he gave it to the tinkerers.</p>",
   
@@ -9266,19 +9266,19 @@ class GameRules::Rules
             {
               :resource_id        => 0,
               :domain_id          => 2,
-              :bonus              => 0.5,
+              :bonus              => 0.05,
             },
 
             {
               :resource_id        => 1,
               :domain_id          => 2,
-              :bonus              => 0.5,
+              :bonus              => 0.05,
             },
 
             {
               :resource_id        => 2,
               :domain_id          => 2,
-              :bonus              => 0.5,
+              :bonus              => 0.05,
             },
 
           ],
