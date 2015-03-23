@@ -16,15 +16,15 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
 
       response = HTTParty.get("https://graph.facebook.com/#{payment_id}", :query => {access_token: "#{Facebook::AppConfig.the_app_config.app_id}|#{Facebook::AppConfig.the_app_config.app_secret}"})
 
-      logger.info "fb api call response: #{response}"
+      # logger.info "---> fb api call response: #{response}"
 
       if response.code == 200
 
         parsed_response = response.parsed_response
         data = Util::FacebookManager.parse_signed_request(signed_request, Facebook::AppConfig.the_app_config.app_secret)
 
-        logger.info "fb api call parsed response: #{parsed_response}"
-        logger.info "parsed signed_request: #{data}"
+        # logger.info "---> fb api call parsed response: #{parsed_response}"
+        # logger.info "---> parsed signed_request: #{data}"
 
         if !data.nil?
 
@@ -32,7 +32,7 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
           item_url = parsed_response['items'] && parsed_response['items'][0] && parsed_response['items'][0]['product']
           offer    = Shop::FbCreditOffer.find_by_id(offer_id)
 
-          logger.info "fb api call parsed response - action: #{action}, item_url: #{item_url}, offer: #{offer}"
+          # logger.info "---> fb api call parsed response - action: #{action}, item_url: #{item_url}, offer: #{offer}"
 
           if action['status'] == 'completed' &&
               data['status'] == 'completed' &&
@@ -58,14 +58,14 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
             query = CreditShop::BytroShop.add_hash(query)
             http_response = HTTParty.post(CreditShop::BytroShop::URL_BASE, :query => query)
 
-            logger.info "transaction_data: #{transaction_data}, query: #{query}, bytro call http_response: #{http_response}"
+            # logger.info "---> transaction_data: #{transaction_data}, query: #{query}, bytro call http_response: #{http_response}"
 
             if http_response.code === 200
 
               api_response = http_response.parsed_response
               api_response = JSON.parse(api_response) if api_response.is_a?(String)
 
-              logger.info "bytro api response: #{api_response}"
+              # logger.info "---> bytro api response: #{api_response}"
 
               if api_response['resultCode'] === 0
 
@@ -83,30 +83,30 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
                   test:         parsed_response['test'],
                 })
 
-                logger.info "bytro api response resultCode: 0"
+                # logger.info "---> bytro api response resultCode: 0"
                 status = :ok
               else
-                logger.info "error 422: bytro api response resultCode: #{api_response['resultCode']}"
+                # logger.info "---> error 422: bytro api response resultCode: #{api_response['resultCode']}"
                 status = :unprocessable_entity
               end
             else
-              logger.error "error 422: http_response.code != 200 (code = #{http_response.code})"
+              # logger.error "---> error 422: http_response.code != 200 (code = #{http_response.code})"
               status = :unprocessable_entity
             end
           else
-            logger.error "error 400: action[status] != completed or data[status] != completed or offer is invalid "
+            # logger.error "---> error 400: action[status] != completed or data[status] != completed or offer is invalid "
             status = :bad_request
           end
         else
-          logger.error "error 400: data is nil"
+          # logger.error "---> error 400: data is nil"
           status = :bad_request
         end
       else
-        logger.error "error 400: bad response"
+        # logger.error "---> error 400: bad response"
         status = :bad_request
       end
     else
-      logger.error "error 400: offer_id or payment_id or signed_request is blank"
+      # logger.error "error 400: offer_id or payment_id or signed_request is blank"
       status = :bad_request
     end
 
