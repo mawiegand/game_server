@@ -28,6 +28,9 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
 
         if !data.nil?
 
+          logger.info "-----> parsed_response['actions']: #{parsed_response['actions']}"
+          logger.info "-----> parsed_response['actions'][0]: #{parsed_response['actions'][0]}"
+
           action   = parsed_response['actions'] && parsed_response['actions'][0]
           item_url = parsed_response['items'] && parsed_response['items'][0] && parsed_response['items'][0]['product']
           offer    = Shop::FbCreditOffer.find_by_id(offer_id)
