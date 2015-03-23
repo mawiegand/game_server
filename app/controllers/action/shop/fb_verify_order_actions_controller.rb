@@ -21,6 +21,7 @@ class Action::Shop::FbVerifyOrderActionsController < ApplicationController
       if response.code == 200
 
         parsed_response = response.parsed_response
+        parsed_response = JSON.parse(parsed_response) if parsed_response.is_a?(String)
         data = Util::FacebookManager.parse_signed_request(signed_request, Facebook::AppConfig.the_app_config.app_secret)
 
         logger.info "---> fb api call parsed response: #{parsed_response}"
