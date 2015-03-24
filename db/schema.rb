@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150224210411) do
+ActiveRecord::Schema.define(:version => 20150324085127) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1924,6 +1924,7 @@ ActiveRecord::Schema.define(:version => 20150224210411) do
     t.datetime "cannot_join_alliance_until"
     t.datetime "can_redeem_retention_bonus_at"
     t.datetime "can_redeem_retention_bonus_start_time"
+    t.boolean  "has_limited_grid",                         :default => false
   end
 
   create_table "fundamental_diplomacy_relations", :force => true do |t|
