@@ -76,12 +76,16 @@ class ApplicationController < ActionController::Base
     # Set the locale according to the user specified locale or to the default
     # locale, if not specified or specified is not available.
     def set_locale
+      logger.debug "get_locale_from_params: " + get_locale_from_params
+      logger.debug "get_locale_from_params || I18n.default_locale: " + (get_locale_from_params || I18n.default_locale)
       I18n.locale = get_locale_from_params || I18n.default_locale
     end
     
     # Checks whether the user specified locale is available.
     def get_locale_from_params 
+      logger.debug "locale before: " params[:locale]
       return nil unless params[:locale]
+      logger.debug "locale available: " + (I18n.available_locales.include?(params[:locale].to_sym) ? params[:locale] : nil)
       I18n.available_locales.include?(params[:locale].to_sym) ? params[:locale] : nil
     end
     
