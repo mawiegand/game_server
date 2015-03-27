@@ -83,7 +83,7 @@ class ApplicationController < ActionController::Base
     
     # Checks whether the user specified locale is available.
     def get_locale_from_params 
-      logger.debug "locale before: " params[:locale]
+      logger.debug "locale before: " + params[:locale]
       return nil unless params[:locale]
       logger.debug "locale available: " + (I18n.available_locales.include?(params[:locale].to_sym) ? params[:locale] : nil)
       I18n.available_locales.include?(params[:locale].to_sym) ? params[:locale] : nil
