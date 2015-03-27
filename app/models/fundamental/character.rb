@@ -480,7 +480,6 @@ class Fundamental::Character < ActiveRecord::Base
   
   # FIXME: this does NOT save the character after all modifications itself!!! should be corrected also inside the corresponding controller
   def self.create_new_character(identifier, name, args = {})
-    logger.debug "args[:lang]" + args[:lang]
     resource_modificator = args[:resource_modificator] || 1.0
     npc                  = args[:npc]                  || false
     start_location       = args[:location]             || nil
