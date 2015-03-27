@@ -114,6 +114,8 @@ class Fundamental::CharactersController < ApplicationController
       
       character = nil
       
+      logger.debug "I18n.locale" + I18n.locale
+
       character_args = {
         resource_modificator: character_properties[:start_resource_modificator], 
         npc: false,
@@ -121,6 +123,7 @@ class Fundamental::CharactersController < ApplicationController
         gender: identity['gender'] || 'male',
         lang: I18n.locale || :en,
       }
+      logger.debug "character_args['lang']" + character_args['lang']
       
       if !use_settler_start
         character = Fundamental::Character.create_new_character(request_access_token.identifier, character_name, character_args)
