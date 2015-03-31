@@ -167,7 +167,7 @@ class Fundamental::Character < ActiveRecord::Base
   @identifier_regex = /[a-z]{16}/i
   
   def self.search(search)
-    if searchx
+    if search
       where('identifier LIKE ?', "%#{search}%")
     else
       scoped
