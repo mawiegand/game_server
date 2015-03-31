@@ -167,7 +167,7 @@ class Fundamental::Character < ActiveRecord::Base
   @identifier_regex = /[a-z]{16}/i
   
   def self.search(search)
-    if search
+    if searchx
       where('identifier LIKE ?', "%#{search}%")
     else
       scoped
@@ -900,7 +900,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   # logged-in at least once
   def logged_in_once?
-    login_count >= 1 && (reached_game? || playtime >= 60.0)  # a minute in game or pressed button in welcome dialog.
+    login_count >= 1 && (reached_game? || playtime >= 60.0 || num_finished_quests > 0)  # a minute in game or pressed button in welcome dialog or solved a quest.
   end  
   
   def update_credits_spent
