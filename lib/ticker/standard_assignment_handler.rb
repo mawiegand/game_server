@@ -28,7 +28,7 @@ class Ticker::StandardAssignmentHandler
       
       runloop.say "Process standard assignment #{ assignment.id } of character #{ assignment.character.id }"
   
-      assignment.redeem_rewards_deposit_and_end_transaction
+      assignment.finish!
             
       # event.destroy unless event.nil?
       runloop.say "Standard assignment handler completed."

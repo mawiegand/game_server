@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150324085127) do
+ActiveRecord::Schema.define(:version => 20150417210352) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -129,10 +129,11 @@ ActiveRecord::Schema.define(:version => 20150324085127) do
     t.datetime "started_at"
     t.datetime "ended_at"
     t.datetime "halved_at"
-    t.integer  "execution_count", :default => 0, :null => false
-    t.integer  "halved_count",    :default => 0, :null => false
+    t.integer  "execution_count", :default => 0,     :null => false
+    t.integer  "halved_count",    :default => 0,     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "finished",        :default => false
   end
 
   create_table "backend_browser_stats", :force => true do |t|
@@ -2263,6 +2264,7 @@ ActiveRecord::Schema.define(:version => 20150324085127) do
     t.string   "avatar_string"
     t.integer  "alliance_color"
     t.boolean  "invisible",                       :default => false
+    t.boolean  "selected",                        :default => false
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2672,10 +2674,10 @@ ActiveRecord::Schema.define(:version => 20150324085127) do
     t.integer  "level",               :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "bubble_resource_id"
-    t.integer  "bubble_amount"
-    t.integer  "bubble_xp"
     t.datetime "bubble_next_test_at"
+    t.integer  "bubble_xp"
+    t.integer  "bubble_amount"
+    t.integer  "bubble_resource_id"
   end
 
   create_table "shop_bonus_offers", :force => true do |t|
