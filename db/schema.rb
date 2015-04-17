@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150417210352) do
+ActiveRecord::Schema.define(:version => 20150417214445) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20150417210352) do
     t.datetime "started_at"
     t.datetime "ended_at"
     t.datetime "halved_at"
-    t.integer  "execution_count",              :default => 0, :null => false
+    t.integer  "execution_count",              :default => 0,     :null => false
     t.datetime "displayed_until"
     t.datetime "seen_at"
     t.datetime "created_at"
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(:version => 20150417210352) do
     t.integer  "unit_warrior_reward"
     t.integer  "unit_great_chief_deposit"
     t.integer  "unit_great_chief_reward"
+    t.boolean  "finished",                     :default => false
   end
 
   create_table "assignment_standard_assignments", :force => true do |t|

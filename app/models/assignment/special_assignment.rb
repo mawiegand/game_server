@@ -359,6 +359,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     self.halved_at = nil
     self.ended_at = nil
     self.displayed_until = Time.now
+    self.finished = false
   end
 
   def redeem_rewards!
@@ -399,7 +400,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
   def redeem_rewards_deposit_and_end_transaction
     ActiveRecord::Base.transaction(:requires_new => true) do
       self.lock!
-      if !self.ended_at.nil?
+      if !self.ended_at.nil? && self.finished
         self.end_now
         self.save!
         self.redeem_rewards!
@@ -410,6 +411,12 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
     end
   end
 
+  def finish!
+    if self.ongoing? && !self.ended_at.nil? && self.ended_at <= Time.now
+      self.finished = true
+      self.save!
+    end
+  end
 
   # ##########################################################################
   #
