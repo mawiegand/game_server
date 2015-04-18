@@ -14,11 +14,11 @@ class Fundamental::Artifact < ActiveRecord::Base
 
   belongs_to :army,        :class_name => "Military::Army",          :foreign_key => "army_id",       :inverse_of => :artifact
 
-  has_many   :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT]
-  has_many   :alliance_resource_effects,  :class_name => "Effect::AllianceResourceEffect", :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::AllianceResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT]
+  has_many   :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT], :dependent => :destroy
+  has_many   :alliance_resource_effects,  :class_name => "Effect::AllianceResourceEffect", :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::AllianceResourceEffect::RESOURCE_EFFECT_TYPE_ARTIFACT], :dependent => :destroy
 
-  has_many   :character_construction_effects, :class_name => "Effect::ConstructionEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ARTIFACT]
-  has_many   :alliance_construction_effects,  :class_name => "Effect::AllianceConstructionEffect", :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::AllianceConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ARTIFACT]
+  has_many   :character_construction_effects, :class_name => "Effect::ConstructionEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ARTIFACT], :dependent => :destroy
+  has_many   :alliance_construction_effects,  :class_name => "Effect::AllianceConstructionEffect", :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::AllianceConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ARTIFACT], :dependent => :destroy
 
   before_save :update_region
 
