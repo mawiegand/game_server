@@ -32,6 +32,10 @@
     <%= f.datetime_select :halved_at %>
   </div>
   <div class="field">
+    <%= f.label :finished %><br />
+    <%= f.check_box :finished %>
+  </div>
+  <div class="field">
     <%= f.label :execution_count %><br />
     <%= f.number_field :execution_count %>
   </div>
