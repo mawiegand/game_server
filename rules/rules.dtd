@@ -505,7 +505,7 @@
 
 <!ELEMENT DisplayDuration (#PCDATA)>
 
-<!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?)>
+<!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?, ProductionBonusReward*, ConstructionBonusReward*)>
 
 <!ELEMENT ResourceReward (#PCDATA)>
 <!ATTLIST ResourceReward
@@ -530,7 +530,18 @@
   norm_variance CDATA "0"
 >
 
-<!ELEMENT SpecialAssignmentRewards (SpecialAssignmentResourceReward*, SpecialAssignmentUnitReward*, SpecialAssignmentExperienceReward?)>
+<!ELEMENT ProductionBonusReward (#PCDATA)>
+<!ATTLIST ProductionBonusReward
+  id IDREF #REQUIRED
+  duration CDATA #REQUIRED
+>
+
+<!ELEMENT ConstructionBonusReward (#PCDATA)>
+<!ATTLIST ConstructionBonusReward
+  duration CDATA #REQUIRED
+>
+
+<!ELEMENT SpecialAssignmentRewards (SpecialAssignmentResourceReward*, SpecialAssignmentUnitReward*, SpecialAssignmentExperienceReward?, ProductionBonusReward*, ConstructionBonusReward*)>
 
 <!ELEMENT SpecialAssignmentResourceReward (#PCDATA)>
 <!ATTLIST SpecialAssignmentResourceReward

@@ -919,6 +919,18 @@ end
 <xsl:if test="SpecialAssignmentExperienceReward">
             :experience_reward => '<xsl:apply-templates select="SpecialAssignmentExperienceReward" />',
 </xsl:if>
+
+<xsl:if test="ProductionBonusReward">
+            :production_bonus_reward => [
+              <xsl:apply-templates select="ProductionBonusReward" />
+            ],
+</xsl:if>
+
+<xsl:if test="ConstructionBonusReward">
+            :construction_bonus_reward => [
+              <xsl:apply-templates select="ConstructionBonusReward" />
+            ],
+</xsl:if>
 </xsl:template>
 
 <xsl:template match="SpecialAssignmentResourceReward">
@@ -1006,6 +1018,18 @@ end
 <xsl:if test="ExperienceReward">
             :experience_reward => <xsl:apply-templates select="ExperienceReward" />,
 </xsl:if>
+
+<xsl:if test="ProductionBonusReward">
+          :production_bonus_rewards => [
+            <xsl:apply-templates select="ProductionBonusReward" />
+          ],
+</xsl:if>
+
+<xsl:if test="ConstructionBonusReward">
+          :construction_bonus_rewards => [
+            <xsl:apply-templates select="ConstructionBonusReward" />
+          ],
+</xsl:if>
 </xsl:template>
 
 <xsl:template match="ResourceReward">
@@ -1039,6 +1063,20 @@ end
               },
 </xsl:template>
 
+<xsl:template match="ProductionBonusReward">
+             {
+               :resource_id => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+               :duration    => <xsl:value-of select="@duration"/>,
+               :bonus       => <xsl:apply-templates />,
+             },
+</xsl:template>
+
+<xsl:template match="ConstructionBonusReward">
+             {
+               :duration  => <xsl:value-of select="@duration"/>,
+               :bonus     => <xsl:apply-templates />,
+             },
+</xsl:template>
 
 <xsl:template match="Requirement">
             {

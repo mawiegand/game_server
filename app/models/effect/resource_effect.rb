@@ -7,6 +7,7 @@ class Effect::ResourceEffect < ActiveRecord::Base
   RESOURCE_EFFECT_TYPE_SHOP = 0
   RESOURCE_EFFECT_TYPE_ARTIFACT = 1
   RESOURCE_EFFECT_TYPE_SPECIAL_OFFER = 2
+  RESOURCE_EFFECT_TYPE_ASSIGNMENT_REWARD = 4
 
   after_create   :propagate_effect_creation
   before_destroy :propagate_effect_removal
@@ -53,7 +54,27 @@ class Effect::ResourceEffect < ActiveRecord::Base
     
     !effect.nil?
   end
-  
+
+  def self.create_reward_effect(character, resource_id, bonus, duration, origin_id, type_id)
+    effect = Effect::ResourceEffect.create({
+      bonus: bonus,
+      resource_pool_id: character.resource_pool.id,
+      resource_id: resource_id,
+      origin_id: origin_id,
+      type_id: type_id,
+      finished_at: Time.now + (duration * 3600),
+    })
+
+    # event for effect
+    effect.create_event(
+      character: character,
+      execute_at: effect.finished_at,
+      event_type: "resource_effect",
+      local_event_id: effect.id,
+    )
+
+    !effect.nil?
+  end
 
   protected
 

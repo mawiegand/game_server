@@ -4,7 +4,10 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   
   belongs_to :character,  :class_name => "Fundamental::Character",  :foreign_key => "character_id",    :inverse_of => :standard_assignments
   has_one    :event,      :class_name => "Event::Event",            :foreign_key => "local_event_id",  :dependent => :destroy, :conditions => "event_type = 'standard_assignment'"
-  
+
+  has_many   :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ASSIGNMENT_REWARD]
+  has_many   :character_construction_effects, :class_name => "Effect::ConstructionEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ASSIGNMENT_REWARD]
+
   scope :with_type_id,  lambda { |type_id| where(:type_id => type_id) }
   scope :with_type,     lambda { |type|    where(:type_id => type[:id]) }
   
@@ -170,9 +173,11 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   def redeem_rewards!
     rewards            = self.assignment_type[:rewards] || {}
     
-    resource_rewards   = rewards[:resource_rewards]
-    unit_rewards       = rewards[:unit_rewards]
-    experience_rewards = rewards[:experience_reward]
+    resource_rewards           = rewards[:resource_rewards]
+    unit_rewards               = rewards[:unit_rewards]
+    experience_rewards         = rewards[:experience_reward]
+    production_bonus_rewards   = rewards[:production_bonus_rewards]
+    construction_bonus_rewards = rewards[:construction_bonus_rewards]
     
     resources = self.resource_hash_from_rewards(resource_rewards) 
     units = self.unit_hash_from_rewards(unit_rewards)
@@ -193,6 +198,31 @@ class Assignment::StandardAssignment < ActiveRecord::Base
     unless experience_rewards.nil?
       self.character.increment(:exp, (rewards[:experience_reward] * (1 + (self.character.exp_bonus_total || 0))).floor)
       self.character.save!
+    end
+
+    unless production_bonus_rewards.nil?
+      production_bonus_rewards.each do |production_bonus|
+        Effect::ResourceEffect.create_reward_effect(
+            self.character,
+            production_bonus[:resource_id],
+            production_bonus[:bonus],
+            production_bonus[:duration],
+            self.id,
+            Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ASSIGNMENT_REWARD
+        )
+      end
+    end
+
+    unless construction_bonus_rewards.nil?
+      construction_bonus_rewards.each do |construction_bonus|
+        Effect::ConstructionEffect.create_reward_effect(
+            self.character,
+            construction_bonus[:bonus],
+            construction_bonus[:duration],
+            self.id,
+            Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ASSIGNMENT_REWARD
+        )
+      end
     end
   end
   
