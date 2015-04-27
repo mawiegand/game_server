@@ -45,13 +45,13 @@ class Action::Military::MoveArmyActionsController < ApplicationController
     
       # now fetch and fill the target region id
       target_location = @action_military_move_army_action.target_location
-#      raise BadRequestError.new('target location not valid') unless target_location.valid_movement_target_for_army?(army)
-#      raise BadRequestError.new('target location does not exist') if target_location.nil?
+      raise BadRequestError.new('target location not valid') unless target_location.valid_movement_target_for_army?(army)
+      raise BadRequestError.new('target location does not exist') if target_location.nil?
       @action_military_move_army_action.target_region_id = target_location.region_id
     
       # check whether this movement is possible and allowed (neighbouring positions, owned by current character)
       role = army.owned_by?(current_character_id) ? :owner : :character # TODO: staff / admin
-#      raise BadRequestError.new('Invalid action.') unless @action_military_move_army_action.valid_action?(role)
+      raise BadRequestError.new('Invalid action.') unless @action_military_move_army_action.valid_action?(role)
         
       army.consume_ap(1)  # consume one action point
       army.target_location_id = @action_military_move_army_action.target_location_id
