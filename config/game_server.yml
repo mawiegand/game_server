@@ -61,6 +61,7 @@ defaults: &defaults
   
   history_update_interval:    24 #hours
   player_deletion_interval:   60 #days
+  inactive_player_deletion_interval:   10 #days
   message_deletion_intervall: 30 #days
 
   special_offer_interval:          5 #days

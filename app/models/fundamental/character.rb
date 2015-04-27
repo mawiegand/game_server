@@ -133,12 +133,23 @@ class Fundamental::Character < ActiveRecord::Base
     now - (GAME_SERVER_CONFIG['player_deletion_interval'] - 1).days + 12.hours,
   ]).order('last_login_at ASC') }
 
+  scope :shortly_before_deletable_inactive, lambda{ |now| not_deleted.where([
+    'last_login_at < ? AND (login_count < 2 OR tutorial_finished_at IS NULL)',
+    now - (GAME_SERVER_CONFIG['inactive_player_deletion_interval'] - 1).days + 12.hours
+  ]).order('last_login_at ASC') }
+
+
   scope :deletable, lambda { |now| not_deleted.where([                                        # older than 30 days or no login and older than 1 day
     '(last_login_at IS NULL AND updated_at < ?) OR last_login_at < ?',
     now - 1.days,
     now - GAME_SERVER_CONFIG['player_deletion_interval'].days + 12.hours
   ]).order('last_login_at ASC') }
-  
+
+  scope :deletable_inactive, lambda { |now| not_deleted.where([
+    '(last_login_at IS NULL AND updated_at < ?) OR (last_login_at < ? AND (login_count < 2 OR tutorial_finished_at IS NULL))',
+    now - 1.days,
+    now - GAME_SERVER_CONFIG['inactive_player_deletion_interval'].days + 12.hours
+  ]).order('last_login_at ASC') }
   
   #used by retention mail
   scope :retention_no_mail_pending,  not_deleted.where('last_retention_mail_sent_at IS NULL OR last_login_at > last_retention_mail_sent_at')
@@ -494,7 +505,7 @@ class Fundamental::Character < ActiveRecord::Base
       start_variant: 1,
       gender: gender,
       lang: lang,
-      has_limited_grid: true,
+      has_limited_grid: false,
     })
     
     avatar = GameState::Avatars.new
@@ -900,7 +911,7 @@ class Fundamental::Character < ActiveRecord::Base
   
   # logged-in at least once
   def logged_in_once?
-    login_count >= 1 && (reached_game? || playtime >= 60.0)  # a minute in game or pressed button in welcome dialog.
+    login_count >= 1 && (reached_game? || playtime >= 60.0 || num_finished_quests > 0)  # a minute in game or pressed button in welcome dialog or solved a quest.
   end  
   
   def update_credits_spent

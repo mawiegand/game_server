@@ -1,40 +1,74 @@
 The player deletion script was started at <%= @report[:started_at] %> 
 and finished running at <%= @report[:finished_at] %>.
 
-<% if @report[:deleted_players].count > 0 %>
-It deleted the oldest <%= @report[:deleted_players].count %> of <%= @report[:deleted_players].count + @report[:not_deleted_players].count %> inactive players:
+<% if @report[:deleted_inactive_players].count > 0 %>
+    It deleted the oldest <%= @report[:deleted_inactive_players].count %> of <%= @report[:deleted_inactive_players].count + @report[:not_deleted_inactive_players].count %> inactive players, who logged in only once or didn't finish the tutorial in the first <%= GAME_SERVER_CONFIG['inactive_player_deletion_interval'] %> days:
 
-  id     |  character name            | last login at
---------+----------------------------+---------------------------
-<% @report[:deleted_players].each do |player| %>
-  <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
-<% end %>
+    id     |  character name            | last login at
+    --------+----------------------------+---------------------------
+    <% @report[:deleted_inactive_players].each do |player| %>
+        <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
+    <% end %>
 <% else %>
-No players were deleted.
+    No inactive players were deleted.
 <% end %>
 
+<% if @report[:not_deleted_inactive_players].count > 0 %>
+    The following <%= @report[:not_deleted_inactive_players].count %> inactive players were not deleted:
+
+    id     |  character name            | last login at
+    --------+----------------------------+---------------------------
+    <% @report[:not_deleted_inactive_players].each do |player| %>
+        <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
+    <% end %>
+<% end %>
+
+<% if @report[:shortly_before_deletable_inactive_players].count > 0 %>
+    In the next 24 hours will be deleted a total of <%= @report[:shortly_before_deletable_inactive_players].count %> inactive players, who logged in only once or didn't finish the tutorial in the first <%= GAME_SERVER_CONFIG['inactive_player_deletion_interval'] %> days:
+
+    id     |  character name            | last login at
+    --------+----------------------------+---------------------------
+    <% @report[:shortly_before_deletable_inactive_players].each do |player| %>
+        <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
+    <% end %>
+<% else %>
+    No inactive players will be deleted in the next 24 hours.
+<% end %>
+
+    -----------------------------------------------------------------
+
+<% if @report[:deleted_players].count > 0 %>
+    It deleted the oldest <%= @report[:deleted_players].count %> of <%= @report[:deleted_players].count + @report[:not_deleted_players].count %> active players, who didn't log in during the last <%= GAME_SERVER_CONFIG['player_deletion_interval'] %> days:
+
+    id     |  character name            | last login at
+    --------+----------------------------+---------------------------
+    <% @report[:deleted_players].each do |player| %>
+        <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
+    <% end %>
+<% else %>
+    No active players were deleted.
+<% end %>
 
 <% if @report[:not_deleted_players].count > 0 %>
-The following <%= @report[:not_deleted_players].count %> inactive players were not deleted:
+    The following <%= @report[:not_deleted_players].count %> active players were not deleted:
 
-  id     |  character name            | last login at
---------+----------------------------+---------------------------
-<% @report[:not_deleted_players].each do |player| %>
-  <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
+      id     |  character name            | last login at
+    --------+----------------------------+---------------------------
+    <% @report[:not_deleted_players].each do |player| %>
+      <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
+    <% end %>
 <% end %>
 
-
-<% end %>
 <% if @report[:shortly_before_deletable_players].count > 0 %>
-In the next 24 hours will be deleted a total of <%= @report[:shortly_before_deletable_players].count %> inactive players:
+    In the next 24 hours will be deleted a total of <%= @report[:shortly_before_deletable_players].count %> active players, who didn't log in during the last <%= GAME_SERVER_CONFIG['player_deletion_interval'] %> days:
 
-  id     |  character name            | last login at
---------+----------------------------+---------------------------
-<% @report[:shortly_before_deletable_players].each do |player| %>
-  <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
-<% end %>
+      id     |  character name            | last login at
+    --------+----------------------------+---------------------------
+    <% @report[:shortly_before_deletable_players].each do |player| %>
+      <%= player.id.to_s.rjust(5) %>  |  <%= player.name.rjust(24) %>  |  <%= player.last_login_at %>
+    <% end %>
 <% else %>
-No players will be deleted in the next 24 hours.
+    No active players will be deleted in the next 24 hours.
 <% end %>
 
 

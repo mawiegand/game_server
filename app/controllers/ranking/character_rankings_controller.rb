@@ -22,6 +22,7 @@ class Ranking::CharacterRankingsController < ApplicationController
     sort = "victories"      if params[:sort] == 'victories'
     sort = "max_experience" if params[:sort] == 'experience'
     sort = "kills"          if params[:sort] == 'kills'
+    sort = "num_fortress"   if params[:sort] == 'fortress'
 
     if params[:page].blank? && @marked_character
       num_before = Ranking::CharacterRanking.where(
