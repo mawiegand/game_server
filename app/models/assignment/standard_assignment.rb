@@ -5,8 +5,8 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   belongs_to :character,  :class_name => "Fundamental::Character",  :foreign_key => "character_id",    :inverse_of => :standard_assignments
   has_one    :event,      :class_name => "Event::Event",            :foreign_key => "local_event_id",  :dependent => :destroy, :conditions => "event_type = 'standard_assignment'"
 
-  has_many   :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ASSIGNMENT_REWARD]
-  has_many   :character_construction_effects, :class_name => "Effect::ConstructionEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ASSIGNMENT_REWARD]
+  has_many   :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD]
+  has_many   :character_construction_effects, :class_name => "Effect::ConstructionEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD]
 
   scope :with_type_id,  lambda { |type_id| where(:type_id => type_id) }
   scope :with_type,     lambda { |type|    where(:type_id => type[:id]) }
@@ -209,7 +209,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
             production_bonus[:bonus],
             production_bonus[:duration],
             self.id,
-            Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_ASSIGNMENT_REWARD
+            Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD
         )
       end
     end
@@ -221,7 +221,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
             construction_bonus[:bonus],
             construction_bonus[:duration],
             self.id,
-            Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_ASSIGNMENT_REWARD
+            Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD
         )
       end
     end

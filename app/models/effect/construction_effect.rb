@@ -6,7 +6,7 @@ class Effect::ConstructionEffect < ActiveRecord::Base
   CONSTRUCTION_EFFECT_TYPE_SHOP     = 0
   CONSTRUCTION_EFFECT_TYPE_ARTIFACT = 1
   CONSTRUCTION_EFFECT_TYPE_CUSTOM   = 2 #
-  CONSTRUCTION_EFFECT_TYPE_ASSIGNMENT_REWARD = 4
+  CONSTRUCTION_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD = 4
 
   after_create   :propagate_effect_creation
   before_destroy :propagate_effect_removal
