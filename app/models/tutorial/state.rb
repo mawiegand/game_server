@@ -26,13 +26,14 @@ class Tutorial::State < ActiveRecord::Base
   end
 
   def create_start_quest_state
-    quest = self.quests.create({          # hack. as the settler-quest won't be reached in this tutorial-graph, it'll be marked as finished right from the start
-      quest_id:     GAME_SERVER_CONFIG['settler_start_quest_id'],
-      status:       Tutorial::Quest::STATE_CLOSED,    
-      finished_at:  Time.now,
-      reward_displayed_at: Time.now,
-      displayed_at: Time.now
-    })
+    # TODO: SOLVE THE START-QUEST-ISSUE
+    #quest = self.quests.create({          # hack. as the settler-quest won't be reached in this tutorial-graph, it'll be marked as finished right from the start
+    #  quest_id:     GAME_SERVER_CONFIG['settler_start_quest_id'],
+    #  status:       Tutorial::Quest::STATE_CLOSED,    
+    #  finished_at:  Time.now,
+    #  reward_displayed_at: Time.now,
+    #  displayed_at: Time.now
+    #})
     
     self.quests.create({
       quest_id:     0,
@@ -41,6 +42,8 @@ class Tutorial::State < ActiveRecord::Base
   end
   
   def create_settler_start_quest_state
+    return create_start_quest_state  # TODO: BECAUSE SETTLER START QUEST WAS COMMENTED OUT (WHO DID THAT; WHY?), WE CANNOT USE THIS BRANCH
+    
     quest = self.quests.create({
       quest_id:     GAME_SERVER_CONFIG['settler_start_quest_id'],
       status:       Tutorial::Quest::STATE_NEW,       

@@ -17,6 +17,7 @@ class Action::Fundamental::AutoJoinAllianceActionsController < ApplicationContro
 
     raise NotFoundError.new('no suitable alliance found') if alliance.nil?
     raise ConflictError.new("too many members in alliance") if alliance.full?
+    raise ForbiddenError.new('auto join is disabled for this alliance') if !alliance.auto_joinable
     
     alliance.add_character(current_character)
     
