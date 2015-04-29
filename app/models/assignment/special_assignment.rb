@@ -248,6 +248,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
   end
 
   def is_outdated?
+    return false if self.finished
     if !self.end_time.nil?
       self.end_time < Time.now
     else
