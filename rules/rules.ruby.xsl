@@ -921,13 +921,13 @@ end
 </xsl:if>
 
 <xsl:if test="ProductionBonusReward">
-            :production_bonus_reward => [
+            :production_bonus_rewards => [
               <xsl:apply-templates select="ProductionBonusReward" />
             ],
 </xsl:if>
 
 <xsl:if test="ConstructionBonusReward">
-            :construction_bonus_reward => [
+            :construction_bonus_rewards => [
               <xsl:apply-templates select="ConstructionBonusReward" />
             ],
 </xsl:if>

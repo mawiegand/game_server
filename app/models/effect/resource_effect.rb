@@ -8,6 +8,7 @@ class Effect::ResourceEffect < ActiveRecord::Base
   RESOURCE_EFFECT_TYPE_ARTIFACT = 1
   RESOURCE_EFFECT_TYPE_SPECIAL_OFFER = 2
   RESOURCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD = 4
+  RESOURCE_EFFECT_TYPE_SPECIAL_ASSIGNMENT_REWARD = 5
 
   after_create   :propagate_effect_creation
   before_destroy :propagate_effect_removal
