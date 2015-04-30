@@ -70,7 +70,7 @@ end
 
 gem 'jquery-ui-rails'
 
-gem 'rails3-jquery-autocomplete', git: 'https://github.com/francisd/rails3-jquery-autocomplete'
+gem 'rails3-jquery-autocomplete', :git => 'https://github.com/francisd/rails3-jquery-autocomplete'
 
 
 
