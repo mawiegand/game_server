@@ -505,7 +505,7 @@
 
 <!ELEMENT DisplayDuration (#PCDATA)>
 
-<!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?, ProductionBonusReward*, ConstructionBonusReward*)>
+<!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?, ProductionBonusReward*, ConstructionBonusReward*, ExperienceProductionBonusReward*)>
 
 <!ELEMENT ResourceReward (#PCDATA)>
 <!ATTLIST ResourceReward
@@ -541,7 +541,12 @@
   duration CDATA #REQUIRED
 >
 
-<!ELEMENT SpecialAssignmentRewards (SpecialAssignmentResourceReward*, SpecialAssignmentUnitReward*, SpecialAssignmentExperienceReward?, ProductionBonusReward*, ConstructionBonusReward*)>
+<!ELEMENT ExperienceProductionBonusReward (#PCDATA)>
+<!ATTLIST ExperienceProductionBonusReward
+  duration CDATA #REQUIRED
+>
+
+<!ELEMENT SpecialAssignmentRewards (SpecialAssignmentResourceReward*, SpecialAssignmentUnitReward*, SpecialAssignmentExperienceReward?, ProductionBonusReward*, ConstructionBonusReward*, ExperienceProductionBonusReward*)>
 
 <!ELEMENT SpecialAssignmentResourceReward (#PCDATA)>
 <!ATTLIST SpecialAssignmentResourceReward

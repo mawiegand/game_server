@@ -7,6 +7,7 @@ class Assignment::StandardAssignment < ActiveRecord::Base
 
   has_many   :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD]
   has_many   :character_construction_effects, :class_name => "Effect::ConstructionEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD]
+  has_many   :character_experience_effects, :class_name => "Effect::ExperienceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ExperienceEffect::EXPERIENCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD]
 
   scope :with_type_id,  lambda { |type_id| where(:type_id => type_id) }
   scope :with_type,     lambda { |type|    where(:type_id => type[:id]) }
@@ -174,12 +175,13 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   def redeem_rewards!
     rewards            = self.assignment_type[:rewards] || {}
     
-    resource_rewards           = rewards[:resource_rewards]
-    unit_rewards               = rewards[:unit_rewards]
-    experience_rewards         = rewards[:experience_reward]
-    production_bonus_rewards   = rewards[:production_bonus_rewards]
-    construction_bonus_rewards = rewards[:construction_bonus_rewards]
-    
+    resource_rewards                    = rewards[:resource_rewards]
+    unit_rewards                        = rewards[:unit_rewards]
+    experience_rewards                  = rewards[:experience_reward]
+    production_bonus_rewards            = rewards[:production_bonus_rewards]
+    construction_bonus_rewards          = rewards[:construction_bonus_rewards]
+    experience_production_bonus_rewards = rewards[:experience_production_bonus_rewards]
+
     resources = self.resource_hash_from_rewards(resource_rewards) 
     units = self.unit_hash_from_rewards(unit_rewards)
     
@@ -222,6 +224,18 @@ class Assignment::StandardAssignment < ActiveRecord::Base
             construction_bonus[:duration],
             self.id,
             Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD
+        )
+      end
+    end
+
+    unless experience_production_bonus_rewards.nil?
+      experience_production_bonus_rewards.each do |experience_production_bonus|
+        Effect::ExperienceEffect.create_reward_effect(
+            self.character,
+            experience_production_bonus[:bonus],
+            experience_production_bonus[:duration],
+            self.id,
+            Effect::ExperienceEffect::EXPERIENCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD
         )
       end
     end

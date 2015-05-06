@@ -5,6 +5,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
 
   has_many   :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_SPECIAL_ASSIGNMENT_REWARD]
   has_many   :character_construction_effects, :class_name => "Effect::ConstructionEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_SPECIAL_ASSIGNMENT_REWARD]
+  has_many   :character_experience_effects, :class_name => "Effect::ExperienceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ExperienceEffect::EXPERIENCE_EFFECT_TYPE_SPECIAL_ASSIGNMENT_REWARD]
 
   after_save :manage_event_on_ended_at_change
 
@@ -369,8 +370,9 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
   def redeem_rewards!
     rewards            = self.assignment_type[:rewards] || {}
 
-    production_bonus_rewards   = rewards[:production_bonus_rewards]
-    construction_bonus_rewards = rewards[:construction_bonus_rewards]
+    production_bonus_rewards            = rewards[:production_bonus_rewards]
+    construction_bonus_rewards          = rewards[:construction_bonus_rewards]
+    experience_production_bonus_rewards = rewards[:experience_production_bonus_rewards]
 
     resource_rewards = {}
     GameRules::Rules.the_rules.resource_types.each do |resource_type|
@@ -425,6 +427,18 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
             construction_bonus[:duration],
             self.id,
             Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_SPECIAL_ASSIGNMENT_REWARD
+        )
+      end
+    end
+
+    unless experience_production_bonus_rewards.nil?
+      experience_production_bonus_rewards.each do |experience_production_bonus|
+        Effect::ExperienceEffect.create_reward_effect(
+            self.character,
+            experience_production_bonus[:bonus],
+            experience_production_bonus[:duration],
+            self.id,
+            Effect::ExperienceEffect::EXPERIENCE_EFFECT_TYPE_SPECIAL_ASSIGNMENT_REWARD
         )
       end
     end

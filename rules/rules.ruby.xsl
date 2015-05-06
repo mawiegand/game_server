@@ -931,6 +931,12 @@ end
               <xsl:apply-templates select="ConstructionBonusReward" />
             ],
 </xsl:if>
+
+<xsl:if test="ExperienceProductionBonusReward">
+            :experience_production_bonus_rewards => [
+              <xsl:apply-templates select="ExperienceProductionBonusReward" />
+            ],
+</xsl:if>
 </xsl:template>
 
 <xsl:template match="SpecialAssignmentResourceReward">
@@ -1030,6 +1036,12 @@ end
             <xsl:apply-templates select="ConstructionBonusReward" />
           ],
 </xsl:if>
+
+<xsl:if test="ExperienceProductionBonusReward">
+         :experience_production_bonus_rewards => [
+           <xsl:apply-templates select="ExperienceProductionBonusReward" />
+         ],
+</xsl:if>
 </xsl:template>
 
 <xsl:template match="ResourceReward">
@@ -1076,6 +1088,13 @@ end
                :duration  => <xsl:value-of select="@duration"/>,
                :bonus     => <xsl:apply-templates />,
              },
+</xsl:template>
+
+<xsl:template match="ExperienceProductionBonusReward">
+            {
+              :duration  => <xsl:value-of select="@duration"/>,
+              :bonus     => <xsl:apply-templates />,
+            },
 </xsl:template>
 
 <xsl:template match="Requirement">
