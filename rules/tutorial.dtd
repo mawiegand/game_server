@@ -91,7 +91,7 @@
 
 <!ELEMENT ProductionBonusReward (#PCDATA)>
 <!ATTLIST ProductionBonusReward
-  id IDREF #REQUIRED
+  resource IDREF #REQUIRED
   duration CDATA #REQUIRED
 >
 

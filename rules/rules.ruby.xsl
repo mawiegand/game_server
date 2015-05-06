@@ -1077,7 +1077,7 @@ end
 
 <xsl:template match="ProductionBonusReward">
              {
-               :resource_id => <xsl:value-of select="count(id(@id)/preceding-sibling::*)"/>,
+               :resource    => :<xsl:value-of select="@resource" />,
                :duration    => <xsl:value-of select="@duration"/>,
                :bonus       => <xsl:apply-templates />,
              },

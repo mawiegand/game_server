@@ -682,9 +682,18 @@ class Tutorial::Quest < ActiveRecord::Base
 
     unless production_bonus_rewards.nil?
       production_bonus_rewards.each do |production_bonus|
+        resource_type_id = nil
+        GameRules::Rules.the_rules().resource_types.each do |type|
+          if type[:symbolic_id].to_s == production_bonus[:resource].to_s
+            resource_type_id = type[:id]
+            break
+          end
+        end
+        raise BadRequestError.new("no resource type found for resource symbolic id #{production_bonus[:resource]}") if resource_type_id.nil?
+
         Effect::ResourceEffect.create_reward_effect(
             self.owner,
-            production_bonus[:resource_id],
+            resource_type_id,
             production_bonus[:bonus],
             production_bonus[:duration],
             self.id,
