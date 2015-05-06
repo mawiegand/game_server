@@ -335,10 +335,10 @@ end
 </xsl:template>
 
 <xsl:template match="ExperienceProductionBonusReward">
-             {
-               :duration  => <xsl:value-of select="@duration"/>,
-               :bonus     => <xsl:apply-templates />,
-             },
+              {
+                :duration  => <xsl:value-of select="@duration"/>,
+                :bonus     => <xsl:apply-templates />,
+              },
 </xsl:template>
 
 <xsl:template match="RewardTests">
