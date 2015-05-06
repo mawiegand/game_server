@@ -623,8 +623,11 @@ class Tutorial::Quest < ActiveRecord::Base
     
     rewards = quest[:rewards] || {}
     #raise BadRequestError.new('no rewards found in quest') if rewards.nil?
-    resource_rewards = rewards[:resource_rewards]
-    unit_rewards = rewards[:unit_rewards]
+    resource_rewards                    = rewards[:resource_rewards]
+    unit_rewards                        = rewards[:unit_rewards]
+    production_bonus_rewards            = rewards[:production_bonus_rewards]
+    construction_bonus_rewards          = rewards[:construction_bonus_rewards]
+    experience_production_bonus_rewards = rewards[:experience_production_bonus_rewards]
 
 
     # calc resources
@@ -674,6 +677,43 @@ class Tutorial::Quest < ActiveRecord::Base
         
         units[unit_db_field] = amount
         total_unit_amount += amount
+      end
+    end
+
+    unless production_bonus_rewards.nil?
+      production_bonus_rewards.each do |production_bonus|
+        Effect::ResourceEffect.create_reward_effect(
+            self.owner,
+            production_bonus[:resource_id],
+            production_bonus[:bonus],
+            production_bonus[:duration],
+            self.id,
+            Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_TUTORIAL_REWARD
+        )
+      end
+    end
+
+    unless construction_bonus_rewards.nil?
+      construction_bonus_rewards.each do |construction_bonus|
+        Effect::ConstructionEffect.create_reward_effect(
+            self.owner,
+            construction_bonus[:bonus],
+            construction_bonus[:duration],
+            self.id,
+            Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_TUTORIAL_REWARD
+        )
+      end
+    end
+
+    unless experience_production_bonus_rewards.nil?
+      experience_production_bonus_rewards.each do |experience_production_bonus|
+        Effect::ExperienceEffect.create_reward_effect(
+            self.owner,
+            experience_production_bonus[:bonus],
+            experience_production_bonus[:duration],
+            self.id,
+            Effect::ExperienceEffect::EXPERIENCE_EFFECT_TYPE_TUTORIAL_REWARD
+        )
       end
     end
 

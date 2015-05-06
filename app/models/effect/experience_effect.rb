@@ -4,6 +4,7 @@ class Effect::ExperienceEffect < ActiveRecord::Base
   belongs_to :character, :class_name => "Fundamental::Character", :foreign_key => "character_id",    :inverse_of => :experience_effects
 
   EXPERIENCE_EFFECT_TYPE_START_GIFT = 0
+  EXPERIENCE_EFFECT_TYPE_TUTORIAL_REWARD = 3
   EXPERIENCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD = 4
   EXPERIENCE_EFFECT_TYPE_SPECIAL_ASSIGNMENT_REWARD = 5
 
