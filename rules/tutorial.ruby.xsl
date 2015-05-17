@@ -228,15 +228,11 @@ end
           :reward_text => {
             <xsl:apply-templates select="RewardText" />              
           },
-<xsl:if test="Requirement">
-          :requirement => {
-            <xsl:apply-templates select="Requirement" />
+<xsl:if test="Triggers">
+          :triggers => {
+            <xsl:apply-templates select="Triggers" />
           },
 </xsl:if>
-          :successor_quests => [<xsl:variable name="self" select="."/>          
-  <xsl:for-each select="//Tutorial/Quests/Quest">
-    <xsl:if test="$self/@id = Requirement/@quest"><xsl:value-of select="position()-1"/>, </xsl:if>
-  </xsl:for-each>],
 <xsl:if test="Rewards">
           :rewards => {
             <xsl:apply-templates select="Rewards" />
@@ -263,8 +259,16 @@ end
       ],                # END OF QUESTS
 </xsl:template>
 
-<xsl:template match="Requirement">
-            :quest => '<xsl:value-of select="@quest" />',
+<xsl:template match="Triggers">
+  <xsl:if test="PlayTimeTrigger">
+            :play_time_trigger => <xsl:value-of select="PlayTimeTrigger" />,
+  </xsl:if>
+  <xsl:if test="FinishQuestTrigger">
+            :finish_quest_trigger => '<xsl:value-of select="FinishQuestTrigger" />',
+  </xsl:if>
+  <xsl:if test="MundaneRankTrigger">
+            :mundane_rank_trigger => <xsl:value-of select="MundaneRankTrigger" />,
+  </xsl:if>
 </xsl:template>
 
 

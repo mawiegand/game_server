@@ -57,7 +57,7 @@
 <!-- Quests -->
 <!ELEMENT Quests (Quest*)>
 
-<!ELEMENT Quest (Name*, Task*, Description*, Flavor*, RewardText*, RewardFlavor*, Requirement?, Rewards?, RewardTests?, UIMarker*, Message*, PlaceNpcs?)>
+<!ELEMENT Quest (Name*, Task*, Description*, Flavor*, RewardText*, RewardFlavor*, Triggers, Rewards?, RewardTests?, UIMarker*, Message*, PlaceNpcs?)>
 <!ATTLIST Quest
   id                 ID #REQUIRED
   advisor            IDREF "warrior"
@@ -68,10 +68,13 @@
   blocking           CDATA "false"
 >
 
-<!ELEMENT Requirement EMPTY>
-<!ATTLIST Requirement
-  quest IDREF #REQUIRED
->
+<!ELEMENT Triggers (PlayTimeTrigger?, FinishQuestTrigger*, MundaneRankTrigger?)>
+
+<!ELEMENT PlayTimeTrigger (#PCDATA)>
+
+<!ELEMENT FinishQuestTrigger (#PCDATA)>
+
+<!ELEMENT MundaneRankTrigger (#PCDATA)>
 
 <!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?, ActionPointReward?)>
 

@@ -156,7 +156,9 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [1, ],
+          :triggers => {
+            
+          },
 
           :rewards => {
             
@@ -256,13 +258,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_queue_1gathererlvl1',
-
+            :finish_quest_trigger => 'quest_queue_1gathererlvl1',
+  
           },
-
-          :successor_quests => [2, ],
 
           :rewards => {
             
@@ -363,13 +363,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_1gathererlvl2',
-
+            :finish_quest_trigger => 'quest_build_1gathererlvl2',
+  
           },
-
-          :successor_quests => [5, ],
 
           :rewards => {
             
@@ -510,7 +508,9 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :triggers => {
+            
+          },
 
           :rewards => {
             
@@ -584,13 +584,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_1campfirelvl1',
-
+            :finish_quest_trigger => 'quest_build_1campfirelvl1',
+  
           },
-
-          :successor_quests => [130, ],
 
           :rewards => {
             
@@ -675,13 +673,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl2',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl2',
+  
           },
-
-          :successor_quests => [6, ],
 
           :rewards => {
             
@@ -781,13 +777,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_1barrackslvl1',
-
+            :finish_quest_trigger => 'quest_build_1barrackslvl1',
+  
           },
-
-          :successor_quests => [7, ],
 
           :rewards => {
             
@@ -882,13 +876,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_recruit_1clubbers',
-
+            :finish_quest_trigger => 'quest_recruit_1clubbers',
+  
           },
-
-          :successor_quests => [17, ],
 
           :rewards => {
             
@@ -960,13 +952,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl4',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl4',
+  
           },
-
-          :successor_quests => [18, ],
 
           :rewards => {
             
@@ -1066,13 +1056,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_army_create',
-
+            :finish_quest_trigger => 'quest_army_create',
+  
           },
-
-          :successor_quests => [11, ],
 
           :rewards => {
             
@@ -1197,7 +1185,9 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :triggers => {
+            
+          },
 
           :rewards => {
             
@@ -1295,13 +1285,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_army_move',
-
+            :finish_quest_trigger => 'quest_army_move',
+  
           },
-
-          :successor_quests => [12, ],
 
           :rewards => {
             
@@ -1384,13 +1372,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_settlement_button2',
-
+            :finish_quest_trigger => 'quest_settlement_button2',
+  
           },
-
-          :successor_quests => [13, ],
 
           :rewards => {
             
@@ -1490,13 +1476,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl3',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl3',
+  
           },
-
-          :successor_quests => [129, ],
 
           :rewards => {
             
@@ -1596,7 +1580,9 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :triggers => {
+            
+          },
 
           :rewards => {
             
@@ -1695,13 +1681,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_queue_chiefcottagelvl4',
-
+            :finish_quest_trigger => 'quest_queue_chiefcottagelvl4',
+  
           },
-
-          :successor_quests => [8, ],
 
           :rewards => {
             
@@ -1799,13 +1783,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_assignment1',
-
+            :finish_quest_trigger => 'quest_assignment1',
+  
           },
-
-          :successor_quests => [15, ],
 
           :rewards => {
             
@@ -1905,13 +1887,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_settlement_button1',
-
+            :finish_quest_trigger => 'quest_settlement_button1',
+  
           },
-
-          :successor_quests => [9, ],
 
           :rewards => {
             
@@ -2012,13 +1992,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_1storagelvl1',
-
+            :finish_quest_trigger => 'quest_build_1storagelvl1',
+  
           },
-
-          :successor_quests => [4, ],
 
           :rewards => {
             
@@ -2157,13 +2135,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_1campfirelvl2',
-
+            :finish_quest_trigger => 'quest_build_1campfirelvl2',
+  
           },
-
-          :successor_quests => [131, ],
 
           :rewards => {
             
@@ -2249,13 +2225,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_1campfirelvl2',
-
+            :finish_quest_trigger => 'quest_build_1campfirelvl2',
+  
           },
-
-          :successor_quests => [21, 103, 134, ],
 
           :rewards => {
             
@@ -2344,13 +2318,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_0',
-
+            :finish_quest_trigger => 'quest_resourcescore_0',
+  
           },
-
-          :successor_quests => [22, 24, ],
 
           :rewards => {
             
@@ -2450,13 +2422,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl5',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl5',
+  
           },
-
-          :successor_quests => [23, ],
 
           :rewards => {
             
@@ -2554,13 +2524,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_1quarrylvl2',
-
+            :finish_quest_trigger => 'quest_build_1quarrylvl2',
+  
           },
-
-          :successor_quests => [37, 58, ],
 
           :rewards => {
             
@@ -2658,13 +2626,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl5',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl5',
+  
           },
-
-          :successor_quests => [25, 26, 28, ],
 
           :rewards => {
             
@@ -2762,13 +2728,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl6',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl6',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -2866,13 +2830,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl6',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl6',
+  
           },
-
-          :successor_quests => [27, 29, ],
 
           :rewards => {
             
@@ -2970,13 +2932,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl7',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl7',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -3060,13 +3020,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl6',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl6',
+  
           },
-
-          :successor_quests => [126, ],
 
           :rewards => {
             
@@ -3168,13 +3126,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl7',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl7',
+  
           },
-
-          :successor_quests => [30, 31, ],
 
           :rewards => {
             
@@ -3274,13 +3230,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl8',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl8',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -3378,13 +3332,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl8',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl8',
+  
           },
-
-          :successor_quests => [32, 33, ],
 
           :rewards => {
             
@@ -3482,13 +3434,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl9',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl9',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -3583,13 +3533,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl9',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl9',
+  
           },
-
-          :successor_quests => [34, ],
 
           :rewards => {
             
@@ -3687,13 +3635,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_chiefcottagelvl10',
-
+            :finish_quest_trigger => 'quest_build_chiefcottagelvl10',
+  
           },
-
-          :successor_quests => [35, ],
 
           :rewards => {
             
@@ -3791,13 +3737,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_copper_smelter',
-
+            :finish_quest_trigger => 'quest_build_copper_smelter',
+  
           },
-
-          :successor_quests => [36, ],
 
           :rewards => {
             
@@ -3899,13 +3843,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_firing_range',
-
+            :finish_quest_trigger => 'quest_build_firing_range',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -4007,13 +3949,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_1loggerlvl2',
-
+            :finish_quest_trigger => 'quest_build_1loggerlvl2',
+  
           },
-
-          :successor_quests => [38, ],
 
           :rewards => {
             
@@ -4102,13 +4042,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_1',
-
+            :finish_quest_trigger => 'quest_charkills_1',
+  
           },
-
-          :successor_quests => [39, ],
 
           :rewards => {
             
@@ -4197,13 +4135,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_2',
-
+            :finish_quest_trigger => 'quest_charkills_2',
+  
           },
-
-          :successor_quests => [40, ],
 
           :rewards => {
             
@@ -4292,13 +4228,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_3',
-
+            :finish_quest_trigger => 'quest_charkills_3',
+  
           },
-
-          :successor_quests => [41, ],
 
           :rewards => {
             
@@ -4387,13 +4321,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_4',
-
+            :finish_quest_trigger => 'quest_charkills_4',
+  
           },
-
-          :successor_quests => [42, ],
 
           :rewards => {
             
@@ -4482,13 +4414,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_5',
-
+            :finish_quest_trigger => 'quest_charkills_5',
+  
           },
-
-          :successor_quests => [43, ],
 
           :rewards => {
             
@@ -4577,13 +4507,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_6',
-
+            :finish_quest_trigger => 'quest_charkills_6',
+  
           },
-
-          :successor_quests => [44, ],
 
           :rewards => {
             
@@ -4672,13 +4600,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_7',
-
+            :finish_quest_trigger => 'quest_charkills_7',
+  
           },
-
-          :successor_quests => [45, ],
 
           :rewards => {
             
@@ -4767,13 +4693,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_8',
-
+            :finish_quest_trigger => 'quest_charkills_8',
+  
           },
-
-          :successor_quests => [46, ],
 
           :rewards => {
             
@@ -4862,13 +4786,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_9',
-
+            :finish_quest_trigger => 'quest_charkills_9',
+  
           },
-
-          :successor_quests => [47, ],
 
           :rewards => {
             
@@ -4957,13 +4879,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_10',
-
+            :finish_quest_trigger => 'quest_charkills_10',
+  
           },
-
-          :successor_quests => [48, ],
 
           :rewards => {
             
@@ -5052,13 +4972,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_11',
-
+            :finish_quest_trigger => 'quest_charkills_11',
+  
           },
-
-          :successor_quests => [49, ],
 
           :rewards => {
             
@@ -5147,13 +5065,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_12',
-
+            :finish_quest_trigger => 'quest_charkills_12',
+  
           },
-
-          :successor_quests => [50, ],
 
           :rewards => {
             
@@ -5242,13 +5158,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_13',
-
+            :finish_quest_trigger => 'quest_charkills_13',
+  
           },
-
-          :successor_quests => [51, ],
 
           :rewards => {
             
@@ -5337,13 +5251,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_14',
-
+            :finish_quest_trigger => 'quest_charkills_14',
+  
           },
-
-          :successor_quests => [52, ],
 
           :rewards => {
             
@@ -5432,13 +5344,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_15',
-
+            :finish_quest_trigger => 'quest_charkills_15',
+  
           },
-
-          :successor_quests => [53, ],
 
           :rewards => {
             
@@ -5527,13 +5437,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_16',
-
+            :finish_quest_trigger => 'quest_charkills_16',
+  
           },
-
-          :successor_quests => [54, ],
 
           :rewards => {
             
@@ -5622,13 +5530,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_17',
-
+            :finish_quest_trigger => 'quest_charkills_17',
+  
           },
-
-          :successor_quests => [55, ],
 
           :rewards => {
             
@@ -5717,13 +5623,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_18',
-
+            :finish_quest_trigger => 'quest_charkills_18',
+  
           },
-
-          :successor_quests => [56, ],
 
           :rewards => {
             
@@ -5812,13 +5716,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_19',
-
+            :finish_quest_trigger => 'quest_charkills_19',
+  
           },
-
-          :successor_quests => [57, ],
 
           :rewards => {
             
@@ -5907,13 +5809,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_charkills_20',
-
+            :finish_quest_trigger => 'quest_charkills_20',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -6002,13 +5902,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_1loggerlvl2',
-
+            :finish_quest_trigger => 'quest_build_1loggerlvl2',
+  
           },
-
-          :successor_quests => [59, ],
 
           :rewards => {
             
@@ -6097,13 +5995,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_1',
-
+            :finish_quest_trigger => 'quest_armyXP_1',
+  
           },
-
-          :successor_quests => [60, ],
 
           :rewards => {
             
@@ -6192,13 +6088,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_2',
-
+            :finish_quest_trigger => 'quest_armyXP_2',
+  
           },
-
-          :successor_quests => [61, ],
 
           :rewards => {
             
@@ -6287,13 +6181,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_3',
-
+            :finish_quest_trigger => 'quest_armyXP_3',
+  
           },
-
-          :successor_quests => [62, ],
 
           :rewards => {
             
@@ -6382,13 +6274,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_4',
-
+            :finish_quest_trigger => 'quest_armyXP_4',
+  
           },
-
-          :successor_quests => [63, ],
 
           :rewards => {
             
@@ -6477,13 +6367,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_5',
-
+            :finish_quest_trigger => 'quest_armyXP_5',
+  
           },
-
-          :successor_quests => [64, ],
 
           :rewards => {
             
@@ -6572,13 +6460,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_6',
-
+            :finish_quest_trigger => 'quest_armyXP_6',
+  
           },
-
-          :successor_quests => [65, ],
 
           :rewards => {
             
@@ -6667,13 +6553,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_7',
-
+            :finish_quest_trigger => 'quest_armyXP_7',
+  
           },
-
-          :successor_quests => [66, ],
 
           :rewards => {
             
@@ -6762,13 +6646,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_8',
-
+            :finish_quest_trigger => 'quest_armyXP_8',
+  
           },
-
-          :successor_quests => [67, ],
 
           :rewards => {
             
@@ -6857,13 +6739,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_9',
-
+            :finish_quest_trigger => 'quest_armyXP_9',
+  
           },
-
-          :successor_quests => [68, ],
 
           :rewards => {
             
@@ -6952,13 +6832,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_10',
-
+            :finish_quest_trigger => 'quest_armyXP_10',
+  
           },
-
-          :successor_quests => [69, ],
 
           :rewards => {
             
@@ -7047,13 +6925,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_11',
-
+            :finish_quest_trigger => 'quest_armyXP_11',
+  
           },
-
-          :successor_quests => [70, ],
 
           :rewards => {
             
@@ -7142,13 +7018,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_12',
-
+            :finish_quest_trigger => 'quest_armyXP_12',
+  
           },
-
-          :successor_quests => [71, ],
 
           :rewards => {
             
@@ -7237,13 +7111,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_13',
-
+            :finish_quest_trigger => 'quest_armyXP_13',
+  
           },
-
-          :successor_quests => [72, ],
 
           :rewards => {
             
@@ -7332,13 +7204,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_14',
-
+            :finish_quest_trigger => 'quest_armyXP_14',
+  
           },
-
-          :successor_quests => [73, ],
 
           :rewards => {
             
@@ -7427,13 +7297,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_15',
-
+            :finish_quest_trigger => 'quest_armyXP_15',
+  
           },
-
-          :successor_quests => [74, ],
 
           :rewards => {
             
@@ -7522,13 +7390,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_16',
-
+            :finish_quest_trigger => 'quest_armyXP_16',
+  
           },
-
-          :successor_quests => [75, ],
 
           :rewards => {
             
@@ -7617,13 +7483,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_17',
-
+            :finish_quest_trigger => 'quest_armyXP_17',
+  
           },
-
-          :successor_quests => [76, ],
 
           :rewards => {
             
@@ -7712,13 +7576,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_18',
-
+            :finish_quest_trigger => 'quest_armyXP_18',
+  
           },
-
-          :successor_quests => [77, ],
 
           :rewards => {
             
@@ -7807,13 +7669,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_19',
-
+            :finish_quest_trigger => 'quest_armyXP_19',
+  
           },
-
-          :successor_quests => [78, ],
 
           :rewards => {
             
@@ -7902,13 +7762,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_20',
-
+            :finish_quest_trigger => 'quest_armyXP_20',
+  
           },
-
-          :successor_quests => [79, ],
 
           :rewards => {
             
@@ -7997,13 +7855,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_armyXP_21',
-
+            :finish_quest_trigger => 'quest_armyXP_21',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -8092,7 +7948,9 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [81, ],
+          :triggers => {
+            
+          },
 
           :rewards => {
             
@@ -8181,13 +8039,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_0',
-
+            :finish_quest_trigger => 'quest_score_0',
+  
           },
-
-          :successor_quests => [82, ],
 
           :rewards => {
             
@@ -8276,13 +8132,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_1',
-
+            :finish_quest_trigger => 'quest_score_1',
+  
           },
-
-          :successor_quests => [83, ],
 
           :rewards => {
             
@@ -8371,13 +8225,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_2',
-
+            :finish_quest_trigger => 'quest_score_2',
+  
           },
-
-          :successor_quests => [84, ],
 
           :rewards => {
             
@@ -8466,13 +8318,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_3',
-
+            :finish_quest_trigger => 'quest_score_3',
+  
           },
-
-          :successor_quests => [85, ],
 
           :rewards => {
             
@@ -8561,13 +8411,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_4',
-
+            :finish_quest_trigger => 'quest_score_4',
+  
           },
-
-          :successor_quests => [86, ],
 
           :rewards => {
             
@@ -8656,13 +8504,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_5',
-
+            :finish_quest_trigger => 'quest_score_5',
+  
           },
-
-          :successor_quests => [87, ],
 
           :rewards => {
             
@@ -8751,13 +8597,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_6',
-
+            :finish_quest_trigger => 'quest_score_6',
+  
           },
-
-          :successor_quests => [88, ],
 
           :rewards => {
             
@@ -8846,13 +8690,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_7',
-
+            :finish_quest_trigger => 'quest_score_7',
+  
           },
-
-          :successor_quests => [89, ],
 
           :rewards => {
             
@@ -8941,13 +8783,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_8',
-
+            :finish_quest_trigger => 'quest_score_8',
+  
           },
-
-          :successor_quests => [90, ],
 
           :rewards => {
             
@@ -9036,13 +8876,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_9',
-
+            :finish_quest_trigger => 'quest_score_9',
+  
           },
-
-          :successor_quests => [91, ],
 
           :rewards => {
             
@@ -9131,13 +8969,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_10',
-
+            :finish_quest_trigger => 'quest_score_10',
+  
           },
-
-          :successor_quests => [92, ],
 
           :rewards => {
             
@@ -9226,13 +9062,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_11',
-
+            :finish_quest_trigger => 'quest_score_11',
+  
           },
-
-          :successor_quests => [93, ],
 
           :rewards => {
             
@@ -9321,13 +9155,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_12',
-
+            :finish_quest_trigger => 'quest_score_12',
+  
           },
-
-          :successor_quests => [94, ],
 
           :rewards => {
             
@@ -9416,13 +9248,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_13',
-
+            :finish_quest_trigger => 'quest_score_13',
+  
           },
-
-          :successor_quests => [95, ],
 
           :rewards => {
             
@@ -9511,13 +9341,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_14',
-
+            :finish_quest_trigger => 'quest_score_14',
+  
           },
-
-          :successor_quests => [96, ],
 
           :rewards => {
             
@@ -9606,13 +9434,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_15',
-
+            :finish_quest_trigger => 'quest_score_15',
+  
           },
-
-          :successor_quests => [97, ],
 
           :rewards => {
             
@@ -9701,13 +9527,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_16',
-
+            :finish_quest_trigger => 'quest_score_16',
+  
           },
-
-          :successor_quests => [98, ],
 
           :rewards => {
             
@@ -9796,13 +9620,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_17',
-
+            :finish_quest_trigger => 'quest_score_17',
+  
           },
-
-          :successor_quests => [99, ],
 
           :rewards => {
             
@@ -9891,13 +9713,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_18',
-
+            :finish_quest_trigger => 'quest_score_18',
+  
           },
-
-          :successor_quests => [100, ],
 
           :rewards => {
             
@@ -9986,13 +9806,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_19',
-
+            :finish_quest_trigger => 'quest_score_19',
+  
           },
-
-          :successor_quests => [101, ],
 
           :rewards => {
             
@@ -10081,13 +9899,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_20',
-
+            :finish_quest_trigger => 'quest_score_20',
+  
           },
-
-          :successor_quests => [102, ],
 
           :rewards => {
             
@@ -10176,13 +9992,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_score_21',
-
+            :finish_quest_trigger => 'quest_score_21',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -10271,13 +10085,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_0',
-
+            :finish_quest_trigger => 'quest_resourcescore_0',
+  
           },
-
-          :successor_quests => [104, ],
 
           :rewards => {
             
@@ -10366,13 +10178,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_1',
-
+            :finish_quest_trigger => 'quest_resourcescore_1',
+  
           },
-
-          :successor_quests => [105, ],
 
           :rewards => {
             
@@ -10461,13 +10271,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_2',
-
+            :finish_quest_trigger => 'quest_resourcescore_2',
+  
           },
-
-          :successor_quests => [106, ],
 
           :rewards => {
             
@@ -10556,13 +10364,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_3',
-
+            :finish_quest_trigger => 'quest_resourcescore_3',
+  
           },
-
-          :successor_quests => [107, ],
 
           :rewards => {
             
@@ -10651,13 +10457,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_4',
-
+            :finish_quest_trigger => 'quest_resourcescore_4',
+  
           },
-
-          :successor_quests => [108, ],
 
           :rewards => {
             
@@ -10746,13 +10550,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_5',
-
+            :finish_quest_trigger => 'quest_resourcescore_5',
+  
           },
-
-          :successor_quests => [109, ],
 
           :rewards => {
             
@@ -10841,13 +10643,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_6',
-
+            :finish_quest_trigger => 'quest_resourcescore_6',
+  
           },
-
-          :successor_quests => [110, ],
 
           :rewards => {
             
@@ -10936,13 +10736,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_7',
-
+            :finish_quest_trigger => 'quest_resourcescore_7',
+  
           },
-
-          :successor_quests => [111, ],
 
           :rewards => {
             
@@ -11031,13 +10829,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_8',
-
+            :finish_quest_trigger => 'quest_resourcescore_8',
+  
           },
-
-          :successor_quests => [112, ],
 
           :rewards => {
             
@@ -11126,13 +10922,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_9',
-
+            :finish_quest_trigger => 'quest_resourcescore_9',
+  
           },
-
-          :successor_quests => [113, ],
 
           :rewards => {
             
@@ -11221,13 +11015,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_10',
-
+            :finish_quest_trigger => 'quest_resourcescore_10',
+  
           },
-
-          :successor_quests => [114, ],
 
           :rewards => {
             
@@ -11316,13 +11108,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_11',
-
+            :finish_quest_trigger => 'quest_resourcescore_11',
+  
           },
-
-          :successor_quests => [115, ],
 
           :rewards => {
             
@@ -11411,13 +11201,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_12',
-
+            :finish_quest_trigger => 'quest_resourcescore_12',
+  
           },
-
-          :successor_quests => [116, ],
 
           :rewards => {
             
@@ -11506,13 +11294,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_13',
-
+            :finish_quest_trigger => 'quest_resourcescore_13',
+  
           },
-
-          :successor_quests => [117, ],
 
           :rewards => {
             
@@ -11601,13 +11387,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_14',
-
+            :finish_quest_trigger => 'quest_resourcescore_14',
+  
           },
-
-          :successor_quests => [118, ],
 
           :rewards => {
             
@@ -11696,13 +11480,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_15',
-
+            :finish_quest_trigger => 'quest_resourcescore_15',
+  
           },
-
-          :successor_quests => [119, ],
 
           :rewards => {
             
@@ -11791,13 +11573,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_16',
-
+            :finish_quest_trigger => 'quest_resourcescore_16',
+  
           },
-
-          :successor_quests => [120, ],
 
           :rewards => {
             
@@ -11886,13 +11666,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_17',
-
+            :finish_quest_trigger => 'quest_resourcescore_17',
+  
           },
-
-          :successor_quests => [121, ],
 
           :rewards => {
             
@@ -11981,13 +11759,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_18',
-
+            :finish_quest_trigger => 'quest_resourcescore_18',
+  
           },
-
-          :successor_quests => [122, ],
 
           :rewards => {
             
@@ -12076,13 +11852,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_19',
-
+            :finish_quest_trigger => 'quest_resourcescore_19',
+  
           },
-
-          :successor_quests => [123, ],
 
           :rewards => {
             
@@ -12171,13 +11945,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_20',
-
+            :finish_quest_trigger => 'quest_resourcescore_20',
+  
           },
-
-          :successor_quests => [124, ],
 
           :rewards => {
             
@@ -12266,13 +12038,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_21',
-
+            :finish_quest_trigger => 'quest_resourcescore_21',
+  
           },
-
-          :successor_quests => [125, ],
 
           :rewards => {
             
@@ -12361,13 +12131,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_22',
-
+            :finish_quest_trigger => 'quest_resourcescore_22',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -12456,13 +12224,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_1barrackslvl5',
-
+            :finish_quest_trigger => 'quest_build_1barrackslvl5',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -12564,7 +12330,9 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :triggers => {
+            
+          },
 
           :rewards => {
             
@@ -12647,13 +12415,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_tavern',
-
+            :finish_quest_trigger => 'quest_build_tavern',
+  
           },
-
-          :successor_quests => [16, ],
 
           :rewards => {
             
@@ -12723,13 +12489,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_build_cottagelvl1',
-
+            :finish_quest_trigger => 'quest_build_cottagelvl1',
+  
           },
-
-          :successor_quests => [128, ],
 
           :rewards => {
             
@@ -12830,13 +12594,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_profile',
-
+            :finish_quest_trigger => 'quest_profile',
+  
           },
-
-          :successor_quests => [19, 20, ],
 
           :rewards => {
             
@@ -12934,13 +12696,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_alliance',
-
+            :finish_quest_trigger => 'quest_alliance',
+  
           },
-
-          :successor_quests => [132, ],
 
           :rewards => {
             
@@ -13028,13 +12788,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_alliance_members',
-
+            :finish_quest_trigger => 'quest_alliance_members',
+  
           },
-
-          :successor_quests => [133, ],
 
           :rewards => {
             
@@ -13122,13 +12880,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_alliance_members2',
-
+            :finish_quest_trigger => 'quest_alliance_members2',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -13216,13 +12972,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_resourcescore_0',
-
+            :finish_quest_trigger => 'quest_resourcescore_0',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -13299,7 +13053,9 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [],
+          :triggers => {
+            
+          },
 
           :rewards => {
             
@@ -13383,7 +13139,9 @@ class Tutorial::Tutorial
                 
           },
 
-          :successor_quests => [137, ],
+          :triggers => {
+            
+          },
 
           :rewards => {
             
@@ -13467,13 +13225,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_fortress_3',
-
+            :finish_quest_trigger => 'quest_fortress_3',
+  
           },
-
-          :successor_quests => [138, ],
 
           :rewards => {
             
@@ -13557,13 +13313,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_fortress_4',
-
+            :finish_quest_trigger => 'quest_fortress_4',
+  
           },
-
-          :successor_quests => [139, ],
 
           :rewards => {
             
@@ -13647,13 +13401,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_fortress_5',
-
+            :finish_quest_trigger => 'quest_fortress_5',
+  
           },
-
-          :successor_quests => [140, 142, ],
 
           :rewards => {
             
@@ -13737,13 +13489,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_fortress_6',
-
+            :finish_quest_trigger => 'quest_fortress_6',
+  
           },
-
-          :successor_quests => [141, ],
 
           :rewards => {
             
@@ -13774,98 +13524,8 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_fortress_7
-        {               #   quest_fortress_8
-          :id                => 141,
-          :symbolic_id       => :quest_fortress_8,
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "8th Fortress",
-  
-            :de_DE => "8te Festung",
-                
-          },
-          :task => {
-            
-            :en_US => "Conquer your 8th fortress.",
-  
-            :de_DE => "Erobere Deine 8te Festung.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
-  
-            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
-  
-            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
-  
-            :en_US => "Now this is fighting! Let's give this one a fancy name.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
-  
-            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
-                
-          },
-
-          :requirement => {
-            
-            :quest => 'quest_fortress_7',
-
-          },
-
-          :successor_quests => [],
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_cash,
-                :amount => 16,
-              },
-
-            ],
-
-            :experience_reward => 7000,
-
-          },          
-
-          :reward_tests => {
-            
-            :settlement_tests => [
-
-              {
-                :type => 'settlement_fortress',
-                :min_count => 8,
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_fortress_8
         {               #   quest_fortress_9
-          :id                => 142,
+          :id                => 141,
           :symbolic_id       => :quest_fortress_9,
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -13917,13 +13577,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_fortress_6',
-
+            :finish_quest_trigger => 'quest_fortress_6',
+  
           },
-
-          :successor_quests => [143, ],
 
           :rewards => {
             
@@ -13954,6 +13612,94 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_fortress_9
+        {               #   quest_fortress_8
+          :id                => 142,
+          :symbolic_id       => :quest_fortress_8,
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "8th Fortress",
+  
+            :de_DE => "8te Festung",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer your 8th fortress.",
+  
+            :de_DE => "Erobere Deine 8te Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Mehr Macht, mehr Armeen und mehr Gänseblümchen...und das alles durch eine feine Schlacht! Los lass uns eine Festung erobern!",
+  
+            :en_US => "More armies, more power and a nice battle as well. Have fun storimg the castle.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mehr Festungen bedeuten mehr Macht. Zusätzliche Armeen, Steuereinnahmen, schnellere Regeneration der Aktionspunkte, bessere Platzierung im Ranking...wenn da bloß das Putzen nicht wäre.</p>",
+  
+            :en_US => "<p>More fortresses means more power. More armies, tax income, faster AP regeneration, if you only didn't have to clean them they would be perfect</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?",
+  
+            :en_US => "Now this is fighting! Let's give this one a fancy name.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der Festung kontrollierst Du die Region. Schnellere Erholung für Deine Armeen inklusive.",
+  
+            :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_trigger => 'quest_fortress_7',
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 16,
+              },
+
+            ],
+
+            :experience_reward => 7000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 8,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_8
         {               #   quest_fortress_10
           :id                => 143,
           :symbolic_id       => :quest_fortress_10,
@@ -14007,13 +13753,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_fortress_9',
-
+            :finish_quest_trigger => 'quest_fortress_9',
+  
           },
-
-          :successor_quests => [144, ],
 
           :rewards => {
             
@@ -14097,13 +13841,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_fortress_10',
-
+            :finish_quest_trigger => 'quest_fortress_10',
+  
           },
-
-          :successor_quests => [],
 
           :rewards => {
             
@@ -14187,13 +13929,11 @@ class Tutorial::Tutorial
                 
           },
 
-          :requirement => {
+          :triggers => {
             
-            :quest => 'quest_fortress_15',
-
+            :finish_quest_trigger => 'quest_fortress_15',
+  
           },
-
-          :successor_quests => [145, ],
 
           :rewards => {
             
