@@ -100,6 +100,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_divine_supporter_changes
   after_save  :propagate_image_set_changes
   after_save  :manage_assignments_on_level_change
+  after_save  :check_for_new_quests_triggered_by_mundane_rank
   
   before_create :init_retention_bonus
 
@@ -243,7 +244,8 @@ class Fundamental::Character < ActiveRecord::Base
   def update_last_request_at
     if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now
       difference = Time.now - (self.last_request_at ||Time.now)
-      self.update_column(:playtime, (playtime || 0.0) + (difference <= 120.0 ? difference : 30.0))     # assumption: larger than 2 minutes -> user was offline inbetween , so just count the startet minute  
+      self.update_column(:playtime, (playtime || 0.0) + (difference <= 120.0 ? difference : 30.0))     # assumption: larger than 2 minutes -> user was offline inbetween , so just count the startet minute
+      self.tutorial_state.check_for_new_quests('play_time_trigger')
       self.update_column(:last_request_at, Time.now)  # change timestamp without triggering before / after handlers, without update updated_at
     end
   end
@@ -1464,7 +1466,13 @@ class Fundamental::Character < ActiveRecord::Base
     self.advance_to_next_mundane_rank
     return true
   end
-  
+
+  def check_for_new_quests_triggered_by_mundane_rank
+    if self.mundane_rank_changed?
+      self.tutorial_state.check_for_new_quests('mundane_rank_trigger')
+    end
+  end
+
   # ##########################################################################
   #
   #   Experience

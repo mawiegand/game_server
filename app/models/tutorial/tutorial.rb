@@ -260,7 +260,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_queue_1gathererlvl1',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_queue_1gathererlvl1',
+              },
+
+            ],
   
           },
 
@@ -365,7 +371,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_1gathererlvl2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_1gathererlvl2',
+              },
+
+            ],
   
           },
 
@@ -586,7 +598,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_1campfirelvl1',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_1campfirelvl1',
+              },
+
+            ],
   
           },
 
@@ -675,7 +693,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl2',
+              },
+
+            ],
   
           },
 
@@ -779,7 +803,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_1barrackslvl1',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_1barrackslvl1',
+              },
+
+            ],
   
           },
 
@@ -878,7 +908,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_recruit_1clubbers',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_recruit_1clubbers',
+              },
+
+            ],
   
           },
 
@@ -954,7 +990,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl4',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl4',
+              },
+
+            ],
   
           },
 
@@ -1058,7 +1100,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_army_create',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_army_create',
+              },
+
+            ],
   
           },
 
@@ -1287,7 +1335,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_army_move',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_army_move',
+              },
+
+            ],
   
           },
 
@@ -1374,7 +1428,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_settlement_button2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_settlement_button2',
+              },
+
+            ],
   
           },
 
@@ -1478,7 +1538,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl3',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl3',
+              },
+
+            ],
   
           },
 
@@ -1683,7 +1749,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_queue_chiefcottagelvl4',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_queue_chiefcottagelvl4',
+              },
+
+            ],
   
           },
 
@@ -1785,7 +1857,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_assignment1',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_assignment1',
+              },
+
+            ],
   
           },
 
@@ -1889,7 +1967,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_settlement_button1',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_settlement_button1',
+              },
+
+            ],
   
           },
 
@@ -1994,7 +2078,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_1storagelvl1',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_1storagelvl1',
+              },
+
+            ],
   
           },
 
@@ -2137,7 +2227,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_1campfirelvl2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_1campfirelvl2',
+              },
+
+            ],
   
           },
 
@@ -2227,7 +2323,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_1campfirelvl2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_1campfirelvl2',
+              },
+
+            ],
   
           },
 
@@ -2320,7 +2422,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_0',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_0',
+              },
+
+            ],
   
           },
 
@@ -2424,7 +2532,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl5',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl5',
+              },
+
+            ],
   
           },
 
@@ -2526,7 +2640,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_1quarrylvl2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_1quarrylvl2',
+              },
+
+            ],
   
           },
 
@@ -2628,7 +2748,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl5',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl5',
+              },
+
+            ],
   
           },
 
@@ -2730,7 +2856,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl6',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl6',
+              },
+
+            ],
   
           },
 
@@ -2832,7 +2964,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl6',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl6',
+              },
+
+            ],
   
           },
 
@@ -2934,7 +3072,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl7',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl7',
+              },
+
+            ],
   
           },
 
@@ -3022,7 +3166,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl6',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl6',
+              },
+
+            ],
   
           },
 
@@ -3128,7 +3278,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl7',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl7',
+              },
+
+            ],
   
           },
 
@@ -3232,7 +3388,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl8',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl8',
+              },
+
+            ],
   
           },
 
@@ -3334,7 +3496,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl8',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl8',
+              },
+
+            ],
   
           },
 
@@ -3436,7 +3604,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl9',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl9',
+              },
+
+            ],
   
           },
 
@@ -3535,7 +3709,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl9',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl9',
+              },
+
+            ],
   
           },
 
@@ -3637,7 +3817,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_chiefcottagelvl10',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_chiefcottagelvl10',
+              },
+
+            ],
   
           },
 
@@ -3739,7 +3925,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_copper_smelter',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_copper_smelter',
+              },
+
+            ],
   
           },
 
@@ -3845,7 +4037,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_firing_range',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_firing_range',
+              },
+
+            ],
   
           },
 
@@ -3951,7 +4149,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_1loggerlvl2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_1loggerlvl2',
+              },
+
+            ],
   
           },
 
@@ -4044,7 +4248,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_1',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_1',
+              },
+
+            ],
   
           },
 
@@ -4137,7 +4347,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_2',
+              },
+
+            ],
   
           },
 
@@ -4230,7 +4446,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_3',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_3',
+              },
+
+            ],
   
           },
 
@@ -4323,7 +4545,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_4',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_4',
+              },
+
+            ],
   
           },
 
@@ -4416,7 +4644,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_5',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_5',
+              },
+
+            ],
   
           },
 
@@ -4509,7 +4743,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_6',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_6',
+              },
+
+            ],
   
           },
 
@@ -4602,7 +4842,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_7',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_7',
+              },
+
+            ],
   
           },
 
@@ -4695,7 +4941,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_8',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_8',
+              },
+
+            ],
   
           },
 
@@ -4788,7 +5040,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_9',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_9',
+              },
+
+            ],
   
           },
 
@@ -4881,7 +5139,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_10',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_10',
+              },
+
+            ],
   
           },
 
@@ -4974,7 +5238,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_11',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_11',
+              },
+
+            ],
   
           },
 
@@ -5067,7 +5337,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_12',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_12',
+              },
+
+            ],
   
           },
 
@@ -5160,7 +5436,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_13',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_13',
+              },
+
+            ],
   
           },
 
@@ -5253,7 +5535,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_14',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_14',
+              },
+
+            ],
   
           },
 
@@ -5346,7 +5634,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_15',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_15',
+              },
+
+            ],
   
           },
 
@@ -5439,7 +5733,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_16',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_16',
+              },
+
+            ],
   
           },
 
@@ -5532,7 +5832,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_17',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_17',
+              },
+
+            ],
   
           },
 
@@ -5625,7 +5931,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_18',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_18',
+              },
+
+            ],
   
           },
 
@@ -5718,7 +6030,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_19',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_19',
+              },
+
+            ],
   
           },
 
@@ -5811,7 +6129,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_charkills_20',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_20',
+              },
+
+            ],
   
           },
 
@@ -5904,7 +6228,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_1loggerlvl2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_1loggerlvl2',
+              },
+
+            ],
   
           },
 
@@ -5997,7 +6327,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_1',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_1',
+              },
+
+            ],
   
           },
 
@@ -6090,7 +6426,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_2',
+              },
+
+            ],
   
           },
 
@@ -6183,7 +6525,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_3',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_3',
+              },
+
+            ],
   
           },
 
@@ -6276,7 +6624,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_4',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_4',
+              },
+
+            ],
   
           },
 
@@ -6369,7 +6723,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_5',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_5',
+              },
+
+            ],
   
           },
 
@@ -6462,7 +6822,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_6',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_6',
+              },
+
+            ],
   
           },
 
@@ -6555,7 +6921,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_7',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_7',
+              },
+
+            ],
   
           },
 
@@ -6648,7 +7020,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_8',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_8',
+              },
+
+            ],
   
           },
 
@@ -6741,7 +7119,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_9',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_9',
+              },
+
+            ],
   
           },
 
@@ -6834,7 +7218,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_10',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_10',
+              },
+
+            ],
   
           },
 
@@ -6927,7 +7317,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_11',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_11',
+              },
+
+            ],
   
           },
 
@@ -7020,7 +7416,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_12',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_12',
+              },
+
+            ],
   
           },
 
@@ -7113,7 +7515,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_13',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_13',
+              },
+
+            ],
   
           },
 
@@ -7206,7 +7614,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_14',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_14',
+              },
+
+            ],
   
           },
 
@@ -7299,7 +7713,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_15',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_15',
+              },
+
+            ],
   
           },
 
@@ -7392,7 +7812,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_16',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_16',
+              },
+
+            ],
   
           },
 
@@ -7485,7 +7911,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_17',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_17',
+              },
+
+            ],
   
           },
 
@@ -7578,7 +8010,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_18',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_18',
+              },
+
+            ],
   
           },
 
@@ -7671,7 +8109,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_19',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_19',
+              },
+
+            ],
   
           },
 
@@ -7764,7 +8208,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_20',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_20',
+              },
+
+            ],
   
           },
 
@@ -7857,7 +8307,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_armyXP_21',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_armyXP_21',
+              },
+
+            ],
   
           },
 
@@ -8041,7 +8497,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_0',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_0',
+              },
+
+            ],
   
           },
 
@@ -8134,7 +8596,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_1',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_1',
+              },
+
+            ],
   
           },
 
@@ -8227,7 +8695,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_2',
+              },
+
+            ],
   
           },
 
@@ -8320,7 +8794,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_3',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_3',
+              },
+
+            ],
   
           },
 
@@ -8413,7 +8893,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_4',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_4',
+              },
+
+            ],
   
           },
 
@@ -8506,7 +8992,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_5',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_5',
+              },
+
+            ],
   
           },
 
@@ -8599,7 +9091,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_6',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_6',
+              },
+
+            ],
   
           },
 
@@ -8692,7 +9190,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_7',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_7',
+              },
+
+            ],
   
           },
 
@@ -8785,7 +9289,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_8',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_8',
+              },
+
+            ],
   
           },
 
@@ -8878,7 +9388,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_9',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_9',
+              },
+
+            ],
   
           },
 
@@ -8971,7 +9487,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_10',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_10',
+              },
+
+            ],
   
           },
 
@@ -9064,7 +9586,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_11',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_11',
+              },
+
+            ],
   
           },
 
@@ -9157,7 +9685,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_12',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_12',
+              },
+
+            ],
   
           },
 
@@ -9250,7 +9784,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_13',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_13',
+              },
+
+            ],
   
           },
 
@@ -9343,7 +9883,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_14',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_14',
+              },
+
+            ],
   
           },
 
@@ -9436,7 +9982,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_15',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_15',
+              },
+
+            ],
   
           },
 
@@ -9529,7 +10081,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_16',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_16',
+              },
+
+            ],
   
           },
 
@@ -9622,7 +10180,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_17',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_17',
+              },
+
+            ],
   
           },
 
@@ -9715,7 +10279,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_18',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_18',
+              },
+
+            ],
   
           },
 
@@ -9808,7 +10378,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_19',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_19',
+              },
+
+            ],
   
           },
 
@@ -9901,7 +10477,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_20',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_20',
+              },
+
+            ],
   
           },
 
@@ -9994,7 +10576,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_score_21',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_score_21',
+              },
+
+            ],
   
           },
 
@@ -10087,7 +10675,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_0',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_0',
+              },
+
+            ],
   
           },
 
@@ -10180,7 +10774,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_1',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_1',
+              },
+
+            ],
   
           },
 
@@ -10273,7 +10873,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_2',
+              },
+
+            ],
   
           },
 
@@ -10366,7 +10972,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_3',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_3',
+              },
+
+            ],
   
           },
 
@@ -10459,7 +11071,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_4',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_4',
+              },
+
+            ],
   
           },
 
@@ -10552,7 +11170,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_5',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_5',
+              },
+
+            ],
   
           },
 
@@ -10645,7 +11269,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_6',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_6',
+              },
+
+            ],
   
           },
 
@@ -10738,7 +11368,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_7',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_7',
+              },
+
+            ],
   
           },
 
@@ -10831,7 +11467,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_8',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_8',
+              },
+
+            ],
   
           },
 
@@ -10924,7 +11566,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_9',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_9',
+              },
+
+            ],
   
           },
 
@@ -11017,7 +11665,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_10',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_10',
+              },
+
+            ],
   
           },
 
@@ -11110,7 +11764,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_11',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_11',
+              },
+
+            ],
   
           },
 
@@ -11203,7 +11863,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_12',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_12',
+              },
+
+            ],
   
           },
 
@@ -11296,7 +11962,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_13',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_13',
+              },
+
+            ],
   
           },
 
@@ -11389,7 +12061,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_14',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_14',
+              },
+
+            ],
   
           },
 
@@ -11482,7 +12160,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_15',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_15',
+              },
+
+            ],
   
           },
 
@@ -11575,7 +12259,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_16',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_16',
+              },
+
+            ],
   
           },
 
@@ -11668,7 +12358,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_17',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_17',
+              },
+
+            ],
   
           },
 
@@ -11761,7 +12457,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_18',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_18',
+              },
+
+            ],
   
           },
 
@@ -11854,7 +12556,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_19',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_19',
+              },
+
+            ],
   
           },
 
@@ -11947,7 +12655,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_20',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_20',
+              },
+
+            ],
   
           },
 
@@ -12040,7 +12754,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_21',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_21',
+              },
+
+            ],
   
           },
 
@@ -12133,7 +12853,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_22',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_22',
+              },
+
+            ],
   
           },
 
@@ -12226,7 +12952,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_1barrackslvl5',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_1barrackslvl5',
+              },
+
+            ],
   
           },
 
@@ -12417,7 +13149,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_tavern',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_tavern',
+              },
+
+            ],
   
           },
 
@@ -12491,7 +13229,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_build_cottagelvl1',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_cottagelvl1',
+              },
+
+            ],
   
           },
 
@@ -12596,7 +13340,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_profile',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_profile',
+              },
+
+            ],
   
           },
 
@@ -12698,7 +13448,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_alliance',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_alliance',
+              },
+
+            ],
   
           },
 
@@ -12790,7 +13546,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_alliance_members',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_alliance_members',
+              },
+
+            ],
   
           },
 
@@ -12882,7 +13644,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_alliance_members2',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_alliance_members2',
+              },
+
+            ],
   
           },
 
@@ -12974,7 +13742,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_resourcescore_0',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_0',
+              },
+
+            ],
   
           },
 
@@ -13227,7 +14001,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_fortress_3',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_3',
+              },
+
+            ],
   
           },
 
@@ -13315,7 +14095,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_fortress_4',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_4',
+              },
+
+            ],
   
           },
 
@@ -13403,7 +14189,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_fortress_5',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_5',
+              },
+
+            ],
   
           },
 
@@ -13491,7 +14283,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_fortress_6',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_6',
+              },
+
+            ],
   
           },
 
@@ -13579,7 +14377,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_fortress_6',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_6',
+              },
+
+            ],
   
           },
 
@@ -13667,7 +14471,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_fortress_7',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_7',
+              },
+
+            ],
   
           },
 
@@ -13755,7 +14565,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_fortress_9',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_9',
+              },
+
+            ],
   
           },
 
@@ -13843,7 +14659,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_fortress_10',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_10',
+              },
+
+            ],
   
           },
 
@@ -13931,7 +14753,13 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_trigger => 'quest_fortress_15',
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_15',
+              },
+
+            ],
   
           },
 

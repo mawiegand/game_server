@@ -263,14 +263,21 @@ end
   <xsl:if test="PlayTimeTrigger">
             :play_time_trigger => <xsl:value-of select="PlayTimeTrigger" />,
   </xsl:if>
-  <xsl:if test="FinishQuestTrigger">
-            :finish_quest_trigger => '<xsl:value-of select="FinishQuestTrigger" />',
+  <xsl:if test="FinishQuestTriggers">
+            :finish_quest_triggers => [
+              <xsl:apply-templates select="FinishQuestTriggers" />
+            ],
   </xsl:if>
   <xsl:if test="MundaneRankTrigger">
             :mundane_rank_trigger => <xsl:value-of select="MundaneRankTrigger" />,
   </xsl:if>
 </xsl:template>
 
+<xsl:template match="FinishQuestTriggers">
+              {
+                :finish_quest_trigger => '<xsl:value-of select="FinishQuestTrigger" />',
+              },
+</xsl:template>
 
 <xsl:template match="Rewards">
 <xsl:if test="ResourceReward">

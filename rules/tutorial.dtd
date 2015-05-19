@@ -68,10 +68,11 @@
   blocking           CDATA "false"
 >
 
-<!ELEMENT Triggers (PlayTimeTrigger?, FinishQuestTrigger*, MundaneRankTrigger?)>
+<!ELEMENT Triggers (PlayTimeTrigger?, FinishQuestTriggers*, MundaneRankTrigger?)>
 
 <!ELEMENT PlayTimeTrigger (#PCDATA)>
 
+<!ELEMENT FinishQuestTriggers (FinishQuestTrigger*)>
 <!ELEMENT FinishQuestTrigger (#PCDATA)>
 
 <!ELEMENT MundaneRankTrigger (#PCDATA)>

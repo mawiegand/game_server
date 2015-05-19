@@ -23,7 +23,7 @@ class Action::Tutorial::CheckQuestActionsController < ApplicationController
     raise BadRequestError.new('check quest rewards failed') unless quest_state.check_for_rewards(browser_request, answer_text)
     quest_state.set_finished 
     quest_state.place_npcs
-    quest_state.open_dependent_quest_states
+    #quest_state.open_dependent_quest_states
 
     respond_to do |format|
       format.html { redirect_to action_path, notice: 'Check quest action was successfully executed.' }

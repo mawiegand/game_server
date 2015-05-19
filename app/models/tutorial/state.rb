@@ -54,6 +54,27 @@ class Tutorial::State < ActiveRecord::Base
     quest
   end
 
+  def check_for_new_quests(trigger_type = 'all')
+    quests = Tutorial::Tutorial.the_tutorial.quests
+
+    quests.each do |quest|
+      if self.quests.where(:quest_id => quest[:id]).empty?
+        unless quest[:triggers].nil?
+           # if trigger type == all or quest includes trigger type
+           if trigger_type == 'all' || !quest[:triggers][trigger_type.to_sym].nil?
+             # if all triggers for quest are valid create new quest
+             if validate_quest_triggers(quest[:id])
+               self.quests.create({
+                 status: Tutorial::Quest::STATE_NEW,
+                 quest_id: quest[:id],
+               })
+             end
+           end
+        end
+      end
+    end
+  end
+
   def check_consistency
     # durchlaufe alle beendeten quest_states
     self.finished_quests.each do |quest_state|
@@ -80,5 +101,40 @@ class Tutorial::State < ActiveRecord::Base
       end  
     end
     false
+  end
+
+  private
+
+  def validate_quest_triggers(quest_id)
+    quest = Tutorial::Tutorial.the_tutorial.quests[quest_id]
+    triggers = quest[:triggers]
+
+    # check for triggers
+    unless triggers.nil?
+      # validate play time trigger
+      unless triggers[:play_time_trigger].nil?
+        return false if self.owner.playtime < triggers[:play_time_trigger]
+      end
+      # validate required finished quests
+      unless triggers[:finish_quest_triggers].nil?
+        triggers[:finish_quest_triggers].each do |trigger|
+          quest_is_finished = false
+          # validate finished quests for required finished quest trigger
+          self.finished_quests.each do |finished_quest|
+            logger.debug "#{trigger[:finish_quest_trigger].to_s} == #{finished_quest.quest[:symbolic_id]}"
+            if trigger[:finish_quest_trigger].to_s == finished_quest.quest[:symbolic_id].to_s
+              quest_is_finished = true
+              break
+            end
+          end
+          return false unless quest_is_finished # false if required quest is not finished
+        end
+      end
+      # validate mundane rank of owner
+      unless triggers[:mundane_rank_trigger].nil?
+        return false if self.owner.mundane_rank < triggers[:mundane_rank_trigger]
+      end
+    end
+    true
   end
 end

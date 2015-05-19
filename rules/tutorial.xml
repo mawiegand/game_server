@@ -83,7 +83,9 @@
       <RewardFlavor locale="de_DE">Wie nett von Dir. Der Sammler freut sich wie verrückt und die Produktion ist gestiegen. Außerdem erhältst Du wertvolle Erfahrung.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh that's nice of you! The Hunter Gatherer is really happy. He gave me some raw materials to give you.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_queue_1gathererlvl1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_queue_1gathererlvl1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">25</ResourceReward>
@@ -119,7 +121,9 @@
       <RewardFlavor locale="en_US">Finished at last, eh? That took you long enough. What do you mean, reward? What for? Isn't it enough that your settlement is bigger and you can build a new building?
       </RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_1gathererlvl2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1gathererlvl2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">100</ResourceReward>
@@ -220,7 +224,9 @@
       <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spaß miteinander haben.</RewardFlavor>
       <RewardFlavor locale="en_US">Thanks. I think we're going to have loads of fun together!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_1campfirelvl1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1campfirelvl1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_cash">2</ResourceReward>
@@ -256,7 +262,9 @@
       </RewardFlavor>
       <RewardFlavor locale="en_US">Finished? About time, too. There's your reward – that's all there is. Push off.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">80</ResourceReward>
@@ -291,7 +299,9 @@
       <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
       <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_1barrackslvl1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1barrackslvl1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_cash">1</ResourceReward>
@@ -328,7 +338,9 @@
       <RewardFlavor locale="de_DE">Na, was gelernt? Hier hast Du noch ein paar Ressourcen, bevor Du wieder nach einer Belohnung fragst.</RewardFlavor>
       <RewardFlavor locale="en_US">So, did you learn anything? Here are a couple of resources for you, before you start asking for rewards again.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_recruit_1clubbers</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_recruit_1clubbers</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ExperienceReward>200</ExperienceReward>
@@ -358,7 +370,9 @@
       <RewardFlavor locale="de_DE">Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
       <RewardFlavor locale="en_US">At last I have enough space for all my shoe…er, things!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl4</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl4</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">325</ResourceReward>
@@ -393,7 +407,9 @@
       <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja.</RewardFlavor>
       <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_army_create</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_army_create</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">110</ResourceReward>
@@ -487,7 +503,9 @@
       <RewardFlavor locale="de_DE">Na? Ging doch ganz einfach, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">See? How easy was that.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_army_move</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_army_move</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_cash">2</ResourceReward>
@@ -519,7 +537,9 @@
       <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
       <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_settlement_button2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_settlement_button2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">175</ResourceReward>
@@ -554,7 +574,9 @@
       <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done! Your workers are happy and they're building things faster because of it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl3</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl3</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">120</ResourceReward>
@@ -622,7 +644,9 @@
       <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
       <RewardFlavor locale="en_US">Isn't it great how much your settlement is growing? I've even managed to persuade the boss to give you something from his huge store of resources.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_queue_chiefcottagelvl4</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_queue_chiefcottagelvl4</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>
@@ -655,7 +679,9 @@
       <RewardFlavor locale="de_DE">Jetzt muss es nur noch fertig werden.</RewardFlavor>
       <RewardFlavor locale="en_US">Now we've just got to finish it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_assignment1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_assignment1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">165</ResourceReward>
@@ -693,7 +719,9 @@
       <RewardFlavor locale="de_DE">Das soll eine Armee sein? Ziemlich klein, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">Call that an army? Rather small, don't you think?</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_settlement_button1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_settlement_button1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_fur">150</ResourceReward>
@@ -730,7 +758,9 @@
       <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
       <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_1storagelvl1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1storagelvl1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">75</ResourceReward>
@@ -798,7 +828,9 @@
       <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_1campfirelvl2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1campfirelvl2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_cash">2</ResourceReward>
@@ -829,7 +861,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_1campfirelvl2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1campfirelvl2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">450</ResourceReward>
@@ -861,7 +895,9 @@
       <RewardFlavor locale="de_DE">Toll, wie weit Du schon gekommen bist. Weiter so!</RewardFlavor>
       <RewardFlavor locale="en_US">Your progress so far has been awesome! Keep it up!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_0</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_0</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>
@@ -894,7 +930,9 @@
       <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl5</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl5</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">137</ResourceReward>
@@ -926,7 +964,9 @@
       <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
       <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_1quarrylvl2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1quarrylvl2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">274</ResourceReward>
@@ -958,7 +998,9 @@
       <RewardFlavor locale="de_DE">Na endlich, endlich habe ich Platz zur Entfaltung! Da geht aber noch mehr, oder?</RewardFlavor>
       <RewardFlavor locale="en_US">At least, more room for my great personality.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl5</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl5</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">900</ResourceReward>
@@ -990,7 +1032,9 @@
       <RewardFlavor locale="de_DE">Ein - zwei, eins - zwei, keine Müdigkeit vortäuschen!</RewardFlavor>
       <RewardFlavor locale="en_US">One and two, one and two! Come on, this is fun!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl6</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl6</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">58</ResourceReward>
@@ -1022,7 +1066,9 @@
       <RewardFlavor locale="de_DE">Ähm? So klein? Wie soll ich denn da einen ordentlichen Empfang veranstalten? Allein die Nachbarn kommen mit über zwanzig Leuten...</RewardFlavor>
       <RewardFlavor locale="en_US">Hmm? That small? It's impossible to seat all of our guests in here… there are at least twenty neighbours to invite!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl6</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl6</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">1600</ResourceReward>
@@ -1054,7 +1100,9 @@
       <RewardFlavor locale="de_DE">Du hast eine Festung in Deinen Besitz gebracht? Das ist großartig!</RewardFlavor>
       <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl7</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl7</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <UnitReward unit="unit_clubbers">30</UnitReward>
@@ -1084,7 +1132,9 @@
       <RewardFlavor locale="de_DE">Sehr gut. Jetzt sind wir endlcih die Möchtegern-Krieger los.</RewardFlavor>
       <RewardFlavor locale="en_US">Thank you Demigod. They may not be the brightest crayons in the box, but clubbers can take a lot of punishment – and hand it out too! </RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl6</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl6</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">800</ResourceReward>
@@ -1116,7 +1166,9 @@
       <RewardFlavor locale="de_DE">Sehr schön! Endlich hast Du den Kürschner erreicht!</RewardFlavor>
       <RewardFlavor locale="en_US">Cool, you get accesss to the furrier!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl7</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl7</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">2500</ResourceReward>
@@ -1149,7 +1201,9 @@
       <RewardFlavor locale="de_DE">Schön, jetzt kannst Du Chef mit dem Bau einer Armee erfreuen. Und mir was nettes schenken.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Now you can build a new army.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl8</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl8</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">137</ResourceReward>
@@ -1181,7 +1235,9 @@
       <RewardFlavor locale="de_DE">Wunderbar, selbst der Chef ist fast zufrieden.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice work. Even the chief is pleased. And let's face it, that never happens.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl8</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl8</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">3000</ResourceReward>
@@ -1215,7 +1271,9 @@
       <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen.</RewardFlavor>
       <RewardFlavor locale="en_US">You've started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl9</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl9</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>
@@ -1248,7 +1306,9 @@
       <RewardFlavor locale="de_DE">Das wurde wirklich Zeit! Jetzt hat Deine Hauptsiedlung die volle Größe!</RewardFlavor>
       <RewardFlavor locale="en_US">It´s about time! Now we have all the space we need!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl9</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl9</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">4000</ResourceReward>
@@ -1280,7 +1340,9 @@
       <RewardFlavor locale="de_DE">Wow, eine neues Zeitalter! So viele Möglichkeiten.</RewardFlavor>
       <RewardFlavor locale="en_US">Wow, a new age! So many opportunities! </RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_chiefcottagelvl10</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_chiefcottagelvl10</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">3750</ResourceReward>
@@ -1308,7 +1370,9 @@
       <RewardFlavor locale="de_DE">Wunderbar, dann werde ich gleich mal ein paar Rekruten anschreien.</RewardFlavor>
       <RewardFlavor locale="en_US">Wonderful! And now they'll have the chance to know their drill instructor.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_copper_smelter</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_copper_smelter</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">2000</ResourceReward>
@@ -1336,7 +1400,9 @@
       <RewardFlavor locale="de_DE">Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.</RewardFlavor>
       <RewardFlavor locale="en_US">Muhaha, I don´t like the smell, but the riders know thier business.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_firing_range</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_firing_range</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">4000</ResourceReward>
@@ -1371,7 +1437,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_1loggerlvl2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1loggerlvl2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>
@@ -1403,7 +1471,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>
@@ -1435,7 +1505,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">1000</ResourceReward>
@@ -1467,7 +1539,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_3</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_3</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">1500</ResourceReward>
@@ -1499,7 +1573,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">YThings are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_4</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_4</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">2000</ResourceReward>
@@ -1531,7 +1607,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_5</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_5</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">2500</ResourceReward>
@@ -1563,7 +1641,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_6</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_6</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">3000</ResourceReward>
@@ -1595,7 +1675,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_7</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_7</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">3750</ResourceReward>
@@ -1627,7 +1709,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_8</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_8</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">4250</ResourceReward>
@@ -1659,7 +1743,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_9</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_9</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">5000</ResourceReward>
@@ -1691,7 +1777,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_10</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_10</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">5500</ResourceReward>
@@ -1723,7 +1811,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_11</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_11</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">6000</ResourceReward>
@@ -1755,7 +1845,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_12</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_12</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">6500</ResourceReward>
@@ -1787,7 +1879,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_13</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_13</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">7000</ResourceReward>
@@ -1819,7 +1913,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_14</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_14</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">7500</ResourceReward>
@@ -1851,7 +1947,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_15</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_15</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">8000</ResourceReward>
@@ -1883,7 +1981,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_16</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_16</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">8500</ResourceReward>
@@ -1915,7 +2015,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_17</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_17</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">9000</ResourceReward>
@@ -1947,7 +2049,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_18</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_18</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">9500</ResourceReward>
@@ -1979,7 +2083,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_19</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_19</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">10000</ResourceReward>
@@ -2011,7 +2117,9 @@
       <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
       <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_charkills_20</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_charkills_20</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">15000</ResourceReward>
@@ -2046,7 +2154,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_1loggerlvl2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1loggerlvl2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>
@@ -2078,7 +2188,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">500</ResourceReward>
@@ -2110,7 +2222,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">1000</ResourceReward>
@@ -2142,7 +2256,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_3</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_3</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">1500</ResourceReward>
@@ -2174,7 +2290,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_4</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_4</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">2000</ResourceReward>
@@ -2206,7 +2324,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_5</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_5</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">2500</ResourceReward>
@@ -2238,7 +2358,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_6</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_6</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">3000</ResourceReward>
@@ -2270,7 +2392,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_7</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_7</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">3500</ResourceReward>
@@ -2302,7 +2426,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_8</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_8</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">4000</ResourceReward>
@@ -2334,7 +2460,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_9</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_9</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">4500</ResourceReward>
@@ -2366,7 +2494,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_10</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_10</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">5500</ResourceReward>
@@ -2398,7 +2528,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_11</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_11</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">6000</ResourceReward>
@@ -2430,7 +2562,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_12</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_12</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">6500</ResourceReward>
@@ -2462,7 +2596,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_13</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_13</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">7000</ResourceReward>
@@ -2494,7 +2630,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_14</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_14</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">7500</ResourceReward>
@@ -2526,7 +2664,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_15</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_15</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">8000</ResourceReward>
@@ -2558,7 +2698,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_16</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_16</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">8500</ResourceReward>
@@ -2590,7 +2732,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_17</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_17</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">9000</ResourceReward>
@@ -2622,7 +2766,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_18</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_18</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">9500</ResourceReward>
@@ -2654,7 +2800,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_19</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_19</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">10000</ResourceReward>
@@ -2686,7 +2834,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_20</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_20</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">12000</ResourceReward>
@@ -2718,7 +2868,9 @@
       <RewardFlavor locale="de_DE">Gut, Deine Krieger sind schon ein bisschen erfahrener.</RewardFlavor>
       <RewardFlavor locale="en_US">Well done, your warriors are a little bit more experienced.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_armyXP_21</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_armyXP_21</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">15000</ResourceReward>
@@ -2785,7 +2937,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_0</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_0</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">200</ResourceReward>
@@ -2817,7 +2971,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">400</ResourceReward>
@@ -2849,7 +3005,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">1000</ResourceReward>
@@ -2881,7 +3039,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_3</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_3</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">1500</ResourceReward>
@@ -2913,7 +3073,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_4</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_4</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">2000</ResourceReward>
@@ -2945,7 +3107,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_5</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_5</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">3000</ResourceReward>
@@ -2977,7 +3141,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_6</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_6</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">3500</ResourceReward>
@@ -3009,7 +3175,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_7</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_7</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">4000</ResourceReward>
@@ -3041,7 +3209,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_8</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_8</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">4500</ResourceReward>
@@ -3073,7 +3243,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_9</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_9</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">5000</ResourceReward>
@@ -3105,7 +3277,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_10</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_10</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">5500</ResourceReward>
@@ -3137,7 +3311,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_11</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_11</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">6000</ResourceReward>
@@ -3169,7 +3345,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_12</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_12</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">6500</ResourceReward>
@@ -3201,7 +3379,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_13</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_13</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">7000</ResourceReward>
@@ -3233,7 +3413,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_14</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_14</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">7500</ResourceReward>
@@ -3265,7 +3447,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_15</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_15</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">8000</ResourceReward>
@@ -3297,7 +3481,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_16</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_16</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">8500</ResourceReward>
@@ -3329,7 +3515,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_17</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_17</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">9000</ResourceReward>
@@ -3361,7 +3549,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_18</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_18</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">9500</ResourceReward>
@@ -3393,7 +3583,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_19</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_19</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">10000</ResourceReward>
@@ -3425,7 +3617,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig.</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_20</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_20</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">12000</ResourceReward>
@@ -3457,7 +3651,9 @@
       <RewardFlavor locale="de_DE">Okay, ein bisschen größer ist Dein Stamm ja geworden, nimm Deine Belohnung. Aber Du bist noch lange nicht fertig</RewardFlavor>
       <RewardFlavor locale="en_US">Yeah, okay, I admit that your tribe has grown a bit. You can have a reward - just don't think you're done yet.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_score_21</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_score_21</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">15000</ResourceReward>
@@ -3491,7 +3687,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_0</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_0</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">250</ResourceReward>
@@ -3523,7 +3721,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">300</ResourceReward>
@@ -3555,7 +3755,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">450</ResourceReward>
@@ -3587,7 +3789,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_3</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_3</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">720</ResourceReward>
@@ -3619,7 +3823,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_4</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_4</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">1500</ResourceReward>
@@ -3651,7 +3857,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_5</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_5</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">2000</ResourceReward>
@@ -3683,7 +3891,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_6</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_6</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">2500</ResourceReward>
@@ -3715,7 +3925,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_7</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_7</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">3000</ResourceReward>
@@ -3747,7 +3959,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_8</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_8</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">3500</ResourceReward>
@@ -3779,7 +3993,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_9</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_9</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">4000</ResourceReward>
@@ -3811,7 +4027,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_10</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_10</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">4500</ResourceReward>
@@ -3843,7 +4061,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_11</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_11</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">5000</ResourceReward>
@@ -3875,7 +4095,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_12</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_12</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">5500</ResourceReward>
@@ -3907,7 +4129,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_13</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_13</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">6000</ResourceReward>
@@ -3939,7 +4163,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_14</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_14</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">6500</ResourceReward>
@@ -3971,7 +4197,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_15</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_15</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">7000</ResourceReward>
@@ -4003,7 +4231,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_16</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_16</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">7500</ResourceReward>
@@ -4035,7 +4265,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_17</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_17</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">8000</ResourceReward>
@@ -4067,7 +4299,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_18</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_18</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">8500</ResourceReward>
@@ -4099,7 +4333,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_19</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_19</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">9000</ResourceReward>
@@ -4131,7 +4367,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_20</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_20</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">9500</ResourceReward>
@@ -4163,7 +4401,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_21</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_21</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">10000</ResourceReward>
@@ -4195,7 +4435,9 @@
       <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_22</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_22</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">12000</ResourceReward>
@@ -4227,7 +4469,9 @@
       <RewardFlavor locale="de_DE">Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Dickhäuter wirklich.</RewardFlavor>
       <RewardFlavor locale="en_US">Thank you Demigod. They may not be the brightest crayons in the box, but thick-skinned clubbers can take a lot of punishment – and hand it out too! </RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_1barrackslvl5</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1barrackslvl5</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">6000</ResourceReward>
@@ -4324,7 +4568,9 @@
      <RewardFlavor locale="de_DE">Du hast es gefunden? Super, ich geh gleich zum Chef.</RewardFlavor>
      <RewardFlavor locale="en_US">You found it? Great! I'll go and tell the boss straight away. </RewardFlavor>
      <Triggers>
-        <FinishQuestTrigger>quest_message</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_message</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
      <Rewards>
      <ResourceReward resource="resource_stone">35</ResourceReward>
@@ -4559,7 +4805,9 @@
      <RewardFlavor locale="de_DE">Danke Halbgott. Zwar nicht die schlausten, aber einstecken und draufhauen können die Dickhäuter wirklich.</RewardFlavor>
      <RewardFlavor locale="en_US">Thank you Demigod. They may not be the brightest crayons in the box, but thick-skinned clubbers can take a lot of punishment – and hand it out too! </RewardFlavor>
      <Triggers>
-        <FinishQuestTrigger>quest_build_1barrackslvl5</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1barrackslvl5</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
      <Rewards>
      <ResourceReward resource="resource_stone">150</ResourceReward>
@@ -5076,7 +5324,9 @@
      <RewardFlavor locale="de_DE"></RewardFlavor>
      <RewardFlavor locale="en_US"></RewardFlavor>
      <Triggers>
-        <FinishQuestTrigger>quest_build_1gathererlvl1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_1gathererlvl1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
      <Rewards>
      <ResourceReward resource="resource_stone">35</ResourceReward>
@@ -5107,7 +5357,9 @@
      <RewardFlavor locale="de_DE"></RewardFlavor>
      <RewardFlavor locale="en_US"></RewardFlavor>
      <Triggers>
-        <FinishQuestTrigger>quest_recruit_1clubbers</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_recruit_1clubbers</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
      <Rewards>
      <ResourceReward resource="resource_stone">55</ResourceReward>
@@ -5249,7 +5501,9 @@
       <RewardFlavor locale="de_DE">Nach einem Auftrag gibt es doch nichts besseres als ein kühles Bier.</RewardFlavor>
       <RewardFlavor locale="en_US">After we finish that assignment, let's go back to the tavern for a drink.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_tavern</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_tavern</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ExperienceReward>250</ExperienceReward>
@@ -5280,7 +5534,9 @@
       <RewardFlavor locale="de_DE">Netter Laden, man hat mir sogar schon einen Job angeboten.</RewardFlavor>
       <RewardFlavor locale="en_US">Nice place, already earned a coupple of stones aswell.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_build_cottagelvl1</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_build_cottagelvl1</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">125</ResourceReward>
@@ -5315,7 +5571,9 @@
       <RewardFlavor locale="de_DE">Schau nur wie es lodert, das nenn ich mal ein Feuer.</RewardFlavor>
       <RewardFlavor locale="en_US">Now thats what I call a fire!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_profile</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_profile</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_stone">125</ResourceReward>
@@ -5346,7 +5604,9 @@
       <RewardFlavor locale="de_DE">Jetzt wirds langsam!</RewardFlavor>
       <RewardFlavor locale="en_US">If we keep up like this we're gona go places.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_alliance</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_alliance</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_cash">2</ResourceReward>
@@ -5376,7 +5636,9 @@
       <RewardFlavor locale="de_DE">Jetzt wirds langsam!</RewardFlavor>
       <RewardFlavor locale="en_US">If we keep up like this we're gona go places.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_alliance_members</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_alliance_members</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_cash">4</ResourceReward>
@@ -5406,7 +5668,9 @@
       <RewardFlavor locale="de_DE">Jetzt wirds langsam!</RewardFlavor>
       <RewardFlavor locale="en_US">If we keep up like this we're gona go places.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_alliance_members2</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_alliance_members2</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_cash">8</ResourceReward>
@@ -5436,7 +5700,9 @@
       <RewardFlavor locale="de_DE">Herzlich Willkommen im Browserspiel!</RewardFlavor>
       <RewardFlavor locale="en_US">Welcome to the browser game!</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_resourcescore_0</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_resourcescore_0</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_cash">20</ResourceReward>
@@ -5556,7 +5822,9 @@
         <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?</RewardFlavor>
         <RewardFlavor locale="en_US">Now this is fighting! Let's give this one a fancy name.</RewardFlavor>
         <Triggers>
-          <FinishQuestTrigger>quest_fortress_3</FinishQuestTrigger>
+          <FinishQuestTriggers>
+            <FinishQuestTrigger>quest_fortress_3</FinishQuestTrigger>
+          </FinishQuestTriggers>
         </Triggers>
         <Rewards>
           <ResourceReward resource="resource_cash">8</ResourceReward>
@@ -5586,7 +5854,9 @@
         <RewardFlavor locale="de_DE">Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.</RewardFlavor>
         <RewardFlavor locale="en_US">That's what I'm talking about! Lets call this one 'Chief rules'.</RewardFlavor>
         <Triggers>
-          <FinishQuestTrigger>quest_fortress_4</FinishQuestTrigger>
+          <FinishQuestTriggers>
+            <FinishQuestTrigger>quest_fortress_4</FinishQuestTrigger>
+          </FinishQuestTriggers>
         </Triggers>
         <Rewards>
           <ResourceReward resource="resource_cash">10</ResourceReward>
@@ -5616,7 +5886,9 @@
         <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?</RewardFlavor>
         <RewardFlavor locale="en_US">Now this is fighting! Let's give this one a fancy name.</RewardFlavor>
         <Triggers>
-          <FinishQuestTrigger>quest_fortress_5</FinishQuestTrigger>
+          <FinishQuestTriggers>
+            <FinishQuestTrigger>quest_fortress_5</FinishQuestTrigger>
+          </FinishQuestTriggers>
         </Triggers>
         <Rewards>
           <ResourceReward resource="resource_cash">12</ResourceReward>
@@ -5646,7 +5918,9 @@
         <RewardFlavor locale="de_DE">Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.</RewardFlavor>
         <RewardFlavor locale="en_US">That's what I'm talking about! Lets call this one 'Chief rules'.</RewardFlavor>
         <Triggers>
-          <FinishQuestTrigger>quest_fortress_6</FinishQuestTrigger>
+          <FinishQuestTriggers>
+            <FinishQuestTrigger>quest_fortress_6</FinishQuestTrigger>
+          </FinishQuestTriggers>
         </Triggers>
         <Rewards>
           <ResourceReward resource="resource_cash">14</ResourceReward>
@@ -5676,7 +5950,9 @@
       <RewardFlavor locale="de_DE">Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.</RewardFlavor>
       <RewardFlavor locale="en_US">That's what I'm talking about! Lets call this one 'Chief rules'.</RewardFlavor>
       <Triggers>
-        <FinishQuestTrigger>quest_fortress_6</FinishQuestTrigger>
+        <FinishQuestTriggers>
+          <FinishQuestTrigger>quest_fortress_6</FinishQuestTrigger>
+        </FinishQuestTriggers>
       </Triggers>
       <Rewards>
         <ResourceReward resource="resource_cash">18</ResourceReward>
@@ -5706,7 +5982,9 @@
         <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?</RewardFlavor>
         <RewardFlavor locale="en_US">Now this is fighting! Let's give this one a fancy name.</RewardFlavor>
         <Triggers>
-          <FinishQuestTrigger>quest_fortress_7</FinishQuestTrigger>
+          <FinishQuestTriggers>
+            <FinishQuestTrigger>quest_fortress_7</FinishQuestTrigger>
+          </FinishQuestTriggers>
         </Triggers>
         <Rewards>
           <ResourceReward resource="resource_cash">16</ResourceReward>
@@ -5736,7 +6014,9 @@
         <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?</RewardFlavor>
         <RewardFlavor locale="en_US">Now this is fighting! Let's give this one a fancy name.</RewardFlavor>
         <Triggers>
-          <FinishQuestTrigger>quest_fortress_9</FinishQuestTrigger>
+          <FinishQuestTriggers>
+            <FinishQuestTrigger>quest_fortress_9</FinishQuestTrigger>
+          </FinishQuestTriggers>
         </Triggers>
         <Rewards>
           <ResourceReward resource="resource_cash">20</ResourceReward>
@@ -5766,7 +6046,9 @@
         <RewardFlavor locale="de_DE">Yieeha! Lass uns den Namen der Region ändern. Mein Vorschlag wäre 'Chefs Herrschaft'.</RewardFlavor>
         <RewardFlavor locale="en_US">That's what I'm talking about! Lets call this one 'Chief rules'.</RewardFlavor>
         <Triggers>
-          <FinishQuestTrigger>quest_fortress_10</FinishQuestTrigger>
+          <FinishQuestTriggers>
+            <FinishQuestTrigger>quest_fortress_10</FinishQuestTrigger>
+          </FinishQuestTriggers>
         </Triggers>
         <Rewards>
           <ResourceReward resource="resource_cash">25</ResourceReward>
@@ -5796,7 +6078,9 @@
         <RewardFlavor locale="de_DE">Jahaha! Das nenn ich Sport! Wir nennen die Festung 'Der schwarze Turm', oder?</RewardFlavor>
         <RewardFlavor locale="en_US">Now this is fighting! Let's give this one a fancy name.</RewardFlavor>
         <Triggers>
-          <FinishQuestTrigger>quest_fortress_15</FinishQuestTrigger>
+          <FinishQuestTriggers>
+            <FinishQuestTrigger>quest_fortress_15</FinishQuestTrigger>
+          </FinishQuestTriggers>
         </Triggers>
         <Rewards>
           <ResourceReward resource="resource_cash">35</ResourceReward>
