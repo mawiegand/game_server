@@ -1471,6 +1471,7 @@ class Fundamental::Character < ActiveRecord::Base
     if self.mundane_rank_changed?
       self.tutorial_state.check_for_new_quests('mundane_rank_trigger')
     end
+    true
   end
 
   # ##########################################################################
