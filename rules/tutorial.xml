@@ -30,7 +30,7 @@
   
   <!-- 0 --> <!-- Tutorial 1-->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" advisor="girl" hide_start_dialog="false" tutorial="true" priority="1" blocking="true" >
+    <Quest id ="quest_queue_1gathererlvl1" type="epic" advisor="girl" hide_start_dialog="false" tutorial="true" priority="1" blocking="true" >
       <Name>The first building</Name>
       <Name locale="de_DE">Der erste Jäger und Sammler</Name>
       <Task>Give an order to a Level 1 Hunter Gatherer.</Task>
@@ -65,7 +65,7 @@
     </Quest>
     
     <!-- 1 --> <!-- Tutorial 2 -->
-    <Quest id="quest_build_1gathererlvl2" advisor="girl" tutorial="true" priority="1" blocking="true">
+    <Quest id ="quest_build_1gathererlvl2" type="epic" advisor="girl" tutorial="true" priority="1" blocking="true">
       <Name>Upgrade</Name>
       <Name locale="de_DE">Jäger und Sammler Level 2</Name>
       <Task>Upgrade a Hunter Gatherer to Level 2.</Task>
@@ -100,9 +100,9 @@
       <UIMarker>mark_upgradable_building</UIMarker>
       <UIMarker>mark_upgrade_button</UIMarker>
     </Quest>
-    
+
     <!-- 2 --> <!-- Tutorial 3 -->
-    <Quest id="quest_build_chiefcottagelvl2" advisor="chef" tutorial="true">
+    <Quest id ="quest_build_chiefcottagelvl2" type="epic" advisor="chef" tutorial="true">
       <Name>Upgrade the chieftan's hut</Name>
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task>Upgrade your chieftan's hut to level 2.</Task>
@@ -175,7 +175,7 @@
     </Quest>
 
     <!-- 3 --> <!-- not in -->
-    <Quest id="quest_quest_button" advisor="girl" tutorial="false">
+    <Quest id ="quest_quest_button" type="epic" advisor="girl" tutorial="false">
       <Name>Quest button</Name>
       <Name locale="de_DE">Questknopf</Name>
       <Task>Find the quest button and press it. Then close the dialog and come back here.</Task>
@@ -204,7 +204,7 @@
     </Quest>
 
     <!-- 4 --> <!-- Tutorial 6 -->
-    <Quest id="quest_profile" advisor="girl" tutorial="true" priority="2" tutorial_end_quest="true">
+    <Quest id ="quest_profile" type="epic" advisor="girl" tutorial="true" priority="2" tutorial_end_quest="true">
       <Name>Name and profile</Name>
       <Name locale="de_DE">Namen und Profil</Name>
       <Task>Change your name.</Task>
@@ -240,7 +240,7 @@
     </Quest>
 
     <!-- 5 -->  <!-- Tutorial 4 -->
-    <Quest id="quest_build_1barrackslvl1" advisor="chef" tutorial="true" priority="2">
+    <Quest id ="quest_build_1barrackslvl1" type="epic" advisor="chef" tutorial="true" priority="2">
       <Name>Training Grounds</Name>
       <Name locale="de_DE">Ausbildungsgelände</Name>
       <Task>Build a Training Grounds.</Task>
@@ -281,7 +281,7 @@
     </Quest>
 
     <!-- 6 --> <!-- Tutorial 5 -->
-    <Quest id="quest_recruit_1clubbers" advisor="warrior" tutorial="true" priority="2">
+    <Quest id ="quest_recruit_1clubbers" type="epic" advisor="warrior" tutorial="true" priority="2">
       <Name>Your first unit</Name>
       <Name locale="de_DE">Deine erste Einheit</Name>
       <Task>Build a warrior.</Task>
@@ -317,7 +317,7 @@
     </Quest>
 
     <!-- 7 --> <!-- Tutorial 7 -->
-    <Quest id="quest_settlement_button1" advisor="chef" tutorial="true" priority="2">
+    <Quest id ="quest_settlement_button1" type="epic" advisor="chef" tutorial="true" priority="2">
       <Name>On the map</Name>
       <Name locale="de_DE">Auf die Karte</Name>
       <Task>Go to the world map.</Task>
@@ -352,7 +352,7 @@
     </Quest>
 
     <!-- 8 --> <!-- Tutorial 17 -->
-    <Quest id="quest_build_1storagelvl1" advisor="girl" tutorial="true" >
+    <Quest id ="quest_build_1storagelvl1" type="epic" advisor="girl" tutorial="true" >
       <Name>Raw materials store</Name>
       <Name locale="de_DE">Rohstofflager </Name>
       <Task>Build a raw materials store.</Task>
@@ -389,7 +389,7 @@
     </Quest>
 
     <!-- 9 --> <!-- Tutorial 9 -->
-    <Quest id="quest_army_move" advisor="warrior" tutorial="true" priority="2">
+    <Quest id ="quest_army_move" type="epic" advisor="warrior" tutorial="true" priority="2">
       <Name>Army movement</Name>
       <Name locale="de_DE">Armeebewegung</Name>
       <Task>Move your army to the fortress.</Task>
@@ -454,7 +454,7 @@
     </Quest>
 
     <!-- 10 --> <!-- Tutorial 11 -->
-    <Quest id="quest_build_2gathererlvl3" advisor="girl" tutorial="false" priority="0">
+    <Quest id ="quest_build_2gathererlvl3" type="epic" advisor="girl" tutorial="false" priority="0">
       <Name>More Hunter Gatherers</Name>
       <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
       <Task>Upgrade a Hunter Gatherer to Level 3.</Task>
@@ -485,7 +485,7 @@
     </Quest>
 
     <!-- 11 --> <!-- Tutorial 10 -->
-    <Quest id="quest_settlement_button2" advisor="girl" tutorial="true" priority="2">
+    <Quest id ="quest_settlement_button2" type="epic" advisor="girl" tutorial="true" priority="2">
       <Name>Back to the settlement</Name>
       <Name locale="de_DE">Zurück in die Siedlung</Name>
       <Task>Get yourself back to your settlement.</Task>
@@ -519,7 +519,7 @@
     </Quest>
 
     <!-- 12 --> <!-- Tutorial 12 -->
-    <Quest id="quest_build_chiefcottagelvl3" advisor="girl" tutorial="true">
+    <Quest id ="quest_build_chiefcottagelvl3" type="epic" advisor="girl" tutorial="true">
       <Name>An even bigger chieftain's hut</Name>
       <Name locale="de_DE">Eine noch größere Häuptlingshütte</Name>
       <Task>Upgrade your chieftan's hut to level 3</Task>
@@ -556,7 +556,7 @@
     </Quest>
 
     <!-- 13 --> <!-- Tutorial 13 -->
-    <Quest id="quest_build_cottagelvl1" advisor="girl" tutorial="true">
+    <Quest id ="quest_build_cottagelvl1" type="epic" advisor="girl" tutorial="true">
       <Name>The small huts</Name>
       <Name locale="de_DE">Die kleinen Hütten</Name>
       <Task>Build a small hut.</Task>
@@ -593,7 +593,7 @@
     </Quest>
 
     <!-- 14 --> <!-- Tutorial 14 -->
-    <Quest id="quest_improve_production_1" advisor="girl" tutorial="false">
+    <Quest id ="quest_improve_production_1" type="epic" advisor="girl" tutorial="false">
       <Name>Improve your production of raw materials</Name>
       <Name locale="de_DE">Erhöhe Deine Rohstoffproduktion</Name>
       <Task>Improve your production of stone and wood to at least 12 units per hour.</Task>
@@ -626,7 +626,7 @@
 
 
     <!-- 15 --> <!-- Tutorial 15 -->
-    <Quest id="quest_build_chiefcottagelvl4" advisor="girl" tutorial="true" blocking="true">
+    <Quest id ="quest_build_chiefcottagelvl4" type="epic" advisor="girl" tutorial="true" blocking="true">
       <Name>Finish upgrade</Name>
       <Name locale="de_DE">Ausbau beenden</Name>
       <Task>Finish the upgrade of the chieftan's hut.</Task>
@@ -661,7 +661,7 @@
     </Quest>
 
     <!-- 16 --> <!-- Tutorial 16 -->
-    <Quest id="quest_queue_chiefcottagelvl4" advisor="girl" tutorial="true">
+    <Quest id ="quest_queue_chiefcottagelvl4" type="epic" advisor="girl" tutorial="true">
       <Name>And another chieftan's hut upgrade</Name>
       <Name locale="de_DE">Noch einmal die Häuptlingshütte</Name>
       <Task>Upgrade your chieftan's hut to level 4.</Task>
@@ -699,7 +699,7 @@
 
 
     <!-- 17--> <!-- Tutorial 8 -->
-    <Quest id="quest_army_create" advisor="warrior" tutorial="true" priority="2">
+    <Quest id ="quest_army_create" type="epic" advisor="warrior" tutorial="true" priority="2">
       <Name>Your first army</Name>
       <Name locale="de_DE">Deine erste Armee</Name>
       <Task>Assemble an army.</Task>
@@ -739,7 +739,7 @@
     </Quest>
 
     <!-- 18 --> <!-- Tutorial 18 -->
-    <Quest id="quest_build_1campfirelvl1" advisor="girl" tutorial="true">
+    <Quest id ="quest_build_1campfirelvl1" type="epic" advisor="girl" tutorial="true">
       <Name>Campfire</Name>
       <Name locale="de_DE">Lagerfeuer</Name>
       <Task>Build a campfire.</Task>
@@ -810,7 +810,7 @@
     </Quest>
 
     <!-- 19 -->
-    <Quest id="quest_alliance" advisor="girl">
+    <Quest id ="quest_alliance" type="epic" advisor="girl">
       <Name>Alliance</Name>
       <Name locale="de_DE">Allianz</Name>
       <Task>Enter an alliance, or start your own alliance.</Task>
@@ -843,7 +843,7 @@
     </Quest>
 
     <!-- 20 -->
-    <Quest id="quest_resourcescore_0" advisor="girl">
+    <Quest id ="quest_resourcescore_0" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 50 resource points.</Task>
@@ -877,7 +877,7 @@
     </Quest>
 
     <!-- 21 -->
-    <Quest id="quest_build_chiefcottagelvl5" advisor="girl" >
+    <Quest id ="quest_build_chiefcottagelvl5" type="epic" advisor="girl" >
       <Name>Chieftan's hut level five</Name>
       <Name locale="de_DE">Häuptlingshütte Level 5</Name>
       <Task>Upgrade your chieftan's hut to level 5.</Task>
@@ -912,7 +912,7 @@
     </Quest>
 
     <!-- 22 -->
-    <Quest id="quest_build_1quarrylvl2" advisor="girl">
+    <Quest id ="quest_build_1quarrylvl2" type="epic" advisor="girl">
       <Name>Quarry</Name>
       <Name locale="de_DE">Steinbruch</Name>
       <Task>Build a quarry and a logging camp.</Task>
@@ -946,7 +946,7 @@
     </Quest>
 
     <!-- 23 -->
-    <Quest id="quest_build_1loggerlvl2" advisor="girl">
+    <Quest id ="quest_build_1loggerlvl2" type="epic" advisor="girl">
       <Name>Logger</Name>
       <Name locale="de_DE">Holzfäller</Name>
       <Task>Build a Level 2 logger.</Task>
@@ -980,7 +980,7 @@
     </Quest>
 
     <!-- 24 -->
-    <Quest id="quest_build_chiefcottagelvl6" advisor="chef" >
+    <Quest id ="quest_build_chiefcottagelvl6" type="epic" advisor="chef" >
       <Name>Chieftan's hut level 6</Name>
       <Name locale="de_DE">Häuptlingshütte Level 6</Name>
       <Task>Upgrade your chieftan's hut to Level 6.</Task>
@@ -1014,7 +1014,7 @@
     </Quest>
 
     <!-- 25 -->
-    <Quest id="quest_build_training_cave" advisor="warrior">
+    <Quest id ="quest_build_training_cave" type="epic" advisor="warrior">
       <Name>Training cave</Name>
       <Name locale="de_DE">Trainingshöhle</Name>
       <Task>Build a training cave.</Task>
@@ -1048,7 +1048,7 @@
     </Quest>
 
     <!-- 26 -->
-    <Quest id="quest_build_chiefcottagelvl7" advisor="chef">
+    <Quest id ="quest_build_chiefcottagelvl7" type="epic" advisor="chef">
       <Name>Upgrade the chieftan's hut</Name>
       <Name locale="de_DE">Häuptlingshütte Level 7</Name>
       <Task>Upgrade your chieftan's hut to Level 7.</Task>
@@ -1082,7 +1082,7 @@
     </Quest>
 
     <!-- 27 --> <!--501-->
-    <Quest id="quest_fortress" advisor="chef">
+    <Quest id ="quest_fortress" type="epic" advisor="chef">
       <Name>Fortress</Name>
       <Name locale="de_DE">Festung erobern</Name>
       <Task>Conquer a fortress.</Task>
@@ -1114,7 +1114,7 @@
     </Quest>
 
     <!-- 28 -->
-    <Quest id="quest_build_1barrackslvl5" advisor="warrior">
+    <Quest id ="quest_build_1barrackslvl5" type="epic" advisor="warrior">
       <Name>Training Grounds level 5</Name>
       <Name locale="de_DE">Ausbildungsgelände Level 5</Name>
       <Task>Upgrade your training grounds to Level 5.</Task>
@@ -1148,7 +1148,7 @@
     </Quest>
 
     <!-- 29 -->
-    <Quest id="quest_build_chiefcottagelvl8" advisor="girl">
+    <Quest id ="quest_build_chiefcottagelvl8" type="epic" advisor="girl">
       <Name>Upgrade of the chieftan's hut</Name>
       <Name locale="de_DE">Häuptlingshütte Level 8</Name>
       <Task>Upgrade of the chieftan's hut to level 8.</Task>
@@ -1183,7 +1183,7 @@
     </Quest>
 
     <!-- 30 -->
-    <Quest id="quest_build_1furrierlvl2" advisor="girl">
+    <Quest id ="quest_build_1furrierlvl2" type="epic" advisor="girl">
       <Name>Furrier</Name>
       <Name locale="de_DE">Kürschner</Name>
       <Task>Build a Level 2 furrier.</Task>
@@ -1217,7 +1217,7 @@
     </Quest>
 
     <!-- 31 -->
-    <Quest id="quest_build_chiefcottagelvl9" advisor="girl">
+    <Quest id ="quest_build_chiefcottagelvl9" type="epic" advisor="girl">
       <Name>Upgrade of the chieftan's hut</Name>
       <Name locale="de_DE">Häuptlingshütte Level 9</Name>
       <Task>Upgrade of the chieftan's hut to level 9.</Task>
@@ -1251,7 +1251,7 @@
     </Quest>
 
     <!-- 32 -->
-    <Quest id="quest_outpost" advisor="chef">
+    <Quest id ="quest_outpost" type="epic" advisor="chef">
       <Name>Encampment</Name>
       <Name locale="de_DE">Lagerstätte</Name>
       <Task>Start an encampment.</Task>
@@ -1287,7 +1287,7 @@
     </Quest>
 
     <!-- 33 -->
-    <Quest id="quest_build_chiefcottagelvl10" advisor="chef">
+    <Quest id ="quest_build_chiefcottagelvl10" type="epic" advisor="chef">
       <Name>Upgrade of the chieftan's hut</Name>
       <Name locale="de_DE">Häuptlingshütte Level 10</Name>
       <Task>Upgrade of the chieftan's hut to level 10.</Task>
@@ -1322,7 +1322,7 @@
     </Quest>
 
     <!-- 34 -->
-    <Quest id="quest_build_copper_smelter" advisor="girl" >
+    <Quest id ="quest_build_copper_smelter" type="epic" advisor="girl" >
       <Name>Copper smelter</Name>
       <Name locale="de_DE">Kupferschmelze</Name>
       <Task>Build a copper smelter.</Task>
@@ -1356,7 +1356,7 @@
     </Quest>
 
     <!-- 35 -->
-    <Quest id="quest_build_firing_range" advisor="warrior">
+    <Quest id ="quest_build_firing_range" type="epic" advisor="warrior">
       <Name>Firing Range</Name>
       <Name locale="de_DE">Schießstand</Name>
       <Task>Build a firing range.</Task>
@@ -1386,7 +1386,7 @@
     </Quest>
 
     <!-- 36 -->
-    <Quest id="quest_build_stud" advisor="warrior">
+    <Quest id ="quest_build_stud" type="epic" advisor="warrior">
       <Name>Smelly barn</Name>
       <Name locale="de_DE">Stinkender Stall</Name>
       <Task>Build a smelly barn.</Task>
@@ -1419,7 +1419,7 @@
     <!-- character kills -->
 
     <!-- 101 -->
-    <Quest id="quest_charkills_1" advisor="warrior">
+    <Quest id ="quest_charkills_1" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 10 units.</Task>
@@ -1453,7 +1453,7 @@
     </Quest>
 
     <!-- 102 -->
-    <Quest id="quest_charkills_2" advisor="warrior">
+    <Quest id ="quest_charkills_2" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 100 units.</Task>
@@ -1487,7 +1487,7 @@
     </Quest>
 
     <!-- 103 -->
-    <Quest id="quest_charkills_3" advisor="warrior">
+    <Quest id ="quest_charkills_3" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 500 units.</Task>
@@ -1521,7 +1521,7 @@
     </Quest>
 
     <!-- 104 -->
-    <Quest id="quest_charkills_4" advisor="warrior">
+    <Quest id ="quest_charkills_4" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 1,000 units.</Task>
@@ -1555,7 +1555,7 @@
     </Quest>
 
     <!-- 105 -->
-    <Quest id="quest_charkills_5" advisor="warrior">
+    <Quest id ="quest_charkills_5" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 5,000 units.</Task>
@@ -1589,7 +1589,7 @@
     </Quest>
 
     <!-- 106 -->
-    <Quest id="quest_charkills_6" advisor="warrior">
+    <Quest id ="quest_charkills_6" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 10,000 units.</Task>
@@ -1623,7 +1623,7 @@
     </Quest>
 
     <!-- 107 -->
-    <Quest id="quest_charkills_7" advisor="warrior">
+    <Quest id ="quest_charkills_7" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 20,000 units.</Task>
@@ -1657,7 +1657,7 @@
     </Quest>
 
     <!-- 108 -->
-    <Quest id="quest_charkills_8" advisor="warrior">
+    <Quest id ="quest_charkills_8" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 25,850 units.</Task>
@@ -1691,7 +1691,7 @@
     </Quest>
 
     <!-- 109 -->
-    <Quest id="quest_charkills_9" advisor="warrior">
+    <Quest id ="quest_charkills_9" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 32,650 units.</Task>
@@ -1725,7 +1725,7 @@
     </Quest>
 
     <!-- 110 -->
-    <Quest id="quest_charkills_10" advisor="warrior">
+    <Quest id ="quest_charkills_10" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 40,250 units.</Task>
@@ -1759,7 +1759,7 @@
     </Quest>
 
     <!-- 111 -->
-    <Quest id="quest_charkills_11" advisor="warrior">
+    <Quest id ="quest_charkills_11" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 48,650 units.</Task>
@@ -1793,7 +1793,7 @@
     </Quest>
 
     <!-- 112 -->
-    <Quest id="quest_charkills_12" advisor="warrior">
+    <Quest id ="quest_charkills_12" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 57,850 units.</Task>
@@ -1827,7 +1827,7 @@
     </Quest>
 
     <!-- 113 -->
-    <Quest id="quest_charkills_13" advisor="warrior">
+    <Quest id ="quest_charkills_13" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 67,850 units.</Task>
@@ -1861,7 +1861,7 @@
     </Quest>
 
     <!-- 114 -->
-    <Quest id="quest_charkills_14" advisor="warrior">
+    <Quest id ="quest_charkills_14" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 78,650 units.</Task>
@@ -1895,7 +1895,7 @@
     </Quest>
 
     <!-- 115 -->
-    <Quest id="quest_charkills_15" advisor="warrior">
+    <Quest id ="quest_charkills_15" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 90,250 units.</Task>
@@ -1929,7 +1929,7 @@
     </Quest>
 
     <!-- 116 -->
-    <Quest id="quest_charkills_16" advisor="warrior">
+    <Quest id ="quest_charkills_16" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 102,650 units.</Task>
@@ -1963,7 +1963,7 @@
     </Quest>
 
     <!-- 117 -->
-    <Quest id="quest_charkills_17" advisor="warrior">
+    <Quest id ="quest_charkills_17" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 115,850 units.</Task>
@@ -1997,7 +1997,7 @@
     </Quest>
 
     <!-- 118 -->
-    <Quest id="quest_charkills_18" advisor="warrior">
+    <Quest id ="quest_charkills_18" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 129,850 units.</Task>
@@ -2031,7 +2031,7 @@
     </Quest>
 
     <!-- 119 -->
-    <Quest id="quest_charkills_19" advisor="warrior">
+    <Quest id ="quest_charkills_19" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 144,640 units.</Task>
@@ -2065,7 +2065,7 @@
     </Quest>
 
     <!-- 120 -->
-    <Quest id="quest_charkills_20" advisor="warrior">
+    <Quest id ="quest_charkills_20" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 160,250 units.</Task>
@@ -2099,7 +2099,7 @@
     </Quest>
 
     <!-- 121 -->
-    <Quest id="quest_charkills_21" advisor="warrior">
+    <Quest id ="quest_charkills_21" type="epic" advisor="warrior">
       <Name>Decimate enemy units</Name>
       <Name locale="de_DE">Gegner dezimieren</Name>
       <Task>Defeat 500,000 units.</Task>
@@ -2136,7 +2136,7 @@
     <!-- army XP -->
 
     <!-- 201 -->
-    <Quest id="quest_armyXP_1" advisor="warrior">
+    <Quest id ="quest_armyXP_1" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 10 Army Experience points.</Task>
@@ -2170,7 +2170,7 @@
     </Quest>
 
     <!-- 202 -->
-    <Quest id="quest_armyXP_2" advisor="warrior">
+    <Quest id ="quest_armyXP_2" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 80 Army Experience points.</Task>
@@ -2204,7 +2204,7 @@
     </Quest>
 
     <!-- 203 -->
-    <Quest id="quest_armyXP_3" advisor="warrior">
+    <Quest id ="quest_armyXP_3" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 200 Army Experience points.</Task>
@@ -2238,7 +2238,7 @@
     </Quest>
 
     <!-- 204 -->
-    <Quest id="quest_armyXP_4" advisor="warrior">
+    <Quest id ="quest_armyXP_4" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 500 Army Experience points.</Task>
@@ -2272,7 +2272,7 @@
     </Quest>
 
     <!-- 205 -->
-    <Quest id="quest_armyXP_5" advisor="warrior">
+    <Quest id ="quest_armyXP_5" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 1,000 Army Experience points.</Task>
@@ -2306,7 +2306,7 @@
     </Quest>
 
     <!-- 206 -->
-    <Quest id="quest_armyXP_6" advisor="warrior">
+    <Quest id ="quest_armyXP_6" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 2,000 Army Experience points.</Task>
@@ -2340,7 +2340,7 @@
     </Quest>
 
     <!-- 207 -->
-    <Quest id="quest_armyXP_7" advisor="warrior">
+    <Quest id ="quest_armyXP_7" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 4,000 Army Experience points.</Task>
@@ -2374,7 +2374,7 @@
     </Quest>
 
     <!-- 208 -->
-    <Quest id="quest_armyXP_8" advisor="warrior">
+    <Quest id ="quest_armyXP_8" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 6,000 Army Experience points.</Task>
@@ -2408,7 +2408,7 @@
     </Quest>
 
     <!-- 209 -->
-    <Quest id="quest_armyXP_9" advisor="warrior">
+    <Quest id ="quest_armyXP_9" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 10,000 Army Experience points.</Task>
@@ -2442,7 +2442,7 @@
     </Quest>
 
     <!-- 210 -->
-    <Quest id="quest_armyXP_10" advisor="warrior">
+    <Quest id ="quest_armyXP_10" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 15,000 Army Experience points.</Task>
@@ -2476,7 +2476,7 @@
     </Quest>
 
     <!-- 211 -->
-    <Quest id="quest_armyXP_11" advisor="warrior">
+    <Quest id ="quest_armyXP_11" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 22,500 Army Experience points.</Task>
@@ -2510,7 +2510,7 @@
     </Quest>
 
     <!-- 212 -->
-    <Quest id="quest_armyXP_12" advisor="warrior">
+    <Quest id ="quest_armyXP_12" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 30,000 Army Experience points.</Task>
@@ -2544,7 +2544,7 @@
     </Quest>
 
     <!-- 213 -->
-    <Quest id="quest_armyXP_13" advisor="warrior">
+    <Quest id ="quest_armyXP_13" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 40,000 Army Experience points.</Task>
@@ -2578,7 +2578,7 @@
     </Quest>
 
     <!-- 214 -->
-    <Quest id="quest_armyXP_14" advisor="warrior">
+    <Quest id ="quest_armyXP_14" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 50,000 Army Experience points.</Task>
@@ -2612,7 +2612,7 @@
     </Quest>
 
     <!-- 215 -->
-    <Quest id="quest_armyXP_15" advisor="warrior">
+    <Quest id ="quest_armyXP_15" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 60,000 Army Experience points.</Task>
@@ -2646,7 +2646,7 @@
     </Quest>
 
     <!-- 216 -->
-    <Quest id="quest_armyXP_16" advisor="warrior">
+    <Quest id ="quest_armyXP_16" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 72,500 Army Experience points.</Task>
@@ -2680,7 +2680,7 @@
     </Quest>
 
     <!-- 217 -->
-    <Quest id="quest_armyXP_17" advisor="warrior">
+    <Quest id ="quest_armyXP_17" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 85,000 Army Experience points.</Task>
@@ -2714,7 +2714,7 @@
     </Quest>
 
     <!-- 218 -->
-    <Quest id="quest_armyXP_18" advisor="warrior">
+    <Quest id ="quest_armyXP_18" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 100,000 Army Experience points.</Task>
@@ -2748,7 +2748,7 @@
     </Quest>
 
     <!-- 219 -->
-    <Quest id="quest_armyXP_19" advisor="warrior">
+    <Quest id ="quest_armyXP_19" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 150,000 Army Experience points.</Task>
@@ -2782,7 +2782,7 @@
     </Quest>
 
     <!-- 220 -->
-    <Quest id="quest_armyXP_20" advisor="warrior">
+    <Quest id ="quest_armyXP_20" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 200,000 Army Experience points.</Task>
@@ -2816,7 +2816,7 @@
     </Quest>
 
     <!-- 221 -->
-    <Quest id="quest_armyXP_21" advisor="warrior">
+    <Quest id ="quest_armyXP_21" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 300,000 Army Experience points.</Task>
@@ -2850,7 +2850,7 @@
     </Quest>
 
     <!-- 222 -->
-    <Quest id="quest_armyXP_22" advisor="warrior">
+    <Quest id ="quest_armyXP_22" type="epic" advisor="warrior">
       <Name>Experienced armies</Name>
       <Name locale="de_DE">Erfahrene Armeen</Name>
       <Task>Fight with an army until it has 500,000 Army Experience points.</Task>
@@ -2887,7 +2887,7 @@
     <!--score-->
 
     <!-- 300 -->
-    <Quest id="quest_score_0" advisor="chef">
+    <Quest id ="quest_score_0" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 200</Task>
@@ -2919,7 +2919,7 @@
     </Quest>
 
     <!-- 301 -->
-    <Quest id="quest_score_1" advisor="chef">
+    <Quest id ="quest_score_1" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 400</Task>
@@ -2953,7 +2953,7 @@
     </Quest>
 
     <!-- 302 -->
-    <Quest id="quest_score_2" advisor="chef">
+    <Quest id ="quest_score_2" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 500</Task>
@@ -2987,7 +2987,7 @@
     </Quest>
 
     <!-- 303 -->
-    <Quest id="quest_score_3" advisor="chef">
+    <Quest id ="quest_score_3" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 700</Task>
@@ -3021,7 +3021,7 @@
     </Quest>
 
     <!-- 304 -->
-    <Quest id="quest_score_4" advisor="chef">
+    <Quest id ="quest_score_4" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 1,000.</Task>
@@ -3055,7 +3055,7 @@
     </Quest>
 
     <!-- 305 -->
-    <Quest id="quest_score_5" advisor="chef">
+    <Quest id ="quest_score_5" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 1,500.</Task>
@@ -3089,7 +3089,7 @@
     </Quest>
 
     <!-- 306 -->
-    <Quest id="quest_score_6" advisor="chef">
+    <Quest id ="quest_score_6" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 2,000.</Task>
@@ -3123,7 +3123,7 @@
     </Quest>
 
     <!-- 307 -->
-    <Quest id="quest_score_7" advisor="chef">
+    <Quest id ="quest_score_7" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 2,800.</Task>
@@ -3157,7 +3157,7 @@
     </Quest>
 
     <!-- 308 -->
-    <Quest id="quest_score_8" advisor="chef">
+    <Quest id ="quest_score_8" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 4,000.</Task>
@@ -3191,7 +3191,7 @@
     </Quest>
 
     <!-- 309 -->
-    <Quest id="quest_score_9" advisor="chef">
+    <Quest id ="quest_score_9" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 6,000.</Task>
@@ -3225,7 +3225,7 @@
     </Quest>
 
     <!-- 310 -->
-    <Quest id="quest_score_10" advisor="chef">
+    <Quest id ="quest_score_10" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 10,000.</Task>
@@ -3259,7 +3259,7 @@
     </Quest>
 
     <!-- 311 -->
-    <Quest id="quest_score_11" advisor="chef">
+    <Quest id ="quest_score_11" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 15,000.</Task>
@@ -3293,7 +3293,7 @@
     </Quest>
 
     <!-- 312 -->
-    <Quest id="quest_score_12" advisor="chef">
+    <Quest id ="quest_score_12" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 22,500.</Task>
@@ -3327,7 +3327,7 @@
     </Quest>
 
     <!-- 313 -->
-    <Quest id="quest_score_13" advisor="chef">
+    <Quest id ="quest_score_13" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 30,000.</Task>
@@ -3361,7 +3361,7 @@
     </Quest>
 
     <!-- 314 -->
-    <Quest id="quest_score_14" advisor="chef">
+    <Quest id ="quest_score_14" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 40,000.</Task>
@@ -3395,7 +3395,7 @@
     </Quest>
 
     <!-- 315 -->
-    <Quest id="quest_score_15" advisor="chef">
+    <Quest id ="quest_score_15" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 50,000.</Task>
@@ -3429,7 +3429,7 @@
     </Quest>
 
     <!-- 316 -->
-    <Quest id="quest_score_16" advisor="chef">
+    <Quest id ="quest_score_16" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 60,000.</Task>
@@ -3463,7 +3463,7 @@
     </Quest>
 
     <!-- 317 -->
-    <Quest id="quest_score_17" advisor="chef">
+    <Quest id ="quest_score_17" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 75,000.</Task>
@@ -3497,7 +3497,7 @@
     </Quest>
 
     <!-- 318 -->
-    <Quest id="quest_score_18" advisor="chef">
+    <Quest id ="quest_score_18" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 80,000.</Task>
@@ -3531,7 +3531,7 @@
     </Quest>
 
     <!-- 319 -->
-    <Quest id="quest_score_19" advisor="chef">
+    <Quest id ="quest_score_19" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 100,000.</Task>
@@ -3565,7 +3565,7 @@
     </Quest>
 
     <!-- 320 -->
-    <Quest id="quest_score_20" advisor="chef">
+    <Quest id ="quest_score_20" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 150,000.</Task>
@@ -3599,7 +3599,7 @@
     </Quest>
 
     <!-- 321 -->
-    <Quest id="quest_score_21" advisor="chef">
+    <Quest id ="quest_score_21" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Populatoin of 250,000.</Task>
@@ -3633,7 +3633,7 @@
     </Quest>
 
     <!-- 322 -->
-    <Quest id="quest_score_22" advisor="chef">
+    <Quest id ="quest_score_22" type="epic" advisor="chef">
       <Name>Population</Name>
       <Name locale="de_DE">Einwohner</Name>
       <Task>Reach a Population of 500,000.</Task>
@@ -3669,7 +3669,7 @@
     <!-- resource production -->
 
     <!-- 401 -->
-    <Quest id="quest_resourcescore_1" advisor="girl">
+    <Quest id ="quest_resourcescore_1" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 120 resource points after taxes.</Task>
@@ -3703,7 +3703,7 @@
     </Quest>
 
     <!-- 402 -->
-    <Quest id="quest_resourcescore_2" advisor="girl">
+    <Quest id ="quest_resourcescore_2" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 210 resource points after taxes.</Task>
@@ -3737,7 +3737,7 @@
     </Quest>
 
     <!-- 403 -->
-    <Quest id="quest_resourcescore_3" advisor="girl">
+    <Quest id ="quest_resourcescore_3" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 420 resource points after taxes.</Task>
@@ -3771,7 +3771,7 @@
     </Quest>
 
     <!-- 404 -->
-    <Quest id="quest_resourcescore_4" advisor="girl">
+    <Quest id ="quest_resourcescore_4" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 750 resource points after taxes.</Task>
@@ -3805,7 +3805,7 @@
     </Quest>
 
     <!-- 405 -->
-    <Quest id="quest_resourcescore_5" advisor="girl">
+    <Quest id ="quest_resourcescore_5" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 1,300 resource points after taxes.</Task>
@@ -3839,7 +3839,7 @@
     </Quest>
 
     <!-- 406 -->
-    <Quest id="quest_resourcescore_6" advisor="girl">
+    <Quest id ="quest_resourcescore_6" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 1,900 resource points after taxes.</Task>
@@ -3873,7 +3873,7 @@
     </Quest>
 
     <!-- 407 -->
-    <Quest id="quest_resourcescore_7" advisor="girl">
+    <Quest id ="quest_resourcescore_7" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 2,720 resource points after taxes.</Task>
@@ -3907,7 +3907,7 @@
     </Quest>
 
     <!-- 408 -->
-    <Quest id="quest_resourcescore_8" advisor="girl">
+    <Quest id ="quest_resourcescore_8" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 3,500 resource points after taxes.</Task>
@@ -3941,7 +3941,7 @@
     </Quest>
 
     <!-- 409 -->
-    <Quest id="quest_resourcescore_9" advisor="girl">
+    <Quest id ="quest_resourcescore_9" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 4,340 resource points after taxes.</Task>
@@ -3975,7 +3975,7 @@
     </Quest>
 
     <!-- 410 -->
-    <Quest id="quest_resourcescore_10" advisor="girl">
+    <Quest id ="quest_resourcescore_10" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 5,540 resource points after taxes.</Task>
@@ -4009,7 +4009,7 @@
     </Quest>
 
     <!-- 411 -->
-    <Quest id="quest_resourcescore_11" advisor="girl">
+    <Quest id ="quest_resourcescore_11" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 6,900 resource points after taxes.</Task>
@@ -4043,7 +4043,7 @@
     </Quest>
 
     <!-- 412 -->
-    <Quest id="quest_resourcescore_12" advisor="girl">
+    <Quest id ="quest_resourcescore_12" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 8,420 resource points after taxes.</Task>
@@ -4077,7 +4077,7 @@
     </Quest>
 
     <!-- 413 -->
-    <Quest id="quest_resourcescore_13" advisor="girl">
+    <Quest id ="quest_resourcescore_13" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 10,100 resource points after taxes.</Task>
@@ -4111,7 +4111,7 @@
     </Quest>
 
     <!-- 414 -->
-    <Quest id="quest_resourcescore_14" advisor="girl">
+    <Quest id ="quest_resourcescore_14" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 11,940 resource points after taxes.</Task>
@@ -4145,7 +4145,7 @@
     </Quest>
 
     <!-- 415 -->
-    <Quest id="quest_resourcescore_15" advisor="girl">
+    <Quest id ="quest_resourcescore_15" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 13,940 resource points after taxes.</Task>
@@ -4179,7 +4179,7 @@
     </Quest>
 
     <!-- 416 -->
-    <Quest id="quest_resourcescore_16" advisor="girl">
+    <Quest id ="quest_resourcescore_16" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 16,100 resource points after taxes.</Task>
@@ -4213,7 +4213,7 @@
     </Quest>
 
     <!-- 417 -->
-    <Quest id="quest_resourcescore_17" advisor="girl">
+    <Quest id ="quest_resourcescore_17" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 18,420 resource points after taxes.</Task>
@@ -4247,7 +4247,7 @@
     </Quest>
 
     <!-- 418 -->
-    <Quest id="quest_resourcescore_18" advisor="girl">
+    <Quest id ="quest_resourcescore_18" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 20,900 resource points after taxes.</Task>
@@ -4281,7 +4281,7 @@
     </Quest>
 
     <!-- 419 -->
-    <Quest id="quest_resourcescore_19" advisor="girl">
+    <Quest id ="quest_resourcescore_19" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 23,540 resource points after taxes.</Task>
@@ -4315,7 +4315,7 @@
     </Quest>
 
     <!-- 420 -->
-    <Quest id="quest_resourcescore_20" advisor="girl">
+    <Quest id ="quest_resourcescore_20" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 26,340 resource points after taxes.</Task>
@@ -4349,7 +4349,7 @@
     </Quest>
 
     <!-- 421 -->
-    <Quest id="quest_resourcescore_21" advisor="girl">
+    <Quest id ="quest_resourcescore_21" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 29,300 resource points after taxes.</Task>
@@ -4383,7 +4383,7 @@
     </Quest>
 
     <!-- 422 -->
-    <Quest id="quest_resourcescore_22" advisor="girl">
+    <Quest id ="quest_resourcescore_22" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 32,400 resource points.</Task>
@@ -4417,7 +4417,7 @@
     </Quest>
 
     <!-- 423 -->
-    <Quest id="quest_resourcescore_23" advisor="girl">
+    <Quest id ="quest_resourcescore_23" type="epic" advisor="girl">
       <Name>Resource Production</Name>
       <Name locale="de_DE">Rohstoffproduktion</Name>
       <Task>Increase the resource production of one settlement to 35,420 reource points.</Task>
@@ -4451,7 +4451,7 @@
     </Quest>
 
     <!-- 500 -->
-    <Quest id="quest_build_1barrackslvl10" advisor="warrior">
+    <Quest id ="quest_build_1barrackslvl10" type="epic" advisor="warrior">
       <Name>Training Grounds level 10</Name>
       <Name locale="de_DE">Ausbildungsgelände Level 10</Name>
       <Task>Upgrade a Training Grounds to Level 10.</Task>
@@ -4485,7 +4485,7 @@
     </Quest>
 
     <!-- NOT IN
-     <Quest id="quest_rank" advisor="chef">
+     <Quest id ="quest_rank" type="epic" advisor="chef">
      <Name>Rank</Name>
      <Name locale="de_DE">Rang</Name>
      <Task>Choose your current rank.</Task>
@@ -4513,7 +4513,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_message" advisor="girl" tutorial="false">
+     <Quest id ="quest_message" type="epic" advisor="girl" tutorial="false">
      <Name>Message</Name>
      <Name locale="de_DE">Nachrichten</Name>
      <Task>Read the message</Task>
@@ -4550,7 +4550,7 @@
      </Message>
      </Quest>
 
-     <Quest id="quest_encyclopedia" advisor="girl" tutorial="false">
+     <Quest id ="quest_encyclopedia" type="epic" advisor="girl" tutorial="false">
      <Name>Encyclopaedia</Name>
      <Name locale="de_DE"> Enzyklopädie </Name>
      <Task>Enter the cost of the wood needed for a Training Grounds level 2.</Task>
@@ -4619,7 +4619,7 @@
 
 
 
-     <Quest id="quest_build_1cottagelvl3" advisor="girl">
+     <Quest id ="quest_build_1cottagelvl3" type="epic" advisor="girl">
      <Name>small huts, big stuff!</Name>
      <Name locale="de_DE">Kleine Hütten, ganz groß!</Name>
      <Task>Upgrade a small hut to level 3.</Task>
@@ -4647,7 +4647,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_2gathererlvl4" advisor="girl">
+     <Quest id ="quest_build_2gathererlvl4" type="epic" advisor="girl">
      <Name>More Hunter Gatherers</Name>
      <Name locale="de_DE">Noch mehr Jäger und Sammler</Name>
      <Task>Upgrade two Hunter Gatherers to level 3.</Task>
@@ -4675,7 +4675,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_4gathererlvl5" advisor="girl">
+     <Quest id ="quest_build_4gathererlvl5" type="epic" advisor="girl">
      <Name>Always more Hunter Gatherers</Name>
      <Name locale="de_DE">Immer mehr Jäger und Sammler</Name>
      <Task>Upgrade four Hunter Gatherers to level 5</Task>
@@ -4703,7 +4703,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_3gathererlvl7" advisor="girl">
+     <Quest id ="quest_build_3gathererlvl7" type="epic" advisor="girl">
      <Name>Upgrade Hunter Gatherers </Name>
      <Name locale="de_DE">Jäger und Sammler weiter ausbauen</Name>
      <Task>Upgrade three Hunter Gatherers to level 7</Task>
@@ -4731,7 +4731,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1barrackslvl2" advisor="chef" tutorial="false">
+     <Quest id ="quest_build_1barrackslvl2" type="epic" advisor="chef" tutorial="false">
      <Name>Training grounds level 2</Name>
      <Name locale="de_DE">Ausbildungsgelände Level 2</Name>
      <Task>Upgrade a training grounds to level 2</Task>
@@ -4759,7 +4759,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1barrackslvl5" advisor="warrior">
+     <Quest id ="quest_build_1barrackslvl5" type="epic" advisor="warrior">
      <Name>Training grounds level 5</Name>
      <Name locale="de_DE">Ausbildungsgelände Level 5</Name>
      <Task>Upgrade a training grounds to level 5</Task>
@@ -4787,7 +4787,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1barrackslvl10" advisor="warrior">
+     <Quest id ="quest_build_1barrackslvl10" type="epic" advisor="warrior">
      <Name>Training Grounds level 10</Name>
      <Name locale="de_DE">Ausbildungsgelände Level 10</Name>
      <Task> Upgrade a training grounds to level 10.</Task>
@@ -4821,7 +4821,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_2quarrylvl3_2loggerlvl3" advisor="girl">
+     <Quest id ="quest_build_2quarrylvl3_2loggerlvl3" type="epic" advisor="girl">
      <Name>More Quarries and logging camps</Name>
      <Name locale="de_DE">Mehr Holzfäller und Steinbrüche</Name>
      <Task>Upgrade two quarries and logging camps to level 3.</Task>
@@ -4850,7 +4850,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1storagelvl5" advisor="chef">
+     <Quest id ="quest_build_1storagelvl5" type="epic" advisor="chef">
      <Name>Raw materials store level 3</Name>
      <Name locale="de_DE"> Rohstofflager Level 3 </Name>
      <Task>Build a raw materials store level 3.</Task>
@@ -4878,7 +4878,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1campfirelvl5" advisor="chef">
+     <Quest id ="quest_build_1campfirelvl5" type="epic" advisor="chef">
      <Name>Campfire level 2</Name>
      <Name locale="de_DE">Lagerfeuer Level 2</Name>
      <Task>Upgrade the campfire to level 2 so you get the chance to start your own alliance.</Task>
@@ -4906,7 +4906,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_6gathererlvl2" advisor="girl">
+     <Quest id ="quest_build_6gathererlvl2" type="epic" advisor="girl">
      <Name>More Hunter Gatherers</Name>
      <Name locale="de_DE">Immer mehr Jäger und Sammler</Name>
      <Task>Upgrade six Hunter Gatherers to level 2.</Task>
@@ -4934,7 +4934,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1gathererlvl4" advisor="girl" hide_start_dialog="true">
+     <Quest id ="quest_build_1gathererlvl4" type="epic" advisor="girl" hide_start_dialog="true">
      <Name>Bigger Hunter Gatherers</Name>
      <Name locale="de_DE">Immer größere Jäger und Sammler</Name>
      <Task>Upgrade one Hunter Gatherer to level 4.</Task>
@@ -4961,7 +4961,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1gathererlvl5" advisor="chef">
+     <Quest id ="quest_build_1gathererlvl5" type="epic" advisor="chef">
      <Name>Oh, these eternal Hunter Gatherers</Name>
      <Name locale="de_DE">Immer diese Jäger und Sammler</Name>
      <Task>Upgrade a Hunter Gatherer to level 5.</Task>
@@ -4988,7 +4988,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1gathererlvl6" advisor="girl">
+     <Quest id ="quest_build_1gathererlvl6" type="epic" advisor="girl">
      <Name>More Hunter Gatherers</Name>
      <Name locale="de_DE">Und wieder Jäger und Sammler</Name>
      <Task>Upgrade a Hunter Gatherer to level 6.</Task>
@@ -5015,7 +5015,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1gathererlvl7" advisor="warrior">
+     <Quest id ="quest_build_1gathererlvl7" type="epic" advisor="warrior">
      <Name>The Hunter Gatherer problem</Name>
      <Name locale="de_DE">Das Jäger und Sammler Problem</Name>
      <Task>Upgrade one of your Hunter Gatherers to level 7.</Task>
@@ -5042,7 +5042,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1gathererlvl8" advisor="girl">
+     <Quest id ="quest_build_1gathererlvl8" type="epic" advisor="girl">
      <Name>Still Hunter Gatherers</Name>
      <Name locale="de_DE">Immer noch Jäger und Sammler</Name>
      <Task>Upgrade one of your Hunter Gatherers to level 8.</Task>
@@ -5069,7 +5069,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1gathererlvl9" advisor="girl">
+     <Quest id ="quest_build_1gathererlvl9" type="epic" advisor="girl">
      <Name>Almost upgraded Hunter Gatherer</Name>
      <Name locale="de_DE">Fast ausgebaute Jäger und Sammler</Name>
      <Task>Upgrade one of your Hunter Gatherers to level 9.</Task>
@@ -5096,7 +5096,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_1gathererlvl10" advisor="girl">
+     <Quest id ="quest_build_1gathererlvl10" type="epic" advisor="girl">
      <Name>A final Hunter Gatherer</Name>
      <Name locale="de_DE">Ein letztes mal der Jäger und Sammler</Name>
      <Task>Upgrade one of your Hunter Gatherers to level 10.</Task>
@@ -5123,7 +5123,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_queue_chiefcottagelvl2" advisor="chef">
+     <Quest id ="quest_queue_chiefcottagelvl2" type="epic" advisor="chef">
      <Name>The chieftain's hut is in the building queue</Name>
      <Name locale="de_DE">Die Häuptlingshütte in der Bauschleife</Name>
      <Task>Order a chieftain's hut upgrade.</Task>
@@ -5145,7 +5145,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_queue_chiefcottagelvl3" advisor="girl" hide_start_dialog="true">
+     <Quest id ="quest_queue_chiefcottagelvl3" type="epic" advisor="girl" hide_start_dialog="true">
      <Name>The start of an even bigger chieftain's hut</Name>
      <Name locale="de_DE">Der Anfang einer noch größeren Häuptlingshütte</Name>
      <Task>Order the next level of the chieftain's hut.</Task>
@@ -5167,7 +5167,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_queue_chiefcottagelvl5" advisor="girl" hide_start_dialog="true">
+     <Quest id ="quest_queue_chiefcottagelvl5" type="epic" advisor="girl" hide_start_dialog="true">
      <Name>Another chieftain's hut upgrade</Name>
      <Name locale="de_DE"> Und wieder der Häuptlingshüttenausbau </Name>
      <Task>Order a chieftain's hut upgrade. </Task>
@@ -5189,7 +5189,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_build_chiefcottagelvl2_V2" advisor="chef" hide_start_dialog="true" tutorial="false">
+     <Quest id ="quest_build_chiefcottagelvl2_V2" type="epic" advisor="chef" hide_start_dialog="true" tutorial="false">
      <Name>Chieftain's hut upgrade</Name>
      <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
      <Task>Upgrade your chieftain's hut to level 2.</Task>
@@ -5214,7 +5214,7 @@
      </RewardTests>
      </Quest>
 
-     <Quest id="quest_queue_chiefcottagelvl2_V2" advisor="chef" tutorial="true">
+     <Quest id ="quest_queue_chiefcottagelvl2_V2" type="epic" advisor="chef" tutorial="true">
      <Name>Order a chieftain's hut</Name>
      <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
      <Task>Order a chieftain's hut upgrade to level 2.</Task>
@@ -5244,7 +5244,7 @@
      -->
 
     <!-- NOT IN
-     <Quest id="quest_army_reinforce" advisor="warrior">
+     <Quest id ="quest_army_reinforce" type="epic" advisor="warrior">
      <Name>Reinforce your army</Name>
      <Name locale="de_DE">Verstärke Deine Armee</Name>
      <Task>Reinforce your army to at least 5 units.</Task>
@@ -5274,7 +5274,7 @@
      </Quest>
      -->
 
-    <Quest id="quest_npc_battle" advisor="warrior" tutorial="false">
+    <Quest id ="quest_npc_battle" type="epic" advisor="warrior" tutorial="false">
       <Name>First battle</Name>
       <Name locale="de_DE">Der erste Kampf</Name>
       <Task>Fight for the first time!</Task>
@@ -5372,7 +5372,7 @@
      </Quest -->
 
     <!-- NOT IN
-     <Quest id="quest_recruitfriends" advisor="girl">
+     <Quest id ="quest_recruitfriends" type="epic" advisor="girl">
      <Name>Freunde</Name>
      <Name locale="de_DE">Freunde</Name>
      <Task></Task>
@@ -5401,7 +5401,7 @@
      -->
 
     <!-- TEST NOT IN
-     <Quest id="quest_trade" advisor="girl">
+     <Quest id ="quest_trade" type="epic" advisor="girl">
      <Name>Trade</Name>
      <Name locale="de_DE"> Waren verschicken </Name>
      <Task></Task>
@@ -5483,7 +5483,7 @@
      -->
     <!-- 503 -->
 
-    <Quest id="quest_assignment1" advisor="warrior" tutorial="true">
+    <Quest id ="quest_assignment1" type="epic" advisor="warrior" tutorial="true">
       <Name>First Assignment</Name>
       <Name locale="de_DE">Der erste Auftrag</Name>
       <Task>Start your first Assignment.</Task>
@@ -5516,7 +5516,7 @@
 
     <!-- 504 -->
 
-    <Quest id="quest_build_tavern" advisor="warrior" tutorial="true">
+    <Quest id ="quest_build_tavern" type="epic" advisor="warrior" tutorial="true">
       <Name>The Tavern</Name>
       <Name locale="de_DE">Die Taverne</Name>
       <Task>Build the tavern.</Task>
@@ -5552,7 +5552,7 @@
       <UIMarker>mark_building_option</UIMarker>
     </Quest>
 
-    <Quest id="quest_build_1campfirelvl2" advisor="chef" tutorial="false">
+    <Quest id ="quest_build_1campfirelvl2" type="epic" advisor="chef" tutorial="false">
       <Name>A bigger campfire</Name>
       <Name locale="de_DE">Ein größeres Lagerfeuer</Name>
       <Task>Upgrade your campfire to level 2.</Task>
@@ -5586,7 +5586,7 @@
       </RewardTests>
     </Quest>
 
-    <Quest id="quest_alliance_members" advisor="chef">
+    <Quest id ="quest_alliance_members" type="epic" advisor="chef">
       <Name>Alliance Members</Name>
       <Name locale="de_DE">Allianzmitglieder</Name>
       <Task>Be a Member of an alliance with atleast 3 others.</Task>
@@ -5618,7 +5618,7 @@
       </RewardTests>
     </Quest>
 
-    <Quest id="quest_alliance_members2" advisor="chef">
+    <Quest id ="quest_alliance_members2" type="epic" advisor="chef">
       <Name>Alliance Members</Name>
       <Name locale="de_DE">Allianzmitglieder</Name>
       <Task>Be a Member of an alliance with atleast 12 others.</Task>
@@ -5650,7 +5650,7 @@
       </RewardTests>
     </Quest>
 
-    <Quest id="quest_alliance_members3" advisor="chef">
+    <Quest id ="quest_alliance_members3" type="epic" advisor="chef">
       <Name>Alliance Members</Name>
       <Name locale="de_DE">Allianzmitglieder</Name>
       <Task>Be a Member of an alliance with atleast 15 others.</Task>
@@ -5682,7 +5682,7 @@
       </RewardTests>
     </Quest>
 
-    <Quest id="quest_crossplatform" advisor="chef">
+    <Quest id ="quest_crossplatform" type="epic" advisor="chef">
       <Name>Cross-Platform</Name>
       <Name locale="de_DE">Cross-Platform</Name>
       <Task>Log into the HTML version of Wack-A-Doo at https://wack-a-doo.com or into the facebook-App.</Task>
@@ -5746,7 +5746,7 @@
       </Quest -->
 
         <!-- 601 -->
-      <Quest id="quest_fortress_2" advisor="warrior">
+      <Quest id ="quest_fortress_2" type="epic" advisor="warrior">
         <Name>2nd Fortress</Name>
         <Name locale="de_DE">2te Festung</Name>
         <Task>Conquer your 2nd fortress.</Task>
@@ -5775,7 +5775,7 @@
       </Quest>
 
           <!-- 602 -->
-      <Quest id="quest_fortress_3" advisor="chef">
+      <Quest id ="quest_fortress_3" type="epic" advisor="chef">
         <Name>3rd Fortress</Name>
         <Name locale="de_DE">3te Festung</Name>
         <Task>Conquer your 3rd fortress.</Task>
@@ -5804,7 +5804,7 @@
       </Quest>
 
           <!-- 603 -->
-      <Quest id="quest_fortress_4" advisor="warrior">
+      <Quest id ="quest_fortress_4" type="epic" advisor="warrior">
         <Name>4th Fortress</Name>
         <Name locale="de_DE">4te Festung</Name>
         <Task>Conquer your 4th fortress.</Task>
@@ -5836,7 +5836,7 @@
       </Quest>
 
           <!-- 604 -->
-      <Quest id="quest_fortress_5" advisor="chef">
+      <Quest id ="quest_fortress_5" type="epic" advisor="chef">
         <Name>5th Fortress</Name>
         <Name locale="de_DE">5te Festung</Name>
         <Task>Conquer your 5th fortress.</Task>
@@ -5868,7 +5868,7 @@
       </Quest>
 
           <!-- 605 -->
-      <Quest id="quest_fortress_6" advisor="warrior">
+      <Quest id ="quest_fortress_6" type="epic" advisor="warrior">
         <Name>6th Fortress</Name>
         <Name locale="de_DE">6te Festung</Name>
         <Task>Conquer your 6th fortress.</Task>
@@ -5900,7 +5900,7 @@
       </Quest>
 
           <!-- 606 -->
-      <Quest id="quest_fortress_7" advisor="chef">
+      <Quest id ="quest_fortress_7" type="epic" advisor="chef">
         <Name>7th Fortress</Name>
         <Name locale="de_DE">7te Festung</Name>
         <Task>Conquer your 7th fortress.</Task>
@@ -5932,7 +5932,7 @@
       </Quest>
 
           <!-- 607 -->
-    <Quest id="quest_fortress_9" advisor="chef">
+    <Quest id ="quest_fortress_9" type="epic" advisor="chef">
       <Name>9th Fortress</Name>
       <Name locale="de_DE">9te Festung</Name>
       <Task>Conquer your 9th fortress.</Task>
@@ -5964,7 +5964,7 @@
     </Quest>
 
           <!-- 608 -->
-      <Quest id="quest_fortress_8" advisor="warrior">
+      <Quest id ="quest_fortress_8" type="epic" advisor="warrior">
         <Name>8th Fortress</Name>
         <Name locale="de_DE">8te Festung</Name>
         <Task>Conquer your 8th fortress.</Task>
@@ -5996,7 +5996,7 @@
       </Quest>
 
           <!-- 609 -->
-      <Quest id="quest_fortress_10" advisor="warrior">
+      <Quest id ="quest_fortress_10" type="epic" advisor="warrior">
         <Name>10th Fortress</Name>
         <Name locale="de_DE">10te Festung</Name>
         <Task>Conquer your 10th fortress.</Task>
@@ -6028,7 +6028,7 @@
       </Quest>
 
           <!-- 610 -->
-      <Quest id="quest_fortress_12" advisor="chef">
+      <Quest id ="quest_fortress_12" type="epic" advisor="chef">
         <Name>12th Fortress</Name>
         <Name locale="de_DE">12te Festung</Name>
         <Task>Conquer your 12th fortress.</Task>
@@ -6060,7 +6060,7 @@
       </Quest>
 
           <!-- 611 -->
-      <Quest id="quest_fortress_15" advisor="warrior">
+      <Quest id ="quest_fortress_15" type="epic" advisor="warrior">
         <Name>15th Fortress</Name>
         <Name locale="de_DE">15te Festung</Name>
         <Task>Conquer your 15th fortress.</Task>

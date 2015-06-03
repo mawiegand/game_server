@@ -199,14 +199,23 @@ end
       :num_tutorial_quests => <xsl:value-of select="count(*[@tutorial = 'true'])" />,
   
       :quests => [  # ALL QUESTS
-<xsl:for-each select="Quest">
+<xsl:for-each select="*">
         {               #   <xsl:value-of select="@id"/>
           :id                => <xsl:value-of select="position()-1"/>,
           :symbolic_id       => :<xsl:value-of select="@id"/>,
+          :type              => :<xsl:value-of select="@type"/>,
           :advisor           => :<xsl:value-of select="@advisor"/>,
           :hide_start_dialog => <xsl:value-of select="@hide_start_dialog"/>,
+  <xsl:choose>
+    <xsl:when test="@type = 'epic'">
           :tutorial          => <xsl:value-of select="@tutorial"/>,
           :tutorial_end_quest => <xsl:value-of select="@tutorial_end_quest"/>,
+    </xsl:when>
+    <xsl:otherwise>
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    </xsl:otherwise>
+  </xsl:choose>
           :priority          => <xsl:value-of select="@priority"/>,
           :blocking          => <xsl:value-of select="@blocking"/>,
 
@@ -228,6 +237,12 @@ end
           :reward_text => {
             <xsl:apply-templates select="RewardText" />              
           },
+<xsl:if test="@type = 'epic' and @tutorial = 'false'">
+          :subquests => [<xsl:variable name="self" select="."/>
+  <xsl:for-each select="//Tutorial/Quests/*">
+  <xsl:if test="$self/@id = @epic"><xsl:value-of select="position()-1"/>, </xsl:if>
+  </xsl:for-each>],
+</xsl:if>
 <xsl:if test="Triggers">
           :triggers => {
             <xsl:apply-templates select="Triggers" />
@@ -315,6 +330,11 @@ end
 
 
 <xsl:template match="RewardTests">
+<xsl:if test="FinishQuestTest">
+            :finish_quest_tests => [
+<xsl:apply-templates select="FinishQuestTest" />
+            ],
+</xsl:if>
 <xsl:if test="ResourceProductionTest">
             :resource_production_tests => [
 <xsl:apply-templates select="ResourceProductionTest" />
@@ -402,6 +422,11 @@ end
 </xsl:if>
 </xsl:template>
 
+<xsl:template match="FinishQuestTest">
+              {
+                :finish_quest_test => '<xsl:value-of select="@quest" />',
+              },
+</xsl:template>
 
 <xsl:template match="BuildingTest">
               {
