@@ -100,6 +100,16 @@ class Tutorial::State < ActiveRecord::Base
     false
   end
 
+  def check_finished_quest(finished_quest_symbolic_str)
+    # validate finished quests for required finished quest
+    self.finished_quests.each do |finished_quest|
+      if finished_quest_symbolic_str == finished_quest.quest[:symbolic_id].to_s
+        return true
+      end
+    end
+    false
+  end
+
   private
 
   def validate_quest_triggers(quest_id)
@@ -111,16 +121,7 @@ class Tutorial::State < ActiveRecord::Base
       # validate required finished quests
       unless triggers[:finish_quest_triggers].nil?
         triggers[:finish_quest_triggers].each do |trigger|
-          quest_is_finished = false
-          # validate finished quests for required finished quest trigger
-          self.finished_quests.each do |finished_quest|
-            logger.debug "#{trigger[:finish_quest_trigger].to_s} == #{finished_quest.quest[:symbolic_id]}"
-            if trigger[:finish_quest_trigger].to_s == finished_quest.quest[:symbolic_id].to_s
-              quest_is_finished = true
-              break
-            end
-          end
-          return false unless quest_is_finished # false if required quest is not finished
+          return false unless check_finished_quest(trigger[:finish_quest_trigger].to_s) # false if required quest is not finished
         end
       end
       # ignore all different triggers if quest is tutorial quest

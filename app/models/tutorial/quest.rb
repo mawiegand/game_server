@@ -99,12 +99,25 @@ class Tutorial::Quest < ActiveRecord::Base
     # quest aus 'm Tutorial holen
     quest = Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
     return false if quest.nil?
+
+    # if quest type is epic and quest has subquests
+    if quest[:type] == :epic && quest[:tutorial] == false && !quest[:subquests].nil?
+      quest[:subquests].each do |subquest_id|
+        return false unless check_finished_subquests(subquest_id)
+      end
+    end
     
     # reward tests durchtesten
     reward_tests = quest[:reward_tests]
     
     unless reward_tests.nil?
-      
+
+      unless reward_tests[:finish_quest_tests].nil?
+        reward_tests[:finish_quest_tests].each do |finish_quest_test|
+          return false unless check_finished_quest(finish_quest_test[:finish_quest_test])
+        end
+      end
+
       unless reward_tests[:resource_production_tests].nil?
         reward_tests[:resource_production_tests].each do |resource_production_test|
           unless check_resource_production(resource_production_test)
@@ -266,10 +279,22 @@ class Tutorial::Quest < ActiveRecord::Base
     true
   end
   
-
+  def check_finished_subquests(subquest_id)
+    self.tutorial_state.finished_quests.each do |finished_quest|
+      if subquest_id == finished_quest.quest[:id]
+        return true
+      end
+    end
+    false
+  end
   
   def place_npcs
     Military::Army.create_npc(self.tutorial_state.owner.home_location, self.quest[:place_npcs]) unless self.quest[:place_npcs].nil?
+  end
+
+  def check_finished_quest(finished_quest_symbolic_str)
+    # validate finished quests for required finished quest trigger
+    self.tutorial_state.check_finished_quest(finished_quest_symbolic_str)
   end
 
   def check_resource_production(test)
