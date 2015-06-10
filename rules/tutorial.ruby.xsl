@@ -203,7 +203,14 @@ end
         {               #   <xsl:value-of select="@id"/>
           :id                => <xsl:value-of select="position()-1"/>,
           :symbolic_id       => :<xsl:value-of select="@id"/>,
+  <xsl:choose>
+    <xsl:when test=". = 'Subquest'">
+          :type              => :sub,
+    </xsl:when>
+  <xsl:otherwise>
           :type              => :<xsl:value-of select="@type"/>,
+  </xsl:otherwise>
+  </xsl:choose>
           :advisor           => :<xsl:value-of select="@advisor"/>,
           :hide_start_dialog => <xsl:value-of select="@hide_start_dialog"/>,
   <xsl:choose>

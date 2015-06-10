@@ -55,6 +55,7 @@ class Tutorial::State < ActiveRecord::Base
   end
 
   def check_for_new_quests(trigger_type = 'all')
+    trigger_type = 'finish_quest_triggers' unless completed_tutorial_end_quest?
     quests = Tutorial::Tutorial.the_tutorial.quests
 
     quests.each do |quest|
@@ -63,7 +64,7 @@ class Tutorial::State < ActiveRecord::Base
            # if trigger type == all or quest includes trigger type
            if trigger_type == 'all' || !quest[:triggers][trigger_type.to_sym].nil?
              # if all triggers for quest are valid create new quest
-             if validate_quest_triggers(quest[:id])
+             if validate_quest_triggers(quest[:id]) && quest
                self.quests.create({
                  status: Tutorial::Quest::STATE_NEW,
                  quest_id: quest[:id],
@@ -98,10 +99,6 @@ class Tutorial::State < ActiveRecord::Base
 
     # check for triggers
     unless triggers.nil?
-      # validate play time trigger
-      unless triggers[:play_time_trigger].nil?
-        return false if self.owner.playtime < triggers[:play_time_trigger]
-      end
       # validate required finished quests
       unless triggers[:finish_quest_triggers].nil?
         triggers[:finish_quest_triggers].each do |trigger|
@@ -116,6 +113,12 @@ class Tutorial::State < ActiveRecord::Base
           end
           return false unless quest_is_finished # false if required quest is not finished
         end
+      end
+      # ignore all different triggers if quest is tutorial quest
+      return true if quest.tutorial == true
+      # validate play time trigger
+      unless triggers[:play_time_trigger].nil?
+        return false if self.owner.playtime < triggers[:play_time_trigger]
       end
       # validate mundane rank of owner
       unless triggers[:mundane_rank_trigger].nil?

@@ -106,10 +106,15 @@ class Tutorial::Tutorial
         {               #   quest_queue_1gathererlvl1
           :id                => 0,
           :symbolic_id       => :quest_queue_1gathererlvl1,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 1,
           :blocking          => true,
 
@@ -208,10 +213,15 @@ class Tutorial::Tutorial
         {               #   quest_build_1gathererlvl2
           :id                => 1,
           :symbolic_id       => :quest_build_1gathererlvl2,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 1,
           :blocking          => true,
 
@@ -318,10 +328,15 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl2
           :id                => 2,
           :symbolic_id       => :quest_build_chiefcottagelvl2,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -470,10 +485,15 @@ class Tutorial::Tutorial
         {               #   quest_quest_button
           :id                => 3,
           :symbolic_id       => :quest_quest_button,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -520,6 +540,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
           },
@@ -544,10 +566,15 @@ class Tutorial::Tutorial
         {               #   quest_profile
           :id                => 4,
           :symbolic_id       => :quest_profile,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => true,
+    
           :priority          => 2,
           :blocking          => false,
 
@@ -637,10 +664,15 @@ class Tutorial::Tutorial
         {               #   quest_build_1barrackslvl1
           :id                => 5,
           :symbolic_id       => :quest_build_1barrackslvl1,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 2,
           :blocking          => false,
 
@@ -751,10 +783,15 @@ class Tutorial::Tutorial
         {               #   quest_recruit_1clubbers
           :id                => 6,
           :symbolic_id       => :quest_recruit_1clubbers,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 2,
           :blocking          => false,
 
@@ -856,10 +893,15 @@ class Tutorial::Tutorial
         {               #   quest_settlement_button1
           :id                => 7,
           :symbolic_id       => :quest_settlement_button1,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 2,
           :blocking          => false,
 
@@ -938,10 +980,15 @@ class Tutorial::Tutorial
         {               #   quest_build_1storagelvl1
           :id                => 8,
           :symbolic_id       => :quest_build_1storagelvl1,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -1048,10 +1095,15 @@ class Tutorial::Tutorial
         {               #   quest_army_move
           :id                => 9,
           :symbolic_id       => :quest_army_move,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 2,
           :blocking          => false,
 
@@ -1183,10 +1235,15 @@ class Tutorial::Tutorial
         {               #   quest_build_2gathererlvl3
           :id                => 10,
           :symbolic_id       => :quest_build_2gathererlvl3,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -1232,6 +1289,8 @@ class Tutorial::Tutorial
             :en_US => "Creating more Hunter Gatherers is always a good idea.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -1283,10 +1342,15 @@ class Tutorial::Tutorial
         {               #   quest_settlement_button2
           :id                => 11,
           :symbolic_id       => :quest_settlement_button2,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 2,
           :blocking          => false,
 
@@ -1376,10 +1440,15 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl3
           :id                => 12,
           :symbolic_id       => :quest_build_chiefcottagelvl3,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -1486,10 +1555,15 @@ class Tutorial::Tutorial
         {               #   quest_build_cottagelvl1
           :id                => 13,
           :symbolic_id       => :quest_build_cottagelvl1,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -1596,10 +1670,15 @@ class Tutorial::Tutorial
         {               #   quest_improve_production_1
           :id                => 14,
           :symbolic_id       => :quest_improve_production_1,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -1645,6 +1724,8 @@ class Tutorial::Tutorial
             :en_US => "Remember to increase your production of raw materials. You need to use every free building slot you have available.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -1697,10 +1778,15 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl4
           :id                => 15,
           :symbolic_id       => :quest_build_chiefcottagelvl4,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => true,
 
@@ -1805,10 +1891,15 @@ class Tutorial::Tutorial
         {               #   quest_queue_chiefcottagelvl4
           :id                => 16,
           :symbolic_id       => :quest_queue_chiefcottagelvl4,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -1915,10 +2006,15 @@ class Tutorial::Tutorial
         {               #   quest_army_create
           :id                => 17,
           :symbolic_id       => :quest_army_create,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 2,
           :blocking          => false,
 
@@ -2025,10 +2121,15 @@ class Tutorial::Tutorial
         {               #   quest_build_1campfirelvl1
           :id                => 18,
           :symbolic_id       => :quest_build_1campfirelvl1,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -2175,10 +2276,15 @@ class Tutorial::Tutorial
         {               #   quest_alliance
           :id                => 19,
           :symbolic_id       => :quest_alliance,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -2224,6 +2330,8 @@ class Tutorial::Tutorial
             :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -2271,10 +2379,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_0
           :id                => 20,
           :symbolic_id       => :quest_resourcescore_0,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -2320,6 +2433,8 @@ class Tutorial::Tutorial
             :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -2370,10 +2485,15 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl5
           :id                => 21,
           :symbolic_id       => :quest_build_chiefcottagelvl5,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -2419,6 +2539,8 @@ class Tutorial::Tutorial
             :en_US => "From now on, you can build quarries and loggers for specialized raw material production.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -2480,10 +2602,15 @@ class Tutorial::Tutorial
         {               #   quest_build_1quarrylvl2
           :id                => 22,
           :symbolic_id       => :quest_build_1quarrylvl2,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -2529,6 +2656,8 @@ class Tutorial::Tutorial
             :en_US => "Quarries are very effective. Build more quarries!",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -2588,10 +2717,15 @@ class Tutorial::Tutorial
         {               #   quest_build_1loggerlvl2
           :id                => 23,
           :symbolic_id       => :quest_build_1loggerlvl2,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -2637,6 +2771,8 @@ class Tutorial::Tutorial
             :en_US => "You will need more loggers.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -2696,10 +2832,15 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl6
           :id                => 24,
           :symbolic_id       => :quest_build_chiefcottagelvl6,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -2745,6 +2886,8 @@ class Tutorial::Tutorial
             :en_US => "Having a chieftan's hut at Level 6 gives you one more command point, which means you can now levy another army. Build your campfire to Level 10.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -2804,10 +2947,15 @@ class Tutorial::Tutorial
         {               #   quest_build_training_cave
           :id                => 25,
           :symbolic_id       => :quest_build_training_cave,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -2853,6 +3001,8 @@ class Tutorial::Tutorial
             :en_US => "You can do your workout in the training cave without any interruptions.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -2912,10 +3062,15 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl7
           :id                => 26,
           :symbolic_id       => :quest_build_chiefcottagelvl7,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -2961,6 +3116,8 @@ class Tutorial::Tutorial
             :en_US => "You can now build an artifact stand. That's great!",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -3020,10 +3177,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress
           :id                => 27,
           :symbolic_id       => :quest_fortress,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -3070,6 +3232,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
             :finish_quest_triggers => [
@@ -3114,10 +3278,15 @@ class Tutorial::Tutorial
         {               #   quest_build_1barrackslvl5
           :id                => 28,
           :symbolic_id       => :quest_build_1barrackslvl5,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -3163,6 +3332,8 @@ class Tutorial::Tutorial
             :en_US => "TA clubber is born! This is great reinforcement for your melee fighters.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -3226,10 +3397,15 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl8
           :id                => 29,
           :symbolic_id       => :quest_build_chiefcottagelvl8,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -3275,6 +3451,8 @@ class Tutorial::Tutorial
             :en_US => "You’ve now got a furrier.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -3336,10 +3514,15 @@ class Tutorial::Tutorial
         {               #   quest_build_1furrierlvl2
           :id                => 30,
           :symbolic_id       => :quest_build_1furrierlvl2,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -3385,6 +3568,8 @@ class Tutorial::Tutorial
             :en_US => "Increase your fur production so that you can defend your settlements with more armies.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -3444,10 +3629,15 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl9
           :id                => 31,
           :symbolic_id       => :quest_build_chiefcottagelvl9,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -3493,6 +3683,8 @@ class Tutorial::Tutorial
             :en_US => "You've now got a furrier.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -3552,10 +3744,15 @@ class Tutorial::Tutorial
         {               #   quest_outpost
           :id                => 32,
           :symbolic_id       => :quest_outpost,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -3601,6 +3798,8 @@ class Tutorial::Tutorial
             :en_US => "Camps can be taken over be other demigods. You can protect the camp by building an altar.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -3656,10 +3855,15 @@ class Tutorial::Tutorial
         {               #   quest_build_chiefcottagelvl10
           :id                => 33,
           :symbolic_id       => :quest_build_chiefcottagelvl10,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -3706,6 +3910,8 @@ class Tutorial::Tutorial
             :en_US => "<p>The maximum level for a chieftan's hut is Level 20. Each level increases the battle bonus you can get. At 20 you'll receive a command point for another army.</p>",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -3765,10 +3971,15 @@ class Tutorial::Tutorial
         {               #   quest_build_copper_smelter
           :id                => 34,
           :symbolic_id       => :quest_build_copper_smelter,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -3814,6 +4025,8 @@ class Tutorial::Tutorial
             :en_US => "So, should we leave the Stone Age and move forward to the Copper Age?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -3873,10 +4086,15 @@ class Tutorial::Tutorial
         {               #   quest_build_firing_range
           :id                => 35,
           :symbolic_id       => :quest_build_firing_range,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -3922,6 +4140,8 @@ class Tutorial::Tutorial
             :en_US => "Keep an eye on your raw materials production. Upgrading your Hunter Gatherers is always worthwhile.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -3985,10 +4205,15 @@ class Tutorial::Tutorial
         {               #   quest_build_stud
           :id                => 36,
           :symbolic_id       => :quest_build_stud,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -4034,6 +4259,8 @@ class Tutorial::Tutorial
             :en_US => "A cavalry can flank the melee and attack throwers directly. A riding army is also quicker than normal warriors.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -4097,10 +4324,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_1
           :id                => 37,
           :symbolic_id       => :quest_charkills_1,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -4146,6 +4378,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -4196,10 +4430,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_2
           :id                => 38,
           :symbolic_id       => :quest_charkills_2,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -4245,6 +4484,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -4295,10 +4536,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_3
           :id                => 39,
           :symbolic_id       => :quest_charkills_3,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -4344,6 +4590,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -4394,10 +4642,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_4
           :id                => 40,
           :symbolic_id       => :quest_charkills_4,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -4443,6 +4696,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -4493,10 +4748,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_5
           :id                => 41,
           :symbolic_id       => :quest_charkills_5,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -4542,6 +4802,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -4592,10 +4854,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_6
           :id                => 42,
           :symbolic_id       => :quest_charkills_6,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -4641,6 +4908,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -4691,10 +4960,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_7
           :id                => 43,
           :symbolic_id       => :quest_charkills_7,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -4740,6 +5014,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -4790,10 +5066,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_8
           :id                => 44,
           :symbolic_id       => :quest_charkills_8,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -4839,6 +5120,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -4889,10 +5172,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_9
           :id                => 45,
           :symbolic_id       => :quest_charkills_9,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -4938,6 +5226,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -4988,10 +5278,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_10
           :id                => 46,
           :symbolic_id       => :quest_charkills_10,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -5037,6 +5332,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -5087,10 +5384,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_11
           :id                => 47,
           :symbolic_id       => :quest_charkills_11,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -5136,6 +5438,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -5186,10 +5490,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_12
           :id                => 48,
           :symbolic_id       => :quest_charkills_12,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -5235,6 +5544,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -5285,10 +5596,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_13
           :id                => 49,
           :symbolic_id       => :quest_charkills_13,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -5334,6 +5650,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -5384,10 +5702,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_14
           :id                => 50,
           :symbolic_id       => :quest_charkills_14,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -5433,6 +5756,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -5483,10 +5808,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_15
           :id                => 51,
           :symbolic_id       => :quest_charkills_15,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -5532,6 +5862,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -5582,10 +5914,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_16
           :id                => 52,
           :symbolic_id       => :quest_charkills_16,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -5631,6 +5968,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -5681,10 +6020,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_17
           :id                => 53,
           :symbolic_id       => :quest_charkills_17,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -5730,6 +6074,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -5780,10 +6126,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_18
           :id                => 54,
           :symbolic_id       => :quest_charkills_18,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -5829,6 +6180,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -5879,10 +6232,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_19
           :id                => 55,
           :symbolic_id       => :quest_charkills_19,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -5928,6 +6286,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -5978,10 +6338,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_20
           :id                => 56,
           :symbolic_id       => :quest_charkills_20,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -6027,6 +6392,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -6077,10 +6444,15 @@ class Tutorial::Tutorial
         {               #   quest_charkills_21
           :id                => 57,
           :symbolic_id       => :quest_charkills_21,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -6126,6 +6498,8 @@ class Tutorial::Tutorial
             :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -6176,10 +6550,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_1
           :id                => 58,
           :symbolic_id       => :quest_armyXP_1,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -6225,6 +6604,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -6275,10 +6656,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_2
           :id                => 59,
           :symbolic_id       => :quest_armyXP_2,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -6324,6 +6710,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -6374,10 +6762,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_3
           :id                => 60,
           :symbolic_id       => :quest_armyXP_3,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -6423,6 +6816,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -6473,10 +6868,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_4
           :id                => 61,
           :symbolic_id       => :quest_armyXP_4,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -6522,6 +6922,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -6572,10 +6974,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_5
           :id                => 62,
           :symbolic_id       => :quest_armyXP_5,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -6621,6 +7028,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -6671,10 +7080,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_6
           :id                => 63,
           :symbolic_id       => :quest_armyXP_6,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -6720,6 +7134,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -6770,10 +7186,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_7
           :id                => 64,
           :symbolic_id       => :quest_armyXP_7,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -6819,6 +7240,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -6869,10 +7292,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_8
           :id                => 65,
           :symbolic_id       => :quest_armyXP_8,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -6918,6 +7346,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -6968,10 +7398,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_9
           :id                => 66,
           :symbolic_id       => :quest_armyXP_9,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -7017,6 +7452,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -7067,10 +7504,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_10
           :id                => 67,
           :symbolic_id       => :quest_armyXP_10,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -7116,6 +7558,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -7166,10 +7610,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_11
           :id                => 68,
           :symbolic_id       => :quest_armyXP_11,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -7215,6 +7664,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -7265,10 +7716,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_12
           :id                => 69,
           :symbolic_id       => :quest_armyXP_12,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -7314,6 +7770,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -7364,10 +7822,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_13
           :id                => 70,
           :symbolic_id       => :quest_armyXP_13,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -7413,6 +7876,8 @@ class Tutorial::Tutorial
             :en_US => "WWith each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -7463,10 +7928,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_14
           :id                => 71,
           :symbolic_id       => :quest_armyXP_14,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -7512,6 +7982,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -7562,10 +8034,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_15
           :id                => 72,
           :symbolic_id       => :quest_armyXP_15,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -7611,6 +8088,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -7661,10 +8140,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_16
           :id                => 73,
           :symbolic_id       => :quest_armyXP_16,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -7710,6 +8194,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -7760,10 +8246,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_17
           :id                => 74,
           :symbolic_id       => :quest_armyXP_17,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -7809,6 +8300,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -7859,10 +8352,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_18
           :id                => 75,
           :symbolic_id       => :quest_armyXP_18,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -7908,6 +8406,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -7958,10 +8458,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_19
           :id                => 76,
           :symbolic_id       => :quest_armyXP_19,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -8007,6 +8512,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -8057,10 +8564,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_20
           :id                => 77,
           :symbolic_id       => :quest_armyXP_20,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -8106,6 +8618,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -8156,10 +8670,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_21
           :id                => 78,
           :symbolic_id       => :quest_armyXP_21,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -8205,6 +8724,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -8255,10 +8776,15 @@ class Tutorial::Tutorial
         {               #   quest_armyXP_22
           :id                => 79,
           :symbolic_id       => :quest_armyXP_22,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -8304,6 +8830,8 @@ class Tutorial::Tutorial
             :en_US => "With each increase in the rank of an army, all units will get a bonus added to their attributes.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -8354,10 +8882,15 @@ class Tutorial::Tutorial
         {               #   quest_score_0
           :id                => 80,
           :symbolic_id       => :quest_score_0,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -8404,6 +8937,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
           },
@@ -8445,10 +8980,15 @@ class Tutorial::Tutorial
         {               #   quest_score_1
           :id                => 81,
           :symbolic_id       => :quest_score_1,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -8494,6 +9034,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -8544,10 +9086,15 @@ class Tutorial::Tutorial
         {               #   quest_score_2
           :id                => 82,
           :symbolic_id       => :quest_score_2,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -8593,6 +9140,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -8643,10 +9192,15 @@ class Tutorial::Tutorial
         {               #   quest_score_3
           :id                => 83,
           :symbolic_id       => :quest_score_3,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -8692,6 +9246,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -8742,10 +9298,15 @@ class Tutorial::Tutorial
         {               #   quest_score_4
           :id                => 84,
           :symbolic_id       => :quest_score_4,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -8791,6 +9352,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -8841,10 +9404,15 @@ class Tutorial::Tutorial
         {               #   quest_score_5
           :id                => 85,
           :symbolic_id       => :quest_score_5,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -8890,6 +9458,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -8940,10 +9510,15 @@ class Tutorial::Tutorial
         {               #   quest_score_6
           :id                => 86,
           :symbolic_id       => :quest_score_6,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -8989,6 +9564,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -9039,10 +9616,15 @@ class Tutorial::Tutorial
         {               #   quest_score_7
           :id                => 87,
           :symbolic_id       => :quest_score_7,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -9088,6 +9670,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -9138,10 +9722,15 @@ class Tutorial::Tutorial
         {               #   quest_score_8
           :id                => 88,
           :symbolic_id       => :quest_score_8,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -9187,6 +9776,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -9237,10 +9828,15 @@ class Tutorial::Tutorial
         {               #   quest_score_9
           :id                => 89,
           :symbolic_id       => :quest_score_9,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -9286,6 +9882,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -9336,10 +9934,15 @@ class Tutorial::Tutorial
         {               #   quest_score_10
           :id                => 90,
           :symbolic_id       => :quest_score_10,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -9385,6 +9988,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -9435,10 +10040,15 @@ class Tutorial::Tutorial
         {               #   quest_score_11
           :id                => 91,
           :symbolic_id       => :quest_score_11,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -9484,6 +10094,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -9534,10 +10146,15 @@ class Tutorial::Tutorial
         {               #   quest_score_12
           :id                => 92,
           :symbolic_id       => :quest_score_12,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -9583,6 +10200,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -9633,10 +10252,15 @@ class Tutorial::Tutorial
         {               #   quest_score_13
           :id                => 93,
           :symbolic_id       => :quest_score_13,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -9682,6 +10306,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -9732,10 +10358,15 @@ class Tutorial::Tutorial
         {               #   quest_score_14
           :id                => 94,
           :symbolic_id       => :quest_score_14,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -9781,6 +10412,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -9831,10 +10464,15 @@ class Tutorial::Tutorial
         {               #   quest_score_15
           :id                => 95,
           :symbolic_id       => :quest_score_15,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -9880,6 +10518,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -9930,10 +10570,15 @@ class Tutorial::Tutorial
         {               #   quest_score_16
           :id                => 96,
           :symbolic_id       => :quest_score_16,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -9979,6 +10624,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -10029,10 +10676,15 @@ class Tutorial::Tutorial
         {               #   quest_score_17
           :id                => 97,
           :symbolic_id       => :quest_score_17,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -10078,6 +10730,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -10128,10 +10782,15 @@ class Tutorial::Tutorial
         {               #   quest_score_18
           :id                => 98,
           :symbolic_id       => :quest_score_18,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -10177,6 +10836,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -10227,10 +10888,15 @@ class Tutorial::Tutorial
         {               #   quest_score_19
           :id                => 99,
           :symbolic_id       => :quest_score_19,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -10276,6 +10942,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -10326,10 +10994,15 @@ class Tutorial::Tutorial
         {               #   quest_score_20
           :id                => 100,
           :symbolic_id       => :quest_score_20,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -10375,6 +11048,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -10425,10 +11100,15 @@ class Tutorial::Tutorial
         {               #   quest_score_21
           :id                => 101,
           :symbolic_id       => :quest_score_21,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -10474,6 +11154,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -10524,10 +11206,15 @@ class Tutorial::Tutorial
         {               #   quest_score_22
           :id                => 102,
           :symbolic_id       => :quest_score_22,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -10573,6 +11260,8 @@ class Tutorial::Tutorial
             :en_US => "By default the ranking is sorted by population.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -10623,10 +11312,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_1
           :id                => 103,
           :symbolic_id       => :quest_resourcescore_1,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -10672,6 +11366,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -10722,10 +11418,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_2
           :id                => 104,
           :symbolic_id       => :quest_resourcescore_2,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -10771,6 +11472,8 @@ class Tutorial::Tutorial
             :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -10821,10 +11524,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_3
           :id                => 105,
           :symbolic_id       => :quest_resourcescore_3,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -10870,6 +11578,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -10920,10 +11630,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_4
           :id                => 106,
           :symbolic_id       => :quest_resourcescore_4,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -10969,6 +11684,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -11019,10 +11736,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_5
           :id                => 107,
           :symbolic_id       => :quest_resourcescore_5,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -11068,6 +11790,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -11118,10 +11842,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_6
           :id                => 108,
           :symbolic_id       => :quest_resourcescore_6,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -11167,6 +11896,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -11217,10 +11948,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_7
           :id                => 109,
           :symbolic_id       => :quest_resourcescore_7,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -11266,6 +12002,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -11316,10 +12054,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_8
           :id                => 110,
           :symbolic_id       => :quest_resourcescore_8,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -11365,6 +12108,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -11415,10 +12160,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_9
           :id                => 111,
           :symbolic_id       => :quest_resourcescore_9,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -11464,6 +12214,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -11514,10 +12266,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_10
           :id                => 112,
           :symbolic_id       => :quest_resourcescore_10,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -11563,6 +12320,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -11613,10 +12372,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_11
           :id                => 113,
           :symbolic_id       => :quest_resourcescore_11,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -11662,6 +12426,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -11712,10 +12478,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_12
           :id                => 114,
           :symbolic_id       => :quest_resourcescore_12,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -11761,6 +12532,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -11811,10 +12584,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_13
           :id                => 115,
           :symbolic_id       => :quest_resourcescore_13,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -11860,6 +12638,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -11910,10 +12690,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_14
           :id                => 116,
           :symbolic_id       => :quest_resourcescore_14,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -11959,6 +12744,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -12009,10 +12796,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_15
           :id                => 117,
           :symbolic_id       => :quest_resourcescore_15,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -12058,6 +12850,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -12108,10 +12902,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_16
           :id                => 118,
           :symbolic_id       => :quest_resourcescore_16,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -12157,6 +12956,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -12207,10 +13008,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_17
           :id                => 119,
           :symbolic_id       => :quest_resourcescore_17,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -12256,6 +13062,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -12306,10 +13114,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_18
           :id                => 120,
           :symbolic_id       => :quest_resourcescore_18,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -12355,6 +13168,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -12405,10 +13220,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_19
           :id                => 121,
           :symbolic_id       => :quest_resourcescore_19,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -12454,6 +13274,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -12504,10 +13326,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_20
           :id                => 122,
           :symbolic_id       => :quest_resourcescore_20,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -12553,6 +13380,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -12603,10 +13432,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_21
           :id                => 123,
           :symbolic_id       => :quest_resourcescore_21,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -12652,6 +13486,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -12702,10 +13538,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_22
           :id                => 124,
           :symbolic_id       => :quest_resourcescore_22,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -12751,6 +13592,8 @@ class Tutorial::Tutorial
             :en_US => "Are you still paying taxes? Why?",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -12801,10 +13644,15 @@ class Tutorial::Tutorial
         {               #   quest_resourcescore_23
           :id                => 125,
           :symbolic_id       => :quest_resourcescore_23,
+  
+          :type              => :epic,
+  
           :advisor           => :girl,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -12850,6 +13698,8 @@ class Tutorial::Tutorial
             :en_US => "The fortress takes up to 15% tax on the resource production of each settlement in the region.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -12900,10 +13750,15 @@ class Tutorial::Tutorial
         {               #   quest_build_1barrackslvl10
           :id                => 126,
           :symbolic_id       => :quest_build_1barrackslvl10,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -12949,6 +13804,8 @@ class Tutorial::Tutorial
             :en_US => "Behold the thick-skinned clubber! Excellent reinforcement for your melee fighters.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -13012,10 +13869,15 @@ class Tutorial::Tutorial
         {               #   quest_npc_battle
           :id                => 127,
           :symbolic_id       => :quest_npc_battle,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -13062,6 +13924,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
           },
@@ -13097,10 +13961,15 @@ class Tutorial::Tutorial
         {               #   quest_assignment1
           :id                => 128,
           :symbolic_id       => :quest_assignment1,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -13177,10 +14046,15 @@ class Tutorial::Tutorial
         {               #   quest_build_tavern
           :id                => 129,
           :symbolic_id       => :quest_build_tavern,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => true,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -13287,10 +14161,15 @@ class Tutorial::Tutorial
         {               #   quest_build_1campfirelvl2
           :id                => 130,
           :symbolic_id       => :quest_build_1campfirelvl2,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -13337,6 +14216,8 @@ class Tutorial::Tutorial
             :en_US => "From now on you can found your own alliance. Try getting other players and your friends to join you.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -13396,10 +14277,15 @@ class Tutorial::Tutorial
         {               #   quest_alliance_members
           :id                => 131,
           :symbolic_id       => :quest_alliance_members,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -13445,6 +14331,8 @@ class Tutorial::Tutorial
             :en_US => "The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -13494,10 +14382,15 @@ class Tutorial::Tutorial
         {               #   quest_alliance_members2
           :id                => 132,
           :symbolic_id       => :quest_alliance_members2,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -13543,6 +14436,8 @@ class Tutorial::Tutorial
             :en_US => "The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -13592,10 +14487,15 @@ class Tutorial::Tutorial
         {               #   quest_alliance_members3
           :id                => 133,
           :symbolic_id       => :quest_alliance_members3,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -13641,6 +14541,8 @@ class Tutorial::Tutorial
             :en_US => "The more members your alliance has, the more influence it may wield. You also may be able to support each other more efficiently.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
@@ -13690,10 +14592,15 @@ class Tutorial::Tutorial
         {               #   quest_crossplatform
           :id                => 134,
           :symbolic_id       => :quest_crossplatform,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -13740,6 +14647,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
             :finish_quest_triggers => [
@@ -13777,10 +14686,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress_2
           :id                => 135,
           :symbolic_id       => :quest_fortress_2,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -13827,6 +14741,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
           },
@@ -13863,10 +14779,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress_3
           :id                => 136,
           :symbolic_id       => :quest_fortress_3,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -13913,6 +14834,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
           },
@@ -13949,10 +14872,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress_4
           :id                => 137,
           :symbolic_id       => :quest_fortress_4,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -13999,6 +14927,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
             :finish_quest_triggers => [
@@ -14043,10 +14973,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress_5
           :id                => 138,
           :symbolic_id       => :quest_fortress_5,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -14093,6 +15028,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
             :finish_quest_triggers => [
@@ -14137,10 +15074,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress_6
           :id                => 139,
           :symbolic_id       => :quest_fortress_6,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -14187,6 +15129,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
             :finish_quest_triggers => [
@@ -14231,10 +15175,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress_7
           :id                => 140,
           :symbolic_id       => :quest_fortress_7,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -14281,6 +15230,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
             :finish_quest_triggers => [
@@ -14325,10 +15276,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress_9
           :id                => 141,
           :symbolic_id       => :quest_fortress_9,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -14375,6 +15331,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
             :finish_quest_triggers => [
@@ -14419,10 +15377,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress_8
           :id                => 142,
           :symbolic_id       => :quest_fortress_8,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -14469,6 +15432,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
             :finish_quest_triggers => [
@@ -14513,10 +15478,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress_10
           :id                => 143,
           :symbolic_id       => :quest_fortress_10,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -14563,6 +15533,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
             :finish_quest_triggers => [
@@ -14607,10 +15579,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress_12
           :id                => 144,
           :symbolic_id       => :quest_fortress_12,
+  
+          :type              => :epic,
+  
           :advisor           => :chef,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -14657,6 +15634,8 @@ class Tutorial::Tutorial
                 
           },
 
+          :subquests => [],
+
           :triggers => {
             
             :finish_quest_triggers => [
@@ -14701,10 +15680,15 @@ class Tutorial::Tutorial
         {               #   quest_fortress_15
           :id                => 145,
           :symbolic_id       => :quest_fortress_15,
+  
+          :type              => :epic,
+  
           :advisor           => :warrior,
           :hide_start_dialog => false,
+  
           :tutorial          => false,
           :tutorial_end_quest => false,
+    
           :priority          => 0,
           :blocking          => false,
 
@@ -14750,6 +15734,8 @@ class Tutorial::Tutorial
             :en_US => "Through the fortress you gain control over the region. That means your suppply routes are better and your army regenerates faster.",
                 
           },
+
+          :subquests => [],
 
           :triggers => {
             
