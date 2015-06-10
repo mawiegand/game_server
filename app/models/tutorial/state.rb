@@ -63,12 +63,21 @@ class Tutorial::State < ActiveRecord::Base
         unless quest[:triggers].nil?
            # if trigger type == all or quest includes trigger type
            if trigger_type == 'all' || !quest[:triggers][trigger_type.to_sym].nil?
-             # if all triggers for quest are valid create new quest
-             if validate_quest_triggers(quest[:id]) && quest
+             # if all triggers for quest are valid and the quest is not a subquest create new quest
+             if validate_quest_triggers(quest[:id]) && quest[:type].to_s != 'sub'
                self.quests.create({
                  status: Tutorial::Quest::STATE_NEW,
                  quest_id: quest[:id],
                })
+               # open related subquests
+               unless quest[:subquests].nil?
+                 quest[:subquests].each do |subquest|
+                   self.quests.create({
+                     status: Tutorial::Quest::STATE_NEW,
+                     quest_id: subquest,
+                   })
+                 end
+               end
              end
            end
         end
@@ -115,7 +124,7 @@ class Tutorial::State < ActiveRecord::Base
         end
       end
       # ignore all different triggers if quest is tutorial quest
-      return true if quest.tutorial == true
+      return true if quest[:tutorial] == true
       # validate play time trigger
       unless triggers[:play_time_trigger].nil?
         return false if self.owner.playtime < triggers[:play_time_trigger]
