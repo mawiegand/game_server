@@ -245,7 +245,7 @@ class Fundamental::Character < ActiveRecord::Base
     if self.last_request_at.nil? || self.last_request_at + 1.minutes < Time.now
       difference = Time.now - (self.last_request_at ||Time.now)
       self.update_column(:playtime, (playtime || 0.0) + (difference <= 120.0 ? difference : 30.0))     # assumption: larger than 2 minutes -> user was offline inbetween , so just count the startet minute
-      self.tutorial_state.check_for_new_quests('play_time_trigger')
+      self.tutorial_state.check_for_new_quests('play_time_trigger') unless self.tutorial_state.nil?
       self.update_column(:last_request_at, Time.now)  # change timestamp without triggering before / after handlers, without update updated_at
     end
   end
@@ -1468,7 +1468,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def check_for_new_quests_triggered_by_mundane_rank
-    if self.mundane_rank_changed?
+    if self.mundane_rank_changed? && !self.tutorial_state.nil?
       self.tutorial_state.check_for_new_quests('mundane_rank_trigger')
     end
     true
