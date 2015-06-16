@@ -293,6 +293,12 @@ end
   <xsl:if test="MundaneRankTrigger">
             :mundane_rank_trigger => <xsl:value-of select="MundaneRankTrigger" />,
   </xsl:if>
+  <xsl:if test="VictoriesCountTrigger">
+            :victories_count_trigger => <xsl:value-of select="VictoriesCountTrigger" />,
+  </xsl:if>
+  <xsl:if test="LikesCountTrigger">
+            :likes_count_trigger => <xsl:value-of select="LikesCountTrigger" />,
+  </xsl:if>
 </xsl:template>
 
 <xsl:template match="FinishQuestTriggers">

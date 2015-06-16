@@ -82,7 +82,7 @@
   blocking           CDATA "false"
 >
 
-<!ELEMENT Triggers (PlayTimeTrigger?, FinishQuestTriggers*, MundaneRankTrigger?)>
+<!ELEMENT Triggers (PlayTimeTrigger?, FinishQuestTriggers*, MundaneRankTrigger?, VictoriesCountTrigger?, LikesCountTrigger?)>
 
 <!ELEMENT PlayTimeTrigger (#PCDATA)>
 
@@ -90,6 +90,10 @@
 <!ELEMENT FinishQuestTrigger (#PCDATA)>
 
 <!ELEMENT MundaneRankTrigger (#PCDATA)>
+
+<!ELEMENT VictoriesCountTrigger (#PCDATA)>
+
+<!ELEMENT LikesCountTrigger (#PCDATA)>
 
 <!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?, ActionPointReward?, ProductionBonusReward*, ConstructionBonusReward*, ExperienceProductionBonusReward*)>
 

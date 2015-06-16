@@ -134,6 +134,12 @@ class Tutorial::State < ActiveRecord::Base
       unless triggers[:mundane_rank_trigger].nil?
         return false if self.owner.mundane_rank < triggers[:mundane_rank_trigger]
       end
+      unless triggers[:victories_count_trigger].nil?
+        return false if self.owner.victories < triggers[:victories_count_trigger]
+      end
+      unless triggers[:likes_count_trigger].nil?
+        return false if self.owner.received_likes_count < triggers[:likes_count_trigger]
+      end
     end
     true
   end

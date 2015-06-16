@@ -1197,9 +1197,14 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def propagate_like_changes
-    if self.received_likes_count_changed? && !self.ranking.nil? && !self.ranking.frozen?
-      self.ranking.likes = received_likes_count || 0
-      self.ranking.save
+    if self.received_likes_count_changed?
+      if !self.ranking.nil? && !self.ranking.frozen?
+        self.ranking.likes = received_likes_count || 0
+        self.ranking.save
+      end
+      if !self.tutorial_state.nil?
+        self.tutorial_state.check_for_new_quests('likes_count_trigger')
+      end
     end
     true
   end
@@ -1213,9 +1218,14 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def propagate_victory_changes
-    if victories_changed? && !self.ranking.nil? && !self.ranking.frozen?
-      self.ranking.victories = victories || 0
-      self.ranking.save
+    if victories_changed?
+      if !self.ranking.nil? && !self.ranking.frozen?
+        self.ranking.victories = victories || 0
+        self.ranking.save
+      end
+      if !self.tutorial_state.nil?
+        self.tutorial_state.check_for_new_quests('victories_count_trigger')
+      end
     end
     true
   end
