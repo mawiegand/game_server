@@ -209,7 +209,7 @@
     <!-- 6 --> <!-- Tutorial 7 -->
     <Quest id="quest_build_chiefcottagelvl3" type="epic" advisor="girl" hide_start_dialog="true" tutorial="true">
     <Name>An even bigger chieftain's hut</Name>
-    <Name locale="de_DE">Eine noch größere Häuptlingshütte</Name>
+    <Name locale="de_DE">Die Häuptlingshütte</Name>
     <Task>Upgrade your chieftan's hut to level 3</Task>
     <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 3 aus.</Task>
     <Description locale="de_DE">
@@ -440,7 +440,7 @@
     <p>A bunch of ferocious neanderthals has gathered outside your settlement while your army is out in the field. We have to stop them. Lead our garrison out to battle and smash them to bits! To do so, first select your settlement. Then press the attack button and select the neandertals to beginn the attack.</p></Description>
   <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
   <Flavor locale="en_US">Those neanderthals sure are cruising for a bruising. </Flavor>
-  <RewardText locale="de_DE">Auf die selbe Art greifst Du auch mit Armeen an. Armeen, die auf der Seite von Siedlungen oder Festungen kämpfen erhalten einen Kampfbonus. Während ein Kampf läuft können beliebig viele Armeen auf beiden Seiten dazukommen.</RewardText>
+  <RewardText locale="de_DE">Ein Kampf läuft meist über mehrere Runden. In jeder Runde können beliebig viele Armeen auf beiden Seiten dazukommen.</RewardText>
   <RewardText locale="en_US">You attack the same way with armies. Armies fighting on the same side as settlements or fortresses get a boost. While a battle is going on armies can join it on either side. </RewardText>
   <RewardFlavor locale="de_DE">Der Kampf wird noch eine Weile toben, aber wir werden mit Sicherheit Siegen! Vielleicht kehrt unsere Armee auch zurück und kommt uns zur Unterstützung.</RewardFlavor>
   <RewardFlavor locale="en_US">The battle is gona keep going for a while but we will surely win! Especially if the army returns and supports us.</RewardFlavor>
@@ -548,11 +548,12 @@
   <Triggers>
     <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
     <FinishQuestTriggers>
-      <FinishQuestTrigger>quest_army_move</FinishQuestTrigger>
+      <FinishQuestTrigger>quest_settlement_button1</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
-    <ResourceReward resource="resource_cash">2</ResourceReward>
+    <ResourceReward resource="resource_stone">100</ResourceReward>
+    <ResourceReward resource="resource_wood">100</ResourceReward>
     <ActionPointReward></ActionPointReward>
   </Rewards>
   <RewardTests>
@@ -565,12 +566,48 @@
 <!-- TUTORIAL ENDE -->
 
 
-<!-- 13 -->
-<Quest id="quest_build_chiefcottagelvl4" type="epic" advisor="girl" tutorial="false">
+
+
+<!-- EPIC ALLIANZ -->
+<Quest id="quest_alliance_epic" type="epic" advisor="chef">
+  <Name>Alliance</Name>
+  <Name locale="de_DE">Allianz</Name>
+  <Task>Enter an alliance, or start your own alliance.</Task>
+  <Task locale="de_DE">Tritt einer Allianz bei oder gründe Deine eigene Allianz.</Task>
+  <Description locale="de_DE">
+    <p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
+  </Description>
+  <Flavor locale="de_DE">Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.</Flavor>
+  <Flavor locale="en_US">Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.</Flavor>
+  <RewardText locale="de_DE">Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.</RewardText>
+  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
+  <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
+  <Triggers>
+    <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_settlement_button2</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_cash">2</ResourceReward>
+    <UnitReward unit="unit_warrior">20</UnitReward>
+    <ExperienceReward>350</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <AllianceTest />
+  </RewardTests>
+  <PlaceNpcs>10</PlaceNpcs>
+</Quest>
+
+<Subquest id="quest_build_chiefcottagelvl4" epic="quest_alliance_epic" advisor="girl" tutorial="false">
   <Name>An even bigger chieftain's hut</Name>
-  <Name locale="de_DE">Eine noch größere Häuptlingshütte</Name>
-  <Task>Upgrade your chieftan's hut to level 3</Task>
-  <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 3 aus.</Task>
+  <Name locale="de_DE">Häuptlingshütte Level 4</Name>
+  <Task>Upgrade your chieftan's hut to level 4</Task>
+  <Task locale="de_DE">Baue Deine Häuptlingshütte auf Level 4 aus.</Task>
   <Description locale="de_DE">
     <p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>
   </Description>
@@ -583,12 +620,6 @@
   <RewardText locale="en_US">Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.</RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
-  <Triggers>
-    <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
-    <FinishQuestTriggers>
-      <FinishQuestTrigger>quest_settlement_button2</FinishQuestTrigger>
-    </FinishQuestTriggers>
-  </Triggers>
   <Rewards>
     <ResourceReward resource="resource_stone">175</ResourceReward>
     <ResourceReward resource="resource_wood">175</ResourceReward>
@@ -599,10 +630,9 @@
   <UIMarker>mark_home_settlement</UIMarker>
   <UIMarker>mark_upgradable_building</UIMarker>
   <UIMarker>mark_upgrade_button</UIMarker>
-</Quest>
+</Subquest>
 
-<!-- 14 -->
-<Quest id="quest_build_campfire" type="epic" advisor="girl" tutorial="false">
+<Subquest id="quest_build_campfire" epic="quest_alliance_epic" advisor="girl" tutorial="false">
   <Name>Campfire</Name>
   <Name locale="de_DE">Lagerfeuer</Name>
   <Task>Build a campfire.</Task>
@@ -620,17 +650,9 @@
   <RewardText locale="en_US">Try to contact your neighbors and form an alliance with them.</RewardText>
   <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
   <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
-  <Triggers>
-    <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
-    <FinishQuestTriggers>
-      <FinishQuestTrigger>quest_build_chiefcottagelvl4</FinishQuestTrigger>
-    </FinishQuestTriggers>
-  </Triggers>
   <Rewards>
     <ResourceReward resource="resource_stone">75</ResourceReward>
     <ResourceReward resource="resource_wood">75</ResourceReward>
-    <ResourceReward resource="resource_cash">3</ResourceReward>
-    <ExperienceReward>150</ExperienceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_campfire" min_level="1" />
@@ -671,10 +693,9 @@
       <li><a href='https://ios.wack-a-doo.com/de/encyclopedia/faq' target='_blank'>FAQ</a></li>
       </ul>]]></Body>
   </Message>
-</Quest>
+</Subquest>
 
-<!-- 15 -->
-<Quest id="quest_alliance" type="optional" advisor="girl">
+<Subquest id="quest_alliance" epic="quest_alliance_epic" advisor="girl">
   <Name>Alliance</Name>
   <Name locale="de_DE">Allianz</Name>
   <Task>Enter an alliance, or start your own alliance.</Task>
@@ -691,16 +712,40 @@
   <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
   <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
-  <Triggers>
-      <PlayTimeTrigger>300</PlayTimeTrigger>
-  </Triggers>
   <Rewards>
     <ResourceReward resource="resource_cash">2</ResourceReward>
-    <UnitReward unit="unit_clubbers">10</UnitReward>
-    <ExperienceReward>350</ExperienceReward>
   </Rewards>
   <RewardTests>
     <AllianceTest />
+  </RewardTests>
+</Subquest>
+
+  <Quest id ="quest_charkills_1" type="optional" advisor="warrior">
+  <Name>Decimate enemy units</Name>
+  <Name locale="de_DE">Gegner dezimieren</Name>
+  <Task>Defeat 10 units.</Task>
+  <Task locale="de_DE">Besiege 10 Einheiten.</Task>
+  <Description locale="de_DE">
+    <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
+  </Description>
+  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+  <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
+  <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
+  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+  <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
+  <Triggers>
+    <PlayTimeTrigger>300</PlayTimeTrigger><!-- Time in seconds -->
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">200</ResourceReward>
+    <ResourceReward resource="resource_wood">200</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <KillTest min_units="10" />
   </RewardTests>
 </Quest>
 

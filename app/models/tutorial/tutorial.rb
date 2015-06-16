@@ -621,7 +621,7 @@ class Tutorial::Tutorial
           :hide_start_dialog => true,
   
           :tutorial          => true,
-          :tutorial_end_quest => false,
+          :tutorial_end_quest => true,
     
           :priority          => 0,
           :blocking          => false,
@@ -1456,7 +1456,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_army_move',
+                :finish_quest_trigger => 'quest_settlement_button1',
               },
 
             ],
@@ -1489,11 +1489,116 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', ],
 
         },              #   END OF quest_settlement_button2
-        {               #   quest_build_chiefcottagelvl4
+        {               #   quest_alliance_epic
           :id                => 13,
-          :symbolic_id       => :quest_build_chiefcottagelvl4,
+          :symbolic_id       => :quest_alliance_epic,
   
           :type              => :epic,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Alliance",
+  
+            :de_DE => "Allianz",
+                
+          },
+          :task => {
+            
+            :en_US => "Enter an alliance, or start your own alliance.",
+  
+            :de_DE => "Tritt einer Allianz bei oder gründe Deine eigene Allianz.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
+  
+            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+  
+            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.",
+  
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.",
+  
+            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
+                
+          },
+
+          :subquests => [14, 15, 16, ],
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_settlement_button2',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_warrior,
+                :amount => 20,
+              },
+
+            ],
+
+            :experience_reward => 350,
+
+          },          
+
+          :reward_tests => {
+            
+            :alliance_test => {},
+
+          },          
+
+          :place_npcs => 10,         
+
+        },              #   END OF quest_alliance_epic
+        {               #   quest_build_chiefcottagelvl4
+          :id                => 14,
+          :symbolic_id       => :quest_build_chiefcottagelvl4,
+  
+          :type              => :sub,
   
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1547,20 +1652,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [],
-
-          :triggers => {
-            
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'quest_settlement_button2',
-              },
-
-            ],
-  
-          },
-
           :rewards => {
             
             :resource_rewards => [
@@ -1600,10 +1691,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl4
         {               #   quest_build_campfire
-          :id                => 14,
+          :id                => 15,
           :symbolic_id       => :quest_build_campfire,
   
-          :type              => :epic,
+          :type              => :sub,
   
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1658,20 +1749,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [],
-
-          :triggers => {
-            
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'quest_build_chiefcottagelvl4',
-              },
-
-            ],
-  
-          },
-
           :rewards => {
             
             :resource_rewards => [
@@ -1686,14 +1763,7 @@ class Tutorial::Tutorial
                 :amount => 75,
               },
 
-              {
-                :resource => :resource_cash,
-                :amount => 3,
-              },
-
             ],
-
-            :experience_reward => 150,
 
           },          
 
@@ -1757,10 +1827,10 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_campfire
         {               #   quest_alliance
-          :id                => 15,
+          :id                => 16,
           :symbolic_id       => :quest_alliance,
   
-          :type              => :optional,
+          :type              => :sub,
   
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -1814,12 +1884,6 @@ class Tutorial::Tutorial
                 
           },
 
-          :triggers => {
-            
-            :play_time_trigger => 300,
-  
-          },
-
           :rewards => {
             
             :resource_rewards => [
@@ -1831,17 +1895,6 @@ class Tutorial::Tutorial
 
             ],
 
-            :unit_rewards => [
-
-              {
-                :unit => :unit_clubbers,
-                :amount => 10,
-              },
-
-            ],
-
-            :experience_reward => 350,
-
           },          
 
           :reward_tests => {
@@ -1851,6 +1904,97 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_alliance
+        {               #   quest_charkills_1
+          :id                => 17,
+          :symbolic_id       => :quest_charkills_1,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 10 units.",
+  
+            :de_DE => "Besiege 10 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => "Your enemies are strong - that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 300,
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 200,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 10,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_1
       ],                # END OF QUESTS
 
     )

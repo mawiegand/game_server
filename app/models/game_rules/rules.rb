@@ -162,9 +162,9 @@ class GameRules::Rules
 
       :character_creation => {
         :start_resources => {
-          1 => 200,
-            0 => 200,
-            2 => 200,
+          1 => 100,
+            0 => 100,
+            2 => 0,
             3 => 0,
             
         },
@@ -1151,9 +1151,8 @@ class GameRules::Rules
           :production_time => '800',
 
           :costs      => {
-            0 => '5',
-            1 => '5',
-            2 => '50',
+            0 => '25',
+            1 => '25',
             
           },
 
