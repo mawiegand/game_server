@@ -6,6 +6,9 @@ class Effect::ConstructionEffect < ActiveRecord::Base
   CONSTRUCTION_EFFECT_TYPE_SHOP     = 0
   CONSTRUCTION_EFFECT_TYPE_ARTIFACT = 1
   CONSTRUCTION_EFFECT_TYPE_CUSTOM   = 2 #
+  CONSTRUCTION_EFFECT_TYPE_TUTORIAL_REWARD = 3
+  CONSTRUCTION_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD = 4
+  CONSTRUCTION_EFFECT_TYPE_SPECIAL_ASSIGNMENT_REWARD = 5
 
   after_create   :propagate_effect_creation
   before_destroy :propagate_effect_removal
@@ -63,6 +66,26 @@ class Effect::ConstructionEffect < ActiveRecord::Base
         event_type: "construction_effect",
         local_event_id: effect.id,
     )
+  end
+
+  def self.create_reward_effect(character, bonus, duration, origin_id, type_id)
+    effect = Effect::ConstructionEffect.create({
+      bonus: bonus,
+      character_id: character.id,
+      origin_id: origin_id,
+      type_id: type_id,
+      finished_at: Time.now + (duration * 3600),
+    })
+
+    # event for effect
+    effect.create_event(
+      character: character,
+      execute_at: effect.finished_at,
+      event_type: "construction_effect",
+      local_event_id: effect.id,
+    )
+
+    !effect.nil?
   end
 
   protected

@@ -91,7 +91,7 @@
 
 <!ELEMENT MundaneRankTrigger (#PCDATA)>
 
-<!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?, ActionPointReward?)>
+<!ELEMENT Rewards (ResourceReward*, UnitReward*, ExperienceReward?, ActionPointReward?, ProductionBonusReward*, ConstructionBonusReward*, ExperienceProductionBonusReward*)>
 
 <!ELEMENT ResourceReward (#PCDATA)>
 <!ATTLIST ResourceReward
@@ -107,7 +107,21 @@
 
 <!ELEMENT ActionPointReward EMPTY>
 
+<!ELEMENT ProductionBonusReward (#PCDATA)>
+<!ATTLIST ProductionBonusReward
+  resource IDREF #REQUIRED
+  duration CDATA #REQUIRED
+>
 
+<!ELEMENT ConstructionBonusReward (#PCDATA)>
+<!ATTLIST ConstructionBonusReward
+  duration CDATA #REQUIRED
+>
+
+<!ELEMENT ExperienceProductionBonusReward (#PCDATA)>
+<!ATTLIST ExperienceProductionBonusReward
+  duration CDATA #REQUIRED
+>
 
 <!ELEMENT RewardTests ((FinishQuestTest*, ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, MovementTest?, AllianceTest?, AllianceMembersTest?, StandardAssignmentTest?, KillTest?, BattleTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?, BuildingSpeedTest?, CrossPlatformTest?) | TextboxTest | CustomTest)>
 

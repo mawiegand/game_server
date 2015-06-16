@@ -7,6 +7,9 @@ class Effect::ResourceEffect < ActiveRecord::Base
   RESOURCE_EFFECT_TYPE_SHOP = 0
   RESOURCE_EFFECT_TYPE_ARTIFACT = 1
   RESOURCE_EFFECT_TYPE_SPECIAL_OFFER = 2
+  RESOURCE_EFFECT_TYPE_TUTORIAL_REWARD = 3
+  RESOURCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD = 4
+  RESOURCE_EFFECT_TYPE_SPECIAL_ASSIGNMENT_REWARD = 5
 
   after_create   :propagate_effect_creation
   before_destroy :propagate_effect_removal
@@ -53,7 +56,48 @@ class Effect::ResourceEffect < ActiveRecord::Base
     
     !effect.nil?
   end
-  
+
+  def self.create_reward_effect(character, resource_id, bonus, duration, origin_id, type_id)
+    # check if reward effect with same resource_id and bonus amount is already active
+    effects = Effect::ResourceEffect.where(
+      :resource_pool_id => character.resource_pool.id,
+      :type_id => [RESOURCE_EFFECT_TYPE_TUTORIAL_REWARD, RESOURCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD, RESOURCE_EFFECT_TYPE_SPECIAL_ASSIGNMENT_REWARD],
+      :resource_id => resource_id,
+      :bonus => bonus
+    )
+
+    raise BadRequestError.new('more than one bonus active for same resource') if effects.count > 1
+
+    if effects.count == 1
+      effect = effects.first
+      effect.finished_at += duration * 3600
+      effect.save
+
+      event = effect.event
+      raise BadRequestError.new('no event for existing effect') if event.nil?
+      event.execute_at   += duration * 3600
+      event.save
+    else
+      effect = Effect::ResourceEffect.create({
+        bonus: bonus,
+        resource_pool_id: character.resource_pool.id,
+        resource_id: resource_id,
+        origin_id: origin_id,
+        type_id: type_id,
+        finished_at: Time.now + (duration * 3600),
+      })
+
+      # event for effect
+      effect.create_event(
+          character: character,
+          execute_at: effect.finished_at,
+          event_type: "resource_effect",
+          local_event_id: effect.id,
+      )
+    end
+
+    !effect.nil?
+  end
 
   protected
 
