@@ -100,6 +100,7 @@ class Fundamental::Character < ActiveRecord::Base
   after_save  :propagate_divine_supporter_changes
   after_save  :propagate_image_set_changes
   after_save  :manage_assignments_on_level_change
+  after_save  :check_for_new_quests_triggered_by_logged_in_on_second_day
   after_save  :check_for_new_quests_triggered_by_mundane_rank
   
   before_create :init_retention_bonus
@@ -1475,6 +1476,13 @@ class Fundamental::Character < ActiveRecord::Base
     return false    unless self.fulfills_mundane_rank?((self.mundane_rank || 0) + 1)
     self.advance_to_next_mundane_rank
     return true
+  end
+
+  def check_for_new_quests_triggered_by_logged_in_on_second_day
+    if self.logged_in_on_second_day_changed? && !self.tutorial_state.nil?
+      self.tutorial_state.check_for_new_quests('logged_in_on_second_day_trigger')
+    end
+    true
   end
 
   def check_for_new_quests_triggered_by_mundane_rank

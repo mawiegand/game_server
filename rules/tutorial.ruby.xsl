@@ -285,6 +285,9 @@ end
   <xsl:if test="PlayTimeTrigger">
             :play_time_trigger => <xsl:value-of select="PlayTimeTrigger" />,
   </xsl:if>
+  <xsl:if test="LoggedInOnSecondDayTrigger">
+    :logged_in_on_second_day_trigger => true,
+  </xsl:if>
   <xsl:if test="FinishQuestTriggers">
             :finish_quest_triggers => [
               <xsl:apply-templates select="FinishQuestTriggers" />

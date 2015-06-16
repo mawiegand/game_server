@@ -82,9 +82,11 @@
   blocking           CDATA "false"
 >
 
-<!ELEMENT Triggers (PlayTimeTrigger?, FinishQuestTriggers*, MundaneRankTrigger?, VictoriesCountTrigger?, LikesCountTrigger?)>
+<!ELEMENT Triggers (PlayTimeTrigger?, LoggedInOnSecondDayTrigger?, FinishQuestTriggers*, MundaneRankTrigger?, VictoriesCountTrigger?, LikesCountTrigger?)>
 
 <!ELEMENT PlayTimeTrigger (#PCDATA)>
+
+<!ELEMENT LoggedInOnSecondDayTrigger EMPTY>
 
 <!ELEMENT FinishQuestTriggers (FinishQuestTrigger*)>
 <!ELEMENT FinishQuestTrigger (#PCDATA)>

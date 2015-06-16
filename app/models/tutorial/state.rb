@@ -130,13 +130,19 @@ class Tutorial::State < ActiveRecord::Base
       unless triggers[:play_time_trigger].nil?
         return false if self.owner.playtime < triggers[:play_time_trigger]
       end
+      # validate logged in on second day trigger
+      unless triggers[:logged_in_on_second_day_trigger].nil?
+        return false unless self.owner.logged_in_on_second_day?
+      end
       # validate mundane rank of owner
       unless triggers[:mundane_rank_trigger].nil?
         return false if self.owner.mundane_rank < triggers[:mundane_rank_trigger]
       end
+      # validate victories count of owner
       unless triggers[:victories_count_trigger].nil?
         return false if self.owner.victories < triggers[:victories_count_trigger]
       end
+      # validate received likes count of owner
       unless triggers[:likes_count_trigger].nil?
         return false if self.owner.received_likes_count < triggers[:likes_count_trigger]
       end
