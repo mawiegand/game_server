@@ -14,28 +14,28 @@
     
   <!-- tier 1 buildings -->  
   <xi:include href="buildings/rules_building_chief_cottage.xml" />
-  <xi:include href="buildings/rules_building_quarry.xml" />
-  <xi:include href="buildings/rules_building_logger.xml" />
+  <xi:include href="buildings/rules_building_gatherer.xml" />
   <xi:include href="buildings/rules_building_tavern.xml" />
   <xi:include href="buildings/rules_building_special_gatherer.xml" />
   <xi:include href="buildings/rules_building_barracks.xml" />
+  <xi:include href="buildings/rules_building_quarry.xml" />
+  <xi:include href="buildings/rules_building_logger.xml" />
   <xi:include href="buildings/rules_building_campfire.xml" />
-  <xi:include href="buildings/rules_building_cottage.xml" />
   <xi:include href="buildings/rules_building_storage.xml" />
-  <xi:include href="buildings/rules_building_furrier.xml" />
   <xi:include href="buildings/rules_building_training_cave.xml" />
-  <xi:include href="buildings/rules_building_artifact_stand.xml" />
-  <xi:include href="buildings/rules_building_copper_smelter.xml" />
-  <xi:include href="buildings/rules_building_gatherer.xml" />
-
-  <!-- tier 2 buildings -->  
+  <xi:include href="buildings/rules_building_cottage.xml" />
+  <xi:include href="buildings/rules_building_furrier.xml" />
   <xi:include href="buildings/rules_building_firing_range.xml" />
-  <xi:include href="buildings/rules_building_alliance_hall.xml" />
+  <xi:include href="buildings/rules_building_copper_smelter.xml" />
+  <xi:include href="buildings/rules_building_artifact_stand.xml" />
+
+  <!-- tier 2 buildings -->
   <xi:include href="buildings/rules_building_barracks_2.xml" />
-  <xi:include href="buildings/rules_building_cottage_2.xml" />
-  <xi:include href="buildings/rules_building_storage_2.xml" />  
+  <xi:include href="buildings/rules_building_alliance_hall.xml" />
   <xi:include href="buildings/rules_building_quarry_2.xml" />
   <xi:include href="buildings/rules_building_logger_2.xml" />
+  <xi:include href="buildings/rules_building_storage_2.xml" />
+  <xi:include href="buildings/rules_building_cottage_2.xml" />
   <xi:include href="buildings/rules_building_furrier_2.xml" />
   <xi:include href="buildings/rules_building_stud.xml" />
   <xi:include href="buildings/rules_building_firing_range_2.xml" />

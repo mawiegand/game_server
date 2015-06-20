@@ -20,7 +20,7 @@
   </Flavour>
   <Population>LESS(LEVEL,11)*FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5))</Population>
   <RequirementGroup>
-    <Requirement id="building_chief_cottage" min_level="7" />
+    <Requirement id="building_chief_cottage" min_level="6" />
     <Requirement id="building_haunt" max_level="0" />
     <Requirement id="building_training_cave" max_level="0" />
     <Requirement id="building_fortress_fortification" max_level="0" />
