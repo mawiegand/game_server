@@ -621,7 +621,7 @@ class Tutorial::Tutorial
           :hide_start_dialog => true,
   
           :tutorial          => true,
-          :tutorial_end_quest => true,
+          :tutorial_end_quest => false,
     
           :priority          => 0,
           :blocking          => false,
@@ -630,7 +630,7 @@ class Tutorial::Tutorial
             
             :en_US => "An even bigger chieftain's hut",
   
-            :de_DE => "Eine noch größere Häuptlingshütte",
+            :de_DE => "Die Häuptlingshütte",
                 
           },
           :task => {
@@ -1218,7 +1218,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Auf die selbe Art greifst Du auch mit Armeen an. Armeen, die auf der Seite von Siedlungen oder Festungen kämpfen erhalten einen Kampfbonus. Während ein Kampf läuft können beliebig viele Armeen auf beiden Seiten dazukommen.",
+            :de_DE => "Ein Kampf läuft meist über mehrere Runden. In jeder Runde können beliebig viele Armeen auf beiden Seiten dazukommen.",
   
             :en_US => "You attack the same way with armies. Armies fighting on the same side as settlements or fortresses get a boost. While a battle is going on armies can join it on either side. ",
                 
@@ -1468,8 +1468,13 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => :resource_cash,
-                :amount => 2,
+                :resource => :resource_stone,
+                :amount => 100,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 100,
               },
 
             ],
@@ -1613,14 +1618,14 @@ class Tutorial::Tutorial
             
             :en_US => "An even bigger chieftain's hut",
   
-            :de_DE => "Eine noch größere Häuptlingshütte",
+            :de_DE => "Häuptlingshütte Level 4",
                 
           },
           :task => {
             
-            :en_US => "Upgrade your chieftan's hut to level 3",
+            :en_US => "Upgrade your chieftan's hut to level 4",
   
-            :de_DE => "Baue Deine Häuptlingshütte auf Level 3 aus.",
+            :de_DE => "Baue Deine Häuptlingshütte auf Level 4 aus.",
                 
           },
           :flavour => {
