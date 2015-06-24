@@ -2998,13 +2998,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            1 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            2 => 'GREATER(LEVEL,7)*(EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5))',
+            0 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1250+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            1 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            2 => '(GREATER(LEVEL,8)*(EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)))*0.5',
             
           },
 
-          :production_time => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*20+EQUAL(LEVEL,4)*60+EQUAL(LEVEL,5)*3600+EQUAL(LEVEL,6)*21600+(GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*6',
+          :production_time => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*20+EQUAL(LEVEL,4)*40+EQUAL(LEVEL,5)*300+EQUAL(LEVEL,6)*3600+EQUAL(LEVEL,7)*3600*5+EQUAL(LEVEL,8)*3600*12+(GREATER(LEVEL,8)*FLOOR(3600*12+(LEVEL-8)*3600*4))',
           :production  => [
             
           ],
@@ -3128,29 +3128,7 @@ class GameRules::Rules
 
               :min_level => 0,
 
-              :max_level => 1,
-
-            },
-
-            {
-              :symbolic_id => 'building_quarry',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 1,
-
-            },
-
-            {
-              :symbolic_id => 'building_logger',
-              :id => 6,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 1,
+              :max_level => 0,
 
             },
 
@@ -3174,29 +3152,7 @@ class GameRules::Rules
 
               :min_level => 0,
 
-              :max_level => 1,
-
-            },
-
-            {
-              :symbolic_id => 'building_quarry',
-              :id => 5,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 1,
-
-            },
-
-            {
-              :symbolic_id => 'building_logger',
-              :id => 6,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 1,
+              :max_level => 0,
 
             },
 
@@ -3242,7 +3198,7 @@ class GameRules::Rules
 
           :conversion_option => {
             :building              => :building_logger,
-            :target_level_formula  => "LEVEL-2", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,2)", 
           },
 
         },              #   END OF Sammler
@@ -7683,10 +7639,69 @@ class GameRules::Rules
 
 
         },              #   END OF Wood Cutting!
-        {              #   Skinning
+        {              #   Bar Room Brawl
           :id          => 2,
-          :symbolic_id => :assignment_fur,
+          :symbolic_id => :assignment_barroombrawl,
           :level       => 3,
+          :advisor     => "warrior",
+          :name        => {
+            
+            :en_US => "Bar Room Brawl",
+  
+            :de_DE => "Schlägerei",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Ein kühles Bier und eine zünftige Tavernenschlägerei. Das nenne ich Erholung!",
+  
+            :en_US => "A chilled beer and flying fists! Now that's what I call relaxation!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Wenn verdiente Krieger zu Gast sind steigt die Schlägerei Rate enorm. Jungspunde wollen sich profilieren, denn so manch große Krieger Karriere begann in der Taverne. Aber irgendjemand muss die Rechnung bezahlen.</p>",
+  
+            :en_US => "<p>If a bunch of accomplished warriors meet at the tavern, chances are that there's going to be quite a brawl. But once it's all over, and someone has paid for the smashed up furniture, you may just find yourself with some reliable companions.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Nach einer ordentlichen Schlägerei kann man gute Freunde finden.</p>",
+  
+            :en_US => "<p>After a nice brawl, you sometimes make some great friends.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '50',
+            1 => '50',
+            
+          },
+
+          :duration => 2700,
+
+
+          :rewards => {
+            
+          :unit_rewards => [
+            
+              {
+                :unit => :unit_warrior,
+                :amount => 3,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Bar Room Brawl
+        {              #   Skinning
+          :id          => 3,
+          :symbolic_id => :assignment_fur,
+          :level       => 4,
           :advisor     => "girl",
           :name        => {
             
@@ -7736,66 +7751,6 @@ class GameRules::Rules
 
 
         },              #   END OF Skinning
-        {              #   Bar Room Brawl
-          :id          => 3,
-          :symbolic_id => :assignment_barroombrawl,
-          :level       => 4,
-          :advisor     => "warrior",
-          :name        => {
-            
-            :en_US => "Bar Room Brawl",
-  
-            :de_DE => "Schlägerei",
-  
-          },
-          :flavour     => {
-            
-            :de_DE => "Ein kühles Bier und eine zünftige Tavernenschlägerei. Das nenne ich Erholung!",
-  
-            :en_US => "A chilled beer and flying fists! Now that's what I call relaxation!",
-  
-          },
-          :description => {
-            
-            :de_DE => "<p>Wenn verdiente Krieger zu Gast sind steigt die Schlägerei Rate enorm. Jungspunde wollen sich profilieren, denn so manch große Krieger Karriere begann in der Taverne. Aber irgendjemand muss die Rechnung bezahlen.</p>",
-  
-            :en_US => "<p>If a bunch of accomplished warriors meet at the tavern, chances are that there's going to be quite a brawl. But once it's all over, and someone has paid for the smashed up furniture, you may just find yourself with some reliable companions.</p>",
-  
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Nach einer ordentlichen Schlägerei kann man gute Freunde finden.</p>",
-  
-            :en_US => "<p>After a nice brawl, you sometimes make some great friends.</p>",
-  
-          },
-
-          :costs      => {
-            0 => '50',
-            1 => '50',
-            2 => '50',
-            
-          },
-
-          :duration => 2700,
-
-
-          :rewards => {
-            
-          :unit_rewards => [
-            
-              {
-                :unit => :unit_warrior,
-                :amount => 3,
-              },
-
-          ],
-
-          },
-
-
-        },              #   END OF Bar Room Brawl
         {              #   Drive out the Neanderthals
           :id          => 4,
           :symbolic_id => :assignment_raid,

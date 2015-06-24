@@ -99,7 +99,7 @@ class Tutorial::Tutorial
   
 # ## QUESTS ##########################################################
   
-      :num_tutorial_quests => 13,
+      :num_tutorial_quests => 14,
   
       :quests => [  # ALL QUESTS
 
@@ -388,12 +388,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 35,
+                :amount => 50,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 35,
+                :amount => 50,
               },
 
             ],
@@ -1386,9 +1386,9 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', ],
 
         },              #   END OF quest_settlement_button2
-        {               #   quest_ressources_epic
+        {               #   epic_ressources
           :id                => 12,
-          :symbolic_id       => :quest_ressources_epic,
+          :symbolic_id       => :epic_ressources,
   
           :type              => :epic,
   
@@ -1438,7 +1438,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.",
+            :de_DE => "Baue weitere oder verbessere Steinbruch und Holzfäller, um Deine Produktion zu erhöhen. ",
   
             :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
                 
@@ -1463,6 +1463,16 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
+                :resource => :resource_stone,
+                :amount => 100,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 100,
+              },
+
+              {
                 :resource => :resource_cash,
                 :amount => 2,
               },
@@ -1477,7 +1487,7 @@ class Tutorial::Tutorial
 
           :place_npcs => 10,         
 
-        },              #   END OF quest_ressources_epic
+        },              #   END OF epic_ressources
         {               #   quest_build_chiefcottagelvl4
           :id                => 13,
           :symbolic_id       => :quest_build_chiefcottagelvl4,
@@ -1542,12 +1552,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 150,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 150,
+                :amount => 200,
               },
 
             ],
@@ -1638,7 +1648,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 200,
+                :amount => 250,
               },
 
             ],
@@ -1729,7 +1739,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_wood,
-                :amount => 200,
+                :amount => 250,
               },
 
             ],
@@ -1756,8 +1766,504 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_logger
-        {               #   quest_alliance_epic
+        {               #   epic__more_ressources
           :id                => 16,
+          :symbolic_id       => :epic__more_ressources,
+  
+          :type              => :epic,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Ressources",
+  
+            :de_DE => "Mehr Rohstoffe",
+                
+          },
+          :task => {
+            
+            :en_US => "Enter an alliance, or start your own alliance.",
+  
+            :de_DE => "Baue Steinbruch und Holzfäller auf Level 3.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
+  
+            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Steinbruch und der Holzfäller sind Deine Rohstoffproduzenten.</p>",
+  
+            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.",
+  
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Baue weitere oder verbessere Steinbruch und Holzfäller, um Deine Produktion zu erhöhen. ",
+  
+            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
+                
+          },
+
+          :subquests => [17, 18, ],
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_ressources_',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+          },          
+
+          :place_npcs => 10,         
+
+        },              #   END OF epic__more_ressources
+        {               #   quest_build_quarry_lvl3
+          :id                => 17,
+          :symbolic_id       => :quest_build_quarry_lvl3,
+  
+          :type              => :sub,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Quarry",
+  
+            :de_DE => "Steinbruch Level 3",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a quarry.",
+  
+            :de_DE => "Baue einen Steinbruch Level 3.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey cool, Du kannst Steinbrüche bauen.",
+  
+            :en_US => "Cool - you can now build quarries.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Steinbruch produziert Steine.</p>",
+  
+            :en_US => "<p>Build a quarry to improve your production.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "So viel Stein, wie toll.",
+  
+            :en_US => "Wow – that's a lot of stone. Fantastic!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Erweitere den Steinbruch für eine höhere Steinproduktion.",
+  
+            :en_US => "Quarries are very effective. Build more quarries!",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 400,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_quarry',
+
+                :min_level => 3,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
+
+        },              #   END OF quest_build_quarry_lvl3
+        {               #   quest_build_logger_lvl3
+          :id                => 18,
+          :symbolic_id       => :quest_build_logger_lvl3,
+  
+          :type              => :sub,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => true,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Logger",
+  
+            :de_DE => "Holzfäller Level 3",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a logger.",
+  
+            :de_DE => "Baue einen Holzfäller Level 3.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.",
+  
+            :en_US => "If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Holzfäller erhöhen Deine Holzproduktion.</p>",
+  
+            :en_US => "<p>Upgrade the logger to increase your production.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Na, das nenne ich mal Holz vor der Hütte!",
+  
+            :en_US => "Wow – look at your wood production. That's massive! ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Erweitere den Hozfäller für eine höhere Holzproduktion.",
+  
+            :en_US => "You will need more loggers.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_wood,
+                :amount => 400,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_logger',
+
+                :min_level => 3,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
+
+        },              #   END OF quest_build_logger_lvl3
+        {               #   quest_build_2quarry_lvl4
+          :id                => 19,
+          :symbolic_id       => :quest_build_2quarry_lvl4,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Quarry",
+  
+            :de_DE => "Mehr Steinbrüche",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a quarry.",
+  
+            :de_DE => "Baue zwei Steinbrüche bis Level 4.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey cool, Du kannst Steinbrüche bauen.",
+  
+            :en_US => "Cool - you can now build quarries.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Weitere Steinbrüche produziert Steine.</p>",
+  
+            :en_US => "<p>Build a quarry to improve your production.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "So viel Stein, wie toll.",
+  
+            :en_US => "Wow – that's a lot of stone. Fantastic!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.",
+  
+            :en_US => "Quarries are very effective. Build more quarries!",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic__more_ressources',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 407,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 203,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_quarry',
+
+                :min_level => 4,
+
+                :min_count => 2,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_2quarry_lvl4
+        {               #   quest_build_2logger_lvl4
+          :id                => 20,
+          :symbolic_id       => :quest_build_2logger_lvl4,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => true,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Logger",
+  
+            :de_DE => "Mehr Holzfäller",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a logger.",
+  
+            :de_DE => "Baue zwei Holzfäller bis Level 4.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.",
+  
+            :en_US => "If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Weitere Holzfäller erhöhen Deine Holzproduktion.</p>",
+  
+            :en_US => "<p>Upgrade the logger to increase your production.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Na, das nenne ich mal Holz vor der Hütte!",
+  
+            :en_US => "Wow – look at your wood production. That's massive! ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Steigere Deine Holzproduktion durch weitere und verbesserte Holzfäller.",
+  
+            :en_US => "You will need more loggers.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic__more_ressources',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 203,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 407,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_logger',
+
+                :min_level => 4,
+
+                :min_count => 2,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_2logger_lvl4
+        {               #   quest_alliance_epic
+          :id                => 21,
           :symbolic_id       => :quest_alliance_epic,
   
           :type              => :epic,
@@ -1814,14 +2320,14 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [17, 18, 19, ],
+          :subquests => [22, 23, 24, ],
 
           :triggers => {
             
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_ressources_epic',
+                :finish_quest_trigger => 'quest__more_ressources_epic',
               },
 
             ],
@@ -1848,8 +2354,6 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 350,
-
           },          
 
           :reward_tests => {
@@ -1858,11 +2362,9 @@ class Tutorial::Tutorial
 
           },          
 
-          :place_npcs => 20,         
-
         },              #   END OF quest_alliance_epic
         {               #   quest_build_chiefcottagelvl5
-          :id                => 17,
+          :id                => 22,
           :symbolic_id       => :quest_build_chiefcottagelvl5,
   
           :type              => :sub,
@@ -1925,12 +2427,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 175,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 175,
+                :amount => 250,
               },
 
             ],
@@ -1944,7 +2446,7 @@ class Tutorial::Tutorial
               {
                 :building => 'building_chief_cottage',
 
-                :min_level => 4,
+                :min_level => 5,
 
                 :min_count => 1,
 
@@ -1958,7 +2460,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_campfire
-          :id                => 18,
+          :id                => 23,
           :symbolic_id       => :quest_build_campfire,
   
           :type              => :sub,
@@ -2094,7 +2596,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_campfire
         {               #   quest_alliance
-          :id                => 19,
+          :id                => 24,
           :symbolic_id       => :quest_alliance,
   
           :type              => :sub,
@@ -2172,7 +2674,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_alliance
         {               #   quest_charkills_1
-          :id                => 20,
+          :id                => 25,
           :symbolic_id       => :quest_charkills_1,
   
           :type              => :optional,
@@ -2231,7 +2733,7 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :play_time_trigger => 300,
+            :play_time_trigger => 600,
   
           },
 

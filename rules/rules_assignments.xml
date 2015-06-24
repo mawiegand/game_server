@@ -58,35 +58,7 @@
     <Duration>720</Duration>
   </AssignmentType>
 
-  <AssignmentType id="assignment_fur" advisor="girl" level="3">
-    <Name>Skinning</Name>
-    <Name lang="de_DE">Tiere häuten</Name>
-    
-    <Flavour lang="de_DE">Wenn ich nur dran denke, was für schöne Sachen wir aus den Fellen machen können. </Flavour>
-    <Flavour lang="en_US">Just think about all the nice things we can do with that fur.</Flavour>
-    
-    <ShortDescription lang="de_DE">
-      <p>Manchmal muss man den Dino bei der Haut packen.</p>
-    </ShortDescription>
-    <ShortDescription lang="en_US">
-      <p>Sometimes you gota grab the dino by the skin.</p>
-    </ShortDescription>
-    
-    <Description lang="de_DE">
-      <p>Du wolltest wirklich nur entspannen, und wurdest doch wieder für einen kleinen Auftrag rekrutiert. Der Gestank des Tierkadavers steigert nicht gerade Deine Stimmung.</p>
-    </Description>
-    <Description lang="en_US">
-      <p>All you wanted to do was relax with a drink, but then they had to go and make you work. At least they're paying for your drinks. Because to be frank, you're going to need a hell of a lot of drinks to forget about this skinning business.</p>
-    </Description>
-    
-    <Rewards>
-      <ResourceReward resource="resource_fur">50</ResourceReward>
-    </Rewards>
-    
-    <Duration>480</Duration>
-  </AssignmentType>
-
-  <AssignmentType id="assignment_barroombrawl" advisor="warrior" level="4">
+  <AssignmentType id="assignment_barroombrawl" advisor="warrior" level="3">
     <Name>Bar Room Brawl</Name>
     <Name lang="de_DE">Schlägerei</Name>
     
@@ -109,7 +81,6 @@
     
     <Cost id="resource_stone">50</Cost>
     <Cost id="resource_wood">50</Cost>
-    <Cost id="resource_fur">50</Cost>
     
     <Rewards>
       <UnitReward unit="unit_warrior">3</UnitReward>
@@ -117,6 +88,34 @@
     
     <Duration>2700</Duration>
   </AssignmentType>
+  
+    <AssignmentType id="assignment_fur" advisor="girl" level="4">
+      <Name>Skinning</Name>
+      <Name lang="de_DE">Tiere häuten</Name>
+      
+      <Flavour lang="de_DE">Wenn ich nur dran denke, was für schöne Sachen wir aus den Fellen machen können. </Flavour>
+      <Flavour lang="en_US">Just think about all the nice things we can do with that fur.</Flavour>
+      
+      <ShortDescription lang="de_DE">
+        <p>Manchmal muss man den Dino bei der Haut packen.</p>
+      </ShortDescription>
+      <ShortDescription lang="en_US">
+        <p>Sometimes you gota grab the dino by the skin.</p>
+      </ShortDescription>
+      
+      <Description lang="de_DE">
+        <p>Du wolltest wirklich nur entspannen, und wurdest doch wieder für einen kleinen Auftrag rekrutiert. Der Gestank des Tierkadavers steigert nicht gerade Deine Stimmung.</p>
+      </Description>
+      <Description lang="en_US">
+        <p>All you wanted to do was relax with a drink, but then they had to go and make you work. At least they're paying for your drinks. Because to be frank, you're going to need a hell of a lot of drinks to forget about this skinning business.</p>
+      </Description>
+      
+      <Rewards>
+        <ResourceReward resource="resource_fur">50</ResourceReward>
+      </Rewards>
+      
+      <Duration>480</Duration>
+    </AssignmentType>
   
   <AssignmentType id="assignment_raid" advisor="warrior" level="5">
     <Name>Drive out the Neanderthals</Name>

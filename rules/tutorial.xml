@@ -127,8 +127,8 @@
         </FinishQuestTriggers>
       </Triggers>
       <Rewards>
-        <ResourceReward resource="resource_stone">35</ResourceReward>
-        <ResourceReward resource="resource_wood">35</ResourceReward>
+        <ResourceReward resource="resource_stone">50</ResourceReward>
+        <ResourceReward resource="resource_wood">50</ResourceReward>
       </Rewards>
       <RewardTests>
         <BuildingTest building="building_tavern" min_count="1" />
@@ -532,7 +532,7 @@
 
 
 <!-- EPIC Ressources -->
-<Quest id="quest_ressources_epic" type="epic" advisor="girl">
+<Quest id="epic_ressources" type="epic" advisor="girl">
   <Name>Ressources</Name>
   <Name locale="de_DE">Rohstoffe</Name>
   <Task>Enter an alliance, or start your own alliance.</Task>
@@ -545,17 +545,18 @@
   </Description>
   <Flavor locale="de_DE">Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.</Flavor>
   <Flavor locale="en_US">Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.</Flavor>
-  <RewardText locale="de_DE">Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.</RewardText>
+  <RewardText locale="de_DE">Baue weitere oder verbessere Steinbruch und Holzfäller, um Deine Produktion zu erhöhen. </RewardText>
   <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
   <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
   <Triggers>
-    <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_settlement_button2</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
+    <ResourceReward resource="resource_stone">100</ResourceReward>
+    <ResourceReward resource="resource_wood">100</ResourceReward>
     <ResourceReward resource="resource_cash">2</ResourceReward>
   </Rewards>
   <RewardTests>
@@ -563,7 +564,7 @@
     <PlaceNpcs>10</PlaceNpcs>
 </Quest>
 
-<Subquest id="quest_build_chiefcottagelvl4" epic="quest_ressources_epic" advisor="girl" tutorial="false">
+<Subquest id="quest_build_chiefcottagelvl4" epic="epic_ressources" advisor="girl" tutorial="false">
   <Name>An even bigger chieftain's hut</Name>
   <Name locale="de_DE">Häuptlingshütte Level 4</Name>
   <Task>Upgrade your chieftan's hut to level 4</Task>
@@ -581,8 +582,8 @@
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">150</ResourceReward>
-    <ResourceReward resource="resource_wood">150</ResourceReward>
+    <ResourceReward resource="resource_stone">200</ResourceReward>
+    <ResourceReward resource="resource_wood">200</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_chief_cottage" min_level="4" />
@@ -592,7 +593,7 @@
   <UIMarker>mark_upgrade_button</UIMarker>
 </Subquest>
 
-<Subquest id="quest_build_quarry" epic="quest_ressources_epic" advisor="girl" hide_start_dialog="false" priority="1" blocking="true" >
+<Subquest id="quest_build_quarry" epic="epic_ressources" advisor="girl" hide_start_dialog="false" priority="1" blocking="true" >
   <Name>Quarry</Name>
   <Name locale="de_DE">Steinbruch</Name>
   <Task>Build a quarry.</Task>
@@ -611,7 +612,7 @@
   <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
   <!-- Requirement quest="quest_found_home_base" / -->
   <Rewards>
-    <ResourceReward resource="resource_stone">200</ResourceReward>
+    <ResourceReward resource="resource_stone">250</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_quarry" min_level="1" />
@@ -621,7 +622,7 @@
   <UIMarker>mark_building_option</UIMarker>
 </Subquest>
 
-<Subquest id="quest_build_logger" epic="quest_ressources_epic" advisor="girl" hide_start_dialog="true" tutorial="true">
+<Subquest id="quest_build_logger" epic="epic_ressources" advisor="girl" hide_start_dialog="true" tutorial="true">
   <Name>Logger</Name>
   <Name locale="de_DE">Holzfäller</Name>
   <Task>Build a logger.</Task>
@@ -639,7 +640,7 @@
   <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
   <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_wood">200</ResourceReward>
+    <ResourceReward resource="resource_wood">250</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_logger" min_level="1" />
@@ -648,6 +649,185 @@
   <UIMarker>mark_free_construction_slot</UIMarker>
   <UIMarker>mark_building_option</UIMarker>
 </Subquest>
+
+<!-- EPIC More Ressources -->
+<Quest id="epic__more_ressources" type="epic" advisor="girl">
+  <Name>Ressources</Name>
+  <Name locale="de_DE">Mehr Rohstoffe</Name>
+  <Task>Enter an alliance, or start your own alliance.</Task>
+  <Task locale="de_DE">Baue Steinbruch und Holzfäller auf Level 3.</Task>
+  <Description locale="de_DE">
+    <p>Der Steinbruch und der Holzfäller sind Deine Rohstoffproduzenten.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
+  </Description>
+  <Flavor locale="de_DE">Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.</Flavor>
+  <Flavor locale="en_US">Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.</Flavor>
+  <RewardText locale="de_DE">Baue weitere oder verbessere Steinbruch und Holzfäller, um Deine Produktion zu erhöhen. </RewardText>
+  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
+  <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>epic_ressources_</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">200</ResourceReward>
+    <ResourceReward resource="resource_wood">200</ResourceReward>
+    <ResourceReward resource="resource_cash">2</ResourceReward>
+  </Rewards>
+  <RewardTests>
+  </RewardTests>
+  <PlaceNpcs>10</PlaceNpcs>
+</Quest>
+
+<!--
+<Subquest id="quest_gatherer_lvl3" epic="epic__more_ressources" advisor="girl">
+  <Name>Gatherer Lvel 3</Name>
+  <Name locale="de_DE">Sammler Level 3</Name>
+  <Task>Give an order to a Level 3 Hunter Gatherer.</Task>
+  <Task locale="de_DE">Verbessere Deinen Sammler auf Level 3.</Task>
+  <Description locale="de_DE">
+    <p>Um einen Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Sammler.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>To give an order to a Hunter Gatherer, press on an empty building site and click Hunter Gatherer.</p>
+  </Description>
+  <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
+  <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
+  <RewardText locale="de_DE">Der Sammler sammelt Steine und Holz für Deinen Rohstoffvorrat.</RewardText>
+  <RewardText locale="en_US">The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. </RewardText>
+  <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
+  <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
+  <Rewards>
+    <ResourceReward resource="resource_stone">150</ResourceReward>
+    <ResourceReward resource="resource_wood">150</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_gatherer" min_count="3" />
+  </RewardTests>
+</Subquest>-->
+
+<Subquest id="quest_build_quarry_lvl3" epic="epic__more_ressources" advisor="girl" hide_start_dialog="false">
+  <Name>Quarry</Name>
+  <Name locale="de_DE">Steinbruch Level 3</Name>
+  <Task>Build a quarry.</Task>
+  <Task locale="de_DE">Baue einen Steinbruch Level 3.</Task>
+  <Description locale="de_DE">
+    <p>Der Steinbruch produziert Steine.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>Build a quarry to improve your production.</p>
+  </Description>
+  <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
+  <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
+  <RewardText locale="de_DE">Erweitere den Steinbruch für eine höhere Steinproduktion.</RewardText>
+  <RewardText locale="en_US">Quarries are very effective. Build more quarries!</RewardText>
+  <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
+  <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
+  <!-- Requirement quest="quest_found_home_base" / -->
+  <Rewards>
+    <ResourceReward resource="resource_stone">400</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_quarry" min_level="3" />
+  </RewardTests>
+  <UIMarker>mark_home_settlement</UIMarker>
+  <UIMarker>mark_free_construction_slot</UIMarker>
+  <UIMarker>mark_building_option</UIMarker>
+</Subquest>
+
+<Subquest id="quest_build_logger_lvl3" epic="epic__more_ressources" advisor="girl" hide_start_dialog="true" tutorial="true">
+  <Name>Logger</Name>
+  <Name locale="de_DE">Holzfäller Level 3</Name>
+  <Task>Build a logger.</Task>
+  <Task locale="de_DE">Baue einen Holzfäller Level 3.</Task>
+  <Description locale="de_DE">
+    <p>Holzfäller erhöhen Deine Holzproduktion.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>Upgrade the logger to increase your production.</p>
+  </Description>
+  <Flavor locale="de_DE">Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.</Flavor>
+  <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
+  <RewardText locale="de_DE">Erweitere den Hozfäller für eine höhere Holzproduktion.</RewardText>
+  <RewardText locale="en_US">You will need more loggers.</RewardText>
+  <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
+  <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
+  <Rewards>
+    <ResourceReward resource="resource_wood">400</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_logger" min_level="3" />
+  </RewardTests>
+  <UIMarker>mark_home_settlement</UIMarker>
+  <UIMarker>mark_free_construction_slot</UIMarker>
+  <UIMarker>mark_building_option</UIMarker>
+</Subquest>
+
+<Quest id="quest_build_2quarry_lvl4" type="optional" advisor="girl" hide_start_dialog="false">
+  <Name>Quarry</Name>
+  <Name locale="de_DE">Mehr Steinbrüche</Name>
+  <Task>Build a quarry.</Task>
+  <Task locale="de_DE">Baue zwei Steinbrüche bis Level 4.</Task>
+  <Description locale="de_DE">
+    <p>Weitere Steinbrüche produziert Steine.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>Build a quarry to improve your production.</p>
+  </Description>
+  <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
+  <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
+  <RewardText locale="de_DE">Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.</RewardText>
+  <RewardText locale="en_US">Quarries are very effective. Build more quarries!</RewardText>
+  <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
+  <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>epic__more_ressources</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">407</ResourceReward>
+    <ResourceReward resource="resource_wood">203</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_quarry" min_level="4" min_count="2"/>
+  </RewardTests>
+</Quest>
+
+<Quest id="quest_build_2logger_lvl4" type="optional" advisor="girl" hide_start_dialog="true">
+  <Name>Logger</Name>
+  <Name locale="de_DE">Mehr Holzfäller</Name>
+  <Task>Build a logger.</Task>
+  <Task locale="de_DE">Baue zwei Holzfäller bis Level 4.</Task>
+  <Description locale="de_DE">
+    <p>Weitere Holzfäller erhöhen Deine Holzproduktion.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>Upgrade the logger to increase your production.</p>
+  </Description>
+  <Flavor locale="de_DE">Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.</Flavor>
+  <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
+  <RewardText locale="de_DE">Steigere Deine Holzproduktion durch weitere und verbesserte Holzfäller.</RewardText>
+  <RewardText locale="en_US">You will need more loggers.</RewardText>
+  <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
+  <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>epic__more_ressources</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">203</ResourceReward>
+    <ResourceReward resource="resource_wood">407</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_logger" min_level="4" min_count="2"/>
+  </RewardTests>
+</Quest>
 
 <!-- EPIC ALLIANZ -->
 <Quest id="quest_alliance_epic" type="epic" advisor="chef">
@@ -669,18 +849,16 @@
   <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
-      <FinishQuestTrigger>quest_ressources_epic</FinishQuestTrigger>
+      <FinishQuestTrigger>quest__more_ressources_epic</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
     <ResourceReward resource="resource_cash">2</ResourceReward>
     <UnitReward unit="unit_warrior">20</UnitReward>
-    <ExperienceReward>350</ExperienceReward>
   </Rewards>
   <RewardTests>
     <AllianceTest />
   </RewardTests>
-  <PlaceNpcs>20</PlaceNpcs>
 </Quest>
 
 <Subquest id="quest_build_chiefcottagelvl5" epic="quest_alliance_epic" advisor="girl" tutorial="false">
@@ -701,11 +879,11 @@
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">175</ResourceReward>
-    <ResourceReward resource="resource_wood">175</ResourceReward>
+    <ResourceReward resource="resource_stone">250</ResourceReward>
+    <ResourceReward resource="resource_wood">250</ResourceReward>
   </Rewards>
   <RewardTests>
-    <BuildingTest building="building_chief_cottage" min_level="4" />
+    <BuildingTest building="building_chief_cottage" min_level="5" />
   </RewardTests>
   <UIMarker>mark_home_settlement</UIMarker>
   <UIMarker>mark_upgradable_building</UIMarker>
@@ -818,7 +996,7 @@
   <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
   <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
   <Triggers>
-    <PlayTimeTrigger>300</PlayTimeTrigger><!-- Time in seconds -->
+    <PlayTimeTrigger>600</PlayTimeTrigger><!-- Time in seconds -->
   </Triggers>
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
