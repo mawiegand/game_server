@@ -227,13 +227,8 @@ class Map::Location < ActiveRecord::Base
   end
   
   def valid_movement_target_for_army?(army)
-    if army.location.fortress?
-      # check neighboring fortresses
-      self.region == army.region || (self.fortress? && army.region.node.neighbor_nodes.include?(self.region.node))
-    else
-      # check same region
-      self.region == army.region
-    end
+    # check same region or neighboring fortresses
+    self.region == army.region || (self.fortress? && army.region.node.neighbor_nodes.include?(self.region.node))
   end
   
   
