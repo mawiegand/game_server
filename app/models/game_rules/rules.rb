@@ -165,7 +165,7 @@ class GameRules::Rules
           1 => 100,
             0 => 100,
             2 => 0,
-            3 => 0,
+            3 => 100,
             
         },
       },
@@ -2152,7 +2152,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 22,
+              :id => 21,
               :type => 'building',
 
               :min_level => 1,
@@ -2270,7 +2270,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 22,
+              :id => 21,
               :type => 'building',
 
               :min_level => 10,
@@ -2574,7 +2574,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 22,
+              :id => 21,
               :type => 'building',
 
               :min_level => 100,
@@ -2745,7 +2745,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 22,
+              :id => 21,
               :type => 'building',
 
               :min_level => 100,
@@ -3000,11 +3000,11 @@ class GameRules::Rules
           :costs      => {
             0 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
             1 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            2 => '(GREATER(LEVEL,8)*(EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)))*0.5',
+            2 => '(GREATER(LEVEL,8)*(EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6000+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)))*0.5',
             
           },
 
-          :production_time => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*20+EQUAL(LEVEL,4)*40+EQUAL(LEVEL,5)*300+EQUAL(LEVEL,6)*3600+EQUAL(LEVEL,7)*3600*5+EQUAL(LEVEL,8)*3600*12+(GREATER(LEVEL,8)*FLOOR(3600*12+(LEVEL-8)*3600*4))',
+          :production_time => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*20+EQUAL(LEVEL,4)*40+EQUAL(LEVEL,5)*180+EQUAL(LEVEL,6)*3600+EQUAL(LEVEL,7)*3600*5+EQUAL(LEVEL,8)*3600*12+(GREATER(LEVEL,8)*FLOOR(3600*12+(LEVEL-8)*3600*4))',
           :production  => [
             
           ],
@@ -3058,7 +3058,7 @@ class GameRules::Rules
 
             :command_points => "GREATER(LEVEL,2)+GREATER(LEVEL,5)+GREATER(LEVEL,15)+EQUAL(LEVEL,20)",
 
-            :unlock_building_slots => "MIN((2+GREATER(LEVEL,2)+GREATER(LEVEL,3)*4+GREATER(LEVEL,4)*4+GREATER(LEVEL,5)*4+GREATER(LEVEL,5)*4+GREATER(LEVEL,7)*LEVEL*3),29)+MIN(GREATER(LEVEL,10)*(LEVEL-10),10)
+            :unlock_building_slots => "MIN((1+GREATER(LEVEL,1)+GREATER(LEVEL,2)+GREATER(LEVEL,3)*4+GREATER(LEVEL,4)*4+GREATER(LEVEL,5)*4+GREATER(LEVEL,5)*4+GREATER(LEVEL,7)*LEVEL*3),29)+MIN(GREATER(LEVEL,10)*(LEVEL-10),10)
   ",
 
             :garrison_size_bonus => "1000",
@@ -5279,110 +5279,8 @@ class GameRules::Rules
           },
 
         },              #   END OF Winddichte Hütte
-        {               #   Verrückter Kürschner
-          :id          => 21, 
-          :symbolic_id => :building_furrier_2,
-					:category    => 5,
-          :db_field    => :building_furrier_2,
-          :name        => {
-            
-            :de_DE => "Verrückter Kürschner",
-  
-            :en_US => "Crazy Furrier",
-                
-          },
-          :advisor     => "girl",
-          :flavour     => {
-            
-            :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
-  
-            :de_DE => "<p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Ermöglicht eine schnellere Fellproduktion.</p><p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
-  
-            :en_US => "<p>The copper knife was a gift from the gods. At least, that's what the furriers who use their copper knives to create gorgeous clothes like to believe. Sadly, members of this group suffer from the usual side effects of a life in haute couture - vigorous fanning, a high-pitched and nasal voice, and generally crazy conduct - all in the name of art, of course. They may be mad, but they set a great example for other furriers.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 3.3,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 7,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 17,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            1 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            0 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            2 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            
-          },
-
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75*1.5',
-          :production  => [
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)",
-              },
-            
-          ],
-          :production_bonus  => [
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
-              },
-            
-          ],
-
-          :abilities   => {
-
-          },
-
-        },              #   END OF Verrückter Kürschner
         {               #   Stinkender Stall
-          :id          => 22, 
+          :id          => 21, 
           :symbolic_id => :building_stud,
 					:category    => 5,
           :db_field    => :building_stud,
@@ -5498,6 +5396,108 @@ class GameRules::Rules
           },
 
         },              #   END OF Stinkender Stall
+        {               #   Verrückter Kürschner
+          :id          => 22, 
+          :symbolic_id => :building_furrier_2,
+					:category    => 5,
+          :db_field    => :building_furrier_2,
+          :name        => {
+            
+            :de_DE => "Verrückter Kürschner",
+  
+            :en_US => "Crazy Furrier",
+                
+          },
+          :advisor     => "girl",
+          :flavour     => {
+            
+            :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
+  
+            :de_DE => "<p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ermöglicht eine schnellere Fellproduktion.</p><p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
+  
+            :en_US => "<p>The copper knife was a gift from the gods. At least, that's what the furriers who use their copper knives to create gorgeous clothes like to believe. Sadly, members of this group suffer from the usual side effects of a life in haute couture - vigorous fanning, a high-pitched and nasal voice, and generally crazy conduct - all in the name of art, of course. They may be mad, but they set a great example for other furriers.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 3.3,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 7,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 17,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            1 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            0 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            2 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75*1.5',
+          :production  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
+            
+          ],
+
+          :abilities   => {
+
+          },
+
+        },              #   END OF Verrückter Kürschner
         {               #   Schießanlage
           :id          => 23, 
           :symbolic_id => :building_firing_range_2,
@@ -9713,8 +9713,8 @@ class GameRules::Rules
           },             #   END OF 
           {              #  1
             :id          => 1,
-            :exp         => 2500,
-            :settlement_points   => 0,
+            :exp         => 5000,
+            :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
               
@@ -9726,7 +9726,7 @@ class GameRules::Rules
           },             #   END OF 
           {              #  2
             :id          => 2,
-            :exp         => 5000,
+            :exp         => 9500,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9739,7 +9739,7 @@ class GameRules::Rules
           },             #   END OF 
           {              #  3
             :id          => 3,
-            :exp         => 9500,
+            :exp         => 16250,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9752,7 +9752,7 @@ class GameRules::Rules
           },             #   END OF 
           {              #  4
             :id          => 4,
-            :exp         => 16250,
+            :exp         => 37500,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9765,20 +9765,7 @@ class GameRules::Rules
           },             #   END OF 
           {              #  5
             :id          => 5,
-            :exp         => 25500,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Steinzeitrattenkuschler",
-  
-            :en_US => "Junior-Stoneageratcuddler",
-  
-            },
-          },             #   END OF 
-          {              #  6
-            :id          => 6,
-            :exp         => 37500,
+            :exp         => 71500,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9789,22 +9776,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  7
-            :id          => 7,
-            :exp         => 52750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Hülsenwirblerverwirbler",
-  
-            :en_US => "Junior-Shell-whirlerswirler",
-  
-            },
-          },             #   END OF 
-          {              #  8
-            :id          => 8,
-            :exp         => 71500,
+          {              #  6
+            :id          => 6,
+            :exp         => 121250,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9815,22 +9789,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  9
-            :id          => 9,
-            :exp         => 94250,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Erdferkelentdecker",
-  
-            :en_US => "Junior-Aardvarkdiscoverer",
-  
-            },
-          },             #   END OF 
-          {              #  10
-            :id          => 10,
-            :exp         => 121250,
+          {              #  7
+            :id          => 7,
+            :exp         => 189750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9841,22 +9802,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  11
-            :id          => 11,
-            :exp         => 153000,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Dodoherdenhüter",
-  
-            :en_US => "Junior-Dodoherdkeeper",
-  
-            },
-          },             #   END OF 
-          {              #  12
-            :id          => 12,
-            :exp         => 189750,
+          {              #  8
+            :id          => 8,
+            :exp         => 280000,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9867,22 +9815,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  13
-            :id          => 13,
-            :exp         => 232000,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Säbelzahnkatzenbesänftiger",
-  
-            :en_US => "Junior-Sabre-toothedcatappeaser",
-  
-            },
-          },             #   END OF 
-          {              #  14
-            :id          => 14,
-            :exp         => 280000,
+          {              #  9
+            :id          => 9,
+            :exp         => 395000,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9893,22 +9828,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  15
-            :id          => 15,
-            :exp         => 334250,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Vielfraßversteher",
-  
-            :en_US => "Junior-Wolverinewhisperer",
-  
-            },
-          },             #   END OF 
-          {              #  16
-            :id          => 16,
-            :exp         => 395000,
+          {              #  10
+            :id          => 10,
+            :exp         => 537000,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9919,22 +9841,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  17
-            :id          => 17,
-            :exp         => 462500,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Rothundzähmer",
-  
-            :en_US => "Junior-Dholetamer",
-  
-            },
-          },             #   END OF 
-          {              #  18
-            :id          => 18,
-            :exp         => 537000,
+          {              #  11
+            :id          => 11,
+            :exp         => 708000,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9945,22 +9854,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  19
-            :id          => 19,
-            :exp         => 618750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Mähnenwolfschmuser",
-  
-            :en_US => "Junior-Manedwolfsnuggler",
-  
-            },
-          },             #   END OF 
-          {              #  20
-            :id          => 20,
-            :exp         => 708000,
+          {              #  12
+            :id          => 12,
+            :exp         => 909250,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9971,22 +9867,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  21
-            :id          => 21,
-            :exp         => 804750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Urschweinkrauler",
-  
-            :en_US => "Junior-Primevalpigfondler",
-  
-            },
-          },             #   END OF 
-          {              #  22
-            :id          => 22,
-            :exp         => 909250,
+          {              #  13
+            :id          => 13,
+            :exp         => 1141500,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9997,22 +9880,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  23
-            :id          => 23,
-            :exp         => 1021500,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Auerochsenstreichler",
-  
-            :en_US => "Junior-Aurochspetter",
-  
-            },
-          },             #   END OF 
-          {              #  24
-            :id          => 24,
-            :exp         => 1141500,
+          {              #  14
+            :id          => 14,
+            :exp         => 1404750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10023,22 +9893,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  25
-            :id          => 25,
-            :exp         => 1269250,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Wildpferdflüsterer",
-  
-            :en_US => "Junior-wildhorsewhisperer",
-  
-            },
-          },             #   END OF 
-          {              #  26
-            :id          => 26,
-            :exp         => 1404750,
+          {              #  15
+            :id          => 15,
+            :exp         => 1689250,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10049,22 +9906,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  27
-            :id          => 27,
-            :exp         => 1547750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Höhlenlöwenbeschwichtiger",
-  
-            :en_US => "Junior-Cavelionappeaser",
-  
-            },
-          },             #   END OF 
-          {              #  28
-            :id          => 28,
-            :exp         => 1689250,
+          {              #  16
+            :id          => 16,
+            :exp         => 2020750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10075,22 +9919,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  29
-            :id          => 29,
-            :exp         => 1856000,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Wollnashornknuddler",
-  
-            :en_US => "Junior-Woollyrhinocuddler",
-  
-            },
-          },             #   END OF 
-          {              #  30
-            :id          => 30,
-            :exp         => 2020750,
+          {              #  17
+            :id          => 17,
+            :exp         => 2442750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10101,22 +9932,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  31
-            :id          => 31,
-            :exp         => 2220750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Steppenwisentliebkoser",
-  
-            :en_US => "Junior-Steppewisentcaresser",
-  
-            },
-          },             #   END OF 
-          {              #  32
-            :id          => 32,
-            :exp         => 2442750,
+          {              #  18
+            :id          => 18,
+            :exp         => 2952750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10127,22 +9945,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  33
-            :id          => 33,
-            :exp         => 2686750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Riesenhirschtätschler",
-  
-            :en_US => "Junior-Megalocerospatter",
-  
-            },
-          },             #   END OF 
-          {              #  34
-            :id          => 34,
-            :exp         => 2952750,
+          {              #  19
+            :id          => 19,
+            :exp         => 3550750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10153,22 +9958,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  35
-            :id          => 35,
-            :exp         => 3240750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Säbelzahntigerbändiger",
-  
-            :en_US => "Junior-Sabre-toothedtigertamer",
-  
-            },
-          },             #   END OF 
-          {              #  36
-            :id          => 36,
-            :exp         => 3550750,
+          {              #  20
+            :id          => 20,
+            :exp         => 4236750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10179,22 +9971,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  37
-            :id          => 37,
-            :exp         => 3882750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Brontotherienbeschützer",
-  
-            :en_US => "Junior-Brontotheresguardian",
-  
-            },
-          },             #   END OF 
-          {              #  38
-            :id          => 38,
-            :exp         => 4236750,
+          {              #  21
+            :id          => 21,
+            :exp         => 5010750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10205,22 +9984,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  39
-            :id          => 39,
-            :exp         => 4612750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Wollmammuttreiber",
-  
-            :en_US => "Junior-Woollymammothdriver",
-  
-            },
-          },             #   END OF 
-          {              #  40
-            :id          => 40,
-            :exp         => 5010750,
+          {              #  22
+            :id          => 22,
+            :exp         => 5872750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10231,22 +9997,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  41
-            :id          => 41,
-            :exp         => 5430750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Allosaurusabrichter",
-  
-            :en_US => "Junior-Allosaurustrainer",
-  
-            },
-          },             #   END OF 
-          {              #  42
-            :id          => 42,
-            :exp         => 5872750,
+          {              #  23
+            :id          => 23,
+            :exp         => 6336750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10257,9 +10010,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  43
-            :id          => 43,
-            :exp         => 6336750,
+          {              #  24
+            :id          => 24,
+            :exp         => 7255579,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10270,9 +10023,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  44
-            :id          => 44,
-            :exp         => 7255579,
+          {              #  25
+            :id          => 25,
+            :exp         => 8307638,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10283,9 +10036,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  45
-            :id          => 45,
-            :exp         => 8307638,
+          {              #  26
+            :id          => 26,
+            :exp         => 9512245,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10296,9 +10049,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  46
-            :id          => 46,
-            :exp         => 9512245,
+          {              #  27
+            :id          => 27,
+            :exp         => 10891521,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10309,9 +10062,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  47
-            :id          => 47,
-            :exp         => 10891521,
+          {              #  28
+            :id          => 28,
+            :exp         => 12470791,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10322,9 +10075,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  48
-            :id          => 48,
-            :exp         => 12470791,
+          {              #  29
+            :id          => 29,
+            :exp         => 17500000,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10332,6 +10085,19 @@ class GameRules::Rules
             :de_DE => "Kriegsfürst",
   
             :en_US => "Warlord",
+  
+            },
+          },             #   END OF 
+          {              #  30
+            :id          => 30,
+            :exp         => 25000000,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
+            :de_DE => "Gottgleich",
+  
+            :en_US => "Godlike",
   
             },
           },             #   END OF 

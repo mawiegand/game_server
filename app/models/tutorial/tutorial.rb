@@ -523,7 +523,7 @@ class Tutorial::Tutorial
   
           :type              => :epic,
   
-          :advisor           => :girl,
+          :advisor           => :chef,
           :hide_start_dialog => true,
   
           :tutorial          => true,
@@ -778,9 +778,9 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_barracks
-        {               #   quest_recruit_clubber
+        {               #   quest_recruit_warrior
           :id                => 6,
-          :symbolic_id       => :quest_recruit_clubber,
+          :symbolic_id       => :quest_recruit_warrior,
   
           :type              => :epic,
   
@@ -876,7 +876,7 @@ class Tutorial::Tutorial
 
           :uimarker => ['mark_home_settlement', 'mark_units_button', 'mark_training_dialog_flow', ],
 
-        },              #   END OF quest_recruit_clubber
+        },              #   END OF quest_recruit_warrior
         {               #   quest_settlement_button1
           :id                => 7,
           :symbolic_id       => :quest_settlement_button1,
@@ -940,7 +940,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_recruit_clubber',
+                :finish_quest_trigger => 'quest_recruit_warrior',
               },
 
             ],
@@ -1508,7 +1508,7 @@ class Tutorial::Tutorial
   
           :type              => :sub,
   
-          :advisor           => :girl,
+          :advisor           => :chef,
           :hide_start_dialog => false,
   
           :tutorial          => false,
@@ -1943,12 +1943,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 150,
+                :amount => 200,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 150,
+                :amount => 200,
               },
 
             ],
@@ -2155,8 +2155,104 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_logger_lvl3
-        {               #   epic_alliance
+        {               #   quest_profile
           :id                => 20,
+          :symbolic_id       => :quest_profile,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Name and profile",
+  
+            :de_DE => "Dein Name",
+                
+          },
+          :task => {
+            
+            :en_US => "Change your name.",
+  
+            :de_DE => "Ändere Deinen Namen.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht, wie Du heißt. Bitte sag mir Deinen Namen.
+  ",
+  
+            :en_US => "We've gone through so much together already, but I still don't know who you are! What's your name?
+  ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Drücke dazu auf den Profil-Knopf. Drücke dann auf 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>",
+  
+            :en_US => "<p>Press the profile button, then select Customization. Select Choose Your Name. The first two name changes are free.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Danke. Wir werden noch viel Spaß miteinander haben.",
+  
+            :en_US => "Thanks. I think we're going to have loads of fun together!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Im Profil kannst Du Deinen Fortschritt sehen und Dein Avatar gestalten.",
+  
+            :en_US => "In your profile you can see your progress and make other changes.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic__more_ressources',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :custom_test => {
+              :id => 'test_profile',
+            },
+
+          },          
+
+          :uimarker => ['mark_profile', 'mark_name_change', ],
+
+        },              #   END OF quest_profile
+        {               #   epic_alliance
+          :id                => 21,
           :symbolic_id       => :epic_alliance,
   
           :type              => :epic,
@@ -2174,14 +2270,14 @@ class Tutorial::Tutorial
             
             :en_US => "Alliance",
   
-            :de_DE => "Allianz",
+            :de_DE => "Allianzmitglied",
                 
           },
           :task => {
             
             :en_US => "Enter an alliance, or start your own alliance.",
   
-            :de_DE => "Tritt einer Allianz bei oder gründe Deine eigene Allianz.",
+            :de_DE => "Sei Mitglied einer Allianz.",
                 
           },
           :flavour => {
@@ -2213,7 +2309,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [21, 22, 23, ],
+          :subquests => [22, 23, 24, ],
 
           :triggers => {
             
@@ -2257,7 +2353,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_alliance
         {               #   quest_build_chiefcottagelvl5
-          :id                => 21,
+          :id                => 22,
           :symbolic_id       => :quest_build_chiefcottagelvl5,
   
           :type              => :sub,
@@ -2353,7 +2449,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_campfire
-          :id                => 22,
+          :id                => 23,
           :symbolic_id       => :quest_build_campfire,
   
           :type              => :sub,
@@ -2489,7 +2585,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_campfire
         {               #   quest_alliance
-          :id                => 23,
+          :id                => 24,
           :symbolic_id       => :quest_alliance,
   
           :type              => :sub,
@@ -2540,7 +2636,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.",
+            :de_DE => "Nutze den Allianzknopf um Dir Deine Allianz anzuschauen.",
   
             :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
                 
@@ -2572,7 +2668,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_alliance
         {               #   epic_storage
-          :id                => 24,
+          :id                => 25,
           :symbolic_id       => :epic_storage,
   
           :type              => :epic,
@@ -2629,7 +2725,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [25, ],
+          :subquests => [26, ],
 
           :triggers => {
             
@@ -2667,7 +2763,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_storage
         {               #   quest_build_storage
-          :id                => 25,
+          :id                => 26,
           :symbolic_id       => :quest_build_storage,
   
           :type              => :sub,
@@ -2763,7 +2859,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_storage
         {               #   quest_build_2quarry_lvl4
-          :id                => 26,
+          :id                => 27,
           :symbolic_id       => :quest_build_2quarry_lvl4,
   
           :type              => :optional,
@@ -2800,7 +2896,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Weitere Steinbrüche produziert Steine.</p>",
+            :de_DE => "<p>Weitere Steinbrüche erhöhen Deine Steinproduktion.</p>",
   
             :en_US => "<p>Build a quarry to improve your production.</p>",
                 
@@ -2869,7 +2965,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2quarry_lvl4
         {               #   quest_build_2logger_lvl4
-          :id                => 27,
+          :id                => 28,
           :symbolic_id       => :quest_build_2logger_lvl4,
   
           :type              => :optional,
@@ -2974,8 +3070,114 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_2logger_lvl4
+        {               #   quest_gatherer_lvl10
+          :id                => 29,
+          :symbolic_id       => :quest_gatherer_lvl10,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Gatherer Level 10",
+  
+            :de_DE => "Maximallevel Sammler",
+                
+          },
+          :task => {
+            
+            :en_US => "Give an order to a Level 10 Hunter Gatherer.",
+  
+            :de_DE => "Verbessere Deinen Sammler auf das Maximallevel 10.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?",
+  
+            :en_US => "Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um einen Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Sammler.</p>",
+  
+            :en_US => "<p>To give an order to a Hunter Gatherer, press on an empty building site and click Hunter Gatherer.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?",
+  
+            :en_US => "Hey – that looks much better, don't you think? ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Sammler sammelt Steine und Holz für Deinen Rohstoffvorrat.",
+  
+            :en_US => "The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. ",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 2000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 2000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_gatherer',
+
+                :min_level => 10,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_gatherer_lvl10
         {               #   epic_cottage
-          :id                => 28,
+          :id                => 30,
           :symbolic_id       => :epic_cottage,
   
           :type              => :epic,
@@ -3032,7 +3234,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [29, 30, 31, ],
+          :subquests => [31, 32, 33, ],
 
           :triggers => {
             
@@ -3065,12 +3267,12 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_cottage
         {               #   quest_build_chiefcottagelvl6
-          :id                => 29,
+          :id                => 31,
           :symbolic_id       => :quest_build_chiefcottagelvl6,
   
           :type              => :sub,
   
-          :advisor           => :girl,
+          :advisor           => :chef,
           :hide_start_dialog => false,
   
           :tutorial          => false,
@@ -3153,7 +3355,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl6
         {               #   quest_finish_upgrade
-          :id                => 30,
+          :id                => 32,
           :symbolic_id       => :quest_finish_upgrade,
   
           :type              => :sub,
@@ -3204,7 +3406,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Erhöhe Deine Rohstoffproduktion durch den Bau neuer Jäger und Sammler.",
+            :de_DE => "Erhöhe Deine Rohstoffproduktion durch den Bau neuer Steinbrüche und Holzfäller.",
   
             :en_US => "Boost your raw materials production by building a new Hunter Gatherer.",
                 
@@ -3247,7 +3449,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_finish_upgrade
         {               #   quest_build_cottage
-          :id                => 31,
+          :id                => 33,
           :symbolic_id       => :quest_build_cottage,
   
           :type              => :sub,
@@ -3342,8 +3544,210 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_cottage
+        {               #   quest_build_quarry_lvl10
+          :id                => 34,
+          :symbolic_id       => :quest_build_quarry_lvl10,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Quarry",
+  
+            :de_DE => "Maximallevel Steinbruch",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a quarry level 10.",
+  
+            :de_DE => "Baue einen Steinbruch bis Level 10.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey cool, Du kannst Steinbrüche bauen.",
+  
+            :en_US => "Cool - you can now build quarries.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Weitere Steinbrüche produzieren viel mehr Steine.</p>",
+  
+            :en_US => "<p>Build a quarry to improve your production.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "So viel Stein, wie toll.",
+  
+            :en_US => "Wow – that's a lot of stone. Fantastic!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.",
+  
+            :en_US => "Quarries are very effective. Build more quarries!",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_cottage',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 5000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_quarry',
+
+                :min_level => 10,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_quarry_lvl10
+        {               #   quest_build_logger_lvl10
+          :id                => 35,
+          :symbolic_id       => :quest_build_logger_lvl10,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => true,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Logger",
+  
+            :de_DE => "Maximallevel Holzfäller",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a logger level 10.",
+  
+            :de_DE => "Baue einen Holzfäller bis Level 10.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.",
+  
+            :en_US => "If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Weitere Holzfäller erhöhen Deine Holzproduktion.</p>",
+  
+            :en_US => "<p>Upgrade the logger to increase your production.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Na, das nenne ich mal Holz vor der Hütte!",
+  
+            :en_US => "Wow – look at your wood production. That's massive! ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Steigere Deine Holzproduktion durch weitere und verbesserte Holzfäller.",
+  
+            :en_US => "You will need more loggers.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_cottage',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_wood,
+                :amount => 5000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_logger',
+
+                :min_level => 10,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_logger_lvl10
         {               #   epic_xp
-          :id                => 32,
+          :id                => 36,
           :symbolic_id       => :epic_xp,
   
           :type              => :epic,
@@ -3368,7 +3772,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a storage and start a trade",
   
-            :de_DE => "Baue eine Traingshöhle.",
+            :de_DE => "Baue eine Trainingshöhle.",
                 
           },
           :flavour => {
@@ -3400,7 +3804,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [33, 34, ],
+          :subquests => [37, 38, ],
 
           :triggers => {
             
@@ -3420,7 +3824,7 @@ class Tutorial::Tutorial
               
               {
                 :duration  => 259200,
-                :bonus     => 0.5,
+                :bonus     => 0.1,
               },
 
             ],
@@ -3433,7 +3837,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_xp
         {               #   quest_build_chiefcottagelvl7
-          :id                => 33,
+          :id                => 37,
           :symbolic_id       => :quest_build_chiefcottagelvl7,
   
           :type              => :sub,
@@ -3529,7 +3933,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl7
         {               #   quest_build_training_cave
-          :id                => 34,
+          :id                => 38,
           :symbolic_id       => :quest_build_training_cave,
   
           :type              => :sub,
@@ -3602,7 +4006,7 @@ class Tutorial::Tutorial
 
             ],
 
-            :experience_reward => 5000,
+            :experience_reward => 4500,
 
           },          
 
@@ -3624,8 +4028,107 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_training_cave
+        {               #   quest_fortress
+          :id                => 39,
+          :symbolic_id       => :quest_fortress,
+  
+          :type              => :optional,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Fortress",
+  
+            :de_DE => "Festung erobern",
+                
+          },
+          :task => {
+            
+            :en_US => "Conquer a fortress.",
+  
+            :de_DE => "Erobere eine Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+  
+            :en_US => "We need more settlements. A fortress would be the way to go.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+  
+            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Du hast eine Festung in Deinen Besitz gebracht? Das ist großartig!",
+  
+            :en_US => "You conquered a fortress? That´s great!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
+  
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_xp',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :unit_rewards => [
+
+              {
+                :unit => :unit_warrior,
+                :amount => 30,
+              },
+
+            ],
+
+            :experience_reward => 500,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_fortress',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress
         {               #   epic_fur
-          :id                => 35,
+          :id                => 40,
           :symbolic_id       => :epic_fur,
   
           :type              => :epic,
@@ -3650,7 +4153,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a storage and start a trade",
   
-            :de_DE => "Baue einen Kürschner um Fell zu produzieren.",
+            :de_DE => "Starte die Fellproduktion.",
                 
           },
           :flavour => {
@@ -3682,7 +4185,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [36, 37, ],
+          :subquests => [41, 42, ],
 
           :triggers => {
             
@@ -3718,7 +4221,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_fur
         {               #   quest_build_chiefcottagelvl8
-          :id                => 36,
+          :id                => 41,
           :symbolic_id       => :quest_build_chiefcottagelvl8,
   
           :type              => :sub,
@@ -3816,7 +4319,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl8
         {               #   quest_build_furrier
-          :id                => 37,
+          :id                => 42,
           :symbolic_id       => :quest_build_furrier,
   
           :type              => :sub,
@@ -3867,7 +4370,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Steigere Deine Fellproduktion laufend weiter. Mit dem Besitz von Festungen oder Lagerstätten steigen auch Deine Kosten für die Verteidigung.",
+            :de_DE => "Steigere Deine Fellproduktion um viele Einheiten bauen zu können.",
   
             :en_US => "Increase your fur production so that you can defend your settlements with more armies.",
                 
@@ -3904,9 +4407,425 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_furrier
-        {               #   epic_stud
-          :id                => 38,
-          :symbolic_id       => :epic_stud,
+        {               #   quest_build_2furrierlvl4
+          :id                => 43,
+          :symbolic_id       => :quest_build_2furrierlvl4,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Quarry",
+  
+            :de_DE => "Mehr Kürschner",
+                
+          },
+          :task => {
+            
+            :en_US => "Build two furrier level 4.",
+  
+            :de_DE => "Baue zwei Kürschner bis Level 4.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey cool, Du kannst Steinbrüche bauen.",
+  
+            :en_US => "Cool - you can now build quarries.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Weitere Kürschner produzieren noch mehr Fell..</p>",
+  
+            :en_US => "<p>Build a quarry to improve your production.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "So viel Stein, wie toll.",
+  
+            :en_US => "Wow – that's a lot of stone. Fantastic!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.",
+  
+            :en_US => "Quarries are very effective. Build more quarries!",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_fur',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_furrier',
+
+                :min_level => 4,
+
+                :min_count => 2,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_2furrierlvl4
+        {               #   quest_build_furrier_lvl10
+          :id                => 44,
+          :symbolic_id       => :quest_build_furrier_lvl10,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Furrier Level 10",
+  
+            :de_DE => "Maximallevel Kürschner",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a furrier level 10.",
+  
+            :de_DE => "Baue einen Kürschner bis Level 10.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey cool, Du kannst Steinbrüche bauen.",
+  
+            :en_US => "Cool - you can now build quarries.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mehr Fell ist immer besser.</p>",
+  
+            :en_US => "<p>Build a quarry to improve your production.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "So viel Stein, wie toll.",
+  
+            :en_US => "Wow – that's a lot of stone. Fantastic!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.",
+  
+            :en_US => "Quarries are very effective. Build more quarries!",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_2furrierlvl4',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 2000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_furrier',
+
+                :min_level => 10,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_furrier_lvl10
+        {               #   quest_build_barrackslvl5
+          :id                => 45,
+          :symbolic_id       => :quest_build_barrackslvl5,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Barracks Level 5",
+  
+            :de_DE => "Ausblidungsgelände Level 5",
+                
+          },
+          :task => {
+            
+            :en_US => "Build barracks level 5.",
+  
+            :de_DE => "Verbessere das Ausbildungsgelände auf Level 5.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.",
+  
+            :en_US => "We need a cavalry to defend ourselves against throwers.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p>",
+  
+            :en_US => "<p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.",
+  
+            :en_US => "Muhaha, I don´t like the smell, but the riders know thier business.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Berittene Einheiten können mit Flankenangriffen die gegnerischen Nahkämpfer umgehen und Fernkämpfer direkt angreifen. Zudem sind sie als Reiterarmee schneller als normalen Kämpfer.",
+  
+            :en_US => "A cavalry can flank the melee and attack throwers directly. A riding army is also quicker than normal warriors.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_fur',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 400,
+              },
+
+            ],
+
+            :experience_reward => 200,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_barracks',
+
+                :min_level => 5,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_barrackslvl5
+        {               #   quest_recruit_clubber
+          :id                => 46,
+          :symbolic_id       => :quest_recruit_clubber,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Clubber",
+  
+            :de_DE => "Keulenkrieger",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a warrior.",
+  
+            :de_DE => "Rekrutiere einen Kieselsteinwerfer.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.",
+  
+            :en_US => "What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Gehe in daen Stall, wähle dort in der Rekrutierungsliste gden Kieselsteinwerfer aus.</p>",
+  
+            :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.",
+  
+            :en_US => "Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die ersten Krieger hast Du. Zeit sich die Nachbarschaft anzuschauen.",
+  
+            :en_US => "You can train several units at the same time. Just select the number of units you want.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_barrackslvl5',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :unit_rewards => [
+
+              {
+                :unit => :unit_clubber,
+                :amount => 30,
+              },
+
+            ],
+
+            :experience_reward => 300,
+
+          },          
+
+          :reward_tests => {
+            
+            :training_queue_tests => [
+
+              {
+                :unit => 'unit_clubber',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+          :uimarker => ['mark_home_settlement', 'mark_units_button', 'mark_training_dialog_flow', ],
+
+        },              #   END OF quest_recruit_clubber
+        {               #   epic_fiering_range
+          :id                => 47,
+          :symbolic_id       => :epic_fiering_range,
   
           :type              => :epic,
   
@@ -3921,9 +4840,9 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Fur",
+            :en_US => "Artillery",
   
-            :de_DE => "Fernkämpfer",
+            :de_DE => "Die Fernkämpfer",
                 
           },
           :task => {
@@ -3962,7 +4881,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [39, 40, 41, ],
+          :subquests => [48, 49, 50, ],
 
           :triggers => {
             
@@ -3995,9 +4914,9 @@ class Tutorial::Tutorial
             
           },          
 
-        },              #   END OF epic_stud
+        },              #   END OF epic_fiering_range
         {               #   quest_build_chiefcottagelvl9
-          :id                => 39,
+          :id                => 48,
           :symbolic_id       => :quest_build_chiefcottagelvl9,
   
           :type              => :sub,
@@ -4100,7 +5019,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl9
         {               #   quest_build_stud
-          :id                => 40,
+          :id                => 49,
           :symbolic_id       => :quest_build_stud,
   
           :type              => :sub,
@@ -4116,16 +5035,16 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Smelly barn",
+            :en_US => "Fiering_range",
   
-            :de_DE => "Stinkender Stall",
+            :de_DE => "Der Schießstand",
                 
           },
           :task => {
             
             :en_US => "Build a smelly barn.",
   
-            :de_DE => "Baue einen Stinkenden Stall.",
+            :de_DE => "Baue einen Schießstand.",
                 
           },
           :flavour => {
@@ -4173,7 +5092,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 750,
               },
 
             ],
@@ -4199,7 +5118,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_stud
         {               #   quest_recruit_thrower
-          :id                => 41,
+          :id                => 50,
           :symbolic_id       => :quest_recruit_thrower,
   
           :type              => :sub,
@@ -4217,7 +5136,7 @@ class Tutorial::Tutorial
             
             :en_US => "Cavalry",
   
-            :de_DE => "Die Fernkämpfer",
+            :de_DE => "Kieselsteinwerfer",
                 
           },
           :task => {
@@ -4288,7 +5207,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_recruit_thrower
         {               #   epic_coppersmelter
-          :id                => 42,
+          :id                => 51,
           :symbolic_id       => :epic_coppersmelter,
   
           :type              => :epic,
@@ -4304,16 +5223,16 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Coppersmelter",
+            :en_US => "Copper age",
   
-            :de_DE => "Kupferschmelzer",
+            :de_DE => "Kupferzeit",
                 
           },
           :task => {
             
             :en_US => "Build a storage and start a trade",
   
-            :de_DE => "Baue die Kupferschmelze.",
+            :de_DE => "Entwickle Dich in die Kupferzeit.",
                 
           },
           :flavour => {
@@ -4345,14 +5264,14 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [43, 44, ],
+          :subquests => [52, 53, ],
 
           :triggers => {
             
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'epic_stud',
+                :finish_quest_trigger => 'epic_fiering_range',
               },
 
             ],
@@ -4380,7 +5299,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_coppersmelter
         {               #   quest_build_chiefcottagelvl10
-          :id                => 43,
+          :id                => 52,
           :symbolic_id       => :quest_build_chiefcottagelvl10,
   
           :type              => :sub,
@@ -4483,7 +5402,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl10
         {               #   quest_build_copper_smelter
-          :id                => 44,
+          :id                => 53,
           :symbolic_id       => :quest_build_copper_smelter,
   
           :type              => :sub,
@@ -4584,7 +5503,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_copper_smelter
         {               #   quest_charkills_1
-          :id                => 45,
+          :id                => 54,
           :symbolic_id       => :quest_charkills_1,
   
           :type              => :optional,

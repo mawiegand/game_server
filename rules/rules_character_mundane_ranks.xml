@@ -151,6 +151,7 @@
   <MundaneRank exp="17500000" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Kriegsfürst</Name>
     <Name lang="en_US">Warlord</Name>
+    </MundaneRank>
   <!-- 30 -->
   <MundaneRank exp="25000000" settlementPoints="1" minimumSacredRank="0">
     <Name lang="de_DE">Gottgleich</Name>

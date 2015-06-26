@@ -94,7 +94,7 @@
       <StartResource id="resource_wood">100</StartResource>
       <StartResource id="resource_stone">100</StartResource>
       <StartResource id="resource_fur">0</StartResource>
-      <StartResource id="resource_cash">0</StartResource>
+      <StartResource id="resource_cash">100</StartResource>
     </CharacterCreation>
     <ConstructionSpeedup>
       <SpeedupCost resource="resource_cash" amount="0"  hours="(1.0/60.0)" />
