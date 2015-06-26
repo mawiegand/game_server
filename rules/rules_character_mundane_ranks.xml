@@ -13,7 +13,7 @@
     <Name lang="en_US">Springtailsearcher</Name>
   </MundaneRank>
   <!-- 2 -->
-  <MundaneRank exp="5000" settlementPoints="1" minimumSacredRank="0">
+  <MundaneRank exp="5000" settlementPoints="1000" minimumSacredRank="0">
     <Name lang="de_DE">Altameisenanbeter</Name>
     <Name lang="en_US">Ancientantworshipper</Name>
   </MundaneRank>
