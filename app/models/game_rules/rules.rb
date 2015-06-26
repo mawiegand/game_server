@@ -9702,7 +9702,7 @@ class GameRules::Rules
           {              #  2
             :id          => 2,
             :exp         => 5000,
-            :settlement_points   => 1,
+            :settlement_points   => 1000,
             :minimum_sacred_rank => 0,
             :name        => {
               
