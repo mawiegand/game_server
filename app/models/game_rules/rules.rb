@@ -2949,7 +2949,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die Häuptlingshütte schaltet weitere Bauplätze und neue Gebäude frei.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 2, 6, 16 und 20.</p>",
+            :de_DE => "<p>Die Häuptlingshütte schaltet weitere Bauplätze und neue Gebäude frei.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 3, 6, 16 und 20.</p>",
   
             :en_US => "<p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6, 16 and 20.</p>",
                 
@@ -2998,7 +2998,7 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1250+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
             1 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
             2 => '(GREATER(LEVEL,8)*(EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)))*0.5',
             
@@ -3056,9 +3056,9 @@ class GameRules::Rules
 
             :unlock_garrison => 2,            
 
-            :command_points => "GREATER(LEVEL,1)+GREATER(LEVEL,5)+GREATER(LEVEL,15)+EQUAL(LEVEL,20)",
+            :command_points => "GREATER(LEVEL,2)+GREATER(LEVEL,5)+GREATER(LEVEL,15)+EQUAL(LEVEL,20)",
 
-            :unlock_building_slots => "MIN((2+EQUAL(LEVEL,2)*2+GREATER(LEVEL,2)*LEVEL),29)+MIN(GREATER(LEVEL,10)*(LEVEL-10),10)
+            :unlock_building_slots => "MIN((2+GREATER(LEVEL,2)+GREATER(LEVEL,3)*4+GREATER(LEVEL,4)*4+GREATER(LEVEL,5)*4+GREATER(LEVEL,5)*4+GREATER(LEVEL,7)*LEVEL*3),29)+MIN(GREATER(LEVEL,10)*(LEVEL-10),10)
   ",
 
             :garrison_size_bonus => "1000",
@@ -3090,7 +3090,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Sammelt geringere Mengen Stein und Holz.</p><p>Primitivster aller Steinzeitbewohner. Er jagt und sammelt einfach alles was ihm vor die Flinte - äh Steinschleuder - kommt. Neben vielen völlig unbrauchbaren Sachen finden die Jäger und Sammler alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>",
+            :de_DE => "<p>Sammelt geringere Mengen Stein und Holz.</p><p>Primitivster aller Steinzeitbewohner. Er sammelt einfach alles was ihm vor die Flinte - äh Steinschleuder - kommt. Neben vielen völlig unbrauchbaren Sachen finden die Sammler alles von Ästen und Steinen über Wurzeln.</p>",
   
             :en_US => "<p>The most primitive of all Stone Age folk, the Hunter Gatherer collects all kinds of stuff, from branches and stones to roots, and even a couple of Golden Frogs, if the area is big enough. Basically, he hunts and gathers anything that comes into his sights - er... into the reach of his slingshot. All his treasures are set out neatly on display in his compound. </p><p>Apart from all kinds of useless stuff, hunter gatherers find everything – from branches and stones to roots and, if the area is big enough, even a couple of golden frogs.</p>",
                 
@@ -3161,8 +3161,8 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)',
-            1 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)',
+            0 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+EQUAL(LEVEL,5)*70+EQUAL(LEVEL,6)*150+EQUAL(LEVEL,7)*260+EQUAL(LEVEL,8)*450+EQUAL(LEVEL,9)*750+EQUAL(LEVEL,10)*1200',
+            1 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+EQUAL(LEVEL,5)*70+EQUAL(LEVEL,6)*150+EQUAL(LEVEL,7)*260+EQUAL(LEVEL,8)*450+EQUAL(LEVEL,9)*750+EQUAL(LEVEL,10)*1200',
             
           },
 
@@ -3172,13 +3172,13 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
+                :formula            => "FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40+GREATER(LEVEL,10)*((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
+                :formula            => "FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40+GREATER(LEVEL,10)*((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
               },
             
               {
@@ -3500,6 +3500,7 @@ class GameRules::Rules
           :costs      => {
             0 => 'EQUAL(LEVEL,1)*50+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
             1 => 'EQUAL(LEVEL,1)*25+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5)',
+            2 => '(EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
             
           },
 
@@ -3614,18 +3615,18 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            1 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
             
           },
 
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
+          :production_time => 'EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*(3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
           :production  => [
             
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100)",
+                :formula            => "EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*7+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*16+EQUAL(LEVEL,5)*25+EQUAL(LEVEL,6)*35+EQUAL(LEVEL,7)*48+EQUAL(LEVEL,8)*62+EQUAL(LEVEL,9)*80+EQUAL(LEVEL,10)*100+(GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))*2/3",
               },
             
           ],
@@ -3645,7 +3646,7 @@ class GameRules::Rules
 
           :conversion_option => {
             :building              => :building_quarry_2,
-            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,5)-GREATER(LEVEL,8)", 
           },
 
         },              #   END OF Steinbruch
@@ -3720,18 +3721,18 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            0 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            1 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
             
           },
 
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
+          :production_time => 'EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*(FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
           :production  => [
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100)",
+                :formula            => "EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*7+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*16+EQUAL(LEVEL,5)*25+EQUAL(LEVEL,6)*35+EQUAL(LEVEL,7)*48+EQUAL(LEVEL,8)*62+EQUAL(LEVEL,9)*80+EQUAL(LEVEL,10)*100+(GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))*2/3",
               },
             
           ],
@@ -3751,7 +3752,7 @@ class GameRules::Rules
 
           :conversion_option => {
             :building              => :building_logger_2,
-            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,5)-GREATER(LEVEL,8)", 
           },
 
         },              #   END OF Holzfäller
@@ -3987,120 +3988,8 @@ class GameRules::Rules
           },
 
         },              #   END OF Rohstofflager
-        {               #   Trainingshöhle
-          :id          => 9, 
-          :symbolic_id => :building_training_cave,
-					:category    => 6,
-          :db_field    => :building_training_cave,
-          :name        => {
-            
-            :de_DE => "Trainingshöhle",
-  
-            :en_US => "Training Cave",
-                
-          },
-          :advisor     => "chef",
-          :flavour     => {
-            
-            :de_DE => "<p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p>",
-  
-            :en_US => "<p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Dient als passive Quelle von Erfahrung.</p><p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth, Spiegel, in denen man sich herrlich erschrecken kann, und natürlich die ein oder andere Ratte, die eingefangen werden will.</p>",
-  
-            :en_US => "<p>The Training Cave offers multiple training possibilities to would-be Demigods. Huge stones to lift, an almost endless labyrinth, mirrors that can scare you witless, and of course, a few rats to catch.</p><p>This building can not be torn down.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "LESS(LEVEL,11)*FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5))",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 8,
-
-          :experience_production => '(CEIL((((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))/12.5)*1.5)))+EQUAL(LEVEL,10)',
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 6,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_training_cave',
-              :id => 9,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
-            2 => 'GREATER(LEVEL,3)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2.25*1.5+0.5))',
-            
-          },
-
-          :production_time => '(EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3))',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-          },
-
-        },              #   END OF Trainingshöhle
         {               #   Kleine Hütte
-          :id          => 10, 
+          :id          => 9, 
           :symbolic_id => :building_cottage,
 					:category    => 5,
           :db_field    => :building_cottage,
@@ -4148,7 +4037,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 7,
+              :min_level => 6,
 
             },
 
@@ -4205,6 +4094,118 @@ class GameRules::Rules
           },
 
         },              #   END OF Kleine Hütte
+        {               #   Trainingshöhle
+          :id          => 10, 
+          :symbolic_id => :building_training_cave,
+					:category    => 6,
+          :db_field    => :building_training_cave,
+          :name        => {
+            
+            :de_DE => "Trainingshöhle",
+  
+            :en_US => "Training Cave",
+                
+          },
+          :advisor     => "chef",
+          :flavour     => {
+            
+            :de_DE => "<p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p>",
+  
+            :en_US => "<p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Dient als passive Quelle von Erfahrung.</p><p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth, Spiegel, in denen man sich herrlich erschrecken kann, und natürlich die ein oder andere Ratte, die eingefangen werden will.</p>",
+  
+            :en_US => "<p>The Training Cave offers multiple training possibilities to would-be Demigods. Huge stones to lift, an almost endless labyrinth, mirrors that can scare you witless, and of course, a few rats to catch.</p><p>This building can not be torn down.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "LESS(LEVEL,11)*FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5))",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 8,
+
+          :experience_production => '(CEIL((((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))/12.5)*1.5)))+EQUAL(LEVEL,10)',
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 7,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_training_cave',
+              :id => 10,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
+            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
+            2 => 'GREATER(LEVEL,3)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2.25*1.5+0.5))',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3))',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+          },
+
+        },              #   END OF Trainingshöhle
         {               #   Kürschner
           :id          => 11, 
           :symbolic_id => :building_furrier,
@@ -4276,19 +4277,19 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            1 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            2 => 'EQUAL(LEVEL,3)*25+EQUAL(LEVEL,4)*40+EQUAL(LEVEL,5)*75+EQUAL(LEVEL,6)*125+EQUAL(LEVEL,7)*210+EQUAL(LEVEL,8)*350+EQUAL(LEVEL,9)*600+EQUAL(LEVEL,10)*1025+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
             
           },
 
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
+          :production_time => 'EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+(GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
           :production  => [
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "GREATER(LEVEl,1)*(EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))",
+                :formula            => "EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*7+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*16+EQUAL(LEVEL,5)*25+EQUAL(LEVEL,6)*35+EQUAL(LEVEL,7)*48+EQUAL(LEVEL,8)*62+EQUAL(LEVEL,9)*80+EQUAL(LEVEL,10)*100+(GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))*2/3",
               },
             
           ],
@@ -4308,7 +4309,7 @@ class GameRules::Rules
 
           :conversion_option => {
             :building              => :building_furrier_2,
-            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,5)-GREATER(LEVEL,8)", 
           },
 
         },              #   END OF Kürschner
@@ -4385,6 +4386,7 @@ class GameRules::Rules
           :costs      => {
             0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)',
             1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)',
+            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))',
             
           },
 
@@ -4699,6 +4701,7 @@ class GameRules::Rules
           :costs      => {
             0 => '(EQUAL(LEVEL,1)*50+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))*1.5',
             1 => '(EQUAL(LEVEL,1)*25+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5))*1.5',
+            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))*1.5',
             3 => '2*MAX(LEVEL-19,0)',
             
           },
@@ -5451,6 +5454,7 @@ class GameRules::Rules
           :costs      => {
             0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)',
             1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)',
+            2 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
             
           },
 
@@ -5565,6 +5569,7 @@ class GameRules::Rules
           :costs      => {
             0 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)*1.5)',
             1 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)*1.5)',
+            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))*1.5',
             3 => '2*MAX(LEVEL-19,0)',
             
           },
@@ -5931,6 +5936,7 @@ class GameRules::Rules
           :costs      => {
             0 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)*1.5)',
             1 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)*1.5)',
+            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))*1.5',
             
           },
 
