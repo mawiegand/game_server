@@ -129,7 +129,7 @@ class Tutorial::Tutorial
             
             :en_US => "Give an order to a Level 1 Hunter Gatherer.",
   
-            :de_DE => "Baue einen Sammler.",
+            :de_DE => "Willkommen Halbgott! Baue einen Sammler.",
                 
           },
           :flavour => {
@@ -155,7 +155,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Der Sammler sammelt Steine und Holz für Deinen Rohstoffvorrat.",
+            :de_DE => "Der Sammler sammelt Steine und Holz für Deinen Rohstoffvorrat. Als nächstes solltest Du Die Häuptlingshütte ausbauen.",
   
             :en_US => "The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. ",
                 
@@ -1832,7 +1832,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Baue weitere oder verbessere Steinbruch und Holzfäller, um Deine Produktion zu erhöhen. ",
+            :de_DE => "Du solltest Deine Rohstoffproduktion laufend zu erhöhen.",
   
             :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
                 
@@ -2155,104 +2155,8 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_logger_lvl3
-        {               #   quest_profile
-          :id                => 20,
-          :symbolic_id       => :quest_profile,
-  
-          :type              => :optional,
-  
-          :advisor           => :girl,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Name and profile",
-  
-            :de_DE => "Dein Name",
-                
-          },
-          :task => {
-            
-            :en_US => "Change your name.",
-  
-            :de_DE => "Ändere Deinen Namen.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht, wie Du heißt. Bitte sag mir Deinen Namen.
-  ",
-  
-            :en_US => "We've gone through so much together already, but I still don't know who you are! What's your name?
-  ",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Drücke dazu auf den Profil-Knopf. Drücke dann auf 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>",
-  
-            :en_US => "<p>Press the profile button, then select Customization. Select Choose Your Name. The first two name changes are free.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Danke. Wir werden noch viel Spaß miteinander haben.",
-  
-            :en_US => "Thanks. I think we're going to have loads of fun together!",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Im Profil kannst Du Deinen Fortschritt sehen und Dein Avatar gestalten.",
-  
-            :en_US => "In your profile you can see your progress and make other changes.",
-                
-          },
-
-          :triggers => {
-            
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'epic__more_ressources',
-              },
-
-            ],
-  
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :custom_test => {
-              :id => 'test_profile',
-            },
-
-          },          
-
-          :uimarker => ['mark_profile', 'mark_name_change', ],
-
-        },              #   END OF quest_profile
         {               #   epic_alliance
-          :id                => 21,
+          :id                => 20,
           :symbolic_id       => :epic_alliance,
   
           :type              => :epic,
@@ -2270,14 +2174,14 @@ class Tutorial::Tutorial
             
             :en_US => "Alliance",
   
-            :de_DE => "Allianzmitglied",
+            :de_DE => "Mitglied einer Allianz",
                 
           },
           :task => {
             
             :en_US => "Enter an alliance, or start your own alliance.",
   
-            :de_DE => "Sei Mitglied einer Allianz.",
+            :de_DE => "Gründe eine oder trete einer Allainz bei.",
                 
           },
           :flavour => {
@@ -2309,7 +2213,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [22, 23, 24, ],
+          :subquests => [21, 22, 23, ],
 
           :triggers => {
             
@@ -2353,7 +2257,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_alliance
         {               #   quest_build_chiefcottagelvl5
-          :id                => 22,
+          :id                => 21,
           :symbolic_id       => :quest_build_chiefcottagelvl5,
   
           :type              => :sub,
@@ -2449,7 +2353,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl5
         {               #   quest_build_campfire
-          :id                => 23,
+          :id                => 22,
           :symbolic_id       => :quest_build_campfire,
   
           :type              => :sub,
@@ -2585,7 +2489,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_campfire
         {               #   quest_alliance
-          :id                => 24,
+          :id                => 23,
           :symbolic_id       => :quest_alliance,
   
           :type              => :sub,
@@ -2668,7 +2572,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_alliance
         {               #   epic_storage
-          :id                => 25,
+          :id                => 24,
           :symbolic_id       => :epic_storage,
   
           :type              => :epic,
@@ -2725,7 +2629,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [26, ],
+          :subquests => [25, ],
 
           :triggers => {
             
@@ -2763,7 +2667,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_storage
         {               #   quest_build_storage
-          :id                => 26,
+          :id                => 25,
           :symbolic_id       => :quest_build_storage,
   
           :type              => :sub,
@@ -2858,8 +2762,2096 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_storage
-        {               #   quest_build_2quarry_lvl4
+        {               #   epic_cottage
+          :id                => 26,
+          :symbolic_id       => :epic_cottage,
+  
+          :type              => :epic,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Cottage",
+  
+            :de_DE => "Erhöhe die Baugeschwindigkeit",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a storage and start a trade",
+  
+            :de_DE => "Baue eine Kleine Hütte.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
+  
+            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+  
+            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Je höher die Baugeschwindigkeit, desto kürzer die Bauzeiten aller Gebäude.",
+  
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Kleinen Hütten verkürzen die Bauzeit. Du kannst mehrere bauen.",
+  
+            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
+                
+          },
+
+          :subquests => [27, 28, 29, ],
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_storage',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :construction_bonus_rewards => [
+              
+              {
+                :duration  => 266400,
+                :bonus     => 0.25,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+          },          
+
+        },              #   END OF epic_cottage
+        {               #   quest_build_chiefcottagelvl6
           :id                => 27,
+          :symbolic_id       => :quest_build_chiefcottagelvl6,
+  
+          :type              => :sub,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "An even bigger chieftain's hut",
+  
+            :de_DE => "Häuptlingshütte Level 6",
+                
+          },
+          :task => {
+            
+            :en_US => "Upgrade your chieftan's hut to level 6",
+  
+            :de_DE => "Verbessere die Häuptlingshütte auf Level 6.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+  
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+  
+            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
+  
+            :en_US => "Great! There are now some more building slots available and you can build a small hut.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
+  
+            :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 3,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :construction_queue_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+                :min_count => 1,
+                :min_level => 6,
+              },
+
+            ],
+
+          },          
+
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
+
+        },              #   END OF quest_build_chiefcottagelvl6
+        {               #   quest_finish_upgrade
+          :id                => 28,
+          :symbolic_id       => :quest_finish_upgrade,
+  
+          :type              => :sub,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Finish upgrade",
+  
+            :de_DE => "Ausbau beenden",
+                
+          },
+          :task => {
+            
+            :en_US => "Finish the upgrade of the chieftan's hut.",
+  
+            :de_DE => "Beende den Ausbau der Häuptlingshütte.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Mit ein paar Kröten lässt sich so einiges bewirken.",
+  
+            :en_US => "With a few golden frogs you can get quite a bit done.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</p>",
+  
+            :en_US => "<p>Use these Golden Frogs to finish the upgrade right now! Press the button marked 'Hurry!' to speed the building process up.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.",
+  
+            :en_US => "Isn't it great how much your settlement is growing? I've even managed to persuade the boss to give you something from his huge store of resources.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Erhöhe Deine Rohstoffproduktion durch den Bau neuer Steinbrüche und Holzfäller.",
+  
+            :en_US => "Boost your raw materials production by building a new Hunter Gatherer.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+
+                :min_level => 6,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_finish_upgrade
+        {               #   quest_build_cottage
+          :id                => 29,
+          :symbolic_id       => :quest_build_cottage,
+  
+          :type              => :sub,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "The small huts",
+  
+            :de_DE => "Die kleinen Hütten",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a small hut.",
+  
+            :de_DE => "Baue eine Kleine Hütte.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Diese kleinen Hütten sind wirklich nützlich. Mehr Einwohner bedeuten auch mehr helfende Hände.",
+  
+            :en_US => "Did you know that you can give your workers two orders at the same time? They can only work on one of them, but they'll keep the other order in mind. Why don't you try it? The happier your workers are, the faster they'll build things for you.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Kleine Hütten verkürzen die Bauzeit von Gebäuden. Du kannst mehrere bauen, um die Bauzeit deutlich zu senken.</p>",
+  
+            :en_US => "<p>Having small huts reduces the time it takes to construct other buildings.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.",
+  
+            :en_US => "Well done! Your workers are happy and they're building things faster because of it.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Kleine Hütten verringern die Bauzeit aller Ausbauten.",
+  
+            :en_US => "choose a Hunter Gatherer. A window will open showing the current status of your development, including the next upgrade level. Press Upgrade to get started.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 225,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 225,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_cottage',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
+
+        },              #   END OF quest_build_cottage
+        {               #   epic_xp
+          :id                => 30,
+          :symbolic_id       => :epic_xp,
+  
+          :type              => :epic,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Experience",
+  
+            :de_DE => "Erfahrung",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a storage and start a trade",
+  
+            :de_DE => "Baue eine Trainingshöhle.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
+  
+            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+  
+            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Erfahrung erhälst Du in der Trainingshöhle, für Ausbauten und vor allem für Kämpfe.",
+  
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
+  
+            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
+                
+          },
+
+          :subquests => [31, 32, ],
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_cottage',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :experience_production_bonus_rewards => [
+              
+              {
+                :duration  => 259200,
+                :bonus     => 0.1,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+          },          
+
+        },              #   END OF epic_xp
+        {               #   quest_build_chiefcottagelvl7
+          :id                => 31,
+          :symbolic_id       => :quest_build_chiefcottagelvl7,
+  
+          :type              => :sub,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "An even bigger chieftain's hut",
+  
+            :de_DE => "Häuptlingshütte Level 7",
+                
+          },
+          :task => {
+            
+            :en_US => "Upgrade your chieftan's hut to level 7",
+  
+            :de_DE => "Verbessere die Häuptlingshütte auf Level 7.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+  
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+  
+            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
+  
+            :en_US => "Great! There are now some more building slots available and you can build a small hut.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
+  
+            :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1500,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+
+                :min_level => 7,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
+
+        },              #   END OF quest_build_chiefcottagelvl7
+        {               #   quest_build_training_cave
+          :id                => 32,
+          :symbolic_id       => :quest_build_training_cave,
+  
+          :type              => :sub,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Training cave",
+  
+            :de_DE => "Trainingshöhle",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a training cave.",
+  
+            :de_DE => "Baue eine Trainingshöhle.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey Halbgott, sitz da nicht so faul rum. Du musst Deinen Armeen als Vorbild dienen, dafür solltest Du etwas trainieren.",
+  
+            :en_US => "Hey Demigod, don't get bored! You need to inspire your armies to be like you, so make sure you  use your training cave to exercise!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Trainingshöhle kannst Du ungestört trainieren und Erfahrung sammeln.</p>",
+  
+            :en_US => "<p>It takes time to execute building orders, but the work will continue while you're away if you leave the game.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ein - zwei, eins - zwei, keine Müdigkeit vortäuschen!",
+  
+            :en_US => "One and two, one and two! Come on, this is fun!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Trainingshöhle kannst Du ungestört trainieren und Erfahrung sammeln",
+  
+            :en_US => "You can do your workout in the training cave without any interruptions.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 120,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 120,
+              },
+
+            ],
+
+            :experience_reward => 4500,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_training_cave',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_training_cave
+        {               #   epic_fur
+          :id                => 33,
+          :symbolic_id       => :epic_fur,
+  
+          :type              => :epic,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Fur",
+  
+            :de_DE => "Fell",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a storage and start a trade",
+  
+            :de_DE => "Starte die Fellproduktion.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
+  
+            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+  
+            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Fell ist der wichtigste Rohstoff zur Produktion von Einheiten..",
+  
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
+  
+            :en_US => "Baue mehr und verbesserte Kürschner. Deine Armee wird es dir danken!",
+                
+          },
+
+          :subquests => [34, 35, ],
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_xp',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :experience_reward => 250,
+
+            :production_bonus_rewards => [
+              
+              {
+                :resource    => :resource_fur,
+                :duration    => 259200,
+                :bonus       => 0.3,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+          },          
+
+        },              #   END OF epic_fur
+        {               #   quest_build_chiefcottagelvl8
+          :id                => 34,
+          :symbolic_id       => :quest_build_chiefcottagelvl8,
+  
+          :type              => :sub,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "An even bigger chieftain's hut",
+  
+            :de_DE => "Häuptlingshütte Level 8",
+                
+          },
+          :task => {
+            
+            :en_US => "Upgrade your chieftan's hut to level 8",
+  
+            :de_DE => "Verbessere die Häuptlingshütte auf Level 8.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+  
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+  
+            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
+  
+            :en_US => "Great! There are now some more building slots available and you can build a small hut.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
+  
+            :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 10000,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+
+                :min_level => 8,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
+
+        },              #   END OF quest_build_chiefcottagelvl8
+        {               #   quest_build_furrier
+          :id                => 35,
+          :symbolic_id       => :quest_build_furrier,
+  
+          :type              => :sub,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Furrier",
+  
+            :de_DE => "Der Kürschner",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a furrier.",
+  
+            :de_DE => "Baue einen Kürschner.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Chef will die Felle für die Armee Rekrutierung, aber für mich fällt doch bestimmt auch was schönes ab, oder?",
+  
+            :en_US => "The chief wants an army, but I'd just like some nice new clothes.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Eine hohe Fellproduktion ist die Grundlage jeder größeren Armee. In den Kämpfen werden immer mal wieder Armeen aufgerieben, die gilt es nachzubauen.</p>",
+  
+            :en_US => "<p>You need good fur production if you want to recruit an impressive army.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Fell wird vor allem für den Aufbau einer schlagkräftigen Armee benötigt.",
+  
+            :en_US => "Nice! Now you can build a new army.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Steigere Deine Fellproduktion um viele Einheiten bauen zu können.",
+  
+            :en_US => "Increase your fur production so that you can defend your settlements with more armies.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_furrier',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_furrier
+        {               #   epic_firing_range
+          :id                => 36,
+          :symbolic_id       => :epic_firing_range,
+  
+          :type              => :epic,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Artillery",
+  
+            :de_DE => "Die Fernkämpfer",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a storage and start a trade",
+  
+            :de_DE => "Rekrutiere Deinen ersten Fernkämpfer.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
+  
+            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+  
+            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Fell ist der wichtigste Rohstoff zur Produktion von Einheiten..",
+  
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Fernkämpfer könne großen Schaden verursachen, sind aber anfällig im Nahkampf.",
+  
+            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
+                
+          },
+
+          :subquests => [37, 38, 39, ],
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_fur',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+            ],
+
+            :experience_reward => 500,
+
+          },          
+
+          :reward_tests => {
+            
+          },          
+
+        },              #   END OF epic_firing_range
+        {               #   quest_build_chiefcottagelvl9
+          :id                => 37,
+          :symbolic_id       => :quest_build_chiefcottagelvl9,
+  
+          :type              => :sub,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "An even bigger chieftain's hut",
+  
+            :de_DE => "Häuptlingshütte Level 9",
+                
+          },
+          :task => {
+            
+            :en_US => "Upgrade your chieftan's hut to level 9",
+  
+            :de_DE => "Verbessere die Häuptlingshütte auf Level 9.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+  
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+  
+            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
+  
+            :en_US => "Great! There are now some more building slots available and you can build a small hut.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
+  
+            :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 1000,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+
+                :min_level => 9,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_chiefcottagelvl9
+        {               #   quest_build_firing_range
+          :id                => 38,
+          :symbolic_id       => :quest_build_firing_range,
+  
+          :type              => :sub,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Firing_range",
+  
+            :de_DE => "Der Schießstand",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a smelly barn.",
+  
+            :de_DE => "Baue einen Schießstand.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.",
+  
+            :en_US => "We need a cavalry to defend ourselves against throwers.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p>",
+  
+            :en_US => "<p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.",
+  
+            :en_US => "Muhaha, I don´t like the smell, but the riders know thier business.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Ein höherer oder mehrere Schießstände beschleunigen die Rekrutierung von Fernkämpfern.",
+  
+            :en_US => "A cavalry can flank the melee and attack throwers directly. A riding army is also quicker than normal warriors.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_firing_range',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_firing_range
+        {               #   quest_recruit_thrower
+          :id                => 39,
+          :symbolic_id       => :quest_recruit_thrower,
+  
+          :type              => :sub,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Thrower",
+  
+            :de_DE => "Kieselsteinwerfer",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a warrior.",
+  
+            :de_DE => "Rekrutiere einen Kieselsteinwerfer.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.",
+  
+            :en_US => "What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Gehe in daen Stall, wähle dort in der Rekrutierungsliste gden Kieselsteinwerfer aus.</p>",
+  
+            :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.",
+  
+            :en_US => "Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Fernkämpfer sollten immer von Nahkämpfern geschützt werden.",
+  
+            :en_US => "You can train several units at the same time. Just select the number of units you want.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 10000,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_thrower,
+                :amount => 30,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+          },          
+
+          :reward_tests => {
+            
+            :training_queue_tests => [
+
+              {
+                :unit => 'unit_thrower',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_recruit_thrower
+        {               #   epic_coppersmelter
+          :id                => 40,
+          :symbolic_id       => :epic_coppersmelter,
+  
+          :type              => :epic,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Copper age",
+  
+            :de_DE => "Kupferzeit",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a storage and start a trade",
+  
+            :de_DE => "Entwickle Dich in die Kupferzeit.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
+  
+            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+  
+            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Fell ist der wichtigste Rohstoff zur Produktion von Einheiten..",
+  
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
+  
+            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
+                
+          },
+
+          :subquests => [41, 42, ],
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_firing_range',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 3,
+              },
+
+            ],
+
+            :experience_reward => 1000,
+
+          },          
+
+          :reward_tests => {
+            
+          },          
+
+        },              #   END OF epic_coppersmelter
+        {               #   quest_build_chiefcottagelvl10
+          :id                => 41,
+          :symbolic_id       => :quest_build_chiefcottagelvl10,
+  
+          :type              => :sub,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "An even bigger chieftain's hut",
+  
+            :de_DE => "Häuptlingshütte Level 10",
+                
+          },
+          :task => {
+            
+            :en_US => "Upgrade your chieftan's hut to level 10",
+  
+            :de_DE => "Verbessere die Häuptlingshütte auf Level 10.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+  
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+  
+            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
+  
+            :en_US => "Great! There are now some more building slots available and you can build a small hut.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
+  
+            :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 4000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 4000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2500,
+              },
+
+            ],
+
+            :experience_reward => 500,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_chief_cottage',
+
+                :min_level => 10,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_chiefcottagelvl10
+        {               #   quest_build_copper_smelter
+          :id                => 42,
+          :symbolic_id       => :quest_build_copper_smelter,
+  
+          :type              => :sub,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Copper smelter",
+  
+            :de_DE => "Kupferschmelze",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a copper smelter.",
+  
+            :de_DE => "Baue eine Kupferschmelze.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "In der Kupferzeit stehen Dir neue Gebäude und verbesserte Versionen bereits bekannter Gebäude zur Verfügung.",
+  
+            :en_US => "In the Copper Age, you can create new buildings as well as improved versions of the buildings you already know.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Kupferschmelze ist ein kleines Gebäude für einen kleinen Bauplatz, sie ermöglicht Dir den Bau der Gebäude der Kupferzeit.</p>",
+  
+            :en_US => "<p>A copper smelter can be created in a small building slot. It gives you acces to buildings from the Copper Age.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Wow, eine neues Zeitalter! So viele Möglichkeiten.",
+  
+            :en_US => "Wow, a new age! So many opportunities! ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Sollen wir die Steinzeit verlassen und in die Kupferzeit fortschreiten?",
+  
+            :en_US => "So, should we leave the Stone Age and move forward to the Copper Age?",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+            ],
+
+            :experience_reward => 1500,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_copper_smelter',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_copper_smelter
+        {               #   epic_encampment
+          :id                => 43,
+          :symbolic_id       => :epic_encampment,
+  
+          :type              => :epic,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Encampment",
+  
+            :de_DE => "Lagerstätte gründen",
+                
+          },
+          :task => {
+            
+            :en_US => "Found a encampment",
+  
+            :de_DE => "Gründe eine Lagerstätte.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
+  
+            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+  
+            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Fell ist der wichtigste Rohstoff zur Produktion von Einheiten..",
+  
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
+  
+            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
+                
+          },
+
+          :subquests => [44, 45, 46, ],
+
+          :triggers => {
+            
+            :mundane_rank_trigger => 2,
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+            ],
+
+            :experience_reward => 1000,
+
+          },          
+
+          :reward_tests => {
+            
+          },          
+
+        },              #   END OF epic_encampment
+        {               #   quest_build_campfirelvl10
+          :id                => 44,
+          :symbolic_id       => :quest_build_campfirelvl10,
+  
+          :type              => :sub,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Campfire Level 10",
+  
+            :de_DE => "Lagerfeuer Level 10",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a campfire level 10.",
+  
+            :de_DE => "Vernessere das Lagerfeuer auf Level 10.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?",
+  
+            :en_US => "Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think?
+  ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Lagerfeuer werden benötigt, um Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>",
+  
+            :en_US => "<p>Campfires are needed to start or enter alliances. They're also where little chieftans are recruited.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ach, wie das Feuer knistert. So schön warm.",
+  
+            :en_US => "Oh, listen to the fire crackling! Lovely warm flames!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen eine Allianz aufzubauen.",
+  
+            :en_US => "Try to contact your neighbors and form an alliance with them.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1000,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_campfire',
+
+                :min_level => 10,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_campfirelvl10
+        {               #   quest_little_chief
+          :id                => 45,
+          :symbolic_id       => :quest_little_chief,
+  
+          :type              => :sub,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Little Chief",
+  
+            :de_DE => "Der Kleine Chef",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a warrior.",
+  
+            :de_DE => "Rekrutiere einen Kleinen Chef",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.",
+  
+            :en_US => "What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Bild am Lagerfeuer einen Kleinen Chef aus.</p>",
+  
+            :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.",
+  
+            :en_US => "Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die ersten Krieger hast Du. Zeit sich die Nachbarschaft anzuschauen.",
+  
+            :en_US => "You can train several units at the same time. Just select the number of units you want.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+            ],
+
+            :experience_reward => 500,
+
+          },          
+
+          :reward_tests => {
+            
+            :training_queue_tests => [
+
+              {
+                :unit => 'unit_little_chief',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_little_chief
+        {               #   quest_outpost
+          :id                => 46,
+          :symbolic_id       => :quest_outpost,
+  
+          :type              => :sub,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Encampment",
+  
+            :de_DE => "Lagerstätte",
+                
+          },
+          :task => {
+            
+            :en_US => "Start an encampment.",
+  
+            :de_DE => "Gründe eine Lagerstätte.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Wie? Nur eine Siedlung? Du musst Dich mehr ausbreiten. Gründe eine Lagerstätte, aber flott! Dann findet sich bei mir vielleicht auch etwas, das ich Dir überlassen kann.",
+  
+            :en_US => "What? Only one settlement? You've got to spread out a bit. Start another settlement, and quick! Then I might find something lying around that I could let you have.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst Du das Lagerfeuer auf Level 10 ausgebaut haben, um dort einen Kleinen Häuptling auszu bilden. Mit dem Kleinen Häuptling musst Du Deine Armee zu einem freien Siedlungsort bewegen.</p><p>Du kannst allerdings nur eine Lagerstätte pro Region haben und benötigst für die Gründung einer Siedlung einen freien Siedlungspunkt.</p>",
+  
+            :en_US => "<p>To start an encampment you need to train a little chieftan at campfire Level 10 and move both him and an army to a free field. You can only have one encampment per region and you'll need a free settlement point.</p><p>But you can only have one encampment per region, and you need a free settlement point.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen.",
+  
+            :en_US => "You've started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Lagerstätten können jederzeit von anderen Halbgöttern erobert werden. Als möglicher Schutz dient der Ritualstein.",
+  
+            :en_US => "Camps can be taken over be other demigods. You can protect the camp by building an altar.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+            ],
+
+            :experience_reward => 1000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_tests => [
+
+              {
+                :type => 'settlement_outpost',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_outpost
+        {               #   quest_profile
+          :id                => 47,
+          :symbolic_id       => :quest_profile,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Name and profile",
+  
+            :de_DE => "Dein Name",
+                
+          },
+          :task => {
+            
+            :en_US => "Change your name.",
+  
+            :de_DE => "Ändere Deinen Namen.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht, wie Du heißt. Bitte sag mir Deinen Namen.
+  ",
+  
+            :en_US => "We've gone through so much together already, but I still don't know who you are! What's your name?
+  ",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Drücke dazu auf den Profil-Knopf. Drücke dann auf 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>",
+  
+            :en_US => "<p>Press the profile button, then select Customization. Select Choose Your Name. The first two name changes are free.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Danke. Wir werden noch viel Spaß miteinander haben.",
+  
+            :en_US => "Thanks. I think we're going to have loads of fun together!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Im Profil kannst Du Deinen Fortschritt sehen und Dein Avatar gestalten.",
+  
+            :en_US => "In your profile you can see your progress and make other changes.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic__more_ressources',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :custom_test => {
+              :id => 'test_profile',
+            },
+
+          },          
+
+          :uimarker => ['mark_profile', 'mark_name_change', ],
+
+        },              #   END OF quest_profile
+        {               #   quest_build_2quarry_lvl4
+          :id                => 48,
           :symbolic_id       => :quest_build_2quarry_lvl4,
   
           :type              => :optional,
@@ -2965,7 +4957,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2quarry_lvl4
         {               #   quest_build_2logger_lvl4
-          :id                => 28,
+          :id                => 49,
           :symbolic_id       => :quest_build_2logger_lvl4,
   
           :type              => :optional,
@@ -3071,7 +5063,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2logger_lvl4
         {               #   quest_gatherer_lvl10
-          :id                => 29,
+          :id                => 50,
           :symbolic_id       => :quest_gatherer_lvl10,
   
           :type              => :optional,
@@ -3133,7 +5125,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
+                :finish_quest_trigger => 'quest_build_2logger_lvl4',
               },
 
             ],
@@ -3176,376 +5168,8 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_gatherer_lvl10
-        {               #   epic_cottage
-          :id                => 30,
-          :symbolic_id       => :epic_cottage,
-  
-          :type              => :epic,
-  
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Cottage",
-  
-            :de_DE => "Erhöhe die Baugeschwindigkeit",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a storage and start a trade",
-  
-            :de_DE => "Baue eine Kleine Hütte.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
-  
-            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
-  
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Je höher die Baugeschwindigkeit, desto kürzer die Bauzeiten aller Gebäude.",
-  
-            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Die Kleinen Hütten verkürzen die Bauzeit. Du kannst mehrere bauen.",
-  
-            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
-                
-          },
-
-          :subquests => [31, 32, 33, ],
-
-          :triggers => {
-            
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'epic_storage',
-              },
-
-            ],
-  
-          },
-
-          :rewards => {
-            
-            :construction_bonus_rewards => [
-              
-              {
-                :duration  => 266400,
-                :bonus     => 0.25,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-          },          
-
-        },              #   END OF epic_cottage
-        {               #   quest_build_chiefcottagelvl6
-          :id                => 31,
-          :symbolic_id       => :quest_build_chiefcottagelvl6,
-  
-          :type              => :sub,
-  
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "An even bigger chieftain's hut",
-  
-            :de_DE => "Häuptlingshütte Level 6",
-                
-          },
-          :task => {
-            
-            :en_US => "Upgrade your chieftan's hut to level 6",
-  
-            :de_DE => "Verbessere die Häuptlingshütte auf Level 6.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
-  
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
-  
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
-  
-            :en_US => "Great! There are now some more building slots available and you can build a small hut.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
-  
-            :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
-                
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_cash,
-                :amount => 3,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :construction_queue_tests => [
-
-              {
-                :building => 'building_chief_cottage',
-                :min_count => 1,
-                :min_level => 6,
-              },
-
-            ],
-
-          },          
-
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
-
-        },              #   END OF quest_build_chiefcottagelvl6
-        {               #   quest_finish_upgrade
-          :id                => 32,
-          :symbolic_id       => :quest_finish_upgrade,
-  
-          :type              => :sub,
-  
-          :advisor           => :girl,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Finish upgrade",
-  
-            :de_DE => "Ausbau beenden",
-                
-          },
-          :task => {
-            
-            :en_US => "Finish the upgrade of the chieftan's hut.",
-  
-            :de_DE => "Beende den Ausbau der Häuptlingshütte.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Mit ein paar Kröten lässt sich so einiges bewirken.",
-  
-            :en_US => "With a few golden frogs you can get quite a bit done.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</p>",
-  
-            :en_US => "<p>Use these Golden Frogs to finish the upgrade right now! Press the button marked 'Hurry!' to speed the building process up.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.",
-  
-            :en_US => "Isn't it great how much your settlement is growing? I've even managed to persuade the boss to give you something from his huge store of resources.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Erhöhe Deine Rohstoffproduktion durch den Bau neuer Steinbrüche und Holzfäller.",
-  
-            :en_US => "Boost your raw materials production by building a new Hunter Gatherer.",
-                
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 500,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 500,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_chief_cottage',
-
-                :min_level => 6,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_finish_upgrade
-        {               #   quest_build_cottage
-          :id                => 33,
-          :symbolic_id       => :quest_build_cottage,
-  
-          :type              => :sub,
-  
-          :advisor           => :girl,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "The small huts",
-  
-            :de_DE => "Die kleinen Hütten",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a small hut.",
-  
-            :de_DE => "Baue eine Kleine Hütte.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Diese kleinen Hütten sind wirklich nützlich. Mehr Einwohner bedeuten auch mehr helfende Hände.",
-  
-            :en_US => "Did you know that you can give your workers two orders at the same time? They can only work on one of them, but they'll keep the other order in mind. Why don't you try it? The happier your workers are, the faster they'll build things for you.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Kleine Hütten verkürzen die Bauzeit von Gebäuden. Du kannst mehrere bauen, um die Bauzeit deutlich zu senken.</p>",
-  
-            :en_US => "<p>Having small huts reduces the time it takes to construct other buildings.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.",
-  
-            :en_US => "Well done! Your workers are happy and they're building things faster because of it.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Kleine Hütten verringern die Bauzeit aller Ausbauten.",
-  
-            :en_US => "choose a Hunter Gatherer. A window will open showing the current status of your development, including the next upgrade level. Press Upgrade to get started.",
-                
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 225,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 225,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_cottage',
-
-                :min_level => 1,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-          :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
-
-        },              #   END OF quest_build_cottage
         {               #   quest_build_quarry_lvl10
-          :id                => 34,
+          :id                => 51,
           :symbolic_id       => :quest_build_quarry_lvl10,
   
           :type              => :optional,
@@ -3561,7 +5185,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Quarry",
+            :en_US => "Quarry Level 10",
   
             :de_DE => "Maximallevel Steinbruch",
                 
@@ -3607,7 +5231,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'epic_cottage',
+                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
               },
 
             ],
@@ -3646,7 +5270,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_quarry_lvl10
         {               #   quest_build_logger_lvl10
-          :id                => 35,
+          :id                => 52,
           :symbolic_id       => :quest_build_logger_lvl10,
   
           :type              => :optional,
@@ -3662,7 +5286,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Logger",
+            :en_US => "Logger Level 10",
   
             :de_DE => "Maximallevel Holzfäller",
                 
@@ -3708,7 +5332,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'epic_cottage',
+                :finish_quest_trigger => 'quest_build_2logger_lvl4',
               },
 
             ],
@@ -3746,669 +5370,8 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_logger_lvl10
-        {               #   epic_xp
-          :id                => 36,
-          :symbolic_id       => :epic_xp,
-  
-          :type              => :epic,
-  
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Experience",
-  
-            :de_DE => "Erfahrung",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a storage and start a trade",
-  
-            :de_DE => "Baue eine Trainingshöhle.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
-  
-            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
-  
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Erfahrung erhälst Du in der Trainingshöhle, für Ausbauten und vor allem für Kämpfe.",
-  
-            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
-  
-            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
-                
-          },
-
-          :subquests => [37, 38, ],
-
-          :triggers => {
-            
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'epic_cottage',
-              },
-
-            ],
-  
-          },
-
-          :rewards => {
-            
-            :experience_production_bonus_rewards => [
-              
-              {
-                :duration  => 259200,
-                :bonus     => 0.1,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-          },          
-
-        },              #   END OF epic_xp
-        {               #   quest_build_chiefcottagelvl7
-          :id                => 37,
-          :symbolic_id       => :quest_build_chiefcottagelvl7,
-  
-          :type              => :sub,
-  
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "An even bigger chieftain's hut",
-  
-            :de_DE => "Häuptlingshütte Level 7",
-                
-          },
-          :task => {
-            
-            :en_US => "Upgrade your chieftan's hut to level 7",
-  
-            :de_DE => "Verbessere die Häuptlingshütte auf Level 7.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
-  
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
-  
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
-  
-            :en_US => "Great! There are now some more building slots available and you can build a small hut.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
-  
-            :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
-                
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 1500,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 1500,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_chief_cottage',
-
-                :min_level => 7,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
-
-        },              #   END OF quest_build_chiefcottagelvl7
-        {               #   quest_build_training_cave
-          :id                => 38,
-          :symbolic_id       => :quest_build_training_cave,
-  
-          :type              => :sub,
-  
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Training cave",
-  
-            :de_DE => "Trainingshöhle",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a training cave.",
-  
-            :de_DE => "Baue eine Trainingshöhle.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Hey Halbgott, sitz da nicht so faul rum. Du musst Deinen Armeen als Vorbild dienen, dafür solltest Du etwas trainieren.",
-  
-            :en_US => "Hey Demigod, don't get bored! You need to inspire your armies to be like you, so make sure you  use your training cave to exercise!",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In der Trainingshöhle kannst Du ungestört trainieren und Erfahrung sammeln.</p>",
-  
-            :en_US => "<p>It takes time to execute building orders, but the work will continue while you're away if you leave the game.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Ein - zwei, eins - zwei, keine Müdigkeit vortäuschen!",
-  
-            :en_US => "One and two, one and two! Come on, this is fun!",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "In der Trainingshöhle kannst Du ungestört trainieren und Erfahrung sammeln",
-  
-            :en_US => "You can do your workout in the training cave without any interruptions.",
-                
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 120,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 120,
-              },
-
-            ],
-
-            :experience_reward => 4500,
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_training_cave',
-
-                :min_level => 1,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_build_training_cave
-        {               #   quest_fortress
-          :id                => 39,
-          :symbolic_id       => :quest_fortress,
-  
-          :type              => :optional,
-  
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Fortress",
-  
-            :de_DE => "Festung erobern",
-                
-          },
-          :task => {
-            
-            :en_US => "Conquer a fortress.",
-  
-            :de_DE => "Erobere eine Festung.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
-  
-            :en_US => "We need more settlements. A fortress would be the way to go.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
-  
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Du hast eine Festung in Deinen Besitz gebracht? Das ist großartig!",
-  
-            :en_US => "You conquered a fortress? That´s great!",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
-  
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
-                
-          },
-
-          :triggers => {
-            
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'epic_xp',
-              },
-
-            ],
-  
-          },
-
-          :rewards => {
-            
-            :unit_rewards => [
-
-              {
-                :unit => :unit_warrior,
-                :amount => 30,
-              },
-
-            ],
-
-            :experience_reward => 500,
-
-          },          
-
-          :reward_tests => {
-            
-            :settlement_tests => [
-
-              {
-                :type => 'settlement_fortress',
-                :min_count => 1,
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_fortress
-        {               #   epic_fur
-          :id                => 40,
-          :symbolic_id       => :epic_fur,
-  
-          :type              => :epic,
-  
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Fur",
-  
-            :de_DE => "Fell",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a storage and start a trade",
-  
-            :de_DE => "Starte die Fellproduktion.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
-  
-            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
-  
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Fell ist der wichtigste Rohstoff zur Produktion von Einheiten..",
-  
-            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
-  
-            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
-                
-          },
-
-          :subquests => [41, 42, ],
-
-          :triggers => {
-            
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'epic_xp',
-              },
-
-            ],
-  
-          },
-
-          :rewards => {
-            
-            :experience_reward => 250,
-
-            :production_bonus_rewards => [
-              
-              {
-                :resource    => :resource_fur,
-                :duration    => 259200,
-                :bonus       => 0.3,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-          },          
-
-        },              #   END OF epic_fur
-        {               #   quest_build_chiefcottagelvl8
-          :id                => 41,
-          :symbolic_id       => :quest_build_chiefcottagelvl8,
-  
-          :type              => :sub,
-  
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "An even bigger chieftain's hut",
-  
-            :de_DE => "Häuptlingshütte Level 8",
-                
-          },
-          :task => {
-            
-            :en_US => "Upgrade your chieftan's hut to level 8",
-  
-            :de_DE => "Verbessere die Häuptlingshütte auf Level 8.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
-  
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
-  
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
-  
-            :en_US => "Great! There are now some more building slots available and you can build a small hut.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
-  
-            :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
-                
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 2000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 2000,
-              },
-
-            ],
-
-            :experience_reward => 250,
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_chief_cottage',
-
-                :min_level => 8,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
-
-        },              #   END OF quest_build_chiefcottagelvl8
-        {               #   quest_build_furrier
-          :id                => 42,
-          :symbolic_id       => :quest_build_furrier,
-  
-          :type              => :sub,
-  
-          :advisor           => :girl,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Furrier",
-  
-            :de_DE => "Der Kürschner",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a furrier.",
-  
-            :de_DE => "Baue einen Kürschner.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Chef will die Felle für die Armee Rekrutierung, aber für mich fällt doch bestimmt auch was schönes ab, oder?",
-  
-            :en_US => "The chief wants an army, but I'd just like some nice new clothes.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Eine hohe Fellproduktion ist die Grundlage jeder größeren Armee. In den Kämpfen werden immer mal wieder Armeen aufgerieben, die gilt es nachzubauen.</p>",
-  
-            :en_US => "<p>You need good fur production if you want to recruit an impressive army.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Fell wird vor allem für den Aufbau einer schlagkräftigen Armee benötigt.",
-  
-            :en_US => "Nice! Now you can build a new army.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Steigere Deine Fellproduktion um viele Einheiten bauen zu können.",
-  
-            :en_US => "Increase your fur production so that you can defend your settlements with more armies.",
-                
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_fur,
-                :amount => 250,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_furrier',
-
-                :min_level => 1,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_build_furrier
         {               #   quest_build_2furrierlvl4
-          :id                => 43,
+          :id                => 53,
           :symbolic_id       => :quest_build_2furrierlvl4,
   
           :type              => :optional,
@@ -4424,7 +5387,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Quarry",
+            :en_US => "More furrier",
   
             :de_DE => "Mehr Kürschner",
                 
@@ -4509,7 +5472,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2furrierlvl4
         {               #   quest_build_furrier_lvl10
-          :id                => 44,
+          :id                => 54,
           :symbolic_id       => :quest_build_furrier_lvl10,
   
           :type              => :optional,
@@ -4610,7 +5573,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_furrier_lvl10
         {               #   quest_build_barrackslvl5
-          :id                => 45,
+          :id                => 55,
           :symbolic_id       => :quest_build_barrackslvl5,
   
           :type              => :optional,
@@ -4723,7 +5686,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_barrackslvl5
         {               #   quest_recruit_clubber
-          :id                => 46,
+          :id                => 56,
           :symbolic_id       => :quest_recruit_clubber,
   
           :type              => :optional,
@@ -4823,103 +5786,11 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', 'mark_units_button', 'mark_training_dialog_flow', ],
 
         },              #   END OF quest_recruit_clubber
-        {               #   epic_fiering_range
-          :id                => 47,
-          :symbolic_id       => :epic_fiering_range,
+        {               #   quest_fortress
+          :id                => 57,
+          :symbolic_id       => :quest_fortress,
   
-          :type              => :epic,
-  
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Artillery",
-  
-            :de_DE => "Die Fernkämpfer",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a storage and start a trade",
-  
-            :de_DE => "Rekrutiere Deinen ersten Fernkämpfer.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
-  
-            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
-  
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Fell ist der wichtigste Rohstoff zur Produktion von Einheiten..",
-  
-            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
-  
-            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
-                
-          },
-
-          :subquests => [48, 49, 50, ],
-
-          :triggers => {
-            
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'epic_fur',
-              },
-
-            ],
-  
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_fur,
-                :amount => 500,
-              },
-
-            ],
-
-            :experience_reward => 500,
-
-          },          
-
-          :reward_tests => {
-            
-          },          
-
-        },              #   END OF epic_fiering_range
-        {               #   quest_build_chiefcottagelvl9
-          :id                => 48,
-          :symbolic_id       => :quest_build_chiefcottagelvl9,
-  
-          :type              => :sub,
+          :type              => :optional,
   
           :advisor           => :chef,
           :hide_start_dialog => false,
@@ -4932,247 +5803,59 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "An even bigger chieftain's hut",
+            :en_US => "Fortress",
   
-            :de_DE => "Häuptlingshütte Level 9",
+            :de_DE => "Festung erobern",
                 
           },
           :task => {
             
-            :en_US => "Upgrade your chieftan's hut to level 9",
+            :en_US => "Conquer a fortress.",
   
-            :de_DE => "Verbessere die Häuptlingshütte auf Level 9.",
+            :de_DE => "Erobere eine Festung.",
                 
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+            :en_US => "We need more settlements. A fortress would be the way to go.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
   
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
+            :de_DE => "Du hast eine Festung in Deinen Besitz gebracht? Das ist großartig!",
   
-            :en_US => "Great! There are now some more building slots available and you can build a small hut.",
+            :en_US => "You conquered a fortress? That´s great!",
                 
           },
           :reward_text => {
             
-            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
   
-            :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
                 
           },
 
-          :rewards => {
+          :triggers => {
             
-            :resource_rewards => [
-
+            :finish_quest_triggers => [
+              
               {
-                :resource => :resource_stone,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 500,
+                :finish_quest_trigger => 'epic_xp',
               },
 
             ],
-
-            :experience_reward => 250,
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_chief_cottage',
-
-                :min_level => 9,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
-
-        },              #   END OF quest_build_chiefcottagelvl9
-        {               #   quest_build_stud
-          :id                => 49,
-          :symbolic_id       => :quest_build_stud,
   
-          :type              => :sub,
+            :mundane_rank_trigger => 1,
   
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Fiering_range",
-  
-            :de_DE => "Der Schießstand",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a smelly barn.",
-  
-            :de_DE => "Baue einen Schießstand.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.",
-  
-            :en_US => "We need a cavalry to defend ourselves against throwers.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p>",
-  
-            :en_US => "<p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.",
-  
-            :en_US => "Muhaha, I don´t like the smell, but the riders know thier business.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Berittene Einheiten können mit Flankenangriffen die gegnerischen Nahkämpfer umgehen und Fernkämpfer direkt angreifen. Zudem sind sie als Reiterarmee schneller als normalen Kämpfer.",
-  
-            :en_US => "A cavalry can flank the melee and attack throwers directly. A riding army is also quicker than normal warriors.",
-                
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 1500,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 750,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_stud',
-
-                :min_level => 1,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_build_stud
-        {               #   quest_recruit_thrower
-          :id                => 50,
-          :symbolic_id       => :quest_recruit_thrower,
-  
-          :type              => :sub,
-  
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Cavalry",
-  
-            :de_DE => "Kieselsteinwerfer",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a warrior.",
-  
-            :de_DE => "Rekrutiere einen Kieselsteinwerfer.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.",
-  
-            :en_US => "What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Gehe in daen Stall, wähle dort in der Rekrutierungsliste gden Kieselsteinwerfer aus.</p>",
-  
-            :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.",
-  
-            :en_US => "Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Die ersten Krieger hast Du. Zeit sich die Nachbarschaft anzuschauen.",
-  
-            :en_US => "You can train several units at the same time. Just select the number of units you want.",
-                
           },
 
           :rewards => {
@@ -5180,199 +5863,8 @@ class Tutorial::Tutorial
             :unit_rewards => [
 
               {
-                :unit => :unit_thrower,
+                :unit => :unit_warrior,
                 :amount => 30,
-              },
-
-            ],
-
-            :experience_reward => 250,
-
-          },          
-
-          :reward_tests => {
-            
-            :training_queue_tests => [
-
-              {
-                :unit => 'unit_thrower',
-                :min_count => 1,
-              },
-
-            ],
-
-          },          
-
-          :uimarker => ['mark_home_settlement', 'mark_units_button', 'mark_training_dialog_flow', ],
-
-        },              #   END OF quest_recruit_thrower
-        {               #   epic_coppersmelter
-          :id                => 51,
-          :symbolic_id       => :epic_coppersmelter,
-  
-          :type              => :epic,
-  
-          :advisor           => :warrior,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Copper age",
-  
-            :de_DE => "Kupferzeit",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a storage and start a trade",
-  
-            :de_DE => "Entwickle Dich in die Kupferzeit.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
-  
-            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
-  
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Fell ist der wichtigste Rohstoff zur Produktion von Einheiten..",
-  
-            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
-  
-            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
-                
-          },
-
-          :subquests => [52, 53, ],
-
-          :triggers => {
-            
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'epic_fiering_range',
-              },
-
-            ],
-  
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_cash,
-                :amount => 3,
-              },
-
-            ],
-
-            :experience_reward => 1000,
-
-          },          
-
-          :reward_tests => {
-            
-          },          
-
-        },              #   END OF epic_coppersmelter
-        {               #   quest_build_chiefcottagelvl10
-          :id                => 52,
-          :symbolic_id       => :quest_build_chiefcottagelvl10,
-  
-          :type              => :sub,
-  
-          :advisor           => :chef,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "An even bigger chieftain's hut",
-  
-            :de_DE => "Häuptlingshütte Level 10",
-                
-          },
-          :task => {
-            
-            :en_US => "Upgrade your chieftan's hut to level 10",
-  
-            :de_DE => "Verbessere die Häuptlingshütte auf Level 10.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
-  
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
-  
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
-  
-            :en_US => "Great! There are now some more building slots available and you can build a small hut.",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
-  
-            :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
-                
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 1500,
               },
 
             ],
@@ -5383,127 +5875,20 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :building_tests => [
+            :settlement_tests => [
 
               {
-                :building => 'building_chief_cottage',
-
-                :min_level => 10,
-
+                :type => 'settlement_fortress',
                 :min_count => 1,
-
               },
 
             ],
 
           },          
 
-          :uimarker => ['mark_home_settlement', 'mark_upgradable_building', 'mark_upgrade_button', ],
-
-        },              #   END OF quest_build_chiefcottagelvl10
-        {               #   quest_build_copper_smelter
-          :id                => 53,
-          :symbolic_id       => :quest_build_copper_smelter,
-  
-          :type              => :sub,
-  
-          :advisor           => :girl,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Copper smelter",
-  
-            :de_DE => "Kupferschmelze",
-                
-          },
-          :task => {
-            
-            :en_US => "Build a copper smelter.",
-  
-            :de_DE => "Baue eine Kupferschmelze.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "In der Kupferzeit stehen Dir neue Gebäude und verbesserte Versionen bereits bekannter Gebäude zur Verfügung.",
-  
-            :en_US => "In the Copper Age, you can create new buildings as well as improved versions of the buildings you already know.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Die Kupferschmelze ist ein kleines Gebäude für einen kleinen Bauplatz, sie ermöglicht Dir den Bau der Gebäude der Kupferzeit.</p>",
-  
-            :en_US => "<p>A copper smelter can be created in a small building slot. It gives you acces to buildings from the Copper Age.</p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Wow, eine neues Zeitalter! So viele Möglichkeiten.",
-  
-            :en_US => "Wow, a new age! So many opportunities! ",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "Sollen wir die Steinzeit verlassen und in die Kupferzeit fortschreiten?",
-  
-            :en_US => "So, should we leave the Stone Age and move forward to the Copper Age?",
-                
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 3000,
-              },
-
-            ],
-
-            :experience_reward => 1500,
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_copper_smelter',
-
-                :min_level => 1,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_build_copper_smelter
+        },              #   END OF quest_fortress
         {               #   quest_charkills_1
-          :id                => 54,
+          :id                => 58,
           :symbolic_id       => :quest_charkills_1,
   
           :type              => :optional,
@@ -5563,6 +5948,14 @@ class Tutorial::Tutorial
           :triggers => {
             
             :play_time_trigger => 1200,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_npc_battle',
+              },
+
+            ],
   
           },
 

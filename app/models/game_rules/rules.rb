@@ -351,6 +351,12 @@ class GameRules::Rules
 
       :training_speedup => [  # ALL TRAINING SPEEDUPS
 
+        {               #   less than (0.5/60.0) hours
+          :resource_id => 3,
+          :amount      => 0,
+          :hours       => (0.5/60.0),
+        },              #   END OF (0.5/60.0) hours
+
         {               #   less than 0.5 hours
           :resource_id => 3,
           :amount      => 1,
@@ -439,7 +445,7 @@ class GameRules::Rules
 
               {
                 :resource => :resource_fur,
-                :amount => 8000,
+                :amount => 4000,
               },
 
           ],
@@ -3606,7 +3612,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 5,
+              :min_level => 3,
 
             },
 
@@ -3712,7 +3718,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 5,
+              :min_level => 3,
 
             },
 
@@ -4050,7 +4056,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 3,
+              :min_level => 5,
 
             },
 
@@ -4268,7 +4274,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 8,
+              :min_level => 7,
 
             },
 
@@ -4375,7 +4381,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 11,
+              :min_level => 9,
 
             },
 
@@ -4679,7 +4685,7 @@ class GameRules::Rules
               :id => 13,
               :type => 'building',
 
-              :min_level => 2,
+              :min_level => 1,
 
             },
 
@@ -4909,7 +4915,7 @@ class GameRules::Rules
               :id => 13,
               :type => 'building',
 
-              :min_level => 4,
+              :min_level => 2,
 
             },
 
@@ -4922,7 +4928,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 14,
+              :min_level => 11,
 
             },
 
@@ -5010,7 +5016,7 @@ class GameRules::Rules
               :id => 13,
               :type => 'building',
 
-              :min_level => 4,
+              :min_level => 2,
 
             },
 
@@ -5023,7 +5029,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 14,
+              :min_level => 11,
 
             },
 
@@ -5043,7 +5049,7 @@ class GameRules::Rules
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)",
+                :formula            => "FLOOR(((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)*2/3)",
               },
             
           ],
@@ -5052,7 +5058,7 @@ class GameRules::Rules
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05)",
               },
             
           ],
@@ -5227,7 +5233,7 @@ class GameRules::Rules
               :id => 13,
               :type => 'building',
 
-              :min_level => 2,
+              :min_level => 4,
 
             },
 
@@ -5240,7 +5246,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 12,
+              :min_level => 13,
 
             },
 
@@ -5445,7 +5451,7 @@ class GameRules::Rules
               :id => 13,
               :type => 'building',
 
-              :min_level => 7,
+              :min_level => 6,
 
             },
 
@@ -5458,7 +5464,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 17,
+              :min_level => 16,
 
             },
 
@@ -5479,7 +5485,7 @@ class GameRules::Rules
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)",
+                :formula            => "EQUAL(LEVEL,1)*12+EQUAL(LEVEL,2)*16+EQUAL(LEVEL,3)*24+EQUAL(LEVEL,4)*36+EQUAL(LEVEL,5)*55+EQUAL(LEVEL,6)*77+EQUAL(LEVEL,7)*105+EQUAL(LEVEL,8)*135+EQUAL(LEVEL,9)*175+EQUAL(LEVEL,10)*225+(GREATER(LEVEL,10)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100)*2+0.5)",
               },
             
           ],
@@ -5658,7 +5664,7 @@ class GameRules::Rules
               :id => 13,
               :type => 'building',
 
-              :min_level => 6,
+              :min_level => 8,
 
             },
 
@@ -5798,7 +5804,7 @@ class GameRules::Rules
               :id => 13,
               :type => 'building',
 
-              :min_level => 8,
+              :min_level => 9,
 
             },
 
