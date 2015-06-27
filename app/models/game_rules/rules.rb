@@ -1168,7 +1168,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 31,
+              :id => 32,
               :type => 'building',
 
               :min_level => 0,
@@ -1275,7 +1275,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 31,
+              :id => 32,
               :type => 'building',
 
               :min_level => 1,
@@ -1384,7 +1384,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 31,
+              :id => 32,
               :type => 'building',
 
               :min_level => 5,
@@ -1393,7 +1393,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 4,
@@ -1502,7 +1502,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 31,
+              :id => 32,
               :type => 'building',
 
               :min_level => 10,
@@ -1511,7 +1511,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 9,
@@ -1710,7 +1710,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 32,
+              :id => 33,
               :type => 'building',
 
               :min_level => 1,
@@ -1819,7 +1819,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 32,
+              :id => 33,
               :type => 'building',
 
               :min_level => 5,
@@ -1828,7 +1828,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 4,
@@ -1937,7 +1937,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 32,
+              :id => 33,
               :type => 'building',
 
               :min_level => 10,
@@ -1946,7 +1946,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 9,
@@ -2145,7 +2145,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 33,
+              :id => 34,
               :type => 'building',
 
               :min_level => 1,
@@ -2254,7 +2254,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 33,
+              :id => 34,
               :type => 'building',
 
               :min_level => 5,
@@ -2263,7 +2263,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 4,
@@ -2372,7 +2372,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 33,
+              :id => 34,
               :type => 'building',
 
               :min_level => 10,
@@ -2381,7 +2381,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 9,
@@ -3274,7 +3274,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -3375,7 +3375,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -3828,7 +3828,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -3842,8 +3842,8 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700',
+            1 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2',
             
           },
 
@@ -4179,7 +4179,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -4193,9 +4193,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
-            2 => 'GREATER(LEVEL,3)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2.25*1.5+0.5))',
+            0 => 'EQUAL(LEVEL,1)*60+EQUAL(LEVEL,2)*90+EQUAL(LEVEL,3)*165+EQUAL(LEVEL,4)*280+EQUAL(LEVEL,5)*465+EQUAL(LEVEL,6)*780+EQUAL(LEVEL,7)*1340+EQUAL(LEVEL,8)*2300+EQUAL(LEVEL,9)*3800+EQUAL(LEVEL,10)*6000',
+            1 => 'EQUAL(LEVEL,1)*60+EQUAL(LEVEL,2)*90+EQUAL(LEVEL,3)*165+EQUAL(LEVEL,4)*280+EQUAL(LEVEL,5)*465+EQUAL(LEVEL,6)*780+EQUAL(LEVEL,7)*1340+EQUAL(LEVEL,8)*2300+EQUAL(LEVEL,9)*3800+EQUAL(LEVEL,10)*6000',
+            2 => 'EQUAL(LEVEL,4)*400+EQUAL(LEVEL,5)*750+EQUAL(LEVEL,6)*1400+EQUAL(LEVEL,7)*2500+EQUAL(LEVEL,8)*4200+EQUAL(LEVEL,9)*7000+EQUAL(LEVEL,10)*10000',
             
           },
 
@@ -4392,7 +4392,7 @@ class GameRules::Rules
           :costs      => {
             0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)',
             1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)',
-            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))',
+            2 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
             
           },
 
@@ -4502,7 +4502,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -4601,7 +4601,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -4707,7 +4707,7 @@ class GameRules::Rules
           :costs      => {
             0 => '(EQUAL(LEVEL,1)*50+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))*1.5',
             1 => '(EQUAL(LEVEL,1)*25+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5))*1.5',
-            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))*1.5',
+            2 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
             3 => '2*MAX(LEVEL-19,0)',
             
           },
@@ -4831,7 +4831,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -4948,7 +4948,7 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)",
+                :formula            => "EQUAL(LEVEL,1)*12+EQUAL(LEVEL,2)*16+EQUAL(LEVEL,3)*24+EQUAL(LEVEL,4)*36+EQUAL(LEVEL,5)*55+EQUAL(LEVEL,6)*75+EQUAL(LEVEL,7)*105+EQUAL(LEVEL,8)*135+EQUAL(LEVEL,9)*175+EQUAL(LEVEL,10)*225+(GREATER(LEVEL,10)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100)*2+0.5)",
               },
             
           ],
@@ -5049,7 +5049,7 @@ class GameRules::Rules
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR(((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)*2/3)",
+                :formula            => "EQUAL(LEVEL,1)*12+EQUAL(LEVEL,2)*16+EQUAL(LEVEL,3)*24+EQUAL(LEVEL,4)*36+EQUAL(LEVEL,5)*55+EQUAL(LEVEL,6)*75+EQUAL(LEVEL,7)*105+EQUAL(LEVEL,8)*135+EQUAL(LEVEL,9)*175+EQUAL(LEVEL,10)*225+(GREATER(LEVEL,10)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100)*2+0.5)",
               },
             
           ],
@@ -5485,7 +5485,7 @@ class GameRules::Rules
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "EQUAL(LEVEL,1)*12+EQUAL(LEVEL,2)*16+EQUAL(LEVEL,3)*24+EQUAL(LEVEL,4)*36+EQUAL(LEVEL,5)*55+EQUAL(LEVEL,6)*77+EQUAL(LEVEL,7)*105+EQUAL(LEVEL,8)*135+EQUAL(LEVEL,9)*175+EQUAL(LEVEL,10)*225+(GREATER(LEVEL,10)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100)*2+0.5)",
+                :formula            => "EQUAL(LEVEL,1)*12+EQUAL(LEVEL,2)*16+EQUAL(LEVEL,3)*24+EQUAL(LEVEL,4)*36+EQUAL(LEVEL,5)*55+EQUAL(LEVEL,6)*75+EQUAL(LEVEL,7)*105+EQUAL(LEVEL,8)*135+EQUAL(LEVEL,9)*175+EQUAL(LEVEL,10)*225+(GREATER(LEVEL,10)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100)*2+0.5)",
               },
             
           ],
@@ -5696,7 +5696,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 3,
@@ -5836,7 +5836,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 3,
@@ -6184,13 +6184,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            1 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            2 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
             
           },
 
-          :production_time => '3600*LEVEL',
+          :production_time => '5400*LEVEL',
           :production  => [
             
           ],
@@ -6300,13 +6300,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            1 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            2 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
             
           },
 
-          :production_time => 'EQUAL(LEVEL,1)*36*3600+GREATER(LEVEL,1)*(3600*LEVEL)',
+          :production_time => 'EQUAL(LEVEL,1)*36*3600+GREATER(LEVEL,1)*(5400*LEVEL)',
           :production  => [
             
           ],
@@ -6321,8 +6321,155 @@ class GameRules::Rules
           },
 
         },              #   END OF Ritualstein
-        {               #   Festungsanlagen
+        {               #   Handelsplatz
           :id          => 30, 
+          :symbolic_id => :building_trade_center,
+					:category    => 7,
+          :db_field    => :building_trade_center,
+          :name        => {
+            
+            :de_DE => "Handelsplatz",
+  
+            :en_US => "Trade Center",
+                
+          },
+          :advisor     => "girl",
+          :flavour     => {
+            
+            :en_US => "<p>Field camps turn encampments into military support units. Despite all the talk about the safety and storage that field camps offer, they seem to have a magical attraction for enemies.</p>",
+  
+            :de_DE => "<p>Mehr Rohstoffe! Mit dem Handelsplatz verwandeln wir Lagerstätten in Wirtschaftsstützpunkte.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Spezialisierungsgebäude, spezalisiert die Lagerstätte für wirtschaftliche Zwecke. Nur ein Spezialisierungsgebäude pro Lagerstätte.</p><p>Auf dem Handelsplatz lassen sich neben den ganzen Rohstoffen in den feuchten dunklen Ecken auch ab und zu Kröten finden.</p>",
+  
+            :en_US => "<p>Specialization building, specializes your camp for military purposes. Only one specialization building per camp is possible. </p><p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 50 per level. At Level 10, a field camp also increases a settlement's command points by one.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
+  
+          :buyable     => false,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> false,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => true,
+          :experience_factor => 8,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 6,
+
+            },
+
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_altar',
+              :id => 29,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_field_camp',
+              :id => 28,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_trade_center',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            1 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            2 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            
+          },
+
+          :production_time => '5400*LEVEL',
+          :production  => [
+            
+              {
+                :id                 => 3,
+                :symbolic_id        => :resource_cash,
+                :formula            => "GREATER(LEVEL,9)*1/48.0",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "0.01*LEVEL",
+              },
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "0.01*LEVEL",
+              },
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "0.01*LEVEL",
+              },
+            
+          ],
+
+          :abilities   => {
+
+            :trading_carts => "5*LEVEL*LEVEL",
+
+          },
+
+        },              #   END OF Handelsplatz
+        {               #   Festungsanlagen
+          :id          => 31, 
           :symbolic_id => :building_fortress_fortification,
 					:category    => 0,
           :db_field    => :building_fortress_fortification,
@@ -6415,7 +6562,7 @@ class GameRules::Rules
 
         },              #   END OF Festungsanlagen
         {               #   Knüppler Gelände
-          :id          => 31, 
+          :id          => 32, 
           :symbolic_id => :building_infantry_tower,
 					:category    => 1,
           :db_field    => :building_infantry_tower,
@@ -6460,7 +6607,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 1,
@@ -6513,7 +6660,7 @@ class GameRules::Rules
 
         },              #   END OF Knüppler Gelände
         {               #   Werfer Gelände
-          :id          => 32, 
+          :id          => 33, 
           :symbolic_id => :building_artillery_tower,
 					:category    => 1,
           :db_field    => :building_artillery_tower,
@@ -6558,7 +6705,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 5,
@@ -6611,7 +6758,7 @@ class GameRules::Rules
 
         },              #   END OF Werfer Gelände
         {               #   Reiteranlage
-          :id          => 33, 
+          :id          => 34, 
           :symbolic_id => :building_cavalry_tower,
 					:category    => 1,
           :db_field    => :building_cavalry_tower,
@@ -6656,7 +6803,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 7,
@@ -6804,7 +6951,7 @@ class GameRules::Rules
             3 => {
               :max_level => 10,
               
-              :building  => 30,
+              :building  => 31,
               
               :level  => 1,
               

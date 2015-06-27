@@ -25,10 +25,10 @@
     <Requirement id="building_altar" max_level="0" />
     <Requirement id="building_field_camp" max_level="0" />
   </RequirementGroup>
-  <Cost id="resource_stone"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)</Cost>
-  <Cost id="resource_wood"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)</Cost>
-  <Cost id="resource_fur"  round="true">FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)</Cost>
-	  <ProductionTime shortenable="true">EQUAL(LEVEL,1)*36*3600+GREATER(LEVEL,1)*(3600*LEVEL)</ProductionTime>
+  <Cost id="resource_stone" round="true">EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000</Cost>
+  <Cost id="resource_wood"  round="true">EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000</Cost>
+  <Cost id="resource_fur"  round="true">EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000</Cost>
+	  <ProductionTime shortenable="true">EQUAL(LEVEL,1)*36*3600+GREATER(LEVEL,1)*(5400*LEVEL)</ProductionTime>
   <Abilities> <!-- just for grouping -->
     <PreventTakeover level="1" />
   </Abilities>
