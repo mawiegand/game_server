@@ -5572,8 +5572,112 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_furrier_lvl10
-        {               #   quest_build_barrackslvl5
+        {               #   quest_resourcescore_1
           :id                => 55,
+          :symbolic_id       => :quest_resourcescore_1,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 200 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 200 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+  
+            :en_US => "Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+  
+            :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Schön, Deine Siedlung produziert mehr und wächst schneller.",
+  
+            :en_US => "Nice! Your settlement is producing more resources and growing rapidly.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.",
+  
+            :en_US => "Are you still paying taxes? Why?",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_furrier_lvl10',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 250,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 250,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 250,
+              },
+
+            ],
+
+            :experience_reward => 50,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 200,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_1
+        {               #   quest_build_barrackslvl5
+          :id                => 56,
           :symbolic_id       => :quest_build_barrackslvl5,
   
           :type              => :optional,
@@ -5686,7 +5790,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_barrackslvl5
         {               #   quest_recruit_clubber
-          :id                => 56,
+          :id                => 57,
           :symbolic_id       => :quest_recruit_clubber,
   
           :type              => :optional,
@@ -5787,7 +5891,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_recruit_clubber
         {               #   quest_fortress
-          :id                => 57,
+          :id                => 58,
           :symbolic_id       => :quest_fortress,
   
           :type              => :optional,
@@ -5887,8 +5991,995 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_fortress
+        {               #   quest_infantry_tower
+          :id                => 59,
+          :symbolic_id       => :quest_infantry_tower,
+  
+          :type              => :optional,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Infantry tower",
+  
+            :de_DE => "Knüppler Gelände",
+                
+          },
+          :task => {
+            
+            :en_US => "Built an infantry tower.",
+  
+            :de_DE => "Baue ein Knüppler Gelände in Deiner Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+  
+            :en_US => "We need more settlements. A fortress would be the way to go.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+  
+            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Höhere Level beschleunigen die Einheitenrekrutierung der Nahkämpfer.",
+  
+            :en_US => "You conquered a fortress? That´s great!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
+  
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_infantry_tower',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_infantry_tower
+        {               #   quest_fortress_fortification_lvl5
+          :id                => 60,
+          :symbolic_id       => :quest_fortress_fortification_lvl5,
+  
+          :type              => :optional,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Fortress fortification level 5",
+  
+            :de_DE => "Festungsanlage Level 5",
+                
+          },
+          :task => {
+            
+            :en_US => "Built a fortress fortification level 5.",
+  
+            :de_DE => "Verbessere die Festungsanlagen auf Level 5.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+  
+            :en_US => "We need more settlements. A fortress would be the way to go.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+  
+            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Höhere Level verbessern die Kampfkraft von Festungen.",
+  
+            :en_US => "You conquered a fortress? That´s great!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
+  
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_infantry_tower',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 750,
+              },
+
+            ],
+
+            :experience_reward => 300,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_fortress_fortification',
+
+                :min_level => 5,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_fortification_lvl5
+        {               #   quest_artillery_tower
+          :id                => 61,
+          :symbolic_id       => :quest_artillery_tower,
+  
+          :type              => :optional,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Artillery tower",
+  
+            :de_DE => "Werfer Gelände",
+                
+          },
+          :task => {
+            
+            :en_US => "Built an infantry tower.",
+  
+            :de_DE => "Baue ein Werfer Gelände in Deiner Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+  
+            :en_US => "We need more settlements. A fortress would be the way to go.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+  
+            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Höhere Level beschleunigen die Einheitenrekrutierung der Fernkämpfer.",
+  
+            :en_US => "You conquered a fortress? That´s great!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
+  
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_fortification_lvl5',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 750,
+              },
+
+            ],
+
+            :experience_reward => 150,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_artillery_tower',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_artillery_tower
+        {               #   quest_fortress_fortification_lvl7
+          :id                => 62,
+          :symbolic_id       => :quest_fortress_fortification_lvl7,
+  
+          :type              => :optional,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Fortress fortification level 7",
+  
+            :de_DE => "Festungsanlage Level 7",
+                
+          },
+          :task => {
+            
+            :en_US => "Built a fortress fortification level 7.",
+  
+            :de_DE => "Verbessere die Festungsanlagen auf Level 7.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+  
+            :en_US => "We need more settlements. A fortress would be the way to go.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+  
+            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Höhere Level verbessern die Kampfkraft von Festungen.",
+  
+            :en_US => "You conquered a fortress? That´s great!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
+  
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_fortification_lvl5',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 1500,
+              },
+
+            ],
+
+            :experience_reward => 300,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_fortress_fortification',
+
+                :min_level => 7,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_fortress_fortification_lvl7
+        {               #   quest_cavalry_tower
+          :id                => 63,
+          :symbolic_id       => :quest_cavalry_tower,
+  
+          :type              => :optional,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Cavalry tower",
+  
+            :de_DE => "Reiteranlage",
+                
+          },
+          :task => {
+            
+            :en_US => "Built an infantry tower.",
+  
+            :de_DE => "Baue eine Reiteranlage in Deiner Festung.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+  
+            :en_US => "We need more settlements. A fortress would be the way to go.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+  
+            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Höhere Level beschleunigen die Einheitenrekrutierung der Reiter.",
+  
+            :en_US => "You conquered a fortress? That´s great!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
+  
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_fortress_fortification_lvl7',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 1000,
+              },
+
+            ],
+
+            :experience_reward => 200,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_cavalry_tower',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_cavalry_tower
+        {               #   quest_haunt_lvl6
+          :id                => 64,
+          :symbolic_id       => :quest_haunt_lvl6,
+  
+          :type              => :optional,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Haunt level 6",
+  
+            :de_DE => "Versammlungsplatz Levle 6",
+                
+          },
+          :task => {
+            
+            :en_US => "Built an infantry tower.",
+  
+            :de_DE => "Verbessere den Versammlungsplatz Deiner Lagerstätte auf Level 6.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+  
+            :en_US => "We need more settlements. A fortress would be the way to go.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+  
+            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Du kannst jetzt eins der drei Spezialgebäude bauen. Entscheide Dich weise!",
+  
+            :en_US => "You conquered a fortress? That´s great!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
+  
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_encampment',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+            ],
+
+            :experience_reward => 150,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_haunt',
+
+                :min_level => 6,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_haunt_lvl6
+        {               #   quest_altar
+          :id                => 65,
+          :symbolic_id       => :quest_altar,
+  
+          :type              => :optional,
+  
+          :advisor           => :chef,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Haunt level",
+  
+            :de_DE => "Spezialgebäude Ritualstein",
+                
+          },
+          :task => {
+            
+            :en_US => "Built an infantry tower.",
+  
+            :de_DE => "Entscheide Dich für den Bau eines Ritualsteins.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+  
+            :en_US => "We need more settlements. A fortress would be the way to go.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+  
+            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Der Ritualstein schützt Deine Lagerstätte vor feindlichen Übernahmen.",
+  
+            :en_US => "You conquered a fortress? That´s great!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
+  
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_haunt_lvl6',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 100,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_altar',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_altar
+        {               #   quest_field_camp
+          :id                => 66,
+          :symbolic_id       => :quest_field_camp,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Field camp",
+  
+            :de_DE => "Spezialgebäude Feldlager",
+                
+          },
+          :task => {
+            
+            :en_US => "Built an infantry tower.",
+  
+            :de_DE => "Entscheide Dich für den Bau eines Feldlager.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+  
+            :en_US => "We need more settlements. A fortress would be the way to go.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+  
+            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Das Feldlager vergrößert Deine Armee und liefert auf Level 10 einen zusätzlichen Kommandopunkt.",
+  
+            :en_US => "You conquered a fortress? That´s great!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
+  
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_haunt_lvl6',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 100,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_field_camp',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_field_camp
+        {               #   quest_trade_center
+          :id                => 67,
+          :symbolic_id       => :quest_trade_center,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Trade center",
+  
+            :de_DE => "Spezialgebäude Handelszentrum",
+                
+          },
+          :task => {
+            
+            :en_US => "Built an infantry tower.",
+  
+            :de_DE => "Entscheide Dich für den Bau eines Handelszentrum.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+  
+            :en_US => "We need more settlements. A fortress would be the way to go.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+  
+            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Das Handelszentrum verbessert Deine Rohstoffproduktion, läßt Deine Lagerstätte aber fast wehrlos.",
+  
+            :en_US => "You conquered a fortress? That´s great!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.",
+  
+            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_haunt_lvl6',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 150,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 100,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_trade_center',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_trade_center
         {               #   quest_charkills_1
-          :id                => 58,
+          :id                => 68,
           :symbolic_id       => :quest_charkills_1,
   
           :type              => :optional,
@@ -5952,7 +7043,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_npc_battle',
+                :finish_quest_trigger => 'quest_outpost',
               },
 
             ],
@@ -5986,6 +7077,324 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_charkills_1
+        {               #   quest_charkills_2
+          :id                => 69,
+          :symbolic_id       => :quest_charkills_2,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 100 units.",
+  
+            :de_DE => "Besiege 100 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => "Your enemies are strong - that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 7200,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_1',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 200,
+              },
+
+            ],
+
+            :experience_reward => 50,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 100,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_2
+        {               #   quest_charkills_3
+          :id                => 70,
+          :symbolic_id       => :quest_charkills_3,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 250 units.",
+  
+            :de_DE => "Besiege 250 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => "Your enemies are strong - that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 14400,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_2',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 300,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 250,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_3
+        {               #   quest_charkills_4
+          :id                => 71,
+          :symbolic_id       => :quest_charkills_4,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 500 units.",
+  
+            :de_DE => "Besiege 500 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+  
+            :en_US => "Your enemies are strong - that has to change! Destroy their units. That will weaken them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>",
+  
+            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+  
+            :en_US => "Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.",
+  
+            :en_US => "If you win a fight, you will be rewarded for each enemy unit killed.",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 86400,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_3',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 300,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 300,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 400,
+              },
+
+            ],
+
+            :experience_reward => 150,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 500,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_4
       ],                # END OF QUESTS
 
     )

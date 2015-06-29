@@ -652,6 +652,7 @@
   <UIMarker>mark_building_option</UIMarker>
 </Subquest>
 
+
 <!-- EPIC More Ressources -->
 <Quest id="epic__more_ressources" type="epic" advisor="girl">
   <Name>More Ressources</Name>
@@ -918,6 +919,7 @@
   </RewardTests>
 </Subquest>
 
+
 <!-- EPIC STORAGE -->
 <Quest id="epic_storage" type="epic" advisor="chef">
   <Name>Storage</Name>
@@ -978,7 +980,7 @@
   <UIMarker>mark_building_option</UIMarker>
 </Subquest>
 
-<!--erster Handel -->
+<!--erster Handel ? -->
 
 
 <!-- EPIC COTTAGE -->
@@ -1470,8 +1472,6 @@
 </Subquest>
 
 
-
-
 <!-- EPIC ENCAMPMENT -->
 <Quest id="epic_encampment" type="epic" advisor="chef">
   <Name>Encampment</Name>
@@ -1624,7 +1624,7 @@
 </Quest>
 
 
-<!-- OPTIONAL Resources -->
+<!-- OPTIONAL Ressources -->
 
 <Quest id="quest_build_2quarry_lvl4" type="optional" advisor="girl" hide_start_dialog="false">
   <Name>Quarry</Name>
@@ -1842,6 +1842,45 @@
   </RewardTests>
 </Quest>
 
+
+<!-- OPTIONAL RESSOURCE PRODUCTION -->
+
+<Quest id="quest_resourcescore_1" type="optional" advisor="girl">
+  <Name>Resource Production</Name>
+  <Name locale="de_DE">Rohstoffproduktion</Name>
+  <Task>Increase the resource production of one settlement to 200 resource points after taxes.</Task>
+  <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 200 Rohstoffpunkte nach Steuern.</Task>
+  <Description locale="de_DE">
+    <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
+  </Description>
+  <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
+  <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
+  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
+  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
+  <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
+  <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_build_furrier_lvl10</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">250</ResourceReward>
+    <ResourceReward resource="resource_wood">250</ResourceReward>
+    <ResourceReward resource="resource_fur">250</ResourceReward>
+    <ExperienceReward>50</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <SettlementProductionTest min_resources="200" />
+  </RewardTests>
+</Quest>
+
+
+
+
 <!-- OPTIONAL CLUBBER -->
 
 <Quest id="quest_build_barrackslvl5" type="optional" advisor="warrior">
@@ -1908,6 +1947,8 @@
 </Quest>
 
 
+<!-- OPTIONAL FORTRESS QUESTS -->
+
 <Quest id="quest_fortress" type="optional" advisor="chef">
   <Name>Fortress</Name>
   <Name locale="de_DE">Festung erobern</Name>
@@ -1940,6 +1981,303 @@
   </RewardTests>
 </Quest>
 
+<Quest id="quest_infantry_tower" type="optional" advisor="chef">
+  <Name>Infantry tower</Name>
+  <Name locale="de_DE">Knüppler Gelände</Name>
+  <Task>Built an infantry tower.</Task>
+  <Task locale="de_DE">Baue ein Knüppler Gelände in Deiner Festung.</Task>
+  <Description locale="de_DE">
+    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+  </Description>
+  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
+  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardFlavor locale="de_DE">Höhere Level beschleunigen die Einheitenrekrutierung der Nahkämpfer.</RewardFlavor>
+  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_fortress</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_fur">500</ResourceReward>
+    <ExperienceReward>100</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+     <BuildingTest building="building_infantry_tower" min_level="1"/>
+  </RewardTests>
+</Quest>
+
+<Quest id="quest_fortress_fortification_lvl5" type="optional" advisor="chef">
+  <Name>Fortress fortification level 5</Name>
+  <Name locale="de_DE">Festungsanlage Level 5</Name>
+  <Task>Built a fortress fortification level 5.</Task>
+  <Task locale="de_DE">Verbessere die Festungsanlagen auf Level 5.</Task>
+  <Description locale="de_DE">
+    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+  </Description>
+  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
+  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardFlavor locale="de_DE">Höhere Level verbessern die Kampfkraft von Festungen.</RewardFlavor>
+  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_infantry_tower</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">1500</ResourceReward>
+    <ResourceReward resource="resource_wood">1500</ResourceReward>
+    <ResourceReward resource="resource_fur">750</ResourceReward>
+    <ExperienceReward>300</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_fortress_fortification" min_level="5"/>
+  </RewardTests>
+</Quest>
+
+<Quest id="quest_artillery_tower" type="optional" advisor="chef">
+  <Name>Artillery tower</Name>
+  <Name locale="de_DE">Werfer Gelände</Name>
+  <Task>Built an infantry tower.</Task>
+  <Task locale="de_DE">Baue ein Werfer Gelände in Deiner Festung.</Task>
+  <Description locale="de_DE">
+    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+  </Description>
+  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
+  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardFlavor locale="de_DE">Höhere Level beschleunigen die Einheitenrekrutierung der Fernkämpfer.</RewardFlavor>
+  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_fortress_fortification_lvl5</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_fur">750</ResourceReward>
+    <ExperienceReward>150</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_artillery_tower" min_level="1"/>
+  </RewardTests>
+</Quest>
+
+<Quest id="quest_fortress_fortification_lvl7" type="optional" advisor="chef">
+  <Name>Fortress fortification level 7</Name>
+  <Name locale="de_DE">Festungsanlage Level 7</Name>
+  <Task>Built a fortress fortification level 7.</Task>
+  <Task locale="de_DE">Verbessere die Festungsanlagen auf Level 7.</Task>
+  <Description locale="de_DE">
+    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+  </Description>
+  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
+  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardFlavor locale="de_DE">Höhere Level verbessern die Kampfkraft von Festungen.</RewardFlavor>
+  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_fortress_fortification_lvl5</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">3000</ResourceReward>
+    <ResourceReward resource="resource_wood">3000</ResourceReward>
+    <ResourceReward resource="resource_fur">1500</ResourceReward>
+    <ExperienceReward>300</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_fortress_fortification" min_level="7"/>
+  </RewardTests>
+</Quest>
+
+<Quest id="quest_cavalry_tower" type="optional" advisor="chef">
+  <Name>Cavalry tower</Name>
+  <Name locale="de_DE">Reiteranlage</Name>
+  <Task>Built an infantry tower.</Task>
+  <Task locale="de_DE">Baue eine Reiteranlage in Deiner Festung.</Task>
+  <Description locale="de_DE">
+    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+  </Description>
+  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
+  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardFlavor locale="de_DE">Höhere Level beschleunigen die Einheitenrekrutierung der Reiter.</RewardFlavor>
+  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_fortress_fortification_lvl7</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_fur">1000</ResourceReward>
+    <ExperienceReward>200</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_cavalry_tower" min_level="1"/>
+  </RewardTests>
+</Quest>
+
+
+<!-- OPTIONAL OUTPOST QUESTS -->
+
+<Quest id="quest_haunt_lvl6" type="optional" advisor="chef">
+  <Name>Haunt level 6</Name>
+  <Name locale="de_DE">Versammlungsplatz Levle 6</Name>
+  <Task>Built an infantry tower.</Task>
+  <Task locale="de_DE">Verbessere den Versammlungsplatz Deiner Lagerstätte auf Level 6.</Task>
+  <Description locale="de_DE">
+    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+  </Description>
+  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
+  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardFlavor locale="de_DE">Du kannst jetzt eins der drei Spezialgebäude bauen. Entscheide Dich weise!</RewardFlavor>
+  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>epic_encampment</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">1000</ResourceReward>
+    <ResourceReward resource="resource_wood">1000</ResourceReward>
+    <ResourceReward resource="resource_fur">500</ResourceReward>
+    <ExperienceReward>150</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_haunt" min_level="6"/>
+  </RewardTests>
+</Quest>
+
+<Quest id="quest_altar" type="optional" advisor="chef">
+  <Name>Haunt level</Name>
+  <Name locale="de_DE">Spezialgebäude Ritualstein</Name>
+  <Task>Built an infantry tower.</Task>
+  <Task locale="de_DE">Entscheide Dich für den Bau eines Ritualsteins.</Task>
+  <Description locale="de_DE">
+    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+  </Description>
+  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
+  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardFlavor locale="de_DE">Der Ritualstein schützt Deine Lagerstätte vor feindlichen Übernahmen.</RewardFlavor>
+  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_haunt_lvl6</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">150</ResourceReward>
+    <ResourceReward resource="resource_wood">150</ResourceReward>
+    <ResourceReward resource="resource_fur">100</ResourceReward>
+    <ExperienceReward>100</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_altar" min_level="1"/>
+  </RewardTests>
+</Quest>
+
+<Quest id="quest_field_camp" type="optional" advisor="warrior">
+  <Name>Field camp</Name>
+  <Name locale="de_DE">Spezialgebäude Feldlager</Name>
+  <Task>Built an infantry tower.</Task>
+  <Task locale="de_DE">Entscheide Dich für den Bau eines Feldlager.</Task>
+  <Description locale="de_DE">
+    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+  </Description>
+  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
+  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardFlavor locale="de_DE">Das Feldlager vergrößert Deine Armee und liefert auf Level 10 einen zusätzlichen Kommandopunkt.</RewardFlavor>
+  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_haunt_lvl6</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">150</ResourceReward>
+    <ResourceReward resource="resource_wood">150</ResourceReward>
+    <ResourceReward resource="resource_fur">100</ResourceReward>
+    <ExperienceReward>100</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_field_camp" min_level="1"/>
+  </RewardTests>
+</Quest>
+
+<Quest id="quest_trade_center" type="optional" advisor="girl">
+  <Name>Trade center</Name>
+  <Name locale="de_DE">Spezialgebäude Handelszentrum</Name>
+  <Task>Built an infantry tower.</Task>
+  <Task locale="de_DE">Entscheide Dich für den Bau eines Handelszentrum.</Task>
+  <Description locale="de_DE">
+    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
+  </Description>
+  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
+  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardFlavor locale="de_DE">Das Handelszentrum verbessert Deine Rohstoffproduktion, läßt Deine Lagerstätte aber fast wehrlos.</RewardFlavor>
+  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_haunt_lvl6</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">150</ResourceReward>
+    <ResourceReward resource="resource_wood">150</ResourceReward>
+    <ResourceReward resource="resource_fur">100</ResourceReward>
+    <ExperienceReward>100</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_trade_center" min_level="1"/>
+  </RewardTests>
+</Quest>
+
+
+<!-- OPTIONAL CHAR KILLS -->
+
   <Quest id ="quest_charkills_1" type="optional" advisor="warrior">
   <Name>Decimate enemy units</Name>
   <Name locale="de_DE">Gegner dezimieren</Name>
@@ -1960,7 +2298,7 @@
   <Triggers>
     <PlayTimeTrigger>1200</PlayTimeTrigger>
     <FinishQuestTriggers>
-      <FinishQuestTrigger>quest_npc_battle</FinishQuestTrigger>
+      <FinishQuestTrigger>quest_outpost</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
@@ -1971,6 +2309,110 @@
     <KillTest min_units="10" />
   </RewardTests>
 </Quest>
+  
+  <Quest id ="quest_charkills_2" type="optional" advisor="warrior">
+    <Name>Decimate enemy units</Name>
+    <Name locale="de_DE">Gegner dezimieren</Name>
+    <Task>Defeat 100 units.</Task>
+    <Task locale="de_DE">Besiege 100 Einheiten.</Task>
+    <Description locale="de_DE">
+      <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
+    </Description>
+    <Description locale="en_US">
+      <p>You can check how many Units you have already killed by visiting the Ranking.</p>
+    </Description>
+    <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+    <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
+    <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
+    <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+    <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+    <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
+    <Triggers>
+      <PlayTimeTrigger>7200</PlayTimeTrigger>
+      <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_charkills_1</FinishQuestTrigger>
+      </FinishQuestTriggers>
+    </Triggers>
+    <Rewards>
+      <ResourceReward resource="resource_stone">200</ResourceReward>
+      <ResourceReward resource="resource_wood">200</ResourceReward>
+      <ResourceReward resource="resource_fur">200</ResourceReward>
+      <ExperienceReward>50</ExperienceReward>
+    </Rewards>
+    <RewardTests>
+      <KillTest min_units="100" />
+    </RewardTests>
+  </Quest>
+  
+  <Quest id ="quest_charkills_3" type="optional" advisor="warrior">
+    <Name>Decimate enemy units</Name>
+    <Name locale="de_DE">Gegner dezimieren</Name>
+    <Task>Defeat 250 units.</Task>
+    <Task locale="de_DE">Besiege 250 Einheiten.</Task>
+    <Description locale="de_DE">
+      <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
+    </Description>
+    <Description locale="en_US">
+      <p>You can check how many Units you have already killed by visiting the Ranking.</p>
+    </Description>
+    <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+    <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
+    <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
+    <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+    <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+    <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
+    <Triggers>
+      <PlayTimeTrigger>14400</PlayTimeTrigger>
+      <FinishQuestTriggers>
+        <FinishQuestTrigger>quest_charkills_2</FinishQuestTrigger>
+      </FinishQuestTriggers>
+    </Triggers>
+    <Rewards>
+      <ResourceReward resource="resource_stone">200</ResourceReward>
+      <ResourceReward resource="resource_wood">200</ResourceReward>
+      <ResourceReward resource="resource_fur">300</ResourceReward>
+      <ExperienceReward>100</ExperienceReward>
+    </Rewards>
+    <RewardTests>
+      <KillTest min_units="250" />
+    </RewardTests>
+  </Quest>
+  
+  <Quest id ="quest_charkills_4" type="optional" advisor="warrior">
+    <Name>Decimate enemy units</Name>
+    <Name locale="de_DE">Gegner dezimieren</Name>
+    <Task>Defeat 500 units.</Task>
+    <Task locale="de_DE">Besiege 500 Einheiten.</Task>
+    <Description locale="de_DE">
+      <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
+    </Description>
+    <Description locale="en_US">
+      <p>You can check how many Units you have already killed by visiting the Ranking.</p>
+    </Description>
+    <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+    <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
+    <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
+    <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+    <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+    <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
+    <Triggers>
+      <PlayTimeTrigger>86400</PlayTimeTrigger>
+      <FinishQuestTriggers>
+        <FinishQuestTrigger>quest_charkills_3</FinishQuestTrigger>
+      </FinishQuestTriggers>
+    </Triggers>
+    <Rewards>
+      <ResourceReward resource="resource_stone">300</ResourceReward>
+      <ResourceReward resource="resource_wood">300</ResourceReward>
+      <ResourceReward resource="resource_fur">400</ResourceReward>
+      <ExperienceReward>150</ExperienceReward>
+    </Rewards>
+    <RewardTests>
+      <KillTest min_units="500" />
+    </RewardTests>
+  </Quest>
+
+
 
 
 
