@@ -32,21 +32,16 @@ class Action::Military::MoveArmyAction < ActiveRecord::Base
   
   # check if target location is neighboring location
   def valid_target?
-    if self.location.fortress?
-      # movement from fortress to a settlement in same region
-      return true if self.region == self.target_region && !self.target_location.fortress?
-      
-      # movement from fortress to neighboring fortress
-      self.region.node.neighbor_nodes.each do |neighbor_node|
-        logger.debug  "NEIGHBOR NODE: #{neighbor_node.inspect}, #{neighbor_node.region}"
-        return true if neighbor_node.region.fortress_location == self.target_location
-      end
-      
-      return false
-    else
-      # movement from settlement to fortress of settlement region
-      return self.region.fortress_location == self.target_location
+    # movement to a different location in same region
+    return true if self.region == self.target_region && self.location != self.target_location
+
+    # movement to neighboring fortress
+    self.region.node.neighbor_nodes.each do |neighbor_node|
+      logger.debug  "NEIGHBOR NODE: #{neighbor_node.inspect}, #{neighbor_node.region}"
+      return true if neighbor_node.region.fortress_location == self.target_location
     end
+
+    false
   end 
   
 end
