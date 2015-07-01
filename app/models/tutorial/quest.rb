@@ -177,6 +177,16 @@ class Tutorial::Quest < ActiveRecord::Base
           end
         end
       end
+
+      unless reward_tests[:trading_carts_tests].nil?
+        reward_tests[:trading_carts_tests].each do |trading_cart_test|
+          unless trading_cart_test.nil?
+            unless check_trading_carts(trading_cart_test)
+              return false
+            end
+          end
+        end
+      end
       
       unless reward_tests[:movement_test].nil?
         movement_test = reward_tests[:movement_test]
@@ -476,6 +486,39 @@ class Tutorial::Quest < ActiveRecord::Base
     
     # queue check failed, if method reaches this point
     false
+  end
+
+  def check_trading_carts(trading_carts_test)
+    # check for min carts count and direction
+    return false if trading_carts_test[:min_carts_count].nil? || trading_carts_test[:direction].nil?
+
+    logger.debug "check_trading_carts check if min #{trading_carts_test[:min_carts_count]} are send in '#{trading_carts_test[:direction]}' direction(s)"
+
+    # count trading carts that meet the requirements of trading_carts_test.
+    # return true, if there are enough trading carts.
+    check_outgoing_count = 0
+    check_incoming_count = 0
+    self.tutorial_state.owner.settlements.each do |settlement|
+      if !settlement.outgoing_trading_carts.nil? && trading_carts_test[:direction] != "incoming"
+        settlement.outgoing_trading_carts.each do |outgoing|
+          check_outgoing_count += outgoing.num_carts
+          if check_outgoing_count >= trading_carts_test[:min_carts_count] && trading_carts_test[:direction] == "outgoing"
+            return true
+          end
+        end
+      end
+      if !settlement.incoming_trading_carts.nil? && trading_carts_test[:direction] != "outgoing"
+        settlement.incoming_trading_carts.each do |incoming|
+          check_incoming_count += incoming.num_carts
+          if check_incoming_count >= trading_carts_test[:min_carts_count] && trading_carts_test[:direction] == "incoming"
+            return true
+          end
+        end
+      end
+    end
+
+    # check for outgoing and incoming trading carts
+    (check_outgoing_count + check_incoming_count) >= trading_carts_test[:min_carts_count]
   end
 
   def check_movements
