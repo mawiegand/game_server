@@ -508,7 +508,7 @@ class Fundamental::Character < ActiveRecord::Base
       start_variant: 1,
       gender: gender,
       lang: lang,
-      has_limited_grid: false,
+      has_limited_grid: true,
     })
     
     avatar = GameState::Avatars.new
