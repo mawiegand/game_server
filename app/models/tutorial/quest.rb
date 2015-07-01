@@ -7,6 +7,7 @@ class Tutorial::Quest < ActiveRecord::Base
   before_create :set_owner
   before_save   :set_finished_playtime
   after_save    :count_completed_tutorial_quests
+  after_save    :check_for_dependent_new_quests
 
   STATES = []
   STATE_NEW = 0
@@ -98,12 +99,25 @@ class Tutorial::Quest < ActiveRecord::Base
     # quest aus 'm Tutorial holen
     quest = Tutorial::Tutorial.the_tutorial.quests[self.quest_id]
     return false if quest.nil?
+
+    # if quest type is epic and quest has subquests
+    if quest[:type] == :epic && quest[:tutorial] == false && !quest[:subquests].nil?
+      quest[:subquests].each do |subquest_id|
+        return false unless check_finished_subquests(subquest_id)
+      end
+    end
     
     # reward tests durchtesten
     reward_tests = quest[:reward_tests]
     
     unless reward_tests.nil?
-      
+
+      unless reward_tests[:finish_quest_tests].nil?
+        reward_tests[:finish_quest_tests].each do |finish_quest_test|
+          return false unless check_finished_quest(finish_quest_test[:finish_quest_test])
+        end
+      end
+
       unless reward_tests[:resource_production_tests].nil?
         reward_tests[:resource_production_tests].each do |resource_production_test|
           unless check_resource_production(resource_production_test)
@@ -265,33 +279,24 @@ class Tutorial::Quest < ActiveRecord::Base
     true
   end
   
-
+  def check_finished_subquests(subquest_id)
+    self.tutorial_state.finished_quests.each do |finished_quest|
+      if subquest_id == finished_quest.quest[:id]
+        return true
+      end
+    end
+    false
+  end
   
   def place_npcs
     Military::Army.create_npc(self.tutorial_state.owner.home_location, self.quest[:place_npcs]) unless self.quest[:place_npcs].nil?
   end
-  
-  def open_dependent_quest_states
-    # durchlaufe alle quests des tutorials
-    quests = Tutorial::Tutorial.the_tutorial.quests
-    #logger.debug "---> quests " + quests.inspect
-    
-    quest_states = self.tutorial_state.quests
-    #logger.debug "---> quest_states " + quest_states.inspect
-    
-    quests.each do |quest|
-      # logger.debug "---> open_dependent_quest_states " + quest.inspect + quest_states.inspect
-      # falls ein mit abhängigkeit dabei ist
-      if self.tutorial_state.quests.where(:quest_id => quest[:id]).empty? && self.required_by_quest_with_id(quest[:id])
-        # erzeuge neue quest
-        self.tutorial_state.quests.create({
-          status: STATE_NEW,
-          quest_id: quest[:id],
-        })
-      end
-    end
+
+  def check_finished_quest(finished_quest_symbolic_str)
+    # validate finished quests for required finished quest trigger
+    self.tutorial_state.check_finished_quest(finished_quest_symbolic_str)
   end
-  
+
   def check_resource_production(test)
     pool = self.tutorial_state.owner.resource_pool
     return false    if pool.nil?
@@ -623,8 +628,11 @@ class Tutorial::Quest < ActiveRecord::Base
     
     rewards = quest[:rewards] || {}
     #raise BadRequestError.new('no rewards found in quest') if rewards.nil?
-    resource_rewards = rewards[:resource_rewards]
-    unit_rewards = rewards[:unit_rewards]
+    resource_rewards                    = rewards[:resource_rewards]
+    unit_rewards                        = rewards[:unit_rewards]
+    production_bonus_rewards            = rewards[:production_bonus_rewards]
+    construction_bonus_rewards          = rewards[:construction_bonus_rewards]
+    experience_production_bonus_rewards = rewards[:experience_production_bonus_rewards]
 
 
     # calc resources
@@ -674,6 +682,52 @@ class Tutorial::Quest < ActiveRecord::Base
         
         units[unit_db_field] = amount
         total_unit_amount += amount
+      end
+    end
+
+    unless production_bonus_rewards.nil?
+      production_bonus_rewards.each do |production_bonus|
+        resource_type_id = nil
+        GameRules::Rules.the_rules().resource_types.each do |type|
+          if type[:symbolic_id].to_s == production_bonus[:resource].to_s
+            resource_type_id = type[:id]
+            break
+          end
+        end
+        raise BadRequestError.new("no resource type found for resource symbolic id #{production_bonus[:resource]}") if resource_type_id.nil?
+
+        Effect::ResourceEffect.create_reward_effect(
+            self.owner,
+            resource_type_id,
+            production_bonus[:bonus],
+            production_bonus[:duration],
+            self.id,
+            Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_TUTORIAL_REWARD
+        )
+      end
+    end
+
+    unless construction_bonus_rewards.nil?
+      construction_bonus_rewards.each do |construction_bonus|
+        Effect::ConstructionEffect.create_reward_effect(
+            self.owner,
+            construction_bonus[:bonus],
+            construction_bonus[:duration],
+            self.id,
+            Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_TUTORIAL_REWARD
+        )
+      end
+    end
+
+    unless experience_production_bonus_rewards.nil?
+      experience_production_bonus_rewards.each do |experience_production_bonus|
+        Effect::ExperienceEffect.create_reward_effect(
+            self.owner,
+            experience_production_bonus[:bonus],
+            experience_production_bonus[:duration],
+            self.id,
+            Effect::ExperienceEffect::EXPERIENCE_EFFECT_TYPE_TUTORIAL_REWARD
+        )
       end
     end
 
@@ -730,17 +784,7 @@ class Tutorial::Quest < ActiveRecord::Base
       end
     end 
   end
-  
-  def required_by_quest_with_id(next_quest_id)
-    quests = Tutorial::Tutorial.the_tutorial.quests
-    this_quest = quests[self.quest_id]
-    next_quest = quests[next_quest_id]
-    
-    return false if this_quest.nil? || next_quest.nil? || next_quest[:requirement].nil? || next_quest[:requirement][:quest].nil?
-    
-    next_quest[:requirement][:quest].to_s == this_quest[:symbolic_id].to_s
-  end
-  
+
   protected
   
     def count_completed_tutorial_quests
@@ -753,7 +797,14 @@ class Tutorial::Quest < ActiveRecord::Base
         self.tutorial_state.save
       end
     end
-    
+
+    def check_for_dependent_new_quests
+      # if status changed to STATE_FINISHED or STATE_CLOSED and wasn't finished or closed before
+      if self.status_changed? && !self.status.nil? && self.status_change[0] != STATE_FINISHED && self.status_change[0] != STATE_CLOSED && (self.status_change[1] == STATE_FINISHED || self.status_change[1] == STATE_CLOSED)
+        self.tutorial_state.check_for_new_quests('finish_quest_triggers')
+      end
+    end
+
     def set_owner
       unless tutorial_state.nil? 
         self.character_id = tutorial_state.character_id

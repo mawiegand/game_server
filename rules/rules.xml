@@ -73,7 +73,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="2" minor="2" build="0" />
+    <Version major="2" minor="3" build="0" />
     <AppControl debugTracking="1" startscreen="settlement">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="19" />
       <Facebook userStoriesEnabled="0" />
@@ -91,10 +91,10 @@
       <Calculation roundTime="20" retreatProbability="0.5" />
     </Battle>
     <CharacterCreation>
-      <StartResource id="resource_wood">200</StartResource>
-      <StartResource id="resource_stone">200</StartResource>
-      <StartResource id="resource_fur">200</StartResource>
-      <StartResource id="resource_cash">0</StartResource>
+      <StartResource id="resource_wood">100</StartResource>
+      <StartResource id="resource_stone">100</StartResource>
+      <StartResource id="resource_fur">0</StartResource>
+      <StartResource id="resource_cash">100</StartResource>
     </CharacterCreation>
     <ConstructionSpeedup>
       <SpeedupCost resource="resource_cash" amount="0"  hours="(1.0/60.0)" />
@@ -109,6 +109,7 @@
       <SpeedupCost resource="resource_cash" amount="48" hours="9999" />
     </ConstructionSpeedup>
     <TrainingSpeedup>
+      <SpeedupCost resource="resource_cash" amount="0"  hours="(0.5/60.0)" />
       <SpeedupCost resource="resource_cash" amount="1"  hours="0.5"  />
       <SpeedupCost resource="resource_cash" amount="2"  hours="3"  />
       <SpeedupCost resource="resource_cash" amount="4"  hours="6"  />
@@ -126,7 +127,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">8000</ResourceReward>
         <ResourceReward resource="resource_wood">8000</ResourceReward>
-        <ResourceReward resource="resource_fur">8000</ResourceReward>
+        <ResourceReward resource="resource_fur">4000</ResourceReward>
       </Rewards>
     </RetentionBonus>
     <ArtifactInitiationSpeedup>

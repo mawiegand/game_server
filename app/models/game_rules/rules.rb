@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.2.0
+# Version: 2.3.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 2,
-                    :minor => 2,
+                    :minor => 3,
                     :build => 0,
       },
       :app_control => {
@@ -162,10 +162,10 @@ class GameRules::Rules
 
       :character_creation => {
         :start_resources => {
-          1 => 200,
-            0 => 200,
-            2 => 200,
-            3 => 0,
+          1 => 100,
+            0 => 100,
+            2 => 0,
+            3 => 100,
             
         },
       },
@@ -351,6 +351,12 @@ class GameRules::Rules
 
       :training_speedup => [  # ALL TRAINING SPEEDUPS
 
+        {               #   less than (0.5/60.0) hours
+          :resource_id => 3,
+          :amount      => 0,
+          :hours       => (0.5/60.0),
+        },              #   END OF (0.5/60.0) hours
+
         {               #   less than 0.5 hours
           :resource_id => 3,
           :amount      => 1,
@@ -439,7 +445,7 @@ class GameRules::Rules
 
               {
                 :resource => :resource_fur,
-                :amount => 8000,
+                :amount => 4000,
               },
 
           ],
@@ -1151,9 +1157,8 @@ class GameRules::Rules
           :production_time => '800',
 
           :costs      => {
-            0 => '5',
-            1 => '5',
-            2 => '50',
+            0 => '25',
+            1 => '25',
             
           },
 
@@ -1163,7 +1168,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 31,
+              :id => 32,
               :type => 'building',
 
               :min_level => 0,
@@ -1174,7 +1179,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_barracks',
-              :id => 3,
+              :id => 4,
               :type => 'building',
 
               :min_level => 1,
@@ -1185,7 +1190,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_barracks_2',
-              :id => 16,
+              :id => 15,
               :type => 'building',
 
               :min_level => 0,
@@ -1270,7 +1275,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 31,
+              :id => 32,
               :type => 'building',
 
               :min_level => 1,
@@ -1283,7 +1288,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_barracks',
-              :id => 3,
+              :id => 4,
               :type => 'building',
 
               :min_level => 5,
@@ -1296,7 +1301,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_barracks_2',
-              :id => 16,
+              :id => 15,
               :type => 'building',
 
               :min_level => 1,
@@ -1379,7 +1384,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 31,
+              :id => 32,
               :type => 'building',
 
               :min_level => 5,
@@ -1388,7 +1393,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 4,
@@ -1401,7 +1406,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_barracks',
-              :id => 3,
+              :id => 4,
               :type => 'building',
 
               :min_level => 10,
@@ -1414,7 +1419,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_barracks_2',
-              :id => 16,
+              :id => 15,
               :type => 'building',
 
               :min_level => 1,
@@ -1497,7 +1502,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 31,
+              :id => 32,
               :type => 'building',
 
               :min_level => 10,
@@ -1506,7 +1511,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 9,
@@ -1519,7 +1524,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_barracks_2',
-              :id => 16,
+              :id => 15,
               :type => 'building',
 
               :min_level => 5,
@@ -1602,7 +1607,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_barracks_2',
-              :id => 16,
+              :id => 15,
               :type => 'building',
 
               :min_level => 10,
@@ -1705,7 +1710,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 32,
+              :id => 33,
               :type => 'building',
 
               :min_level => 1,
@@ -1718,7 +1723,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_firing_range',
-              :id => 14,
+              :id => 12,
               :type => 'building',
 
               :min_level => 1,
@@ -1814,7 +1819,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 32,
+              :id => 33,
               :type => 'building',
 
               :min_level => 5,
@@ -1823,7 +1828,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 4,
@@ -1836,7 +1841,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_firing_range',
-              :id => 14,
+              :id => 12,
               :type => 'building',
 
               :min_level => 10,
@@ -1932,7 +1937,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 32,
+              :id => 33,
               :type => 'building',
 
               :min_level => 10,
@@ -1941,7 +1946,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 9,
@@ -2140,7 +2145,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 33,
+              :id => 34,
               :type => 'building',
 
               :min_level => 1,
@@ -2153,7 +2158,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 22,
+              :id => 21,
               :type => 'building',
 
               :min_level => 1,
@@ -2249,7 +2254,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 33,
+              :id => 34,
               :type => 'building',
 
               :min_level => 5,
@@ -2258,7 +2263,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 4,
@@ -2271,7 +2276,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 22,
+              :id => 21,
               :type => 'building',
 
               :min_level => 10,
@@ -2367,7 +2372,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 33,
+              :id => 34,
               :type => 'building',
 
               :min_level => 10,
@@ -2376,7 +2381,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 9,
@@ -2575,7 +2580,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 22,
+              :id => 21,
               :type => 'building',
 
               :min_level => 100,
@@ -2746,7 +2751,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 22,
+              :id => 21,
               :type => 'building',
 
               :min_level => 100,
@@ -2950,7 +2955,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Die Häuptlingshütte schaltet weitere Bauplätze und neue Gebäude frei.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 2, 6, 16 und 20.</p>",
+            :de_DE => "<p>Die Häuptlingshütte schaltet weitere Bauplätze und neue Gebäude frei.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 3, 6, 16 und 20.</p>",
   
             :en_US => "<p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6, 16 and 20.</p>",
                 
@@ -2999,13 +3004,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            1 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
-            2 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*35+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*800+GREATER(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            1 => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6800+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            2 => '(GREATER(LEVEL,8)*(EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*50+EQUAL(LEVEL,4)*100+EQUAL(LEVEL,5)*500+EQUAL(LEVEL,6)*1200+EQUAL(LEVEL,7)*2400+EQUAL(LEVEL,8)*4000+EQUAL(LEVEL,9)*6000+EQUAL(LEVEL,10)*10000+GREATER(LEVEL,10)+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)))*0.5',
             
           },
 
-          :production_time => 'EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*30+EQUAL(LEVEL,4)*600+EQUAL(LEVEL,5)*3600+EQUAL(LEVEL,6)*21600+(GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*6',
+          :production_time => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*20+EQUAL(LEVEL,4)*40+EQUAL(LEVEL,5)*180+EQUAL(LEVEL,6)*3600+EQUAL(LEVEL,7)*3600*5+EQUAL(LEVEL,8)*3600*12+(GREATER(LEVEL,8)*FLOOR(3600*12+(LEVEL-8)*3600*4))',
           :production  => [
             
           ],
@@ -3057,9 +3062,10 @@ class GameRules::Rules
 
             :unlock_garrison => 2,            
 
-            :command_points => "GREATER(LEVEL,1)+GREATER(LEVEL,5)+GREATER(LEVEL,15)+EQUAL(LEVEL,20)",
+            :command_points => "GREATER(LEVEL,2)+GREATER(LEVEL,5)+GREATER(LEVEL,15)+EQUAL(LEVEL,20)",
 
-            :unlock_building_slots => "MIN(MIN(LEVEL,10)*4-1,39)",
+            :unlock_building_slots => "MIN((1+GREATER(LEVEL,1)+GREATER(LEVEL,2)+GREATER(LEVEL,3)*4+GREATER(LEVEL,4)*4+GREATER(LEVEL,5)*4+GREATER(LEVEL,5)*4+GREATER(LEVEL,7)*LEVEL*3),29)+MIN(GREATER(LEVEL,10)*(LEVEL-10),10)
+  ",
 
             :garrison_size_bonus => "1000",
 
@@ -3068,16 +3074,16 @@ class GameRules::Rules
           },
 
         },              #   END OF Häuptlingshütte
-        {               #   Jäger und Sammler
+        {               #   Sammler
           :id          => 1, 
           :symbolic_id => :building_gatherer,
-					:category    => 5,
+					:category    => 6,
           :db_field    => :building_gatherer,
           :name        => {
             
-            :de_DE => "Jäger und Sammler",
+            :de_DE => "Sammler",
   
-            :en_US => "Hunter Gatherers",
+            :en_US => "Gatherer",
                 
           },
           :advisor     => "girl",
@@ -3085,12 +3091,12 @@ class GameRules::Rules
             
             :en_US => "<p>Wood and stones, a couple of rabbits or other rodents and the occasional golden frog. For hunter gatherers, though, the real treasures are mushrooms. Especially the red ones with the white spots.</p>",
   
-            :de_DE => "<p>Holz und Steine, ein paar Kaninchen oder andere Nager und ganz selten auch mal eine Kröte. Das sind die Schätze des Sammlers.</p>",
+            :de_DE => "<p>Holz und Steine, nur nicht zu schwer. Das sind die Schätze des Sammlers.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Produziert Stein, Holz und Fell.</p><p>Primitivster aller Steinzeitbewohner. Er jagt und sammelt einfach alles was ihm vor die Flinte - äh Steinschleuder - kommt. Neben vielen völlig unbrauchbaren Sachen finden die Jäger und Sammler alles von Ästen und Steinen über Wurzeln und bei ausreichend großem Gelände sogar ein paar Kröten.</p>",
+            :de_DE => "<p>Sammelt geringere Mengen Stein und Holz.</p><p>Primitivster aller Steinzeitbewohner. Er sammelt einfach alles was ihm vor die Flinte - äh Steinschleuder - kommt. Neben vielen völlig unbrauchbaren Sachen finden die Sammler alles von Ästen und Steinen über Wurzeln.</p>",
   
             :en_US => "<p>The most primitive of all Stone Age folk, the Hunter Gatherer collects all kinds of stuff, from branches and stones to roots, and even a couple of Golden Frogs, if the area is big enough. Basically, he hunts and gathers anything that comes into his sights - er... into the reach of his slingshot. All his treasures are set out neatly on display in his compound. </p><p>Apart from all kinds of useless stuff, hunter gatherers find everything – from branches and stones to roots and, if the area is big enough, even a couple of golden frogs.</p>",
                 
@@ -3121,6 +3127,17 @@ class GameRules::Rules
 
             },
 
+            {
+              :symbolic_id => 'building_gatherer',
+              :id => 1,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ],
 
             [
@@ -3134,14 +3151,24 @@ class GameRules::Rules
 
             },
 
+            {
+              :symbolic_id => 'building_gatherer',
+              :id => 1,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
             ],
 
           ],          
 
           :costs      => {
-            0 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)',
-            1 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5)',
-            2 => 'FLOOR((EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5))*0.5)',
+            0 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+EQUAL(LEVEL,5)*70+EQUAL(LEVEL,6)*150+EQUAL(LEVEL,7)*260+EQUAL(LEVEL,8)*450+EQUAL(LEVEL,9)*750+EQUAL(LEVEL,10)*1200',
+            1 => 'EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+EQUAL(LEVEL,5)*70+EQUAL(LEVEL,6)*150+EQUAL(LEVEL,7)*260+EQUAL(LEVEL,8)*450+EQUAL(LEVEL,9)*750+EQUAL(LEVEL,10)*1200',
             
           },
 
@@ -3151,19 +3178,13 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
+                :formula            => "FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40+GREATER(LEVEL,10)*((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
-              },
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
+                :formula            => "FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40+GREATER(LEVEL,10)*((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))/4+0.5)",
               },
             
               {
@@ -3181,9 +3202,115 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Jäger und Sammler
-        {               #   Gottesgläubiger Sammler
+          :conversion_option => {
+            :building              => :building_logger,
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,2)", 
+          },
+
+        },              #   END OF Sammler
+        {               #   Taverne
           :id          => 2, 
+          :symbolic_id => :building_tavern,
+					:category    => 6,
+          :db_field    => :building_tavern,
+          :name        => {
+            
+            :de_DE => "Taverne",
+  
+            :en_US => "Tavern",
+                
+          },
+          :advisor     => "girl",
+          :flavour     => {
+            
+            :en_US => "<p>A quiet seat, a cool beer, and some reasonably friendly company. What more could anyone want from life?</p>",
+  
+            :de_DE => "<p>Ein ruhiger Sitz, ein kühles Bier in mehr oder weniger angenehmer Gesellschaft - was könnte man sich mehr wünschen?</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ermöglicht die Annahme von Aufträgen.</p><p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Vielleicht findet ihr auch weitere Verdienstmöglichkeiten.</p>",
+  
+            :en_US => "<p>There is no more wretched a hive of scum and villainy than the tavern. So, it's an ideal place to relax, have a drink, and laze around during your day off. And who knows, a job may even turn up if you stick around long enough.</p><p>This building can not be torn down.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 12,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 2,
+
+            },
+
+            {
+              :symbolic_id => 'building_tavern',
+              :id => 2,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 31,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => '(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
+            1 => '(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
+            2 => 'GREATER(LEVEL,3)*(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3))',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :assignment_level => "LEVEL",
+
+          },
+
+        },              #   END OF Taverne
+        {               #   Gottesgläubiger Sammler
+          :id          => 3, 
           :symbolic_id => :building_special_gatherer,
 					:category    => 6,
           :db_field    => :building_special_gatherer,
@@ -3237,7 +3364,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_special_gatherer',
-              :id => 2,
+              :id => 3,
               :type => 'building',
 
               :min_level => 0,
@@ -3248,7 +3375,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -3262,9 +3389,9 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => '(EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5))*2.5',
-            1 => '(EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5))*2.5',
-            2 => '(FLOOR((EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+GREATER(LEVEL,4)*FLOOR((((MIN(LEVEL,6)-MIN(LEVEL,5))*0.2+0.8)*(0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.33+0.5))*0.5))*2.5',
+            0 => '(EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+EQUAL(LEVEL,5)*70+EQUAL(LEVEL,6)*150+EQUAL(LEVEL,7)*260+EQUAL(LEVEL,8)*450+EQUAL(LEVEL,9)*750+EQUAL(LEVEL,10)*1200)*2',
+            1 => '(EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+EQUAL(LEVEL,5)*70+EQUAL(LEVEL,6)*150+EQUAL(LEVEL,7)*260+EQUAL(LEVEL,8)*450+EQUAL(LEVEL,9)*750+EQUAL(LEVEL,10)*1200)*2',
+            2 => '(EQUAL(LEVEL,6)*150+EQUAL(LEVEL,7)*260+EQUAL(LEVEL,8)*450+EQUAL(LEVEL,9)*750+EQUAL(LEVEL,10)*1200)*2',
             
           },
 
@@ -3275,25 +3402,19 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "(FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))+0.5))",
+                :formula            => "(FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40)*2",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "(FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))+0.5))",
-              },
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "(FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))+0.5))",
+                :formula            => "(FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40)*2",
               },
             
               {
                 :id                 => 3,
                 :symbolic_id        => :resource_cash,
-                :formula            => "1/12.0",
+                :formula            => "1/24.0",
               },
             
           ],
@@ -3307,7 +3428,7 @@ class GameRules::Rules
 
         },              #   END OF Gottesgläubiger Sammler
         {               #   Ausbildungsgelände
-          :id          => 3, 
+          :id          => 4, 
           :symbolic_id => :building_barracks,
 					:category    => 5,
           :db_field    => :building_barracks,
@@ -3355,7 +3476,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 2,
+              :min_level => 3,
 
             },
 
@@ -3379,6 +3500,7 @@ class GameRules::Rules
           :costs      => {
             0 => 'EQUAL(LEVEL,1)*50+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
             1 => 'EQUAL(LEVEL,1)*25+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5)',
+            2 => '(EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
             
           },
 
@@ -3422,37 +3544,37 @@ class GameRules::Rules
           },
 
         },              #   END OF Ausbildungsgelände
-        {               #   Kleine Hütte
-          :id          => 4, 
-          :symbolic_id => :building_cottage,
+        {               #   Steinbruch
+          :id          => 5, 
+          :symbolic_id => :building_quarry,
 					:category    => 5,
-          :db_field    => :building_cottage,
+          :db_field    => :building_quarry,
           :name        => {
             
-            :de_DE => "Kleine Hütte",
+            :de_DE => "Steinbruch",
   
-            :en_US => "Small Hut",
+            :en_US => "Quarry",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>Your subjects live in small huts. The more subjects there are, the faster you can build other buildings.</p>",
+            :en_US => "<p>Stones – nothing but stones, everywhere! Sweaty labourers and the monotonous thwack of heavy tools.</p>",
   
-            :de_DE => "<p>Ein Dach über dem Kopf. Mehr ist das wirklich nicht!</p>",
+            :de_DE => "<p>Steine, nichts als Steine! Verschwitzte Arbeiter und der monotone Schlag der schweren Werkzeuge.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Beschleunigt die Baugeschwindigkeit.</p><p>In den kleinen Hütten sind Eure Untertanen vor Sonne und Regen geschützt. Hauptsache, sie sind fleißig und beschweren sich nicht.</p>",
+            :de_DE => "<p>Ermöglicht den Steinabbau.</p><p>Durch eine aus Sicht der Steinzeit komplizierte Kette von Arbeitsvorgängen werden im Steinbruch Steine gewonnen.</p><p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für noch schnelleren Abbau auch bei den anderen Steinbrüchen.</p>",
   
-            :en_US => "<p>A little hut can only protect your subjects from sun and rain. The main thing is that they work hard and don't complain. If only being the boss was always this easy!</p>",
+            :en_US => "<p>Stones are quarried using a complicated - well, for the Stone Age! - series of working processes. A really large quarry stimulates competition among the its workers, which speeds up the quarrying quite a bit - even in other quarries.</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
           :divine_supporters_only => false,
@@ -3471,7 +3593,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 3,
+              :min_level => 4,
 
             },
 
@@ -3493,72 +3615,72 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'LESS(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.75*1.5+0.5)*0.5)+EQUAL(LEVEL,5)*275+GREATER(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.75*1.5+0.5))',
-            1 => 'LESS(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)*0.5)+EQUAL(LEVEL,5)*180+GREATER(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5))',
-            2 => 'LESS(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.25*1.5+0.5)*0.5)+EQUAL(LEVEL,5)*90+GREATER(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.25*1.5+0.5))',
+            0 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            1 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
             
           },
 
-          :production_time => 'EQUAL(LEVEL,1)*FLOOR(5*1.25)+EQUAL(LEVEL,2)*FLOOR(15*1.25)+EQUAL(LEVEL,3)*FLOOR(60*1.25)+EQUAL(LEVEL,4)*FLOOR(180*1.25)+EQUAL(LEVEL,5)*FLOOR(900*1.25)+EQUAL(LEVEL,6)*FLOOR(3600*1.25)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*1.25)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600)*1.25',
+          :production_time => 'EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*(3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
           :production  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*7+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*16+EQUAL(LEVEL,5)*25+EQUAL(LEVEL,6)*35+EQUAL(LEVEL,7)*48+EQUAL(LEVEL,8)*62+EQUAL(LEVEL,9)*80+EQUAL(LEVEL,10)*100+(GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))*2/3",
+              },
             
           ],
           :production_bonus  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
             
           ],
 
           :abilities   => {
 
-            :speedup_queue => [
-
-              {
-                :queue_type_id     => 0,
-                :queue_type_id_sym => :queue_buildings,
-                :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*(FLOOR((1.25*POW(LEVEL,1.3)+0.5)*3*1.2)/100.0)+GREATER(LEVEL,10)*FLOOR((0.3*POW(LEVEL,1.94)+0.5)*3*1.2)/100.0",
-              },
-
-            ],
-
           },
 
           :conversion_option => {
-            :building              => :building_cottage_2,
-            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,5)-GREATER(LEVEL,9)-GREATER(LEVEL,12)-GREATER(LEVEL,15)-GREATER(LEVEL,18)", 
+            :building              => :building_quarry_2,
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,5)-GREATER(LEVEL,8)", 
           },
 
-        },              #   END OF Kleine Hütte
-        {               #   Taverne
-          :id          => 5, 
-          :symbolic_id => :building_tavern,
-					:category    => 6,
-          :db_field    => :building_tavern,
+        },              #   END OF Steinbruch
+        {               #   Holzfäller
+          :id          => 6, 
+          :symbolic_id => :building_logger,
+					:category    => 5,
+          :db_field    => :building_logger,
           :name        => {
             
-            :de_DE => "Taverne",
+            :de_DE => "Holzfäller",
   
-            :en_US => "Tavern",
+            :en_US => "Logger",
                 
           },
           :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>A quiet seat, a cool beer, and some reasonably friendly company. What more could anyone want from life?</p>",
+            :en_US => "<p>A man and his stone axe! Apart from firewood, he occasionally even brings a tree he managed to fell back to the compound.</p>",
   
-            :de_DE => "<p>Ein ruhiger Sitz, ein kühles Bier in mehr oder weniger angenehmer Gesellschaft - was könnte man sich mehr wünschen?</p>",
+            :de_DE => "<p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ermöglicht die Annahme von Aufträgen.</p><p>Die Taverne. Nirgendwo wirst du mehr Abschaum und Verkommenheit versammelt finden als hier. Der ideale Ort, um ein Bierchen zu heben und den einen oder anderen Plausch zu halten. Vielleicht findet ihr auch weitere Verdienstmöglichkeiten.</p>",
+            :de_DE => "<p>Ermöglicht den Holzabbau.</p><p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller, mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p><p>Große Holzfäller lassen nur die kleinen Bäume übrig und reduzieren so die Frustration der kleineren Holzfäller, was sich sehr positiv auf ihren Ertrag auswirkt.</p>",
   
-            :en_US => "<p>There is no more wretched a hive of scum and villainy than the tavern. So, it's an ideal place to relax, have a drink, and laze around during your day off. And who knows, a job may even turn up if you stick around long enough.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p>Using a combination of brute force and up-to-date stone tools, a logger can chop down quite large tree trunks and process them into valuable raw materials. Tall loggers only leave small trees behind, reducing the frustration of smaller loggers. This has a very positive effect on their output!</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
   
           :buyable     => true,
           :divine_supporters_only => false,
@@ -3566,7 +3688,7 @@ class GameRules::Rules
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
-          :experience_factor => 12,
+          :experience_factor => 1.5,
 
           :requirementGroups=> [
 
@@ -3577,13 +3699,119 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
+              :min_level => 4,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
               :min_level => 3,
 
             },
 
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            1 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            
+          },
+
+          :production_time => 'EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*(FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
+          :production  => [
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*7+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*16+EQUAL(LEVEL,5)*25+EQUAL(LEVEL,6)*35+EQUAL(LEVEL,7)*48+EQUAL(LEVEL,8)*62+EQUAL(LEVEL,9)*80+EQUAL(LEVEL,10)*100+(GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))*2/3",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
+            
+          ],
+
+          :abilities   => {
+
+          },
+
+          :conversion_option => {
+            :building              => :building_logger_2,
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,5)-GREATER(LEVEL,8)", 
+          },
+
+        },              #   END OF Holzfäller
+        {               #   Lagerfeuer
+          :id          => 7, 
+          :symbolic_id => :building_campfire,
+					:category    => 6,
+          :db_field    => :building_campfire,
+          :name        => {
+            
+            :de_DE => "Lagerfeuer",
+  
+            :en_US => "Campfire",
+                
+          },
+          :advisor     => "chef",
+          :flavour     => {
+            
+            :en_US => "<p>The place where alliance members hold diplomatic exchanges or discussions. It takes at least two to have a good conversation, even though often only one of them does the talking. Talk? A little chief can do that better than anyone else.</p>",
+  
+            :de_DE => "<p>Gutes Essen, leckere Getränke und ein paar Lieder. Ein würdiger Rahmen für Verhandlungen!</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Das Lagerfeuer dient zur Kontaktaufnahme mit Allianzen und zur Ausbildung des Kleinen Häuptlings.</p><p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+  
+            :en_US => "<p>At the campfire, inhabitants gather in sociable groups to discuss important arrangements. Guests are either selected to join the campfire group, or arranged around it on stakes. It's also where the career of a little chief begins. A couple of flattering words here, a bit of scheming there, taking credit for someone else's bravery, and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p><p>This building can not be torn down.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1))",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> false,
+          :destructable=> false,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 1.5,
+
+          :requirementGroups=> [
+
+            [
+              
             {
-              :symbolic_id => 'building_tavern',
-              :id => 5,
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+            {
+              :symbolic_id => 'building_campfire',
+              :id => 7,
               :type => 'building',
 
               :min_level => 0,
@@ -3594,7 +3822,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -3608,13 +3836,12 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'LESS(LEVEL,11)*(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
-            1 => 'LESS(LEVEL,11)*(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
-            2 => 'LESS(LEVEL,11)*(LESS(LEVEL,5)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)+GREATER(LEVEL,4)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.125*1.5+0.5+1125))',
+            0 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700',
+            1 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2',
             
           },
 
-          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3))',
+          :production_time => 'EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3)',
           :production  => [
             
           ],
@@ -3624,13 +3851,25 @@ class GameRules::Rules
 
           :abilities   => {
 
-            :assignment_level => "LEVEL",
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 6,
+                :queue_type_id_sym => :queue_special,
+                :level             => 1,
+              },
+
+            ],
+
+            :unlock_diplomacy     => 1,
+
+            :unlock_alliance_creation => 2,
 
           },
 
-        },              #   END OF Taverne
+        },              #   END OF Lagerfeuer
         {               #   Rohstofflager
-          :id          => 6, 
+          :id          => 8, 
           :symbolic_id => :building_storage,
 					:category    => 5,
           :db_field    => :building_storage,
@@ -3678,7 +3917,7 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 4,
+              :min_level => 5,
 
             },
 
@@ -3749,42 +3988,42 @@ class GameRules::Rules
           },
 
         },              #   END OF Rohstofflager
-        {               #   Lagerfeuer
-          :id          => 7, 
-          :symbolic_id => :building_campfire,
-					:category    => 6,
-          :db_field    => :building_campfire,
+        {               #   Kleine Hütte
+          :id          => 9, 
+          :symbolic_id => :building_cottage,
+					:category    => 5,
+          :db_field    => :building_cottage,
           :name        => {
             
-            :de_DE => "Lagerfeuer",
+            :de_DE => "Kleine Hütte",
   
-            :en_US => "Campfire",
+            :en_US => "Small Hut",
                 
           },
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>The place where alliance members hold diplomatic exchanges or discussions. It takes at least two to have a good conversation, even though often only one of them does the talking. Talk? A little chief can do that better than anyone else.</p>",
+            :en_US => "<p>Your subjects live in small huts. The more subjects there are, the faster you can build other buildings.</p>",
   
-            :de_DE => "<p>Gutes Essen, leckere Getränke und ein paar Lieder. Ein würdiger Rahmen für Verhandlungen!</p>",
+            :de_DE => "<p>Ein Dach über dem Kopf. Mehr ist das wirklich nicht!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Das Lagerfeuer dient zur Kontaktaufnahme mit Allianzen und zur Ausbildung des Kleinen Häuptlings.</p><p>Am Lagerfeuer versammeln sich die Bewohner in geselligen Runden oder für wichtige Absprachen. Auch die Gäste werden wahlweise ans Feuer gebeten oder am Marterpfahl aufgestellt.</p><p>Ein paar nette Worte hier, eine kleine Intrige da, schmücken mit fremden Federn und schon kann man sich den Status des kleinen Häuptlings erwerben und vielleicht eine eigene Lagerstätte gründen.</p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Beschleunigt die Baugeschwindigkeit.</p><p>In den kleinen Hütten sind Eure Untertanen vor Sonne und Regen geschützt. Hauptsache, sie sind fleißig und beschweren sich nicht.</p>",
   
-            :en_US => "<p>At the campfire, inhabitants gather in sociable groups to discuss important arrangements. Guests are either selected to join the campfire group, or arranged around it on stakes. It's also where the career of a little chief begins. A couple of flattering words here, a bit of scheming there, taking credit for someone else's bravery, and hey presto! You can take on the status of little chief and maybe even start your own encampment.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p>A little hut can only protect your subjects from sun and rain. The main thing is that they work hard and don't complain. If only being the boss was always this easy!</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "LESS(LEVEL,11)*(FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1))",
+	        :population  => "FLOOR((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)",
   
           :buyable     => true,
           :divine_supporters_only => false,
-          :demolishable=> false,
-          :destructable=> false,
+          :demolishable=> true,
+          :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
           :experience_factor => 1.5,
@@ -3798,13 +4037,132 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 4,
+              :min_level => 6,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 5,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'LESS(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.75*1.5+0.5)*0.5)+EQUAL(LEVEL,5)*275+GREATER(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.75*1.5+0.5))',
+            1 => 'LESS(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)*0.5)+EQUAL(LEVEL,5)*180+GREATER(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5))',
+            2 => 'GREATER(LEVEL,3)*(LESS(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.25*1.5+0.5)*0.5)+EQUAL(LEVEL,5)*90+GREATER(LEVEL,5)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.25*1.5+0.5)))',
+            
+          },
+
+          :production_time => 'EQUAL(LEVEL,1)*FLOOR(5*1.25)+EQUAL(LEVEL,2)*FLOOR(15*1.25)+EQUAL(LEVEL,3)*FLOOR(60*1.25)+EQUAL(LEVEL,4)*FLOOR(180*1.25)+EQUAL(LEVEL,5)*FLOOR(900*1.25)+EQUAL(LEVEL,6)*FLOOR(3600*1.25)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*1.25)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600)*1.25',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*(FLOOR((1.25*POW(LEVEL,1.3)+0.5)*3*1.2)/100.0)+GREATER(LEVEL,10)*FLOOR((0.3*POW(LEVEL,1.94)+0.5)*3*1.2)/100.0",
+              },
+
+            ],
+
+          },
+
+          :conversion_option => {
+            :building              => :building_cottage_2,
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,5)-GREATER(LEVEL,9)-GREATER(LEVEL,12)-GREATER(LEVEL,15)-GREATER(LEVEL,18)", 
+          },
+
+        },              #   END OF Kleine Hütte
+        {               #   Trainingshöhle
+          :id          => 10, 
+          :symbolic_id => :building_training_cave,
+					:category    => 6,
+          :db_field    => :building_training_cave,
+          :name        => {
+            
+            :de_DE => "Trainingshöhle",
+  
+            :en_US => "Training Cave",
+                
+          },
+          :advisor     => "chef",
+          :flavour     => {
+            
+            :de_DE => "<p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p>",
+  
+            :en_US => "<p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Dient als passive Quelle von Erfahrung.</p><p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth, Spiegel, in denen man sich herrlich erschrecken kann, und natürlich die ein oder andere Ratte, die eingefangen werden will.</p>",
+  
+            :en_US => "<p>The Training Cave offers multiple training possibilities to would-be Demigods. Huge stones to lift, an almost endless labyrinth, mirrors that can scare you witless, and of course, a few rats to catch.</p><p>This building can not be torn down.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "LESS(LEVEL,11)*FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5))",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 8,
+
+          :experience_production => '(CEIL((((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))/12.5)*1.5)))+EQUAL(LEVEL,10)',
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 7,
 
             },
 
             {
-              :symbolic_id => 'building_campfire',
-              :id => 7,
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_training_cave',
+              :id => 10,
               :type => 'building',
 
               :min_level => 0,
@@ -3815,7 +4173,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -3829,12 +4187,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            1 => 'LESS(LEVEL,11)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,1)*60+EQUAL(LEVEL,2)*90+EQUAL(LEVEL,3)*165+EQUAL(LEVEL,4)*280+EQUAL(LEVEL,5)*465+EQUAL(LEVEL,6)*780+EQUAL(LEVEL,7)*1340+EQUAL(LEVEL,8)*2300+EQUAL(LEVEL,9)*3800+EQUAL(LEVEL,10)*6000',
+            1 => 'EQUAL(LEVEL,1)*60+EQUAL(LEVEL,2)*90+EQUAL(LEVEL,3)*165+EQUAL(LEVEL,4)*280+EQUAL(LEVEL,5)*465+EQUAL(LEVEL,6)*780+EQUAL(LEVEL,7)*1340+EQUAL(LEVEL,8)*2300+EQUAL(LEVEL,9)*3800+EQUAL(LEVEL,10)*6000',
+            2 => 'EQUAL(LEVEL,4)*400+EQUAL(LEVEL,5)*750+EQUAL(LEVEL,6)*1400+EQUAL(LEVEL,7)*2500+EQUAL(LEVEL,8)*4200+EQUAL(LEVEL,9)*7000+EQUAL(LEVEL,10)*10000',
             
           },
 
-          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3))',
+          :production_time => '(EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3))',
           :production  => [
             
           ],
@@ -3844,237 +4203,11 @@ class GameRules::Rules
 
           :abilities   => {
 
-            :unlock_queue => [
-
-              {
-                :queue_type_id     => 6,
-                :queue_type_id_sym => :queue_special,
-                :level             => 1,
-              },
-
-            ],
-
-            :unlock_diplomacy     => 1,
-
-            :unlock_alliance_creation => 2,
-
           },
 
-        },              #   END OF Lagerfeuer
-        {               #   Steinbruch
-          :id          => 8, 
-          :symbolic_id => :building_quarry,
-					:category    => 5,
-          :db_field    => :building_quarry,
-          :name        => {
-            
-            :de_DE => "Steinbruch",
-  
-            :en_US => "Quarry",
-                
-          },
-          :advisor     => "girl",
-          :flavour     => {
-            
-            :en_US => "<p>Stones – nothing but stones, everywhere! Sweaty labourers and the monotonous thwack of heavy tools.</p>",
-  
-            :de_DE => "<p>Steine, nichts als Steine! Verschwitzte Arbeiter und der monotone Schlag der schweren Werkzeuge.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Ermöglicht den Steinabbau.</p><p>Durch eine aus Sicht der Steinzeit komplizierte Kette von Arbeitsvorgängen werden im Steinbruch Steine gewonnen.</p><p>Ein richtig großer Steinbruch treibt den Wettkampf unter den Steinbrechern an und sorgt so für noch schnelleren Abbau auch bei den anderen Steinbrüchen.</p>",
-  
-            :en_US => "<p>Stones are quarried using a complicated - well, for the Stone Age! - series of working processes. A really large quarry stimulates competition among the its workers, which speeds up the quarrying quite a bit - even in other quarries.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 1.5,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 5,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 5,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
-            
-          },
-
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
-          :production  => [
-            
-              {
-                :id                 => 0,
-                :symbolic_id        => :resource_stone,
-                :formula            => "EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100)",
-              },
-            
-          ],
-          :production_bonus  => [
-            
-              {
-                :id                 => 0,
-                :symbolic_id        => :resource_stone,
-                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
-              },
-            
-          ],
-
-          :abilities   => {
-
-          },
-
-          :conversion_option => {
-            :building              => :building_quarry_2,
-            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
-          },
-
-        },              #   END OF Steinbruch
-        {               #   Holzfäller
-          :id          => 9, 
-          :symbolic_id => :building_logger,
-					:category    => 5,
-          :db_field    => :building_logger,
-          :name        => {
-            
-            :de_DE => "Holzfäller",
-  
-            :en_US => "Logger",
-                
-          },
-          :advisor     => "girl",
-          :flavour     => {
-            
-            :en_US => "<p>A man and his stone axe! Apart from firewood, he occasionally even brings a tree he managed to fell back to the compound.</p>",
-  
-            :de_DE => "<p>Ein Mann und seine Steinaxt! Neben losem Holz bringt er ab und zu sogar einen selbst gefällten Baum mit ins Lager.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Ermöglicht den Holzabbau.</p><p>Unter Ausnutzung purer Gewalt aber auch modernster Steinwerkzeuge gelingt es dem Holzfäller, mehr oder weniger große Stämme zu fällen und zu wertvollen Rohstoffen zu verarbeiten.</p><p>Große Holzfäller lassen nur die kleinen Bäume übrig und reduzieren so die Frustration der kleineren Holzfäller, was sich sehr positiv auf ihren Ertrag auswirkt.</p>",
-  
-            :en_US => "<p>Using a combination of brute force and up-to-date stone tools, a logger can chop down quite large tree trunks and process them into valuable raw materials. Tall loggers only leave small trees behind, reducing the frustration of smaller loggers. This has a very positive effect on their output!</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 1.5,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 5,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 5,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            
-          },
-
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
-          :production  => [
-            
-              {
-                :id                 => 1,
-                :symbolic_id        => :resource_wood,
-                :formula            => "EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100)",
-              },
-            
-          ],
-          :production_bonus  => [
-            
-              {
-                :id                 => 1,
-                :symbolic_id        => :resource_wood,
-                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
-              },
-            
-          ],
-
-          :abilities   => {
-
-          },
-
-          :conversion_option => {
-            :building              => :building_logger_2,
-            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
-          },
-
-        },              #   END OF Holzfäller
+        },              #   END OF Trainingshöhle
         {               #   Kürschner
-          :id          => 10, 
+          :id          => 11, 
           :symbolic_id => :building_furrier,
 					:category    => 5,
           :db_field    => :building_furrier,
@@ -4135,7 +4268,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 8,
+              :min_level => 7,
 
             },
 
@@ -4144,19 +4277,19 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            1 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            2 => 'EQUAL(LEVEL,3)*25+EQUAL(LEVEL,4)*40+EQUAL(LEVEL,5)*75+EQUAL(LEVEL,6)*125+EQUAL(LEVEL,7)*210+EQUAL(LEVEL,8)*350+EQUAL(LEVEL,9)*600+EQUAL(LEVEL,10)*1025+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
             
           },
 
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
+          :production_time => 'EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*20+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+(GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75',
           :production  => [
             
               {
                 :id                 => 2,
                 :symbolic_id        => :resource_fur,
-                :formula            => "EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100)",
+                :formula            => "EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*7+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*16+EQUAL(LEVEL,5)*25+EQUAL(LEVEL,6)*35+EQUAL(LEVEL,7)*48+EQUAL(LEVEL,8)*62+EQUAL(LEVEL,9)*80+EQUAL(LEVEL,10)*100+(GREATER(LEVEL,10)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))*2/3",
               },
             
           ],
@@ -4176,147 +4309,35 @@ class GameRules::Rules
 
           :conversion_option => {
             :building              => :building_furrier_2,
-            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,7)-GREATER(LEVEL,15)", 
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,1)-GREATER(LEVEL,3)-GREATER(LEVEL,5)-GREATER(LEVEL,8)", 
           },
 
         },              #   END OF Kürschner
-        {               #   Trainingshöhle
-          :id          => 11, 
-          :symbolic_id => :building_training_cave,
-					:category    => 6,
-          :db_field    => :building_training_cave,
-          :name        => {
-            
-            :de_DE => "Trainingshöhle",
-  
-            :en_US => "Training Cave",
-                
-          },
-          :advisor     => "chef",
-          :flavour     => {
-            
-            :de_DE => "<p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p>",
-  
-            :en_US => "<p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Dient als passive Quelle von Erfahrung.</p><p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth, Spiegel, in denen man sich herrlich erschrecken kann, und natürlich die ein oder andere Ratte, die eingefangen werden will.</p>",
-  
-            :en_US => "<p>The Training Cave offers multiple training possibilities to would-be Demigods. Huge stones to lift, an almost endless labyrinth, mirrors that can scare you witless, and of course, a few rats to catch.</p><p>This building can not be torn down.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "LESS(LEVEL,11)*FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5))",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 8,
-
-          :experience_production => '(CEIL((((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))/12.5)*1.5)))+EQUAL(LEVEL,10)',
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 6,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_training_cave',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.125*1.5+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2.25*1.5+0.5)',
-            
-          },
-
-          :production_time => 'LESS(LEVEL,11)*(EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3))',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-          },
-
-        },              #   END OF Trainingshöhle
-        {               #   Tüftler-Werkstatt
+        {               #   Schießstand
           :id          => 12, 
-          :symbolic_id => :building_artifact_stand,
-					:category    => 6,
-          :db_field    => :building_artifact_stand,
+          :symbolic_id => :building_firing_range,
+					:category    => 5,
+          :db_field    => :building_firing_range,
           :name        => {
             
-            :de_DE => "Tüftler-Werkstatt",
+            :de_DE => "Schießstand",
   
-            :en_US => "Workshop",
+            :en_US => "Firing Range",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "warrior",
           :flavour     => {
             
-            :de_DE => "<p>Die Tüftler warten bereits auf die Artefakte. Hol Dir eins!</p>",
+            :en_US => "<p>Don't feel like brawling or getting up close and personal with stinky animals? Prefer to kill your enemy from a safe distance? Then ranged combat is right up your alley.</p>",
   
-            :en_US => "<p>Those Tinkers are insane! Enter at your own risk.</p>",
+            :de_DE => "<p>Keine Lust auf Prügeleien oder stinkende Tiere? Du willst Deinen Gegner am liebsten aus sicherer Entfernung töten? Dann ist Fernkampf Dein Ding!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Benötigt um Artefakte zu nutzen.</p><p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+            :de_DE => "<p>Ermöglicht Rekrutierung von Fernkämpfern in der Heimatsiedlung und in Lagerstätten.</p><p>Steine, Speere und alles, was man werfen oder schießen kann, fliegt auf dem Ausbildungsgelände für Fernkämpfer durch die Luft.</p>",
   
-            :en_US => "<p>Thinkers and Tinkers get together at the workshop. They examine whatever unknown materials there are - artifacts, as the simple-minded call them - and attempt to bring about a technological revolution.</p><p>This building can not be torn down.</p>",
+            :en_US => "<p>Stones, spears and anything else that can be thrown or shot flies through the air at the long-range combat training ground. The larger the grounds, the faster the training – as well as the development of completely new techniques which, in turn, form the basis of the training of new units.</p>",
                 
           },
 
@@ -4326,11 +4347,11 @@ class GameRules::Rules
   
           :buyable     => true,
           :divine_supporters_only => false,
-          :demolishable=> false,
+          :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
-          :experience_factor => 12,
+          :experience_factor => 4.5,
 
           :requirementGroups=> [
 
@@ -4341,29 +4362,20 @@ class GameRules::Rules
               :id => 0,
               :type => 'building',
 
-              :min_level => 7,
+              :min_level => 9,
 
             },
 
+            ],
+
+            [
+              
             {
-              :symbolic_id => 'building_artifact_stand',
-              :id => 12,
+              :symbolic_id => 'building_haunt',
+              :id => 27,
               :type => 'building',
 
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
+              :min_level => 9,
 
             },
 
@@ -4372,13 +4384,14 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => '(FLOOR(7500*POW(LEVEL,0.4)))',
-            1 => '(FLOOR(10000*POW(LEVEL,0.4)))',
-            2 => '(FLOOR(12500*POW(LEVEL,0.4)))',
+            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)',
+            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)',
+            2 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
             
           },
 
-          :production_time => '(36000+(7200*LEVEL))',
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3
+',
           :production  => [
             
           ],
@@ -4388,11 +4401,35 @@ class GameRules::Rules
 
           :abilities   => {
 
-            :unlock_artifact_initiation => "LEVEL",
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
+                :level             => 1,
+              },
+
+            ],
 
           },
 
-        },              #   END OF Tüftler-Werkstatt
+          :conversion_option => {
+            :building              => :building_firing_range_2,
+            :target_level_formula  => "LEVEL-GREATER(LEVEL,3)-GREATER(LEVEL,8)-GREATER(LEVEL,13)-GREATER(LEVEL,18)", 
+          },
+
+        },              #   END OF Schießstand
         {               #   Kupferschmelze
           :id          => 13, 
           :symbolic_id => :building_copper_smelter,
@@ -4459,7 +4496,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -4492,31 +4529,31 @@ class GameRules::Rules
           },
 
         },              #   END OF Kupferschmelze
-        {               #   Schießstand
+        {               #   Tüftler-Werkstatt
           :id          => 14, 
-          :symbolic_id => :building_firing_range,
-					:category    => 5,
-          :db_field    => :building_firing_range,
+          :symbolic_id => :building_artifact_stand,
+					:category    => 6,
+          :db_field    => :building_artifact_stand,
           :name        => {
             
-            :de_DE => "Schießstand",
+            :de_DE => "Tüftler-Werkstatt",
   
-            :en_US => "Firing Range",
+            :en_US => "Workshop",
                 
           },
-          :advisor     => "warrior",
+          :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>Don't feel like brawling or getting up close and personal with stinky animals? Prefer to kill your enemy from a safe distance? Then ranged combat is right up your alley.</p>",
+            :de_DE => "<p>Die Tüftler warten bereits auf die Artefakte. Hol Dir eins!</p>",
   
-            :de_DE => "<p>Keine Lust auf Prügeleien oder stinkende Tiere? Du willst Deinen Gegner am liebsten aus sicherer Entfernung töten? Dann ist Fernkampf Dein Ding!</p>",
+            :en_US => "<p>Those Tinkers are insane! Enter at your own risk.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ermöglicht Rekrutierung von Fernkämpfern in der Heimatsiedlung und in Lagerstätten.</p><p>Steine, Speere und alles, was man werfen oder schießen kann, fliegt auf dem Ausbildungsgelände für Fernkämpfer durch die Luft.</p>",
+            :de_DE => "<p>Benötigt um Artefakte zu nutzen.</p><p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
   
-            :en_US => "<p>Stones, spears and anything else that can be thrown or shot flies through the air at the long-range combat training ground. The larger the grounds, the faster the training – as well as the development of completely new techniques which, in turn, form the basis of the training of new units.</p>",
+            :en_US => "<p>Thinkers and Tinkers get together at the workshop. They examine whatever unknown materials there are - artifacts, as the simple-minded call them - and attempt to bring about a technological revolution.</p><p>This building can not be torn down.</p>",
                 
           },
 
@@ -4526,11 +4563,112 @@ class GameRules::Rules
   
           :buyable     => true,
           :divine_supporters_only => false,
+          :demolishable=> false,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 12,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_artifact_stand',
+              :id => 14,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 31,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => '(FLOOR(7500*POW(LEVEL,0.4)))',
+            1 => '(FLOOR(10000*POW(LEVEL,0.4)))',
+            2 => '(FLOOR(12500*POW(LEVEL,0.4)))',
+            
+          },
+
+          :production_time => '(36000+(7200*LEVEL))',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :unlock_artifact_initiation => "LEVEL",
+
+          },
+
+        },              #   END OF Tüftler-Werkstatt
+        {               #   Fortschrittliches Ausbildungsgelände
+          :id          => 15, 
+          :symbolic_id => :building_barracks_2,
+					:category    => 5,
+          :db_field    => :building_barracks_2,
+          :name        => {
+            
+            :de_DE => "Fortschrittliches Ausbildungsgelände",
+  
+            :en_US => "Advanced Training Grounds",
+                
+          },
+          :advisor     => "warrior",
+          :flavour     => {
+            
+            :en_US => "<p></p>",
+  
+            :de_DE => "<p></p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Im Fortschrittlichen Ausbildungsgelände werden in der Heimatsiedlung und in Lagerstätten Nahkämpfer mit modernen Waffen ausgebildet.</p>",
+  
+            :en_US => "<p>At the Advanced Training Grounds your infantry units are instructed in the  use of state of the art weaponry.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
           :demolishable=> true,
           :destructable=> true,
           :takeover_downgrade_by_levels=> 1,
           :takeover_destroy  => false,
-          :experience_factor => 4.5,
+          :experience_factor => 6.5,
 
           :requirementGroups=> [
 
@@ -4545,16 +4683,14 @@ class GameRules::Rules
 
             },
 
-            ],
-
-            [
-              
             {
               :symbolic_id => 'building_haunt',
               :id => 27,
               :type => 'building',
 
-              :min_level => 11,
+              :min_level => 0,
+
+              :max_level => 0,
 
             },
 
@@ -4563,12 +4699,14 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)',
-            1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)',
+            0 => '(EQUAL(LEVEL,1)*50+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))*1.5',
+            1 => '(EQUAL(LEVEL,1)*25+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5))*1.5',
+            2 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            3 => '2*MAX(LEVEL-19,0)',
             
           },
 
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3*1.75
 ',
           :production  => [
             
@@ -4582,10 +4720,10 @@ class GameRules::Rules
             :speedup_queue => [
 
               {
-                :queue_type_id     => 3,
-                :queue_type_id_sym => :queue_artillery,
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
                 :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.33*1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
               },
 
             ],
@@ -4593,8 +4731,8 @@ class GameRules::Rules
             :unlock_queue => [
 
               {
-                :queue_type_id     => 3,
-                :queue_type_id_sym => :queue_artillery,
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
                 :level             => 1,
               },
 
@@ -4602,14 +4740,9 @@ class GameRules::Rules
 
           },
 
-          :conversion_option => {
-            :building              => :building_firing_range_2,
-            :target_level_formula  => "LEVEL-GREATER(LEVEL,3)-GREATER(LEVEL,8)-GREATER(LEVEL,13)-GREATER(LEVEL,18)", 
-          },
-
-        },              #   END OF Schießstand
+        },              #   END OF Fortschrittliches Ausbildungsgelände
         {               #   Stammeshalle
-          :id          => 15, 
+          :id          => 16, 
           :symbolic_id => :building_alliance_hall,
 					:category    => 6,
           :db_field    => :building_alliance_hall,
@@ -4681,7 +4814,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_alliance_hall',
-              :id => 15,
+              :id => 16,
               :type => 'building',
 
               :min_level => 0,
@@ -4692,7 +4825,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -4727,147 +4860,37 @@ class GameRules::Rules
           },
 
         },              #   END OF Stammeshalle
-        {               #   Fortschrittliches Ausbildungsgelände
-          :id          => 16, 
-          :symbolic_id => :building_barracks_2,
-					:category    => 5,
-          :db_field    => :building_barracks_2,
-          :name        => {
-            
-            :de_DE => "Fortschrittliches Ausbildungsgelände",
-  
-            :en_US => "Advanced Training Grounds",
-                
-          },
-          :advisor     => "warrior",
-          :flavour     => {
-            
-            :en_US => "<p></p>",
-  
-            :de_DE => "<p></p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Im Fortschrittlichen Ausbildungsgelände werden in der Heimatsiedlung und in Lagerstätten Nahkämpfer mit modernen Waffen ausgebildet.</p>",
-  
-            :en_US => "<p>At the Advanced Training Grounds your infantry units are instructed in the  use of state of the art weaponry.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 6.5,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 2,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => '(EQUAL(LEVEL,1)*50+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))*1.5',
-            1 => '(EQUAL(LEVEL,1)*25+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5))*1.5',
-            3 => '2*MAX(LEVEL-19,0)',
-            
-          },
-
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3*1.75
-',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-            :speedup_queue => [
-
-              {
-                :queue_type_id     => 2,
-                :queue_type_id_sym => :queue_infantry,
-                :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.33*1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
-              },
-
-            ],
-
-            :unlock_queue => [
-
-              {
-                :queue_type_id     => 2,
-                :queue_type_id_sym => :queue_infantry,
-                :level             => 1,
-              },
-
-            ],
-
-          },
-
-        },              #   END OF Fortschrittliches Ausbildungsgelände
-        {               #   Winddichte Hütte
+        {               #   Altehrwürdiger Steinbruch
           :id          => 17, 
-          :symbolic_id => :building_cottage_2,
+          :symbolic_id => :building_quarry_2,
 					:category    => 5,
-          :db_field    => :building_cottage_2,
+          :db_field    => :building_quarry_2,
           :name        => {
             
-            :de_DE => "Winddichte Hütte",
+            :de_DE => "Altehrwürdiger Steinbruch",
   
-            :en_US => "Windproof Hut",
+            :en_US => "Age Old Stone Quarry",
                 
           },
-          :advisor     => "chef",
+          :advisor     => "girl",
           :flavour     => {
             
-            :en_US => "<p>A fireplace, a neatly fenced front lawn and a front doormat. Living the dream!</p>",
+            :en_US => "<p>In the Copper-Stone Age, you'd expect workers to have copper pickaxes - but the workers actually preferred to invest their copper in jewellery for their wives. The fact they chose this option suggests their grateful wives gave them some pretty lavish rewards...</p>",
   
-            :de_DE => "<p>Ein Feuerplatz, eingezäunter Vorgarten und eine Fußmatte vor der Tür. Ein Traum!</p>",
+            :de_DE => "<p>Der Fortschritt ist eindeutig ablesbar. Starke muskulöse Arbeiter im Steinbruch, behangen mit schönstem Kupferschmuck.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Beschleunigt die Baugeschwindigkeit.</p><p>In der fortschrittlichen winddichten Hütten wohnen die verdienten sprich fleißigen Bewohner. Diese Hütte hat neben Wände, die diesen Namen auch verdienen, sogar einen Feuerplatz, wodurch die Bewohner noch zufriedener werden. Und sie ist natürlich größer, denn seien wir mal ehrlich, zwei Arbeiter sind immer besser als ein zufriedener.</p>",
+            :de_DE => "<p>Ermöglicht eine schnellen Steinabbau.</p><p>Wie in Steinbrüchen mit Beginn der Kupferzeit mehr Steine abgebaut worden konnten, bleibt rätselhaft. Denn nur hier wurden keine Kupferwerkzeuge benutzt. Aber trotzdem ging der Abbau spürbar schneller.</p><p>Ab Level 11 werden die Arbeiter noch schneller und treiben sogar Arbeiter in anderen Steinbrüchen zu schnellerer Arbeit an.</p>",
   
-            :en_US => "<p>These modern, windproof huts are where the deserving - that is, hard-working - residents live. Apart from walls that can actually be called walls, there's also a fireplace, which makes the people who live there considerable more satisfied. And, of course, windproof huts are bigger because, let's be honest, two grumpy workers are still better than one happy one.</p>",
+            :en_US => "<p>How workers managed to excavate so much stone from the quarries of the Copper-Stone Age is a mystery, considering that they still weren't using copper implements. Despite this, excavation was noticeably faster at this time. Workers above a certain size were even faster still, encouraging workers in other quarries to work faster as well.</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
   
           :buyable     => true,
           :divine_supporters_only => false,
@@ -4899,7 +4922,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 12,
+              :min_level => 11,
 
             },
 
@@ -4908,38 +4931,139 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.75*1.5*8.05+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5*8.05+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.25*1.5*8.05+0.5)',
+            0 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            1 => '(LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))',
             
           },
 
           :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75*1.5',
           :production  => [
             
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "EQUAL(LEVEL,1)*12+EQUAL(LEVEL,2)*16+EQUAL(LEVEL,3)*24+EQUAL(LEVEL,4)*36+EQUAL(LEVEL,5)*55+EQUAL(LEVEL,6)*75+EQUAL(LEVEL,7)*105+EQUAL(LEVEL,8)*135+EQUAL(LEVEL,9)*175+EQUAL(LEVEL,10)*225+(GREATER(LEVEL,10)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100)*2+0.5)",
+              },
+            
           ],
           :production_bonus  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
             
           ],
 
           :abilities   => {
 
-            :speedup_queue => [
+          },
 
-              {
-                :queue_type_id     => 0,
-                :queue_type_id_sym => :queue_buildings,
-                :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*(FLOOR((1.25*POW(LEVEL,1.3)+0.5)*3*1.75*1.2)/100.0)+GREATER(LEVEL,10)*FLOOR((0.3*POW(LEVEL,1.94)+0.5)*3*1.75*1.2)/100.0",
-              },
+        },              #   END OF Altehrwürdiger Steinbruch
+        {               #   Holzfäller mit Kupferaxt
+          :id          => 18, 
+          :symbolic_id => :building_logger_2,
+					:category    => 5,
+          :db_field    => :building_logger_2,
+          :name        => {
+            
+            :de_DE => "Holzfäller mit Kupferaxt",
+  
+            :en_US => "Logger with Copper Axe",
+                
+          },
+          :advisor     => "girl",
+          :flavour     => {
+            
+            :en_US => "<p>A man and his copper axe! Although copper axes always bend, this worker can still bring home the trees he's felled himself as well as some brushwood.</p>",
+  
+            :de_DE => "<p>Ein Mann und seine Kupferaxt! Stoff einiger Gesänge und mancher Träume.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ermöglicht eine hohe Holzproduktion.</p><p>Kupferäxte fällen einen Baum deutlich schneller. Leider sind Kupferäxte auch sehr reparaturbedürftig. Dennoch sind Holzfäller effektiver und leiten ab einer bestimmten Größe auch die normalen Holzfäller zu erhöhtem Bäume fällen an.</p>",
+  
+            :en_US => "<p>Copper axes fell trees much more quickly - unfortunately they need a lot of repairing as well. However, the loggers who use them are more efficient and can motivate ordinary loggers to fell more trees, generally of the smaller variety.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 3.3,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 2,
+
+            },
 
             ],
 
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 11,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000)',
+            1 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            
           },
 
-        },              #   END OF Winddichte Hütte
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75*1.5',
+          :production  => [
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "EQUAL(LEVEL,1)*12+EQUAL(LEVEL,2)*16+EQUAL(LEVEL,3)*24+EQUAL(LEVEL,4)*36+EQUAL(LEVEL,5)*55+EQUAL(LEVEL,6)*75+EQUAL(LEVEL,7)*105+EQUAL(LEVEL,8)*135+EQUAL(LEVEL,9)*175+EQUAL(LEVEL,10)*225+(GREATER(LEVEL,10)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100)*2+0.5)",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05)",
+              },
+            
+          ],
+
+          :abilities   => {
+
+          },
+
+        },              #   END OF Holzfäller mit Kupferaxt
         {               #   Großes Rohstofflager
-          :id          => 18, 
+          :id          => 19, 
           :symbolic_id => :building_storage_2,
 					:category    => 5,
           :db_field    => :building_storage_2,
@@ -5054,138 +5178,37 @@ class GameRules::Rules
           },
 
         },              #   END OF Großes Rohstofflager
-        {               #   Altehrwürdiger Steinbruch
-          :id          => 19, 
-          :symbolic_id => :building_quarry_2,
-					:category    => 5,
-          :db_field    => :building_quarry_2,
-          :name        => {
-            
-            :de_DE => "Altehrwürdiger Steinbruch",
-  
-            :en_US => "Age Old Stone Quarry",
-                
-          },
-          :advisor     => "girl",
-          :flavour     => {
-            
-            :en_US => "<p>In the Copper-Stone Age, you'd expect workers to have copper pickaxes - but the workers actually preferred to invest their copper in jewellery for their wives. The fact they chose this option suggests their grateful wives gave them some pretty lavish rewards...</p>",
-  
-            :de_DE => "<p>Der Fortschritt ist eindeutig ablesbar. Starke muskulöse Arbeiter im Steinbruch, behangen mit schönstem Kupferschmuck.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Ermöglicht eine schnellen Steinabbau.</p><p>Wie in Steinbrüchen mit Beginn der Kupferzeit mehr Steine abgebaut worden konnten, bleibt rätselhaft. Denn nur hier wurden keine Kupferwerkzeuge benutzt. Aber trotzdem ging der Abbau spürbar schneller.</p><p>Ab Level 11 werden die Arbeiter noch schneller und treiben sogar Arbeiter in anderen Steinbrüchen zu schnellerer Arbeit an.</p>",
-  
-            :en_US => "<p>How workers managed to excavate so much stone from the quarries of the Copper-Stone Age is a mystery, considering that they still weren't using copper implements. Despite this, excavation was noticeably faster at this time. Workers above a certain size were even faster still, encouraging workers in other quarries to work faster as well.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 3.3,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 4,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 14,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            1 => '(LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))',
-            
-          },
-
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75*1.5',
-          :production  => [
-            
-              {
-                :id                 => 0,
-                :symbolic_id        => :resource_stone,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)",
-              },
-            
-          ],
-          :production_bonus  => [
-            
-              {
-                :id                 => 0,
-                :symbolic_id        => :resource_stone,
-                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
-              },
-            
-          ],
-
-          :abilities   => {
-
-          },
-
-        },              #   END OF Altehrwürdiger Steinbruch
-        {               #   Holzfäller mit Kupferaxt
+        {               #   Winddichte Hütte
           :id          => 20, 
-          :symbolic_id => :building_logger_2,
+          :symbolic_id => :building_cottage_2,
 					:category    => 5,
-          :db_field    => :building_logger_2,
+          :db_field    => :building_cottage_2,
           :name        => {
             
-            :de_DE => "Holzfäller mit Kupferaxt",
+            :de_DE => "Winddichte Hütte",
   
-            :en_US => "Logger with Copper Axe",
+            :en_US => "Windproof Hut",
                 
           },
-          :advisor     => "girl",
+          :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>A man and his copper axe! Although copper axes always bend, this worker can still bring home the trees he's felled himself as well as some brushwood.</p>",
+            :en_US => "<p>A fireplace, a neatly fenced front lawn and a front doormat. Living the dream!</p>",
   
-            :de_DE => "<p>Ein Mann und seine Kupferaxt! Stoff einiger Gesänge und mancher Träume.</p>",
+            :de_DE => "<p>Ein Feuerplatz, eingezäunter Vorgarten und eine Fußmatte vor der Tür. Ein Traum!</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Ermöglicht eine hohe Holzproduktion.</p><p>Kupferäxte fällen einen Baum deutlich schneller. Leider sind Kupferäxte auch sehr reparaturbedürftig. Dennoch sind Holzfäller effektiver und leiten ab einer bestimmten Größe auch die normalen Holzfäller zu erhöhtem Bäume fällen an.</p>",
+            :de_DE => "<p>Beschleunigt die Baugeschwindigkeit.</p><p>In der fortschrittlichen winddichten Hütten wohnen die verdienten sprich fleißigen Bewohner. Diese Hütte hat neben Wände, die diesen Namen auch verdienen, sogar einen Feuerplatz, wodurch die Bewohner noch zufriedener werden. Und sie ist natürlich größer, denn seien wir mal ehrlich, zwei Arbeiter sind immer besser als ein zufriedener.</p>",
   
-            :en_US => "<p>Copper axes fell trees much more quickly - unfortunately they need a lot of repairing as well. However, the loggers who use them are more efficient and can motivate ordinary loggers to fell more trees, generally of the smaller variety.</p>",
+            :en_US => "<p>These modern, windproof huts are where the deserving - that is, hard-working - residents live. Apart from walls that can actually be called walls, there's also a fireplace, which makes the people who live there considerable more satisfied. And, of course, windproof huts are bigger because, let's be honest, two grumpy workers are still better than one happy one.</p>",
                 
           },
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => true,
           :divine_supporters_only => false,
@@ -5217,7 +5240,7 @@ class GameRules::Rules
               :id => 27,
               :type => 'building',
 
-              :min_level => 14,
+              :min_level => 13,
 
             },
 
@@ -5226,140 +5249,38 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000)',
-            1 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.75*1.5*8.05+0.5)',
+            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5*8.05+0.5)',
+            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.25*1.5*8.05+0.5)',
             
           },
 
           :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75*1.5',
           :production  => [
             
-              {
-                :id                 => 1,
-                :symbolic_id        => :resource_wood,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)",
-              },
-            
           ],
           :production_bonus  => [
-            
-              {
-                :id                 => 1,
-                :symbolic_id        => :resource_wood,
-                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
-              },
             
           ],
 
           :abilities   => {
 
-          },
+            :speedup_queue => [
 
-        },              #   END OF Holzfäller mit Kupferaxt
-        {               #   Verrückter Kürschner
-          :id          => 21, 
-          :symbolic_id => :building_furrier_2,
-					:category    => 5,
-          :db_field    => :building_furrier_2,
-          :name        => {
-            
-            :de_DE => "Verrückter Kürschner",
-  
-            :en_US => "Crazy Furrier",
-                
-          },
-          :advisor     => "girl",
-          :flavour     => {
-            
-            :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
-  
-            :de_DE => "<p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Ermöglicht eine schnellere Fellproduktion.</p><p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
-  
-            :en_US => "<p>The copper knife was a gift from the gods. At least, that's what the furriers who use their copper knives to create gorgeous clothes like to believe. Sadly, members of this group suffer from the usual side effects of a life in haute couture - vigorous fanning, a high-pitched and nasal voice, and generally crazy conduct - all in the name of art, of course. They may be mad, but they set a great example for other furriers.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 3.3,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 7,
-
-            },
+              {
+                :queue_type_id     => 0,
+                :queue_type_id_sym => :queue_buildings,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*(FLOOR((1.25*POW(LEVEL,1.3)+0.5)*3*1.75*1.2)/100.0)+GREATER(LEVEL,10)*FLOOR((0.3*POW(LEVEL,1.94)+0.5)*3*1.75*1.2)/100.0",
+              },
 
             ],
 
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 17,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            1 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            0 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            2 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            
           },
 
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75*1.5',
-          :production  => [
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "FLOOR((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100))*2+0.5)",
-              },
-            
-          ],
-          :production_bonus  => [
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
-              },
-            
-          ],
-
-          :abilities   => {
-
-          },
-
-        },              #   END OF Verrückter Kürschner
+        },              #   END OF Winddichte Hütte
         {               #   Stinkender Stall
-          :id          => 22, 
+          :id          => 21, 
           :symbolic_id => :building_stud,
 					:category    => 5,
           :db_field    => :building_stud,
@@ -5431,6 +5352,7 @@ class GameRules::Rules
           :costs      => {
             0 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)',
             1 => 'FLOOR(((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)',
+            2 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
             
           },
 
@@ -5474,6 +5396,108 @@ class GameRules::Rules
           },
 
         },              #   END OF Stinkender Stall
+        {               #   Verrückter Kürschner
+          :id          => 22, 
+          :symbolic_id => :building_furrier_2,
+					:category    => 5,
+          :db_field    => :building_furrier_2,
+          :name        => {
+            
+            :de_DE => "Verrückter Kürschner",
+  
+            :en_US => "Crazy Furrier",
+                
+          },
+          :advisor     => "girl",
+          :flavour     => {
+            
+            :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
+  
+            :de_DE => "<p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ermöglicht eine schnellere Fellproduktion.</p><p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
+  
+            :en_US => "<p>The copper knife was a gift from the gods. At least, that's what the furriers who use their copper knives to create gorgeous clothes like to believe. Sadly, members of this group suffer from the usual side effects of a life in haute couture - vigorous fanning, a high-pitched and nasal voice, and generally crazy conduct - all in the name of art, of course. They may be mad, but they set a great example for other furriers.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 3.3,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 6,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 16,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            1 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            0 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            2 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75*1.5',
+          :production  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "EQUAL(LEVEL,1)*12+EQUAL(LEVEL,2)*16+EQUAL(LEVEL,3)*24+EQUAL(LEVEL,4)*36+EQUAL(LEVEL,5)*55+EQUAL(LEVEL,6)*75+EQUAL(LEVEL,7)*105+EQUAL(LEVEL,8)*135+EQUAL(LEVEL,9)*175+EQUAL(LEVEL,10)*225+(GREATER(LEVEL,10)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100)*2+0.5)",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
+            
+          ],
+
+          :abilities   => {
+
+          },
+
+        },              #   END OF Verrückter Kürschner
         {               #   Schießanlage
           :id          => 23, 
           :symbolic_id => :building_firing_range_2,
@@ -5545,6 +5569,7 @@ class GameRules::Rules
           :costs      => {
             0 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)*1.5)',
             1 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)*1.5)',
+            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))*1.5',
             3 => '2*MAX(LEVEL-19,0)',
             
           },
@@ -5633,7 +5658,7 @@ class GameRules::Rules
               :id => 13,
               :type => 'building',
 
-              :min_level => 6,
+              :min_level => 8,
 
             },
 
@@ -5665,7 +5690,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 3,
@@ -5773,7 +5798,7 @@ class GameRules::Rules
               :id => 13,
               :type => 'building',
 
-              :min_level => 8,
+              :min_level => 9,
 
             },
 
@@ -5805,7 +5830,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 3,
@@ -5911,6 +5936,7 @@ class GameRules::Rules
           :costs      => {
             0 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)*1.5)',
             1 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)*1.5)',
+            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))*1.5',
             
           },
 
@@ -6091,7 +6117,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => false,
           :divine_supporters_only => false,
@@ -6152,13 +6178,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            1 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            2 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
             
           },
 
-          :production_time => '3600*LEVEL',
+          :production_time => '5400*LEVEL',
           :production  => [
             
           ],
@@ -6207,7 +6233,7 @@ class GameRules::Rules
 
           :hidden      => 0,
 
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
   
           :buyable     => false,
           :divine_supporters_only => false,
@@ -6268,13 +6294,13 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
-            1 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5)',
-            2 => 'FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*2*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            1 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            2 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
             
           },
 
-          :production_time => 'EQUAL(LEVEL,1)*36*3600+GREATER(LEVEL,1)*(3600*LEVEL)',
+          :production_time => 'EQUAL(LEVEL,1)*36*3600+GREATER(LEVEL,1)*(5400*LEVEL)',
           :production  => [
             
           ],
@@ -6289,8 +6315,155 @@ class GameRules::Rules
           },
 
         },              #   END OF Ritualstein
-        {               #   Festungsanlagen
+        {               #   Handelsplatz
           :id          => 30, 
+          :symbolic_id => :building_trade_center,
+					:category    => 7,
+          :db_field    => :building_trade_center,
+          :name        => {
+            
+            :de_DE => "Handelsplatz",
+  
+            :en_US => "Trade Center",
+                
+          },
+          :advisor     => "girl",
+          :flavour     => {
+            
+            :en_US => "<p>Field camps turn encampments into military support units. Despite all the talk about the safety and storage that field camps offer, they seem to have a magical attraction for enemies.</p>",
+  
+            :de_DE => "<p>Mehr Rohstoffe! Mit dem Handelsplatz verwandeln wir Lagerstätten in Wirtschaftsstützpunkte.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Spezialisierungsgebäude, spezialisiert die Lagerstätte für wirtschaftliche Zwecke. Nur ein Spezialisierungsgebäude pro Lagerstätte.</p><p>Der Handelsplatz verbessert die Rohstoffproduktion der Lagerstätte um 1% pro Level. Auf Level 10 nisten sich Kröten in den feuchten Ecken ein.</p>",
+  
+            :en_US => "<p>Specialization building, specializes your camp for military purposes. Only one specialization building per camp is possible. </p><p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 50 per level. At Level 10, a field camp also increases a settlement's command points by one.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
+  
+          :buyable     => false,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> false,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => true,
+          :experience_factor => 8,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 6,
+
+            },
+
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_altar',
+              :id => 29,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_field_camp',
+              :id => 28,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_trade_center',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            1 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            2 => 'EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000',
+            
+          },
+
+          :production_time => '5400*LEVEL',
+          :production  => [
+            
+              {
+                :id                 => 3,
+                :symbolic_id        => :resource_cash,
+                :formula            => "GREATER(LEVEL,9)*1/48.0",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+              {
+                :id                 => 0,
+                :symbolic_id        => :resource_stone,
+                :formula            => "0.01*LEVEL",
+              },
+            
+              {
+                :id                 => 1,
+                :symbolic_id        => :resource_wood,
+                :formula            => "0.01*LEVEL",
+              },
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "0.01*LEVEL",
+              },
+            
+          ],
+
+          :abilities   => {
+
+            :trading_carts => "5*LEVEL*LEVEL",
+
+          },
+
+        },              #   END OF Handelsplatz
+        {               #   Festungsanlagen
+          :id          => 31, 
           :symbolic_id => :building_fortress_fortification,
 					:category    => 0,
           :db_field    => :building_fortress_fortification,
@@ -6383,7 +6556,7 @@ class GameRules::Rules
 
         },              #   END OF Festungsanlagen
         {               #   Knüppler Gelände
-          :id          => 31, 
+          :id          => 32, 
           :symbolic_id => :building_infantry_tower,
 					:category    => 1,
           :db_field    => :building_infantry_tower,
@@ -6428,7 +6601,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 1,
@@ -6481,7 +6654,7 @@ class GameRules::Rules
 
         },              #   END OF Knüppler Gelände
         {               #   Werfer Gelände
-          :id          => 32, 
+          :id          => 33, 
           :symbolic_id => :building_artillery_tower,
 					:category    => 1,
           :db_field    => :building_artillery_tower,
@@ -6526,7 +6699,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 5,
@@ -6560,7 +6733,7 @@ class GameRules::Rules
                 :queue_type_id     => 3,
                 :queue_type_id_sym => :queue_artillery,
                 :domain            => :settlement,
-                :speedup_formula   => "(LESS(LEVEL,11)*FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*4",
+                :speedup_formula   => "(FLOOR(1.25*POW(LEVEL,1.3)+0.5)/100.0)*4",
               },
 
             ],
@@ -6579,7 +6752,7 @@ class GameRules::Rules
 
         },              #   END OF Werfer Gelände
         {               #   Reiteranlage
-          :id          => 33, 
+          :id          => 34, 
           :symbolic_id => :building_cavalry_tower,
 					:category    => 1,
           :db_field    => :building_cavalry_tower,
@@ -6624,7 +6797,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 30,
+              :id => 31,
               :type => 'building',
 
               :min_level => 7,
@@ -6772,7 +6945,7 @@ class GameRules::Rules
             3 => {
               :max_level => 10,
               
-              :building  => 30,
+              :building  => 31,
               
               :level  => 1,
               
@@ -7619,10 +7792,69 @@ class GameRules::Rules
 
 
         },              #   END OF Wood Cutting!
-        {              #   Skinning
+        {              #   Bar Room Brawl
           :id          => 2,
-          :symbolic_id => :assignment_fur,
+          :symbolic_id => :assignment_barroombrawl,
           :level       => 3,
+          :advisor     => "warrior",
+          :name        => {
+            
+            :en_US => "Bar Room Brawl",
+  
+            :de_DE => "Schlägerei",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Ein kühles Bier und eine zünftige Tavernenschlägerei. Das nenne ich Erholung!",
+  
+            :en_US => "A chilled beer and flying fists! Now that's what I call relaxation!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Wenn verdiente Krieger zu Gast sind steigt die Schlägerei Rate enorm. Jungspunde wollen sich profilieren, denn so manch große Krieger Karriere begann in der Taverne. Aber irgendjemand muss die Rechnung bezahlen.</p>",
+  
+            :en_US => "<p>If a bunch of accomplished warriors meet at the tavern, chances are that there's going to be quite a brawl. But once it's all over, and someone has paid for the smashed up furniture, you may just find yourself with some reliable companions.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Nach einer ordentlichen Schlägerei kann man gute Freunde finden.</p>",
+  
+            :en_US => "<p>After a nice brawl, you sometimes make some great friends.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '50',
+            1 => '50',
+            
+          },
+
+          :duration => 2700,
+
+
+          :rewards => {
+            
+          :unit_rewards => [
+            
+              {
+                :unit => :unit_warrior,
+                :amount => 3,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Bar Room Brawl
+        {              #   Skinning
+          :id          => 3,
+          :symbolic_id => :assignment_fur,
+          :level       => 4,
           :advisor     => "girl",
           :name        => {
             
@@ -7672,66 +7904,6 @@ class GameRules::Rules
 
 
         },              #   END OF Skinning
-        {              #   Bar Room Brawl
-          :id          => 3,
-          :symbolic_id => :assignment_barroombrawl,
-          :level       => 4,
-          :advisor     => "warrior",
-          :name        => {
-            
-            :en_US => "Bar Room Brawl",
-  
-            :de_DE => "Schlägerei",
-  
-          },
-          :flavour     => {
-            
-            :de_DE => "Ein kühles Bier und eine zünftige Tavernenschlägerei. Das nenne ich Erholung!",
-  
-            :en_US => "A chilled beer and flying fists! Now that's what I call relaxation!",
-  
-          },
-          :description => {
-            
-            :de_DE => "<p>Wenn verdiente Krieger zu Gast sind steigt die Schlägerei Rate enorm. Jungspunde wollen sich profilieren, denn so manch große Krieger Karriere begann in der Taverne. Aber irgendjemand muss die Rechnung bezahlen.</p>",
-  
-            :en_US => "<p>If a bunch of accomplished warriors meet at the tavern, chances are that there's going to be quite a brawl. But once it's all over, and someone has paid for the smashed up furniture, you may just find yourself with some reliable companions.</p>",
-  
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Nach einer ordentlichen Schlägerei kann man gute Freunde finden.</p>",
-  
-            :en_US => "<p>After a nice brawl, you sometimes make some great friends.</p>",
-  
-          },
-
-          :costs      => {
-            0 => '50',
-            1 => '50',
-            2 => '50',
-            
-          },
-
-          :duration => 2700,
-
-
-          :rewards => {
-            
-          :unit_rewards => [
-            
-              {
-                :unit => :unit_warrior,
-                :amount => 3,
-              },
-
-          ],
-
-          },
-
-
-        },              #   END OF Bar Room Brawl
         {              #   Drive out the Neanderthals
           :id          => 4,
           :symbolic_id => :assignment_raid,
@@ -9688,8 +9860,8 @@ class GameRules::Rules
           },             #   END OF 
           {              #  1
             :id          => 1,
-            :exp         => 2500,
-            :settlement_points   => 0,
+            :exp         => 5000,
+            :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
               
@@ -9701,7 +9873,7 @@ class GameRules::Rules
           },             #   END OF 
           {              #  2
             :id          => 2,
-            :exp         => 5000,
+            :exp         => 9500,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9714,7 +9886,7 @@ class GameRules::Rules
           },             #   END OF 
           {              #  3
             :id          => 3,
-            :exp         => 9500,
+            :exp         => 16250,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9727,7 +9899,7 @@ class GameRules::Rules
           },             #   END OF 
           {              #  4
             :id          => 4,
-            :exp         => 16250,
+            :exp         => 37500,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9740,20 +9912,7 @@ class GameRules::Rules
           },             #   END OF 
           {              #  5
             :id          => 5,
-            :exp         => 25500,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Steinzeitrattenkuschler",
-  
-            :en_US => "Junior-Stoneageratcuddler",
-  
-            },
-          },             #   END OF 
-          {              #  6
-            :id          => 6,
-            :exp         => 37500,
+            :exp         => 71500,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9764,22 +9923,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  7
-            :id          => 7,
-            :exp         => 52750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Hülsenwirblerverwirbler",
-  
-            :en_US => "Junior-Shell-whirlerswirler",
-  
-            },
-          },             #   END OF 
-          {              #  8
-            :id          => 8,
-            :exp         => 71500,
+          {              #  6
+            :id          => 6,
+            :exp         => 121250,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9790,22 +9936,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  9
-            :id          => 9,
-            :exp         => 94250,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Erdferkelentdecker",
-  
-            :en_US => "Junior-Aardvarkdiscoverer",
-  
-            },
-          },             #   END OF 
-          {              #  10
-            :id          => 10,
-            :exp         => 121250,
+          {              #  7
+            :id          => 7,
+            :exp         => 189750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9816,22 +9949,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  11
-            :id          => 11,
-            :exp         => 153000,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Dodoherdenhüter",
-  
-            :en_US => "Junior-Dodoherdkeeper",
-  
-            },
-          },             #   END OF 
-          {              #  12
-            :id          => 12,
-            :exp         => 189750,
+          {              #  8
+            :id          => 8,
+            :exp         => 280000,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9842,22 +9962,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  13
-            :id          => 13,
-            :exp         => 232000,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Säbelzahnkatzenbesänftiger",
-  
-            :en_US => "Junior-Sabre-toothedcatappeaser",
-  
-            },
-          },             #   END OF 
-          {              #  14
-            :id          => 14,
-            :exp         => 280000,
+          {              #  9
+            :id          => 9,
+            :exp         => 395000,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9868,22 +9975,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  15
-            :id          => 15,
-            :exp         => 334250,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Vielfraßversteher",
-  
-            :en_US => "Junior-Wolverinewhisperer",
-  
-            },
-          },             #   END OF 
-          {              #  16
-            :id          => 16,
-            :exp         => 395000,
+          {              #  10
+            :id          => 10,
+            :exp         => 537000,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9894,22 +9988,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  17
-            :id          => 17,
-            :exp         => 462500,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Rothundzähmer",
-  
-            :en_US => "Junior-Dholetamer",
-  
-            },
-          },             #   END OF 
-          {              #  18
-            :id          => 18,
-            :exp         => 537000,
+          {              #  11
+            :id          => 11,
+            :exp         => 708000,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9920,22 +10001,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  19
-            :id          => 19,
-            :exp         => 618750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Mähnenwolfschmuser",
-  
-            :en_US => "Junior-Manedwolfsnuggler",
-  
-            },
-          },             #   END OF 
-          {              #  20
-            :id          => 20,
-            :exp         => 708000,
+          {              #  12
+            :id          => 12,
+            :exp         => 909250,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9946,22 +10014,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  21
-            :id          => 21,
-            :exp         => 804750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Urschweinkrauler",
-  
-            :en_US => "Junior-Primevalpigfondler",
-  
-            },
-          },             #   END OF 
-          {              #  22
-            :id          => 22,
-            :exp         => 909250,
+          {              #  13
+            :id          => 13,
+            :exp         => 1141500,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9972,22 +10027,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  23
-            :id          => 23,
-            :exp         => 1021500,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Auerochsenstreichler",
-  
-            :en_US => "Junior-Aurochspetter",
-  
-            },
-          },             #   END OF 
-          {              #  24
-            :id          => 24,
-            :exp         => 1141500,
+          {              #  14
+            :id          => 14,
+            :exp         => 1404750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -9998,22 +10040,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  25
-            :id          => 25,
-            :exp         => 1269250,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Wildpferdflüsterer",
-  
-            :en_US => "Junior-wildhorsewhisperer",
-  
-            },
-          },             #   END OF 
-          {              #  26
-            :id          => 26,
-            :exp         => 1404750,
+          {              #  15
+            :id          => 15,
+            :exp         => 1689250,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10024,22 +10053,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  27
-            :id          => 27,
-            :exp         => 1547750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Höhlenlöwenbeschwichtiger",
-  
-            :en_US => "Junior-Cavelionappeaser",
-  
-            },
-          },             #   END OF 
-          {              #  28
-            :id          => 28,
-            :exp         => 1689250,
+          {              #  16
+            :id          => 16,
+            :exp         => 2020750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10050,22 +10066,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  29
-            :id          => 29,
-            :exp         => 1856000,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Wollnashornknuddler",
-  
-            :en_US => "Junior-Woollyrhinocuddler",
-  
-            },
-          },             #   END OF 
-          {              #  30
-            :id          => 30,
-            :exp         => 2020750,
+          {              #  17
+            :id          => 17,
+            :exp         => 2442750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10076,22 +10079,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  31
-            :id          => 31,
-            :exp         => 2220750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Steppenwisentliebkoser",
-  
-            :en_US => "Junior-Steppewisentcaresser",
-  
-            },
-          },             #   END OF 
-          {              #  32
-            :id          => 32,
-            :exp         => 2442750,
+          {              #  18
+            :id          => 18,
+            :exp         => 2952750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10102,22 +10092,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  33
-            :id          => 33,
-            :exp         => 2686750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Riesenhirschtätschler",
-  
-            :en_US => "Junior-Megalocerospatter",
-  
-            },
-          },             #   END OF 
-          {              #  34
-            :id          => 34,
-            :exp         => 2952750,
+          {              #  19
+            :id          => 19,
+            :exp         => 3550750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10128,22 +10105,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  35
-            :id          => 35,
-            :exp         => 3240750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Säbelzahntigerbändiger",
-  
-            :en_US => "Junior-Sabre-toothedtigertamer",
-  
-            },
-          },             #   END OF 
-          {              #  36
-            :id          => 36,
-            :exp         => 3550750,
+          {              #  20
+            :id          => 20,
+            :exp         => 4236750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10154,22 +10118,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  37
-            :id          => 37,
-            :exp         => 3882750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Brontotherienbeschützer",
-  
-            :en_US => "Junior-Brontotheresguardian",
-  
-            },
-          },             #   END OF 
-          {              #  38
-            :id          => 38,
-            :exp         => 4236750,
+          {              #  21
+            :id          => 21,
+            :exp         => 5010750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10180,22 +10131,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  39
-            :id          => 39,
-            :exp         => 4612750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Wollmammuttreiber",
-  
-            :en_US => "Junior-Woollymammothdriver",
-  
-            },
-          },             #   END OF 
-          {              #  40
-            :id          => 40,
-            :exp         => 5010750,
+          {              #  22
+            :id          => 22,
+            :exp         => 5872750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10206,22 +10144,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  41
-            :id          => 41,
-            :exp         => 5430750,
-            :settlement_points   => 0,
-            :minimum_sacred_rank => 0,
-            :name        => {
-              
-            :de_DE => "Nachwuchs-Allosaurusabrichter",
-  
-            :en_US => "Junior-Allosaurustrainer",
-  
-            },
-          },             #   END OF 
-          {              #  42
-            :id          => 42,
-            :exp         => 5872750,
+          {              #  23
+            :id          => 23,
+            :exp         => 6336750,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10232,9 +10157,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  43
-            :id          => 43,
-            :exp         => 6336750,
+          {              #  24
+            :id          => 24,
+            :exp         => 7255579,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10245,9 +10170,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  44
-            :id          => 44,
-            :exp         => 7255579,
+          {              #  25
+            :id          => 25,
+            :exp         => 8307638,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10258,9 +10183,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  45
-            :id          => 45,
-            :exp         => 8307638,
+          {              #  26
+            :id          => 26,
+            :exp         => 9512245,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10271,9 +10196,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  46
-            :id          => 46,
-            :exp         => 9512245,
+          {              #  27
+            :id          => 27,
+            :exp         => 10891521,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10284,9 +10209,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  47
-            :id          => 47,
-            :exp         => 10891521,
+          {              #  28
+            :id          => 28,
+            :exp         => 12470791,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10297,9 +10222,9 @@ class GameRules::Rules
   
             },
           },             #   END OF 
-          {              #  48
-            :id          => 48,
-            :exp         => 12470791,
+          {              #  29
+            :id          => 29,
+            :exp         => 17500000,
             :settlement_points   => 1,
             :minimum_sacred_rank => 0,
             :name        => {
@@ -10307,6 +10232,19 @@ class GameRules::Rules
             :de_DE => "Kriegsfürst",
   
             :en_US => "Warlord",
+  
+            },
+          },             #   END OF 
+          {              #  30
+            :id          => 30,
+            :exp         => 25000000,
+            :settlement_points   => 1,
+            :minimum_sacred_rank => 0,
+            :name        => {
+              
+            :de_DE => "Gottgleich",
+  
+            :en_US => "Godlike",
   
             },
           },             #   END OF 
