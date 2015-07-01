@@ -12,6 +12,7 @@ class Action::Fundamental::CreateAllianceActionsController < ApplicationControll
     raise ForbiddenError.new('tried to create an alliance without having the ability') unless current_character.can_create_alliance?
     raise ConflictError.new('this alliance tag is already reserved') unless Fundamental::AllianceReservation.find_by_tag(params[:alliance][:tag]).nil?
     raise ConflictError.new('this alliance tag is not allowed') unless Fundamental::Alliance.tag_is_valid?(params[:alliance][:tag])
+    raise ForbiddenError.new('creating new alliance is not allowed') if !current_character.can_join_or_create_alliance?
 
     Fundamental::Alliance.create_alliance(params[:alliance][:tag], params[:alliance][:name], current_character)
     

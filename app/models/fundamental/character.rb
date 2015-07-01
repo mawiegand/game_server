@@ -1297,10 +1297,10 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def join_alliance_check
-    return false if self.alliance_id_changed? && self.alliance_id_was.nil? && !can_join_alliance?
+    return false if self.alliance_id_changed? && self.alliance_id_was.nil? && !can_join_or_create_alliance?
   end
 
-  def can_join_alliance?
+  def can_join_or_create_alliance?
     self.cannot_join_alliance_until.nil? || self.cannot_join_alliance_until < Time.now
   end
   ############################################################################
