@@ -45,7 +45,7 @@
       </Description>
       <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
       <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
-      <RewardText locale="de_DE">Der Sammler sammelt Steine und Holz für Deinen Rohstoffvorrat. Als nächstes solltest Du Die Häuptlingshütte ausbauen.</RewardText>
+      <RewardText locale="de_DE">Der Sammler sammelt Steine und Holz für Deinen Rohstoffvorrat. Als nächstes solltest Du die Häuptlingshütte ausbauen.</RewardText>
       <RewardText locale="en_US">The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. </RewardText>
       <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
       <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
@@ -433,8 +433,8 @@
 <Quest id="quest_army_move" type="epic" advisor="warrior" hide_start_dialog="true" tutorial="true" priority="2">
   <Name>Army movement</Name>
   <Name locale="de_DE">Armeebewegung</Name>
-  <Task>Move your army to the fortress.</Task>
-  <Task locale="de_DE">Bewege Deine Armee zur Festung.</Task>
+  <Task>Move your army.</Task>
+  <Task locale="de_DE">Bewege Deine Armee.</Task>
   <Description locale="de_DE">
     <p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen von Spielern zu kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügend Kampfstärke erfolgen.</p>
   </Description>
@@ -980,7 +980,38 @@
   <UIMarker>mark_building_option</UIMarker>
 </Subquest>
 
-<!--erster Handel ? -->
+
+<!--erster Handel ? OPTIONAL?-->
+<Quest id="quest_first_trade" type="epic_optional" advisor="girl" >
+  <Name>First trade</Name>
+  <Name locale="de_DE">Erster Handel</Name>
+  <Task>Build a raw materials store.</Task>
+  <Task locale="de_DE">Start a trade.</Task>
+  <Description locale="de_DE">
+    <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die Du lagern kannst. Wenn Du die Grenze erreichst, verfällt jede weitere Produktion.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>Having raw materials store increases the maximum number of raw materials you can store. Once you´ve reached the limit, any further production is lost.</p>
+  </Description>
+  <Flavor locale="de_DE">Noch mag der Lagerplatz ausreichen, doch bald wirst Du mehr brauchen. Baue doch bitte ein Rohstofflager, damit wir mehr Platz haben.</Flavor>
+  <Flavor locale="en_US">Doesn't it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!</Flavor>
+  <RewardText locale="de_DE">Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern.</RewardText>
+  <RewardText locale="en_US">The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.</RewardText>
+  <RewardFlavor locale="de_DE">Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
+  <RewardFlavor locale="en_US">At last I have enough space for all my shoe…er, things!</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>epic_storage</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_stone">200</ResourceReward>
+    <ResourceReward resource="resource_wood">200</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <TradingCartTest direction="outgoing" min_carts_count="1"></TradingCartTest>
+  </RewardTests>
+</Quest>
 
 
 <!-- EPIC COTTAGE -->

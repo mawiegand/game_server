@@ -155,7 +155,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Der Sammler sammelt Steine und Holz für Deinen Rohstoffvorrat. Als nächstes solltest Du Die Häuptlingshütte ausbauen.",
+            :de_DE => "Der Sammler sammelt Steine und Holz für Deinen Rohstoffvorrat. Als nächstes solltest Du die Häuptlingshütte ausbauen.",
   
             :en_US => "The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. ",
                 
@@ -1192,9 +1192,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Move your army to the fortress.",
+            :en_US => "Move your army.",
   
-            :de_DE => "Bewege Deine Armee zur Festung.",
+            :de_DE => "Bewege Deine Armee.",
                 
           },
           :flavour => {
@@ -2762,8 +2762,110 @@ class Tutorial::Tutorial
           :uimarker => ['mark_home_settlement', 'mark_free_construction_slot', 'mark_building_option', ],
 
         },              #   END OF quest_build_storage
-        {               #   epic_cottage
+        {               #   quest_first_trade
           :id                => 26,
+          :symbolic_id       => :quest_first_trade,
+  
+          :type              => :epic_optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "First trade",
+  
+            :de_DE => "Erster Handel",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a raw materials store.",
+  
+            :de_DE => "Start a trade.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Noch mag der Lagerplatz ausreichen, doch bald wirst Du mehr brauchen. Baue doch bitte ein Rohstofflager, damit wir mehr Platz haben.",
+  
+            :en_US => "Doesn't it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die Du lagern kannst. Wenn Du die Grenze erreichst, verfällt jede weitere Produktion.</p>",
+  
+            :en_US => "<p>Having raw materials store increases the maximum number of raw materials you can store. Once you´ve reached the limit, any further production is lost.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.",
+  
+            :en_US => "At last I have enough space for all my shoe…er, things!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern.",
+  
+            :en_US => "The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_storage',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 200,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 200,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :trading_carts_tests => [
+
+              {
+                :direction => 'outgoing',
+                :min_carts_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_first_trade
+        {               #   epic_cottage
+          :id                => 27,
           :symbolic_id       => :epic_cottage,
   
           :type              => :epic,
@@ -2820,7 +2922,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [27, 28, 29, ],
+          :subquests => [28, 29, 30, ],
 
           :triggers => {
             
@@ -2853,7 +2955,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_cottage
         {               #   quest_build_chiefcottagelvl6
-          :id                => 27,
+          :id                => 28,
           :symbolic_id       => :quest_build_chiefcottagelvl6,
   
           :type              => :sub,
@@ -2941,7 +3043,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl6
         {               #   quest_finish_upgrade
-          :id                => 28,
+          :id                => 29,
           :symbolic_id       => :quest_finish_upgrade,
   
           :type              => :sub,
@@ -3035,7 +3137,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_finish_upgrade
         {               #   quest_build_cottage
-          :id                => 29,
+          :id                => 30,
           :symbolic_id       => :quest_build_cottage,
   
           :type              => :sub,
@@ -3131,7 +3233,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_cottage
         {               #   epic_xp
-          :id                => 30,
+          :id                => 31,
           :symbolic_id       => :epic_xp,
   
           :type              => :epic,
@@ -3188,7 +3290,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [31, 32, ],
+          :subquests => [32, 33, ],
 
           :triggers => {
             
@@ -3221,7 +3323,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_xp
         {               #   quest_build_chiefcottagelvl7
-          :id                => 31,
+          :id                => 32,
           :symbolic_id       => :quest_build_chiefcottagelvl7,
   
           :type              => :sub,
@@ -3317,7 +3419,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl7
         {               #   quest_build_training_cave
-          :id                => 32,
+          :id                => 33,
           :symbolic_id       => :quest_build_training_cave,
   
           :type              => :sub,
@@ -3413,7 +3515,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_training_cave
         {               #   epic_fur
-          :id                => 33,
+          :id                => 34,
           :symbolic_id       => :epic_fur,
   
           :type              => :epic,
@@ -3470,7 +3572,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [34, 35, ],
+          :subquests => [35, 36, ],
 
           :triggers => {
             
@@ -3506,7 +3608,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_fur
         {               #   quest_build_chiefcottagelvl8
-          :id                => 34,
+          :id                => 35,
           :symbolic_id       => :quest_build_chiefcottagelvl8,
   
           :type              => :sub,
@@ -3609,7 +3711,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl8
         {               #   quest_build_furrier
-          :id                => 35,
+          :id                => 36,
           :symbolic_id       => :quest_build_furrier,
   
           :type              => :sub,
@@ -3698,7 +3800,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_furrier
         {               #   epic_firing_range
-          :id                => 36,
+          :id                => 37,
           :symbolic_id       => :epic_firing_range,
   
           :type              => :epic,
@@ -3755,7 +3857,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [37, 38, 39, ],
+          :subquests => [38, 39, 40, ],
 
           :triggers => {
             
@@ -3790,7 +3892,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_firing_range
         {               #   quest_build_chiefcottagelvl9
-          :id                => 37,
+          :id                => 38,
           :symbolic_id       => :quest_build_chiefcottagelvl9,
   
           :type              => :sub,
@@ -3891,7 +3993,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl9
         {               #   quest_build_firing_range
-          :id                => 38,
+          :id                => 39,
           :symbolic_id       => :quest_build_firing_range,
   
           :type              => :sub,
@@ -3990,7 +4092,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_firing_range
         {               #   quest_recruit_thrower
-          :id                => 39,
+          :id                => 40,
           :symbolic_id       => :quest_recruit_thrower,
   
           :type              => :sub,
@@ -4096,7 +4198,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_recruit_thrower
         {               #   epic_coppersmelter
-          :id                => 40,
+          :id                => 41,
           :symbolic_id       => :epic_coppersmelter,
   
           :type              => :epic,
@@ -4153,7 +4255,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [41, 42, ],
+          :subquests => [42, 43, ],
 
           :triggers => {
             
@@ -4188,7 +4290,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_coppersmelter
         {               #   quest_build_chiefcottagelvl10
-          :id                => 41,
+          :id                => 42,
           :symbolic_id       => :quest_build_chiefcottagelvl10,
   
           :type              => :sub,
@@ -4289,7 +4391,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_chiefcottagelvl10
         {               #   quest_build_copper_smelter
-          :id                => 42,
+          :id                => 43,
           :symbolic_id       => :quest_build_copper_smelter,
   
           :type              => :sub,
@@ -4390,7 +4492,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_copper_smelter
         {               #   epic_encampment
-          :id                => 43,
+          :id                => 44,
           :symbolic_id       => :epic_encampment,
   
           :type              => :epic,
@@ -4447,7 +4549,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [44, 45, 46, ],
+          :subquests => [45, 46, 47, ],
 
           :triggers => {
             
@@ -4476,7 +4578,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_encampment
         {               #   quest_build_campfirelvl10
-          :id                => 44,
+          :id                => 45,
           :symbolic_id       => :quest_build_campfirelvl10,
   
           :type              => :sub,
@@ -4571,7 +4673,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_campfirelvl10
         {               #   quest_little_chief
-          :id                => 45,
+          :id                => 46,
           :symbolic_id       => :quest_little_chief,
   
           :type              => :sub,
@@ -4658,7 +4760,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_little_chief
         {               #   quest_outpost
-          :id                => 46,
+          :id                => 47,
           :symbolic_id       => :quest_outpost,
   
           :type              => :sub,
@@ -4755,7 +4857,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_outpost
         {               #   quest_profile
-          :id                => 47,
+          :id                => 48,
           :symbolic_id       => :quest_profile,
   
           :type              => :optional,
@@ -4851,7 +4953,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_profile
         {               #   quest_build_2quarry_lvl4
-          :id                => 48,
+          :id                => 49,
           :symbolic_id       => :quest_build_2quarry_lvl4,
   
           :type              => :optional,
@@ -4957,7 +5059,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2quarry_lvl4
         {               #   quest_build_2logger_lvl4
-          :id                => 49,
+          :id                => 50,
           :symbolic_id       => :quest_build_2logger_lvl4,
   
           :type              => :optional,
@@ -5063,7 +5165,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2logger_lvl4
         {               #   quest_gatherer_lvl10
-          :id                => 50,
+          :id                => 51,
           :symbolic_id       => :quest_gatherer_lvl10,
   
           :type              => :optional,
@@ -5169,7 +5271,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_gatherer_lvl10
         {               #   quest_build_quarry_lvl10
-          :id                => 51,
+          :id                => 52,
           :symbolic_id       => :quest_build_quarry_lvl10,
   
           :type              => :optional,
@@ -5270,7 +5372,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_quarry_lvl10
         {               #   quest_build_logger_lvl10
-          :id                => 52,
+          :id                => 53,
           :symbolic_id       => :quest_build_logger_lvl10,
   
           :type              => :optional,
@@ -5371,7 +5473,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_logger_lvl10
         {               #   quest_build_2furrierlvl4
-          :id                => 53,
+          :id                => 54,
           :symbolic_id       => :quest_build_2furrierlvl4,
   
           :type              => :optional,
@@ -5472,7 +5574,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2furrierlvl4
         {               #   quest_build_furrier_lvl10
-          :id                => 54,
+          :id                => 55,
           :symbolic_id       => :quest_build_furrier_lvl10,
   
           :type              => :optional,
@@ -5573,7 +5675,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_furrier_lvl10
         {               #   quest_resourcescore_1
-          :id                => 55,
+          :id                => 56,
           :symbolic_id       => :quest_resourcescore_1,
   
           :type              => :optional,
@@ -5677,7 +5779,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_1
         {               #   quest_build_barrackslvl5
-          :id                => 56,
+          :id                => 57,
           :symbolic_id       => :quest_build_barrackslvl5,
   
           :type              => :optional,
@@ -5790,7 +5892,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_barrackslvl5
         {               #   quest_recruit_clubber
-          :id                => 57,
+          :id                => 58,
           :symbolic_id       => :quest_recruit_clubber,
   
           :type              => :optional,
@@ -5891,7 +5993,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_recruit_clubber
         {               #   quest_fortress
-          :id                => 58,
+          :id                => 59,
           :symbolic_id       => :quest_fortress,
   
           :type              => :optional,
@@ -5992,7 +6094,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_fortress
         {               #   quest_infantry_tower
-          :id                => 59,
+          :id                => 60,
           :symbolic_id       => :quest_infantry_tower,
   
           :type              => :optional,
@@ -6095,7 +6197,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_infantry_tower
         {               #   quest_fortress_fortification_lvl5
-          :id                => 60,
+          :id                => 61,
           :symbolic_id       => :quest_fortress_fortification_lvl5,
   
           :type              => :optional,
@@ -6208,7 +6310,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_fortress_fortification_lvl5
         {               #   quest_artillery_tower
-          :id                => 61,
+          :id                => 62,
           :symbolic_id       => :quest_artillery_tower,
   
           :type              => :optional,
@@ -6311,7 +6413,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_artillery_tower
         {               #   quest_fortress_fortification_lvl7
-          :id                => 62,
+          :id                => 63,
           :symbolic_id       => :quest_fortress_fortification_lvl7,
   
           :type              => :optional,
@@ -6424,7 +6526,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_fortress_fortification_lvl7
         {               #   quest_cavalry_tower
-          :id                => 63,
+          :id                => 64,
           :symbolic_id       => :quest_cavalry_tower,
   
           :type              => :optional,
@@ -6527,7 +6629,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_cavalry_tower
         {               #   quest_haunt_lvl6
-          :id                => 64,
+          :id                => 65,
           :symbolic_id       => :quest_haunt_lvl6,
   
           :type              => :optional,
@@ -6640,7 +6742,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_haunt_lvl6
         {               #   quest_altar
-          :id                => 65,
+          :id                => 66,
           :symbolic_id       => :quest_altar,
   
           :type              => :optional,
@@ -6753,7 +6855,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_altar
         {               #   quest_field_camp
-          :id                => 66,
+          :id                => 67,
           :symbolic_id       => :quest_field_camp,
   
           :type              => :optional,
@@ -6866,7 +6968,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_field_camp
         {               #   quest_trade_center
-          :id                => 67,
+          :id                => 68,
           :symbolic_id       => :quest_trade_center,
   
           :type              => :optional,
@@ -6979,7 +7081,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_trade_center
         {               #   quest_charkills_1
-          :id                => 68,
+          :id                => 69,
           :symbolic_id       => :quest_charkills_1,
   
           :type              => :optional,
@@ -7078,7 +7180,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_1
         {               #   quest_charkills_2
-          :id                => 69,
+          :id                => 70,
           :symbolic_id       => :quest_charkills_2,
   
           :type              => :optional,
@@ -7184,7 +7286,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_2
         {               #   quest_charkills_3
-          :id                => 70,
+          :id                => 71,
           :symbolic_id       => :quest_charkills_3,
   
           :type              => :optional,
@@ -7290,7 +7392,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_3
         {               #   quest_charkills_4
-          :id                => 71,
+          :id                => 72,
           :symbolic_id       => :quest_charkills_4,
   
           :type              => :optional,
