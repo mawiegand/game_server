@@ -104,6 +104,7 @@ class Tutorial::State < ActiveRecord::Base
   def check_finished_quest(finished_quest_symbolic_str)
     # validate finished quests for required finished quest
     self.finished_quests.each do |finished_quest|
+      next if finished_quest.nil? || finished_quest.quest.nil?
       if finished_quest_symbolic_str == finished_quest.quest[:symbolic_id].to_s
         return true
       end
