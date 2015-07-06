@@ -93,7 +93,7 @@ class Tutorial::State < ActiveRecord::Base
   
   def completed_tutorial_end_quest?
     self.finished_quests.each do |quest_state|
-      if quest_state.quest[:tutorial_end_quest]
+      if quest_state.quest[:tutorial_end_quest] unless quest_state.nil?
         return true
       end  
     end
