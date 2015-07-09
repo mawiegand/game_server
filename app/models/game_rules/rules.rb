@@ -7865,7 +7865,7 @@ class GameRules::Rules
           },
           :flavour     => {
             
-            :de_DE => "Wenn ich nur dran denke, was für schöne Sachen wir aus den Fellen machen können. ",
+            :de_DE => "Wenn ich nur dran denke, was für schöne Sachen wir aus den Fellen machen können.",
   
             :en_US => "Just think about all the nice things we can do with that fur.",
   
@@ -7904,8 +7904,68 @@ class GameRules::Rules
 
 
         },              #   END OF Skinning
-        {              #   Drive out the Neanderthals
+        {              #   Motivation
           :id          => 4,
+          :symbolic_id => :assignment_construction,
+          :level       => 4,
+          :advisor     => "chef",
+          :name        => {
+            
+            :en_US => "Motivation",
+  
+            :de_DE => "Motivation",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Eine kleine Motivationsansprache, ein paar sanft geführte Peitschenhiebe. Und schon gehts schneller!",
+  
+            :en_US => "Just think about all the nice things we can do with that fur.",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Das gefällt Dir. Endlich ein Auftrag bei dem Du andere arbeiten lässt.</p>",
+  
+            :en_US => "<p>All you wanted to do was relax with a drink, but then they had to go and make you work. At least they're paying for your drinks. Because to be frank, you're going to need a hell of a lot of drinks to forget about this skinning business.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Schaka!</p>",
+  
+            :en_US => "<p>Sometimes you gota grab the dino by the skin.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '0.1*PRODUCTION',
+            1 => '0.1*PRODUCTION',
+            2 => '0.05*PRODUCTION',
+            
+          },
+
+          :duration => 129600,
+
+
+          :rewards => {
+            
+          :construction_bonus_rewards => [
+            
+             {
+               :duration  => 16,
+               :bonus     => 0.15,
+             },
+
+          ],
+
+          },
+
+
+        },              #   END OF Motivation
+        {              #   Drive out the Neanderthals
+          :id          => 5,
           :symbolic_id => :assignment_raid,
           :level       => 5,
           :advisor     => "warrior",
@@ -7972,8 +8032,76 @@ class GameRules::Rules
 
 
         },              #   END OF Drive out the Neanderthals
+        {              #   Mushroom gathering
+          :id          => 6,
+          :symbolic_id => :assignment_mushrooms,
+          :level       => 6,
+          :advisor     => "girl",
+          :name        => {
+            
+            :en_US => "Mushroom gathering",
+  
+            :de_DE => "Pilze sammeln",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Was für ein schöner Tag zum Pilze sammeln.",
+  
+            :en_US => "What a nice day for gathering mushrooms.",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Sammler lädt die Dicken Keulen zum Pilze sammeln ein. Bei einem lauschigen Spaziergang erklärt der Sammler den Unterschied zwischen essbaren und giftigen Pilzen. Auf dem Rückweg wird noch ein wenig Feuerholz für das Lagerfeuer gesammelt, wobei auch die ein oder andere Kröte entdeckt wird.</p>",
+  
+            :en_US => "<p>Your gatherers and thick clubs are out for a walk through the woods. On the way back they bring some especially nice branches and golden frogs with them.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Geh mit dem Sammler in den Wald.</p>",
+  
+            :en_US => "<p>Take a stroll through the woods.</p>",
+  
+          },
+
+          :costs      => {
+            0 => '1000',
+            
+          },
+
+          :unit_deposits => {
+            2 => '50',
+            
+          },
+
+          :duration => 86400,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_wood,
+                :amount => 5000,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 1,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Mushroom gathering
         {              #   The Great Hunt
-          :id          => 5,
+          :id          => 7,
           :symbolic_id => :assignment_hunt,
           :level       => 7,
           :advisor     => "girl",
@@ -8009,7 +8137,7 @@ class GameRules::Rules
 
           :costs      => {
             0 => '600',
-            1 => '400',
+            1 => '500',
             
           },
 
@@ -8038,8 +8166,141 @@ class GameRules::Rules
 
 
         },              #   END OF The Great Hunt
+        {              #   Gone fishing
+          :id          => 8,
+          :symbolic_id => :assignment_fishing,
+          :level       => 7,
+          :advisor     => "chef",
+          :name        => {
+            
+            :en_US => "Gone fishing",
+  
+            :de_DE => "Fische fangen",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Lecker Fisch.",
+  
+            :en_US => "Yummy fish!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>Der Chef liebt Fisch. Gegrillt, in Fett gebraten oder im Holzofen gegart. Regelmäßig schickt er seine Zielwerfer aus, um ihm am Fluss ein paar Fische zu fangen. Die Zielwerfer suchen sich natürlich feinste Kieselsteine für ihre Schleudern und finden dabei auch immer wieder ein paar Kröten.</p>",
+  
+            :en_US => "<p>The bigwigs love fish. Grilled, fried, boiled there is no kind they dont enjoy. They often send out their throwers to hunt some, and occasionaly they will even bring back something other than their throwing stones.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Der Chef schickt die Zielwerfer zum Fische fangen.</p>",
+  
+            :en_US => "<p>The chief tells some troops to go fish.</p>",
+  
+          },
+
+          :costs      => {
+            1 => '2000',
+            
+          },
+
+          :unit_deposits => {
+            6 => '50',
+            
+          },
+
+          :duration => 115200,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_stone,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_cash,
+                :amount => 2,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Gone fishing
+        {              #   Further training
+          :id          => 9,
+          :symbolic_id => :assignment_training,
+          :level       => 8,
+          :advisor     => "warrior",
+          :name        => {
+            
+            :en_US => "Further training",
+  
+            :de_DE => "Fortbildung",
+  
+          },
+          :flavour     => {
+            
+            :de_DE => "Erfahrene Krieger berichten von ihren Heldentaten. Hört sich langweilig an, wirkt aber!",
+  
+            :en_US => "A chilled beer and flying fists! Now that's what I call relaxation!",
+  
+          },
+          :description => {
+            
+            :de_DE => "<p>So eine Fortbildung ist eine wertvolle Erfahrung.</p>",
+  
+            :en_US => "<p>If a bunch of accomplished warriors meet at the tavern, chances are that there's going to be quite a brawl. But once it's all over, and someone has paid for the smashed up furniture, you may just find yourself with some reliable companions.</p>",
+  
+          },
+
+          :short_description => {
+            
+            :de_DE => "<p>Den ganzen Tag rumsitzen und zuhören. Boah, ist das anstrengend!</p>",
+  
+            :en_US => "<p>After a nice brawl, you sometimes make some great friends.</p>",
+  
+          },
+
+          :costs      => {
+            2 => '0.15*PRODUCTION',
+            
+          },
+
+          :unit_deposits => {
+            3 => '100',
+            7 => '100',
+            11 => '100',
+            
+          },
+
+          :duration => 129600,
+
+
+          :rewards => {
+            
+          :resource_rewards => [
+            
+              {
+                :resource => :resource_cash,
+                :amount => 3,
+              },
+
+          ],
+
+          },
+
+
+        },              #   END OF Further training
         {              #   Caravan
-          :id          => 6,
+          :id          => 10,
           :symbolic_id => :assignment_caravan,
           :level       => 9,
           :advisor     => "chef",
@@ -8115,7 +8376,7 @@ class GameRules::Rules
 
         },              #   END OF Caravan
         {              #   Expedition
-          :id          => 7,
+          :id          => 11,
           :symbolic_id => :assignment_expedition,
           :level       => 10,
           :advisor     => "chef",
@@ -8191,132 +8452,6 @@ class GameRules::Rules
 
 
         },              #   END OF Expedition
-        {              #   Mushroom gathering
-          :id          => 8,
-          :symbolic_id => :assignment_mushrooms,
-          :level       => 6,
-          :advisor     => "girl",
-          :name        => {
-            
-            :en_US => "Mushroom gathering",
-  
-            :de_DE => "Pilze sammeln",
-  
-          },
-          :flavour     => {
-            
-            :de_DE => "Was für ein schöner Tag zum Pilze sammeln.",
-  
-            :en_US => "What a nice day for gathering mushrooms.",
-  
-          },
-          :description => {
-            
-            :de_DE => "<p>Der Sammler lädt die Dicken Keulen zum Pilze sammeln ein. Bei einem lauschigen Spaziergang erklärt der Sammler den Unterschied zwischen essbaren und giftigen Pilzen. Auf dem Rückweg wird noch ein wenig Feuerholz für das Lagerfeuer gesammelt, wobei auch die ein oder andere Kröte entdeckt wird.</p>",
-  
-            :en_US => "<p>Your gatherers and thick clubs are out for a walk through the woods. On the way back they bring some especially nice branches and golden frogs with them.</p>",
-  
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Geh mit dem Sammler in den Wald.</p>",
-  
-            :en_US => "<p>Take a stroll through the woods.</p>",
-  
-          },
-
-          :unit_deposits => {
-            2 => '50',
-            
-          },
-
-          :duration => 86400,
-
-
-          :rewards => {
-            
-          :resource_rewards => [
-            
-              {
-                :resource => :resource_wood,
-                :amount => 5000,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 1,
-              },
-
-          ],
-
-          },
-
-
-        },              #   END OF Mushroom gathering
-        {              #   Gone fishing
-          :id          => 9,
-          :symbolic_id => :assignment_fishing,
-          :level       => 8,
-          :advisor     => "chef",
-          :name        => {
-            
-            :en_US => "Gone fishing",
-  
-            :de_DE => "Fische fangen",
-  
-          },
-          :flavour     => {
-            
-            :de_DE => "Lecker Fisch.",
-  
-            :en_US => "Yummy fish!",
-  
-          },
-          :description => {
-            
-            :de_DE => "<p>Der Chef liebt Fisch. Gegrillt, in Fett gebraten oder im Holzofen gegart. Regelmäßig schickt er seine Zielwerfer aus, um ihm am Fluss ein paar Fische zu fangen. Die Zielwerfer suchen sich natürlich feinste Kieselsteine für ihre Schleudern und finden dabei auch immer wieder ein paar Kröten.</p>",
-  
-            :en_US => "<p>The bigwigs love fish. Grilled, fried, boiled there is no kind they dont enjoy. They often send out their throwers to hunt some, and occasionaly they will even bring back something other than their throwing stones.</p>",
-  
-          },
-
-          :short_description => {
-            
-            :de_DE => "<p>Der Chef schickt die Zielwerfer zum Fische fangen.</p>",
-  
-            :en_US => "<p>The chief tells some troops to go fish.</p>",
-  
-          },
-
-          :unit_deposits => {
-            6 => '50',
-            
-          },
-
-          :duration => 115200,
-
-
-          :rewards => {
-            
-          :resource_rewards => [
-            
-              {
-                :resource => :resource_stone,
-                :amount => 7500,
-              },
-
-              {
-                :resource => :resource_cash,
-                :amount => 2,
-              },
-
-          ],
-
-          },
-
-
-        },              #   END OF Gone fishing
       ],                # END OF ASSIGNMENT TYPES
 
 # ## SPECIAL ASSIGNMENT TYPES ##########################################################
