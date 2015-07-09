@@ -448,7 +448,6 @@
   <RewardFlavor locale="de_DE">Hm? Die Armee ist unterwegs? Sicher, dass Du genug Truppen hast? Na okay, ich glaub Dir ja.</RewardFlavor>
   <RewardFlavor locale="en_US">Hm. The army is on its way? Are you sure you have enough units? OK, I believe you.</RewardFlavor>
   <Triggers>
-    <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_npc_battle</FinishQuestTrigger>
     </FinishQuestTriggers>
@@ -514,7 +513,7 @@
   <Triggers>
     <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
     <FinishQuestTriggers>
-      <FinishQuestTrigger>quest_army_create</FinishQuestTrigger>
+      <FinishQuestTrigger>quest_army_move</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
@@ -532,6 +531,7 @@
 <!-- TUTORIAL ENDE -->
 
 
+<!-- EPICs -->
 
 <!-- EPIC Ressources -->
 <Quest id="epic_ressources" type="epic" advisor="girl">
@@ -1229,7 +1229,7 @@
   </Description>
   <Flavor locale="de_DE">Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.</Flavor>
   <Flavor locale="en_US">Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.</Flavor>
-  <RewardText locale="de_DE">Je höher das Rostofflager, desto mehr Karren hast Du.</RewardText>
+  <RewardText locale="de_DE">Baue mehr und verbesserte Kürschner. Deine Armee wird es dir danken!</RewardText>
   <RewardText locale="en_US">Baue mehr und verbesserte Kürschner. Deine Armee wird es dir danken!</RewardText>
   <RewardFlavor locale="de_DE">Fell ist der wichtigste Rohstoff zur Produktion von Einheiten..</RewardFlavor>
   <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
