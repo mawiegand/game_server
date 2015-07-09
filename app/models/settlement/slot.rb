@@ -243,6 +243,7 @@ class Settlement::Slot < ActiveRecord::Base
   end
 
   def level_after_finishing_jobs
+    return self.level if self.jobs.nil?
     end_level = self.level
     self.jobs.each do |job|
       end_level = job.level_after if job.level_after > end_level
