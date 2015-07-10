@@ -9,8 +9,8 @@
     <p>Der Handelsplatz verbessert die Rohstoffproduktion der Lagerstätte um 1% pro Level. Auf Level 10 nisten sich Kröten in den feuchten Ecken ein.</p>
   </Description>
   <Description lang="en_US">
-    <p>Specialization building, specializes your camp for military purposes. Only one specialization building per camp is possible. </p>
-    <p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 50 per level. At Level 10, a field camp also increases a settlement's command points by one.</p>
+    <p>Specialization building, specializes your camp for economic purpose. Only one specialization building per camp.</p>
+    <p>The trade center improves the resource production of the camp by 1% per level. Additionally, it will produce a few frogs on level 10.</p>
   </Description>
   <Flavour lang="en_US">
     <p>Field camps turn encampments into military support units. Despite all the talk about the safety and storage that field camps offer, they seem to have a magical attraction for enemies.</p>
