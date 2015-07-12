@@ -721,7 +721,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Jetzt kannst Du Krieger ausbilden.",
+            :de_DE => "Im Ausbildungsgelände kannst Du Deine erste Einheit, den Krieger rekrutieren.",
   
             :en_US => "Having a Training Grounds speeds up the time it takes to recruit melee fighters.
   ",
@@ -1023,7 +1023,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Deine erste Armee wartet auf Befehle.",
+            :de_DE => "Deine erste Armee wartet auf Befehle. Zeig gleich mal den Neandertaler wo die Keule hängt.",
   
             :en_US => "Every army needs a command point in the settlement - that's where they receive their commands from. You can only reinforce your army at their home settlement.",
                 
@@ -1124,7 +1124,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Ein Kampf läuft meist über mehrere Runden. In jeder Runde können beliebig viele Armeen auf beiden Seiten dazukommen.",
+            :de_DE => "Ein Kampf läuft meist über mehrere Runden, dabei können beliebig viele Armeen auf beiden Seiten dazukommen.",
   
             :en_US => "You attack the same way with armies. Armies fighting on the same side as settlements or fortresses get a boost. While a battle is going on armies can join it on either side. ",
                 
@@ -1362,7 +1362,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_army_create',
+                :finish_quest_trigger => 'quest_army_move',
               },
 
             ],
@@ -1832,7 +1832,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du solltest Deine Rohstoffproduktion laufend zu erhöhen.",
+            :de_DE => "Du solltest Deine Rohstoffproduktion laufend erhöhen.",
   
             :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
                 
@@ -1990,7 +1990,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Quarry",
+            :en_US => "Quarry Level 3",
   
             :de_DE => "Steinbruch Level 3",
                 
@@ -2207,7 +2207,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Du kannst das Profil der Allianz einsehen, indem Du auf den Allianzwimpel oben rechts neben der Rohstoffübersicht klickst.",
+            :de_DE => "Du kannst das Profil der Allianz im Allianzmenü einsehen.",
   
             :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
                 
@@ -2308,7 +2308,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
+            :de_DE => "Jetzt kannst Du ein Lagerfeuer bauen und Dich einer Allianz anschließen.",
   
             :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
                 
@@ -2540,7 +2540,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Nutze den Allianzknopf um Dir Deine Allianz anzuschauen.",
+            :de_DE => "Im Allianzmenü kannst Du auch sehen wie aktiv Deine Mitstreiter sind.",
   
             :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
                 
@@ -2786,9 +2786,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a raw materials store.",
+            :en_US => "Start a trade.",
   
-            :de_DE => "Start a trade.",
+            :de_DE => "Beginne Deinen ersten Handel.",
                 
           },
           :flavour => {
@@ -2814,7 +2814,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern.",
+            :de_DE => "Die Handelskarren benötigen eine Stunde für jeden Weg.",
   
             :en_US => "The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.",
                 
@@ -3094,7 +3094,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Erhöhe Deine Rohstoffproduktion durch den Bau neuer Steinbrüche und Holzfäller.",
+            :de_DE => "Du kannst jeden Ausbau sofort abschließen.",
   
             :en_US => "Boost your raw materials production by building a new Hunter Gatherer.",
                 
@@ -3258,7 +3258,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build a storage and start a trade",
   
-            :de_DE => "Baue eine Trainingshöhle.",
+            :de_DE => "Sammel Erfahrung.",
                 
           },
           :flavour => {
@@ -3284,7 +3284,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
+            :de_DE => "Erfahrung erhälst Du in der Trainingshöhle, für Ausbauten und vor allem für Kämpfe.",
   
             :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
                 
@@ -3374,7 +3374,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
+            :de_DE => "Du hast die Trainingshöhle freigeschaltet.",
   
             :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
                 
@@ -3470,7 +3470,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "In der Trainingshöhle kannst Du ungestört trainieren und Erfahrung sammeln",
+            :de_DE => "In der Trainingshöhle kannst Du ungestört trainieren und Erfahrung sammeln.",
   
             :en_US => "You can do your workout in the training cave without any interruptions.",
                 
@@ -3538,7 +3538,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a storage and start a trade",
+            :en_US => "Fur production",
   
             :de_DE => "Starte die Fellproduktion.",
                 
@@ -3566,7 +3566,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
+            :de_DE => "Baue mehr und verbesserte Kürschner. Deine Armee wird es dir danken!",
   
             :en_US => "Baue mehr und verbesserte Kürschner. Deine Armee wird es dir danken!",
                 
@@ -3823,7 +3823,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a storage and start a trade",
+            :en_US => "Recruit your first thrower.",
   
             :de_DE => "Rekrutiere Deinen ersten Fernkämpfer.",
                 
@@ -3943,7 +3943,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.",
+            :de_DE => "Du kannst jetzt einen Schießstand bauen und dort Fernkämpfer rekrutieren.",
   
             :en_US => "Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.",
                 
@@ -4249,7 +4249,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
+            :de_DE => "In der Kupferzeit stehen Dir neue und verbesserte Versionen bestehender Gebäude zur Verfügung.",
   
             :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
                 
@@ -4543,7 +4543,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Je höher das Rostofflager, desto mehr Karren hast Du.",
+            :de_DE => "Jede Lagerstätte kannst Du ganz durch ein Spezialgebäude (Ritualstein, Feldlager oder Handelplatz) individuell gestalten.",
   
             :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
                 
@@ -4630,7 +4630,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen eine Allianz aufzubauen.",
+            :de_DE => "Mit Level 10 des Lagerfeuers kannst Du einen Kleinen Häuptling rekrutieren.",
   
             :en_US => "Try to contact your neighbors and form an alliance with them.",
                 
@@ -5227,7 +5227,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_2logger_lvl4',
+                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
               },
 
             ],
@@ -5434,7 +5434,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_2logger_lvl4',
+                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
               },
 
             ],
@@ -5524,7 +5524,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.",
+            :de_DE => "Steigere Deine Fellproduktion durch weitere und verbesserte Kürschner.",
   
             :en_US => "Quarries are very effective. Build more quarries!",
                 
@@ -5625,7 +5625,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.",
+            :de_DE => "Steigere Deine Fellproduktion durch weitere und verbesserte Kürschner.",
   
             :en_US => "Quarries are very effective. Build more quarries!",
                 

@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.3.0
+# Version: 2.3.1
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -125,7 +125,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 3,
-                    :build => 0,
+                    :build => 1,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -828,7 +828,7 @@ class GameRules::Rules
           },
           :description => {
             
-            :de_DE => "<p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz. Als Rohstoff spielt Holz eine wichtige Rolle bei der Konstruktion von Gebäuden und Belagerungswaffen.</p>",
+            :de_DE => "<p>Holz war bereits in der Steinzeit in allen Varianten verfügbar: Nadelholz, Laubholz, Kantholz und natürlich Brettholz. Als Rohstoff spielt Holz eine wichtige Rolle bei der Konstruktion von Gebäuden und Waffen.</p>",
   
             :en_US => "<p>Even in the Stone Age, wood was used for various important purposes, including the construction of buildings and siege weapons.</p>",
                 
@@ -3010,7 +3010,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*20+EQUAL(LEVEL,4)*40+EQUAL(LEVEL,5)*180+EQUAL(LEVEL,6)*3600+EQUAL(LEVEL,7)*3600*5+EQUAL(LEVEL,8)*3600*12+(GREATER(LEVEL,8)*FLOOR(3600*12+(LEVEL-8)*3600*4))',
+          :production_time => 'EQUAL(LEVEL,2)*10+EQUAL(LEVEL,3)*20+EQUAL(LEVEL,4)*30+EQUAL(LEVEL,5)*180+EQUAL(LEVEL,6)*3600+EQUAL(LEVEL,7)*3600*5+EQUAL(LEVEL,8)*3600*12+(GREATER(LEVEL,8)*FLOOR(3600*12+(LEVEL-8)*3600*4))',
           :production  => [
             
           ],
@@ -3294,7 +3294,7 @@ class GameRules::Rules
             
           },
 
-          :production_time => '(EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3))',
+          :production_time => '(EQUAL(LEVEL,1)*FLOOR(10)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3))',
           :production  => [
             
           ],
@@ -6339,7 +6339,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Spezialisierungsgebäude, spezialisiert die Lagerstätte für wirtschaftliche Zwecke. Nur ein Spezialisierungsgebäude pro Lagerstätte.</p><p>Der Handelsplatz verbessert die Rohstoffproduktion der Lagerstätte um 1% pro Level. Auf Level 10 nisten sich Kröten in den feuchten Ecken ein.</p>",
   
-            :en_US => "<p>Specialization building, specializes your camp for military purposes. Only one specialization building per camp is possible. </p><p>Once a field camp is built, the message is clear - We're here to fight, not to have fun! Having a field camp means that more fighters can be deployed: 50 per level. At Level 10, a field camp also increases a settlement's command points by one.</p>",
+            :en_US => "<p>Specialization building, specializes your camp for economic purpose. Only one specialization building per camp.</p><p>The trade center improves the resource production of the camp by 1% per level. Additionally, it will produce a few frogs on level 10.</p>",
                 
           },
 

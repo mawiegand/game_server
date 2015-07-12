@@ -1171,7 +1171,7 @@
   </Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
-  <RewardText locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
+  <RewardText locale="de_DE">Du hast die Trainingshöhle freigeschaltet.</RewardText>
   <RewardText locale="en_US">Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.</RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
@@ -1347,7 +1347,7 @@
   </Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
-  <RewardText locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
+  <RewardText locale="de_DE">Du kannst jetzt einen Schießstand bauen und dort Fernkämpfer rekrutieren.</RewardText>
   <RewardText locale="en_US">Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.</RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
@@ -1739,7 +1739,9 @@
   <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_build_2quarry_lvl4</FinishQuestTrigger>
       <FinishQuestTrigger>quest_build_2logger_lvl4</FinishQuestTrigger>
+      <FinishQuestTrigger>epic_cottage</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
@@ -1771,6 +1773,7 @@
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_build_2quarry_lvl4</FinishQuestTrigger>
+      <FinishQuestTrigger>quest_build_2logger_lvl4</FinishQuestTrigger>
       <FinishQuestTrigger>epic_cottage</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
@@ -1801,6 +1804,7 @@
   <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
+      <FinishQuestTrigger>quest_build_2quarry_lvl4</FinishQuestTrigger>
       <FinishQuestTrigger>quest_build_2logger_lvl4</FinishQuestTrigger>
       <FinishQuestTrigger>epic_cottage</FinishQuestTrigger>
     </FinishQuestTriggers>
