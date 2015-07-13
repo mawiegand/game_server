@@ -196,19 +196,15 @@ class GameRules::Rules
           },
 2 => {
             :id          => 1,
-            :level       => 4,
+            :level       => 7,
           },
 3 => {
-            :id          => 1,
-            :level       => 5,
+            :id          => 6,
+            :level       => 4,
           },
 4 => {
-            :id          => 1,
-            :level       => 6,
-          },
-5 => {
-            :id          => 1,
-            :level       => 7,
+            :id          => 5,
+            :level       => 4,
           },
 7 => {
             :id          => 29,
@@ -221,7 +217,7 @@ class GameRules::Rules
           3 => 300,
             0 => 500,
             1 => 500,
-            2 => 500,
+            2 => 250,
             
         },
 
@@ -255,7 +251,7 @@ class GameRules::Rules
 
             "Zweite Siedlung:\nLagerstaette",
 
-            "1500 Rohstoffe einmalig\n150 Rohstoffe pro Stunde\n15% Produktionsbonus",
+            "1250 Rohstoffe einmalig\n150 Rohstoffe pro Stunde\n15% Produktionsbonus",
 
             "300 Goldkröten",
 
@@ -267,7 +263,7 @@ class GameRules::Rules
 
             "SecondSettlement:\nCamp",
 
-            "1500 Resources\n150 Resources per hour\n15% Production Bonus",
+            "1250 Resources\n150 Resources per hour\n15% Production Bonus",
 
             "300 Golden Frogs",
 

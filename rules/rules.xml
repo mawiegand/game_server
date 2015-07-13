@@ -235,29 +235,28 @@
     <SpecialOffer>
       <Outpost>
         <Slot slotNum="1" id="building_haunt" level="6"/>
-        <Slot slotNum="2" id="building_gatherer" level="4"/>
-        <Slot slotNum="3" id="building_gatherer" level="5"/>
-        <Slot slotNum="4" id="building_gatherer" level="6"/>
-        <Slot slotNum="5" id="building_gatherer" level="7"/>
+        <Slot slotNum="2" id="building_gatherer" level="7"/>
+        <Slot slotNum="3" id="building_logger" level="4"/>
+        <Slot slotNum="4" id="building_quarry" level="4"/>
         <Slot slotNum="7" id="building_altar" level="1"/>
       </Outpost>
       <StartResource id="resource_cash">300</StartResource>
       <StartResource id="resource_stone">500</StartResource>
       <StartResource id="resource_wood">500</StartResource>
-      <StartResource id="resource_fur">500</StartResource>
+      <StartResource id="resource_fur">250</StartResource>
       <ProductionStartBonus bonusOfferId="1" duration="96"/>
       <ProductionStartBonus bonusOfferId="2" duration="96"/>
       <ProductionStartBonus bonusOfferId="3" duration="96"/>
       <ConstructionStartBonus duration="96">1</ConstructionStartBonus>
       <DisplayStrings lang="de_DE">
         <DisplayString>Zweite Siedlung:\nLagerstaette</DisplayString>
-        <DisplayString>1500 Rohstoffe einmalig\n150 Rohstoffe pro Stunde\n15% Produktionsbonus</DisplayString>
+        <DisplayString>1250 Rohstoffe einmalig\n150 Rohstoffe pro Stunde\n15% Produktionsbonus</DisplayString>
         <DisplayString>300 Goldkröten</DisplayString>
         <DisplayString>Halbierte Bauzeit fuer 4 Tage</DisplayString>
       </DisplayStrings>
       <DisplayStrings lang="en_US">
         <DisplayString>SecondSettlement:\nCamp</DisplayString>
-        <DisplayString>1500 Resources\n150 Resources per hour\n15% Production Bonus</DisplayString>
+        <DisplayString>1250 Resources\n150 Resources per hour\n15% Production Bonus</DisplayString>
         <DisplayString>300 Golden Frogs</DisplayString>
         <DisplayString>Halved Construction Time for 4 days</DisplayString>
       </DisplayStrings>
