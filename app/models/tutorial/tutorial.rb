@@ -816,7 +816,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger aus und drücke auf 'Rekrutiere Krieger'.</p>",
+            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger aus.</p>",
   
             :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
                 
@@ -4004,7 +4004,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a smelly barn.",
+            :en_US => "Build a Firing range.",
   
             :de_DE => "Baue einen Schießstand.",
                 
@@ -4103,7 +4103,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a warrior.",
+            :en_US => "Build a thrower.",
   
             :de_DE => "Rekrutiere einen Kieselsteinwerfer.",
                 
@@ -4117,7 +4117,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in daen Stall, wähle dort in der Rekrutierungsliste gden Kieselsteinwerfer aus.</p>",
+            :de_DE => "<p>Gehe in den Schießstand, wähle dort in der Rekrutierungsliste den Kieselsteinwerfer aus.</p>",
   
             :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
                 
@@ -4479,8 +4479,396 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_copper_smelter
-        {               #   epic_encampment
+        {               #   epic_cavalry
           :id                => 44,
+          :symbolic_id       => :epic_cavalry,
+  
+          :type              => :epic,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Cavalry",
+  
+            :de_DE => "Die Reiter",
+                
+          },
+          :task => {
+            
+            :en_US => "Recruit your first cavalry.",
+  
+            :de_DE => "Rekrutiere Deine ersten berittenen Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
+  
+            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+  
+            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Fell ist der wichtigste Rohstoff zur Produktion von Einheiten..",
+  
+            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Fernkämpfer könne großen Schaden verursachen, sind aber anfällig im Nahkampf.",
+  
+            :en_US => "You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.",
+                
+          },
+
+          :subquests => [45, 46, 47, ],
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'epic_firing_range',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 1000,
+              },
+
+            ],
+
+            :experience_reward => 500,
+
+          },          
+
+          :reward_tests => {
+            
+          },          
+
+        },              #   END OF epic_cavalry
+        {               #   quest_build_copper_smelter_lvl5
+          :id                => 45,
+          :symbolic_id       => :quest_build_copper_smelter_lvl5,
+  
+          :type              => :sub,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Copper smelter level 5",
+  
+            :de_DE => "Kupferschmelze Level 5",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a copper smelter levle 5.",
+  
+            :de_DE => "Verbessere die Kupferschmelze auf Level 5.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "In der Kupferzeit stehen Dir neue Gebäude und verbesserte Versionen bereits bekannter Gebäude zur Verfügung.",
+  
+            :en_US => "In the Copper Age, you can create new buildings as well as improved versions of the buildings you already know.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Die Kupferschmelze Level 5 schaltet den Stall frei.</p>",
+  
+            :en_US => "<p>A copper smelter can be created in a small building slot. It gives you acces to buildings from the Copper Age.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Wow, eine neues Zeitalter! So viele Möglichkeiten.",
+  
+            :en_US => "Wow, a new age! So many opportunities! ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Mit der verbesserten Kupferschmelze können wir endlich einen Stall bauen.",
+  
+            :en_US => "So, should we leave the Stone Age and move forward to the Copper Age?",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+            ],
+
+            :experience_reward => 1500,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_copper_smelter',
+
+                :min_level => 5,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_copper_smelter_lvl5
+        {               #   quest_build_stid
+          :id                => 46,
+          :symbolic_id       => :quest_build_stid,
+  
+          :type              => :sub,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Stud",
+  
+            :de_DE => "Der Stall",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a smelly barn.",
+  
+            :de_DE => "Baue einen Stall.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.",
+  
+            :en_US => "We need a cavalry to defend ourselves against throwers.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p>",
+  
+            :en_US => "<p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.",
+  
+            :en_US => "Muhaha, I don´t like the smell, but the riders know thier business.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Ein höherer oder mehrere Schießstände beschleunigen die Rekrutierung von Fernkämpfern.",
+  
+            :en_US => "A cavalry can flank the melee and attack throwers directly. A riding army is also quicker than normal warriors.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 3000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 250,
+              },
+
+            ],
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_stud',
+
+                :min_level => 1,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_stid
+        {               #   quest_light_cavalry
+          :id                => 47,
+          :symbolic_id       => :quest_light_cavalry,
+  
+          :type              => :sub,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Ostrich rider",
+  
+            :de_DE => "Der Straußenreiter",
+                
+          },
+          :task => {
+            
+            :en_US => "Recruit a ostrich rider.",
+  
+            :de_DE => "Rekrutiere einen Straußenreiter.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.",
+  
+            :en_US => "What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Gehe in den Stall, wähle dort in der Rekrutierungsliste den Straußenreiter aus.</p>",
+  
+            :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.",
+  
+            :en_US => "Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "Fernkämpfer sollten immer von Nahkämpfern geschützt werden.",
+  
+            :en_US => "You can train several units at the same time. Just select the number of units you want.",
+                
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_light_cavalry,
+                :amount => 30,
+              },
+
+            ],
+
+            :experience_reward => 500,
+
+          },          
+
+          :reward_tests => {
+            
+            :training_queue_tests => [
+
+              {
+                :unit => 'unit_light_cavalry',
+                :min_count => 1,
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_light_cavalry
+        {               #   epic_encampment
+          :id                => 48,
           :symbolic_id       => :epic_encampment,
   
           :type              => :epic,
@@ -4537,7 +4925,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [45, 46, 47, ],
+          :subquests => [49, 50, 51, ],
 
           :triggers => {
             
@@ -4566,7 +4954,7 @@ class Tutorial::Tutorial
 
         },              #   END OF epic_encampment
         {               #   quest_build_campfirelvl10
-          :id                => 45,
+          :id                => 49,
           :symbolic_id       => :quest_build_campfirelvl10,
   
           :type              => :sub,
@@ -4661,7 +5049,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_campfirelvl10
         {               #   quest_little_chief
-          :id                => 46,
+          :id                => 50,
           :symbolic_id       => :quest_little_chief,
   
           :type              => :sub,
@@ -4684,9 +5072,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a warrior.",
+            :en_US => "Build a little chief.",
   
-            :de_DE => "Rekrutiere einen Kleinen Chef",
+            :de_DE => "Rekrutiere einen Kleinen Chef.",
                 
           },
           :flavour => {
@@ -4748,7 +5136,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_little_chief
         {               #   quest_outpost
-          :id                => 47,
+          :id                => 51,
           :symbolic_id       => :quest_outpost,
   
           :type              => :sub,
@@ -4845,7 +5233,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_outpost
         {               #   quest_profile
-          :id                => 48,
+          :id                => 52,
           :symbolic_id       => :quest_profile,
   
           :type              => :optional,
@@ -4941,7 +5329,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_profile
         {               #   quest_build_2quarry_lvl4
-          :id                => 49,
+          :id                => 53,
           :symbolic_id       => :quest_build_2quarry_lvl4,
   
           :type              => :optional,
@@ -5047,7 +5435,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2quarry_lvl4
         {               #   quest_build_2logger_lvl4
-          :id                => 50,
+          :id                => 54,
           :symbolic_id       => :quest_build_2logger_lvl4,
   
           :type              => :optional,
@@ -5153,7 +5541,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2logger_lvl4
         {               #   quest_gatherer_lvl10
-          :id                => 51,
+          :id                => 55,
           :symbolic_id       => :quest_gatherer_lvl10,
   
           :type              => :optional,
@@ -5259,7 +5647,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_gatherer_lvl10
         {               #   quest_build_quarry_lvl10
-          :id                => 52,
+          :id                => 56,
           :symbolic_id       => :quest_build_quarry_lvl10,
   
           :type              => :optional,
@@ -5360,7 +5748,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_quarry_lvl10
         {               #   quest_build_logger_lvl10
-          :id                => 53,
+          :id                => 57,
           :symbolic_id       => :quest_build_logger_lvl10,
   
           :type              => :optional,
@@ -5461,7 +5849,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_logger_lvl10
         {               #   quest_build_2furrierlvl4
-          :id                => 54,
+          :id                => 58,
           :symbolic_id       => :quest_build_2furrierlvl4,
   
           :type              => :optional,
@@ -5562,7 +5950,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2furrierlvl4
         {               #   quest_build_furrier_lvl10
-          :id                => 55,
+          :id                => 59,
           :symbolic_id       => :quest_build_furrier_lvl10,
   
           :type              => :optional,
@@ -5663,7 +6051,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_furrier_lvl10
         {               #   quest_resourcescore_1
-          :id                => 56,
+          :id                => 60,
           :symbolic_id       => :quest_resourcescore_1,
   
           :type              => :optional,
@@ -5767,7 +6155,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_resourcescore_1
         {               #   quest_build_barrackslvl5
-          :id                => 57,
+          :id                => 61,
           :symbolic_id       => :quest_build_barrackslvl5,
   
           :type              => :optional,
@@ -5818,7 +6206,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Berittene Einheiten können mit Flankenangriffen die gegnerischen Nahkämpfer umgehen und Fernkämpfer direkt angreifen. Zudem sind sie als Reiterarmee schneller als normalen Kämpfer.",
+            :de_DE => "Die Keulenkriger sind die ersten echten Einheiten.",
   
             :en_US => "A cavalry can flank the melee and attack throwers directly. A riding army is also quicker than normal warriors.",
                 
@@ -5880,7 +6268,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_barrackslvl5
         {               #   quest_recruit_clubber
-          :id                => 58,
+          :id                => 62,
           :symbolic_id       => :quest_recruit_clubber,
   
           :type              => :optional,
@@ -5903,9 +6291,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a warrior.",
+            :en_US => "Build a clubber.",
   
-            :de_DE => "Rekrutiere einen Kieselsteinwerfer.",
+            :de_DE => "Rekrutiere einen Keulenkrieger.",
                 
           },
           :flavour => {
@@ -5917,7 +6305,7 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in daen Stall, wähle dort in der Rekrutierungsliste gden Kieselsteinwerfer aus.</p>",
+            :de_DE => "<p>Gehe in das Ausbilsungsgelände, wähle dort in der Rekrutierungsliste den Keulenkrieger aus.</p>",
   
             :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
                 
@@ -5931,7 +6319,7 @@ class Tutorial::Tutorial
           },
           :reward_text => {
             
-            :de_DE => "Die ersten Krieger hast Du. Zeit sich die Nachbarschaft anzuschauen.",
+            :de_DE => "Endlich vernüftige Keulen. Jetzt tut das Hauen wenigstens weh!",
   
             :en_US => "You can train several units at the same time. Just select the number of units you want.",
                 
@@ -5981,7 +6369,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_recruit_clubber
         {               #   quest_fortress
-          :id                => 59,
+          :id                => 63,
           :symbolic_id       => :quest_fortress,
   
           :type              => :optional,
@@ -6082,7 +6470,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_fortress
         {               #   quest_infantry_tower
-          :id                => 60,
+          :id                => 64,
           :symbolic_id       => :quest_infantry_tower,
   
           :type              => :optional,
@@ -6185,7 +6573,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_infantry_tower
         {               #   quest_fortress_fortification_lvl5
-          :id                => 61,
+          :id                => 65,
           :symbolic_id       => :quest_fortress_fortification_lvl5,
   
           :type              => :optional,
@@ -6298,7 +6686,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_fortress_fortification_lvl5
         {               #   quest_artillery_tower
-          :id                => 62,
+          :id                => 66,
           :symbolic_id       => :quest_artillery_tower,
   
           :type              => :optional,
@@ -6401,7 +6789,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_artillery_tower
         {               #   quest_fortress_fortification_lvl7
-          :id                => 63,
+          :id                => 67,
           :symbolic_id       => :quest_fortress_fortification_lvl7,
   
           :type              => :optional,
@@ -6514,7 +6902,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_fortress_fortification_lvl7
         {               #   quest_cavalry_tower
-          :id                => 64,
+          :id                => 68,
           :symbolic_id       => :quest_cavalry_tower,
   
           :type              => :optional,
@@ -6617,7 +7005,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_cavalry_tower
         {               #   quest_haunt_lvl6
-          :id                => 65,
+          :id                => 69,
           :symbolic_id       => :quest_haunt_lvl6,
   
           :type              => :optional,
@@ -6730,7 +7118,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_haunt_lvl6
         {               #   quest_altar
-          :id                => 66,
+          :id                => 70,
           :symbolic_id       => :quest_altar,
   
           :type              => :optional,
@@ -6843,7 +7231,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_altar
         {               #   quest_field_camp
-          :id                => 67,
+          :id                => 71,
           :symbolic_id       => :quest_field_camp,
   
           :type              => :optional,
@@ -6956,7 +7344,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_field_camp
         {               #   quest_trade_center
-          :id                => 68,
+          :id                => 72,
           :symbolic_id       => :quest_trade_center,
   
           :type              => :optional,
@@ -7069,7 +7457,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_trade_center
         {               #   quest_charkills_1
-          :id                => 69,
+          :id                => 73,
           :symbolic_id       => :quest_charkills_1,
   
           :type              => :optional,
@@ -7168,7 +7556,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_1
         {               #   quest_charkills_2
-          :id                => 70,
+          :id                => 74,
           :symbolic_id       => :quest_charkills_2,
   
           :type              => :optional,
@@ -7274,7 +7662,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_2
         {               #   quest_charkills_3
-          :id                => 71,
+          :id                => 75,
           :symbolic_id       => :quest_charkills_3,
   
           :type              => :optional,
@@ -7380,7 +7768,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_3
         {               #   quest_charkills_4
-          :id                => 72,
+          :id                => 76,
           :symbolic_id       => :quest_charkills_4,
   
           :type              => :optional,

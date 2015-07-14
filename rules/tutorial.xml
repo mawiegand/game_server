@@ -290,7 +290,7 @@
   <Task>Build a warrior.</Task>
   <Task locale="de_DE">Rekrutiere einen Krieger.</Task>
   <Description locale="de_DE">
-    <p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger aus und drücke auf 'Rekrutiere Krieger'.</p>
+    <p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger aus.</p>
   </Description>
   <Description locale="en_US">
     <p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>
@@ -1360,7 +1360,7 @@
 <Subquest id="quest_build_firing_range" epic="epic_firing_range" advisor="warrior">
   <Name>Firing_range</Name>
   <Name locale="de_DE">Der Schießstand</Name>
-  <Task>Build a smelly barn.</Task>
+  <Task>Build a Firing range.</Task>
   <Task locale="de_DE">Baue einen Schießstand.</Task>
   <Description locale="de_DE"><p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p></Description>
   <Description locale="en_US"><p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p></Description>
@@ -1383,10 +1383,10 @@
 <Subquest id="quest_recruit_thrower" epic="epic_firing_range" advisor="warrior" >
   <Name>Thrower</Name>
   <Name locale="de_DE">Kieselsteinwerfer</Name>
-  <Task>Build a warrior.</Task>
+  <Task>Build a thrower.</Task>
   <Task locale="de_DE">Rekrutiere einen Kieselsteinwerfer.</Task>
   <Description locale="de_DE">
-    <p>Gehe in daen Stall, wähle dort in der Rekrutierungsliste gden Kieselsteinwerfer aus.</p>
+    <p>Gehe in den Schießstand, wähle dort in der Rekrutierungsliste den Kieselsteinwerfer aus.</p>
   </Description>
   <Description locale="en_US">
     <p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>
@@ -1497,6 +1497,115 @@
   </RewardTests>
 </Subquest>
 
+<!-- EPIC CAVALRY -->
+<Quest id="epic_cavalry" type="epic" advisor="warrior">
+  <Name>Cavalry</Name>
+  <Name locale="de_DE">Die Reiter</Name>
+  <Task>Recruit your first cavalry.</Task>
+  <Task locale="de_DE">Rekrutiere Deine ersten berittenen Einheiten.</Task>
+  <Description locale="de_DE">
+    <p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
+  </Description>
+  <Flavor locale="de_DE">Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.</Flavor>
+  <Flavor locale="en_US">Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.</Flavor>
+  <RewardText locale="de_DE">Fernkämpfer könne großen Schaden verursachen, sind aber anfällig im Nahkampf.</RewardText>
+  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardFlavor locale="de_DE">Fell ist der wichtigste Rohstoff zur Produktion von Einheiten..</RewardFlavor>
+  <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
+  <Triggers>
+    <FinishQuestTriggers>
+      <FinishQuestTrigger>epic_firing_range</FinishQuestTrigger>
+    </FinishQuestTriggers>
+  </Triggers>
+  <Rewards>
+    <ResourceReward resource="resource_fur">1000</ResourceReward>
+    <ExperienceReward>500</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+  </RewardTests>
+</Quest>
+
+<Subquest id="quest_build_copper_smelter_lvl5" epic="epic_cavalry" advisor="girl" >
+  <Name>Copper smelter level 5</Name>
+  <Name locale="de_DE">Kupferschmelze Level 5</Name>
+  <Task>Build a copper smelter levle 5.</Task>
+  <Task locale="de_DE">Verbessere die Kupferschmelze auf Level 5.</Task>
+  <Description locale="de_DE">
+    <p>Die Kupferschmelze Level 5 schaltet den Stall frei.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>A copper smelter can be created in a small building slot. It gives you acces to buildings from the Copper Age.</p>
+  </Description>
+  <Flavor locale="de_DE">In der Kupferzeit stehen Dir neue Gebäude und verbesserte Versionen bereits bekannter Gebäude zur Verfügung.</Flavor>
+  <Flavor locale="en_US">In the Copper Age, you can create new buildings as well as improved versions of the buildings you already know.</Flavor>
+  <RewardText locale="de_DE">Mit der verbesserten Kupferschmelze können wir endlich einen Stall bauen.</RewardText>
+  <RewardText locale="en_US">So, should we leave the Stone Age and move forward to the Copper Age?</RewardText>
+  <RewardFlavor locale="de_DE">Wow, eine neues Zeitalter! So viele Möglichkeiten.</RewardFlavor>
+  <RewardFlavor locale="en_US">Wow, a new age! So many opportunities! </RewardFlavor>
+  <Rewards>
+    <ResourceReward resource="resource_stone">3000</ResourceReward>
+    <ResourceReward resource="resource_wood">3000</ResourceReward>
+    <ResourceReward resource="resource_fur">3000</ResourceReward>
+    <ExperienceReward>1500</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_copper_smelter" min_level="5" />
+  </RewardTests>
+</Subquest>
+
+<Subquest id="quest_build_stid" epic="epic_cavalry" advisor="warrior">
+  <Name>Stud</Name>
+  <Name locale="de_DE">Der Stall</Name>
+  <Task>Build a smelly barn.</Task>
+  <Task locale="de_DE">Baue einen Stall.</Task>
+  <Description locale="de_DE"><p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p></Description>
+  <Description locale="en_US"><p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p></Description>
+  <Flavor locale="de_DE">Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.</Flavor>
+  <Flavor locale="en_US">We need a cavalry to defend ourselves against throwers.</Flavor>
+  <RewardText locale="de_DE">Ein höherer oder mehrere Schießstände beschleunigen die Rekrutierung von Fernkämpfern.</RewardText>
+  <RewardText locale="en_US">A cavalry can flank the melee and attack throwers directly. A riding army is also quicker than normal warriors.</RewardText>
+  <RewardFlavor locale="de_DE">Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.</RewardFlavor>
+  <RewardFlavor locale="en_US">Muhaha, I don´t like the smell, but the riders know thier business.</RewardFlavor>
+  <Rewards>
+    <ResourceReward resource="resource_stone">3000</ResourceReward>
+    <ResourceReward resource="resource_wood">1500</ResourceReward>
+    <ResourceReward resource="resource_fur">250</ResourceReward>
+  </Rewards>
+  <RewardTests>
+    <BuildingTest building="building_stud" min_level="1"/>
+  </RewardTests>
+</Subquest>
+
+<Subquest id="quest_light_cavalry" epic="epic_cavalry" advisor="warrior" >
+  <Name>Ostrich rider</Name>
+  <Name locale="de_DE">Der Straußenreiter</Name>
+  <Task>Recruit a ostrich rider.</Task>
+  <Task locale="de_DE">Rekrutiere einen Straußenreiter.</Task>
+  <Description locale="de_DE">
+    <p>Gehe in den Stall, wähle dort in der Rekrutierungsliste den Straußenreiter aus.</p>
+  </Description>
+  <Description locale="en_US">
+    <p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>
+  </Description>
+  <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
+  <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
+  <RewardText locale="de_DE">Fernkämpfer sollten immer von Nahkämpfern geschützt werden.</RewardText>
+  <RewardText locale="en_US">You can train several units at the same time. Just select the number of units you want.</RewardText>
+  <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
+  <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
+  <Rewards>
+    <ResourceReward resource="resource_fur">3000</ResourceReward>
+    <UnitReward unit="unit_light_cavalry">30</UnitReward>
+    <ExperienceReward>500</ExperienceReward>
+  </Rewards>
+  <RewardTests>
+    <TrainingQueueTest unit="unit_light_cavalry" min_count="1" />
+  </RewardTests>
+</Subquest>
+
 
 <!-- EPIC ENCAMPMENT -->
 <Quest id="epic_encampment" type="epic" advisor="chef">
@@ -1557,8 +1666,8 @@
 <Subquest id="quest_little_chief" epic="epic_encampment" advisor="warrior" >
   <Name>Little Chief</Name>
   <Name locale="de_DE">Der Kleine Chef</Name>
-  <Task>Build a warrior.</Task>
-  <Task locale="de_DE">Rekrutiere einen Kleinen Chef</Task>
+  <Task>Build a little chief.</Task>
+  <Task locale="de_DE">Rekrutiere einen Kleinen Chef.</Task>
   <Description locale="de_DE">
     <p>Bild am Lagerfeuer einen Kleinen Chef aus.</p>
   </Description>
@@ -1922,7 +2031,7 @@
   <Description locale="en_US"><p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p></Description>
   <Flavor locale="de_DE">Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.</Flavor>
   <Flavor locale="en_US">We need a cavalry to defend ourselves against throwers.</Flavor>
-  <RewardText locale="de_DE">Berittene Einheiten können mit Flankenangriffen die gegnerischen Nahkämpfer umgehen und Fernkämpfer direkt angreifen. Zudem sind sie als Reiterarmee schneller als normalen Kämpfer.</RewardText>
+  <RewardText locale="de_DE">Die Keulenkriger sind die ersten echten Einheiten.</RewardText>
   <RewardText locale="en_US">A cavalry can flank the melee and attack throwers directly. A riding army is also quicker than normal warriors.</RewardText>
   <RewardFlavor locale="de_DE">Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.</RewardFlavor>
   <RewardFlavor locale="en_US">Muhaha, I don´t like the smell, but the riders know thier business.</RewardFlavor>
@@ -1945,17 +2054,17 @@
 <Quest id="quest_recruit_clubber" type="optional" advisor="warrior" >
   <Name>Clubber</Name>
   <Name locale="de_DE">Keulenkrieger</Name>
-  <Task>Build a warrior.</Task>
-  <Task locale="de_DE">Rekrutiere einen Kieselsteinwerfer.</Task>
+  <Task>Build a clubber.</Task>
+  <Task locale="de_DE">Rekrutiere einen Keulenkrieger.</Task>
   <Description locale="de_DE">
-    <p>Gehe in daen Stall, wähle dort in der Rekrutierungsliste gden Kieselsteinwerfer aus.</p>
+    <p>Gehe in das Ausbilsungsgelände, wähle dort in der Rekrutierungsliste den Keulenkrieger aus.</p>
   </Description>
   <Description locale="en_US">
     <p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>
   </Description>
   <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
-  <RewardText locale="de_DE">Die ersten Krieger hast Du. Zeit sich die Nachbarschaft anzuschauen.</RewardText>
+  <RewardText locale="de_DE">Endlich vernüftige Keulen. Jetzt tut das Hauen wenigstens weh!</RewardText>
   <RewardText locale="en_US">You can train several units at the same time. Just select the number of units you want.</RewardText>
   <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
   <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
