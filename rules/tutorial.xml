@@ -982,7 +982,7 @@
 
 
 <!--erster Handel ? OPTIONAL?-->
-<Quest id="quest_first_trade" type="epic_optional" advisor="girl" >
+<Subquest id="quest_first_trade" epic="epic_storage" advisor="girl" >
   <Name>First trade</Name>
   <Name locale="de_DE">Erster Handel</Name>
   <Task>Start a trade.</Task>
@@ -999,11 +999,6 @@
   <RewardText locale="en_US">The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.</RewardText>
   <RewardFlavor locale="de_DE">Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
   <RewardFlavor locale="en_US">At last I have enough space for all my shoe…er, things!</RewardFlavor>
-  <Triggers>
-    <FinishQuestTriggers>
-      <FinishQuestTrigger>epic_storage</FinishQuestTrigger>
-    </FinishQuestTriggers>
-  </Triggers>
   <Rewards>
     <ResourceReward resource="resource_stone">200</ResourceReward>
     <ResourceReward resource="resource_wood">200</ResourceReward>
@@ -1011,7 +1006,7 @@
   <RewardTests>
     <TradingCartTest direction="outgoing" min_carts_count="1"></TradingCartTest>
   </RewardTests>
-</Quest>
+</Subquest>
 
 
 <!-- EPIC COTTAGE -->

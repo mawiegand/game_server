@@ -2629,7 +2629,7 @@ class Tutorial::Tutorial
                 
           },
 
-          :subquests => [25, ],
+          :subquests => [25, 26, ],
 
           :triggers => {
             
@@ -2766,7 +2766,7 @@ class Tutorial::Tutorial
           :id                => 26,
           :symbolic_id       => :quest_first_trade,
   
-          :type              => :epic_optional,
+          :type              => :sub,
   
           :advisor           => :girl,
           :hide_start_dialog => false,
@@ -2818,18 +2818,6 @@ class Tutorial::Tutorial
   
             :en_US => "The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.",
                 
-          },
-
-          :triggers => {
-            
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'epic_storage',
-              },
-
-            ],
-  
           },
 
           :rewards => {
