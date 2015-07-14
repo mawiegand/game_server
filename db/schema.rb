@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150417214445) do
+ActiveRecord::Schema.define(:version => 20150714151328) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2266,6 +2266,7 @@ ActiveRecord::Schema.define(:version => 20150417214445) do
     t.integer  "alliance_color"
     t.boolean  "invisible",                       :default => false
     t.boolean  "selected",                        :default => false
+    t.integer  "specific_character_id"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"

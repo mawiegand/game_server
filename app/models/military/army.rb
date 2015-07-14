@@ -10,6 +10,7 @@ class Military::Army < ActiveRecord::Base
   
   belongs_to :alliance,           :class_name => "Fundamental::Alliance",            :foreign_key => "alliance_id",            :inverse_of => :armies
   belongs_to :owner,              :class_name => "Fundamental::Character",           :foreign_key => "owner_id",               :inverse_of => :armies
+  belongs_to :specific_character, :class_name => "Fundamental::Character",           :foreign_key => "specific_character_id",  :inverse_of => :character_specific_npcs
   
   has_one    :movement_command,   :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id",                :dependent => :destroy
   has_one    :details,            :class_name => "Military::ArmyDetail",             :foreign_key => "army_id",                :dependent => :destroy, :inverse_of => :army
@@ -53,7 +54,7 @@ class Military::Army < ActiveRecord::Base
   scope :garrison,             where('(garrison = ?)', true)
   scope :non_garrison,         where('(garrison is null OR garrison = ?)', false)
   scope :visible,              where('invisible = ?', false)
-  scope :visible_to_character, lambda { |character| where('owner_id = ? or invisible = ?', character.id, false) }
+  scope :visible_to_character, lambda { |character| where('specific_character_id = ? OR owner_id = ? OR (invisible = ? AND specific_character_id IS NULL)', character.id, character.id, false) }
   scope :idle,                 where(mode: MODE_IDLE)
   scope :moving,               where(mode: MODE_MOVING)
   scope :at_least_ap,          lambda { |ap| where(["ap_present >= ?", ap]) }
@@ -652,7 +653,7 @@ class Military::Army < ActiveRecord::Base
     sum
   end
 
-  def self.create_npc(location, size)
+  def self.create_npc(location, size, specific_character = nil)
     raise BadRequestError.new('No location for army creation!') if location.nil?
     npc = Fundamental::Character.find_by_id(1)
     
@@ -678,6 +679,7 @@ class Military::Army < ActiveRecord::Base
     army.region = location.region
     army.owner = npc
     army.owner_name = npc.name
+    army.specific_character = specific_character
     army.alliance = npc.alliance
     army.alliance_tag = npc.alliance_tag
     
