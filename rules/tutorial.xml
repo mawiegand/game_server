@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="0" build="1" />
+    <Version major="1" minor="0" build="2" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -32,7 +32,7 @@
   
   <!-- 0 --> <!-- Tutorial 1-->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" type="epic" advisor="girl" hide_start_dialog="false" tutorial="true" priority="1" blocking="true" >
+    <Quest id="quest_queue_1gathererlvl1" type="epic" advisor="girl" hide_start_dialog="false" tutorial="true" >
       <Name>The first building</Name>
       <Name locale="de_DE">Der Sammler</Name>
       <Task>Build a Gatherer. He will prepare the great settlement building</Task>
@@ -41,10 +41,10 @@
       <Description locale="en_US"><p>Build a Gatherer. He will prepare the great settlement building.</p></Description>
       <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
       <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
-      <RewardText locale="de_DE">Sehr gut! Jetzt kann der Ausbau losgehen.</RewardText>
-      <RewardText locale="en_US">Very well! Now the settlements construction can begin.</RewardText>
-      <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
-      <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
+      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="en_US"></RewardText>
+      <RewardFlavor locale="de_DE">Sehr gut! Jetzt kann der Ausbau losgehen.</RewardFlavor>
+      <RewardFlavor locale="en_US">Very well! Now the settlements construction can begin.</RewardFlavor>
       <!-- Requirement quest="quest_found_home_base" / -->
       <Triggers>
         <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
@@ -75,8 +75,8 @@
       </Description>
       <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort!</Flavor>
       <Flavor locale="en_US">Demigod?! I don´t think so. Look at my chieftan´s hut! You think I´m going to live in that? Ha! Change it immediately!</Flavor>
-      <RewardText locale="de_DE">Ein neuer Bauplatz! Baue dort eine Taverne.</RewardText>
-      <RewardText locale="en_US">At the moment you should build your building at the small building slots.</RewardText>
+      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="en_US"></RewardText>
       <RewardFlavor locale="de_DE">Weiter so! Schließlich braucht man Platz zum Herrschen.</RewardFlavor>
       <RewardFlavor locale="en_US">Go on! Finally it  needs space to rule.</RewardFlavor>
       <Triggers>
@@ -107,8 +107,8 @@
       <Description locale="en_US"><p>The warriors need a drink! Build a tavern.</p></Description>
       <Flavor locale="de_DE">Ein Ort zum trinken? Ganz mein Geschmack.</Flavor>
       <Flavor locale="en_US">Finally a place where i can have a pint in peace.</Flavor>
-      <RewardText locale="de_DE">Die Taverne ist fertig. Nimm gleich den ersten Auftrag an.</RewardText>
-      <RewardText locale="en_US">There are many people looking for favors in the tavern. Maybe you can get something out of that.</RewardText>
+      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="en_US"></RewardText>
       <RewardFlavor locale="de_DE">Prost! Und dann zurück an die Arbeit.</RewardFlavor>
       <RewardFlavor locale="en_US">Cheers! And then back to work.</RewardFlavor>
       <Triggers>
@@ -139,10 +139,10 @@
       <Description locale="en_US"><p>Startle the drunkards and start your first assignment.</p></Description>
       <Flavor locale="de_DE">Krempel die Ärmel hoch, wir haben Arbeit zu verrichten.</Flavor>
       <Flavor locale="en_US">Pull up those sleeves, looks like we got work to do.</Flavor>
-      <RewardText locale="de_DE">Mit Aufträgen kannst du ein paar extra Rohstoffe  verdienen.</RewardText>
-      <RewardText locale="en_US">You can earn some additional resources through assignments.'</RewardText>
-      <RewardFlavor locale="de_DE">Nach einem Auftrag gibt es doch nichts besseres als ein kühles Bier.</RewardFlavor>
-      <RewardFlavor locale="en_US">After we finish that assignment, let's go back to the tavern for a drink.</RewardFlavor>
+      <RewardText locale="de_DE"></RewardText>
+      <RewardText locale="en_US"></RewardText>
+      <RewardFlavor locale="de_DE">Mit Aufträgen kannst du ein paar extra Rohstoffe  verdienen.</RewardFlavor>
+      <RewardFlavor locale="en_US">You can earn some additional resources through assignments.</RewardFlavor>
       <Triggers>
         <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
         <FinishQuestTriggers>
@@ -169,8 +169,8 @@
     <Description locale="en_US"><p>Upgrade your chieftain's hut to level 3.</p></Description>
     <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
     <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
-    <RewardText locale="de_DE">Du kannst jetzt ein Ausbildungsgelände bauen.</RewardText>
-    <RewardText locale="en_US">Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.</RewardText>
+    <RewardText locale="de_DE"></RewardText>
+    <RewardText locale="en_US"></RewardText>
     <RewardFlavor locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Bauplätze frei.</RewardFlavor>
     <RewardFlavor locale="en_US">Upgrading the chieftain’s hut unlocks new building spots.</RewardFlavor>
     <Triggers>
@@ -236,9 +236,8 @@
   <Description locale="en_US"><p>Build training grounds.</p></Description>
   <Flavor locale="de_DE">Du kannst ein Ausbildungsgelände bauen, machst es aber nicht? Bau sofort eins und ich gebe Dir etwas aus meiner Schatzkiste.</Flavor>
   <Flavor locale="en_US">You can build a Training Grounds but you're not doing it? If you build one now, I´ll give you something from my treasure chest.</Flavor>
-  <RewardText locale="de_DE">Im Ausbildungsgelände kannst Du Deine erste Einheit, den Krieger rekrutieren.</RewardText>
-  <RewardText locale="en_US">Having a Training Grounds speeds up the time it takes to recruit melee fighters.
-  </RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Baue das Ausbildungsgelände aus, um Nahkämpfer schneller zu trainieren.</RewardFlavor>
   <RewardFlavor locale="en_US">Upgrade your training grounds to increase the training speed for melee units.</RewardFlavor>
   <Triggers>
@@ -273,8 +272,8 @@
   </Description>
   <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
-  <RewardText locale="de_DE">Die ersten Krieger hast Du. Zeit sich die Nachbarschaft anzuschauen.</RewardText>
-  <RewardText locale="en_US">You can train several units at the same time. Just select the number of units you want.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Du kannst mehrere Einheiten auf einmal in Auftrag geben. Sie werden dann nacheinander ausgebildet.</RewardFlavor>
   <RewardFlavor locale="en_US">You can order several units at once. They will be trained one after another.</RewardFlavor>
   <Triggers>
@@ -311,8 +310,8 @@
   </Description>
   <Flavor locale="de_DE">Was? Dir ist es hier zu klein? Es gibt eine riesige Welt zu erobern. Wenn Du mal aus diesem Loch rauskommen würdest, wüsstest Du das auch. Worauf wartest Du? Geh!</Flavor>
   <Flavor locale="en_US">What? It's too small for you here? There's a whole world to conquer. If you made an effort to get out of this hole, you´d realize that. So what are you waiting for?! Go!</Flavor>
-  <RewardText locale="de_DE">Da ist Deine Siedlung. Jetzt brauchst Du nur noch eine Armee.</RewardText>
-  <RewardText locale="en_US">On the World Map you can also see the other gamers who are active arround you.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Auf der Weltkarte kannst du die Aktivitäten aller Spieler sehen.</RewardFlavor>
   <RewardFlavor locale="en_US">On the world map you can see the activities of all players.</RewardFlavor>
   <Triggers>
@@ -346,8 +345,8 @@
   </Description>
   <Flavor locale="de_DE">Um Einheiten zu bewegen, müssen sie aus der Garnison in eine Armee verschoben werden.</Flavor>
   <Flavor locale="en_US">You can't move units that are in the garrison. To move units, you first have to relocate them from the garrison into an army.</Flavor>
-  <RewardText locale="de_DE">Deine erste Armee wartet auf Befehle. Zeig gleich mal den Neandertaler wo die Keule hängt.</RewardText>
-  <RewardText locale="en_US">Every army needs a command point in the settlement - that's where they receive their commands from. You can only reinforce your army at their home settlement.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Jede Armee belegt einen Kommandopunkt.</RewardFlavor>
   <RewardFlavor locale="en_US">Every Army occupies a command point.</RewardFlavor>
   <Triggers>
@@ -370,7 +369,7 @@
 </Quest>
 
 <!-- 9--> <!-- Tutorial 10 -->
-<Quest id="quest_npc_battle" type="epic" advisor="warrior" hide_start_dialog="false" tutorial="true" priority="1">
+<Quest id="quest_npc_battle" type="epic" advisor="warrior" hide_start_dialog="false" tutorial="true" >
   <Name>First battle</Name>
   <Name locale="de_DE">Der erste Kampf</Name>
   <Task>Beat a pack of Neanderthals in your region.</Task>
@@ -382,9 +381,9 @@
     <p>A bunch of ferocious neanderthals has gathered outside your settlement while your army is out in the field. We have to stop them. Lead our garrison out to battle and smash them to bits! To do so, first select your settlement. Then press the attack button and select the neandertals to beginn the attack.</p></Description>
   <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
   <Flavor locale="en_US">Those neanderthals sure are cruising for a bruising. </Flavor>
-  <RewardText locale="de_DE">Ein Kampf läuft meist über mehrere Runden, dabei können beliebig viele Armeen auf beiden Seiten dazukommen.</RewardText>
-  <RewardText locale="en_US">You attack the same way with armies. Armies fighting on the same side as settlements or fortresses get a boost. While a battle is going on armies can join it on either side. </RewardText>
-  <RewardFlavor locale="de_DE">Deine Armeen sammeln beim Kämpfen Erfahrung.</RewardFlavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
+  <RewardFlavor locale="de_DE">Deine Armeen sammeln beim Kämpfen wichtige Erfahrung.</RewardFlavor>
   <RewardFlavor locale="en_US">Your armies gather experience through fighting.</RewardFlavor>
   <Triggers>
     <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
@@ -406,7 +405,7 @@
 </Quest>
 
 <!-- 10 --> <!-- Tutorial 11 -->
-<Quest id="quest_army_move" type="epic" advisor="warrior" hide_start_dialog="true" tutorial="true" priority="2">
+<Quest id="quest_army_move" type="epic" advisor="warrior" hide_start_dialog="true" tutorial="true" >
   <Name>Army movement</Name>
   <Name locale="de_DE">Armeebewegung</Name>
   <Task>Send your army to a different location.</Task>
@@ -419,8 +418,8 @@
   </Description>
   <Flavor locale="de_DE">Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten.</Flavor>
   <Flavor locale="en_US">An army can do more than just stand around, you know. It´s there to destroy the enemies of the tribe!</Flavor>
-  <RewardText locale="de_DE">Jede Bewegung und jeder Angriff kostet Dich einen Aktionspunkt.</RewardText>
-  <RewardText locale="en_US">Below your army you'll see your available action points. Movements and attacks cost one action point and your army regenerates one action point every three hours.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Denke daran, dass jeder deine Truppenbewegungen beobachten kann!</RewardFlavor>
   <RewardFlavor locale="en_US">Keep in mind that everyone can watch your troop movement!</RewardFlavor>
   <Triggers>
@@ -469,7 +468,7 @@
 
 
 <!-- 11 --> <!-- Tutorial 12 -->
-<Quest id="quest_settlement_button2" type="epic" advisor="girl" hide_start_dialog="true" tutorial="true" priority="2" tutorial_end_quest="true">
+<Quest id="quest_settlement_button2" type="epic" advisor="girl" hide_start_dialog="true" tutorial="true"  tutorial_end_quest="true">
   <Name>Back to the settlement</Name>
   <Name locale="de_DE">Zurück in die Siedlung</Name>
   <Task>Get your selfe back to your settlement.</Task>
@@ -482,8 +481,8 @@
   </Description>
   <Flavor locale="de_DE">Du findest Deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.</Flavor>
   <Flavor locale="en_US">Can't find your settlement? It's quite easy, if you'll let me explain.</Flavor>
-  <RewardText locale="de_DE">Alle Deine Siedlungen und Festungen kannst Du über das Gebäudesymbol betreten.</RewardText>
-  <RewardText locale="en_US">You can enter all of your settlements and fortresses by selecting them and clicking Enter.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Hurra! Du kennst jetzt die Grundlagen. Drücke der Steinzeit deinen Stempel auf!</RewardFlavor>
   <RewardFlavor locale="en_US">Yeah! Now you know the basics. Put your stamp on the Stone Age!</RewardFlavor>
   <Triggers>
@@ -523,8 +522,8 @@
   </Description>
   <Flavor locale="de_DE">Stein und Holz benötigen wir für jeden Ausbau.</Flavor>
   <Flavor locale="en_US">We need stone and wood for every upgrade.</Flavor>
-  <RewardText locale="de_DE">Baue weitere oder verbessere Steinbruch und Holzfäller, um Deine Produktion zu erhöhen. </RewardText>
-  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Sehr gut! Daraus lässt sich was machen.</RewardFlavor>
   <RewardFlavor locale="en_US">Well done! This might work as a base.</RewardFlavor>
   <Triggers>
@@ -555,8 +554,8 @@
   </Description>
   <Flavor locale="de_DE">Je mehr Rohstoffe desto mehr von allem.</Flavor>
   <Flavor locale="en_US">The more ressources the more of everything.</Flavor>
-  <RewardText locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
-  <RewardText locale="en_US">Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Du solltest deine Rohstoffproduktion regelmäßig ausbauen.</RewardFlavor>
   <RewardFlavor locale="en_US">You should upgrade your ressource production continuously.</RewardFlavor>
   <Rewards>
@@ -571,7 +570,7 @@
   <UIMarker>mark_upgrade_button</UIMarker>
 </Subquest>
 
-<Subquest id="quest_build_quarry" epic="epic_ressources" advisor="girl" hide_start_dialog="false" priority="1" blocking="true" >
+<Subquest id="quest_build_quarry" epic="epic_ressources" advisor="girl" hide_start_dialog="false" >
   <Name>Quarry</Name>
   <Name locale="de_DE">Steinbruch errichten</Name>
   <Task>Build a quarry.</Task>
@@ -584,8 +583,8 @@
   </Description>
   <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
-  <RewardText locale="de_DE">Erweitere den Steinbruch für eine höhere Steinproduktion.</RewardText>
-  <RewardText locale="en_US">Quarries are very effective. Build more quarries!</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
   <!-- Requirement quest="quest_found_home_base" / -->
@@ -613,8 +612,8 @@
   </Description>
   <Flavor locale="de_DE">Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.</Flavor>
   <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
-  <RewardText locale="de_DE">Erweitere den Hozfäller für eine höhere Holzproduktion.</RewardText>
-  <RewardText locale="en_US">You will need more loggers.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
   <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
   <Rewards>
@@ -639,8 +638,8 @@
   <Description locale="en_US"><p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p></Description>
   <Flavor locale="de_DE">Je mehr Rohstoffe desto mehr von allem.</Flavor>
   <Flavor locale="en_US">The more ressources the more of everything.</Flavor>
-  <RewardText locale="de_DE">Du solltest Deine Rohstoffproduktion laufend erhöhen.</RewardText>
-  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Du solltest deine Rohstoffproduktion regelmäßig ausbauen.</RewardFlavor>
   <RewardFlavor locale="en_US">You should upgrade your ressource production continuously.</RewardFlavor>
   <Triggers>
@@ -670,8 +669,8 @@
   </Description>
   <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
   <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
-  <RewardText locale="de_DE">Der Sammler sammelt Steine und Holz für Deinen Rohstoffvorrat.</RewardText>
-  <RewardText locale="en_US">The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. </RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
   <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
   <Rewards>
@@ -683,7 +682,7 @@
   </RewardTests>
   </Subquest>
 
-<Subquest id="quest_build_quarry_lvl3" epic="epic__more_ressources" advisor="girl" hide_start_dialog="false">
+<Subquest id="quest_build_quarry_lvl3" epic="epic__more_ressources" advisor="girl" >
   <Name>Quarry Level 3</Name>
   <Name locale="de_DE">Steinbruch ausbauen</Name>
   <Task>Build a quarry.</Task>
@@ -696,11 +695,10 @@
   </Description>
   <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
-  <RewardText locale="de_DE">Erweitere den Steinbruch für eine höhere Steinproduktion.</RewardText>
-  <RewardText locale="en_US">Quarries are very effective. Build more quarries!</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
-  <!-- Requirement quest="quest_found_home_base" / -->
   <Rewards>
     <ResourceReward resource="resource_stone">400</ResourceReward>
   </Rewards>
@@ -725,8 +723,8 @@
   </Description>
   <Flavor locale="de_DE">Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.</Flavor>
   <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
-  <RewardText locale="de_DE">Erweitere den Hozfäller für eine höhere Holzproduktion.</RewardText>
-  <RewardText locale="en_US">You will need more loggers.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
   <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
   <Rewards>
@@ -755,8 +753,8 @@
   </Description>
   <Flavor locale="de_DE">Auf zur Weltherrschaft!</Flavor>
   <Flavor locale="en_US">To the global dominance.</Flavor>
-  <RewardText locale="de_DE">Im Allianzmenü erhälst Du Informationen über die Allianz und Deine Mitstreiter.</RewardText>
-  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Im Allianzmenü erhälst Du Informationen über die Allianz und Deine Mitstreiter.</RewardFlavor>
   <RewardFlavor locale="en_US">In the alliance menu you receive information about the alliance and your companions.</RewardFlavor>
   <Triggers>
@@ -786,8 +784,8 @@
   </Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
-  <RewardText locale="de_DE">Jetzt kannst Du ein Lagerfeuer bauen und Dich einer Allianz anschließen.</RewardText>
-  <RewardText locale="en_US">Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
@@ -816,8 +814,8 @@
   <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
   <Flavor locale="en_US">Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think?
   </Flavor>
-  <RewardText locale="de_DE">Versuch doch Deine Nachbarn zu kontaktieren und mit ihnen eine Allianz aufzubauen.</RewardText>
-  <RewardText locale="en_US">Try to contact your neighbors and form an alliance with them.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
   <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
   <Rewards>
@@ -878,8 +876,8 @@
   </Description>
   <Flavor locale="de_DE">Werde Mitglied einer Allianz.</Flavor>
   <Flavor locale="en_US">Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.</Flavor>
-  <RewardText locale="de_DE">Im Allianzmenü erhälst Du Informationen über die Allianz und Deine Mitstreiter.</RewardText>
-  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
   <Rewards>
@@ -906,8 +904,8 @@
   </Description>
   <Flavor locale="de_DE">Den Handel sollten wir nicht nur der Amazone überlassen.</Flavor>
   <Flavor locale="en_US">We shouldn’t leave the trading only in the Amazon’s discretion.</Flavor>
-  <RewardText locale="de_DE">Je höher das Rostofflager, desto mehr Karren hast Du.</RewardText>
-  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Jede Handelsbewegung dauert eine Stunde. Größere Lager bedeuten auch mehr Karren.</RewardFlavor>
   <RewardFlavor locale="en_US">Every trade movement takes one hour. Bigger storages mean even more carts.</RewardFlavor>
   <Triggers>
@@ -936,8 +934,8 @@
   </Description>
   <Flavor locale="de_DE">Noch mag der Lagerplatz ausreichen, doch bald wirst Du mehr brauchen. Baue doch bitte ein Rohstofflager, damit wir mehr Platz haben.</Flavor>
   <Flavor locale="en_US">Doesn't it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!</Flavor>
-  <RewardText locale="de_DE">Die Handelskarren im Rohstofflager erlauben Dir den Handel mit anderen Spielern.</RewardText>
-  <RewardText locale="en_US">The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
   <RewardFlavor locale="en_US">At last I have enough space for all my shoe…er, things!</RewardFlavor>
   <Rewards>
@@ -967,8 +965,8 @@
   </Description>
   <Flavor locale="de_DE">Tausche Deine Rohstoffe.</Flavor>
   <Flavor locale="en_US">Doesn't it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!</Flavor>
-  <RewardText locale="de_DE">Die Handelskarren benötigen eine Stunde für jeden Weg.</RewardText>
-  <RewardText locale="en_US">The tradings carts in the raw material store let you trade with other players. Each trading cart can transport ten resources.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
   <RewardFlavor locale="en_US">At last I have enough space for all my shoe…er, things!</RewardFlavor>
   <Rewards>
@@ -995,8 +993,8 @@
   </Description>
   <Flavor locale="de_DE">Gut erholt arbeitet selbst der faulste Arbeiter schneller.</Flavor>
   <Flavor locale="en_US">Even the lazied Worker works faster if he’s freshly regained.</Flavor>
-  <RewardText locale="de_DE">Die Kleinen Hütten verkürzen die Bauzeit. Du kannst mehrere bauen.</RewardText>
-  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Mehrere Kleine Hütten verkürzen die Bauzeit noch weiter.</RewardFlavor>
   <RewardFlavor locale="en_US">More Small Huts will reduce the construction time even farer.</RewardFlavor>
   <Triggers>
@@ -1024,8 +1022,8 @@
   </Description>
   <Flavor locale="de_DE">Gut erholt arbeitet selbst der faulste Arbeiter schneller.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
-  <RewardText locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
-  <RewardText locale="en_US">Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
@@ -1052,8 +1050,8 @@
   </Description>
   <Flavor locale="de_DE">Mit ein paar Kröten lässt sich so einiges bewirken.</Flavor>
   <Flavor locale="en_US">With a few golden frogs you can get quite a bit done.</Flavor>
-  <RewardText locale="de_DE">Du kannst jeden Ausbau sofort abschließen.</RewardText>
-  <RewardText locale="en_US">Boost your raw materials production by building a new Hunter Gatherer.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
   <RewardFlavor locale="en_US">Isn't it great how much your settlement is growing? I've even managed to persuade the boss to give you something from his huge store of resources.</RewardFlavor>
   <Rewards>
@@ -1078,8 +1076,8 @@
   </Description>
   <Flavor locale="de_DE">Diese kleinen Hütten sind wirklich nützlich. Mehr Einwohner bedeuten auch mehr helfende Hände.</Flavor>
   <Flavor locale="en_US">Did you know that you can give your workers two orders at the same time? They can only work on one of them, but they'll keep the other order in mind. Why don't you try it? The happier your workers are, the faster they'll build things for you.</Flavor>
-  <RewardText locale="de_DE">Kleine Hütten verringern die Bauzeit aller Ausbauten.</RewardText>
-  <RewardText locale="en_US">choose a Hunter Gatherer. A window will open showing the current status of your development, including the next upgrade level. Press Upgrade to get started.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Well done! Your workers are happy and they're building things faster because of it.</RewardFlavor>
   <Rewards>
@@ -1109,8 +1107,8 @@
   </Description>
   <Flavor locale="de_DE">Jeder Fortschritt benötigt ausreichend Erfahrung.</Flavor>
   <Flavor locale="en_US">Every progress needs sufficient experience.</Flavor>
-  <RewardText locale="de_DE">Erfahrung erhälst du in der Trainingshöhle, für Ausbauten und vor allem für Kämpfe.</RewardText>
-  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Erfahrung erhältst Du in der Trainingshöhle, für Ausbauten und vor allem für Kämpfe.</RewardFlavor>
   <RewardFlavor locale="en_US">You will get experience in the Training Cave, for Upgrades and mainly for fighting.</RewardFlavor>
   <Triggers>
@@ -1138,8 +1136,8 @@
   </Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
-  <RewardText locale="de_DE">Du hast die Trainingshöhle freigeschaltet.</RewardText>
-  <RewardText locale="en_US">Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
@@ -1167,8 +1165,8 @@
   </Description>
   <Flavor locale="de_DE">Hey Halbgott, sitz da nicht so faul rum. Du musst Deinen Armeen als Vorbild dienen, dafür solltest Du etwas trainieren.</Flavor>
   <Flavor locale="en_US">Hey Demigod, don't get bored! You need to inspire your armies to be like you, so make sure you  use your training cave to exercise!</Flavor>
-  <RewardText locale="de_DE">In der Trainingshöhle kannst Du ungestört trainieren und Erfahrung sammeln.</RewardText>
-  <RewardText locale="en_US">You can do your workout in the training cave without any interruptions.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Ein - zwei, eins - zwei, keine Müdigkeit vortäuschen!</RewardFlavor>
   <RewardFlavor locale="en_US">One and two, one and two! Come on, this is fun!</RewardFlavor>
   <Rewards>
@@ -1196,8 +1194,8 @@
   </Description>
   <Flavor locale="de_DE">Fell - flauschig und warm.</Flavor>
   <Flavor locale="en_US">Fur - fluffy and warm.</Flavor>
-  <RewardText locale="de_DE">Baue mehr und verbesserte Kürschner. Deine Armee wird es dir danken!</RewardText>
-  <RewardText locale="en_US">Baue mehr und verbesserte Kürschner. Deine Armee wird es dir danken!</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Fell wird vor allem für die Ausrüstung der Krieger benötigt.</RewardFlavor>
   <RewardFlavor locale="en_US">Fur is mainly used to equip warriors.</RewardFlavor>
   <Triggers>
@@ -1226,8 +1224,8 @@
   </Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
-  <RewardText locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
-  <RewardText locale="en_US">Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
@@ -1257,8 +1255,8 @@
   </Description>
   <Flavor locale="de_DE">Chef will die Felle für die Armee Rekrutierung, aber für mich fällt doch bestimmt auch was schönes ab, oder?</Flavor>
   <Flavor locale="en_US">The chief wants an army, but I'd just like some nice new clothes.</Flavor>
-  <RewardText locale="de_DE">Steigere Deine Fellproduktion um viele Einheiten bauen zu können.</RewardText>
-  <RewardText locale="en_US">Increase your fur production so that you can defend your settlements with more armies.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Fell wird vor allem für den Aufbau einer schlagkräftigen Armee benötigt.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice! Now you can build a new army.</RewardFlavor>
   <Rewards>
@@ -1284,8 +1282,8 @@
   </Description>
   <Flavor locale="de_DE">Ein Wurf - ein Treffer. Fernkampf ist was feines.</Flavor>
   <Flavor locale="en_US">One shot - one hit. I like long-range-fighting.</Flavor>
-  <RewardText locale="de_DE">Ein Wurf - ein Treffer. Fernkampf ist was feines..</RewardText>
-  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Die Ausbildung von Fernkämpfern wird durch verbesserte und zusätzliche Schießstände beschleunigt. </RewardFlavor>
   <RewardFlavor locale="en_US">The training of long-ranged-fighters will be shortened by building additional firing-ranges or upgrading them.</RewardFlavor>
   <Triggers>
@@ -1314,8 +1312,8 @@
   </Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
-  <RewardText locale="de_DE">Du kannst jetzt einen Schießstand bauen und dort Fernkämpfer rekrutieren.</RewardText>
-  <RewardText locale="en_US">Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
@@ -1338,8 +1336,8 @@
   <Description locale="en_US"><p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p></Description>
   <Flavor locale="de_DE">Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.</Flavor>
   <Flavor locale="en_US">We need a cavalry to defend ourselves against throwers.</Flavor>
-  <RewardText locale="de_DE">Ein höherer oder mehrere Schießstände beschleunigen die Rekrutierung von Fernkämpfern.</RewardText>
-  <RewardText locale="en_US">A cavalry can flank the melee and attack throwers directly. A riding army is also quicker than normal warriors.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.</RewardFlavor>
   <RewardFlavor locale="en_US">Muhaha, I don´t like the smell, but the riders know thier business.</RewardFlavor>
   <Rewards>
@@ -1365,8 +1363,8 @@
   </Description>
   <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
-  <RewardText locale="de_DE">Fernkämpfer sollten immer von Nahkämpfern geschützt werden.</RewardText>
-  <RewardText locale="en_US">You can train several units at the same time. Just select the number of units you want.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
   <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
   <Rewards>
@@ -1396,8 +1394,8 @@
   </Description>
   <Flavor locale="de_DE">Mit Kupfer können wir alles besser machen.</Flavor>
   <Flavor locale="en_US">With copper we can improve everything.</Flavor>
-  <RewardText locale="de_DE">Mit Kupfer können wir alles besser machen.</RewardText>
-  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Der Ausbau der Kupferschmelze ermöglicht die Verbesserung von Gebäuden sowie den Bau von neuartigen Gebäude.</RewardFlavor>
   <RewardFlavor locale="en_US">Upgrading the Copper Smelter enables upgrades for existing buildings and unlocks even new buildings.</RewardFlavor>
   <Triggers>
@@ -1426,8 +1424,8 @@
   </Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
-  <RewardText locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Gebäudearten frei und erlaubt Dir mehr Gebäude zu bauen.</RewardText>
-  <RewardText locale="en_US">Upgrading the chieftan's hut gives you the option to construct a wider range of buildings.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
@@ -1454,8 +1452,8 @@
   </Description>
   <Flavor locale="de_DE">In der Kupferzeit stehen Dir neue Gebäude und verbesserte Versionen bereits bekannter Gebäude zur Verfügung.</Flavor>
   <Flavor locale="en_US">In the Copper Age, you can create new buildings as well as improved versions of the buildings you already know.</Flavor>
-  <RewardText locale="de_DE">Sollen wir die Steinzeit verlassen und in die Kupferzeit fortschreiten?</RewardText>
-  <RewardText locale="en_US">So, should we leave the Stone Age and move forward to the Copper Age?</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Wow, eine neues Zeitalter! So viele Möglichkeiten.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow, a new age! So many opportunities! </RewardFlavor>
   <Rewards>
@@ -1483,8 +1481,8 @@
   </Description>
   <Flavor locale="de_DE">Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.</Flavor>
   <Flavor locale="en_US">Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.</Flavor>
-  <RewardText locale="de_DE">Fernkämpfer könne großen Schaden verursachen, sind aber anfällig im Nahkampf.</RewardText>
-  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Die Reiter sind schneller und können die Nahkämpfer umgehen um die Fernkämpfer direkt anzugreifen.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
   <Triggers>
@@ -1513,8 +1511,8 @@
   </Description>
   <Flavor locale="de_DE">In der Kupferzeit stehen Dir neue Gebäude und verbesserte Versionen bereits bekannter Gebäude zur Verfügung.</Flavor>
   <Flavor locale="en_US">In the Copper Age, you can create new buildings as well as improved versions of the buildings you already know.</Flavor>
-  <RewardText locale="de_DE">Mit der verbesserten Kupferschmelze können wir endlich einen Stall bauen.</RewardText>
-  <RewardText locale="en_US">So, should we leave the Stone Age and move forward to the Copper Age?</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Wow, eine neues Zeitalter! So viele Möglichkeiten.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow, a new age! So many opportunities! </RewardFlavor>
   <Rewards>
@@ -1537,8 +1535,8 @@
   <Description locale="en_US"><p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p></Description>
   <Flavor locale="de_DE">Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.</Flavor>
   <Flavor locale="en_US">We need a cavalry to defend ourselves against throwers.</Flavor>
-  <RewardText locale="de_DE">Ein höherer oder mehrere Schießstände beschleunigen die Rekrutierung von Fernkämpfern.</RewardText>
-  <RewardText locale="en_US">A cavalry can flank the melee and attack throwers directly. A riding army is also quicker than normal warriors.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.</RewardFlavor>
   <RewardFlavor locale="en_US">Muhaha, I don´t like the smell, but the riders know thier business.</RewardFlavor>
   <Rewards>
@@ -1564,8 +1562,8 @@
   </Description>
   <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
-  <RewardText locale="de_DE">Fernkämpfer sollten immer von Nahkämpfern geschützt werden.</RewardText>
-  <RewardText locale="en_US">You can train several units at the same time. Just select the number of units you want.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
   <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
   <Rewards>
@@ -1593,8 +1591,8 @@
   </Description>
   <Flavor locale="de_DE">Eine weitere  Siedlung - mehr geht kaum.</Flavor>
   <Flavor locale="en_US">An additional settlement - more is nearly impossible.</Flavor>
-  <RewardText locale="de_DE">Die Siedlungspunkte begrenzen die Anzahl deiner Siedlungen. Sammel Erfahrung um deinen Einfluss weiter zu erhöhen..</RewardText>
-  <RewardText locale="en_US">You can see an alliance's profile by clicking on the alliance pennant on the top right, next to the raw materials overview.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Die Siedlungspunkte begrenzen die Anzahl deiner Siedlungen. Sammel Erfahrung um deinen Einfluss weiter zu erhöhen.</RewardFlavor>
   <RewardFlavor locale="en_US">The Settlement Points restrict your number of settlements. Collect experience to raise your clout.</RewardFlavor>
   <Triggers>
@@ -1622,8 +1620,8 @@
   <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
   <Flavor locale="en_US">Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think?
   </Flavor>
-  <RewardText locale="de_DE">Mit Level 10 des Lagerfeuers kannst Du einen Kleinen Häuptling rekrutieren.</RewardText>
-  <RewardText locale="en_US">Try to contact your neighbors and form an alliance with them.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
   <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
   <Rewards>
@@ -1648,8 +1646,8 @@
   </Description>
   <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
-  <RewardText locale="de_DE">Die ersten Krieger hast Du. Zeit sich die Nachbarschaft anzuschauen.</RewardText>
-  <RewardText locale="en_US">You can train several units at the same time. Just select the number of units you want.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
   <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
   <Rewards>
@@ -1676,8 +1674,8 @@
   </Description>
   <Flavor locale="de_DE">Wie? Nur eine Siedlung? Du musst Dich mehr ausbreiten. Gründe eine Lagerstätte, aber flott! Dann findet sich bei mir vielleicht auch etwas, das ich Dir überlassen kann.</Flavor>
   <Flavor locale="en_US">What? Only one settlement? You've got to spread out a bit. Start another settlement, and quick! Then I might find something lying around that I could let you have.</Flavor>
-  <RewardText locale="de_DE">Lagerstätten können jederzeit von anderen Halbgöttern erobert werden. Als möglicher Schutz dient der Ritualstein.</RewardText>
-  <RewardText locale="en_US">Camps can be taken over be other demigods. You can protect the camp by building an altar.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen.</RewardFlavor>
   <RewardFlavor locale="en_US">You've started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost.</RewardFlavor>
   <Rewards>
@@ -1697,22 +1695,18 @@
 <!-- OPTIONAL QUESTS-->
 
 <Quest id="quest_profile" type="optional" advisor="girl" >
-  <Name>Name and profile</Name>
+  <Name>Your Name</Name>
   <Name locale="de_DE">Dein Name</Name>
   <Task>Change your name.</Task>
-  <Task locale="de_DE">Ändere Deinen Namen.</Task>
+  <Task locale="de_DE">Im Profil kannst Du Deinen Namen und Dein Avatar ändern.</Task>
   <Description locale="de_DE">
-    <p>Drücke dazu auf den Profil-Knopf. Drücke dann auf 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>
-  </Description>
+    <p>Drücke dazu auf den Profil-Knopf. Drücke dann auf 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p></Description>
   <Description locale="en_US">
-    <p>Press the profile button, then select Customization. Select Choose Your Name. The first two name changes are free.</p>
-  </Description>
-  <Flavor locale="de_DE">Jetzt haben wir schon so viel zusammen erlebt und ich weiß immer noch nicht, wie Du heißt. Bitte sag mir Deinen Namen.
-  </Flavor>
-  <Flavor locale="en_US">We've gone through so much together already, but I still don't know who you are! What's your name?
-  </Flavor>
-  <RewardText locale="de_DE">Im Profil kannst Du Deinen Fortschritt sehen und Dein Avatar gestalten.</RewardText>
-  <RewardText locale="en_US">In your profile you can see your progress and make other changes.</RewardText>
+    <p>Press the profile button, then select Customization. Select Choose Your Name. The first two name changes are free.</p></Description>
+  <Flavor locale="de_DE">Hey, wie heißt Du eigentlich?</Flavor>
+  <Flavor locale="en_US">Hey, what's your name?</Flavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spaß miteinander haben.</RewardFlavor>
   <RewardFlavor locale="en_US">Thanks. I think we're going to have loads of fun together!</RewardFlavor>
   <Triggers>
@@ -1733,26 +1727,21 @@
 
 <!-- OPTIONAL Ressources -->
 
-<Quest id="quest_build_2quarry_lvl4" type="optional" advisor="girl" hide_start_dialog="false">
-  <Name>Quarry</Name>
+<Quest id="quest_build_2quarry_lvl4" type="optional" advisor="girl" >
+  <Name>More Quarries</Name>
   <Name locale="de_DE">Mehr Steinbrüche</Name>
-  <Task>Build a quarry.</Task>
-  <Task locale="de_DE">Baue zwei Steinbrüche bis Level 4.</Task>
-  <Description locale="de_DE">
-    <p>Weitere Steinbrüche erhöhen Deine Steinproduktion.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Build a quarry to improve your production.</p>
-  </Description>
+  <Task>Built two quarries up to level 4.</Task>
+  <Task locale="de_DE">Baue zwei Steinbrüche bis Level 4 aus.</Task>
+  <Description locale="de_DE"><p>Weitere Steinbrüche erhöhen Deine Steinproduktion.</p></Description>
+  <Description locale="en_US"><p>Build a quarry to improve your production.</p></Description>
   <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
-  <RewardText locale="de_DE">Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.</RewardText>
-  <RewardText locale="en_US">Quarries are very effective. Build more quarries!</RewardText>
-  <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
-  <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
+  <RewardFlavor locale="de_DE">Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.</RewardFlavor>
+  <RewardFlavor locale="en_US">Quarries are very effective. Build more quarries!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
-      <FinishQuestTrigger>epic_storage</FinishQuestTrigger>
       <FinishQuestTrigger>epic_storage</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
@@ -1765,11 +1754,11 @@
   </RewardTests>
 </Quest>
 
-<Quest id="quest_build_2logger_lvl4" type="optional" advisor="girl" hide_start_dialog="true">
-  <Name>Logger</Name>
+<Quest id="quest_build_2logger_lvl4" type="optional" advisor="girl" >
+  <Name>More logger</Name>
   <Name locale="de_DE">Mehr Holzfäller</Name>
-  <Task>Build a logger.</Task>
-  <Task locale="de_DE">Baue zwei Holzfäller bis Level 4.</Task>
+  <Task>Built two logger up to level 4.</Task>
+  <Task locale="de_DE">Baue zwei Holzfäller bis Level 4 aus.</Task>
   <Description locale="de_DE">
     <p>Weitere Holzfäller erhöhen Deine Holzproduktion.</p>
   </Description>
@@ -1778,10 +1767,10 @@
   </Description>
   <Flavor locale="de_DE">Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.</Flavor>
   <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
-  <RewardText locale="de_DE">Steigere Deine Holzproduktion durch weitere und verbesserte Holzfäller.</RewardText>
-  <RewardText locale="en_US">You will need more loggers.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
-  <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
+  <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>epic_storage</FinishQuestTrigger>
@@ -1809,10 +1798,10 @@
   </Description>
   <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
   <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
-  <RewardText locale="de_DE">Der Sammler sammelt Steine und Holz für Deinen Rohstoffvorrat.</RewardText>
-  <RewardText locale="en_US">The job of a Hunter Gatherer is to collect small quantities of stone, wood and fur - all the raw materials you need to succeed. </RewardText>
-  <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
-  <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
+  <RewardFlavor locale="de_DE">Der Sammler ist nicht so effektiv wie Steinbruch und Holzfäller.</RewardFlavor>
+  <RewardFlavor locale="en_US">Hey – that looks much better, don't you think?</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_build_2quarry_lvl4</FinishQuestTrigger>
@@ -1829,7 +1818,7 @@
   </RewardTests>
 </Quest>
 
-<Quest id="quest_build_quarry_lvl10" type="optional" advisor="girl" hide_start_dialog="false">
+<Quest id="quest_build_quarry_lvl10" type="optional" advisor="girl" >
   <Name>Quarry Level 10</Name>
   <Name locale="de_DE">Maximallevel Steinbruch</Name>
   <Task>Build a quarry level 10.</Task>
@@ -1842,10 +1831,10 @@
   </Description>
   <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
-  <RewardText locale="de_DE">Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.</RewardText>
-  <RewardText locale="en_US">Quarries are very effective. Build more quarries!</RewardText>
-  <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
-  <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
+  <RewardFlavor locale="de_DE">Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.</RewardFlavor>
+  <RewardFlavor locale="en_US">Quarries are very effective. Build more quarries!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_build_2quarry_lvl4</FinishQuestTrigger>
@@ -1861,7 +1850,7 @@
   </RewardTests>
 </Quest>
 
-<Quest id="quest_build_logger_lvl10" type="optional" advisor="girl" hide_start_dialog="true">
+<Quest id="quest_build_logger_lvl10" type="optional" advisor="girl" >
   <Name>Logger Level 10</Name>
   <Name locale="de_DE">Maximallevel Holzfäller</Name>
   <Task>Build a logger level 10.</Task>
@@ -1874,8 +1863,8 @@
   </Description>
   <Flavor locale="de_DE">Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.</Flavor>
   <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
-  <RewardText locale="de_DE">Steigere Deine Holzproduktion durch weitere und verbesserte Holzfäller.</RewardText>
-  <RewardText locale="en_US">You will need more loggers.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
   <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
   <Triggers>
@@ -1893,23 +1882,23 @@
   </RewardTests>
 </Quest>
 
-<Quest id="quest_build_2furrierlvl4" type="optional" advisor="girl" hide_start_dialog="false">
+<Quest id="quest_build_2furrierlvl4" type="optional" advisor="girl" >
   <Name>More furrier</Name>
   <Name locale="de_DE">Mehr Kürschner</Name>
   <Task>Build two furrier level 4.</Task>
   <Task locale="de_DE">Baue zwei Kürschner bis Level 4.</Task>
   <Description locale="de_DE">
-    <p>Weitere Kürschner produzieren noch mehr Fell..</p>
+    <p>Weitere Kürschner produzieren noch mehr Fell.</p>
   </Description>
   <Description locale="en_US">
     <p>Build a quarry to improve your production.</p>
   </Description>
-  <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
-  <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
-  <RewardText locale="de_DE">Steigere Deine Fellproduktion durch weitere und verbesserte Kürschner.</RewardText>
-  <RewardText locale="en_US">Quarries are very effective. Build more quarries!</RewardText>
-  <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
-  <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
+  <Flavor locale="de_DE">Fell können wir nie genug haben.</Flavor>
+  <Flavor locale="en_US">We need much more fur.</Flavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
+  <RewardFlavor locale="de_DE">Verbessere und baue weitere Kürschner.</RewardFlavor>
+  <RewardFlavor locale="en_US">Upgrade and build new furrier.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>epic_fur</FinishQuestTrigger>
@@ -1923,7 +1912,7 @@
   </RewardTests>
 </Quest>
 
-<Quest id="quest_build_furrier_lvl10" type="optional" advisor="girl" hide_start_dialog="false">
+<Quest id="quest_build_furrier_lvl10" type="optional" advisor="girl" >
   <Name>Furrier Level 10</Name>
   <Name locale="de_DE">Maximallevel Kürschner</Name>
   <Task>Build a furrier level 10.</Task>
@@ -1936,10 +1925,10 @@
   </Description>
   <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
-  <RewardText locale="de_DE">Steigere Deine Fellproduktion durch weitere und verbesserte Kürschner.</RewardText>
-  <RewardText locale="en_US">Quarries are very effective. Build more quarries!</RewardText>
-  <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
-  <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
+  <RewardFlavor locale="de_DE">Steigere die fellproduktion durch den Bau weiterer Kürschner.</RewardFlavor>
+  <RewardFlavor locale="en_US">Raise your fur production by building more furrier.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_build_2furrierlvl4</FinishQuestTrigger>
@@ -1969,10 +1958,10 @@
   </Description>
   <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
   <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
-  <RewardText locale="de_DE">Wenn Du nicht selber der Festungsbesitzer bist, solltest Du über den Steuersatz verhandeln. 15% müssen nicht sein.</RewardText>
-  <RewardText locale="en_US">Are you still paying taxes? Why?</RewardText>
-  <RewardFlavor locale="de_DE">Schön, Deine Siedlung produziert mehr und wächst schneller.</RewardFlavor>
-  <RewardFlavor locale="en_US">Nice! Your settlement is producing more resources and growing rapidly.</RewardFlavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
+  <RewardFlavor locale="de_DE">Rohstoffe haben wir nei genug. Wir brauchen mehr!</RewardFlavor>
+  <RewardFlavor locale="en_US">We need more ressources.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_build_furrier_lvl10</FinishQuestTrigger>
@@ -2003,9 +1992,9 @@
   <Description locale="en_US"><p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p></Description>
   <Flavor locale="de_DE">Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.</Flavor>
   <Flavor locale="en_US">We need a cavalry to defend ourselves against throwers.</Flavor>
-  <RewardText locale="de_DE">Die Keulenkriger sind die ersten echten Einheiten.</RewardText>
-  <RewardText locale="en_US">A cavalry can flank the melee and attack throwers directly. A riding army is also quicker than normal warriors.</RewardText>
-  <RewardFlavor locale="de_DE">Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.</RewardFlavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
+  <RewardFlavor locale="de_DE">Die Keulenkrieger sind die ersten richtigen Einheiten.</RewardFlavor>
   <RewardFlavor locale="en_US">Muhaha, I don´t like the smell, but the riders know thier business.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2036,9 +2025,9 @@
   </Description>
   <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
-  <RewardText locale="de_DE">Endlich vernüftige Keulen. Jetzt tut das Hauen wenigstens weh!</RewardText>
-  <RewardText locale="en_US">You can train several units at the same time. Just select the number of units you want.</RewardText>
-  <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
+  <RewardFlavor locale="de_DE">Endlich vernüftige Keulen. Jetzt tut das Hauen wenigstens weh!</RewardFlavor>
   <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2073,8 +2062,8 @@
   </Description>
   <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
-  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
-  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Du hast eine Festung in Deinen Besitz gebracht? Das ist großartig!</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
@@ -2105,9 +2094,9 @@
   </Description>
   <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
-  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
-  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
-  <RewardFlavor locale="de_DE">Höhere Level beschleunigen die Einheitenrekrutierung der Nahkämpfer.</RewardFlavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
+  <RewardFlavor locale="de_DE">Jetzt kannst du Nahkämpfer in deiner Festung ausbilden.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2136,9 +2125,9 @@
   </Description>
   <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
-  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
-  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
-  <RewardFlavor locale="de_DE">Höhere Level verbessern die Kampfkraft von Festungen.</RewardFlavor>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
+  <RewardFlavor locale="de_DE">Höhere Level der festungsanlagen verbessern die Kampfkraft von Festungen.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2169,8 +2158,8 @@
   </Description>
   <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
-  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
-  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Höhere Level beschleunigen die Einheitenrekrutierung der Fernkämpfer.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
@@ -2200,8 +2189,8 @@
   </Description>
   <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
-  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
-  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Höhere Level verbessern die Kampfkraft von Festungen.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
@@ -2233,8 +2222,8 @@
   </Description>
   <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
-  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
-  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Höhere Level beschleunigen die Einheitenrekrutierung der Reiter.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
@@ -2267,8 +2256,8 @@
   </Description>
   <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
-  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
-  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Du kannst jetzt eins der drei Spezialgebäude bauen. Entscheide Dich weise!</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
@@ -2299,8 +2288,8 @@
     <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
   </Description>
   <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
-  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
-  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
   <RewardFlavor locale="de_DE">Der Ritualstein schützt Deine Lagerstätte vor feindlichen Übernahmen.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
@@ -2333,8 +2322,8 @@
   </Description>
   <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
-  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
-  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Das Feldlager vergrößert Deine Armee und liefert auf Level 10 einen zusätzlichen Kommandopunkt.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
@@ -2366,8 +2355,8 @@
   </Description>
   <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
-  <RewardText locale="de_DE">In der Festung kannst Du Steuern erheben und den Steuersatz ändern. Die Festung ist auch Standort einer weiteren Armee.</RewardText>
-  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Das Handelszentrum verbessert Deine Rohstoffproduktion, läßt Deine Lagerstätte aber fast wehrlos.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
@@ -2402,8 +2391,8 @@
   </Description>
   <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
   <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
-  <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
-  <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+  <RewardText locale="de_DE"></RewardText>
+  <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
   <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
   <Triggers>
@@ -2434,8 +2423,8 @@
     </Description>
     <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
     <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
-    <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
-    <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+    <RewardText locale="de_DE"></RewardText>
+    <RewardText locale="en_US"></RewardText>
     <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
     <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
     <Triggers>
@@ -2468,8 +2457,8 @@
     </Description>
     <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
     <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
-    <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
-    <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+    <RewardText locale="de_DE"></RewardText>
+    <RewardText locale="en_US"></RewardText>
     <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
     <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
     <Triggers>
@@ -2502,8 +2491,8 @@
     </Description>
     <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
     <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
-    <RewardText locale="de_DE">Wenn Du einen Kampf gewinnst, bekommst Du für jede besiegte Einheit Erfahrung.</RewardText>
-    <RewardText locale="en_US">If you win a fight, you will be rewarded for each enemy unit killed.</RewardText>
+    <RewardText locale="de_DE"></RewardText>
+    <RewardText locale="en_US"></RewardText>
     <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
     <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
     <Triggers>
