@@ -273,7 +273,7 @@ class Military::Battle < ActiveRecord::Base
   #advanced the next_round_at field
   def schedule_next_round
     rules = GameRules::Rules.the_rules
-    if !attacker.owner.completed_tutorial?
+    if !Fundamental::Character.find(self.initiator_id).completed_tutorial?
       self.next_round_at = self.next_round_at.advance(:seconds => 20)
     else
       self.next_round_at = self.next_round_at.advance(:seconds => rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor'])
