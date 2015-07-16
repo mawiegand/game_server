@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="0" build="2" />
+    <Version major="1" minor="0" build="3" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -1734,7 +1734,7 @@
   <Task locale="de_DE">Baue zwei Steinbrüche bis Level 4 aus.</Task>
   <Description locale="de_DE"><p>Weitere Steinbrüche erhöhen Deine Steinproduktion.</p></Description>
   <Description locale="en_US"><p>Build a quarry to improve your production.</p></Description>
-  <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
+  <Flavor locale="de_DE">Stein auf Stein, die Hütten werden bald fertig sein.</Flavor>
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
@@ -1833,7 +1833,7 @@
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Steigere Deine Steinproduktion durch weitere Steinbrüche.</RewardFlavor>
   <RewardFlavor locale="en_US">Quarries are very effective. Build more quarries!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -1861,11 +1861,11 @@
   <Description locale="en_US">
     <p>Upgrade the logger to increase your production.</p>
   </Description>
-  <Flavor locale="de_DE">Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.</Flavor>
+  <Flavor locale="de_DE">Aufpassen, die jungen Bäume nicht fällen.</Flavor>
   <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
+  <RewardFlavor locale="de_DE">Mehr Holzfäller sind immer eine gute Idee.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -1885,7 +1885,7 @@
 <Quest id="quest_build_2furrierlvl4" type="optional" advisor="girl" >
   <Name>More furrier</Name>
   <Name locale="de_DE">Mehr Kürschner</Name>
-  <Task>Build two furrier level 4.</Task>
+  <Task>Build two furrier up to level 4.</Task>
   <Task locale="de_DE">Baue zwei Kürschner bis Level 4.</Task>
   <Description locale="de_DE">
     <p>Weitere Kürschner produzieren noch mehr Fell.</p>
@@ -1893,7 +1893,7 @@
   <Description locale="en_US">
     <p>Build a quarry to improve your production.</p>
   </Description>
-  <Flavor locale="de_DE">Fell können wir nie genug haben.</Flavor>
+  <Flavor locale="de_DE">Ich mag die Lendenschurze der Keulenkrieger.</Flavor>
   <Flavor locale="en_US">We need much more fur.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
@@ -1927,7 +1927,7 @@
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Steigere die fellproduktion durch den Bau weiterer Kürschner.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Steigere die Fellproduktion durch den Bau weiterer Kürschner.</RewardFlavor>
   <RewardFlavor locale="en_US">Raise your fur production by building more furrier.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -1956,11 +1956,11 @@
   <Description locale="en_US">
     <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
   </Description>
-  <Flavor locale="de_DE">Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?</Flavor>
+  <Flavor locale="de_DE">Du zahlst Steuern? Warum?</Flavor>
   <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Rohstoffe haben wir nei genug. Wir brauchen mehr!</RewardFlavor>
+  <RewardFlavor locale="de_DE">Rohstoffe haben wir nie genug. Wir brauchen mehr!</RewardFlavor>
   <RewardFlavor locale="en_US">We need more ressources.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -1990,11 +1990,11 @@
   <Task locale="de_DE">Verbessere das Ausbildungsgelände auf Level 5.</Task>
   <Description locale="de_DE"><p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p></Description>
   <Description locale="en_US"><p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p></Description>
-  <Flavor locale="de_DE">Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.</Flavor>
+  <Flavor locale="de_DE">Die Ausbildung der Keulenkrieger geht auch schneller.</Flavor>
   <Flavor locale="en_US">We need a cavalry to defend ourselves against throwers.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Die Keulenkrieger sind die ersten richtigen Einheiten.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Die Keulenkrieger sind vernünftige Einheiten. Mit Keulen und so.</RewardFlavor>
   <RewardFlavor locale="en_US">Muhaha, I don´t like the smell, but the riders know thier business.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2016,14 +2016,14 @@
   <Name>Clubber</Name>
   <Name locale="de_DE">Keulenkrieger</Name>
   <Task>Build a clubber.</Task>
-  <Task locale="de_DE">Rekrutiere einen Keulenkrieger.</Task>
+  <Task locale="de_DE">Bilde einen Keulenkrieger aus.</Task>
   <Description locale="de_DE">
     <p>Gehe in das Ausbilsungsgelände, wähle dort in der Rekrutierungsliste den Keulenkrieger aus.</p>
   </Description>
   <Description locale="en_US">
     <p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>
   </Description>
-  <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
+  <Flavor locale="de_DE">Einfache Krieger sind nicht zu gebrauchen.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
@@ -2064,7 +2064,7 @@
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Du hast eine Festung in Deinen Besitz gebracht? Das ist großartig!</RewardFlavor>
+  <RewardFlavor locale="de_DE">Jede Festung erhält die Steuereinnahmen aller Siedlungen der Region.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2084,7 +2084,7 @@
 <Quest id="quest_infantry_tower" type="optional" advisor="chef">
   <Name>Infantry tower</Name>
   <Name locale="de_DE">Knüppler Gelände</Name>
-  <Task>Built an infantry tower.</Task>
+  <Task>Build an infantry tower.</Task>
   <Task locale="de_DE">Baue ein Knüppler Gelände in Deiner Festung.</Task>
   <Description locale="de_DE">
     <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
@@ -2092,7 +2092,7 @@
   <Description locale="en_US">
     <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
   </Description>
-  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="de_DE">Wir brauchen Nahkämpfer für die Verteidigung.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
@@ -2123,11 +2123,11 @@
   <Description locale="en_US">
     <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
   </Description>
-  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="de_DE">Mit dem Ausbau der Festungsanlagen steigt der Kampfbonus.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Höhere Level der festungsanlagen verbessern die Kampfkraft von Festungen.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Jetzt kannst Du das Werfer Gelände bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2149,18 +2149,18 @@
   <Name>Artillery tower</Name>
   <Name locale="de_DE">Werfer Gelände</Name>
   <Task>Built an infantry tower.</Task>
-  <Task locale="de_DE">Baue ein Werfer Gelände in Deiner Festung.</Task>
+  <Task locale="de_DE">Baue ein Werfer Gelände in deiner Festung.</Task>
   <Description locale="de_DE">
     <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
   </Description>
   <Description locale="en_US">
     <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
   </Description>
-  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="de_DE">Fernkampf ist das einzieg wahre. Weit weg und doch tödlich.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Höhere Level beschleunigen die Einheitenrekrutierung der Fernkämpfer.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Der weitere Ausbau beschleunigt die Ausbildung der Fernkämpfer.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2187,11 +2187,11 @@
   <Description locale="en_US">
     <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
   </Description>
-  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="de_DE">Bald ist unsere Festung uneinnehmbar!</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Höhere Level verbessern die Kampfkraft von Festungen.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Du musst dich für maximal zwei Kampfarten in der Festung entscheiden.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2211,20 +2211,20 @@
 
 <Quest id="quest_cavalry_tower" type="optional" advisor="chef">
   <Name>Cavalry tower</Name>
-  <Name locale="de_DE">Reiteranlage</Name>
+  <Name locale="de_DE">Reiteranlage errichten</Name>
   <Task>Built an infantry tower.</Task>
-  <Task locale="de_DE">Baue eine Reiteranlage in Deiner Festung.</Task>
+  <Task locale="de_DE">Baue eine Reiteranlage in deiner Festung.</Task>
   <Description locale="de_DE">
     <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
   </Description>
   <Description locale="en_US">
     <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
   </Description>
-  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="de_DE">Reiter sind schnell. Aber sie stinken auch.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Höhere Level beschleunigen die Einheitenrekrutierung der Reiter.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Reine Reiterarmeen sind schneller als andere Armeen.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2245,7 +2245,7 @@
 
 <Quest id="quest_haunt_lvl6" type="optional" advisor="chef">
   <Name>Haunt level 6</Name>
-  <Name locale="de_DE">Versammlungsplatz Levle 6</Name>
+  <Name locale="de_DE">Versammlungsplatz ausbauen</Name>
   <Task>Built an infantry tower.</Task>
   <Task locale="de_DE">Verbessere den Versammlungsplatz Deiner Lagerstätte auf Level 6.</Task>
   <Description locale="de_DE">
@@ -2254,7 +2254,7 @@
   <Description locale="en_US">
     <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
   </Description>
-  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="de_DE">Wir brauchen mehr Platz am Feuer für unsere Versammlungen.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
@@ -2278,20 +2278,20 @@
 
 <Quest id="quest_altar" type="optional" advisor="chef">
   <Name>Haunt level</Name>
-  <Name locale="de_DE">Spezialgebäude Ritualstein</Name>
+  <Name locale="de_DE">Ritualstein errichten</Name>
   <Task>Built an infantry tower.</Task>
-  <Task locale="de_DE">Entscheide Dich für den Bau eines Ritualsteins.</Task>
+  <Task locale="de_DE">Entscheide dich für das Spezialgebäude Ritualstein in deiner Lagerstätte.</Task>
   <Description locale="de_DE">
     <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
   </Description>
   <Description locale="en_US">
     <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
   </Description>
-  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="de_DE">Der Ritualstein schützt Deine Lagerstätte vor feindlichen Übernahmen.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
-  <RewardFlavor locale="de_DE">Der Ritualstein schützt Deine Lagerstätte vor feindlichen Übernahmen.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Endlich in Sicherheit. Diese Lagerstätte kann von Feinden nicht mehr geklaut werden.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2311,16 +2311,16 @@
 
 <Quest id="quest_field_camp" type="optional" advisor="warrior">
   <Name>Field camp</Name>
-  <Name locale="de_DE">Spezialgebäude Feldlager</Name>
+  <Name locale="de_DE">Feldlager errichten</Name>
   <Task>Built an infantry tower.</Task>
-  <Task locale="de_DE">Entscheide Dich für den Bau eines Feldlager.</Task>
+  <Task locale="de_DE">Entscheide dich für das Spezialgebäude Feldlager in deiner Lagerstätte.</Task>
   <Description locale="de_DE">
     <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
   </Description>
   <Description locale="en_US">
     <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
   </Description>
-  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="de_DE">Das Feldlager stärkt die Armee der Lagerstätte.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
@@ -2344,20 +2344,20 @@
 
 <Quest id="quest_trade_center" type="optional" advisor="girl">
   <Name>Trade center</Name>
-  <Name locale="de_DE">Spezialgebäude Handelszentrum</Name>
+  <Name locale="de_DE">Handelsplatz errichten</Name>
   <Task>Built an infantry tower.</Task>
-  <Task locale="de_DE">Entscheide Dich für den Bau eines Handelszentrum.</Task>
+  <Task locale="de_DE">Entscheide dich für das Spezialgebäude Handelsplatz in deiner Lagerstätte.</Task>
   <Description locale="de_DE">
     <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
   </Description>
   <Description locale="en_US">
     <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
   </Description>
-  <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
+  <Flavor locale="de_DE">Der Handelsplatz verbessert die Rohstoffproduktion der Lagerstätte.</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Das Handelszentrum verbessert Deine Rohstoffproduktion, läßt Deine Lagerstätte aber fast wehrlos.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Mit dem Handelsplatz verbessert sich deine Rohstoffproduktion, läßt Deine Lagerstätte aber fast wehrlos.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2489,11 +2489,11 @@
     <Description locale="en_US">
       <p>You can check how many Units you have already killed by visiting the Ranking.</p>
     </Description>
-    <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
+    <Flavor locale="de_DE">Muhaha, kämpfen heißt leben!</Flavor>
     <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
     <RewardText locale="de_DE"></RewardText>
     <RewardText locale="en_US"></RewardText>
-    <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
+    <RewardFlavor locale="de_DE">Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.</RewardFlavor>
     <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
     <Triggers>
       <PlayTimeTrigger>86400</PlayTimeTrigger>

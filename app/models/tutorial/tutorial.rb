@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.0.2
+# Version: 1.0.3
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 1, 
         :minor => 0, 
-        :build => 2, 
+        :build => 3, 
       },
       
       :production_test_weights => {
@@ -5352,7 +5352,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Hey cool, Du kannst Steinbrüche bauen.",
+            :de_DE => "Stein auf Stein, die Hütten werden bald fertig sein.",
   
             :en_US => "Cool - you can now build quarries.",
                 
@@ -5684,7 +5684,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.",
+            :de_DE => "Steigere Deine Steinproduktion durch weitere Steinbrüche.",
   
             :en_US => "Quarries are very effective. Build more quarries!",
                 
@@ -5771,7 +5771,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.",
+            :de_DE => "Aufpassen, die jungen Bäume nicht fällen.",
   
             :en_US => "If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.",
                 
@@ -5785,7 +5785,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Na, das nenne ich mal Holz vor der Hütte!",
+            :de_DE => "Mehr Holzfäller sind immer eine gute Idee.",
   
             :en_US => "Wow – look at your wood production. That's massive! ",
                 
@@ -5865,14 +5865,14 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build two furrier level 4.",
+            :en_US => "Build two furrier up to level 4.",
   
             :de_DE => "Baue zwei Kürschner bis Level 4.",
                 
           },
           :flavour => {
             
-            :de_DE => "Fell können wir nie genug haben.",
+            :de_DE => "Ich mag die Lendenschurze der Keulenkrieger.",
   
             :en_US => "We need much more fur.",
                 
@@ -5987,7 +5987,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Steigere die fellproduktion durch den Bau weiterer Kürschner.",
+            :de_DE => "Steigere die Fellproduktion durch den Bau weiterer Kürschner.",
   
             :en_US => "Raise your fur production by building more furrier.",
                 
@@ -6074,7 +6074,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Hey, Deine Siedlungen sehen schon toll aus, aber es wäre gut wenn sie mehr produzieren würden. Könntest Du Dich bitte darum kümmern?",
+            :de_DE => "Du zahlst Steuern? Warum?",
   
             :en_US => "Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.",
                 
@@ -6088,7 +6088,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Rohstoffe haben wir nei genug. Wir brauchen mehr!",
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
   
             :en_US => "We need more ressources.",
                 
@@ -6178,7 +6178,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.",
+            :de_DE => "Die Ausbildung der Keulenkrieger geht auch schneller.",
   
             :en_US => "We need a cavalry to defend ourselves against throwers.",
                 
@@ -6192,7 +6192,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Die Keulenkrieger sind die ersten richtigen Einheiten.",
+            :de_DE => "Die Keulenkrieger sind vernünftige Einheiten. Mit Keulen und so.",
   
             :en_US => "Muhaha, I don´t like the smell, but the riders know thier business.",
                 
@@ -6286,12 +6286,12 @@ class Tutorial::Tutorial
             
             :en_US => "Build a clubber.",
   
-            :de_DE => "Rekrutiere einen Keulenkrieger.",
+            :de_DE => "Bilde einen Keulenkrieger aus.",
                 
           },
           :flavour => {
             
-            :de_DE => "Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.",
+            :de_DE => "Einfache Krieger sind nicht zu gebrauchen.",
   
             :en_US => "What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.",
                 
@@ -6406,7 +6406,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Du hast eine Festung in Deinen Besitz gebracht? Das ist großartig!",
+            :de_DE => "Jede Festung erhält die Steuereinnahmen aller Siedlungen der Region.",
   
             :en_US => "You conquered a fortress? That´s great!",
                 
@@ -6486,14 +6486,14 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Built an infantry tower.",
+            :en_US => "Build an infantry tower.",
   
             :de_DE => "Baue ein Knüppler Gelände in Deiner Festung.",
                 
           },
           :flavour => {
             
-            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+            :de_DE => "Wir brauchen Nahkämpfer für die Verteidigung.",
   
             :en_US => "We need more settlements. A fortress would be the way to go.",
                 
@@ -6596,7 +6596,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+            :de_DE => "Mit dem Ausbau der Festungsanlagen steigt der Kampfbonus.",
   
             :en_US => "We need more settlements. A fortress would be the way to go.",
                 
@@ -6610,7 +6610,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Höhere Level der festungsanlagen verbessern die Kampfkraft von Festungen.",
+            :de_DE => "Jetzt kannst Du das Werfer Gelände bauen.",
   
             :en_US => "You conquered a fortress? That´s great!",
                 
@@ -6704,12 +6704,12 @@ class Tutorial::Tutorial
             
             :en_US => "Built an infantry tower.",
   
-            :de_DE => "Baue ein Werfer Gelände in Deiner Festung.",
+            :de_DE => "Baue ein Werfer Gelände in deiner Festung.",
                 
           },
           :flavour => {
             
-            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+            :de_DE => "Fernkampf ist das einzieg wahre. Weit weg und doch tödlich.",
   
             :en_US => "We need more settlements. A fortress would be the way to go.",
                 
@@ -6723,7 +6723,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Höhere Level beschleunigen die Einheitenrekrutierung der Fernkämpfer.",
+            :de_DE => "Der weitere Ausbau beschleunigt die Ausbildung der Fernkämpfer.",
   
             :en_US => "You conquered a fortress? That´s great!",
                 
@@ -6812,7 +6812,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+            :de_DE => "Bald ist unsere Festung uneinnehmbar!",
   
             :en_US => "We need more settlements. A fortress would be the way to go.",
                 
@@ -6826,7 +6826,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Höhere Level verbessern die Kampfkraft von Festungen.",
+            :de_DE => "Du musst dich für maximal zwei Kampfarten in der Festung entscheiden.",
   
             :en_US => "You conquered a fortress? That´s great!",
                 
@@ -6913,19 +6913,19 @@ class Tutorial::Tutorial
             
             :en_US => "Cavalry tower",
   
-            :de_DE => "Reiteranlage",
+            :de_DE => "Reiteranlage errichten",
                 
           },
           :task => {
             
             :en_US => "Built an infantry tower.",
   
-            :de_DE => "Baue eine Reiteranlage in Deiner Festung.",
+            :de_DE => "Baue eine Reiteranlage in deiner Festung.",
                 
           },
           :flavour => {
             
-            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+            :de_DE => "Reiter sind schnell. Aber sie stinken auch.",
   
             :en_US => "We need more settlements. A fortress would be the way to go.",
                 
@@ -6939,7 +6939,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Höhere Level beschleunigen die Einheitenrekrutierung der Reiter.",
+            :de_DE => "Reine Reiterarmeen sind schneller als andere Armeen.",
   
             :en_US => "You conquered a fortress? That´s great!",
                 
@@ -7016,7 +7016,7 @@ class Tutorial::Tutorial
             
             :en_US => "Haunt level 6",
   
-            :de_DE => "Versammlungsplatz Levle 6",
+            :de_DE => "Versammlungsplatz ausbauen",
                 
           },
           :task => {
@@ -7028,7 +7028,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+            :de_DE => "Wir brauchen mehr Platz am Feuer für unsere Versammlungen.",
   
             :en_US => "We need more settlements. A fortress would be the way to go.",
                 
@@ -7129,19 +7129,19 @@ class Tutorial::Tutorial
             
             :en_US => "Haunt level",
   
-            :de_DE => "Spezialgebäude Ritualstein",
+            :de_DE => "Ritualstein errichten",
                 
           },
           :task => {
             
             :en_US => "Built an infantry tower.",
   
-            :de_DE => "Entscheide Dich für den Bau eines Ritualsteins.",
+            :de_DE => "Entscheide dich für das Spezialgebäude Ritualstein in deiner Lagerstätte.",
                 
           },
           :flavour => {
             
-            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+            :de_DE => "Der Ritualstein schützt Deine Lagerstätte vor feindlichen Übernahmen.",
                 
           },
           :description => {
@@ -7153,7 +7153,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Der Ritualstein schützt Deine Lagerstätte vor feindlichen Übernahmen.",
+            :de_DE => "Endlich in Sicherheit. Diese Lagerstätte kann von Feinden nicht mehr geklaut werden.",
   
             :en_US => "You conquered a fortress? That´s great!",
                 
@@ -7242,19 +7242,19 @@ class Tutorial::Tutorial
             
             :en_US => "Field camp",
   
-            :de_DE => "Spezialgebäude Feldlager",
+            :de_DE => "Feldlager errichten",
                 
           },
           :task => {
             
             :en_US => "Built an infantry tower.",
   
-            :de_DE => "Entscheide Dich für den Bau eines Feldlager.",
+            :de_DE => "Entscheide dich für das Spezialgebäude Feldlager in deiner Lagerstätte.",
                 
           },
           :flavour => {
             
-            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+            :de_DE => "Das Feldlager stärkt die Armee der Lagerstätte.",
   
             :en_US => "We need more settlements. A fortress would be the way to go.",
                 
@@ -7355,19 +7355,19 @@ class Tutorial::Tutorial
             
             :en_US => "Trade center",
   
-            :de_DE => "Spezialgebäude Handelszentrum",
+            :de_DE => "Handelsplatz errichten",
                 
           },
           :task => {
             
             :en_US => "Built an infantry tower.",
   
-            :de_DE => "Entscheide Dich für den Bau eines Handelszentrum.",
+            :de_DE => "Entscheide dich für das Spezialgebäude Handelsplatz in deiner Lagerstätte.",
                 
           },
           :flavour => {
             
-            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+            :de_DE => "Der Handelsplatz verbessert die Rohstoffproduktion der Lagerstätte.",
   
             :en_US => "We need more settlements. A fortress would be the way to go.",
                 
@@ -7381,7 +7381,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Das Handelszentrum verbessert Deine Rohstoffproduktion, läßt Deine Lagerstätte aber fast wehrlos.",
+            :de_DE => "Mit dem Handelsplatz verbessert sich deine Rohstoffproduktion, läßt Deine Lagerstätte aber fast wehrlos.",
   
             :en_US => "You conquered a fortress? That´s great!",
                 
@@ -7791,7 +7791,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+            :de_DE => "Muhaha, kämpfen heißt leben!",
   
             :en_US => "Your enemies are strong - that has to change! Destroy their units. That will weaken them.",
                 
@@ -7805,7 +7805,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
   
             :en_US => "Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.",
                 
