@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.0.3
+# Version: 1.0.4
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 1, 
         :minor => 0, 
-        :build => 3, 
+        :build => 4, 
       },
       
       :production_test_weights => {
@@ -141,9 +141,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Baue einen Sammler. Er wird den großen Siedlungsbau vorbereiten.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Build a Gatherer. He will prepare the great settlement building.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -241,9 +241,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Baue deine Häuptlingshütte auf Level 2 aus.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Upgrade your chieftain’s hut to level 2.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -349,9 +349,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Die Krieger brauchen was zu trinken! Baue eine Taverne.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>The warriors need a drink! Build a tavern.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -457,9 +457,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Scheuch die Saufnasen auf und starte deinen ersten Auftrag.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Startle the drunkards and start your first assignment.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -554,9 +554,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Baue deine Häuptlingshütte auf Level 3 für einen neuen Bauplatz aus.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Upgrade your chieftain's hut to level 3.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -703,9 +703,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Baue ein Ausbildungsgelände, um Nahkampfeinheiten ausbilden zu können.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Build training grounds.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -811,9 +811,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger aus.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -910,9 +910,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Finde und drücke den Kartenknopf.</p><p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal, wo Du bist, oder wo Deine Armeen stehen.</p><p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Find and press the Map button.</p><p>You´ll be able to see the World Map and focus on the region of your sattlement, no matter where you are. If you want to go back to yout settlement, select it and click Enter.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -1004,9 +1004,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Verstärken' Knopf.</p><p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Du kannst die Krieger in die Armee bewegen.</p><p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Go to the map and select your settlement. Press the Reinforce button. You'll be able to see the units in the garrison on the left and the warriors in the army on the right. You can then move units into the army. Give your army a name and click on Create to confirm.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -1105,9 +1105,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Während deine Armee unterwegs ist haben sich die hinterhältigen Neandertaler vor Deiner Siedlung versammelt. Führe Deine Garnison aus deiner Siedlung heraus in die Schlacht und zerschmettere sie. Wähle hierzu zunächst Deine Siedlung aus. Drücke jetzt den Angriffsknopf und wähle dann die Neandertaler aus, um den Angriff zu starten.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>A bunch of ferocious neanderthals has gathered outside your settlement while your army is out in the field. We have to stop them. Lead our garrison out to battle and smash them to bits! To do so, first select your settlement. Then press the attack button and select the neandertals to beginn the attack.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -1201,9 +1201,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen von Spielern zu kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügend Kampfstärke erfolgen.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Select your army, click on Move, and then on the destination you want to go to. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players can only be made if the other player agrees or if you have enough fighting strenght.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -1332,9 +1332,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung aus und drücke 'Betreten' um zurück in Deine Siedlung zu kommen.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Use the Settlement button or press on your settlement and then click Enter to get back to your settlement.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -1433,9 +1433,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Der Steinbruch und der Holzfäller sind Deine Rohstoffproduzenten.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -1535,9 +1535,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du Steinbruch und Holzfäller bauen.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -1631,9 +1631,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Der Steinbruch produziert Steine.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Build a quarry to improve your production.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -1722,9 +1722,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Holzfäller erhöhen Deine Holzproduktion.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Upgrade the logger to increase your production.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -1813,9 +1813,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Der Steinbruch und der Holzfäller sind Deine Rohstoffproduzenten.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -1912,9 +1912,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um einen Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Sammler.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>To give an order to a Hunter Gatherer, press on an empty building site and click Hunter Gatherer.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -2006,9 +2006,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Der Steinbruch produziert Steine.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Build a quarry to improve your production.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -2097,9 +2097,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Holzfäller erhöhen Deine Holzproduktion.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Upgrade the logger to increase your production.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -2188,9 +2188,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -2289,9 +2289,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -2386,9 +2386,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Lagerfeuer werden benötigt, um Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Campfires are needed to start or enter alliances. They're also where little chieftans are recruited.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -2521,9 +2521,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -2604,9 +2604,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -2699,9 +2699,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die Du lagern kannst. Wenn Du die Grenze erreichst, verfällt jede weitere Produktion.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Having raw materials store increases the maximum number of raw materials you can store. Once you´ve reached the limit, any further production is lost.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -2795,9 +2795,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die Du lagern kannst. Wenn Du die Grenze erreichst, verfällt jede weitere Produktion.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Having raw materials store increases the maximum number of raw materials you can store. Once you´ve reached the limit, any further production is lost.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -2885,9 +2885,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -2975,9 +2975,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -3063,9 +3063,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Use these Golden Frogs to finish the upgrade right now! Press the button marked 'Hurry!' to speed the building process up.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -3157,9 +3157,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Kleine Hütten verkürzen die Bauzeit von Gebäuden. Du kannst mehrere bauen, um die Bauzeit deutlich zu senken.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Having small huts reduces the time it takes to construct other buildings.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -3253,9 +3253,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -3343,9 +3343,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -3439,9 +3439,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>In der Trainingshöhle kannst Du ungestört trainieren und Erfahrung sammeln.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>It takes time to execute building orders, but the work will continue while you're away if you leave the game.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -3535,9 +3535,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -3628,9 +3628,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -3731,9 +3731,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Eine hohe Fellproduktion ist die Grundlage jeder größeren Armee. In den Kämpfen werden immer mal wieder Armeen aufgerieben, die gilt es nachzubauen.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You need good fur production if you want to recruit an impressive army.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -3820,9 +3820,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -3912,9 +3912,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -4013,9 +4013,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -4112,9 +4112,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in den Schießstand, wähle dort in der Rekrutierungsliste den Kieselsteinwerfer aus.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -4218,9 +4218,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -4310,9 +4310,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -4411,9 +4411,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Die Kupferschmelze ist ein kleines Gebäude für einen kleinen Bauplatz, sie ermöglicht Dir den Bau der Gebäude der Kupferzeit.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>A copper smelter can be created in a small building slot. It gives you acces to buildings from the Copper Age.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -4512,9 +4512,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -4604,9 +4604,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Die Kupferschmelze Level 5 schaltet den Stall frei.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>A copper smelter can be created in a small building slot. It gives you acces to buildings from the Copper Age.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -4705,9 +4705,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -4804,9 +4804,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Gehe in den Stall, wähle dort in der Rekrutierungsliste den Straußenreiter aus.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -4900,9 +4900,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -4987,9 +4987,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Lagerfeuer werden benötigt, um Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Campfires are needed to start or enter alliances. They're also where little chieftans are recruited.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -5081,9 +5081,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Bild am Lagerfeuer einen Kleinen Chef aus.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -5168,9 +5168,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um eine Lagerstätte zu gründen, musst Du das Lagerfeuer auf Level 10 ausgebaut haben, um dort einen Kleinen Häuptling auszu bilden. Mit dem Kleinen Häuptling musst Du Deine Armee zu einem freien Siedlungsort bewegen.</p><p>Du kannst allerdings nur eine Lagerstätte pro Region haben und benötigst für die Gründung einer Siedlung einen freien Siedlungspunkt.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>To start an encampment you need to train a little chieftan at campfire Level 10 and move both him and an army to a free field. You can only have one encampment per region and you'll need a free settlement point.</p><p>But you can only have one encampment per region, and you need a free settlement point.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -5265,9 +5265,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Drücke dazu auf den Profil-Knopf. Drücke dann auf 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Press the profile button, then select Customization. Select Choose Your Name. The first two name changes are free.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -5359,9 +5359,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Weitere Steinbrüche erhöhen Deine Steinproduktion.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Build a quarry to improve your production.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -5465,9 +5465,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Weitere Holzfäller erhöhen Deine Holzproduktion.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Upgrade the logger to increase your production.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -5571,9 +5571,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um einen Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Sammler.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>To give an order to a Hunter Gatherer, press on an empty building site and click Hunter Gatherer.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -5677,9 +5677,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Weitere Steinbrüche produzieren viel mehr Steine.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Build a quarry to improve your production.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -5778,9 +5778,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Weitere Holzfäller erhöhen Deine Holzproduktion.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Upgrade the logger to increase your production.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -5879,9 +5879,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Weitere Kürschner produzieren noch mehr Fell.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Build a quarry to improve your production.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -5973,16 +5973,16 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Hey cool, Du kannst Steinbrüche bauen.",
+            :de_DE => "Lendenschurze find ich klasse.",
   
-            :en_US => "Cool - you can now build quarries.",
+            :en_US => "I like lionclothes.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Mehr Fell ist immer besser.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Build a quarry to improve your production.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -6076,21 +6076,21 @@ class Tutorial::Tutorial
             
             :de_DE => "Du zahlst Steuern? Warum?",
   
-            :en_US => "Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.",
+            :en_US => "Your pay taxes? Why!?",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
   
-            :en_US => "We need more ressources.",
+            :en_US => "We will never have enough recourses. We need more!",
                 
           },
           :reward_text => {
@@ -6164,14 +6164,14 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Barracks Level 5",
+            :en_US => "Improve Barracks",
   
-            :de_DE => "Ausblidungsgelände Level 5",
+            :de_DE => "Ausblidungsgelände verbessern",
                 
           },
           :task => {
             
-            :en_US => "Build barracks level 5.",
+            :en_US => "Upgrade the training grounds to level 5.",
   
             :de_DE => "Verbessere das Ausbildungsgelände auf Level 5.",
                 
@@ -6180,21 +6180,21 @@ class Tutorial::Tutorial
             
             :de_DE => "Die Ausbildung der Keulenkrieger geht auch schneller.",
   
-            :en_US => "We need a cavalry to defend ourselves against throwers.",
+            :en_US => "Training Warriors will be faster too.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Die Keulenkrieger sind vernünftige Einheiten. Mit Keulen und so.",
   
-            :en_US => "Muhaha, I don´t like the smell, but the riders know thier business.",
+            :en_US => "The club warriors are reasonable units. With clubs and stuff.",
                 
           },
           :reward_text => {
@@ -6284,7 +6284,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a clubber.",
+            :en_US => "Train a club warrior.",
   
             :de_DE => "Bilde einen Keulenkrieger aus.",
                 
@@ -6293,21 +6293,21 @@ class Tutorial::Tutorial
             
             :de_DE => "Einfache Krieger sind nicht zu gebrauchen.",
   
-            :en_US => "What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.",
+            :en_US => "Simple warriors are not very useful.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Gehe in das Ausbilsungsgelände, wähle dort in der Rekrutierungsliste den Keulenkrieger aus.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Endlich vernüftige Keulen. Jetzt tut das Hauen wenigstens weh!",
   
-            :en_US => "Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.",
+            :en_US => "Finally decent clubs. Now chopping will hurt!",
                 
           },
           :reward_text => {
@@ -6378,37 +6378,37 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Fortress",
+            :en_US => "Conquer Fortress",
   
             :de_DE => "Festung erobern",
                 
           },
           :task => {
             
-            :en_US => "Conquer a fortress.",
+            :en_US => "Conquer a fortress from the Neanderthals or an other chieftain.",
   
-            :de_DE => "Erobere eine Festung.",
+            :de_DE => "Erobere eine Festung von den Neandertalern oder von anderen Häuptlingen.",
                 
           },
           :flavour => {
             
             :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "Such a fortress would be the ticket.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Jede Festung erhält die Steuereinnahmen aller Siedlungen der Region.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Each fortress receives the taxes from all settlements of a region.",
                 
           },
           :reward_text => {
@@ -6479,14 +6479,14 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Infantry tower",
+            :en_US => "Build an Infantry tower",
   
-            :de_DE => "Knüppler Gelände",
+            :de_DE => "Knüppler Gelände errichten",
                 
           },
           :task => {
             
-            :en_US => "Build an infantry tower.",
+            :en_US => "Build clubber grounds in your fortress.",
   
             :de_DE => "Baue ein Knüppler Gelände in Deiner Festung.",
                 
@@ -6495,21 +6495,21 @@ class Tutorial::Tutorial
             
             :de_DE => "Wir brauchen Nahkämpfer für die Verteidigung.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "We need melee fighters for defense.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Jetzt kannst du Nahkämpfer in deiner Festung ausbilden.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Now you can train melee fighters in your fortress.",
                 
           },
           :reward_text => {
@@ -6582,14 +6582,14 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Fortress fortification level 5",
+            :en_US => "Improve Fortress fortification",
   
-            :de_DE => "Festungsanlage Level 5",
+            :de_DE => "Festungsanlagen verbessern",
                 
           },
           :task => {
             
-            :en_US => "Built a fortress fortification level 5.",
+            :en_US => "Upgrade the fortification to level 5.",
   
             :de_DE => "Verbessere die Festungsanlagen auf Level 5.",
                 
@@ -6598,21 +6598,21 @@ class Tutorial::Tutorial
             
             :de_DE => "Mit dem Ausbau der Festungsanlagen steigt der Kampfbonus.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "Upgrading the fortification increases the combat bonus.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Jetzt kannst Du das Werfer Gelände bauen.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Now you can build throwing grounds.",
                 
           },
           :reward_text => {
@@ -6697,12 +6697,12 @@ class Tutorial::Tutorial
             
             :en_US => "Artillery tower",
   
-            :de_DE => "Werfer Gelände",
+            :de_DE => "Werfer Gelände errichten",
                 
           },
           :task => {
             
-            :en_US => "Built an infantry tower.",
+            :en_US => "Build throwing grounds in your fortress.",
   
             :de_DE => "Baue ein Werfer Gelände in deiner Festung.",
                 
@@ -6711,21 +6711,21 @@ class Tutorial::Tutorial
             
             :de_DE => "Fernkampf ist das einzieg wahre. Weit weg und doch tödlich.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "Ranged fighting is the one and only. Far away but still deadly.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Der weitere Ausbau beschleunigt die Ausbildung der Fernkämpfer.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Further upgrading increases the building speed of ranged fighters.",
                 
           },
           :reward_text => {
@@ -6798,14 +6798,14 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Fortress fortification level 7",
+            :en_US => "Improve Fortress fortification",
   
-            :de_DE => "Festungsanlage Level 7",
+            :de_DE => "Festungsanlagen verbessern",
                 
           },
           :task => {
             
-            :en_US => "Built a fortress fortification level 7.",
+            :en_US => "Upgrade the fortification to level 7.",
   
             :de_DE => "Verbessere die Festungsanlagen auf Level 7.",
                 
@@ -6819,9 +6819,9 @@ class Tutorial::Tutorial
           },
           :description => {
             
-            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
@@ -6918,7 +6918,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Built an infantry tower.",
+            :en_US => "Build cavalry grounds in your fortress.",
   
             :de_DE => "Baue eine Reiteranlage in deiner Festung.",
                 
@@ -6927,21 +6927,21 @@ class Tutorial::Tutorial
             
             :de_DE => "Reiter sind schnell. Aber sie stinken auch.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "Riders are fast. But they also smell.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Reine Reiterarmeen sind schneller als andere Armeen.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Pure cavalry armies are faster than others.",
                 
           },
           :reward_text => {
@@ -7021,7 +7021,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Built an infantry tower.",
+            :en_US => "Upgrade your encampment’s haunt to level 6.",
   
             :de_DE => "Verbessere den Versammlungsplatz Deiner Lagerstätte auf Level 6.",
                 
@@ -7030,21 +7030,21 @@ class Tutorial::Tutorial
             
             :de_DE => "Wir brauchen mehr Platz am Feuer für unsere Versammlungen.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "We need more space next to the fire for our assemblies.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Du kannst jetzt eins der drei Spezialgebäude bauen. Entscheide Dich weise!",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Now you can build one of three special buildings. Decide wisely!",
                 
           },
           :reward_text => {
@@ -7127,14 +7127,14 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Haunt level",
+            :en_US => "Build an altar",
   
             :de_DE => "Ritualstein errichten",
                 
           },
           :task => {
             
-            :en_US => "Built an infantry tower.",
+            :en_US => "Choose the altar as special building for your encampment.",
   
             :de_DE => "Entscheide dich für das Spezialgebäude Ritualstein in deiner Lagerstätte.",
                 
@@ -7142,20 +7142,22 @@ class Tutorial::Tutorial
           :flavour => {
             
             :de_DE => "Der Ritualstein schützt Deine Lagerstätte vor feindlichen Übernahmen.",
+  
+            :en_US => "The altar protects your encampment from being conquered.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Endlich in Sicherheit. Diese Lagerstätte kann von Feinden nicht mehr geklaut werden.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "Finally safe. This encampment cannot be stolen by your enemies anymore.",
                 
           },
           :reward_text => {
@@ -7163,8 +7165,6 @@ class Tutorial::Tutorial
             :de_DE => "",
   
             :en_US => "",
-  
-            :en_US => "You can edit the tax rate in the fortress. A fortress is another army garrison.",
                 
           },
 
@@ -7240,14 +7240,14 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Field camp",
+            :en_US => "Build Field camp",
   
             :de_DE => "Feldlager errichten",
                 
           },
           :task => {
             
-            :en_US => "Built an infantry tower.",
+            :en_US => "Choose the field camp as special building for your encampment.",
   
             :de_DE => "Entscheide dich für das Spezialgebäude Feldlager in deiner Lagerstätte.",
                 
@@ -7256,19 +7256,19 @@ class Tutorial::Tutorial
             
             :de_DE => "Das Feldlager stärkt die Armee der Lagerstätte.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "The field camp reinforces encampment’s armies.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Das Feldlager vergrößert Deine Armee und liefert auf Level 10 einen zusätzlichen Kommandopunkt.",
+            :de_DE => "The field camp extends your armies and on level 10 it will provide another command point.",
   
             :en_US => "You conquered a fortress? That´s great!",
                 
@@ -7353,14 +7353,14 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Trade center",
+            :en_US => "Build Trade Center",
   
             :de_DE => "Handelsplatz errichten",
                 
           },
           :task => {
             
-            :en_US => "Built an infantry tower.",
+            :en_US => "Choose the trading center as special building for your encampment.",
   
             :de_DE => "Entscheide dich für das Spezialgebäude Handelsplatz in deiner Lagerstätte.",
                 
@@ -7369,21 +7369,21 @@ class Tutorial::Tutorial
             
             :de_DE => "Der Handelsplatz verbessert die Rohstoffproduktion der Lagerstätte.",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "The trading center increases the encampment’s ressource production.",
                 
           },
           :description => {
             
-            :de_DE => "<p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Mit dem Handelsplatz verbessert sich deine Rohstoffproduktion, läßt Deine Lagerstätte aber fast wehrlos.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "The trading center increases your ressource production, but leaves your encampment nearly unprotected.",
                 
           },
           :reward_text => {
@@ -7480,23 +7480,23 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+            :de_DE => "Muhaha, kämpfen heißt leben!",
   
-            :en_US => "Your enemies are strong - that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Muhaha, fighting means living!",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
   
-            :en_US => "Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.",
+            :en_US => "You receive additional experience for a victorious fight.",
                 
           },
           :reward_text => {
@@ -7579,23 +7579,23 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+            :de_DE => "Muhaha, kämpfen heißt leben!",
   
-            :en_US => "Your enemies are strong - that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Muhaha, fighting means living!",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
   
-            :en_US => "Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.",
+            :en_US => "You receive additional experience for a victorious fight.",
                 
           },
           :reward_text => {
@@ -7685,23 +7685,23 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.",
+            :de_DE => "Muhaha, kämpfen heißt leben!",
   
-            :en_US => "Your enemies are strong - that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Muhaha, fighting means living!",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
-            :de_DE => "Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.",
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
   
-            :en_US => "Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.",
+            :en_US => "You receive additional experience for a victorious fight.",
                 
           },
           :reward_text => {
@@ -7784,7 +7784,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Defeat 500 units.",
+            :en_US => "Defeat 500 enemy units.",
   
             :de_DE => "Besiege 500 Einheiten.",
                 
@@ -7793,21 +7793,21 @@ class Tutorial::Tutorial
             
             :de_DE => "Muhaha, kämpfen heißt leben!",
   
-            :en_US => "Your enemies are strong - that has to change! Destroy their units. That will weaken them.",
+            :en_US => "Muhaha, fighting means living!",
                 
           },
           :description => {
             
-            :de_DE => "<p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>",
+            :de_DE => "<p></p>",
   
-            :en_US => "<p>You can check how many Units you have already killed by visiting the Ranking.</p>",
+            :en_US => "<p></p>",
                 
           },          
           :reward_flavour => {
             
             :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
   
-            :en_US => "Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.",
+            :en_US => "You receive additional experience for a victorious fight.",
                 
           },
           :reward_text => {

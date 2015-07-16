@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="0" build="3" />
+    <Version major="1" minor="0" build="4" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -37,8 +37,8 @@
       <Name locale="de_DE">Der Sammler</Name>
       <Task>Build a Gatherer. He will prepare the great settlement building</Task>
       <Task locale="de_DE">Baue einen Sammler. Er wird den großen Siedlungsbau vorbereiten.</Task>
-      <Description locale="de_DE"><p>Baue einen Sammler. Er wird den großen Siedlungsbau vorbereiten.</p></Description>
-      <Description locale="en_US"><p>Build a Gatherer. He will prepare the great settlement building.</p></Description>
+      <Description locale="de_DE"><p></p></Description>
+      <Description locale="en_US"><p></p></Description>
       <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
       <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
       <RewardText locale="de_DE"></RewardText>
@@ -67,12 +67,8 @@
       <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
       <Task>Upgrade your chieftain’s hut to level 2.</Task>
       <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 2 aus.</Task>
-      <Description locale="de_DE">
-        <p>Baue deine Häuptlingshütte auf Level 2 aus.</p>
-      </Description>
-      <Description locale="en_US">
-        <p>Upgrade your chieftain’s hut to level 2.</p>
-      </Description>
+      <Description locale="de_DE"><p></p></Description>
+      <Description locale="en_US"><p></p></Description>
       <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort!</Flavor>
       <Flavor locale="en_US">Demigod?! I don´t think so. Look at my chieftan´s hut! You think I´m going to live in that? Ha! Change it immediately!</Flavor>
       <RewardText locale="de_DE"></RewardText>
@@ -103,8 +99,8 @@
       <Name locale="de_DE">Die Taverne</Name>
       <Task>The warriors need a drink! Build a tavern..</Task>
       <Task locale="de_DE">Die Krieger brauchen was zu trinken! Baue eine Taverne.</Task>
-      <Description locale="de_DE"><p>Die Krieger brauchen was zu trinken! Baue eine Taverne.</p></Description>
-      <Description locale="en_US"><p>The warriors need a drink! Build a tavern.</p></Description>
+      <Description locale="de_DE"><p></p></Description>
+      <Description locale="en_US"><p></p></Description>
       <Flavor locale="de_DE">Ein Ort zum trinken? Ganz mein Geschmack.</Flavor>
       <Flavor locale="en_US">Finally a place where i can have a pint in peace.</Flavor>
       <RewardText locale="de_DE"></RewardText>
@@ -135,8 +131,8 @@
       <Name locale="de_DE">Der erste Auftrag</Name>
       <Task>Startle the drunkards and start your first assignment.</Task>
       <Task locale="de_DE">Scheuch die Saufnasen auf und starte deinen ersten Auftrag.</Task>
-      <Description locale="de_DE"><p>Scheuch die Saufnasen auf und starte deinen ersten Auftrag.</p></Description>
-      <Description locale="en_US"><p>Startle the drunkards and start your first assignment.</p></Description>
+      <Description locale="de_DE"><p></p></Description>
+      <Description locale="en_US"><p></p></Description>
       <Flavor locale="de_DE">Krempel die Ärmel hoch, wir haben Arbeit zu verrichten.</Flavor>
       <Flavor locale="en_US">Pull up those sleeves, looks like we got work to do.</Flavor>
       <RewardText locale="de_DE"></RewardText>
@@ -165,8 +161,8 @@
     <Name locale="de_DE">Die Häuptlingshütte</Name>
     <Task>Upgrade your chieftain's hut to level 3.</Task>
     <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 3 für einen neuen Bauplatz aus.</Task>
-    <Description locale="de_DE"><p>Baue deine Häuptlingshütte auf Level 3 für einen neuen Bauplatz aus.</p></Description>
-    <Description locale="en_US"><p>Upgrade your chieftain's hut to level 3.</p></Description>
+    <Description locale="de_DE"><p></p></Description>
+    <Description locale="en_US"><p></p></Description>
     <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
     <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
     <RewardText locale="de_DE"></RewardText>
@@ -232,8 +228,8 @@
   <Name locale="de_DE">Ausbildungsgelände</Name>
   <Task>Build training grounds.</Task>
   <Task locale="de_DE">Baue ein Ausbildungsgelände.</Task>
-  <Description locale="de_DE"><p>Baue ein Ausbildungsgelände, um Nahkampfeinheiten ausbilden zu können.</p></Description>
-  <Description locale="en_US"><p>Build training grounds.</p></Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Du kannst ein Ausbildungsgelände bauen, machst es aber nicht? Bau sofort eins und ich gebe Dir etwas aus meiner Schatzkiste.</Flavor>
   <Flavor locale="en_US">You can build a Training Grounds but you're not doing it? If you build one now, I´ll give you something from my treasure chest.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -264,12 +260,8 @@
   <Name locale="de_DE">Deine erste Einheit</Name>
   <Task>Train a warrior.</Task>
   <Task locale="de_DE">Bilde einen Krieger aus.</Task>
-  <Description locale="de_DE">
-    <p>Gehe in das Ausbildungsgelände, wähle dort in der Rekrutierungsliste ganz unten den Krieger aus.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -299,15 +291,8 @@
   <Name locale="de_DE">Auf die Karte</Name>
   <Task>Go to the world map.</Task>
   <Task locale="de_DE">Gehe auf die Weltkarte.</Task>
-  <Description locale="de_DE">
-    <p>Finde und drücke den Kartenknopf.</p>
-    <p>Der Knopf wechselt auf die Weltkarte und zentriert sie auf die Region mit Deiner Siedlung, egal, wo Du bist, oder wo Deine Armeen stehen.</p>
-    <p>Wenn Du zurück in Deine Siedlung willst, wähle Deine Siedlung aus und klicke auf 'Betreten'.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Find and press the Map button.</p>
-    <p>You´ll be able to see the World Map and focus on the region of your sattlement, no matter where you are. If you want to go back to yout settlement, select it and click Enter.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Was? Dir ist es hier zu klein? Es gibt eine riesige Welt zu erobern. Wenn Du mal aus diesem Loch rauskommen würdest, wüsstest Du das auch. Worauf wartest Du? Geh!</Flavor>
   <Flavor locale="en_US">What? It's too small for you here? There's a whole world to conquer. If you made an effort to get out of this hole, you´d realize that. So what are you waiting for?! Go!</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -335,14 +320,8 @@
   <Name locale="de_DE">Deine erste Armee</Name>
   <Task>Assemble an army.</Task>
   <Task locale="de_DE">Stelle eine Armee auf.</Task>
-  <Description locale="de_DE">
-    <p>Gehe auf die Karte und wähle Deine Siedlung aus. Drücke den 'Verstärken' Knopf.</p>
-    <p>Der Dialog zeigt Dir auf der linken Seite die Einheiten der Garnison und auf der rechten Seite die Einheiten in der Armee. Du kannst die Krieger in die Armee bewegen.</p>
-    <p>Gib Deiner Armee einen Namen und drücke zum Bestätigen auf 'Erzeugen'.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Go to the map and select your settlement. Press the Reinforce button. You'll be able to see the units in the garrison on the left and the warriors in the army on the right. You can then move units into the army. Give your army a name and click on Create to confirm.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Um Einheiten zu bewegen, müssen sie aus der Garnison in eine Armee verschoben werden.</Flavor>
   <Flavor locale="en_US">You can't move units that are in the garrison. To move units, you first have to relocate them from the garrison into an army.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -374,11 +353,8 @@
   <Name locale="de_DE">Der erste Kampf</Name>
   <Task>Beat a pack of Neanderthals in your region.</Task>
   <Task locale="de_DE">Besiege eine Gruppe Neandertaler in deiner Region.</Task>
-  <Description locale="de_DE">
-    <p>Während deine Armee unterwegs ist haben sich die hinterhältigen Neandertaler vor Deiner Siedlung versammelt. Führe Deine Garnison aus deiner Siedlung heraus in die Schlacht und zerschmettere sie. Wähle hierzu zunächst Deine Siedlung aus. Drücke jetzt den Angriffsknopf und wähle dann die Neandertaler aus, um den Angriff zu starten.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>A bunch of ferocious neanderthals has gathered outside your settlement while your army is out in the field. We have to stop them. Lead our garrison out to battle and smash them to bits! To do so, first select your settlement. Then press the attack button and select the neandertals to beginn the attack.</p></Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Halbgott, die wilden Neandertaler benötigen dringend eine Abreibung!</Flavor>
   <Flavor locale="en_US">Those neanderthals sure are cruising for a bruising. </Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -410,12 +386,8 @@
   <Name locale="de_DE">Armeebewegung</Name>
   <Task>Send your army to a different location.</Task>
   <Task locale="de_DE">Sende deine Armee an einen anderen Ort.</Task>
-  <Description locale="de_DE">
-    <p>Wähle Deine Armee aus und klicke auf 'Bewegen' und dann auf das Ziel. Mögliche Ziele sind mit einem grünen Pfeil markiert. Bewegungen von Spielern zu kontrollierten Festungen sollten nur mit Einverständnis des Spielers oder mit genügend Kampfstärke erfolgen.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Select your army, click on Move, and then on the destination you want to go to. Possible destinations are marked with a green arrow. Moves to fortresses controlled by other players can only be made if the other player agrees or if you have enough fighting strenght.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten.</Flavor>
   <Flavor locale="en_US">An army can do more than just stand around, you know. It´s there to destroy the enemies of the tribe!</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -473,12 +445,8 @@
   <Name locale="de_DE">Zurück in die Siedlung</Name>
   <Task>Get your selfe back to your settlement.</Task>
   <Task locale="de_DE">Begib dich zurück in deine Siedlung.</Task>
-  <Description locale="de_DE">
-    <p>Drücke auf den Siedlungsknopf oder wähle Deine Siedlung aus und drücke 'Betreten' um zurück in Deine Siedlung zu kommen.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Use the Settlement button or press on your settlement and then click Enter to get back to your settlement.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Du findest Deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.</Flavor>
   <Flavor locale="en_US">Can't find your settlement? It's quite easy, if you'll let me explain.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -514,12 +482,8 @@
   <Name locale="de_DE">Stein und Holz</Name>
   <Task>Build a quarry and a logger for improved ressource production.</Task>
   <Task locale="de_DE">Errichte Steinbruch und Holzfäller für eine verbesserte Rohstoffproduktion</Task>
-  <Description locale="de_DE">
-    <p>Der Steinbruch und der Holzfäller sind Deine Rohstoffproduzenten.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Stein und Holz benötigen wir für jeden Ausbau.</Flavor>
   <Flavor locale="en_US">We need stone and wood for every upgrade.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -546,12 +510,8 @@
   <Name locale="de_DE">Häuptlingshütte ausbauen</Name>
   <Task>Improve your ressource production by upgrading your quarry and logger.</Task>
   <Task locale="de_DE">Verbessere Deine Rohstoffproduktion durch den Ausbau von Steinbruch und Holzfäller.</Task>
-  <Description locale="de_DE">
-    <p>Mit Ausbau der Häuptlingshütte kannst Du Steinbruch und Holzfäller bauen.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Je mehr Rohstoffe desto mehr von allem.</Flavor>
   <Flavor locale="en_US">The more ressources the more of everything.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -575,12 +535,8 @@
   <Name locale="de_DE">Steinbruch errichten</Name>
   <Task>Build a quarry.</Task>
   <Task locale="de_DE">Baue einen Steinbruch.</Task>
-  <Description locale="de_DE">
-    <p>Der Steinbruch produziert Steine.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Build a quarry to improve your production.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -604,12 +560,8 @@
   <Name locale="de_DE">Holzfäller errichten</Name>
   <Task>Build a Logger.</Task>
   <Task locale="de_DE">Baue einen Holzfäller.</Task>
-  <Description locale="de_DE">
-    <p>Holzfäller erhöhen Deine Holzproduktion.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Upgrade the logger to increase your production.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.</Flavor>
   <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -634,8 +586,8 @@
   <Name locale="de_DE">Die Industrie ankurbeln</Name>
   <Task>Improve your ressource production by upgrading your quarry and logger.</Task>
   <Task locale="de_DE">Verbessere Deine Rohstoffproduktion durch den Ausbau von Steinbruch und Holzfäller.</Task>
-  <Description locale="de_DE"><p>Der Steinbruch und der Holzfäller sind Deine Rohstoffproduzenten.</p></Description>
-  <Description locale="en_US"><p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p></Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Je mehr Rohstoffe desto mehr von allem.</Flavor>
   <Flavor locale="en_US">The more ressources the more of everything.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -661,12 +613,8 @@
   <Name locale="de_DE">Sammler ausbauen</Name>
   <Task>Give an order to a Level 3 Hunter Gatherer.</Task>
   <Task locale="de_DE">Baue den Sammler auf Level 3 aus.</Task>
-  <Description locale="de_DE">
-    <p>Um einen Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Sammler.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>To give an order to a Hunter Gatherer, press on an empty building site and click Hunter Gatherer.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
   <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -687,12 +635,8 @@
   <Name locale="de_DE">Steinbruch ausbauen</Name>
   <Task>Build a quarry.</Task>
   <Task locale="de_DE">Baue den Steinbruch auf Level 3 aus.</Task>
-  <Description locale="de_DE">
-    <p>Der Steinbruch produziert Steine.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Build a quarry to improve your production.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -715,12 +659,8 @@
   <Name locale="de_DE">Holzfäller ausbauen</Name>
   <Task>Build a logger.</Task>
   <Task locale="de_DE">Baue den Holzfäller auf Level 3 aus.</Task>
-  <Description locale="de_DE">
-    <p>Holzfäller erhöhen Deine Holzproduktion.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Upgrade the logger to increase your production.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.</Flavor>
   <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -745,12 +685,8 @@
   <Name locale="de_DE">Mitglied einer Allianz</Name>
   <Task>Join an alliance. Together you will be much stronger.</Task>
   <Task locale="de_DE">Werde Teil einer Allianz. Gemeinsam seid ihr viel stärker.</Task>
-  <Description locale="de_DE">
-    <p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Auf zur Weltherrschaft!</Flavor>
   <Flavor locale="en_US">To the global dominance.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -776,12 +712,8 @@
   <Name locale="de_DE">Häuptlingshütte Level 5</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">Häuptlingshütte ausbauen.</Task>
-  <Description locale="de_DE">
-    <p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -805,12 +737,8 @@
   <Name locale="de_DE">Lagerfeuer errichten</Name>
   <Task>Build a campfire.</Task>
   <Task locale="de_DE">Wärme Dich am Lagerfeuer.</Task>
-  <Description locale="de_DE">
-    <p>Lagerfeuer werden benötigt, um Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Campfires are needed to start or enter alliances. They're also where little chieftans are recruited.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
   <Flavor locale="en_US">Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think?
   </Flavor>
@@ -868,12 +796,8 @@
   <Name locale="de_DE">Allianz</Name>
   <Task>Enter an alliance, or start your own alliance.</Task>
   <Task locale="de_DE">Tritt einer Allianz bei oder gründe Deine eigene Allianz.</Task>
-  <Description locale="de_DE">
-    <p>Ab jetzt kannst Du einer Allianz beitreten. Eine Allianz hat viele Vorteile, man tauscht Rohstoffe, hilft sich gegenseitig bei der Verteidigung und koordiniert Angriffe. Nur eine Allianz kann ein großes Territorium halten. Wenn Du Dich bereit fühlst, tritt doch einer bei.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Werde Mitglied einer Allianz.</Flavor>
   <Flavor locale="en_US">Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -896,12 +820,8 @@
   <Name locale="de_DE">Lager und Handel</Name>
   <Task>Improve your storage and trade with other Chiefs.</Task>
   <Task locale="de_DE">Erhöhe die Lagerkapazität und handel mit anderen Häuptlingen.</Task>
-  <Description locale="de_DE">
-    <p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Den Handel sollten wir nicht nur der Amazone überlassen.</Flavor>
   <Flavor locale="en_US">We shouldn’t leave the trading only in the Amazon’s discretion.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -926,12 +846,8 @@
   <Name locale="de_DE">Rohstofflager errichten</Name>
   <Task>Build a raw materials store.</Task>
   <Task locale="de_DE">Baue ein Rohstofflager.</Task>
-  <Description locale="de_DE">
-    <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die Du lagern kannst. Wenn Du die Grenze erreichst, verfällt jede weitere Produktion.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Having raw materials store increases the maximum number of raw materials you can store. Once you´ve reached the limit, any further production is lost.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Noch mag der Lagerplatz ausreichen, doch bald wirst Du mehr brauchen. Baue doch bitte ein Rohstofflager, damit wir mehr Platz haben.</Flavor>
   <Flavor locale="en_US">Doesn't it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -957,12 +873,8 @@
   <Name locale="de_DE">Treibe Handel</Name>
   <Task>Start a trade.</Task>
   <Task locale="de_DE">Beginne Deinen ersten Handel.</Task>
-  <Description locale="de_DE">
-    <p>Rohstofflager erhöhen die maximale Menge an Rohstoffen, die Du lagern kannst. Wenn Du die Grenze erreichst, verfällt jede weitere Produktion.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Having raw materials store increases the maximum number of raw materials you can store. Once you´ve reached the limit, any further production is lost.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Tausche Deine Rohstoffe.</Flavor>
   <Flavor locale="en_US">Doesn't it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -985,12 +897,8 @@
   <Name locale="de_DE">Erhöhe die Baugeschwindigkeit</Name>
   <Task>Reduce the construction time for every building through building a Small Hut.</Task>
   <Task locale="de_DE">Verringere die Bauzeit aller Gebäude durch den Bau von Kleinen Hütten.</Task>
-  <Description locale="de_DE">
-    <p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Gut erholt arbeitet selbst der faulste Arbeiter schneller.</Flavor>
   <Flavor locale="en_US">Even the lazied Worker works faster if he’s freshly regained.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1014,12 +922,8 @@
   <Name locale="de_DE">Häuptlingshütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">Verringere die Bauzeit aller Gebäude durch den Bau von Kleinen Hütten.</Task>
-  <Description locale="de_DE">
-    <p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Gut erholt arbeitet selbst der faulste Arbeiter schneller.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1042,12 +946,8 @@
   <Name locale="de_DE">Ausbau abschließen</Name>
   <Task>Finish the upgrade of the chieftan's hut.</Task>
   <Task locale="de_DE">Schließe den Ausbau sofort mit einer Kröte ab.</Task>
-  <Description locale="de_DE">
-    <p>Du hast von mir zwei Kröten erhalten. Stelle den Ausbau der Häutplingshütte sofort fertig, indem Du auf 'Hurtig!' drückst.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Use these Golden Frogs to finish the upgrade right now! Press the button marked 'Hurry!' to speed the building process up.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Mit ein paar Kröten lässt sich so einiges bewirken.</Flavor>
   <Flavor locale="en_US">With a few golden frogs you can get quite a bit done.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1068,12 +968,8 @@
   <Name locale="de_DE">Kleinen Hütte errichten</Name>
   <Task>Build a small hut.</Task>
   <Task locale="de_DE">Baue eine Kleine Hütte.</Task>
-  <Description locale="de_DE">
-    <p>Kleine Hütten verkürzen die Bauzeit von Gebäuden. Du kannst mehrere bauen, um die Bauzeit deutlich zu senken.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Having small huts reduces the time it takes to construct other buildings.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Diese kleinen Hütten sind wirklich nützlich. Mehr Einwohner bedeuten auch mehr helfende Hände.</Flavor>
   <Flavor locale="en_US">Did you know that you can give your workers two orders at the same time? They can only work on one of them, but they'll keep the other order in mind. Why don't you try it? The happier your workers are, the faster they'll build things for you.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1099,12 +995,8 @@
   <Name locale="de_DE">Erfahrung</Name>
   <Task>Collect valuable experience. The Training Cave is the first step.</Task>
   <Task locale="de_DE">Sammel wertvolle Erfahrungen. Die Trainingshöhle ist ein erster Schritt.</Task>
-  <Description locale="de_DE">
-    <p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Jeder Fortschritt benötigt ausreichend Erfahrung.</Flavor>
   <Flavor locale="en_US">Every progress needs sufficient experience.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1128,12 +1020,8 @@
   <Name locale="de_DE">Häuptlingshütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">erbessere die Häuptlingshütte auf Level 7.</Task>
-  <Description locale="de_DE">
-    <p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1157,12 +1045,8 @@
   <Name locale="de_DE">Trainingshöhle errichten</Name>
   <Task>Build a training cave.</Task>
   <Task locale="de_DE">Baue eine Trainingshöhle.</Task>
-  <Description locale="de_DE">
-    <p>In der Trainingshöhle kannst Du ungestört trainieren und Erfahrung sammeln.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>It takes time to execute building orders, but the work will continue while you're away if you leave the game.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Hey Halbgott, sitz da nicht so faul rum. Du musst Deinen Armeen als Vorbild dienen, dafür solltest Du etwas trainieren.</Flavor>
   <Flavor locale="en_US">Hey Demigod, don't get bored! You need to inspire your armies to be like you, so make sure you  use your training cave to exercise!</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1186,12 +1070,8 @@
   <Name locale="de_DE">Fell</Name>
   <Task>Build a furrier to produce the worthwhile fur.</Task>
   <Task locale="de_DE">Errichte einen Kürschner um das wertvolle Fell zu produzieren.</Task>
-  <Description locale="de_DE">
-    <p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Fell - flauschig und warm.</Flavor>
   <Flavor locale="en_US">Fur - fluffy and warm.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1216,12 +1096,8 @@
   <Name locale="de_DE">Häuptlingshütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">Verbessere die Häuptlingshütte auf Level 8.</Task>
-  <Description locale="de_DE">
-    <p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1247,12 +1123,8 @@
   <Name locale="de_DE">Kürschner errichten</Name>
   <Task>Build a furrier.</Task>
   <Task locale="de_DE">Baue einen Kürschner.</Task>
-  <Description locale="de_DE">
-    <p>Eine hohe Fellproduktion ist die Grundlage jeder größeren Armee. In den Kämpfen werden immer mal wieder Armeen aufgerieben, die gilt es nachzubauen.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You need good fur production if you want to recruit an impressive army.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Chef will die Felle für die Armee Rekrutierung, aber für mich fällt doch bestimmt auch was schönes ab, oder?</Flavor>
   <Flavor locale="en_US">The chief wants an army, but I'd just like some nice new clothes.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1274,12 +1146,8 @@
   <Name locale="de_DE">Die Fernkämpfer</Name>
   <Task>Use your knowledge to train long-range-units.</Task>
   <Task locale="de_DE">Nutze Dein Wissen zur Ausbildung von Fernkämpfern. </Task>
-  <Description locale="de_DE">
-    <p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Ein Wurf - ein Treffer. Fernkampf ist was feines.</Flavor>
   <Flavor locale="en_US">One shot - one hit. I like long-range-fighting.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1304,12 +1172,8 @@
   <Name locale="de_DE">Häuptlingshütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">Verbessere die Häuptlingshütte auf Level 9.</Task>
-  <Description locale="de_DE">
-    <p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1332,8 +1196,8 @@
   <Name locale="de_DE">Schießstand errichten</Name>
   <Task>Build a Firing range.</Task>
   <Task locale="de_DE">Baue einen Schießstand.</Task>
-  <Description locale="de_DE"><p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p></Description>
-  <Description locale="en_US"><p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p></Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.</Flavor>
   <Flavor locale="en_US">We need a cavalry to defend ourselves against throwers.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1355,12 +1219,8 @@
   <Name locale="de_DE">Kieselsteinwerfer ausbilden</Name>
   <Task>Build a thrower.</Task>
   <Task locale="de_DE">Bilde einen Kieselsteinwerfer aus.</Task>
-  <Description locale="de_DE">
-    <p>Gehe in den Schießstand, wähle dort in der Rekrutierungsliste den Kieselsteinwerfer aus.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1386,12 +1246,8 @@
   <Name locale="de_DE">Kupferzeit</Name>
   <Task>The production of cupper means a great leap forward in development.</Task>
   <Task locale="de_DE">Die Herstellung von Kupfer bedeutet einen großen Sprung in der Entwicklung.</Task>
-  <Description locale="de_DE">
-    <p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Mit Kupfer können wir alles besser machen.</Flavor>
   <Flavor locale="en_US">With copper we can improve everything.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1416,12 +1272,8 @@
   <Name locale="de_DE">Häuptlingshütte Level 10</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">Häuptlingshütte ausbauen.</Task>
-  <Description locale="de_DE">
-    <p>Mit Ausbau der Häuptlingshütte kannst Du mehr Gebäude und auch neue Gebäude bauen.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>By upgrading your chieftan's hut, you'll have the option to create a wider range of buildings for your settlement.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
   <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1444,12 +1296,8 @@
   <Name locale="de_DE">Kupferschmelze</Name>
   <Task>Upgrade your Copper Smleter</Task>
   <Task locale="de_DE">Kupferschmelze ausbauen</Task>
-  <Description locale="de_DE">
-    <p>Die Kupferschmelze ist ein kleines Gebäude für einen kleinen Bauplatz, sie ermöglicht Dir den Bau der Gebäude der Kupferzeit.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>A copper smelter can be created in a small building slot. It gives you acces to buildings from the Copper Age.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">In der Kupferzeit stehen Dir neue Gebäude und verbesserte Versionen bereits bekannter Gebäude zur Verfügung.</Flavor>
   <Flavor locale="en_US">In the Copper Age, you can create new buildings as well as improved versions of the buildings you already know.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1473,12 +1321,8 @@
   <Name locale="de_DE">Die Reiter</Name>
   <Task>Recruit your first cavalry.</Task>
   <Task locale="de_DE">Rekrutiere Deine ersten berittenen Einheiten.</Task>
-  <Description locale="de_DE">
-    <p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.</Flavor>
   <Flavor locale="en_US">Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1503,12 +1347,8 @@
   <Name locale="de_DE">Kupferschmelze Level 5</Name>
   <Task>Build a copper smelter levle 5.</Task>
   <Task locale="de_DE">Verbessere die Kupferschmelze auf Level 5.</Task>
-  <Description locale="de_DE">
-    <p>Die Kupferschmelze Level 5 schaltet den Stall frei.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>A copper smelter can be created in a small building slot. It gives you acces to buildings from the Copper Age.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">In der Kupferzeit stehen Dir neue Gebäude und verbesserte Versionen bereits bekannter Gebäude zur Verfügung.</Flavor>
   <Flavor locale="en_US">In the Copper Age, you can create new buildings as well as improved versions of the buildings you already know.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1531,8 +1371,8 @@
   <Name locale="de_DE">Der Stall</Name>
   <Task>Build a smelly barn.</Task>
   <Task locale="de_DE">Baue einen Stall.</Task>
-  <Description locale="de_DE"><p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p></Description>
-  <Description locale="en_US"><p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p></Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.</Flavor>
   <Flavor locale="en_US">We need a cavalry to defend ourselves against throwers.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1554,12 +1394,8 @@
   <Name locale="de_DE">Der Straußenreiter</Name>
   <Task>Recruit a ostrich rider.</Task>
   <Task locale="de_DE">Rekrutiere einen Straußenreiter.</Task>
-  <Description locale="de_DE">
-    <p>Gehe in den Stall, wähle dort in der Rekrutierungsliste den Straußenreiter aus.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1583,12 +1419,8 @@
   <Name locale="de_DE">Lagerstätte gründen</Name>
   <Task>Found an Encampment as a further settlement to accelerate your progression.</Task>
   <Task locale="de_DE">Gründe mit der Lagerstätte eine weitere Siedlung um Deinen Fortschritt zu beschleunigen.</Task>
-  <Description locale="de_DE">
-    <p>Mit einer Allianz kannst Du die Weltherrschaft erringen! Um einer Allianz beizutreten benötigst Du ein Lagerfeuer.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>From now on, you can enter an alliance. This has many advantages: you can exchange raw materials, help each other with defense and coordinate attacks. Only an alliance can hold a large territory.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Eine weitere  Siedlung - mehr geht kaum.</Flavor>
   <Flavor locale="en_US">An additional settlement - more is nearly impossible.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1611,12 +1443,8 @@
   <Name locale="de_DE">Lagerfeuer ausbauen</Name>
   <Task>Upgrade your Campfire</Task>
   <Task locale="de_DE">Verbessere das Lagerfeuer auf Level 10.</Task>
-  <Description locale="de_DE">
-    <p>Lagerfeuer werden benötigt, um Allianzen zu gründen oder ihnen beizutreten. Außerdem wird hier der Kleine Häuptling rekrutiert.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Campfires are needed to start or enter alliances. They're also where little chieftans are recruited.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?</Flavor>
   <Flavor locale="en_US">Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think?
   </Flavor>
@@ -1638,12 +1466,8 @@
   <Name locale="de_DE">Der Kleine Chef</Name>
   <Task>Train a Little Chief</Task>
   <Task locale="de_DE">Bilde einen Kleinen Häuptling aus.</Task>
-  <Description locale="de_DE">
-    <p>Bild am Lagerfeuer einen Kleinen Chef aus.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1664,14 +1488,8 @@
   <Name locale="de_DE">Lagerstätte gründen</Name>
   <Task>Start an encampment.</Task>
   <Task locale="de_DE">Gründe eine Lagerstätte.</Task>
-  <Description locale="de_DE">
-    <p>Um eine Lagerstätte zu gründen, musst Du das Lagerfeuer auf Level 10 ausgebaut haben, um dort einen Kleinen Häuptling auszu bilden. Mit dem Kleinen Häuptling musst Du Deine Armee zu einem freien Siedlungsort bewegen.</p>
-    <p>Du kannst allerdings nur eine Lagerstätte pro Region haben und benötigst für die Gründung einer Siedlung einen freien Siedlungspunkt.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>To start an encampment you need to train a little chieftan at campfire Level 10 and move both him and an army to a free field. You can only have one encampment per region and you'll need a free settlement point.</p>
-    <p>But you can only have one encampment per region, and you need a free settlement point.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Wie? Nur eine Siedlung? Du musst Dich mehr ausbreiten. Gründe eine Lagerstätte, aber flott! Dann findet sich bei mir vielleicht auch etwas, das ich Dir überlassen kann.</Flavor>
   <Flavor locale="en_US">What? Only one settlement? You've got to spread out a bit. Start another settlement, and quick! Then I might find something lying around that I could let you have.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1699,10 +1517,8 @@
   <Name locale="de_DE">Dein Name</Name>
   <Task>Change your name.</Task>
   <Task locale="de_DE">Im Profil kannst Du Deinen Namen und Dein Avatar ändern.</Task>
-  <Description locale="de_DE">
-    <p>Drücke dazu auf den Profil-Knopf. Drücke dann auf 'Anpassung' und wähle dort 'Namen ändern'. Die ersten zwei Namensänderungen sind kostenlos.</p></Description>
-  <Description locale="en_US">
-    <p>Press the profile button, then select Customization. Select Choose Your Name. The first two name changes are free.</p></Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Hey, wie heißt Du eigentlich?</Flavor>
   <Flavor locale="en_US">Hey, what's your name?</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1732,8 +1548,8 @@
   <Name locale="de_DE">Mehr Steinbrüche</Name>
   <Task>Built two quarries up to level 4.</Task>
   <Task locale="de_DE">Baue zwei Steinbrüche bis Level 4 aus.</Task>
-  <Description locale="de_DE"><p>Weitere Steinbrüche erhöhen Deine Steinproduktion.</p></Description>
-  <Description locale="en_US"><p>Build a quarry to improve your production.</p></Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Stein auf Stein, die Hütten werden bald fertig sein.</Flavor>
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1759,12 +1575,8 @@
   <Name locale="de_DE">Mehr Holzfäller</Name>
   <Task>Built two logger up to level 4.</Task>
   <Task locale="de_DE">Baue zwei Holzfäller bis Level 4 aus.</Task>
-  <Description locale="de_DE">
-    <p>Weitere Holzfäller erhöhen Deine Holzproduktion.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Upgrade the logger to increase your production.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Der Chef sagt immer: 'Ein Brett in Ehren kann niemand verwehren!'.</Flavor>
   <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1790,12 +1602,8 @@
   <Name locale="de_DE">Maximallevel Sammler</Name>
   <Task>Give an order to a Level 10 Hunter Gatherer.</Task>
   <Task locale="de_DE">Verbessere Deinen Sammler auf das Maximallevel 10.</Task>
-  <Description locale="de_DE">
-    <p>Um einen Sammler in Auftrag zu geben, drücke auf einen Bauplatz und wähle dort den Sammler.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>To give an order to a Hunter Gatherer, press on an empty building site and click Hunter Gatherer.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
   <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1823,12 +1631,8 @@
   <Name locale="de_DE">Maximallevel Steinbruch</Name>
   <Task>Build a quarry level 10.</Task>
   <Task locale="de_DE">Baue einen Steinbruch bis Level 10.</Task>
-  <Description locale="de_DE">
-    <p>Weitere Steinbrüche produzieren viel mehr Steine.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Build a quarry to improve your production.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
   <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1855,12 +1659,8 @@
   <Name locale="de_DE">Maximallevel Holzfäller</Name>
   <Task>Build a logger level 10.</Task>
   <Task locale="de_DE">Baue einen Holzfäller bis Level 10.</Task>
-  <Description locale="de_DE">
-    <p>Weitere Holzfäller erhöhen Deine Holzproduktion.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Upgrade the logger to increase your production.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Aufpassen, die jungen Bäume nicht fällen.</Flavor>
   <Flavor locale="en_US">If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1887,12 +1687,8 @@
   <Name locale="de_DE">Mehr Kürschner</Name>
   <Task>Build two furrier up to level 4.</Task>
   <Task locale="de_DE">Baue zwei Kürschner bis Level 4.</Task>
-  <Description locale="de_DE">
-    <p>Weitere Kürschner produzieren noch mehr Fell.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Build a quarry to improve your production.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Ich mag die Lendenschurze der Keulenkrieger.</Flavor>
   <Flavor locale="en_US">We need much more fur.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -1917,14 +1713,10 @@
   <Name locale="de_DE">Maximallevel Kürschner</Name>
   <Task>Build a furrier level 10.</Task>
   <Task locale="de_DE">Baue einen Kürschner bis Level 10.</Task>
-  <Description locale="de_DE">
-    <p>Mehr Fell ist immer besser.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Build a quarry to improve your production.</p>
-  </Description>
-  <Flavor locale="de_DE">Hey cool, Du kannst Steinbrüche bauen.</Flavor>
-  <Flavor locale="en_US">Cool - you can now build quarries.</Flavor>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
+  <Flavor locale="de_DE">Lendenschurze find ich klasse.</Flavor>
+  <Flavor locale="en_US">I like lionclothes.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Steigere die Fellproduktion durch den Bau weiterer Kürschner.</RewardFlavor>
@@ -1950,18 +1742,14 @@
   <Name locale="de_DE">Rohstoffproduktion</Name>
   <Task>Increase the resource production of one settlement to 200 resource points after taxes.</Task>
   <Task locale="de_DE">Steigere die Produktion einer Siedlung auf 200 Rohstoffpunkte nach Steuern.</Task>
-  <Description locale="de_DE">
-    <p>Die Festung kassiert bis zu 15% der Rohstoffproduktion jeder Siedlung in der Region als Steuer.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Stone, wood and fur are all worth one resource point. The fortress takes up to 15% tax on the resource production of each settlement in the region.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Du zahlst Steuern? Warum?</Flavor>
-  <Flavor locale="en_US">Hey, so your settlements look okay, but they'd be even better if they produced more resources. Maybe you should do something about that.</Flavor>
+  <Flavor locale="en_US">Your pay taxes? Why!?</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Rohstoffe haben wir nie genug. Wir brauchen mehr!</RewardFlavor>
-  <RewardFlavor locale="en_US">We need more ressources.</RewardFlavor>
+  <RewardFlavor locale="en_US">We will never have enough recourses. We need more!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_build_furrier_lvl10</FinishQuestTrigger>
@@ -1984,18 +1772,18 @@
 <!-- OPTIONAL CLUBBER -->
 
 <Quest id="quest_build_barrackslvl5" type="optional" advisor="warrior">
-  <Name>Barracks Level 5</Name>
-  <Name locale="de_DE">Ausblidungsgelände Level 5</Name>
-  <Task>Build barracks level 5.</Task>
+  <Name>Improve Barracks</Name>
+  <Name locale="de_DE">Ausblidungsgelände verbessern</Name>
+  <Task>Upgrade the training grounds to level 5.</Task>
   <Task locale="de_DE">Verbessere das Ausbildungsgelände auf Level 5.</Task>
-  <Description locale="de_DE"><p>Bau die Kupferschmelze weiter aus, auf Level 5 steht dir der stinkende Stall zur Verfügung.</p></Description>
-  <Description locale="en_US"><p>Keep upgrading the copper smelter. At Level 5, you can unlock the smelly barn.</p></Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Die Ausbildung der Keulenkrieger geht auch schneller.</Flavor>
-  <Flavor locale="en_US">We need a cavalry to defend ourselves against throwers.</Flavor>
+  <Flavor locale="en_US">Training Warriors will be faster too.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Die Keulenkrieger sind vernünftige Einheiten. Mit Keulen und so.</RewardFlavor>
-  <RewardFlavor locale="en_US">Muhaha, I don´t like the smell, but the riders know thier business.</RewardFlavor>
+  <RewardFlavor locale="en_US">The club warriors are reasonable units. With clubs and stuff.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>epic_fur</FinishQuestTrigger>
@@ -2015,20 +1803,16 @@
 <Quest id="quest_recruit_clubber" type="optional" advisor="warrior" >
   <Name>Clubber</Name>
   <Name locale="de_DE">Keulenkrieger</Name>
-  <Task>Build a clubber.</Task>
+  <Task>Train a club warrior.</Task>
   <Task locale="de_DE">Bilde einen Keulenkrieger aus.</Task>
-  <Description locale="de_DE">
-    <p>Gehe in das Ausbilsungsgelände, wähle dort in der Rekrutierungsliste den Keulenkrieger aus.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>Go to the Training Grounds, select a warrior from the recruiting list at the bottom and then start training. Recruited units end up in the settlement´s garrison.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Einfache Krieger sind nicht zu gebrauchen.</Flavor>
-  <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
+  <Flavor locale="en_US">Simple warriors are not very useful.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Endlich vernüftige Keulen. Jetzt tut das Hauen wenigstens weh!</RewardFlavor>
-  <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
+  <RewardFlavor locale="en_US">Finally decent clubs. Now chopping will hurt!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_build_barrackslvl5</FinishQuestTrigger>
@@ -2050,22 +1834,18 @@
 <!-- OPTIONAL FORTRESS QUESTS -->
 
 <Quest id="quest_fortress" type="optional" advisor="chef">
-  <Name>Fortress</Name>
+  <Name>Conquer Fortress</Name>
   <Name locale="de_DE">Festung erobern</Name>
-  <Task>Conquer a fortress.</Task>
-  <Task locale="de_DE">Erobere eine Festung.</Task>
-  <Description locale="de_DE">
-    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
-  </Description>
+  <Task>Conquer a fortress from the Neanderthals or an other chieftain.</Task>
+  <Task locale="de_DE">Erobere eine Festung von den Neandertalern oder von anderen Häuptlingen.</Task>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.</Flavor>
-  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <Flavor locale="en_US">Such a fortress would be the ticket.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Jede Festung erhält die Steuereinnahmen aller Siedlungen der Region.</RewardFlavor>
-  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <RewardFlavor locale="en_US">Each fortress receives the taxes from all settlements of a region.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>epic_xp</FinishQuestTrigger>
@@ -2082,22 +1862,18 @@
 </Quest>
 
 <Quest id="quest_infantry_tower" type="optional" advisor="chef">
-  <Name>Infantry tower</Name>
-  <Name locale="de_DE">Knüppler Gelände</Name>
-  <Task>Build an infantry tower.</Task>
+  <Name>Build an Infantry tower</Name>
+  <Name locale="de_DE">Knüppler Gelände errichten</Name>
+  <Task>Build clubber grounds in your fortress.</Task>
   <Task locale="de_DE">Baue ein Knüppler Gelände in Deiner Festung.</Task>
-  <Description locale="de_DE">
-    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Wir brauchen Nahkämpfer für die Verteidigung.</Flavor>
-  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <Flavor locale="en_US">We need melee fighters for defense.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Jetzt kannst du Nahkämpfer in deiner Festung ausbilden.</RewardFlavor>
-  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <RewardFlavor locale="en_US">Now you can train melee fighters in your fortress.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_fortress</FinishQuestTrigger>
@@ -2113,22 +1889,18 @@
 </Quest>
 
 <Quest id="quest_fortress_fortification_lvl5" type="optional" advisor="chef">
-  <Name>Fortress fortification level 5</Name>
-  <Name locale="de_DE">Festungsanlage Level 5</Name>
-  <Task>Built a fortress fortification level 5.</Task>
+  <Name>Improve Fortress fortification</Name>
+  <Name locale="de_DE">Festungsanlagen verbessern</Name>
+  <Task>Upgrade the fortification to level 5.</Task>
   <Task locale="de_DE">Verbessere die Festungsanlagen auf Level 5.</Task>
-  <Description locale="de_DE">
-    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Mit dem Ausbau der Festungsanlagen steigt der Kampfbonus.</Flavor>
-  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <Flavor locale="en_US">Upgrading the fortification increases the combat bonus.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Jetzt kannst Du das Werfer Gelände bauen.</RewardFlavor>
-  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <RewardFlavor locale="en_US">Now you can build throwing grounds.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_infantry_tower</FinishQuestTrigger>
@@ -2147,21 +1919,17 @@
 
 <Quest id="quest_artillery_tower" type="optional" advisor="chef">
   <Name>Artillery tower</Name>
-  <Name locale="de_DE">Werfer Gelände</Name>
-  <Task>Built an infantry tower.</Task>
+  <Name locale="de_DE">Werfer Gelände errichten</Name>
+  <Task>Build throwing grounds in your fortress.</Task>
   <Task locale="de_DE">Baue ein Werfer Gelände in deiner Festung.</Task>
-  <Description locale="de_DE">
-    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Fernkampf ist das einzieg wahre. Weit weg und doch tödlich.</Flavor>
-  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <Flavor locale="en_US">Ranged fighting is the one and only. Far away but still deadly.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Der weitere Ausbau beschleunigt die Ausbildung der Fernkämpfer.</RewardFlavor>
-  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <RewardFlavor locale="en_US">Further upgrading increases the building speed of ranged fighters.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_fortress_fortification_lvl5</FinishQuestTrigger>
@@ -2177,16 +1945,12 @@
 </Quest>
 
 <Quest id="quest_fortress_fortification_lvl7" type="optional" advisor="chef">
-  <Name>Fortress fortification level 7</Name>
-  <Name locale="de_DE">Festungsanlage Level 7</Name>
-  <Task>Built a fortress fortification level 7.</Task>
+  <Name>Improve Fortress fortification</Name>
+  <Name locale="de_DE">Festungsanlagen verbessern</Name>
+  <Task>Upgrade the fortification to level 7.</Task>
   <Task locale="de_DE">Verbessere die Festungsanlagen auf Level 7.</Task>
-  <Description locale="de_DE">
-    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Bald ist unsere Festung uneinnehmbar!</Flavor>
   <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
   <RewardText locale="de_DE"></RewardText>
@@ -2212,20 +1976,16 @@
 <Quest id="quest_cavalry_tower" type="optional" advisor="chef">
   <Name>Cavalry tower</Name>
   <Name locale="de_DE">Reiteranlage errichten</Name>
-  <Task>Built an infantry tower.</Task>
+  <Task>Build cavalry grounds in your fortress.</Task>
   <Task locale="de_DE">Baue eine Reiteranlage in deiner Festung.</Task>
-  <Description locale="de_DE">
-    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Reiter sind schnell. Aber sie stinken auch.</Flavor>
-  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <Flavor locale="en_US">Riders are fast. But they also smell.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Reine Reiterarmeen sind schneller als andere Armeen.</RewardFlavor>
-  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <RewardFlavor locale="en_US">Pure cavalry armies are faster than others.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_fortress_fortification_lvl7</FinishQuestTrigger>
@@ -2246,20 +2006,16 @@
 <Quest id="quest_haunt_lvl6" type="optional" advisor="chef">
   <Name>Haunt level 6</Name>
   <Name locale="de_DE">Versammlungsplatz ausbauen</Name>
-  <Task>Built an infantry tower.</Task>
+  <Task>Upgrade your encampment’s haunt to level 6.</Task>
   <Task locale="de_DE">Verbessere den Versammlungsplatz Deiner Lagerstätte auf Level 6.</Task>
-  <Description locale="de_DE">
-    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Wir brauchen mehr Platz am Feuer für unsere Versammlungen.</Flavor>
-  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <Flavor locale="en_US">We need more space next to the fire for our assemblies.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Du kannst jetzt eins der drei Spezialgebäude bauen. Entscheide Dich weise!</RewardFlavor>
-  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <RewardFlavor locale="en_US">Now you can build one of three special buildings. Decide wisely!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>epic_encampment</FinishQuestTrigger>
@@ -2277,22 +2033,18 @@
 </Quest>
 
 <Quest id="quest_altar" type="optional" advisor="chef">
-  <Name>Haunt level</Name>
+  <Name>Build an altar</Name>
   <Name locale="de_DE">Ritualstein errichten</Name>
-  <Task>Built an infantry tower.</Task>
+  <Task>Choose the altar as special building for your encampment.</Task>
   <Task locale="de_DE">Entscheide dich für das Spezialgebäude Ritualstein in deiner Lagerstätte.</Task>
-  <Description locale="de_DE">
-    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Der Ritualstein schützt Deine Lagerstätte vor feindlichen Übernahmen.</Flavor>
+  <Flavor locale="en_US">The altar protects your encampment from being conquered.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardText locale="en_US">You can edit the tax rate in the fortress. A fortress is another army garrison.</RewardText>
   <RewardFlavor locale="de_DE">Endlich in Sicherheit. Diese Lagerstätte kann von Feinden nicht mehr geklaut werden.</RewardFlavor>
-  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <RewardFlavor locale="en_US">Finally safe. This encampment cannot be stolen by your enemies anymore.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_haunt_lvl6</FinishQuestTrigger>
@@ -2310,21 +2062,17 @@
 </Quest>
 
 <Quest id="quest_field_camp" type="optional" advisor="warrior">
-  <Name>Field camp</Name>
+  <Name>Build Field camp</Name>
   <Name locale="de_DE">Feldlager errichten</Name>
-  <Task>Built an infantry tower.</Task>
+  <Task>Choose the field camp as special building for your encampment.</Task>
   <Task locale="de_DE">Entscheide dich für das Spezialgebäude Feldlager in deiner Lagerstätte.</Task>
-  <Description locale="de_DE">
-    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Das Feldlager stärkt die Armee der Lagerstätte.</Flavor>
-  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <Flavor locale="en_US">The field camp reinforces encampment’s armies.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Das Feldlager vergrößert Deine Armee und liefert auf Level 10 einen zusätzlichen Kommandopunkt.</RewardFlavor>
+  <RewardFlavor locale="de_DE">The field camp extends your armies and on level 10 it will provide another command point.</RewardFlavor>
   <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -2343,22 +2091,18 @@
 </Quest>
 
 <Quest id="quest_trade_center" type="optional" advisor="girl">
-  <Name>Trade center</Name>
+  <Name>Build Trade Center</Name>
   <Name locale="de_DE">Handelsplatz errichten</Name>
-  <Task>Built an infantry tower.</Task>
+  <Task>Choose the trading center as special building for your encampment.</Task>
   <Task locale="de_DE">Entscheide dich für das Spezialgebäude Handelsplatz in deiner Lagerstätte.</Task>
-  <Description locale="de_DE">
-    <p>Um eine Festung in Deinen Besitz zu bringen musst Du die Festung angreifen. Dafür benötigst Du eine große Armee. Du kannst sowohl die Festung im Besitz von Neandertalern als auch von Spielern angreifen. Neandertaler sind dabei nicht nachtragend.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You have to attack the fortress, and to do that you'll need a bigger army. You can attack both neanderthals and other players, but a neanderthal might be a good option for a first attack.</p>
-  </Description>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Der Handelsplatz verbessert die Rohstoffproduktion der Lagerstätte.</Flavor>
-  <Flavor locale="en_US">We need more settlements. A fortress would be the way to go.</Flavor>
+  <Flavor locale="en_US">The trading center increases the encampment’s ressource production.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Mit dem Handelsplatz verbessert sich deine Rohstoffproduktion, läßt Deine Lagerstätte aber fast wehrlos.</RewardFlavor>
-  <RewardFlavor locale="en_US">You conquered a fortress? That´s great!</RewardFlavor>
+  <RewardFlavor locale="en_US">The trading center increases your ressource production, but leaves your encampment nearly unprotected.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_haunt_lvl6</FinishQuestTrigger>
@@ -2383,18 +2127,14 @@
   <Name locale="de_DE">Gegner dezimieren</Name>
   <Task>Defeat 10 units.</Task>
   <Task locale="de_DE">Besiege 10 Einheiten.</Task>
-  <Description locale="de_DE">
-    <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
-  </Description>
-  <Description locale="en_US">
-    <p>You can check how many Units you have already killed by visiting the Ranking.</p>
-  </Description>
-  <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-  <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
+  <Description locale="de_DE"><p></p></Description>
+  <Description locale="en_US"><p></p></Description>
+  <Flavor locale="de_DE">Muhaha, kämpfen heißt leben!</Flavor>
+  <Flavor locale="en_US">Muhaha, fighting means living!</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
-  <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.</RewardFlavor>
+  <RewardFlavor locale="en_US">You receive additional experience for a victorious fight.</RewardFlavor>
   <Triggers>
     <PlayTimeTrigger>1200</PlayTimeTrigger>
     <FinishQuestTriggers>
@@ -2415,18 +2155,14 @@
     <Name locale="de_DE">Gegner dezimieren</Name>
     <Task>Defeat 100 units.</Task>
     <Task locale="de_DE">Besiege 100 Einheiten.</Task>
-    <Description locale="de_DE">
-      <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
-    </Description>
-    <Description locale="en_US">
-      <p>You can check how many Units you have already killed by visiting the Ranking.</p>
-    </Description>
-    <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-    <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
+    <Description locale="de_DE"><p></p></Description>
+    <Description locale="en_US"><p></p></Description>
+    <Flavor locale="de_DE">Muhaha, kämpfen heißt leben!</Flavor>
+    <Flavor locale="en_US">Muhaha, fighting means living!</Flavor>
     <RewardText locale="de_DE"></RewardText>
     <RewardText locale="en_US"></RewardText>
-    <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
-    <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
+    <RewardFlavor locale="de_DE">Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.</RewardFlavor>
+    <RewardFlavor locale="en_US">You receive additional experience for a victorious fight.</RewardFlavor>
     <Triggers>
       <PlayTimeTrigger>7200</PlayTimeTrigger>
       <FinishQuestTriggers>
@@ -2449,18 +2185,14 @@
     <Name locale="de_DE">Gegner dezimieren</Name>
     <Task>Defeat 250 units.</Task>
     <Task locale="de_DE">Besiege 250 Einheiten.</Task>
-    <Description locale="de_DE">
-      <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
-    </Description>
-    <Description locale="en_US">
-      <p>You can check how many Units you have already killed by visiting the Ranking.</p>
-    </Description>
-    <Flavor locale="de_DE">Deine Feinde sind stark, ändere das! Vernichte ihre Einheiten. Das wird sie schwächen.</Flavor>
-    <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
+    <Description locale="de_DE"><p></p></Description>
+    <Description locale="en_US"><p></p></Description>
+    <Flavor locale="de_DE">Muhaha, kämpfen heißt leben!</Flavor>
+    <Flavor locale="en_US">Muhaha, fighting means living!</Flavor>
     <RewardText locale="de_DE"></RewardText>
     <RewardText locale="en_US"></RewardText>
-    <RewardFlavor locale="de_DE">Ha, das gefällt mir. Deine Feinde sind dezimiert und zittern vor Angst, wenn jemand Deinen Namen sagt.</RewardFlavor>
-    <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
+    <RewardFlavor locale="de_DE">Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.</RewardFlavor>
+    <RewardFlavor locale="en_US">You receive additional experience for a victorious fight.</RewardFlavor>
     <Triggers>
       <PlayTimeTrigger>14400</PlayTimeTrigger>
       <FinishQuestTriggers>
@@ -2481,20 +2213,16 @@
   <Quest id ="quest_charkills_4" type="optional" advisor="warrior">
     <Name>Decimate enemy units</Name>
     <Name locale="de_DE">Gegner dezimieren</Name>
-    <Task>Defeat 500 units.</Task>
+    <Task>Defeat 500 enemy units.</Task>
     <Task locale="de_DE">Besiege 500 Einheiten.</Task>
-    <Description locale="de_DE">
-      <p>In der Rangliste kannst Du sehen, wie viele Einheiten Du schon besiegt hast.</p>
-    </Description>
-    <Description locale="en_US">
-      <p>You can check how many Units you have already killed by visiting the Ranking.</p>
-    </Description>
+    <Description locale="de_DE"><p></p></Description>
+    <Description locale="en_US"><p></p></Description>
     <Flavor locale="de_DE">Muhaha, kämpfen heißt leben!</Flavor>
-    <Flavor locale="en_US">Your enemies are strong - that has to change! Destroy their units. That will weaken them.</Flavor>
+    <Flavor locale="en_US">Muhaha, fighting means living!</Flavor>
     <RewardText locale="de_DE"></RewardText>
     <RewardText locale="en_US"></RewardText>
     <RewardFlavor locale="de_DE">Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.</RewardFlavor>
-    <RewardFlavor locale="en_US">Things are going extremely well. Your enemies are counting their losses and they cower in fear when someone mentions your name. I like it.</RewardFlavor>
+    <RewardFlavor locale="en_US">You receive additional experience for a victorious fight.</RewardFlavor>
     <Triggers>
       <PlayTimeTrigger>86400</PlayTimeTrigger>
       <FinishQuestTriggers>
