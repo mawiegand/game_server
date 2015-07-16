@@ -222,25 +222,17 @@ class Military::Battle < ActiveRecord::Base
 
   def self.create_battle_between(attacker, defender)
     rules = GameRules::Rules.the_rules
-    if !attacker.owner.completed_tutorial?
-      battle = Military::Battle.create(
-        :started_at => DateTime.now,
-        :next_round_at => DateTime.now.advance(:seconds => 20), #DateTime.now.advance(:seconds => 60 * 30 ),   # CONFIG
-        :initiator_id => attacker.owner_id,
-        :opponent_id => defender.owner_id,
-        :location_id => attacker.location_id,
-        :region_id => attacker.region_id
-      )
-    else
-      battle = Military::Battle.create(
-        :started_at => DateTime.now,
-        :next_round_at => DateTime.now.advance(:seconds => rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor']), #DateTime.now.advance(:seconds => 60 * 30 ),   # CONFIG
-        :initiator_id => attacker.owner_id,
-        :opponent_id => defender.owner_id,
-        :location_id => attacker.location_id,
-        :region_id => attacker.region_id
-      )
-    end
+
+    round_duration = attacker.owner.completed_tutorial? ? rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor'] : 20
+    
+    battle = Military::Battle.create(
+      :started_at => DateTime.now,
+      :next_round_at => DateTime.now.advance(:seconds => round_duration), #DateTime.now.advance(:seconds => 60 * 30 ),   # CONFIG
+      :initiator_id => attacker.owner_id,
+      :opponent_id => defender.owner_id,
+      :location_id => attacker.location_id,
+      :region_id => attacker.region_id
+    )
 
     faction0 = battle.factions.create(
       :faction_num => 0,
