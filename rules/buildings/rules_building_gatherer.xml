@@ -22,10 +22,12 @@
   <RequirementGroup>
     <Requirement id="building_chief_cottage" min_level="1" />
     <Requirement id="building_gatherer" max_level="0" />
+    <Requirement id="building_fortress_fortification" max_level="0" />
   </RequirementGroup>
   <RequirementGroup> 
     <Requirement id="building_haunt" min_level="1" />
     <Requirement id="building_gatherer" max_level="0" />
+    <Requirement id="building_fortress_fortification" max_level="0" />
   </RequirementGroup>
   <Cost id="resource_stone" round="true">EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+EQUAL(LEVEL,5)*70+EQUAL(LEVEL,6)*150+EQUAL(LEVEL,7)*260+EQUAL(LEVEL,8)*450+EQUAL(LEVEL,9)*750+EQUAL(LEVEL,10)*1200</Cost>
   <Cost id="resource_wood" round="true">EQUAL(LEVEL,1)*1+EQUAL(LEVEL,2)*4+EQUAL(LEVEL,3)*10+EQUAL(LEVEL,4)*30+EQUAL(LEVEL,5)*70+EQUAL(LEVEL,6)*150+EQUAL(LEVEL,7)*260+EQUAL(LEVEL,8)*450+EQUAL(LEVEL,9)*750+EQUAL(LEVEL,10)*1200</Cost>
