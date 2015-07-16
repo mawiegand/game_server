@@ -64,6 +64,9 @@ de:
         retreated: "zurückgezogen"
         survived: "hat überlebt"
         no_units: "keine Einheiten"
+      alliance_character_invite_message:
+        subject: "Allianz Einladung"
+        body: "Der Anführer der Allianz %{alliance_name} hat Dich eingeladen seiner Allianz beizutreten. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Einladung abzulehnen."
       alliance_application_message:
         subject: "Allianz Bewerbung"
         body: "Der Spieler %{name} hat sich bei Deiner Allianz um Aufnahme beworben. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Bewerbung abzulehnen."

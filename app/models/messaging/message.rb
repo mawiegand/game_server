@@ -34,7 +34,8 @@ class Messaging::Message < ActiveRecord::Base
   MESSAGE_TYPE_ARTIFACT_JUMPED    = 15
   MESSAGE_TYPE_ARTIFACT_STOLEN    = 16
   INDIVIDUAL_ANNOUNCEMENT_TYPE_ID = 17
-	ALLIANCE_APPLICATION_ID         = 18
+  ALLIANCE_APPLICATION_ID         = 18
+  ALLIANCE_CHARACTER_INVITE_ID    = 19
 
   scope :system, where(type_id: ANNOUNCEMENT_TYPE_ID)
 
@@ -415,6 +416,19 @@ class Messaging::Message < ActiveRecord::Base
       type_id:      ALLIANCE_APPLICATION_ID,
       subject:      I18n.translate('application.messaging.alliance_application_message.subject', locale: alliance.leader.lang),
       body:         I18n.translate('application.messaging.alliance_application_message.body', locale: alliance.leader.lang, :name => character.name),
+      send_at:      DateTime.now,
+      reported:     false,
+      flag:         0,
+    })
+  end
+
+  def self.generate_alliance_character_invite_message(character, alliance)
+    Messaging::Message.create({
+      sender:       alliance.leader,
+      recipient:    character,
+      type_id:      ALLIANCE_CHARACTER_INVITE_ID,
+      subject:      I18n.translate('application.messaging.alliance_character_invite_message.subject', locale: character.lang),
+      body:         I18n.translate('application.messaging.alliance_character_invite_message.body', locale: character.lang, :alliance_name => alliance.name),
       send_at:      DateTime.now,
       reported:     false,
       flag:         0,
