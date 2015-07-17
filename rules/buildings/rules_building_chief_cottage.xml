@@ -2,7 +2,7 @@
 <!DOCTYPE Rules SYSTEM "../rules.dtd">
 
 <Building id="building_chief_cottage" advisor="chef" group="miscellaneous" category="building_category_large_building" buyable="true" destructable="false" demolishable="false" experienceFactor="6">
-  <Name lang="de_DE">Chef#hütte</Name>
+  <Name lang="de_DE">Chefhütte</Name>
   <Name lang="en_US">Chief's Hut</Name>
   <Description lang="de_DE">
     <p>Die Chefhütte schaltet weitere Bauplätze und neue Gebäude frei.</p>

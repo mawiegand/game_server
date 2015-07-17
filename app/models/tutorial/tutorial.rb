@@ -1208,7 +1208,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Jeder kann deine Truppenbewegungen beobachten!",
+            :de_DE => "Jeder kann deine Bewegungen beobachten!",
   
             :en_US => "Everyone can watch your troop movement!",
                 

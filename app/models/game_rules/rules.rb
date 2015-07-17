@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.3.8
+# Version: 2.3.9
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -125,7 +125,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 3,
-                    :build => 8,
+                    :build => 9,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -2929,14 +2929,14 @@ class GameRules::Rules
   
       :building_types => [  # ALL BUILDING TYPES
 
-        {               #   Chef#hütte
+        {               #   Chefhütte
           :id          => 0, 
           :symbolic_id => :building_chief_cottage,
 					:category    => 4,
           :db_field    => :building_chief_cottage,
           :name        => {
             
-            :de_DE => "Chef#hütte",
+            :de_DE => "Chefhütte",
   
             :en_US => "Chief's Hut",
                 
@@ -3069,7 +3069,7 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Chef#hütte
+        },              #   END OF Chefhütte
         {               #   Sammler
           :id          => 1, 
           :symbolic_id => :building_gatherer,

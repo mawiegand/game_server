@@ -392,7 +392,7 @@
   <Flavor locale="en_US">An army can do more than just stand around, you know. It´s there to destroy the enemies of the tribe!</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Jeder kann deine Truppenbewegungen beobachten!</RewardFlavor>
+  <RewardFlavor locale="de_DE">Jeder kann deine Bewegungen beobachten!</RewardFlavor>
   <RewardFlavor locale="en_US">Everyone can watch your troop movement!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
