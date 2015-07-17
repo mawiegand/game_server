@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="0" build="5" />
+    <Version major="1" minor="0" build="6" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -157,9 +157,9 @@
 
     <!-- 4 --> <!-- Tutorial 5 -->
     <Quest id="quest_build_chiefcottagelvl3" type="epic" advisor="chef" hide_start_dialog="true" tutorial="true">
-    <Name>An even bigger chieftain's hut</Name>
+    <Name>An even bigger chief's hut</Name>
     <Name locale="de_DE">Die Chefhütte</Name>
-    <Task>Upgrade your chieftain's hut to level 3.</Task>
+    <Task>Upgrade your chief's hut to level 3.</Task>
     <Task locale="de_DE">Baue die Chefhütte für einen neuen Bauplatz aus.</Task>
     <Description locale="de_DE"><p></p></Description>
     <Description locale="en_US"><p></p></Description>
@@ -359,7 +359,7 @@
   <Flavor locale="en_US">Those neanderthals sure are cruising for a bruising. </Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Deine Armeen sammeln beim Kämpfen wichtige Erfahrung.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Im Kampf sammelst du wichtige Erfahrung.</RewardFlavor>
   <RewardFlavor locale="en_US">Your armies gather experience through fighting.</RewardFlavor>
   <Triggers>
     <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
@@ -400,8 +400,8 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
-    <ResourceReward resource="resource_stone">110</ResourceReward>
-    <ResourceReward resource="resource_wood">110</ResourceReward>
+    <ResourceReward resource="resource_stone">150</ResourceReward>
+    <ResourceReward resource="resource_wood">150</ResourceReward>
     <ActionPointReward></ActionPointReward>
   </Rewards>
   <RewardTests>
@@ -460,8 +460,8 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
-    <ResourceReward resource="resource_stone">100</ResourceReward>
-    <ResourceReward resource="resource_wood">100</ResourceReward>
+    <ResourceReward resource="resource_stone">250</ResourceReward>
+    <ResourceReward resource="resource_wood">250</ResourceReward>
     <ActionPointReward></ActionPointReward>
   </Rewards>
   <RewardTests>
@@ -496,8 +496,8 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
-    <ResourceReward resource="resource_stone">100</ResourceReward>
-    <ResourceReward resource="resource_wood">100</ResourceReward>
+    <ResourceReward resource="resource_stone">750</ResourceReward>
+    <ResourceReward resource="resource_wood">750</ResourceReward>
     <ResourceReward resource="resource_cash">2</ResourceReward>
   </Rewards>
   <RewardTests>
@@ -506,7 +506,7 @@
 </Quest>
 
 <Subquest id="quest_build_chiefcottagelvl4" epic="epic_ressources" advisor="chef" tutorial="false">
-  <Name>An even bigger chieftain's hut</Name>
+  <Name>An even bigger chief's hut</Name>
   <Name locale="de_DE">Chefhütte ausbauen</Name>
   <Task>Improve your ressource production by upgrading your quarry and logger.</Task>
   <Task locale="de_DE">Verbessere Deine Rohstoffproduktion durch den Ausbau von Steinbruch und Holzfäller.</Task>
@@ -519,8 +519,6 @@
   <RewardFlavor locale="de_DE">Du solltest deine Rohstoffproduktion regelmäßig ausbauen.</RewardFlavor>
   <RewardFlavor locale="en_US">You should upgrade your ressource production continuously.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">200</ResourceReward>
-    <ResourceReward resource="resource_wood">200</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_chief_cottage" min_level="4" />
@@ -543,9 +541,7 @@
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
-  <!-- Requirement quest="quest_found_home_base" / -->
   <Rewards>
-    <ResourceReward resource="resource_stone">250</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_quarry" min_level="1" />
@@ -569,7 +565,6 @@
   <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
   <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_wood">250</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_logger" min_level="1" />
@@ -600,6 +595,8 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
+    <ResourceReward resource="resource_stone">600</ResourceReward>
+    <ResourceReward resource="resource_wood">600</ResourceReward>
     <ProductionBonusReward resource="resource_wood" duration="259200">0.3</ProductionBonusReward>
     <ProductionBonusReward resource="resource_stone" duration="259200">0.3</ProductionBonusReward>
   </Rewards>
@@ -622,8 +619,6 @@
   <RewardFlavor locale="de_DE">Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?</RewardFlavor>
   <RewardFlavor locale="en_US">Hey – that looks much better, don't you think? </RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">200</ResourceReward>
-    <ResourceReward resource="resource_wood">200</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_gatherer" min_level="3" />
@@ -644,7 +639,6 @@
   <RewardFlavor locale="de_DE">So viel Stein, wie toll.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow – that's a lot of stone. Fantastic!</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">400</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_quarry" min_level="3" />
@@ -668,7 +662,6 @@
   <RewardFlavor locale="de_DE">Na, das nenne ich mal Holz vor der Hütte!</RewardFlavor>
   <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_wood">400</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_logger" min_level="3" />
@@ -699,6 +692,8 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
+    <ResourceReward resource="resource_stone">600</ResourceReward>
+    <ResourceReward resource="resource_wood">600</ResourceReward>
     <ResourceReward resource="resource_cash">2</ResourceReward>
     <UnitReward unit="unit_warrior">20</UnitReward>
   </Rewards>
@@ -708,7 +703,7 @@
 </Quest>
 
 <Subquest id="quest_build_chiefcottagelvl5" epic="epic_alliance" advisor="chef" tutorial="false">
-  <Name>An even bigger chieftain's hut</Name>
+  <Name>An even bigger chief's hut</Name>
   <Name locale="de_DE">Chefhütte Level 5</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">Chefhütte ausbauen.</Task>
@@ -721,8 +716,6 @@
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">400</ResourceReward>
-    <ResourceReward resource="resource_wood">400</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_chief_cottage" min_level="5" />
@@ -747,8 +740,6 @@
   <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
   <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">175</ResourceReward>
-    <ResourceReward resource="resource_wood">175</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_campfire" min_level="1" />
@@ -805,8 +796,6 @@
   <RewardFlavor locale="de_DE">Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow, that's some alliance! I'm sure they're going to go far.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">100</ResourceReward>
-    <ResourceReward resource="resource_wood">100</ResourceReward>
   </Rewards>
   <RewardTests>
     <AllianceTest />
@@ -836,6 +825,7 @@
   <Rewards>
     <ResourceReward resource="resource_stone">8000</ResourceReward>
     <ResourceReward resource="resource_wood">8000</ResourceReward>
+    <ResourceReward resource="resource_cash">3</ResourceReward>
   </Rewards>
   <RewardTests>
   </RewardTests>
@@ -855,8 +845,6 @@
   <RewardFlavor locale="de_DE">Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
   <RewardFlavor locale="en_US">At last I have enough space for all my shoe…er, things!</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">325</ResourceReward>
-    <ResourceReward resource="resource_wood">325</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_storage" min_level="1" />
@@ -882,8 +870,6 @@
   <RewardFlavor locale="de_DE">Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
   <RewardFlavor locale="en_US">At last I have enough space for all my shoe…er, things!</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">200</ResourceReward>
-    <ResourceReward resource="resource_wood">200</ResourceReward>
   </Rewards>
   <RewardTests>
     <TradingCartTest direction="outgoing" min_carts_count="1"></TradingCartTest>
@@ -911,6 +897,8 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
+    <ResourceReward resource="resource_stone">750</ResourceReward>
+    <ResourceReward resource="resource_wood">750</ResourceReward>
     <ConstructionBonusReward duration="266400">0.25</ConstructionBonusReward>
   </Rewards>
   <RewardTests>
@@ -918,7 +906,7 @@
 </Quest>
 
 <Subquest id="quest_build_chiefcottagelvl6" epic="epic_cottage" advisor="chef" >
-  <Name>An even bigger chieftain's hut</Name>
+  <Name>An even bigger chief's hut</Name>
   <Name locale="de_DE">Chefhütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">Verringere die Bauzeit aller Gebäude durch den Bau von Kleinen Hütten.</Task>
@@ -931,7 +919,6 @@
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_cash">3</ResourceReward>
   </Rewards>
   <RewardTests>
     <ConstructionQueueTest building="building_chief_cottage" min_level="6" />
@@ -955,8 +942,6 @@
   <RewardFlavor locale="de_DE">Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.</RewardFlavor>
   <RewardFlavor locale="en_US">Isn't it great how much your settlement is growing? I've even managed to persuade the boss to give you something from his huge store of resources.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">500</ResourceReward>
-    <ResourceReward resource="resource_wood">500</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_chief_cottage" min_level="6" />
@@ -977,8 +962,6 @@
   <RewardFlavor locale="de_DE">Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.</RewardFlavor>
   <RewardFlavor locale="en_US">Well done! Your workers are happy and they're building things faster because of it.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">225</ResourceReward>
-    <ResourceReward resource="resource_wood">225</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_cottage" min_level="1" />
@@ -1009,6 +992,9 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
+    <ResourceReward resource="resource_stone">1500</ResourceReward>
+    <ResourceReward resource="resource_wood">1500</ResourceReward>
+    <ExperienceReward>4500</ExperienceReward>
     <ExperienceProductionBonusReward duration="259200">0.1</ExperienceProductionBonusReward>
   </Rewards>
 <RewardTests>
@@ -1016,7 +1002,7 @@
 </Quest>
 
 <Subquest id="quest_build_chiefcottagelvl7" epic="epic_xp" advisor="chef" tutorial="false">
-  <Name>An even bigger chieftain's hut</Name>
+  <Name>An even bigger chief's hut</Name>
   <Name locale="de_DE">Chefhütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">erbessere die Chefhütte auf Level 7.</Task>
@@ -1029,8 +1015,6 @@
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">1500</ResourceReward>
-    <ResourceReward resource="resource_wood">1500</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_chief_cottage" min_level="7" />
@@ -1054,9 +1038,6 @@
   <RewardFlavor locale="de_DE">Ein - zwei, eins - zwei, keine Müdigkeit vortäuschen!</RewardFlavor>
   <RewardFlavor locale="en_US">One and two, one and two! Come on, this is fun!</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">120</ResourceReward>
-    <ResourceReward resource="resource_wood">120</ResourceReward>
-    <ExperienceReward>4500</ExperienceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_training_cave" min_count="1" />
@@ -1084,6 +1065,9 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
+    <ResourceReward resource="resource_stone">10000</ResourceReward>
+    <ResourceReward resource="resource_wood">10000</ResourceReward>
+    <ResourceReward resource="resource_fur">10000</ResourceReward>
     <ExperienceReward>250</ExperienceReward>
     <ProductionBonusReward resource="resource_fur" duration="259200">0.3</ProductionBonusReward>
   </Rewards>
@@ -1092,7 +1076,7 @@
 </Quest>
 
 <Subquest id="quest_build_chiefcottagelvl8" epic="epic_fur" advisor="chef" tutorial="false">
-  <Name>An even bigger chieftain's hut</Name>
+  <Name>An even bigger chief's hut</Name>
   <Name locale="de_DE">Chefhütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">Verbessere die Chefhütte auf Level 8.</Task>
@@ -1105,10 +1089,6 @@
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">10000</ResourceReward>
-    <ResourceReward resource="resource_wood">10000</ResourceReward>
-    <ResourceReward resource="resource_fur">10000</ResourceReward>
-    <ExperienceReward>250</ExperienceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_chief_cottage" min_level="8" />
@@ -1132,7 +1112,6 @@
   <RewardFlavor locale="de_DE">Fell wird vor allem für den Aufbau einer schlagkräftigen Armee benötigt.</RewardFlavor>
   <RewardFlavor locale="en_US">Nice! Now you can build a new army.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_fur">250</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_furrier" min_level="1" />
@@ -1160,7 +1139,10 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
-    <ResourceReward resource="resource_fur">500</ResourceReward>
+    <ResourceReward resource="resource_stone">5000</ResourceReward>
+    <ResourceReward resource="resource_wood">5000</ResourceReward>
+    <ResourceReward resource="resource_fur">2500</ResourceReward>
+    <UnitReward unit="unit_thrower">30</UnitReward>
     <ExperienceReward>500</ExperienceReward>
   </Rewards>
   <RewardTests>
@@ -1168,7 +1150,7 @@
 </Quest>
 
 <Subquest id="quest_build_chiefcottagelvl9" epic="epic_firing_range" advisor="chef" >
-  <Name>An even bigger chieftain's hut</Name>
+  <Name>An even bigger chief's hut</Name>
   <Name locale="de_DE">Chefhütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">Verbessere die Chefhütte auf Level 9.</Task>
@@ -1181,10 +1163,6 @@
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">3000</ResourceReward>
-    <ResourceReward resource="resource_wood">3000</ResourceReward>
-    <ResourceReward resource="resource_fur">1000</ResourceReward>
-    <ExperienceReward>250</ExperienceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_chief_cottage" min_level="9" />
@@ -1205,9 +1183,6 @@
   <RewardFlavor locale="de_DE">Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.</RewardFlavor>
   <RewardFlavor locale="en_US">Muhaha, I don´t like the smell, but the riders know thier business.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">1500</ResourceReward>
-    <ResourceReward resource="resource_wood">3000</ResourceReward>
-    <ResourceReward resource="resource_fur">250</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_firing_range" min_level="1"/>
@@ -1228,11 +1203,6 @@
   <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
   <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">10000</ResourceReward>
-    <ResourceReward resource="resource_wood">10000</ResourceReward>
-    <ResourceReward resource="resource_fur">10000</ResourceReward>
-    <UnitReward unit="unit_thrower">30</UnitReward>
-    <ExperienceReward>250</ExperienceReward>
   </Rewards>
   <RewardTests>
     <TrainingQueueTest unit="unit_thrower" min_count="1" />
@@ -1260,6 +1230,9 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
+    <ResourceReward resource="resource_stone">6000</ResourceReward>
+    <ResourceReward resource="resource_wood">6000</ResourceReward>
+    <ResourceReward resource="resource_fur">4000</ResourceReward>
     <ResourceReward resource="resource_cash">3</ResourceReward>
     <ExperienceReward>1000</ExperienceReward>
   </Rewards>
@@ -1268,7 +1241,7 @@
 </Quest>
 
 <Subquest id="quest_build_chiefcottagelvl10" epic="epic_coppersmelter" advisor="chef" tutorial="false">
-  <Name>An even bigger chieftain's hut</Name>
+  <Name>An even bigger chief's hut</Name>
   <Name locale="de_DE">Chefhütte Level 10</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">Chefhütte ausbauen.</Task>
@@ -1281,10 +1254,6 @@
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
   <RewardFlavor locale="en_US">Great! There are now some more building slots available and you can build a small hut.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">4000</ResourceReward>
-    <ResourceReward resource="resource_wood">4000</ResourceReward>
-    <ResourceReward resource="resource_fur">2500</ResourceReward>
-    <ExperienceReward>500</ExperienceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_chief_cottage" min_level="10" />
@@ -1305,10 +1274,6 @@
   <RewardFlavor locale="de_DE">Wow, eine neues Zeitalter! So viele Möglichkeiten.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow, a new age! So many opportunities! </RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">3000</ResourceReward>
-    <ResourceReward resource="resource_wood">3000</ResourceReward>
-    <ResourceReward resource="resource_fur">3000</ResourceReward>
-    <ExperienceReward>1500</ExperienceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_copper_smelter" min_level="1" />
@@ -1335,8 +1300,11 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
-    <ResourceReward resource="resource_fur">1000</ResourceReward>
-    <ExperienceReward>500</ExperienceReward>
+    <ResourceReward resource="resource_stone">5000</ResourceReward>
+    <ResourceReward resource="resource_wood">5000</ResourceReward>
+    <ResourceReward resource="resource_fur">3000</ResourceReward>
+    <UnitReward unit="unit_light_cavalry">30</UnitReward>
+    <ExperienceReward>1500</ExperienceReward>
   </Rewards>
   <RewardTests>
   </RewardTests>
@@ -1356,10 +1324,6 @@
   <RewardFlavor locale="de_DE">Wow, eine neues Zeitalter! So viele Möglichkeiten.</RewardFlavor>
   <RewardFlavor locale="en_US">Wow, a new age! So many opportunities! </RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">3000</ResourceReward>
-    <ResourceReward resource="resource_wood">3000</ResourceReward>
-    <ResourceReward resource="resource_fur">3000</ResourceReward>
-    <ExperienceReward>1500</ExperienceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_copper_smelter" min_level="5" />
@@ -1380,9 +1344,6 @@
   <RewardFlavor locale="de_DE">Muhaha, I don't like the smell, but I've got admit… those riders know what they're doing.</RewardFlavor>
   <RewardFlavor locale="en_US">Muhaha, I don´t like the smell, but the riders know thier business.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">3000</ResourceReward>
-    <ResourceReward resource="resource_wood">1500</ResourceReward>
-    <ResourceReward resource="resource_fur">250</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_stud" min_level="1"/>
@@ -1403,9 +1364,6 @@
   <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
   <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_fur">3000</ResourceReward>
-    <UnitReward unit="unit_light_cavalry">30</UnitReward>
-    <ExperienceReward>500</ExperienceReward>
   </Rewards>
   <RewardTests>
     <TrainingQueueTest unit="unit_light_cavalry" min_count="1" />
@@ -1431,6 +1389,9 @@
   <MundaneRankTrigger>2</MundaneRankTrigger>
   </Triggers>
   <Rewards>
+    <ResourceReward resource="resource_stone">2000</ResourceReward>
+    <ResourceReward resource="resource_wood">2000</ResourceReward>
+    <ResourceReward resource="resource_fur">1000</ResourceReward>
     <ResourceReward resource="resource_cash">2</ResourceReward>
     <ExperienceReward>1000</ExperienceReward>
   </Rewards>
@@ -1453,8 +1414,6 @@
   <RewardFlavor locale="de_DE">Ach, wie das Feuer knistert. So schön warm.</RewardFlavor>
   <RewardFlavor locale="en_US">Oh, listen to the fire crackling! Lovely warm flames!</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">1000</ResourceReward>
-    <ResourceReward resource="resource_wood">1000</ResourceReward>
   </Rewards>
   <RewardTests>
     <BuildingTest building="building_campfire" min_level="10" />
@@ -1475,8 +1434,6 @@
   <RewardFlavor locale="de_DE">Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.</RewardFlavor>
   <RewardFlavor locale="en_US">Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_fur">500</ResourceReward>
-    <ExperienceReward>500</ExperienceReward>
   </Rewards>
   <RewardTests>
     <TrainingQueueTest unit="unit_little_chief" min_count="1" />
@@ -1497,10 +1454,6 @@
   <RewardFlavor locale="de_DE">Du hast eine Lagerstätte gegründet? Brauchst Du immer so lange für einfache Aufgaben? Hier, nimm die Rohstoffe und geh mir aus den Augen.</RewardFlavor>
   <RewardFlavor locale="en_US">You've started an encampment? Do you always take this long to complete a simple task? Here – take the raw materials and get lost.</RewardFlavor>
   <Rewards>
-    <ResourceReward resource="resource_stone">500</ResourceReward>
-    <ResourceReward resource="resource_wood">500</ResourceReward>
-    <ResourceReward resource="resource_fur">500</ResourceReward>
-    <ExperienceReward>1000</ExperienceReward>
   </Rewards>
   <RewardTests>
     <SettlementTest type="settlement_outpost" min_count="1" />

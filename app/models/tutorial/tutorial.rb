@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.0.5
+# Version: 1.0.6
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 1, 
         :minor => 0, 
-        :build => 5, 
+        :build => 6, 
       },
       
       :production_test_weights => {
@@ -533,14 +533,14 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "An even bigger chieftain's hut",
+            :en_US => "An even bigger chief's hut",
   
             :de_DE => "Die Chefhütte",
                 
           },
           :task => {
             
-            :en_US => "Upgrade your chieftain's hut to level 3.",
+            :en_US => "Upgrade your chief's hut to level 3.",
   
             :de_DE => "Baue die Chefhütte für einen neuen Bauplatz aus.",
                 
@@ -1112,7 +1112,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Deine Armeen sammeln beim Kämpfen wichtige Erfahrung.",
+            :de_DE => "Im Kampf sammelst du wichtige Erfahrung.",
   
             :en_US => "Your armies gather experience through fighting.",
                 
@@ -1239,12 +1239,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 110,
+                :amount => 150,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 110,
+                :amount => 150,
               },
 
             ],
@@ -1370,12 +1370,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 250,
               },
 
             ],
@@ -1473,12 +1473,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 100,
+                :amount => 750,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 100,
+                :amount => 750,
               },
 
               {
@@ -1514,7 +1514,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "An even bigger chieftain's hut",
+            :en_US => "An even bigger chief's hut",
   
             :de_DE => "Chefhütte ausbauen",
                 
@@ -1557,20 +1557,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 200,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 200,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -1653,15 +1639,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 250,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -1744,15 +1721,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_wood,
-                :amount => 250,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -1849,6 +1817,20 @@ class Tutorial::Tutorial
 
           :rewards => {
             
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 600,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 600,
+              },
+
+            ],
+
             :production_bonus_rewards => [
               
               {
@@ -1934,20 +1916,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 200,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 200,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -2028,15 +1996,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 400,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -2119,15 +2078,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_wood,
-                :amount => 400,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -2227,6 +2177,16 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
+                :resource => :resource_stone,
+                :amount => 600,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 600,
+              },
+
+              {
                 :resource => :resource_cash,
                 :amount => 2,
               },
@@ -2268,7 +2228,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "An even bigger chieftain's hut",
+            :en_US => "An even bigger chief's hut",
   
             :de_DE => "Chefhütte Level 5",
                 
@@ -2311,20 +2271,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 400,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 400,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -2408,20 +2354,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 175,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 175,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -2543,20 +2475,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 100,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 100,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -2652,6 +2570,11 @@ class Tutorial::Tutorial
                 :amount => 8000,
               },
 
+              {
+                :resource => :resource_cash,
+                :amount => 3,
+              },
+
             ],
 
           },          
@@ -2721,20 +2644,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 325,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 325,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -2817,20 +2726,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 200,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 200,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -2921,6 +2816,20 @@ class Tutorial::Tutorial
 
           :rewards => {
             
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 750,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 750,
+              },
+
+            ],
+
             :construction_bonus_rewards => [
               
               {
@@ -2954,7 +2863,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "An even bigger chieftain's hut",
+            :en_US => "An even bigger chief's hut",
   
             :de_DE => "Chefhütte ausbauen",
                 
@@ -2997,15 +2906,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_cash,
-                :amount => 3,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -3085,20 +2985,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 500,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 500,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -3179,20 +3065,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 225,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 225,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -3289,6 +3161,22 @@ class Tutorial::Tutorial
 
           :rewards => {
             
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1500,
+              },
+
+            ],
+
+            :experience_reward => 4500,
+
             :experience_production_bonus_rewards => [
               
               {
@@ -3322,7 +3210,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "An even bigger chieftain's hut",
+            :en_US => "An even bigger chief's hut",
   
             :de_DE => "Chefhütte ausbauen",
                 
@@ -3365,20 +3253,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 1500,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 1500,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -3461,22 +3335,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 120,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 120,
-              },
-
-            ],
-
-            :experience_reward => 4500,
-
           },          
 
           :reward_tests => {
@@ -3571,6 +3429,25 @@ class Tutorial::Tutorial
 
           :rewards => {
             
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 10000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 10000,
+              },
+
+            ],
+
             :experience_reward => 250,
 
             :production_bonus_rewards => [
@@ -3607,7 +3484,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "An even bigger chieftain's hut",
+            :en_US => "An even bigger chief's hut",
   
             :de_DE => "Chefhütte ausbauen",
                 
@@ -3650,27 +3527,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 10000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 10000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 10000,
-              },
-
-            ],
-
-            :experience_reward => 250,
-
           },          
 
           :reward_tests => {
@@ -3753,15 +3609,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_fur,
-                :amount => 250,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -3859,8 +3706,27 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
+                :resource => :resource_stone,
+                :amount => 5000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 5000,
+              },
+
+              {
                 :resource => :resource_fur,
-                :amount => 500,
+                :amount => 2500,
+              },
+
+            ],
+
+            :unit_rewards => [
+
+              {
+                :unit => :unit_thrower,
+                :amount => 30,
               },
 
             ],
@@ -3891,7 +3757,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "An even bigger chieftain's hut",
+            :en_US => "An even bigger chief's hut",
   
             :de_DE => "Chefhütte ausbauen",
                 
@@ -3934,27 +3800,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 1000,
-              },
-
-            ],
-
-            :experience_reward => 250,
-
           },          
 
           :reward_tests => {
@@ -4035,25 +3880,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 1500,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 250,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -4134,36 +3960,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 10000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 10000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 10000,
-              },
-
-            ],
-
-            :unit_rewards => [
-
-              {
-                :unit => :unit_thrower,
-                :amount => 30,
-              },
-
-            ],
-
-            :experience_reward => 250,
-
           },          
 
           :reward_tests => {
@@ -4257,6 +4053,21 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
+                :resource => :resource_stone,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 6000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4000,
+              },
+
+              {
                 :resource => :resource_cash,
                 :amount => 3,
               },
@@ -4289,7 +4100,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "An even bigger chieftain's hut",
+            :en_US => "An even bigger chief's hut",
   
             :de_DE => "Chefhütte Level 10",
                 
@@ -4332,27 +4143,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 4000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 4000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 2500,
-              },
-
-            ],
-
-            :experience_reward => 500,
-
           },          
 
           :reward_tests => {
@@ -4433,27 +4223,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 3000,
-              },
-
-            ],
-
-            :experience_reward => 1500,
-
           },          
 
           :reward_tests => {
@@ -4551,13 +4320,32 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
+                :resource => :resource_stone,
+                :amount => 5000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 5000,
+              },
+
+              {
                 :resource => :resource_fur,
-                :amount => 1000,
+                :amount => 3000,
               },
 
             ],
 
-            :experience_reward => 500,
+            :unit_rewards => [
+
+              {
+                :unit => :unit_light_cavalry,
+                :amount => 30,
+              },
+
+            ],
+
+            :experience_reward => 1500,
 
           },          
 
@@ -4626,27 +4414,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 3000,
-              },
-
-            ],
-
-            :experience_reward => 1500,
-
           },          
 
           :reward_tests => {
@@ -4727,25 +4494,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 3000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 1500,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 250,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -4826,26 +4574,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_fur,
-                :amount => 3000,
-              },
-
-            ],
-
-            :unit_rewards => [
-
-              {
-                :unit => :unit_light_cavalry,
-                :amount => 30,
-              },
-
-            ],
-
-            :experience_reward => 500,
-
           },          
 
           :reward_tests => {
@@ -4933,6 +4661,21 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
+                :resource => :resource_stone,
+                :amount => 2000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 2000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 1000,
+              },
+
+              {
                 :resource => :resource_cash,
                 :amount => 2,
               },
@@ -5009,20 +4752,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 1000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 1000,
-              },
-
-            ],
-
           },          
 
           :reward_tests => {
@@ -5103,17 +4832,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_fur,
-                :amount => 500,
-              },
-
-            ],
-
-            :experience_reward => 500,
-
           },          
 
           :reward_tests => {
@@ -5190,27 +4908,6 @@ class Tutorial::Tutorial
 
           :rewards => {
             
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 500,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 500,
-              },
-
-              {
-                :resource => :resource_fur,
-                :amount => 500,
-              },
-
-            ],
-
-            :experience_reward => 1000,
-
           },          
 
           :reward_tests => {
