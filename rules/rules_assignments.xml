@@ -140,12 +140,12 @@
       <p>All you wanted to do was relax with a drink, but then they had to go and make you work. At least they're paying for your drinks. Because to be frank, you're going to need a hell of a lot of drinks to forget about this skinning business.</p>
     </Description>
     
-    <Cost id="resource_stone">0.1*PRODUCTION</Cost>
-    <Cost id="resource_wood">0.1*PRODUCTION</Cost>
-    <Cost id="resource_fur">0.05*PRODUCTION</Cost>
+    <Cost id="resource_stone">250</Cost>
+    <Cost id="resource_wood">250</Cost>
+    <Cost id="resource_fur">500</Cost>
     
     <Rewards>
-      <ConstructionBonusReward duration="16">0.15</ConstructionBonusReward>
+      <ConstructionBonusReward duration="12">0.10</ConstructionBonusReward>
     </Rewards>
     
     <Duration>129600</Duration>
