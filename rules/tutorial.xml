@@ -40,7 +40,7 @@
       <Description locale="de_DE"><p></p></Description>
       <Description locale="en_US"><p></p></Description>
       <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
-      <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
+      <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great?</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"></RewardText>
       <RewardFlavor locale="de_DE">Sehr gut! Jetzt kann der Ausbau losgehen.</RewardFlavor>
@@ -63,18 +63,18 @@
     
     <!-- 1 --> <!-- Tutorial 2 -->
     <Quest id="quest_build_chiefcottagelvl2" type="epic" advisor="chef" hide_start_dialog="true" tutorial="true">
-      <Name>Upgrade the chieftan's hut</Name>
-      <Name locale="de_DE">Ausbau der Häuptlingshütte</Name>
+      <Name>Upgrade chief's hut</Name>
+      <Name locale="de_DE">Die Chefhütte</Name>
       <Task>Upgrade your chieftain’s hut to level 2.</Task>
-      <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 2 aus.</Task>
+      <Task locale="de_DE">Baue deine Chefhütte auf Level 2 aus.</Task>
       <Description locale="de_DE"><p></p></Description>
       <Description locale="en_US"><p></p></Description>
-      <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort!</Flavor>
+      <Flavor locale="de_DE">Halbgott? Und was soll das da sein? Meine Chefhütte? Da kann ja niemand drin leben! Ändere das sofort!</Flavor>
       <Flavor locale="en_US">Demigod?! I don´t think so. Look at my chieftan´s hut! You think I´m going to live in that? Ha! Change it immediately!</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"></RewardText>
-      <RewardFlavor locale="de_DE">Weiter so! Schließlich braucht man Platz zum Herrschen.</RewardFlavor>
-      <RewardFlavor locale="en_US">Go on! Finally it  needs space to rule.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Endlich ein Platz zum Herrschen.</RewardFlavor>
+      <RewardFlavor locale="en_US">Finally a space to rule.</RewardFlavor>
       <Triggers>
         <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
         <FinishQuestTriggers>
@@ -137,8 +137,8 @@
       <Flavor locale="en_US">Pull up those sleeves, looks like we got work to do.</Flavor>
       <RewardText locale="de_DE"></RewardText>
       <RewardText locale="en_US"></RewardText>
-      <RewardFlavor locale="de_DE">Mit Aufträgen kannst du ein paar extra Rohstoffe  verdienen.</RewardFlavor>
-      <RewardFlavor locale="en_US">You can earn some additional resources through assignments.</RewardFlavor>
+      <RewardFlavor locale="de_DE">Mit Aufträgen verdienst du ein paar extra Rohstoffe.</RewardFlavor>
+      <RewardFlavor locale="en_US">Earn some additional resources through assignments.</RewardFlavor>
       <Triggers>
         <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
         <FinishQuestTriggers>
@@ -158,17 +158,17 @@
     <!-- 4 --> <!-- Tutorial 5 -->
     <Quest id="quest_build_chiefcottagelvl3" type="epic" advisor="chef" hide_start_dialog="true" tutorial="true">
     <Name>An even bigger chieftain's hut</Name>
-    <Name locale="de_DE">Die Häuptlingshütte</Name>
+    <Name locale="de_DE">Die Chefhütte</Name>
     <Task>Upgrade your chieftain's hut to level 3.</Task>
-    <Task locale="de_DE">Baue deine Häuptlingshütte auf Level 3 für einen neuen Bauplatz aus.</Task>
+    <Task locale="de_DE">Baue die Chefhütte für einen neuen Bauplatz aus.</Task>
     <Description locale="de_DE"><p></p></Description>
     <Description locale="en_US"><p></p></Description>
-    <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
-    <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
+    <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.</Flavor>
+    <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.</Flavor>
     <RewardText locale="de_DE"></RewardText>
     <RewardText locale="en_US"></RewardText>
-    <RewardFlavor locale="de_DE">Der Ausbau der Häuptlingshütte schaltet neue Bauplätze frei.</RewardFlavor>
-    <RewardFlavor locale="en_US">Upgrading the chieftain’s hut unlocks new building spots.</RewardFlavor>
+    <RewardFlavor locale="de_DE">Die Chefhütte schaltet neue Bauplätze frei.</RewardFlavor>
+    <RewardFlavor locale="en_US">The chieftain’s hut unlocks new building spots.</RewardFlavor>
     <Triggers>
       <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
       <FinishQuestTriggers>
@@ -227,14 +227,14 @@
   <Name>Training Grounds</Name>
   <Name locale="de_DE">Ausbildungsgelände</Name>
   <Task>Build training grounds.</Task>
-  <Task locale="de_DE">Baue ein Ausbildungsgelände.</Task>
+  <Task locale="de_DE">Baue auf dem freien Bauplatz ein Ausbildungsgelände.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Du kannst ein Ausbildungsgelände bauen, machst es aber nicht? Bau sofort eins und ich gebe Dir etwas aus meiner Schatzkiste.</Flavor>
   <Flavor locale="en_US">You can build a Training Grounds but you're not doing it? If you build one now, I´ll give you something from my treasure chest.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Baue das Ausbildungsgelände aus, um Nahkämpfer schneller zu trainieren.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Der Ausbau beschleunigt die Ausbildung der Nahkämpfer.</RewardFlavor>
   <RewardFlavor locale="en_US">Upgrade your training grounds to increase the training speed for melee units.</RewardFlavor>
   <Triggers>
     <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
@@ -259,15 +259,15 @@
   <Name>Your first unit</Name>
   <Name locale="de_DE">Deine erste Einheit</Name>
   <Task>Train a warrior.</Task>
-  <Task locale="de_DE">Bilde einen Krieger aus.</Task>
+  <Task locale="de_DE">Bilde im Ausbildungsgelände einen Krieger aus.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.</Flavor>
   <Flavor locale="en_US">What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Du kannst mehrere Einheiten auf einmal in Auftrag geben. Sie werden dann nacheinander ausgebildet.</RewardFlavor>
-  <RewardFlavor locale="en_US">You can order several units at once. They will be trained one after another.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Mehrere Einheiten werden nacheinander ausgebildet.</RewardFlavor>
+  <RewardFlavor locale="en_US">Several units will be trained one after another.</RewardFlavor>
   <Triggers>
     <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
     <FinishQuestTriggers>
@@ -319,7 +319,7 @@
   <Name>Your first army</Name>
   <Name locale="de_DE">Deine erste Armee</Name>
   <Task>Assemble an army.</Task>
-  <Task locale="de_DE">Stelle eine Armee auf.</Task>
+  <Task locale="de_DE">Stelle deine erste Armee auf.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Um Einheiten zu bewegen, müssen sie aus der Garnison in eine Armee verschoben werden.</Flavor>
@@ -392,8 +392,8 @@
   <Flavor locale="en_US">An army can do more than just stand around, you know. It´s there to destroy the enemies of the tribe!</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Denke daran, dass jeder deine Truppenbewegungen beobachten kann!</RewardFlavor>
-  <RewardFlavor locale="en_US">Keep in mind that everyone can watch your troop movement!</RewardFlavor>
+  <RewardFlavor locale="de_DE">Jeder kann deine Truppenbewegungen beobachten!</RewardFlavor>
+  <RewardFlavor locale="en_US">Everyone can watch your troop movement!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_npc_battle</FinishQuestTrigger>
@@ -451,8 +451,8 @@
   <Flavor locale="en_US">Can't find your settlement? It's quite easy, if you'll let me explain.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Hurra! Du kennst jetzt die Grundlagen. Drücke der Steinzeit deinen Stempel auf!</RewardFlavor>
-  <RewardFlavor locale="en_US">Yeah! Now you know the basics. Put your stamp on the Stone Age!</RewardFlavor>
+  <RewardFlavor locale="de_DE">Hurra! Drücke der Steinzeit deinen Stempel auf!</RewardFlavor>
+  <RewardFlavor locale="en_US">Yeah! Put your stamp on the Stone Age!</RewardFlavor>
   <Triggers>
     <!-- For tutorial quests here are only FinishQuestTrigger allowed -->
     <FinishQuestTriggers>
@@ -507,7 +507,7 @@
 
 <Subquest id="quest_build_chiefcottagelvl4" epic="epic_ressources" advisor="chef" tutorial="false">
   <Name>An even bigger chieftain's hut</Name>
-  <Name locale="de_DE">Häuptlingshütte ausbauen</Name>
+  <Name locale="de_DE">Chefhütte ausbauen</Name>
   <Task>Improve your ressource production by upgrading your quarry and logger.</Task>
   <Task locale="de_DE">Verbessere Deine Rohstoffproduktion durch den Ausbau von Steinbruch und Holzfäller.</Task>
   <Description locale="de_DE"><p></p></Description>
@@ -709,13 +709,13 @@
 
 <Subquest id="quest_build_chiefcottagelvl5" epic="epic_alliance" advisor="chef" tutorial="false">
   <Name>An even bigger chieftain's hut</Name>
-  <Name locale="de_DE">Häuptlingshütte Level 5</Name>
+  <Name locale="de_DE">Chefhütte Level 5</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
-  <Task locale="de_DE">Häuptlingshütte ausbauen.</Task>
+  <Task locale="de_DE">Chefhütte ausbauen.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
-  <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
-  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
+  <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.</Flavor>
+  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
@@ -826,8 +826,8 @@
   <Flavor locale="en_US">We shouldn’t leave the trading only in the Amazon’s discretion.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Jede Handelsbewegung dauert eine Stunde. Größere Lager bedeuten auch mehr Karren.</RewardFlavor>
-  <RewardFlavor locale="en_US">Every trade movement takes one hour. Bigger storages mean even more carts.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Jede Handelsbewegung dauert eine Stunde.</RewardFlavor>
+  <RewardFlavor locale="en_US">Every trade movement takes one hour.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>epic_alliance</FinishQuestTrigger>
@@ -919,13 +919,13 @@
 
 <Subquest id="quest_build_chiefcottagelvl6" epic="epic_cottage" advisor="chef" >
   <Name>An even bigger chieftain's hut</Name>
-  <Name locale="de_DE">Häuptlingshütte ausbauen</Name>
+  <Name locale="de_DE">Chefhütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
   <Task locale="de_DE">Verringere die Bauzeit aller Gebäude durch den Bau von Kleinen Hütten.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Gut erholt arbeitet selbst der faulste Arbeiter schneller.</Flavor>
-  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
+  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
@@ -944,7 +944,7 @@
 <Subquest id="quest_finish_upgrade" epic="epic_cottage" advisor="girl" >
   <Name>Finish upgrade</Name>
   <Name locale="de_DE">Ausbau abschließen</Name>
-  <Task>Finish the upgrade of the chieftan's hut.</Task>
+  <Task>Finish the upgrade of the chief's hut.</Task>
   <Task locale="de_DE">Schließe den Ausbau sofort mit einer Kröte ab.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
@@ -1017,13 +1017,13 @@
 
 <Subquest id="quest_build_chiefcottagelvl7" epic="epic_xp" advisor="chef" tutorial="false">
   <Name>An even bigger chieftain's hut</Name>
-  <Name locale="de_DE">Häuptlingshütte ausbauen</Name>
+  <Name locale="de_DE">Chefhütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
-  <Task locale="de_DE">erbessere die Häuptlingshütte auf Level 7.</Task>
+  <Task locale="de_DE">erbessere die Chefhütte auf Level 7.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
-  <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
-  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
+  <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.</Flavor>
+  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
@@ -1093,13 +1093,13 @@
 
 <Subquest id="quest_build_chiefcottagelvl8" epic="epic_fur" advisor="chef" tutorial="false">
   <Name>An even bigger chieftain's hut</Name>
-  <Name locale="de_DE">Häuptlingshütte ausbauen</Name>
+  <Name locale="de_DE">Chefhütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
-  <Task locale="de_DE">Verbessere die Häuptlingshütte auf Level 8.</Task>
+  <Task locale="de_DE">Verbessere die Chefhütte auf Level 8.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
-  <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
-  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
+  <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.</Flavor>
+  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
@@ -1169,13 +1169,13 @@
 
 <Subquest id="quest_build_chiefcottagelvl9" epic="epic_firing_range" advisor="chef" >
   <Name>An even bigger chieftain's hut</Name>
-  <Name locale="de_DE">Häuptlingshütte ausbauen</Name>
+  <Name locale="de_DE">Chefhütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
-  <Task locale="de_DE">Verbessere die Häuptlingshütte auf Level 9.</Task>
+  <Task locale="de_DE">Verbessere die Chefhütte auf Level 9.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
-  <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
-  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
+  <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.</Flavor>
+  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
@@ -1269,13 +1269,13 @@
 
 <Subquest id="quest_build_chiefcottagelvl10" epic="epic_coppersmelter" advisor="chef" tutorial="false">
   <Name>An even bigger chieftain's hut</Name>
-  <Name locale="de_DE">Häuptlingshütte Level 10</Name>
+  <Name locale="de_DE">Chefhütte Level 10</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
-  <Task locale="de_DE">Häuptlingshütte ausbauen.</Task>
+  <Task locale="de_DE">Chefhütte ausbauen.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
-  <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.</Flavor>
-  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.</Flavor>
+  <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.</Flavor>
+  <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.</RewardFlavor>
