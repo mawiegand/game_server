@@ -305,7 +305,7 @@
       <p>If a bunch of accomplished warriors meet at the tavern, chances are that there's going to be quite a brawl. But once it's all over, and someone has paid for the smashed up furniture, you may just find yourself with some reliable companions.</p>
     </Description>
 
-    <Cost id="resource_fur">0.15*PRODUCTION</Cost>
+    <Cost id="resource_fur">10000</Cost>
     
     <UnitDeposit id="clubbers_3">100</UnitDeposit>
     <UnitDeposit id="thrower_3">100</UnitDeposit>
