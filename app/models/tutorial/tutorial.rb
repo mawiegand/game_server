@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.0.4
+# Version: 1.0.5
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 1, 
         :minor => 0, 
-        :build => 4, 
+        :build => 5, 
       },
       
       :production_test_weights => {
@@ -136,7 +136,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?",
   
-            :en_US => "Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.",
+            :en_US => "Welcome Demigod! Look at your settlement – isn't it great?",
                 
           },
           :description => {
@@ -220,21 +220,21 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Upgrade the chieftan's hut",
+            :en_US => "Upgrade chief's hut",
   
-            :de_DE => "Ausbau der Häuptlingshütte",
+            :de_DE => "Die Chefhütte",
                 
           },
           :task => {
             
             :en_US => "Upgrade your chieftain’s hut to level 2.",
   
-            :de_DE => "Baue deine Häuptlingshütte auf Level 2 aus.",
+            :de_DE => "Baue deine Chefhütte auf Level 2 aus.",
                 
           },
           :flavour => {
             
-            :de_DE => "Halbgott? Und was soll das da sein? Meine Häuptlingshütte? Da kann ja niemand drin leben! Ändere das sofort!",
+            :de_DE => "Halbgott? Und was soll das da sein? Meine Chefhütte? Da kann ja niemand drin leben! Ändere das sofort!",
   
             :en_US => "Demigod?! I don´t think so. Look at my chieftan´s hut! You think I´m going to live in that? Ha! Change it immediately!",
                 
@@ -248,9 +248,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Weiter so! Schließlich braucht man Platz zum Herrschen.",
+            :de_DE => "Endlich ein Platz zum Herrschen.",
   
-            :en_US => "Go on! Finally it  needs space to rule.",
+            :en_US => "Finally a space to rule.",
                 
           },
           :reward_text => {
@@ -464,9 +464,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Mit Aufträgen kannst du ein paar extra Rohstoffe  verdienen.",
+            :de_DE => "Mit Aufträgen verdienst du ein paar extra Rohstoffe.",
   
-            :en_US => "You can earn some additional resources through assignments.",
+            :en_US => "Earn some additional resources through assignments.",
                 
           },
           :reward_text => {
@@ -535,21 +535,21 @@ class Tutorial::Tutorial
             
             :en_US => "An even bigger chieftain's hut",
   
-            :de_DE => "Die Häuptlingshütte",
+            :de_DE => "Die Chefhütte",
                 
           },
           :task => {
             
             :en_US => "Upgrade your chieftain's hut to level 3.",
   
-            :de_DE => "Baue deine Häuptlingshütte auf Level 3 für einen neuen Bauplatz aus.",
+            :de_DE => "Baue die Chefhütte für einen neuen Bauplatz aus.",
                 
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.",
                 
           },
           :description => {
@@ -561,9 +561,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Der Ausbau der Häuptlingshütte schaltet neue Bauplätze frei.",
+            :de_DE => "Die Chefhütte schaltet neue Bauplätze frei.",
   
-            :en_US => "Upgrading the chieftain’s hut unlocks new building spots.",
+            :en_US => "The chieftain’s hut unlocks new building spots.",
                 
           },
           :reward_text => {
@@ -691,7 +691,7 @@ class Tutorial::Tutorial
             
             :en_US => "Build training grounds.",
   
-            :de_DE => "Baue ein Ausbildungsgelände.",
+            :de_DE => "Baue auf dem freien Bauplatz ein Ausbildungsgelände.",
                 
           },
           :flavour => {
@@ -710,7 +710,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Baue das Ausbildungsgelände aus, um Nahkämpfer schneller zu trainieren.",
+            :de_DE => "Der Ausbau beschleunigt die Ausbildung der Nahkämpfer.",
   
             :en_US => "Upgrade your training grounds to increase the training speed for melee units.",
                 
@@ -799,7 +799,7 @@ class Tutorial::Tutorial
             
             :en_US => "Train a warrior.",
   
-            :de_DE => "Bilde einen Krieger aus.",
+            :de_DE => "Bilde im Ausbildungsgelände einen Krieger aus.",
                 
           },
           :flavour => {
@@ -818,9 +818,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Du kannst mehrere Einheiten auf einmal in Auftrag geben. Sie werden dann nacheinander ausgebildet.",
+            :de_DE => "Mehrere Einheiten werden nacheinander ausgebildet.",
   
-            :en_US => "You can order several units at once. They will be trained one after another.",
+            :en_US => "Several units will be trained one after another.",
                 
           },
           :reward_text => {
@@ -992,7 +992,7 @@ class Tutorial::Tutorial
             
             :en_US => "Assemble an army.",
   
-            :de_DE => "Stelle eine Armee auf.",
+            :de_DE => "Stelle deine erste Armee auf.",
                 
           },
           :flavour => {
@@ -1208,9 +1208,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Denke daran, dass jeder deine Truppenbewegungen beobachten kann!",
+            :de_DE => "Jeder kann deine Truppenbewegungen beobachten!",
   
-            :en_US => "Keep in mind that everyone can watch your troop movement!",
+            :en_US => "Everyone can watch your troop movement!",
                 
           },
           :reward_text => {
@@ -1339,9 +1339,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Hurra! Du kennst jetzt die Grundlagen. Drücke der Steinzeit deinen Stempel auf!",
+            :de_DE => "Hurra! Drücke der Steinzeit deinen Stempel auf!",
   
-            :en_US => "Yeah! Now you know the basics. Put your stamp on the Stone Age!",
+            :en_US => "Yeah! Put your stamp on the Stone Age!",
                 
           },
           :reward_text => {
@@ -1516,7 +1516,7 @@ class Tutorial::Tutorial
             
             :en_US => "An even bigger chieftain's hut",
   
-            :de_DE => "Häuptlingshütte ausbauen",
+            :de_DE => "Chefhütte ausbauen",
                 
           },
           :task => {
@@ -2270,21 +2270,21 @@ class Tutorial::Tutorial
             
             :en_US => "An even bigger chieftain's hut",
   
-            :de_DE => "Häuptlingshütte Level 5",
+            :de_DE => "Chefhütte Level 5",
                 
           },
           :task => {
             
             :en_US => "Upgrade Chieftain’s Hut",
   
-            :de_DE => "Häuptlingshütte ausbauen.",
+            :de_DE => "Chefhütte ausbauen.",
                 
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.",
                 
           },
           :description => {
@@ -2611,9 +2611,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Jede Handelsbewegung dauert eine Stunde. Größere Lager bedeuten auch mehr Karren.",
+            :de_DE => "Jede Handelsbewegung dauert eine Stunde.",
   
-            :en_US => "Every trade movement takes one hour. Bigger storages mean even more carts.",
+            :en_US => "Every trade movement takes one hour.",
                 
           },
           :reward_text => {
@@ -2956,7 +2956,7 @@ class Tutorial::Tutorial
             
             :en_US => "An even bigger chieftain's hut",
   
-            :de_DE => "Häuptlingshütte ausbauen",
+            :de_DE => "Chefhütte ausbauen",
                 
           },
           :task => {
@@ -2970,7 +2970,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Gut erholt arbeitet selbst der faulste Arbeiter schneller.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.",
                 
           },
           :description => {
@@ -3049,7 +3049,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Finish the upgrade of the chieftan's hut.",
+            :en_US => "Finish the upgrade of the chief's hut.",
   
             :de_DE => "Schließe den Ausbau sofort mit einer Kröte ab.",
                 
@@ -3324,21 +3324,21 @@ class Tutorial::Tutorial
             
             :en_US => "An even bigger chieftain's hut",
   
-            :de_DE => "Häuptlingshütte ausbauen",
+            :de_DE => "Chefhütte ausbauen",
                 
           },
           :task => {
             
             :en_US => "Upgrade Chieftain’s Hut",
   
-            :de_DE => "erbessere die Häuptlingshütte auf Level 7.",
+            :de_DE => "erbessere die Chefhütte auf Level 7.",
                 
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.",
                 
           },
           :description => {
@@ -3609,21 +3609,21 @@ class Tutorial::Tutorial
             
             :en_US => "An even bigger chieftain's hut",
   
-            :de_DE => "Häuptlingshütte ausbauen",
+            :de_DE => "Chefhütte ausbauen",
                 
           },
           :task => {
             
             :en_US => "Upgrade Chieftain’s Hut",
   
-            :de_DE => "Verbessere die Häuptlingshütte auf Level 8.",
+            :de_DE => "Verbessere die Chefhütte auf Level 8.",
                 
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.",
                 
           },
           :description => {
@@ -3893,21 +3893,21 @@ class Tutorial::Tutorial
             
             :en_US => "An even bigger chieftain's hut",
   
-            :de_DE => "Häuptlingshütte ausbauen",
+            :de_DE => "Chefhütte ausbauen",
                 
           },
           :task => {
             
             :en_US => "Upgrade Chieftain’s Hut",
   
-            :de_DE => "Verbessere die Häuptlingshütte auf Level 9.",
+            :de_DE => "Verbessere die Chefhütte auf Level 9.",
                 
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.",
                 
           },
           :description => {
@@ -4291,21 +4291,21 @@ class Tutorial::Tutorial
             
             :en_US => "An even bigger chieftain's hut",
   
-            :de_DE => "Häuptlingshütte Level 10",
+            :de_DE => "Chefhütte Level 10",
                 
           },
           :task => {
             
             :en_US => "Upgrade Chieftain’s Hut",
   
-            :de_DE => "Häuptlingshütte ausbauen.",
+            :de_DE => "Chefhütte ausbauen.",
                 
           },
           :flavour => {
             
-            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Häuptlingshütte ausbauen um weiterzukommen.",
+            :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chieftan's hut if you want to make some more progress.",
+            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.",
                 
           },
           :description => {

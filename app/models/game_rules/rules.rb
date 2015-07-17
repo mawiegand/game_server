@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.3.5
+# Version: 2.3.6
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -125,7 +125,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 3,
-                    :build => 5,
+                    :build => 6,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -2929,29 +2929,29 @@ class GameRules::Rules
   
       :building_types => [  # ALL BUILDING TYPES
 
-        {               #   Häuptlingshütte
+        {               #   Chef#hütte
           :id          => 0, 
           :symbolic_id => :building_chief_cottage,
 					:category    => 4,
           :db_field    => :building_chief_cottage,
           :name        => {
             
-            :de_DE => "Häuptlingshütte",
+            :de_DE => "Chef#hütte",
   
-            :en_US => "Chieftain's Hut",
+            :en_US => "Chief's Hut",
                 
           },
           :advisor     => "chef",
           :flavour     => {
             
-            :en_US => "<p>Show me your chieftain's hut and I'll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>",
+            :en_US => "<p>Show me your chief's hut and I'll tell you who you are! More buildings, more armies, more glory. Chieftains are pretty predictable.</p>",
   
-            :de_DE => "<p>Zeig mir Deine Häuptlingshütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>",
+            :de_DE => "<p>Zeig mir Deine Chefhütte und ich sag Dir wer Du bist! Mehr Gebäude, mehr Armeen, mehr Glanz. Häuptlinge sind wirklich berechenbar.</p>",
                 
           },
           :description => {
             
-            :de_DE => "<p>Die Häuptlingshütte schaltet weitere Bauplätze und neue Gebäude frei.</p><p>Die Häuptlingshütte liefert jeweils einen Kommandopunkt auf Level 3, 6, 16 und 20.</p>",
+            :de_DE => "<p>Die Chefhütte schaltet weitere Bauplätze und neue Gebäude frei.</p><p>Die Chefhütte liefert jeweils einen Kommandopunkt auf Level 3, 6, 16 und 20.</p>",
   
             :en_US => "<p>Even a halfway fortified settlement will have long had a chieftan's hut. Of course, the chieftan has a little store in his hut for when times get tough. Upgrading the chieftan's hut gives a command point at Levels 2, 6, 16 and 20.</p>",
                 
@@ -3069,7 +3069,7 @@ class GameRules::Rules
 
           },
 
-        },              #   END OF Häuptlingshütte
+        },              #   END OF Chef#hütte
         {               #   Sammler
           :id          => 1, 
           :symbolic_id => :building_gatherer,
