@@ -26,7 +26,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :standard_assignments,  :class_name => "Assignment::StandardAssignment",  :foreign_key => "character_id",  :inverse_of => :character
   has_one  :special_assignment,    :class_name => "Assignment::SpecialAssignment",   :foreign_key => "character_id",  :inverse_of => :character
   has_many :armies,            :class_name => "Military::Army",             :foreign_key => "owner_id",     :inverse_of => :owner
-  has_many :character_specific_npcs, :class_name => "Military::Army",       :foreign_key => "specific_character_id", :inverse_of => :specific_character
+  has_many :poachers,          :class_name => "Military::Army",             :foreign_key => "specific_character_id", :inverse_of => :specific_character
   has_many :locations,         :class_name => "Map::Location",              :foreign_key => "owner_id"
   has_many :regions,           :class_name => "Map::Region",                :foreign_key => "owner_id"
   has_many :alliance_shouts,   :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"

@@ -10,7 +10,7 @@ class Military::Army < ActiveRecord::Base
   
   belongs_to :alliance,           :class_name => "Fundamental::Alliance",            :foreign_key => "alliance_id",            :inverse_of => :armies
   belongs_to :owner,              :class_name => "Fundamental::Character",           :foreign_key => "owner_id",               :inverse_of => :armies
-  belongs_to :specific_character, :class_name => "Fundamental::Character",           :foreign_key => "specific_character_id",  :inverse_of => :character_specific_npcs
+  belongs_to :specific_character, :class_name => "Fundamental::Character",           :foreign_key => "specific_character_id",  :inverse_of => :poachers
   
   has_one    :movement_command,   :class_name => "Action::Military::MoveArmyAction", :foreign_key => "army_id",                :dependent => :destroy
   has_one    :details,            :class_name => "Military::ArmyDetail",             :foreign_key => "army_id",                :dependent => :destroy, :inverse_of => :army
