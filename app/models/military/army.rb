@@ -682,7 +682,7 @@ class Military::Army < ActiveRecord::Base
     npc = Fundamental::Character.find_by_id(1)
     
     army = Military::Army.new({
-      name: I18n.translate('application.military.neanderthal'),
+      name: specific_character.nil? ? I18n.translate('application.military.neanderthal') : I18n.translate('application.military.poacher'),
       ap_max: 4,
       ap_present: 4,
       ap_seconds_per_point: Military::Army.regeneration_base_duration,
