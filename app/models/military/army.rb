@@ -721,6 +721,38 @@ class Military::Army < ActiveRecord::Base
     army.save
     army
   end
+
+  def self.place_poacher_for(character)
+    return if character.nil?
+
+    max_poachers_count = character.settlement_points_total * 2 # TODO: Maybe define formula in rules?
+    poachers_count = character.poachers.count
+
+    if poachers_count < max_poachers_count
+      # calculate placement location
+      placment_probability = Random.rand(0..1.0)
+      if placment_probability <= GAME_SERVER_CONFIG['poacher_home_region_probability']
+        # place poacher in home region
+        location = character.home_location.region.random_location
+      else
+        # place poacher in none home region
+        regions = character.settled_regions
+        location = regions[(Random.rand(regions.count))].random_location
+      end
+
+      # calculate army size
+      character_units_count = character.armies.sum(:size_present)
+      if character_units_count < GAME_SERVER_CONFIG['poacher_character_units_count_limit']
+        character_max_poacher_size = [1, (character_units_count / 2)].max # TODO: Maybe define formula in rules?
+        size = Random.rand(1..character_max_poacher_size)
+      else
+        size = GAME_SERVER_CONFIG['poacher_max_size']
+      end
+
+      # place randomly generated poacher
+      Military::Army.create_npc(location, size, character)
+    end
+  end
   
   # creates a new army. create_action must contain the home location id and the units of the new army.
   def self.create_with_action(create_action)
