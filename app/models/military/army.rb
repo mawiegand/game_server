@@ -806,6 +806,7 @@ class Military::Army < ActiveRecord::Base
     return   unless idle? && !fighting?   # already busy
     return   unless ap_present > 0        # no action points
     return   unless self.artifact.nil?    # has an artifact --> don't move
+    return   if self.is_poacher?          # exclude poachers from ai actions
     
     attack_prob = 0.1
 
