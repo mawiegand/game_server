@@ -376,7 +376,15 @@ class Fundamental::Character < ActiveRecord::Base
   def can_takeover_settlement?
     settlement_point_available?
   end  
-  
+
+  def settled_regions
+    regions = {}
+    self.settlements.each do |settlement|
+      regions[settlement.region_id] = settlement.region
+    end
+
+    return regions.values
+  end
   
   def voted_for_candidate_id
     return nil     if self.alliance_leader_vote.nil?
