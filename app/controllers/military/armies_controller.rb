@@ -135,7 +135,7 @@ class Military::ArmiesController < ApplicationController
   def show
     @military_army = Military::Army.find(params[:id])
     raise NotFoundError.new('Page Not Found') if @military_army.nil? || (@military_army.removed? && !staff?)
-    raise NotFoundError.new('Page Not Found') if api_request? && @military_army.invisible? && @military_army.owner != current_character
+    raise NotFoundError.new('Page Not Found') if api_request? && @military_army.invisible? && !@military_army.is_poacher_of?(current_character) && @military_army.owner != current_character
 
     last_modified =  @military_army.updated_at
 
