@@ -54,7 +54,7 @@ class Military::Army < ActiveRecord::Base
   scope :garrison,             where('(garrison = ?)', true)
   scope :non_garrison,         where('(garrison is null OR garrison = ?)', false)
   scope :visible,              where('invisible = ?', false)
-  scope :visible_to_character, lambda { |character| where('specific_character_id = ? OR owner_id = ? OR (invisible = ? AND specific_character_id IS NULL)', character.id, character.id, false) }
+  scope :visible_to_character, lambda { |character| where('specific_character_id = ? OR owner_id = ? OR invisible = ?', character.id, character.id, false) }
   scope :idle,                 where(mode: MODE_IDLE)
   scope :moving,               where(mode: MODE_MOVING)
   scope :at_least_ap,          lambda { |ap| where(["ap_present >= ?", ap]) }
@@ -322,6 +322,30 @@ class Military::Army < ActiveRecord::Base
     !founder.nil?
   end
 
+  def is_poacher?
+    self.owned_by_npc? && !self.specific_character_id.nil?
+  end
+
+  def is_poacher_of?(character)
+    self.is_poacher? && self.specific_character_id == character.id
+  end
+
+  def is_foreign_poacher_of?(character)
+    self.is_poacher? && self.specific_character_id != character.id
+  end
+
+  def is_fighting_against_poacher?
+    self.fighting? && self.battle.other_faction(self.battle_participant.faction_id).contains_poacher?
+  end
+
+  def visible?
+    !self.invisible
+  end
+
+  def make_visible
+    self.invisible = false
+    self.save
+  end
 
   def move_to_location(target_location)
     self.location = target_location
@@ -672,6 +696,7 @@ class Military::Army < ActiveRecord::Base
       kills: 0,
       victories: 0,
       npc: true,
+      invisible: !specific_character.nil?,
       home_settlement_name: I18n.translate('application.settlement.neanderthal')
     })
     
