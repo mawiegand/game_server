@@ -38,6 +38,7 @@ class Military::Army < ActiveRecord::Base
   after_create   :touch_home_settlement
   after_destroy  :remove_battle_from_settlement
   after_destroy  :touch_home_settlement
+  after_destroy  :check_if_poacher_spawn_event_needs_update
 
     
   after_find :update_ap_if_necessary
@@ -723,36 +724,31 @@ class Military::Army < ActiveRecord::Base
   end
 
   def self.place_poacher_for(character)
-    return if character.nil?
+    return if character.nil? || character.npc
 
-    max_poachers_count = character.settlement_points_total * 2 # TODO: Maybe define formula in rules?
-    poachers_count = character.poachers.count
-
-    if poachers_count < max_poachers_count
-      # calculate placement location
-      placment_probability = Random.rand(0..1.0)
-      if placment_probability <= GAME_SERVER_CONFIG['poacher_home_region_probability']
-        # place poacher in home region
-        location = character.home_location.region.random_location
-      else
-        # place poacher in none home region
-        regions = character.settled_regions
-        location = regions[(Random.rand(regions.count))].random_location
-      end
-
-      # calculate army size
-      character_units_count = character.armies.sum(:size_present)
-      if character_units_count < GAME_SERVER_CONFIG['poacher_character_units_count_limit']
-        character_max_poacher_size = (character_units_count / 2)          # TODO: Maybe define formula in rules?
-        character_min_poacher_size = [1, (character_units_count / 4)].max # TODO: Maybe define formula in rules?
-        size = Random.rand(character_min_poacher_size..character_max_poacher_size)
-      else
-        size = GAME_SERVER_CONFIG['poacher_max_size']
-      end
-
-      # place randomly generated poacher
-      Military::Army.create_npc(location, size, character)
+    # calculate placement location
+    placement_probability = Random.rand(0..1.0)
+    if placement_probability <= GAME_SERVER_CONFIG['poacher_home_region_probability']
+      # place poacher in home region
+      location = character.home_location.region.random_location
+    else
+      # place poacher in none home region
+      regions = character.settled_regions
+      location = regions[(Random.rand(regions.count))].random_location
     end
+
+    # calculate army size
+    character_units_count = character.armies.sum(:size_present)
+    if character_units_count < GAME_SERVER_CONFIG['poacher_character_units_count_limit']
+      character_max_poacher_size = [1, (character_units_count / 2)].max # TODO: Maybe define formula in rules?
+      character_min_poacher_size = [1, (character_units_count / 4)].max # TODO: Maybe define formula in rules?
+      size = Random.rand(character_min_poacher_size..character_max_poacher_size)
+    else
+      size = GAME_SERVER_CONFIG['poacher_max_size']
+    end
+
+    # place randomly generated poacher
+    Military::Army.create_npc(location, size, character)
   end
   
   # creates a new army. create_action must contain the home location id and the units of the new army.
@@ -1095,6 +1091,13 @@ class Military::Army < ActiveRecord::Base
     def touch_home_settlement
       if !self.home.nil?  
         self.home.touch
+      end
+      true
+    end
+
+    def check_if_poacher_spawn_event_needs_update
+      if self.is_poacher? && self.specific_character.new_poacher_spawn_possible? # && new spawn possible
+        self.specific_character.update_spawn_poacher_event
       end
       true
     end

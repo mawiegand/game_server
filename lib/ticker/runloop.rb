@@ -12,6 +12,7 @@ require 'ticker/artifact_initiation_handler'
 require 'ticker/diplomacy_relation_handler'
 require 'ticker/standard_assignment_handler'
 require 'ticker/special_assignment_handler'
+require 'ticker/spawn_poacher_handler'
 require 'exception/http_exceptions'
 
 
@@ -43,6 +44,7 @@ module Ticker
   Ticker.add_handler_class(Ticker::DiplomacyRelationHandler)
   Ticker.add_handler_class(Ticker::StandardAssignmentHandler)
   Ticker.add_handler_class(Ticker::SpecialAssignmentHandler)
+  Ticker.add_handler_class(Ticker::SpawnPoacherHandler)
 
 
   class Runloop
