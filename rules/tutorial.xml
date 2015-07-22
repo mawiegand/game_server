@@ -815,7 +815,7 @@
   <Flavor locale="en_US">We shouldn’t leave the trading only in the Amazon’s discretion.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Jede Handelsbewegung dauert eine Stunde.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Jede Weg der Karren dauert eine Stunde.</RewardFlavor>
   <RewardFlavor locale="en_US">Every trade movement takes one hour.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
@@ -880,7 +880,7 @@
 <!-- EPIC COTTAGE -->
 <Quest id="epic_cottage" type="epic" advisor="chef">
   <Name>Cottage</Name>
-  <Name locale="de_DE">Erhöhe die Baugeschwindigkeit</Name>
+  <Name locale="de_DE">Baugeschwindigkeit</Name>
   <Task>Reduce the construction time for every building through building a Small Hut.</Task>
   <Task locale="de_DE">Verringere die Bauzeit aller Gebäude durch den Bau von Kleinen Hütten.</Task>
   <Description locale="de_DE"><p></p></Description>
@@ -1005,7 +1005,7 @@
   <Name>An even bigger chief's hut</Name>
   <Name locale="de_DE">Chefhütte ausbauen</Name>
   <Task>Upgrade Chieftain’s Hut</Task>
-  <Task locale="de_DE">erbessere die Chefhütte auf Level 7.</Task>
+  <Task locale="de_DE">Verbessere die Chefhütte auf Level 7.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.</Flavor>
@@ -1557,8 +1557,8 @@
   <Task locale="de_DE">Verbessere Deinen Sammler auf das Maximallevel 10.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
-  <Flavor locale="de_DE">Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?</Flavor>
-  <Flavor locale="en_US">Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.</Flavor>
+  <Flavor locale="de_DE">Der Sammler ist wirklich stets bemüht.</Flavor>
+  <Flavor locale="en_US">The gatherer tries really hard.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Der Sammler ist nicht so effektiv wie Steinbruch und Holzfäller.</RewardFlavor>

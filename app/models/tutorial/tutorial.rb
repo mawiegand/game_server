@@ -2529,7 +2529,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Jede Handelsbewegung dauert eine Stunde.",
+            :de_DE => "Jede Weg der Karren dauert eine Stunde.",
   
             :en_US => "Every trade movement takes one hour.",
                 
@@ -2761,7 +2761,7 @@ class Tutorial::Tutorial
             
             :en_US => "Cottage",
   
-            :de_DE => "Erhöhe die Baugeschwindigkeit",
+            :de_DE => "Baugeschwindigkeit",
                 
           },
           :task => {
@@ -3219,7 +3219,7 @@ class Tutorial::Tutorial
             
             :en_US => "Upgrade Chieftain’s Hut",
   
-            :de_DE => "erbessere die Chefhütte auf Level 7.",
+            :de_DE => "Verbessere die Chefhütte auf Level 7.",
                 
           },
           :flavour => {
@@ -5261,9 +5261,9 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?",
+            :de_DE => "Der Sammler ist wirklich stets bemüht.",
   
-            :en_US => "Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.",
+            :en_US => "The gatherer tries really hard.",
                 
           },
           :description => {
