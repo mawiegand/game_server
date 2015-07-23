@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="0" build="7" />
+    <Version major="1" minor="0" build="8" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -1592,7 +1592,7 @@
   <RewardFlavor locale="en_US">Quarries are very effective. Build more quarries!</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
-      <FinishQuestTrigger>quest_build_quarry_lvl10</FinishQuestTrigger>
+      <FinishQuestTrigger>quest_build_quarry_lvl8</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
@@ -1619,7 +1619,7 @@
   <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
-      <FinishQuestTrigger>quest_build_logger_lvl10</FinishQuestTrigger>
+      <FinishQuestTrigger>quest_build_logger_lvl8</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
@@ -1726,7 +1726,7 @@
 
 <Quest id="quest_build_barrackslvl5" type="optional" advisor="warrior">
   <Name>Improve Barracks</Name>
-  <Name locale="de_DE">Ausblidungsgelände verbessern</Name>
+  <Name locale="de_DE">Ausbildungsgelände verbessern</Name>
   <Task>Upgrade the training grounds to level 5.</Task>
   <Task locale="de_DE">Verbessere das Ausbildungsgelände auf Level 5.</Task>
   <Description locale="de_DE"><p></p></Description>
@@ -1802,6 +1802,8 @@
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>epic_xp</FinishQuestTrigger>
+      <FinishQuestTrigger>quest_build_2quarry_lvl4</FinishQuestTrigger>
+      <FinishQuestTrigger>quest_build_2logger_lvl4</FinishQuestTrigger>
     </FinishQuestTriggers>
     <MundaneRankTrigger>1</MundaneRankTrigger>
   </Triggers>

@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.0.7
+# Version: 1.0.8
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 1, 
         :minor => 0, 
-        :build => 7, 
+        :build => 8, 
       },
       
       :production_test_weights => {
@@ -1208,7 +1208,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Jeder kann deine Bewegungen beobachten!",
+            :de_DE => "Jeder kann Deine Bewegungen beobachten!",
   
             :en_US => "Everyone can watch your troop movement!",
                 
@@ -5283,7 +5283,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_quarry_lvl10',
+                :finish_quest_trigger => 'quest_build_quarry_lvl8',
               },
 
             ],
@@ -5386,7 +5386,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_logger_lvl10',
+                :finish_quest_trigger => 'quest_build_logger_lvl8',
               },
 
             ],
@@ -5755,7 +5755,7 @@ class Tutorial::Tutorial
             
             :en_US => "Improve Barracks",
   
-            :de_DE => "Ausblidungsgelände verbessern",
+            :de_DE => "Ausbildungsgelände verbessern",
                 
           },
           :task => {
