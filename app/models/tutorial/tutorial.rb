@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.0.6
+# Version: 1.0.7
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 1, 
         :minor => 0, 
-        :build => 6, 
+        :build => 7, 
       },
       
       :production_test_weights => {
@@ -127,14 +127,14 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a Gatherer. He will prepare the great settlement building",
+            :en_US => "Build a Gatherer. He will prepare the great settlement building.",
   
             :de_DE => "Baue einen Sammler. Er wird den großen Siedlungsbau vorbereiten.",
                 
           },
           :flavour => {
             
-            :de_DE => "Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?",
+            :de_DE => "Willkommen Halbgott! Schau Dir Deine Siedlung an, ist sie nicht wundervoll?",
   
             :en_US => "Welcome Demigod! Look at your settlement – isn't it great?",
                 
@@ -236,7 +236,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Halbgott? Und was soll das da sein? Meine Chefhütte? Da kann ja niemand drin leben! Ändere das sofort!",
   
-            :en_US => "Demigod?! I don´t think so. Look at my chieftan´s hut! You think I´m going to live in that? Ha! Change it immediately!",
+            :en_US => "Demigod?! I don´t think so. Look at my chieftain´s hut! You think I´m going to live in that? Ha! Change it immediately!",
                 
           },
           :description => {
@@ -335,7 +335,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "The warriors need a drink! Build a tavern..",
+            :en_US => "The warriors need a drink! Build a tavern.",
   
             :de_DE => "Die Krieger brauchen was zu trinken! Baue eine Taverne.",
                 
@@ -344,7 +344,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Ein Ort zum trinken? Ganz mein Geschmack.",
   
-            :en_US => "Finally a place where i can have a pint in peace.",
+            :en_US => "Finally a place where I can have a pint in peace.",
                 
           },
           :description => {
@@ -698,7 +698,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Du kannst ein Ausbildungsgelände bauen, machst es aber nicht? Bau sofort eins und ich gebe Dir etwas aus meiner Schatzkiste.",
   
-            :en_US => "You can build a Training Grounds but you're not doing it? If you build one now, I´ll give you something from my treasure chest.",
+            :en_US => "You can build training grounds but you're not doing it? If you build one now, I´ll give you something from my treasure chest.",
                 
           },
           :description => {
@@ -799,14 +799,14 @@ class Tutorial::Tutorial
             
             :en_US => "Train a warrior.",
   
-            :de_DE => "Bilde im Ausbildungsgelände einen Krieger aus.",
+            :de_DE => "Bilde einen Krieger aus.",
                 
           },
           :flavour => {
             
             :de_DE => "Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.",
   
-            :en_US => "What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.",
+            :en_US => "What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will be burned to the ground soon.",
                 
           },
           :description => {
@@ -992,7 +992,7 @@ class Tutorial::Tutorial
             
             :en_US => "Assemble an army.",
   
-            :de_DE => "Stelle deine erste Armee auf.",
+            :de_DE => "Stelle Deine erste Armee auf.",
                 
           },
           :flavour => {
@@ -1196,7 +1196,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Eine Armee kann mehr als nur herumstehen. Sie ist dazu da die Feinde des Stammes zu vernichten.",
   
-            :en_US => "An army can do more than just stand around, you know. It´s there to destroy the enemies of the tribe!",
+            :en_US => "An army can do more than just standing around, you know. It´s there to destroy the tribe's enemies!",
                 
           },
           :description => {
@@ -1327,7 +1327,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Du findest Deine Siedlung nicht mehr? Das ist ganz einfach, ich erklär's Dir. Dann kannst Du es versuchen.",
   
-            :en_US => "Can't find your settlement? It's quite easy, if you'll let me explain.",
+            :en_US => "Can't find your settlement? It's quite easy, if you let me explain.",
                 
           },
           :description => {
@@ -1612,7 +1612,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey cool, Du kannst Steinbrüche bauen.",
   
-            :en_US => "Cool - you can now build quarries.",
+            :en_US => "Cool - Now you can build quarries.",
                 
           },
           :description => {
@@ -1880,16 +1880,16 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Give an order to a Level 3 Hunter Gatherer.",
+            :en_US => "Upgrade your gatherer to Level 3.",
   
             :de_DE => "Baue den Sammler auf Level 3 aus.",
                 
           },
           :flavour => {
             
-            :de_DE => "Willkommen Halbgott. Schau Dir Deine Siedlung an, ist sie nicht wundervoll?",
+            :de_DE => "Mein Halbgott! Schau Dir Deine Siedlung an, ist sie nicht wundervoll?",
   
-            :en_US => "Welcome Demigod! Look at your settlement – isn't it great? A bit empty, though.",
+            :en_US => "My Demigod! Look at your settlement – isn't it great? A bit empty, though.",
                 
           },
           :description => {
@@ -1901,7 +1901,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Hey, der erste Jäger und Sammler ist eingezogen. So sieht es doch schon viel besser aus, findest Du nicht?",
+            :de_DE => "Hey, immer mehr Sammler ziehen ein. So sieht es doch schon viel besser aus, findest Du nicht?",
   
             :en_US => "Hey – that looks much better, don't you think? ",
                 
@@ -2178,17 +2178,17 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 600,
+                :amount => 400,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 600,
+                :amount => 1000,
               },
 
               {
                 :resource => :resource_cash,
-                :amount => 2,
+                :amount => 3,
               },
 
             ],
@@ -2324,9 +2324,9 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben, oder?",
+            :de_DE => "An Lagerfeuern treffen sich die Diplomaten, tauschen Nachrichten aus und schmieden Allianzen. Wäre doch schön, so etwas zu haben oder?",
   
-            :en_US => "Diplomats meet around the campfire to swap messages and forge alliances. It would be great to have someone like that, don't you think?
+            :en_US => "Diplomats meet around the campfire to exchange messages and forge alliances. It would be great to have something like that, don't you think?
   ",
                 
           },
@@ -2446,9 +2446,9 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Werde Mitglied einer Allianz.",
+            :de_DE => "Werde Mitglied einer Allianz. Um eine eigene gründen zu können, musst Du das Lagerfeuer ausbauen.",
   
-            :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
+            :en_US => "Join an alliance. If you want to found your own, you have to upgrade the campfire.",
                 
           },
           :description => {
@@ -2462,7 +2462,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hui, das ist aber eine tolle Allianz. Ich bin sicher, dass Ihr sehr weit kommen werdet.",
   
-            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
+            :en_US => "Wow, that's a great alliance! I'm sure you will make it.",
                 
           },
           :reward_text => {
@@ -2501,16 +2501,16 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Storage",
+            :en_US => "Storage and trading",
   
             :de_DE => "Lager und Handel",
                 
           },
           :task => {
             
-            :en_US => "Improve your storage and trade with other Chiefs.",
+            :en_US => "Improve your storage and trade with the traveling merchant.",
   
-            :de_DE => "Erhöhe die Lagerkapazität und handel mit anderen Häuptlingen.",
+            :de_DE => "Erhöhe die Lagerkapazität und handle mit dem fahrenden Händler.",
                 
           },
           :flavour => {
@@ -2529,9 +2529,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Jede Weg der Karren dauert eine Stunde.",
+            :de_DE => "Für eine kleine Provision teilt der fahrende Händler deine Rohstoffe gleichmäßig auf.",
   
-            :en_US => "Every trade movement takes one hour.",
+            :en_US => "For a little commission the traveling merchant equaly devides your ressources.",
                 
           },
           :reward_text => {
@@ -2562,12 +2562,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 8000,
+                :amount => 800,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 8000,
+                :amount => 800,
               },
 
               {
@@ -2617,7 +2617,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Noch mag der Lagerplatz ausreichen, doch bald wirst Du mehr brauchen. Baue doch bitte ein Rohstofflager, damit wir mehr Platz haben.",
   
-            :en_US => "Doesn't it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!",
+            :en_US => "Doesn't it bug you that your storage capacity is so limited? Why don't you build a raw materials store so we have more space!",
                 
           },
           :description => {
@@ -2697,9 +2697,9 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Tausche Deine Rohstoffe.",
+            :de_DE => "Teile Deine Rohstoffe neu auf.",
   
-            :en_US => "Doesn't it bug you that your storage capacity is so limited? Why not build a raw materials store so we have more space!",
+            :en_US => "Devide your ressources equaly.",
                 
           },
           :description => {
@@ -2759,23 +2759,23 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Cottage",
+            :en_US => "Increase the building speed",
   
-            :de_DE => "Baugeschwindigkeit",
+            :de_DE => "Erhöhe die Baugeschwindigkeit",
                 
           },
           :task => {
             
-            :en_US => "Reduce the construction time for every building through building a Small Hut.",
+            :en_US => "Reduce the construction time for every building through building a small hut.",
   
-            :de_DE => "Verringere die Bauzeit aller Gebäude durch den Bau von Kleinen Hütten.",
+            :de_DE => "Verringere die Bauzeit aller Gebäude durch den Bau einer kleinen Hütte.",
                 
           },
           :flavour => {
             
             :de_DE => "Gut erholt arbeitet selbst der faulste Arbeiter schneller.",
   
-            :en_US => "Even the lazied Worker works faster if he’s freshly regained.",
+            :en_US => "Even the lazied worker works faster if he’s freshly regained.",
                 
           },
           :description => {
@@ -2787,7 +2787,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Mehrere Kleine Hütten verkürzen die Bauzeit noch weiter.",
+            :de_DE => "Mehrere kleine Hütten verkürzen die Bauzeit zusätzlich.",
   
             :en_US => "More Small Huts will reduce the construction time even farer.",
                 
@@ -2872,7 +2872,7 @@ class Tutorial::Tutorial
             
             :en_US => "Upgrade Chieftain’s Hut",
   
-            :de_DE => "Verringere die Bauzeit aller Gebäude durch den Bau von Kleinen Hütten.",
+            :de_DE => "Chefhütte ausbauen.",
                 
           },
           :flavour => {
@@ -2893,7 +2893,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Toll. Wieder ein paar Bauplätze mehr. Und eine kleine Hütte kannst Du jetzt auch bauen.",
   
-            :en_US => "Great! There are now some more building slots available and you can build a small hut.",
+            :en_US => "Great! There are some more building slots available now and you can build a small hut.",
                 
           },
           :reward_text => {
@@ -2972,7 +2972,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Ist es nicht toll, wie Deine Siedlung wächst? Ich habe sogar Chef dazu überreden können, Dir etwas von seinem Rohstoffberg abzugeben.",
   
-            :en_US => "Isn't it great how much your settlement is growing? I've even managed to persuade the boss to give you something from his huge store of resources.",
+            :en_US => "Isn't it great how your settlement grows? I've even managed to persuade the boss to give you something from his huge store of resources.",
                 
           },
           :reward_text => {
@@ -3022,16 +3022,16 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "The small huts",
+            :en_US => "The small hut",
   
-            :de_DE => "Kleinen Hütte errichten",
+            :de_DE => "Kleine Hütte errichten",
                 
           },
           :task => {
             
             :en_US => "Build a small hut.",
   
-            :de_DE => "Baue eine Kleine Hütte.",
+            :de_DE => "Baue eine kleine Hütte.",
                 
           },
           :flavour => {
@@ -3052,7 +3052,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Gut gemacht. Deine Arbeiter freuen sich und bauen schneller.",
   
-            :en_US => "Well done! Your workers are happy and they're building things faster because of it.",
+            :en_US => "Well done! Your workers are happy and build things faster.",
                 
           },
           :reward_text => {
@@ -3113,7 +3113,7 @@ class Tutorial::Tutorial
             
             :en_US => "Collect valuable experience. The Training Cave is the first step.",
   
-            :de_DE => "Sammel wertvolle Erfahrungen. Die Trainingshöhle ist ein erster Schritt.",
+            :de_DE => "Sammle wertvolle Erfahrung. Die Trainingshöhle ist ein erster Schritt.",
                 
           },
           :flavour => {
@@ -3219,14 +3219,14 @@ class Tutorial::Tutorial
             
             :en_US => "Upgrade Chieftain’s Hut",
   
-            :de_DE => "Verbessere die Chefhütte auf Level 7.",
+            :de_DE => "Verbessere die Chefhütte auf Level 7",
                 
           },
           :flavour => {
             
             :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.",
+            :en_US => "Your settlement is coming along nicely, but you'll have to upgrade the chief's hut if you want to make some more progress.",
                 
           },
           :description => {
@@ -3308,7 +3308,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hey Halbgott, sitz da nicht so faul rum. Du musst Deinen Armeen als Vorbild dienen, dafür solltest Du etwas trainieren.",
   
-            :en_US => "Hey Demigod, don't get bored! You need to inspire your armies to be like you, so make sure you  use your training cave to exercise!",
+            :en_US => "Hey Demigod, don't get bored! You need to inspire your armies to be like you, so make sure you use your training cave to exercise!",
                 
           },
           :description => {
@@ -3320,7 +3320,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Ein - zwei, eins - zwei, keine Müdigkeit vortäuschen!",
+            :de_DE => "Eins - zwei, eins - zwei, keine Müdigkeit vortäuschen!",
   
             :en_US => "One and two, one and two! Come on, this is fun!",
                 
@@ -3432,18 +3432,8 @@ class Tutorial::Tutorial
             :resource_rewards => [
 
               {
-                :resource => :resource_stone,
-                :amount => 10000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 10000,
-              },
-
-              {
                 :resource => :resource_fur,
-                :amount => 10000,
+                :amount => 500,
               },
 
             ],
@@ -3500,7 +3490,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.",
+            :en_US => "Your settlement is coming along nicely, but you'll have to upgrade the chief's hut if you want to make some more progress.",
                 
           },
           :description => {
@@ -3573,14 +3563,14 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a furrier.",
+            :en_US => "Build a furrier",
   
-            :de_DE => "Baue einen Kürschner.",
+            :de_DE => "Baue einen Kürschner",
                 
           },
           :flavour => {
             
-            :de_DE => "Chef will die Felle für die Armee Rekrutierung, aber für mich fällt doch bestimmt auch was schönes ab, oder?",
+            :de_DE => "Chef will die Felle für die Armeerekrutierung, aber für mich fällt doch bestimmt auch was schönes ab, oder?",
   
             :en_US => "The chief wants an army, but I'd just like some nice new clothes.",
                 
@@ -3853,7 +3843,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Jetzt fehlen uns nur noch die berittenen Einheiten, um uns auch gegen die gegnerischen Fernkämpfer behaupten zu können.",
   
-            :en_US => "We need a cavalry to defend ourselves against throwers.",
+            :en_US => "We need cavalry to defend ourselves against throwers.",
                 
           },
           :description => {
@@ -3924,7 +3914,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a thrower.",
+            :en_US => "Train a thrower.",
   
             :de_DE => "Bilde einen Kieselsteinwerfer aus.",
                 
@@ -3933,7 +3923,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Hmm? Keine Einheiten weit und breit. Da sollte sich mal jemand drum kümmern, sonst wird diese Siedlung demnächst niedergebrannt.",
   
-            :en_US => "What? Not a unit to be seen anywhere. Someone should pay attention to that or the settlement will soon be burned to the ground.",
+            :en_US => "What? Not a unit to be seen anywhere. Someone should pay attention on that or the settlement will be burned to the ground soon.",
                 
           },
           :description => {
@@ -3947,7 +3937,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.",
   
-            :en_US => "Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.",
+            :en_US => "Everything's always difficult at first. You just have to stick with it. For now, I'll give you some of my warriors.",
                 
           },
           :reward_text => {
@@ -4000,7 +3990,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "The production of cupper means a great leap forward in development.",
+            :en_US => "The production of copper means a great leap forward in development.",
   
             :de_DE => "Die Herstellung von Kupfer bedeutet einen großen Sprung in der Entwicklung.",
                 
@@ -4021,7 +4011,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Der Ausbau der Kupferschmelze ermöglicht die Verbesserung von Gebäuden sowie den Bau von neuartigen Gebäude.",
+            :de_DE => "Der Ausbau der Kupferschmelze ermöglicht die Verbesserung von Gebäuden sowie den Bau von neuartigen Gebäuden.",
   
             :en_US => "Upgrading the Copper Smelter enables upgrades for existing buildings and unlocks even new buildings.",
                 
@@ -4116,7 +4106,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.",
+            :en_US => "Your settlement is coming along nicely, but you'll have to upgrade the chief's hut if you want to make some more progress.",
                 
           },
           :description => {
@@ -4187,16 +4177,16 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Upgrade your Copper Smleter",
+            :en_US => "Build the Copper Smelter",
   
-            :de_DE => "Kupferschmelze ausbauen",
+            :de_DE => "Baue die Kupferschmelze",
                 
           },
           :flavour => {
             
             :de_DE => "In der Kupferzeit stehen Dir neue Gebäude und verbesserte Versionen bereits bekannter Gebäude zur Verfügung.",
   
-            :en_US => "In the Copper Age, you can create new buildings as well as improved versions of the buildings you already know.",
+            :en_US => "In the Copper Age, you can create new buildings as well as improved versions of buildings you already know.",
                 
           },
           :description => {
@@ -4208,7 +4198,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Wow, eine neues Zeitalter! So viele Möglichkeiten.",
+            :de_DE => "Wow, ein neues Zeitalter! So viele Möglichkeiten.",
   
             :en_US => "Wow, a new age! So many opportunities! ",
                 
@@ -4267,14 +4257,14 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Recruit your first cavalry.",
+            :en_US => "Recruit your first cavalry units.",
   
             :de_DE => "Rekrutiere Deine ersten berittenen Einheiten.",
                 
           },
           :flavour => {
             
-            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen, ist ja nett. Aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
+            :de_DE => "Feindliche Armeen mit Deinen eigenen Armeen zu bekämpfen ist ja nett, aber viel besser wäre es doch, wenn ihr zusammenarbeiten würdet oder wenn Deine Freunde Dir helfen würden.",
   
             :en_US => "Fighting enemy armies with your own army is great, but it's even better if you have help from your friends or you can work together with other players. You should be in an alliance - allies are there to help each other.",
                 
@@ -4290,7 +4280,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Die Reiter sind schneller und können die Nahkämpfer umgehen um die Fernkämpfer direkt anzugreifen.",
   
-            :en_US => "Wow, that's some alliance! I'm sure they're going to go far.",
+            :en_US => "Cavalry is fast and can dodge your enemy's infantry to directly attack their artillery.",
                 
           },
           :reward_text => {
@@ -4378,7 +4368,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Build a copper smelter levle 5.",
+            :en_US => "Upgrade your copper smelter to levle 5.",
   
             :de_DE => "Verbessere die Kupferschmelze auf Level 5.",
                 
@@ -4399,7 +4389,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Wow, eine neues Zeitalter! So viele Möglichkeiten.",
+            :de_DE => "Wow, ein neues Zeitalter! So viele Möglichkeiten.",
   
             :en_US => "Wow, a new age! So many opportunities! ",
                 
@@ -4538,7 +4528,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Recruit a ostrich rider.",
+            :en_US => "Recruit an ostrich rider.",
   
             :de_DE => "Rekrutiere einen Straußenreiter.",
                 
@@ -4561,7 +4551,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Aller Anfang ist schwer, aber da musst Du noch dran arbeiten. Fürs Erste stell ich Dir ein paar meiner Krieger zur Verfügung.",
   
-            :en_US => "Everything's always difficult at first. You just have to stick with it. For now, I'll let you have some of my warriors.",
+            :en_US => "Everything's always difficult at first. You just have to stick with it. For now, I'll give you some of my warriors.",
                 
           },
           :reward_text => {
@@ -4616,7 +4606,7 @@ class Tutorial::Tutorial
             
             :en_US => "Found an Encampment as a further settlement to accelerate your progression.",
   
-            :de_DE => "Gründe mit der Lagerstätte eine weitere Siedlung um Deinen Fortschritt zu beschleunigen.",
+            :de_DE => "Gründe eine Lagerstätte als weitere Siedlung um Deinen Fortschritt zu beschleunigen.",
                 
           },
           :flavour => {
@@ -4635,9 +4625,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Die Siedlungspunkte begrenzen die Anzahl deiner Siedlungen. Sammel Erfahrung um deinen Einfluss weiter zu erhöhen.",
+            :de_DE => "Die Siedlungspunkte begrenzen die Anzahl deiner Siedlungen. Sammle Erfahrung um deinen Einfluss weiter zu erhöhen.",
   
-            :en_US => "The Settlement Points restrict your number of settlements. Collect experience to raise your clout.",
+            :en_US => "The Settlement Points restrict the number of settlements. Collect experience to raise your clout.",
                 
           },
           :reward_text => {
@@ -4791,7 +4781,7 @@ class Tutorial::Tutorial
             
             :en_US => "Little Chief",
   
-            :de_DE => "Der Kleine Chef",
+            :de_DE => "Der Kleine Häuptling",
                 
           },
           :task => {
@@ -4950,7 +4940,7 @@ class Tutorial::Tutorial
             
             :en_US => "Change your name.",
   
-            :de_DE => "Im Profil kannst Du Deinen Namen und Dein Avatar ändern.",
+            :de_DE => "Im Profil kannst Du Deinen Namen und Deinen Avatar ändern.",
                 
           },
           :flavour => {
@@ -4971,7 +4961,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Danke. Wir werden noch viel Spaß miteinander haben.",
   
-            :en_US => "Thanks. I think we're going to have loads of fun together!",
+            :en_US => "Thanks. I think we're going to have lot of fun together!",
                 
           },
           :reward_text => {
@@ -5000,7 +4990,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_cash,
-                :amount => 1,
+                :amount => 2,
               },
 
             ],
@@ -5042,7 +5032,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Built two quarries up to level 4.",
+            :en_US => "Build two quarries up to level 4.",
   
             :de_DE => "Baue zwei Steinbrüche bis Level 4 aus.",
                 
@@ -5065,7 +5055,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Steigere Deine Steinproduktion durch weitere und verbesserte Steinbrüche.",
   
-            :en_US => "Quarries are very effective. Build more quarries!",
+            :en_US => "Quarries are very efficient. Build more quarries!",
                 
           },
           :reward_text => {
@@ -5094,12 +5084,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 407,
+                :amount => 500,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 203,
+                :amount => 250,
               },
 
             ],
@@ -5200,12 +5190,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 203,
+                :amount => 250,
               },
 
               {
                 :resource => :resource_wood,
-                :amount => 407,
+                :amount => 500,
               },
 
             ],
@@ -5230,114 +5220,8 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_build_2logger_lvl4
-        {               #   quest_gatherer_lvl10
-          :id                => 55,
-          :symbolic_id       => :quest_gatherer_lvl10,
-  
-          :type              => :optional,
-  
-          :advisor           => :girl,
-          :hide_start_dialog => false,
-  
-          :tutorial          => false,
-          :tutorial_end_quest => false,
-    
-          :priority          => 0,
-          :blocking          => false,
-
-          :name => {
-            
-            :en_US => "Gatherer Level 10",
-  
-            :de_DE => "Maximallevel Sammler",
-                
-          },
-          :task => {
-            
-            :en_US => "Give an order to a Level 10 Hunter Gatherer.",
-  
-            :de_DE => "Verbessere Deinen Sammler auf das Maximallevel 10.",
-                
-          },
-          :flavour => {
-            
-            :de_DE => "Der Sammler ist wirklich stets bemüht.",
-  
-            :en_US => "The gatherer tries really hard.",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p></p>",
-  
-            :en_US => "<p></p>",
-                
-          },          
-          :reward_flavour => {
-            
-            :de_DE => "Der Sammler ist nicht so effektiv wie Steinbruch und Holzfäller.",
-  
-            :en_US => "Hey – that looks much better, don't you think?",
-                
-          },
-          :reward_text => {
-            
-            :de_DE => "",
-  
-            :en_US => "",
-                
-          },
-
-          :triggers => {
-            
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
-              },
-
-            ],
-  
-          },
-
-          :rewards => {
-            
-            :resource_rewards => [
-
-              {
-                :resource => :resource_stone,
-                :amount => 2000,
-              },
-
-              {
-                :resource => :resource_wood,
-                :amount => 2000,
-              },
-
-            ],
-
-          },          
-
-          :reward_tests => {
-            
-            :building_tests => [
-
-              {
-                :building => 'building_gatherer',
-
-                :min_level => 10,
-
-                :min_count => 1,
-
-              },
-
-            ],
-
-          },          
-
-        },              #   END OF quest_gatherer_lvl10
         {               #   quest_build_quarry_lvl10
-          :id                => 56,
+          :id                => 55,
           :symbolic_id       => :quest_build_quarry_lvl10,
   
           :type              => :optional,
@@ -5399,7 +5283,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
+                :finish_quest_trigger => 'quest_build_quarry_lvl10',
               },
 
             ],
@@ -5412,10 +5296,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_stone,
-                :amount => 5000,
+                :amount => 3000,
               },
 
             ],
+
+            :experience_reward => 300,
 
           },          
 
@@ -5438,7 +5324,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_quarry_lvl10
         {               #   quest_build_logger_lvl10
-          :id                => 57,
+          :id                => 56,
           :symbolic_id       => :quest_build_logger_lvl10,
   
           :type              => :optional,
@@ -5500,7 +5386,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
+                :finish_quest_trigger => 'quest_build_logger_lvl10',
               },
 
             ],
@@ -5513,10 +5399,12 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_wood,
-                :amount => 5000,
+                :amount => 3000,
               },
 
             ],
+
+            :experience_reward => 300,
 
           },          
 
@@ -5539,7 +5427,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_logger_lvl10
         {               #   quest_build_2furrierlvl4
-          :id                => 58,
+          :id                => 57,
           :symbolic_id       => :quest_build_2furrierlvl4,
   
           :type              => :optional,
@@ -5569,7 +5457,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Ich mag die Lendenschurze der Keulenkrieger.",
+            :de_DE => "Ich mag den Lendenschurz der Keulenkrieger.",
   
             :en_US => "We need much more fur.",
                 
@@ -5619,6 +5507,8 @@ class Tutorial::Tutorial
 
             ],
 
+            :experience_reward => 50,
+
           },          
 
           :reward_tests => {
@@ -5640,7 +5530,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_2furrierlvl4
         {               #   quest_build_furrier_lvl10
-          :id                => 59,
+          :id                => 58,
           :symbolic_id       => :quest_build_furrier_lvl10,
   
           :type              => :optional,
@@ -5670,7 +5560,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Lendenschurze find ich klasse.",
+            :de_DE => "Lendenschurze finde ich klasse.",
   
             :en_US => "I like lionclothes.",
                 
@@ -5702,7 +5592,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_2furrierlvl4',
+                :finish_quest_trigger => 'quest_build_furrierlvl10',
               },
 
             ],
@@ -5719,6 +5609,8 @@ class Tutorial::Tutorial
               },
 
             ],
+
+            :experience_reward => 300,
 
           },          
 
@@ -5741,7 +5633,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_furrier_lvl10
         {               #   quest_resourcescore_1
-          :id                => 60,
+          :id                => 59,
           :symbolic_id       => :quest_resourcescore_1,
   
           :type              => :optional,
@@ -5764,14 +5656,14 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Increase the resource production of one settlement to 200 resource points after taxes.",
+            :en_US => "Increase the resource production of one settlement to 400 resource points after taxes.",
   
-            :de_DE => "Steigere die Produktion einer Siedlung auf 200 Rohstoffpunkte nach Steuern.",
+            :de_DE => "Steigere die Produktion einer Siedlung auf 400 Rohstoffpunkte nach Steuern.",
                 
           },
           :flavour => {
             
-            :de_DE => "Du zahlst Steuern? Warum?",
+            :de_DE => "Du zahlst Steuern? Warum!?",
   
             :en_US => "Your pay taxes? Why!?",
                 
@@ -5787,7 +5679,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
   
-            :en_US => "We will never have enough recourses. We need more!",
+            :en_US => "We will never ever have enough recourses. We need more!",
                 
           },
           :reward_text => {
@@ -5803,7 +5695,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_furrier_lvl10',
+                :finish_quest_trigger => 'quest_build_quarry_lvl10',
               },
 
             ],
@@ -5826,7 +5718,7 @@ class Tutorial::Tutorial
 
               {
                 :resource => :resource_fur,
-                :amount => 250,
+                :amount => 150,
               },
 
             ],
@@ -5838,14 +5730,14 @@ class Tutorial::Tutorial
           :reward_tests => {
             
             :settlement_production_test => {
-              :min_resources => 200,
+              :min_resources => 400,
             },
 
           },          
 
         },              #   END OF quest_resourcescore_1
         {               #   quest_build_barrackslvl5
-          :id                => 61,
+          :id                => 60,
           :symbolic_id       => :quest_build_barrackslvl5,
   
           :type              => :optional,
@@ -5958,7 +5850,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_build_barrackslvl5
         {               #   quest_recruit_clubber
-          :id                => 62,
+          :id                => 61,
           :symbolic_id       => :quest_recruit_clubber,
   
           :type              => :optional,
@@ -6059,7 +5951,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_recruit_clubber
         {               #   quest_fortress
-          :id                => 63,
+          :id                => 62,
           :symbolic_id       => :quest_fortress,
   
           :type              => :optional,
@@ -6082,14 +5974,14 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Conquer a fortress from the Neanderthals or an other chieftain.",
+            :en_US => "Conquer a fortress from the Neanderthals or another chieftain.",
   
             :de_DE => "Erobere eine Festung von den Neandertalern oder von anderen Häuptlingen.",
                 
           },
           :flavour => {
             
-            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das richtige.",
+            :de_DE => "Wir brauchen mehr Siedlungen! So eine Festung wäre genau das Richtige.",
   
             :en_US => "Such a fortress would be the ticket.",
                 
@@ -6160,7 +6052,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_fortress
         {               #   quest_infantry_tower
-          :id                => 64,
+          :id                => 63,
           :symbolic_id       => :quest_infantry_tower,
   
           :type              => :optional,
@@ -6176,7 +6068,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Build an Infantry tower",
+            :en_US => "Build clubber grounds",
   
             :de_DE => "Knüppler Gelände errichten",
                 
@@ -6263,7 +6155,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_infantry_tower
         {               #   quest_fortress_fortification_lvl5
-          :id                => 65,
+          :id                => 64,
           :symbolic_id       => :quest_fortress_fortification_lvl5,
   
           :type              => :optional,
@@ -6279,7 +6171,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Improve Fortress fortification",
+            :en_US => "Improve the fortification",
   
             :de_DE => "Festungsanlagen verbessern",
                 
@@ -6376,7 +6268,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_fortress_fortification_lvl5
         {               #   quest_artillery_tower
-          :id                => 66,
+          :id                => 65,
           :symbolic_id       => :quest_artillery_tower,
   
           :type              => :optional,
@@ -6392,7 +6284,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Artillery tower",
+            :en_US => "Build throwing grounds",
   
             :de_DE => "Werfer Gelände errichten",
                 
@@ -6406,7 +6298,7 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Fernkampf ist das einzieg wahre. Weit weg und doch tödlich.",
+            :de_DE => "Fernkampf ist das einzieg Wahre. Weit weg und doch tödlich.",
   
             :en_US => "Ranged fighting is the one and only. Far away but still deadly.",
                 
@@ -6479,7 +6371,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_artillery_tower
         {               #   quest_fortress_fortification_lvl7
-          :id                => 67,
+          :id                => 66,
           :symbolic_id       => :quest_fortress_fortification_lvl7,
   
           :type              => :optional,
@@ -6495,7 +6387,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Improve Fortress fortification",
+            :en_US => "Improve the fortification",
   
             :de_DE => "Festungsanlagen verbessern",
                 
@@ -6511,7 +6403,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Bald ist unsere Festung uneinnehmbar!",
   
-            :en_US => "We need more settlements. A fortress would be the way to go.",
+            :en_US => "Our fortress will be unconquerable soon!.",
                 
           },
           :description => {
@@ -6525,7 +6417,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Du musst dich für maximal zwei Kampfarten in der Festung entscheiden.",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "You have to decide for two types of units in your fortress.",
                 
           },
           :reward_text => {
@@ -6592,7 +6484,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_fortress_fortification_lvl7
         {               #   quest_cavalry_tower
-          :id                => 68,
+          :id                => 67,
           :symbolic_id       => :quest_cavalry_tower,
   
           :type              => :optional,
@@ -6608,7 +6500,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Cavalry tower",
+            :en_US => "Build cavalry grounds",
   
             :de_DE => "Reiteranlage errichten",
                 
@@ -6695,7 +6587,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_cavalry_tower
         {               #   quest_haunt_lvl6
-          :id                => 69,
+          :id                => 68,
           :symbolic_id       => :quest_haunt_lvl6,
   
           :type              => :optional,
@@ -6739,7 +6631,7 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Du kannst jetzt eins der drei Spezialgebäude bauen. Entscheide Dich weise!",
+            :de_DE => "Du kannst jetzt eines der drei Spezialgebäude bauen. Entscheide Dich weise!",
   
             :en_US => "Now you can build one of three special buildings. Decide wisely!",
                 
@@ -6808,7 +6700,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_haunt_lvl6
         {               #   quest_altar
-          :id                => 70,
+          :id                => 69,
           :symbolic_id       => :quest_altar,
   
           :type              => :optional,
@@ -6921,7 +6813,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_altar
         {               #   quest_field_camp
-          :id                => 71,
+          :id                => 70,
           :symbolic_id       => :quest_field_camp,
   
           :type              => :optional,
@@ -6937,7 +6829,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Build Field camp",
+            :en_US => "Build field camp",
   
             :de_DE => "Feldlager errichten",
                 
@@ -6953,7 +6845,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Das Feldlager stärkt die Armee der Lagerstätte.",
   
-            :en_US => "The field camp reinforces encampment’s armies.",
+            :en_US => "The field camp reinforces the encampment’s armies.",
                 
           },
           :description => {
@@ -6965,9 +6857,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "The field camp extends your armies and on level 10 it will provide another command point.",
+            :de_DE => "Das Feldlager vergößert deine Armeen und stellt auf Level 10 einen zusätzlichen Kommandopunkt",
   
-            :en_US => "You conquered a fortress? That´s great!",
+            :en_US => "The field camp extends your armies and on level 10 it will provide another command point.",
                 
           },
           :reward_text => {
@@ -7034,7 +6926,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_field_camp
         {               #   quest_trade_center
-          :id                => 72,
+          :id                => 71,
           :symbolic_id       => :quest_trade_center,
   
           :type              => :optional,
@@ -7050,7 +6942,7 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Build Trade Center",
+            :en_US => "Build Trading Center",
   
             :de_DE => "Handelsplatz errichten",
                 
@@ -7078,9 +6970,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Mit dem Handelsplatz verbessert sich deine Rohstoffproduktion, läßt Deine Lagerstätte aber fast wehrlos.",
+            :de_DE => "Der Handelsplatz verbessert Deine Rohstoffproduktion, lässt Deine Lagerstätte aber fast wehrlos.",
   
-            :en_US => "The trading center increases your ressource production, but leaves your encampment nearly unprotected.",
+            :en_US => "The trading center increases your ressource production but leaves your encampment nearly unprotected.",
                 
           },
           :reward_text => {
@@ -7147,7 +7039,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_trade_center
         {               #   quest_charkills_1
-          :id                => 73,
+          :id                => 72,
           :symbolic_id       => :quest_charkills_1,
   
           :type              => :optional,
@@ -7246,7 +7138,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_1
         {               #   quest_charkills_2
-          :id                => 74,
+          :id                => 73,
           :symbolic_id       => :quest_charkills_2,
   
           :type              => :optional,
@@ -7352,7 +7244,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_2
         {               #   quest_charkills_3
-          :id                => 75,
+          :id                => 74,
           :symbolic_id       => :quest_charkills_3,
   
           :type              => :optional,
@@ -7458,7 +7350,7 @@ class Tutorial::Tutorial
 
         },              #   END OF quest_charkills_3
         {               #   quest_charkills_4
-          :id                => 76,
+          :id                => 75,
           :symbolic_id       => :quest_charkills_4,
   
           :type              => :optional,
@@ -7517,7 +7409,7 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :play_time_trigger => 86400,
+            :play_time_trigger => 172800,
   
             :finish_quest_triggers => [
               
@@ -7563,6 +7455,3460 @@ class Tutorial::Tutorial
           },          
 
         },              #   END OF quest_charkills_4
+        {               #   quest_charkills_5
+          :id                => 76,
+          :symbolic_id       => :quest_charkills_5,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 1.500 enemy units.",
+  
+            :de_DE => "Besiege 1.500 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 259200,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_4',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 400,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 400,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+            ],
+
+            :experience_reward => 200,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 1500,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_5
+        {               #   quest_charkills_6
+          :id                => 77,
+          :symbolic_id       => :quest_charkills_6,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat . enemy units.",
+  
+            :de_DE => "Besiege 5.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_5',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 600,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 5000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_6
+        {               #   quest_charkills_7
+          :id                => 78,
+          :symbolic_id       => :quest_charkills_7,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 10.000 enemy units.",
+  
+            :de_DE => "Besiege 10.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_6',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 700,
+              },
+
+            ],
+
+            :experience_reward => 400,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 10000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_7
+        {               #   quest_charkills_8
+          :id                => 79,
+          :symbolic_id       => :quest_charkills_8,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 20.000 enemy units.",
+  
+            :de_DE => "Besiege 20.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_7',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 800,
+              },
+
+            ],
+
+            :experience_reward => 500,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 20000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_8
+        {               #   quest_charkills_9
+          :id                => 80,
+          :symbolic_id       => :quest_charkills_9,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 30.000 enemy units.",
+  
+            :de_DE => "Besiege 30.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_8',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 900,
+              },
+
+            ],
+
+            :experience_reward => 600,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 30000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_9
+        {               #   quest_charkills_10
+          :id                => 81,
+          :symbolic_id       => :quest_charkills_10,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 45.000 enemy units.",
+  
+            :de_DE => "Besiege 45.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_9',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 1000,
+              },
+
+            ],
+
+            :experience_reward => 750,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 45000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_10
+        {               #   quest_charkills_11
+          :id                => 82,
+          :symbolic_id       => :quest_charkills_11,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 60.000 enemy units.",
+  
+            :de_DE => "Besiege 60.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_10',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 1100,
+              },
+
+            ],
+
+            :experience_reward => 900,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 60000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_11
+        {               #   quest_charkills_12
+          :id                => 83,
+          :symbolic_id       => :quest_charkills_12,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 80.000 enemy units.",
+  
+            :de_DE => "Besiege 80.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_11',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 1200,
+              },
+
+            ],
+
+            :experience_reward => 1100,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 80000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_12
+        {               #   quest_charkills_13
+          :id                => 84,
+          :symbolic_id       => :quest_charkills_13,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 100.000 enemy units.",
+  
+            :de_DE => "Besiege 100.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_12',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2000,
+              },
+
+            ],
+
+            :experience_reward => 1400,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 100000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_13
+        {               #   quest_charkills_14
+          :id                => 85,
+          :symbolic_id       => :quest_charkills_14,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 125,000 enemy units.",
+  
+            :de_DE => "Besiege 125.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_13',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2250,
+              },
+
+            ],
+
+            :experience_reward => 1700,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 125000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_14
+        {               #   quest_charkills_15
+          :id                => 86,
+          :symbolic_id       => :quest_charkills_15,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 150.000 enemy units.",
+  
+            :de_DE => "Besiege 150.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_14',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1250,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1250,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+            ],
+
+            :experience_reward => 2000,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 150000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_15
+        {               #   quest_charkills_16
+          :id                => 87,
+          :symbolic_id       => :quest_charkills_16,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 175.000 enemy units.",
+  
+            :de_DE => "Besiege 175.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_15',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3500,
+              },
+
+            ],
+
+            :experience_reward => 2300,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 175000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_16
+        {               #   quest_charkills_17
+          :id                => 88,
+          :symbolic_id       => :quest_charkills_17,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 200.000 enemy units.",
+  
+            :de_DE => "Besiege 200.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_16',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1750,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1750,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4000,
+              },
+
+            ],
+
+            :experience_reward => 2600,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 200000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_17
+        {               #   quest_charkills_18
+          :id                => 89,
+          :symbolic_id       => :quest_charkills_18,
+  
+          :type              => :optional,
+  
+          :advisor           => :warrior,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Decimate enemy units",
+  
+            :de_DE => "Gegner dezimieren",
+                
+          },
+          :task => {
+            
+            :en_US => "Defeat 500.000 enemy units.",
+  
+            :de_DE => "Besiege 500.000 Einheiten.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Muhaha, kämpfen heißt leben!",
+  
+            :en_US => "Muhaha, fighting means living!",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Für einen siegreichen Kampf erhälst du zusätzliche Erfahrung.",
+  
+            :en_US => "You receive additional experience for a victorious fight.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :play_time_trigger => 345600,
+  
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_charkills_17',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 2500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 2500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 7500,
+              },
+
+            ],
+
+            :experience_reward => 5000,
+
+          },          
+
+          :reward_tests => {
+            
+            :kill_test => {
+              :min_units => 500000,
+            },
+
+          },          
+
+        },              #   END OF quest_charkills_18
+        {               #   quest_build_quarry_lvl6
+          :id                => 90,
+          :symbolic_id       => :quest_build_quarry_lvl6,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Quarry Level 6",
+  
+            :de_DE => "Steinbruch ausbauen",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a quarry level 6.",
+  
+            :de_DE => "Baue einen Steinbruch bis Level 6.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey cool, Du kannst Steinbrüche bauen.",
+  
+            :en_US => "Cool - you can now build quarries.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Steigere Deine Steinproduktion durch weitere Steinbrüche.",
+  
+            :en_US => "Quarries are very effective. Build more quarries!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1000,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_quarry',
+
+                :min_level => 6,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_quarry_lvl6
+        {               #   quest_build_logger_lvl6
+          :id                => 91,
+          :symbolic_id       => :quest_build_logger_lvl6,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Logger Level 6",
+  
+            :de_DE => "Holzfäller ausbauen",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a logger level 6.",
+  
+            :de_DE => "Baue einen Holzfäller bis Level 6.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Aufpassen, die jungen Bäume nicht fällen.",
+  
+            :en_US => "If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Mehr Holzfäller sind immer eine gute Idee.",
+  
+            :en_US => "Wow – look at your wood production. That's massive! ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_wood,
+                :amount => 1000,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_logger',
+
+                :min_level => 6,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_logger_lvl6
+        {               #   quest_build_furrier_lvl6
+          :id                => 92,
+          :symbolic_id       => :quest_build_furrier_lvl6,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Furrier Level 6",
+  
+            :de_DE => "Kürschner ausbauen",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a furrier level 6.",
+  
+            :de_DE => "Baue einen Kürschner bis Level 6.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Lendenschurze finde ich klasse.",
+  
+            :en_US => "I like lionclothes.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Steigere die Fellproduktion durch den Bau weiterer Kürschner.",
+  
+            :en_US => "Raise your fur production by building more furrier.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_2furrierlvl4',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 750,
+              },
+
+            ],
+
+            :experience_reward => 100,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_furrier',
+
+                :min_level => 6,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_furrier_lvl6
+        {               #   quest_build_quarry_lvl8
+          :id                => 93,
+          :symbolic_id       => :quest_build_quarry_lvl8,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Quarry Level 8",
+  
+            :de_DE => "Steinbruch ausbauen",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a quarry level 8.",
+  
+            :de_DE => "Baue einen Steinbruch bis Level 8.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Hey cool, Du kannst Steinbrüche bauen.",
+  
+            :en_US => "Cool - you can now build quarries.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Steigere Deine Steinproduktion durch weitere Steinbrüche.",
+  
+            :en_US => "Quarries are very effective. Build more quarries!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_quarry_lvl6',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 2000,
+              },
+
+            ],
+
+            :experience_reward => 200,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_quarry',
+
+                :min_level => 8,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_quarry_lvl8
+        {               #   quest_build_logger_lvl8
+          :id                => 94,
+          :symbolic_id       => :quest_build_logger_lvl8,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Logger Level 8",
+  
+            :de_DE => "Holzfäller ausbauen",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a logger level 8.",
+  
+            :de_DE => "Baue einen Holzfäller bis Level 8.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Aufpassen, die jungen Bäume nicht fällen.",
+  
+            :en_US => "If you want to increase production, you'll need to build more quarries and logging camps and then upgrade them.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Mehr Holzfäller sind immer eine gute Idee.",
+  
+            :en_US => "Wow – look at your wood production. That's massive! ",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_wood,
+                :amount => 2000,
+              },
+
+            ],
+
+            :experience_reward => 200,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_logger',
+
+                :min_level => 8,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_logger_lvl8
+        {               #   quest_build_furrier_lvl8
+          :id                => 95,
+          :symbolic_id       => :quest_build_furrier_lvl8,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Furrier Level 8",
+  
+            :de_DE => "Kürschner ausbauen",
+                
+          },
+          :task => {
+            
+            :en_US => "Build a furrier level 8.",
+  
+            :de_DE => "Baue einen Kürschner bis Level 8.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Lendenschurze finde ich klasse.",
+  
+            :en_US => "I like lionclothes.",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Steigere die Fellproduktion durch den Bau weiterer Kürschner.",
+  
+            :en_US => "Raise your fur production by building more furrier.",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_build_furrierlvl6',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_fur,
+                :amount => 150,
+              },
+
+            ],
+
+            :experience_reward => 200,
+
+          },          
+
+          :reward_tests => {
+            
+            :building_tests => [
+
+              {
+                :building => 'building_furrier',
+
+                :min_level => 8,
+
+                :min_count => 1,
+
+              },
+
+            ],
+
+          },          
+
+        },              #   END OF quest_build_furrier_lvl8
+        {               #   quest_resourcescore_2
+          :id                => 96,
+          :symbolic_id       => :quest_resourcescore_2,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 400 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 400 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_1',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 400,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 400,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 250,
+              },
+
+            ],
+
+            :experience_reward => 150,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 400,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_2
+        {               #   quest_resourcescore_3
+          :id                => 97,
+          :symbolic_id       => :quest_resourcescore_3,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 500 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 500 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_2',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 250,
+              },
+
+            ],
+
+            :experience_reward => 200,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 500,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_3
+        {               #   quest_resourcescore_4
+          :id                => 98,
+          :symbolic_id       => :quest_resourcescore_4,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 600 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 600 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_3',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 600,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 600,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 250,
+              },
+
+            ],
+
+            :experience_reward => 250,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 600,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_4
+        {               #   quest_resourcescore_5
+          :id                => 99,
+          :symbolic_id       => :quest_resourcescore_5,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 750 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 750 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_4',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 750,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 750,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 350,
+              },
+
+            ],
+
+            :experience_reward => 400,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 750,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_5
+        {               #   quest_resourcescore_6
+          :id                => 100,
+          :symbolic_id       => :quest_resourcescore_6,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 900 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 900 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_5',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 900,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 900,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 500,
+              },
+
+            ],
+
+            :experience_reward => 550,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 900,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_6
+        {               #   quest_resourcescore_7
+          :id                => 101,
+          :symbolic_id       => :quest_resourcescore_7,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 1200 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 1200 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_6',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1200,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1200,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 750,
+              },
+
+            ],
+
+            :experience_reward => 750,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 1200,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_7
+        {               #   quest_resourcescore_8
+          :id                => 102,
+          :symbolic_id       => :quest_resourcescore_8,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 1500 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 1500 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_7',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 900,
+              },
+
+            ],
+
+            :experience_reward => 1000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 1500,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_8
+        {               #   quest_resourcescore_9
+          :id                => 103,
+          :symbolic_id       => :quest_resourcescore_9,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 1750 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 1750 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_8',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 1750,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 1750,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 1100,
+              },
+
+            ],
+
+            :experience_reward => 1200,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 1750,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_9
+        {               #   quest_resourcescore_10
+          :id                => 104,
+          :symbolic_id       => :quest_resourcescore_10,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 2000 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 2000 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_9',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 2000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 2000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 1300,
+              },
+
+            ],
+
+            :experience_reward => 2000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 2000,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_10
+        {               #   quest_resourcescore_11
+          :id                => 105,
+          :symbolic_id       => :quest_resourcescore_11,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 2300 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 2300 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_10',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 2500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 2500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 1500,
+              },
+
+            ],
+
+            :experience_reward => 2300,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 2300,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_11
+        {               #   quest_resourcescore_12
+          :id                => 106,
+          :symbolic_id       => :quest_resourcescore_12,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 2600 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 2600 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_11',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 3500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 3500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 2000,
+              },
+
+            ],
+
+            :experience_reward => 2600,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 2600,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_12
+        {               #   quest_resourcescore_13
+          :id                => 107,
+          :symbolic_id       => :quest_resourcescore_13,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 3000 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 3000 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_12',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 5000,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 5000,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 3000,
+              },
+
+            ],
+
+            :experience_reward => 3000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 3000,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_13
+        {               #   quest_resourcescore_14
+          :id                => 108,
+          :symbolic_id       => :quest_resourcescore_14,
+  
+          :type              => :optional,
+  
+          :advisor           => :girl,
+          :hide_start_dialog => false,
+  
+          :tutorial          => false,
+          :tutorial_end_quest => false,
+    
+          :priority          => 0,
+          :blocking          => false,
+
+          :name => {
+            
+            :en_US => "Resource Production",
+  
+            :de_DE => "Rohstoffproduktion",
+                
+          },
+          :task => {
+            
+            :en_US => "Increase the resource production of one settlement to 3500 resource points after taxes.",
+  
+            :de_DE => "Steigere die Produktion einer Siedlung auf 3500 Rohstoffpunkte nach Steuern.",
+                
+          },
+          :flavour => {
+            
+            :de_DE => "Du zahlst Steuern? Warum!?",
+  
+            :en_US => "Your pay taxes? Why!?",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p></p>",
+  
+            :en_US => "<p></p>",
+                
+          },          
+          :reward_flavour => {
+            
+            :de_DE => "Rohstoffe haben wir nie genug. Wir brauchen mehr!",
+  
+            :en_US => "We will never ever have enough recourses. We need more!",
+                
+          },
+          :reward_text => {
+            
+            :de_DE => "",
+  
+            :en_US => "",
+                
+          },
+
+          :triggers => {
+            
+            :finish_quest_triggers => [
+              
+              {
+                :finish_quest_trigger => 'quest_resourcescore_13',
+              },
+
+            ],
+  
+          },
+
+          :rewards => {
+            
+            :resource_rewards => [
+
+              {
+                :resource => :resource_stone,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_wood,
+                :amount => 7500,
+              },
+
+              {
+                :resource => :resource_fur,
+                :amount => 4000,
+              },
+
+            ],
+
+            :experience_reward => 5000,
+
+          },          
+
+          :reward_tests => {
+            
+            :settlement_production_test => {
+              :min_resources => 3500,
+            },
+
+          },          
+
+        },              #   END OF quest_resourcescore_14
       ],                # END OF QUESTS
 
     )
