@@ -164,7 +164,7 @@
     <Description locale="de_DE"><p></p></Description>
     <Description locale="en_US"><p></p></Description>
     <Flavor locale="de_DE">Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.</Flavor>
-    <Flavor locale="en_US">Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.</Flavor>
+    <Flavor locale="en_US">Your settlement is coming along nicely, but you'll have to upgrade the chief's hut if you want to make some more progress.</Flavor>
     <RewardText locale="de_DE"></RewardText>
     <RewardText locale="en_US"></RewardText>
     <RewardFlavor locale="de_DE">Die Chefhütte schaltet neue Bauplätze frei.</RewardFlavor>
@@ -508,8 +508,8 @@
 <Subquest id="quest_build_chiefcottagelvl4" epic="epic_ressources" advisor="chef" tutorial="false">
   <Name>An even bigger chief's hut</Name>
   <Name locale="de_DE">Chefhütte ausbauen</Name>
-  <Task>Improve your ressource production by upgrading your quarry and logger.</Task>
-  <Task locale="de_DE">Verbessere Deine Rohstoffproduktion durch den Ausbau von Steinbruch und Holzfäller.</Task>
+  <Task>Upgrade chieftain's hut.</Task>
+  <Task locale="de_DE">Verbessere die Chefhütte.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Je mehr Rohstoffe desto mehr von allem.</Flavor>
@@ -807,16 +807,16 @@
 <Quest id="epic_storage" type="epic" advisor="chef">
   <Name>Storage and trading</Name>
   <Name locale="de_DE">Lager und Handel</Name>
-  <Task>Improve your storage and trade with the traveling merchant.</Task>
-  <Task locale="de_DE">Erhöhe die Lagerkapazität und handle mit dem fahrenden Händler.</Task>
+  <Task>Improve your storage and send ressources to annouther chief.</Task>
+  <Task locale="de_DE">Erhöhe die Lagerkapazität und sende Rohstoffe an einen anderen Häuptling.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Den Handel sollten wir nicht nur der Amazone überlassen.</Flavor>
   <Flavor locale="en_US">We shouldn’t leave the trading only in the Amazon’s discretion.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
-  <RewardFlavor locale="de_DE">Für eine kleine Provision teilt der fahrende Händler deine Rohstoffe gleichmäßig auf.</RewardFlavor>
-  <RewardFlavor locale="en_US">For a little commission the traveling merchant equaly devides your ressources.</RewardFlavor>
+  <RewardFlavor locale="de_DE">Im Rohstofflager gibt es Karren, die die Lieferung trasportieren.</RewardFlavor>
+  <RewardFlavor locale="en_US">There are trading carts in the raw materials store which transport the goods.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>epic_alliance</FinishQuestTrigger>
@@ -863,8 +863,8 @@
   <Task locale="de_DE">Beginne Deinen ersten Handel.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
-  <Flavor locale="de_DE">Teile Deine Rohstoffe neu auf.</Flavor>
-  <Flavor locale="en_US">Devide your ressources equaly.</Flavor>
+  <Flavor locale="de_DE">Versende Rohstoffe.</Flavor>
+  <Flavor locale="en_US">Send materials.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Endlich hab ich genug Platz für meine ganzen Schu - äh Sachen.</RewardFlavor>
