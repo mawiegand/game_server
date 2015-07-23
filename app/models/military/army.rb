@@ -727,6 +727,7 @@ class Military::Army < ActiveRecord::Base
     return if character.nil? || character.npc
 
     # calculate placement location
+    location = nil
     placement_probability = Random.rand(0..1.0)
     if placement_probability <= GAME_SERVER_CONFIG['poacher_home_region_probability'] && !character.home_location.nil?
       # place poacher in home region
@@ -748,7 +749,7 @@ class Military::Army < ActiveRecord::Base
     end
 
     # place randomly generated poacher
-    Military::Army.create_npc(location, size, character)
+    Military::Army.create_npc(location, size, character) unless location.nil?
   end
   
   # creates a new army. create_action must contain the home location id and the units of the new army.

@@ -2268,7 +2268,6 @@ ActiveRecord::Schema.define(:version => 20150719213231) do
     t.string   "avatar_string"
     t.integer  "alliance_color"
     t.boolean  "invisible",                       :default => false
-    t.boolean  "selected",                        :default => false
     t.integer  "specific_character_id"
   end
 
@@ -2665,10 +2664,10 @@ ActiveRecord::Schema.define(:version => 20150719213231) do
     t.integer  "name_change_count",                              :default => 0
     t.integer  "alliance_size_bonus",                            :default => 0
     t.integer  "assignment_level",                               :default => 0,            :null => false
+    t.integer  "alliance_color"
     t.integer  "battle_id"
     t.decimal  "condition",                                      :default => 1.0,          :null => false
     t.datetime "condition_updated_at"
-    t.integer  "alliance_color"
   end
 
   create_table "settlement_slots", :force => true do |t|
@@ -2679,10 +2678,10 @@ ActiveRecord::Schema.define(:version => 20150719213231) do
     t.integer  "level",               :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "bubble_next_test_at"
-    t.integer  "bubble_xp"
-    t.integer  "bubble_amount"
     t.integer  "bubble_resource_id"
+    t.integer  "bubble_amount"
+    t.integer  "bubble_xp"
+    t.datetime "bubble_next_test_at"
   end
 
   create_table "shop_bonus_offers", :force => true do |t|
