@@ -549,7 +549,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Deine Siedlung kommt ganz schön voran. Aber Du musst jetzt die Chefhütte ausbauen um weiterzukommen.",
   
-            :en_US => "Your settlement is coming along nicely, but you're going to have to upgrade the chief's hut if you want to make some more progress.",
+            :en_US => "Your settlement is coming along nicely, but you'll have to upgrade the chief's hut if you want to make some more progress.",
                 
           },
           :description => {
@@ -1521,9 +1521,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your ressource production by upgrading your quarry and logger.",
+            :en_US => "Upgrade chieftain's hut.",
   
-            :de_DE => "Verbessere Deine Rohstoffproduktion durch den Ausbau von Steinbruch und Holzfäller.",
+            :de_DE => "Verbessere die Chefhütte.",
                 
           },
           :flavour => {
@@ -2508,9 +2508,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your storage and trade with the traveling merchant.",
+            :en_US => "Improve your storage and send ressources to annouther chief.",
   
-            :de_DE => "Erhöhe die Lagerkapazität und handle mit dem fahrenden Händler.",
+            :de_DE => "Erhöhe die Lagerkapazität und sende Rohstoffe an einen anderen Häuptling.",
                 
           },
           :flavour => {
@@ -2529,9 +2529,9 @@ class Tutorial::Tutorial
           },          
           :reward_flavour => {
             
-            :de_DE => "Für eine kleine Provision teilt der fahrende Händler deine Rohstoffe gleichmäßig auf.",
+            :de_DE => "Im Rohstofflager gibt es Karren, die die Lieferung trasportieren.",
   
-            :en_US => "For a little commission the traveling merchant equaly devides your ressources.",
+            :en_US => "There are trading carts in the raw materials store which transport the goods.",
                 
           },
           :reward_text => {
@@ -2697,9 +2697,9 @@ class Tutorial::Tutorial
           },
           :flavour => {
             
-            :de_DE => "Teile Deine Rohstoffe neu auf.",
+            :de_DE => "Versende Rohstoffe.",
   
-            :en_US => "Devide your ressources equaly.",
+            :en_US => "Send materials.",
                 
           },
           :description => {

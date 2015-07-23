@@ -120,7 +120,7 @@ class Construction::Job < ActiveRecord::Base
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
     raise ForbiddenError.new('character must be divine supporter') if building_type[:divine_supporters_only] && !slot.settlement.owner.divine_supporter?
     requirement_groups = building_type[:requirementGroups]
-    raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
+    raise ConflictError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
 
     # logger.debug "---> create_queueable? #{self.level_after} #{queue.settlement.building_slots_available?} #{self.level_after == 1 && (slot.level.nil? || slot.level == 0) && slot.jobs.empty? && queue.settlement.building_slots_available?}"
     self.level_after == 1 && (slot.level.nil? || slot.level == 0) && slot.jobs.empty? && queue.settlement.building_slots_available?
@@ -131,7 +131,7 @@ class Construction::Job < ActiveRecord::Base
     # logger.debug '---> upgrade_queueable?'
     building_type = GameRules::Rules.the_rules.building_types[self.building_id]
     requirement_groups = building_type[:requirementGroups]
-    raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
+    raise ConflictError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement, slot)
 
     self.level_after == slot.last_level + 1 &&
     self.level_after <= slot.max_level &&
@@ -162,7 +162,7 @@ class Construction::Job < ActiveRecord::Base
     # requirement_groups = GameRules::Rules.the_rules.building_type_with_symbolic_id(conversion_option[:building])[:requirementGroups]
     
     # don't test self.slot for requirements of converted building
-    raise ForbiddenError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement) # do not exclude the slot itself on conversions, because the requirement may be met by the slot itself
+    raise ConflictError.new('Requirements not met.')  if !requirement_groups.nil? && !requirement_groups.empty? && !GameState::Requirements.meet_one_requirement_group?(requirement_groups, slot.settlement.owner, slot.settlement) # do not exclude the slot itself on conversions, because the requirement may be met by the slot itself
     
     # level anhand formel testen
     formula = Util::Formula.parse_from_formula(conversion_option[:target_level_formula])
