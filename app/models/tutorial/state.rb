@@ -54,31 +54,101 @@ class Tutorial::State < ActiveRecord::Base
     quest
   end
 
-  def check_consistency
-    # durchlaufe alle beendeten quest_states
-    self.finished_quests.each do |quest_state|
-      # durchlauf alle nachfolge-quests
-      quest_state.quest[:successor_quests].each do |quest_id|
-        # if qe.nachfolger nicht vorhanden
-        if self.quest_state_with_quest_id(quest_id).nil?
-          # offenen nachfolger erzeugen
-          logger.debug "create missing quest_state: quest_id #{quest_id} for character #{self.owner.id}"
-         self.quests.create({
-           quest_id: quest_id,
-           status: Tutorial::Quest::STATE_NEW,
-         })
+  def check_for_new_quests(trigger_type = 'all')
+    trigger_type = 'finish_quest_triggers' unless completed_tutorial_end_quest?
+    quests = Tutorial::Tutorial.the_tutorial.quests
+
+    quests.each do |quest|
+      if self.quests.where(:quest_id => quest[:id]).empty?
+        unless quest[:triggers].nil?
+           # if trigger type == all or quest includes trigger type
+           if trigger_type == 'all' || !quest[:triggers][trigger_type.to_sym].nil?
+             # if all triggers for quest are valid and the quest is not a subquest create new quest
+             if validate_quest_triggers(quest[:id]) && quest[:type].to_s != 'sub'
+               self.quests.create({
+                 status: Tutorial::Quest::STATE_NEW,
+                 quest_id: quest[:id],
+               })
+               # open related subquests
+               unless quest[:subquests].nil?
+                 quest[:subquests].each do |subquest|
+                   self.quests.create({
+                     status: Tutorial::Quest::STATE_NEW,
+                     quest_id: subquest,
+                   })
+                 end
+               end
+             end
+           end
         end
       end
     end
+  end
+
+  def check_consistency
+    # check for new quests with all types
+    self.check_for_new_quests
   end
   
   
   def completed_tutorial_end_quest?
     self.finished_quests.each do |quest_state|
+      next if quest_state.nil? || quest_state.quest.nil?
       if quest_state.quest[:tutorial_end_quest]
         return true
       end  
     end
     false
+  end
+
+  def check_finished_quest(finished_quest_symbolic_str)
+    # validate finished quests for required finished quest
+    self.finished_quests.each do |finished_quest|
+      next if finished_quest.nil? || finished_quest.quest.nil?
+      if finished_quest_symbolic_str == finished_quest.quest[:symbolic_id].to_s
+        return true
+      end
+    end
+    false
+  end
+
+  private
+
+  def validate_quest_triggers(quest_id)
+    quest = Tutorial::Tutorial.the_tutorial.quests[quest_id]
+    triggers = quest[:triggers]
+
+    # check for triggers
+    unless triggers.nil?
+      # validate required finished quests
+      unless triggers[:finish_quest_triggers].nil?
+        triggers[:finish_quest_triggers].each do |trigger|
+          return false unless check_finished_quest(trigger[:finish_quest_trigger].to_s) # false if required quest is not finished
+        end
+      end
+      # ignore all different triggers if quest is tutorial quest
+      return true if quest[:tutorial] == true
+      # validate play time trigger
+      unless triggers[:play_time_trigger].nil?
+        return false if self.owner.playtime < triggers[:play_time_trigger]
+      end
+      # validate logged in on second day trigger
+      unless triggers[:logged_in_on_second_day_trigger].nil?
+        return false unless self.owner.logged_in_on_second_day?
+      end
+      # validate mundane rank of owner
+      unless triggers[:mundane_rank_trigger].nil?
+        return false if self.owner.mundane_rank < triggers[:mundane_rank_trigger]
+      end
+      # validate victories count of owner
+      unless triggers[:victories_count_trigger].nil?
+        return false if self.owner.victories < triggers[:victories_count_trigger]
+      end
+      # validate received likes count of owner
+      unless triggers[:likes_count_trigger].nil?
+        return false if self.owner.received_likes_count < triggers[:likes_count_trigger]
+      end
+    end
+    true
   end
 end

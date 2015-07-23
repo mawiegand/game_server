@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150324085127) do
+ActiveRecord::Schema.define(:version => 20150719213231) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20150324085127) do
     t.datetime "started_at"
     t.datetime "ended_at"
     t.datetime "halved_at"
-    t.integer  "execution_count",              :default => 0, :null => false
+    t.integer  "execution_count",              :default => 0,     :null => false
     t.datetime "displayed_until"
     t.datetime "seen_at"
     t.datetime "created_at"
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(:version => 20150324085127) do
     t.integer  "unit_warrior_reward"
     t.integer  "unit_great_chief_deposit"
     t.integer  "unit_great_chief_reward"
+    t.boolean  "finished",                     :default => false
   end
 
   create_table "assignment_standard_assignments", :force => true do |t|
@@ -129,10 +130,11 @@ ActiveRecord::Schema.define(:version => 20150324085127) do
     t.datetime "started_at"
     t.datetime "ended_at"
     t.datetime "halved_at"
-    t.integer  "execution_count", :default => 0, :null => false
-    t.integer  "halved_count",    :default => 0, :null => false
+    t.integer  "execution_count", :default => 0,     :null => false
+    t.integer  "halved_count",    :default => 0,     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "finished",        :default => false
   end
 
   create_table "backend_browser_stats", :force => true do |t|
@@ -1925,6 +1927,9 @@ ActiveRecord::Schema.define(:version => 20150324085127) do
     t.datetime "can_redeem_retention_bonus_at"
     t.datetime "can_redeem_retention_bonus_start_time"
     t.boolean  "has_limited_grid",                         :default => false
+    t.integer  "max_poachers_count"
+    t.integer  "spawned_poachers_count",                   :default => 0
+    t.datetime "last_poacher_cycle_update"
   end
 
   create_table "fundamental_diplomacy_relations", :force => true do |t|
@@ -2263,6 +2268,7 @@ ActiveRecord::Schema.define(:version => 20150324085127) do
     t.string   "avatar_string"
     t.integer  "alliance_color"
     t.boolean  "invisible",                       :default => false
+    t.integer  "specific_character_id"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"
@@ -2658,10 +2664,10 @@ ActiveRecord::Schema.define(:version => 20150324085127) do
     t.integer  "name_change_count",                              :default => 0
     t.integer  "alliance_size_bonus",                            :default => 0
     t.integer  "assignment_level",                               :default => 0,            :null => false
+    t.integer  "alliance_color"
     t.integer  "battle_id"
     t.decimal  "condition",                                      :default => 1.0,          :null => false
     t.datetime "condition_updated_at"
-    t.integer  "alliance_color"
   end
 
   create_table "settlement_slots", :force => true do |t|

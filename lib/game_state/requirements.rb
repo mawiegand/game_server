@@ -65,7 +65,7 @@ module GameState
         # TODO, IMPORTANT: vorgehen bei requirements diskutieren. Diese Lösung reicht unter Umständen nicht:
         # beim bauen (bauauftrag ausführen) reicht es, sollte beim queuen aber vielleicht auch gecheckt werden, was bereits im Bau ist ?
         # Falls ja: Lösungsvorschlag: im slot-model wird eine Funktion implementiert, die das Level nach Abschluss aller Jobs zurückliefert
-        if (exclude_slot.nil? || exclude_slot.slot_num != slot.slot_num) && slot.building_id == requirement[:id] && requirement[:max_level] && slot.level > requirement[:max_level]
+        if (exclude_slot.nil? || exclude_slot.slot_num != slot.slot_num) && slot.building_id == requirement[:id] && requirement[:max_level] && slot.level_after_finishing_jobs > requirement[:max_level]
           return false
         end
       end

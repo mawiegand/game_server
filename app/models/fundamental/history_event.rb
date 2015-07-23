@@ -46,7 +46,8 @@ class Fundamental::HistoryEvent < ActiveRecord::Base
           end
         end
       else
-        Rails.logger.debug "An error occured while fetching history events! Http-Status: #{httpstatus}"
+        #Rails.logger.debug "An error occured while fetching history events! Http-Status: #{httpstatus}"
+        Rails.logger.debug "An error occured while fetching history events! response: #{response}"
       end
     end
   end

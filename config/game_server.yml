@@ -71,6 +71,11 @@ defaults: &defaults
   artifact_capture_probability_factor:   0.05    # probability factor of artifact to be captured by attacker after every battle round
   artifact_capture_disable_time: 24 #hours to disable artifact capture after settlement move
 
+  poacher_cycle_update_interval:       8    # interval for updating max_poachers_count and resetting spawned_poachers_count in hours
+  poacher_home_region_probability:     0.5  # probability of placing poacher in home region
+  poacher_max_size:                    1500 # maximum poacher size
+  poacher_character_units_count_limit: 6000 # if character has more units than this limit, only poacher with max size will spawn
+
   moving_disable_time_after_region_takeover: 12 #hours to disable moving to region after region was taken over
 
   battle_xp_winner_bonus_factor:         3.0

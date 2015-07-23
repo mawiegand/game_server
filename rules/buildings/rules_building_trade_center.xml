@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Rules SYSTEM "../rules.dtd">
+
+<Building id="building_trade_center" advisor="girl" group="military" category="building_category_specialization_building" buyable="false" destructable="false" demolishable="true"  experienceFactor="8" takeoverDestroy="true">
+  <Name lang="de_DE">Handelsplatz</Name>
+  <Name lang="en_US">Trade Center</Name>
+  <Description lang="de_DE">
+    <p>Spezialisierungsgebäude, spezialisiert die Lagerstätte für wirtschaftliche Zwecke. Nur ein Spezialisierungsgebäude pro Lagerstätte.</p>
+    <p>Der Handelsplatz verbessert die Rohstoffproduktion der Lagerstätte um 1% pro Level. Auf Level 10 nisten sich Kröten in den feuchten Ecken ein.</p>
+  </Description>
+  <Description lang="en_US">
+    <p>Specialization building, specializes your camp for economic purpose. Only one specialization building per camp.</p>
+    <p>The trade center improves the resource production of the camp by 1% per level. Additionally, it will produce a few frogs on level 10.</p>
+  </Description>
+  <Flavour lang="en_US">
+    <p>Field camps turn encampments into military support units. Despite all the talk about the safety and storage that field camps offer, they seem to have a magical attraction for enemies.</p>
+  </Flavour>
+    <Flavour lang="de_DE">
+    <p>Mehr Rohstoffe! Mit dem Handelsplatz verwandeln wir Lagerstätten in Wirtschaftsstützpunkte.</p>
+  </Flavour>
+<Population>FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)</Population>
+ <RequirementGroup>
+    <Requirement id="building_haunt" min_level="6" />
+    <Requirement id="building_chief_cottage" max_level="0" />
+    <Requirement id="building_altar" max_level="0" />
+    <Requirement id="building_field_camp" max_level="0" />
+    <Requirement id="building_trade_center" max_level="0" />
+  </RequirementGroup>
+  <Cost id="resource_stone" round="true">EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000</Cost>
+  <Cost id="resource_wood"  round="true">EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000</Cost>
+  <Cost id="resource_fur"  round="true">EQUAL(LEVEL,1)*200+EQUAL(LEVEL,2)*300+EQUAL(LEVEL,3)*500+EQUAL(LEVEL,4)*900+EQUAL(LEVEL,5)*1600+EQUAL(LEVEL,6)*2700+EQUAL(LEVEL,7)*4500+EQUAL(LEVEL,8)*8000+EQUAL(LEVEL,9)*13500+EQUAL(LEVEL,10)*20000</Cost>
+    <ProductionTime shortenable="true">5400*LEVEL</ProductionTime>
+    <Production id="resource_cash">GREATER(LEVEL,9)*1/48.0</Production>
+    <ProductionBonus id="resource_stone">0.01*LEVEL</ProductionBonus>
+    <ProductionBonus id="resource_wood">0.01*LEVEL</ProductionBonus>
+  <ProductionBonus id="resource_fur">0.01*LEVEL</ProductionBonus>
+  <Abilities> <!-- just for grouping -->
+    <TradingCarts>5*LEVEL*LEVEL</TradingCarts>
+  </Abilities>
+</Building>

@@ -2,6 +2,7 @@
 <!DOCTYPE Rules SYSTEM "rules.dtd">
 
 <AssignmentTypes>
+  
   <AssignmentType id="assignment_stone" advisor="girl" level="1">
     <Name>Boulder Smashing</Name>
     <Name lang="de_DE">Steine klopfen!</Name>
@@ -58,35 +59,7 @@
     <Duration>720</Duration>
   </AssignmentType>
 
-  <AssignmentType id="assignment_fur" advisor="girl" level="3">
-    <Name>Skinning</Name>
-    <Name lang="de_DE">Tiere häuten</Name>
-    
-    <Flavour lang="de_DE">Wenn ich nur dran denke, was für schöne Sachen wir aus den Fellen machen können. </Flavour>
-    <Flavour lang="en_US">Just think about all the nice things we can do with that fur.</Flavour>
-    
-    <ShortDescription lang="de_DE">
-      <p>Manchmal muss man den Dino bei der Haut packen.</p>
-    </ShortDescription>
-    <ShortDescription lang="en_US">
-      <p>Sometimes you gota grab the dino by the skin.</p>
-    </ShortDescription>
-    
-    <Description lang="de_DE">
-      <p>Du wolltest wirklich nur entspannen, und wurdest doch wieder für einen kleinen Auftrag rekrutiert. Der Gestank des Tierkadavers steigert nicht gerade Deine Stimmung.</p>
-    </Description>
-    <Description lang="en_US">
-      <p>All you wanted to do was relax with a drink, but then they had to go and make you work. At least they're paying for your drinks. Because to be frank, you're going to need a hell of a lot of drinks to forget about this skinning business.</p>
-    </Description>
-    
-    <Rewards>
-      <ResourceReward resource="resource_fur">50</ResourceReward>
-    </Rewards>
-    
-    <Duration>480</Duration>
-  </AssignmentType>
-
-  <AssignmentType id="assignment_barroombrawl" advisor="warrior" level="4">
+  <AssignmentType id="assignment_barroombrawl" advisor="warrior" level="3">
     <Name>Bar Room Brawl</Name>
     <Name lang="de_DE">Schlägerei</Name>
     
@@ -109,7 +82,6 @@
     
     <Cost id="resource_stone">50</Cost>
     <Cost id="resource_wood">50</Cost>
-    <Cost id="resource_fur">50</Cost>
     
     <Rewards>
       <UnitReward unit="unit_warrior">3</UnitReward>
@@ -117,6 +89,68 @@
     
     <Duration>2700</Duration>
   </AssignmentType>
+  
+    <AssignmentType id="assignment_fur" advisor="girl" level="4">
+      <Name>Skinning</Name>
+      <Name lang="de_DE">Tiere häuten</Name>
+      
+      <Flavour lang="de_DE">Wenn ich nur dran denke, was für schöne Sachen wir aus den Fellen machen können.</Flavour>
+      <Flavour lang="en_US">Just think about all the nice things we can do with that fur.</Flavour>
+      
+      <ShortDescription lang="de_DE">
+        <p>Manchmal muss man den Dino bei der Haut packen.</p>
+      </ShortDescription>
+      <ShortDescription lang="en_US">
+        <p>Sometimes you gota grab the dino by the skin.</p>
+      </ShortDescription>
+      
+      <Description lang="de_DE">
+        <p>Du wolltest wirklich nur entspannen, und wurdest doch wieder für einen kleinen Auftrag rekrutiert. Der Gestank des Tierkadavers steigert nicht gerade Deine Stimmung.</p>
+      </Description>
+      <Description lang="en_US">
+        <p>All you wanted to do was relax with a drink, but then they had to go and make you work. At least they're paying for your drinks. Because to be frank, you're going to need a hell of a lot of drinks to forget about this skinning business.</p>
+      </Description>
+      
+      <Rewards>
+        <ResourceReward resource="resource_fur">50</ResourceReward>
+      </Rewards>
+      
+      <Duration>480</Duration>
+    </AssignmentType>
+  
+  
+  <AssignmentType id="assignment_construction" advisor="chef" level="4">
+    <Name>Motivation</Name>
+    <Name lang="de_DE">Motivation</Name>
+    
+    <Flavour lang="de_DE">Eine kleine Motivationsansprache, ein paar sanft geführte Peitschenhiebe. Und schon gehts schneller!</Flavour>
+    <Flavour lang="en_US">Just think about all the nice things we can do with that fur.</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Schaka!</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Sometimes you gota grab the dino by the skin.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Das gefällt Dir. Endlich ein Auftrag bei dem Du andere arbeiten lässt.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>All you wanted to do was relax with a drink, but then they had to go and make you work. At least they're paying for your drinks. Because to be frank, you're going to need a hell of a lot of drinks to forget about this skinning business.</p>
+    </Description>
+    
+    <Cost id="resource_stone">250</Cost>
+    <Cost id="resource_wood">250</Cost>
+    <Cost id="resource_fur">500</Cost>
+    
+    <Rewards>
+      <ConstructionBonusReward duration="12">0.10</ConstructionBonusReward>
+    </Rewards>
+    
+    <Duration>129600</Duration>
+  </AssignmentType>
+  
   
   <AssignmentType id="assignment_raid" advisor="warrior" level="5">
     <Name>Drive out the Neanderthals</Name>
@@ -148,6 +182,39 @@
     </Rewards>
     
     <Duration>7200</Duration>
+    
+  </AssignmentType>
+  
+  <AssignmentType id="assignment_mushrooms" advisor="girl" level="6">
+    <Name>Mushroom gathering</Name>
+    <Name lang="de_DE">Pilze sammeln</Name>
+    
+    <Flavour lang="de_DE">Was für ein schöner Tag zum Pilze sammeln.</Flavour>
+    <Flavour lang="en_US">What a nice day for gathering mushrooms.</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Geh mit dem Sammler in den Wald.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>Take a stroll through the woods.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Der Sammler lädt die Dicken Keulen zum Pilze sammeln ein. Bei einem lauschigen Spaziergang erklärt der Sammler den Unterschied zwischen essbaren und giftigen Pilzen. Auf dem Rückweg wird noch ein wenig Feuerholz für das Lagerfeuer gesammelt, wobei auch die ein oder andere Kröte entdeckt wird.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>Your gatherers and thick clubs are out for a walk through the woods. On the way back they bring some especially nice branches and golden frogs with them.</p>
+    </Description>
+    
+    <Cost id="resource_stone">1000</Cost>
+    <UnitDeposit id="clubbers_2">50</UnitDeposit>
+    
+    <Rewards>
+      <ResourceReward resource="resource_wood">5000</ResourceReward>
+      <ResourceReward resource="resource_cash">1</ResourceReward>
+    </Rewards>
+    
+    <Duration>86400</Duration>
   </AssignmentType>
   
   <AssignmentType id="assignment_hunt" advisor="girl" level="7">
@@ -172,7 +239,7 @@
     </Description>
     
     <Cost id="resource_stone">600</Cost>
-    <Cost id="resource_wood">400</Cost>
+    <Cost id="resource_wood">500</Cost>
     <UnitDeposit id="clubbers">100</UnitDeposit>
     
     <Rewards>
@@ -182,6 +249,74 @@
     
     <Duration>21600</Duration>
   </AssignmentType>
+  
+  
+  <AssignmentType id="assignment_fishing" advisor="chef" level="7">
+    <Name>Gone fishing</Name>
+    <Name lang="de_DE">Fische fangen</Name>
+    
+    <Flavour lang="de_DE">Lecker Fisch.</Flavour>
+    <Flavour lang="en_US">Yummy fish!</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Der Chef schickt die Zielwerfer zum Fische fangen.</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>The chief tells some troops to go fish.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>Der Chef liebt Fisch. Gegrillt, in Fett gebraten oder im Holzofen gegart. Regelmäßig schickt er seine Zielwerfer aus, um ihm am Fluss ein paar Fische zu fangen. Die Zielwerfer suchen sich natürlich feinste Kieselsteine für ihre Schleudern und finden dabei auch immer wieder ein paar Kröten.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>The bigwigs love fish. Grilled, fried, boiled there is no kind they dont enjoy. They often send out their throwers to hunt some, and occasionaly they will even bring back something other than their throwing stones.</p>
+    </Description>
+    
+    <Cost id="resource_wood">2000</Cost>
+    <UnitDeposit id="thrower_2">50</UnitDeposit>
+    
+    <Rewards>
+      <ResourceReward resource="resource_stone">7500</ResourceReward>
+      <ResourceReward resource="resource_cash">2</ResourceReward>
+    </Rewards>
+    
+    <Duration>115200</Duration>
+  </AssignmentType>
+  
+  
+  <AssignmentType id="assignment_training" advisor="warrior" level="8">
+    <Name>Further training</Name>
+    <Name lang="de_DE">Fortbildung</Name>
+    
+    <Flavour lang="de_DE">Erfahrene Krieger berichten von ihren Heldentaten. Hört sich langweilig an, wirkt aber!</Flavour>
+    <Flavour lang="en_US">A chilled beer and flying fists! Now that's what I call relaxation!</Flavour>
+    
+    <ShortDescription lang="de_DE">
+      <p>Den ganzen Tag rumsitzen und zuhören. Boah, ist das anstrengend!</p>
+    </ShortDescription>
+    <ShortDescription lang="en_US">
+      <p>After a nice brawl, you sometimes make some great friends.</p>
+    </ShortDescription>
+    
+    <Description lang="de_DE">
+      <p>So eine Fortbildung ist eine wertvolle Erfahrung.</p>
+    </Description>
+    <Description lang="en_US">
+      <p>If a bunch of accomplished warriors meet at the tavern, chances are that there's going to be quite a brawl. But once it's all over, and someone has paid for the smashed up furniture, you may just find yourself with some reliable companions.</p>
+    </Description>
+
+    <Cost id="resource_fur">10000</Cost>
+    
+    <UnitDeposit id="clubbers_3">100</UnitDeposit>
+    <UnitDeposit id="thrower_3">100</UnitDeposit>
+    <UnitDeposit id="light_cavalry_3">100</UnitDeposit>
+    
+    <Rewards>
+      <ResourceReward resource="resource_cash">3</ResourceReward>
+    </Rewards>
+    
+        <Duration>129600</Duration>
+      </AssignmentType>
   
   <AssignmentType id="assignment_caravan" advisor="chef" level="9">
     <Name>Caravan</Name>
@@ -256,67 +391,5 @@
     <Duration>604800</Duration>
   </AssignmentType>
   
-  <AssignmentType id="assignment_mushrooms" advisor="girl" level="6">
-    <Name>Mushroom gathering</Name>
-    <Name lang="de_DE">Pilze sammeln</Name>
-    
-    <Flavour lang="de_DE">Was für ein schöner Tag zum Pilze sammeln.</Flavour>
-    <Flavour lang="en_US">What a nice day for gathering mushrooms.</Flavour>
-    
-    <ShortDescription lang="de_DE">
-      <p>Geh mit dem Sammler in den Wald.</p>
-    </ShortDescription>
-    <ShortDescription lang="en_US">
-      <p>Take a stroll through the woods.</p>
-    </ShortDescription>
-    
-    <Description lang="de_DE">
-      <p>Der Sammler lädt die Dicken Keulen zum Pilze sammeln ein. Bei einem lauschigen Spaziergang erklärt der Sammler den Unterschied zwischen essbaren und giftigen Pilzen. Auf dem Rückweg wird noch ein wenig Feuerholz für das Lagerfeuer gesammelt, wobei auch die ein oder andere Kröte entdeckt wird.</p>
-    </Description>
-    <Description lang="en_US">
-      <p>Your gatherers and thick clubs are out for a walk through the woods. On the way back they bring some especially nice branches and golden frogs with them.</p>
-    </Description>
-    
-    <UnitDeposit id="clubbers_2">50</UnitDeposit>
-    
-    <Rewards>
-      <ResourceReward resource="resource_wood">5000</ResourceReward>
-      <ResourceReward resource="resource_cash">1</ResourceReward>
-    </Rewards>
-    
-    <Duration>86400</Duration>
-  </AssignmentType>
-  
-  <AssignmentType id="assignment_fishing" advisor="chef" level="8">
-    <Name>Gone fishing</Name>
-    <Name lang="de_DE">Fische fangen</Name>
-    
-    <Flavour lang="de_DE">Lecker Fisch.</Flavour>
-    <Flavour lang="en_US">Yummy fish!</Flavour>
-    
-    <ShortDescription lang="de_DE">
-      <p>Der Chef schickt die Zielwerfer zum Fische fangen.</p>
-    </ShortDescription>
-    <ShortDescription lang="en_US">
-      <p>The chief tells some troops to go fish.</p>
-    </ShortDescription>
-    
-    <Description lang="de_DE">
-      <p>Der Chef liebt Fisch. Gegrillt, in Fett gebraten oder im Holzofen gegart. Regelmäßig schickt er seine Zielwerfer aus, um ihm am Fluss ein paar Fische zu fangen. Die Zielwerfer suchen sich natürlich feinste Kieselsteine für ihre Schleudern und finden dabei auch immer wieder ein paar Kröten.</p>
-    </Description>
-    <Description lang="en_US">
-      <p>The bigwigs love fish. Grilled, fried, boiled there is no kind they dont enjoy. They often send out their throwers to hunt some, and occasionaly they will even bring back something other than their throwing stones.</p>
-    </Description>
-    
-    <UnitDeposit id="thrower_2">50</UnitDeposit>
-    
-    <Rewards>
-      <ResourceReward resource="resource_stone">7500</ResourceReward>
-      <ResourceReward resource="resource_cash">2</ResourceReward>
-    </Rewards>
-    
-    <Duration>115200</Duration>
-  </AssignmentType>
-  
-  
-</AssignmentTypes>
+
+  </AssignmentTypes>

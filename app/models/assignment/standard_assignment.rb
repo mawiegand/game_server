@@ -4,7 +4,11 @@ class Assignment::StandardAssignment < ActiveRecord::Base
   
   belongs_to :character,  :class_name => "Fundamental::Character",  :foreign_key => "character_id",    :inverse_of => :standard_assignments
   has_one    :event,      :class_name => "Event::Event",            :foreign_key => "local_event_id",  :dependent => :destroy, :conditions => "event_type = 'standard_assignment'"
-  
+
+  has_many   :character_resource_effects, :class_name => "Effect::ResourceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD]
+  has_many   :character_construction_effects, :class_name => "Effect::ConstructionEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD]
+  has_many   :character_experience_effects, :class_name => "Effect::ExperienceEffect",         :foreign_key => "origin_id", :conditions => ["type_id = ?", Effect::ExperienceEffect::EXPERIENCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD]
+
   scope :with_type_id,  lambda { |type_id| where(:type_id => type_id) }
   scope :with_type,     lambda { |type|    where(:type_id => type[:id]) }
   
@@ -165,15 +169,19 @@ class Assignment::StandardAssignment < ActiveRecord::Base
     self.started_at = nil
     self.halved_at = nil
     self.ended_at = nil
+    self.finished = false
   end
   
   def redeem_rewards!
     rewards            = self.assignment_type[:rewards] || {}
     
-    resource_rewards   = rewards[:resource_rewards]
-    unit_rewards       = rewards[:unit_rewards]
-    experience_rewards = rewards[:experience_reward]
-    
+    resource_rewards                    = rewards[:resource_rewards]
+    unit_rewards                        = rewards[:unit_rewards]
+    experience_rewards                  = rewards[:experience_reward]
+    production_bonus_rewards            = rewards[:production_bonus_rewards]
+    construction_bonus_rewards          = rewards[:construction_bonus_rewards]
+    experience_production_bonus_rewards = rewards[:experience_production_bonus_rewards]
+
     resources = self.resource_hash_from_rewards(resource_rewards) 
     units = self.unit_hash_from_rewards(unit_rewards)
     
@@ -194,13 +202,59 @@ class Assignment::StandardAssignment < ActiveRecord::Base
       self.character.increment(:exp, (rewards[:experience_reward] * (1 + (self.character.exp_bonus_total || 0))).floor)
       self.character.save!
     end
+
+    unless production_bonus_rewards.nil?
+      production_bonus_rewards.each do |production_bonus|
+        resource_type_id = nil
+        GameRules::Rules.the_rules().resource_types.each do |type|
+          if type[:symbolic_id].to_s == production_bonus[:resource].to_s
+            resource_type_id = type[:id]
+            break
+          end
+        end
+        raise BadRequestError.new("no resource type found for resource symbolic id #{production_bonus[:resource]}") if resource_type_id.nil?
+
+        Effect::ResourceEffect.create_reward_effect(
+            self.character,
+            resource_type_id,
+            production_bonus[:bonus],
+            production_bonus[:duration],
+            self.id,
+            Effect::ResourceEffect::RESOURCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD
+        )
+      end
+    end
+
+    unless construction_bonus_rewards.nil?
+      construction_bonus_rewards.each do |construction_bonus|
+        Effect::ConstructionEffect.create_reward_effect(
+            self.character,
+            construction_bonus[:bonus],
+            construction_bonus[:duration],
+            self.id,
+            Effect::ConstructionEffect::CONSTRUCTION_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD
+        )
+      end
+    end
+
+    unless experience_production_bonus_rewards.nil?
+      experience_production_bonus_rewards.each do |experience_production_bonus|
+        Effect::ExperienceEffect.create_reward_effect(
+            self.character,
+            experience_production_bonus[:bonus],
+            experience_production_bonus[:duration],
+            self.id,
+            Effect::ExperienceEffect::EXPERIENCE_EFFECT_TYPE_STANDARD_ASSIGNMENT_REWARD
+        )
+      end
+    end
   end
   
   
   def redeem_rewards_deposit_and_end_transaction
     ActiveRecord::Base.transaction(:requires_new => true) do
       self.lock!
-      if !self.ended_at.nil?
+      if !self.ended_at.nil? && self.finished
         self.end_now
         self.save!
         self.redeem_rewards!
@@ -210,7 +264,13 @@ class Assignment::StandardAssignment < ActiveRecord::Base
       end
     end
   end
-  
+
+  def finish!
+    if self.ongoing? && !self.ended_at.nil? && self.ended_at <= Time.now
+      self.finished = true
+      self.save!
+    end
+  end
   
   # ##########################################################################
   #

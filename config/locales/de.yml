@@ -21,6 +21,7 @@ de:
     military:
       new_army: Neue Armee
       neanderthal: Neandertaler
+      poacher: Wilderer
     settlement:
       neanderthal: Neandertal
     messaging:
@@ -64,6 +65,9 @@ de:
         retreated: "zurückgezogen"
         survived: "hat überlebt"
         no_units: "keine Einheiten"
+      alliance_character_invite_message:
+        subject: "Allianz Einladung"
+        body: "Der Anführer der Allianz %{alliance_name} hat Dich eingeladen seiner Allianz beizutreten. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Einladung abzulehnen."
       alliance_application_message:
         subject: "Allianz Bewerbung"
         body: "Der Spieler %{name} hat sich bei Deiner Allianz um Aufnahme beworben. Bitte nimm Kontakt auf, um Details zu besprechen oder seine Bewerbung abzulehnen."
@@ -125,13 +129,13 @@ de:
         body2: <p>Juhu! Deine Armeen haben den Kampf in der Region <b>%{region_name}</b> um die Siedlung <b>%{settlement_name}</b> gewonnen. Du bist jetzt neuer Besitzer der Siedlung.</p>
       artifact_captured_message:
         subject: Du hast ein Artefakt gewonnen!
-        body: <p>Hurra! Unsere Armeen haben erfolgreich gekämpft und von unserem Gegner ein Artefakt erobert. Du kannst das Artefakt in Deiner Hauptsiedlung bewundern. Für die Aktivierung musst Du einen Artefakt-Stand bauen.</p>
+        body: <p>Hurra! Unsere Armeen haben erfolgreich gekämpft und von unserem Gegner ein Artefakt erobert. Du kannst das Artefakt in Deiner Hauptsiedlung bewundern. Für die Aktivierung musst Du eine Tüftler-Werkstatt bauen.</p>
       artifact_jumped_message:
         subject: Das Artefakt ist verloren!
         body: <p>So ein Mist! Unsere Armeen haben zwar erfolgreich gekämpft, aber das Artefakt ging während des Kampfes verloren. Suche das verlorene Artefakt bei einer Neandertaler-Armee in der Nähe.</p>
       artifact_stolen_message:
         subject: Dein Artefakt wurde geraubt!
-        body: <p>Och menno! Deine Untergebenen haben tapfer gekämpft, aber das Artefakt wurde Dir geraubt. Einheiten rekrutieren, Armeen aufstellen und dann wird sich das Artefakt zurückgeholt! Ein anderes tut es aber auch.</p>
+        body: <p>Och menno! Deine Untergebenen haben tapfer gekämpft, aber das Artefakt wurde Dir geraubt. Einheiten rekrutieren, Armeen aufstellen und dann wird das Artefakt zurückgeholt! Ein anderes tut es aber auch.</p>
     identity_provider:
       custom_booking:
         subject: 5D-Credit-Buchung
@@ -152,7 +156,7 @@ de:
           description:
             Der Platinum Account erweitert die Bauschleife um zusätzliche 3 Plätze. Dadurch kannst Du
             mehr Aufträge gleichzeitig erteilen. Diese werden nach und nach abgearbeitet, auch wenn Du 
-            nicht im Spiel einloggt bist, vorausgesetzt, Du hast genug Ressourcen.
+            nicht im Spiel eingeloggt bist, vorausgesetzt, Du hast genug Ressourcen.
         training:
           title:
             Trainingsschleife
@@ -166,8 +170,8 @@ de:
           description:
             Mit aktiviertem Platinum Account wirst Du umgehend per E-Mail über Angriffe auf Deine Siedlungen,
             Festungen und Armeen informiert, wenn Du gerade nicht im Spiel bist. Damit kannst Du direkt auf
-            Eure Gegner reagieren, auch wenn Du Dich nicht gerade im Spiel befunden hast. Du kannst weitere
-            Armeen zur Unterstützung zum Ort des Geschehens beordern oder Deine Allianz um Hilfe ersuchen.
+            Deine Gegner reagieren, auch wenn Du Dich gerade nicht im Spiel befunden hast. Du kannst weitere
+            Armeen zur Unterstützung zum Ort des Geschehens beordern oder Deine Allianz um Hilfe bitten.
         like_regeneration:
           title:
             Schnellere Regeneration vergebener Likes / Dislikes
@@ -179,7 +183,7 @@ de:
           title:
             Nachrichten-Archiv
           description:
-            Gelesene Nachrichten aus der Inbox und alle Nachrichten aus der Outbox werden nach 14 Tagen gelöscht. Mit
+            Gelesene Nachrichten aus dem Eingang und alle Nachrichten aus dem Ausgang werden nach 14 Tagen gelöscht. Mit
             dem Platinum erhälst Du zusätzlich eine Archivbox, in die Du wichtige Nachrichten verschieben kannst, damit
             sie dauerhaft gespeichert werden.
         footer:
@@ -188,9 +192,9 @@ de:
     retention:
       subject:
         played_too_short:
-          "In Deiner Siedlung geht's grad drunter und drüber"
+          "In Deiner Siedlung geht's grade drunter und drüber"
         paused_too_long:
-          "In Deiner Siedlung geht's grad drunter und drüber"
+          "In Deiner Siedlung geht's grade drunter und drüber"
         getting_inactive:
           "%{name}, %{credit_reward} 5D Platinum Credits - Hol dir deine Belohnung!"
         getting_deleted:

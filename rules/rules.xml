@@ -73,7 +73,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="2" minor="2" build="0" />
+    <Version major="2" minor="3" build="11" />
     <AppControl debugTracking="1" startscreen="settlement">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="19" />
       <Facebook userStoriesEnabled="0" />
@@ -91,9 +91,9 @@
       <Calculation roundTime="20" retreatProbability="0.5" />
     </Battle>
     <CharacterCreation>
-      <StartResource id="resource_wood">200</StartResource>
-      <StartResource id="resource_stone">200</StartResource>
-      <StartResource id="resource_fur">200</StartResource>
+      <StartResource id="resource_wood">100</StartResource>
+      <StartResource id="resource_stone">100</StartResource>
+      <StartResource id="resource_fur">0</StartResource>
       <StartResource id="resource_cash">0</StartResource>
     </CharacterCreation>
     <ConstructionSpeedup>
@@ -109,6 +109,7 @@
       <SpeedupCost resource="resource_cash" amount="48" hours="9999" />
     </ConstructionSpeedup>
     <TrainingSpeedup>
+      <SpeedupCost resource="resource_cash" amount="0"  hours="(0.5/60.0)" />
       <SpeedupCost resource="resource_cash" amount="1"  hours="0.5"  />
       <SpeedupCost resource="resource_cash" amount="2"  hours="3"  />
       <SpeedupCost resource="resource_cash" amount="4"  hours="6"  />
@@ -126,7 +127,7 @@
       <Rewards>
         <ResourceReward resource="resource_stone">8000</ResourceReward>
         <ResourceReward resource="resource_wood">8000</ResourceReward>
-        <ResourceReward resource="resource_fur">8000</ResourceReward>
+        <ResourceReward resource="resource_fur">4000</ResourceReward>
       </Rewards>
     </RetentionBonus>
     <ArtifactInitiationSpeedup>
@@ -234,29 +235,28 @@
     <SpecialOffer>
       <Outpost>
         <Slot slotNum="1" id="building_haunt" level="6"/>
-        <Slot slotNum="2" id="building_gatherer" level="4"/>
-        <Slot slotNum="3" id="building_gatherer" level="5"/>
-        <Slot slotNum="4" id="building_gatherer" level="6"/>
-        <Slot slotNum="5" id="building_gatherer" level="7"/>
+        <Slot slotNum="2" id="building_gatherer" level="7"/>
+        <Slot slotNum="3" id="building_logger" level="4"/>
+        <Slot slotNum="4" id="building_quarry" level="4"/>
         <Slot slotNum="7" id="building_altar" level="1"/>
       </Outpost>
       <StartResource id="resource_cash">300</StartResource>
       <StartResource id="resource_stone">500</StartResource>
       <StartResource id="resource_wood">500</StartResource>
-      <StartResource id="resource_fur">500</StartResource>
+      <StartResource id="resource_fur">250</StartResource>
       <ProductionStartBonus bonusOfferId="1" duration="96"/>
       <ProductionStartBonus bonusOfferId="2" duration="96"/>
       <ProductionStartBonus bonusOfferId="3" duration="96"/>
       <ConstructionStartBonus duration="96">1</ConstructionStartBonus>
       <DisplayStrings lang="de_DE">
         <DisplayString>Zweite Siedlung:\nLagerstaette</DisplayString>
-        <DisplayString>1500 Rohstoffe einmalig\n150 Rohstoffe pro Stunde\n15% Produktionsbonus</DisplayString>
+        <DisplayString>1250 Rohstoffe einmalig\n150 Rohstoffe pro Stunde\n15% Produktionsbonus</DisplayString>
         <DisplayString>300 Goldkröten</DisplayString>
         <DisplayString>Halbierte Bauzeit fuer 4 Tage</DisplayString>
       </DisplayStrings>
       <DisplayStrings lang="en_US">
         <DisplayString>SecondSettlement:\nCamp</DisplayString>
-        <DisplayString>1500 Resources\n150 Resources per hour\n15% Production Bonus</DisplayString>
+        <DisplayString>1250 Resources\n150 Resources per hour\n15% Production Bonus</DisplayString>
         <DisplayString>300 Golden Frogs</DisplayString>
         <DisplayString>Halved Construction Time for 4 days</DisplayString>
       </DisplayStrings>

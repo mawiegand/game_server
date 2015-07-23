@@ -241,6 +241,15 @@ class Settlement::Slot < ActiveRecord::Base
     settlement_type = GameRules::Rules.the_rules().settlement_types[self.settlement.type_id]
     settlement_type[:building_slots][self.slot_num][:max_level]
   end
+
+  def level_after_finishing_jobs
+    return self.level if self.jobs.nil?
+    end_level = self.level
+    self.jobs.each do |job|
+      end_level = job.level_after if job.level_after > end_level
+    end
+    end_level
+  end
   
   def takeover_level_factor
     settlement_type = GameRules::Rules.the_rules.settlement_types[self.settlement.type_id]
