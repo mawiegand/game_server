@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="0" build="8" />
+    <Version major="1" minor="0" build="9" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -2693,7 +2693,7 @@
   <RewardFlavor locale="en_US">Raise your fur production by building more furrier.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
-      <FinishQuestTrigger>quest_build_2furrierlvl4</FinishQuestTrigger>
+      <FinishQuestTrigger>quest_build_2furrier_lvl4</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
@@ -2722,7 +2722,6 @@
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_build_quarry_lvl6</FinishQuestTrigger>
-      <FinishQuestTrigger>quest_build_2logger_lvl4</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
@@ -2749,7 +2748,6 @@
   <RewardFlavor locale="en_US">Wow – look at your wood production. That's massive! </RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
-      <FinishQuestTrigger>quest_build_2quarry_lvl4</FinishQuestTrigger>
       <FinishQuestTrigger>quest_build_logger_lvl6</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
@@ -2777,7 +2775,7 @@
   <RewardFlavor locale="en_US">Raise your fur production by building more furrier.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
-      <FinishQuestTrigger>quest_build_furrierlvl6</FinishQuestTrigger>
+      <FinishQuestTrigger>quest_build_furrier_lvl6</FinishQuestTrigger>
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>

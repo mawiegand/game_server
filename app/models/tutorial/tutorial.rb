@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.0.8
+# Version: 1.0.9
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 1, 
         :minor => 0, 
-        :build => 8, 
+        :build => 9, 
       },
       
       :production_test_weights => {
@@ -9208,7 +9208,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_2furrierlvl4',
+                :finish_quest_trigger => 'quest_build_2furrier_lvl4',
               },
 
             ],
@@ -9414,7 +9414,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_2quarry_lvl4',
+                :finish_quest_trigger => 'quest_build_logger_lvl6',
               },
 
             ],
@@ -9517,7 +9517,7 @@ class Tutorial::Tutorial
             :finish_quest_triggers => [
               
               {
-                :finish_quest_trigger => 'quest_build_furrierlvl6',
+                :finish_quest_trigger => 'quest_build_furrier_lvl6',
               },
 
             ],
