@@ -21,6 +21,8 @@ class Action::Military::AttackArmyActionsController < ApplicationController
       raise ForbiddenError.new('attacker is currently suspended')               if attacker.suspended?
       raise ForbiddenError.new('defender is currently under attack protection') if defender.protected?
 
+      raise ConflictError.new('tried to start or intervene a foreign poacher fight') if defender.is_foreign_poacher_of?(attacker.owner) || defender.is_fighting_against_poacher?
+
       attacker.consume_ap         unless attacker.garrison?                                    # raises a BadAccessError if no aps are available
       Military::Battle.start_fight_between(attacker, defender)     # creates and returns battle, or returns nil, if army was overrun
     end

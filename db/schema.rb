@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150417214445) do
+ActiveRecord::Schema.define(:version => 20150719213231) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1927,6 +1927,9 @@ ActiveRecord::Schema.define(:version => 20150417214445) do
     t.datetime "can_redeem_retention_bonus_at"
     t.datetime "can_redeem_retention_bonus_start_time"
     t.boolean  "has_limited_grid",                         :default => false
+    t.integer  "max_poachers_count"
+    t.integer  "spawned_poachers_count",                   :default => 0
+    t.datetime "last_poacher_cycle_update"
   end
 
   create_table "fundamental_diplomacy_relations", :force => true do |t|
@@ -2266,6 +2269,7 @@ ActiveRecord::Schema.define(:version => 20150417214445) do
     t.integer  "alliance_color"
     t.boolean  "invisible",                       :default => false
     t.boolean  "selected",                        :default => false
+    t.integer  "specific_character_id"
   end
 
   add_index "military_armies", ["location_id"], :name => "index_military_armies_on_location_id"

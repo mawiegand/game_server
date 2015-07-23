@@ -26,6 +26,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_many :standard_assignments,  :class_name => "Assignment::StandardAssignment",  :foreign_key => "character_id",  :inverse_of => :character
   has_one  :special_assignment,    :class_name => "Assignment::SpecialAssignment",   :foreign_key => "character_id",  :inverse_of => :character
   has_many :armies,            :class_name => "Military::Army",             :foreign_key => "owner_id",     :inverse_of => :owner
+  has_many :poachers,          :class_name => "Military::Army",             :foreign_key => "specific_character_id", :inverse_of => :specific_character
   has_many :locations,         :class_name => "Map::Location",              :foreign_key => "owner_id"
   has_many :regions,           :class_name => "Map::Region",                :foreign_key => "owner_id"
   has_many :alliance_shouts,   :class_name => "Fundamental::AllianceShout", :foreign_key => "alliance_id"
@@ -62,9 +63,11 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :alliance_leader_candidate, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "candidate_id", :inverse_of => :candidate
   has_one  :alliance_leader_vote, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "voter_id", :inverse_of => :voter
 
+  has_one  :spawn_poacher_event,  :class_name => "Event::Event",            :foreign_key => "local_event_id",  :dependent => :destroy, :conditions => "event_type = 'spawn_poacher'"
+
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at, :can_redeem_retention_bonus_at, :can_redeem_retention_bonus_start_time, :has_limited_grid,   :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
-  attr_readable *readable_attributes(:ally), :cannot_join_alliance_until, :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :start_variant, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :divine_supporter, :image_set_id, :platinum_lifetime, :moved_at, :gc_player_id, :gc_rejected_at, :gc_player_id_connected_at, :fb_player_id, :fb_rejected_at, :fb_player_id_connected_at, :as => :owner
+  attr_readable *readable_attributes(:ally), :cannot_join_alliance_until, :premium_account, :locked, :locked_by, :locked_at, :character_unlock_, :skill_points, :premium_expiration, :start_variant, :premium_expiration_displayed_at, :character_queue_, :name_change_count, :last_login_at, :settlement_points_total, :settlement_points_used, :notified_mundane_rank, :notified_sacred_rank, :gender_change_count, :ban_reason, :ban_ended_at, :staff_roles, :exp_production_rate, :exp_bonus_total, :kills, :same_ip, :playtime, :assignment_level, :special_offer_dialog_count, :special_offer_displayed_at, :divine_supporter, :image_set_id, :platinum_lifetime, :moved_at, :gc_player_id, :gc_rejected_at, :gc_player_id_connected_at, :fb_player_id, :fb_rejected_at, :fb_player_id_connected_at, :max_poachers_count, :spawned_poachers_count, :last_poacher_cycle_update, :as => :owner
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game, :credits_spent_total, :insider_since,   :as => :staff
   attr_readable *readable_attributes(:owner), :last_request_at, :max_conversion_state, :reached_game,                          :as => :developer
   attr_readable *readable_attributes(:staff),                                                                                  :as => :admin
@@ -375,7 +378,15 @@ class Fundamental::Character < ActiveRecord::Base
   def can_takeover_settlement?
     settlement_point_available?
   end  
-  
+
+  def settled_regions
+    regions = {}
+    self.settlements.each do |settlement|
+      regions[settlement.region_id] = settlement.region
+    end
+
+    return regions.values
+  end
   
   def voted_for_candidate_id
     return nil     if self.alliance_leader_vote.nil?
@@ -539,8 +550,8 @@ class Fundamental::Character < ActiveRecord::Base
       character.base_region_id = location.region_id
       character.base_node_id = location.region.node_id
 
-      character.resource_pool.fill_with_start_resources_transaction(resource_modificator)   
-      
+      character.resource_pool.fill_with_start_resources_transaction(resource_modificator)
+
       character
     end
     
@@ -579,6 +590,8 @@ class Fundamental::Character < ActiveRecord::Base
         cmd.character_id = character.id
         cmd.save
       end
+
+      character.update_poachers
     end
     
     character 
@@ -659,6 +672,8 @@ class Fundamental::Character < ActiveRecord::Base
       cmd = Messaging::JabberCommand.grant_access(character, 'beginner')
       cmd.character_id = character.id
       cmd.save
+
+      character.update_poachers
     end
     
     character 
@@ -954,7 +969,64 @@ class Fundamental::Character < ActiveRecord::Base
     end
     self.max_conversion_state = "registered"
   end
-  
+
+  def new_poacher_spawn_possible?
+    self.poachers.count < self.max_poachers_count && self.spawned_poachers_count < self.max_poachers_count
+  end
+
+  def update_poachers
+    # update poacher cycle variables
+    if self.last_poacher_cycle_update.nil? || self.last_poacher_cycle_update <= GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours.ago
+      self.last_poacher_cycle_update = Time.now
+      self.max_poachers_count = self.settlement_points_total * 2 # TODO: Maybe define formula in rules?
+      self.spawned_poachers_count = 0
+      self.save
+    end
+
+    # place a new poacher if needed
+    if self.new_poacher_spawn_possible?
+      Military::Army.place_poacher_for(self)
+      self.spawned_poachers_count += 1
+      self.save
+    end
+
+    self.create_spawn_poacher_event
+  end
+
+  def create_spawn_poacher_event
+    # check if next event should spawn new poacher or only update poacher cycle variables
+    if self.new_poacher_spawn_possible?
+      # create new event for new spawn
+      event_time = Time.now + (GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours / self.max_poachers_count)
+    else
+      # create new event for update cycle
+      event_time = self.last_poacher_cycle_update + GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours
+    end
+
+    # build new spawn poacher event
+    event = self.build_spawn_poacher_event(
+      character_id: self.id,
+      execute_at: event_time,
+      event_type: "spawn_poacher",
+      local_event_id: self.id
+    )
+    event.save
+  end
+
+  def update_spawn_poacher_event
+    next_update_cycle_execution = self.last_poacher_cycle_update + GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours
+
+    # find existing spawn poacher event which would update cycle variables
+    existing_events = Event::Event.where(character_id: self.id, event_type: 'spawn_poacher', execute_at: next_update_cycle_execution)
+    event = existing_events.first unless existing_events.nil?
+
+    if !event.nil? # if next event should update cycle variables
+      event_time = Time.now + (GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours / self.max_poachers_count)
+      event.execute_at = event_time if self.new_poacher_spawn_possible? && event_time < next_update_cycle_execution # update spawn event if spawn is possible within current cycle
+      event.save
+    end
+  end
+
   # ##########################################################################
   #
   #   Alliance related stuff
