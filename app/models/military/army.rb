@@ -728,13 +728,13 @@ class Military::Army < ActiveRecord::Base
 
     # calculate placement location
     placement_probability = Random.rand(0..1.0)
-    if placement_probability <= GAME_SERVER_CONFIG['poacher_home_region_probability']
+    if placement_probability <= GAME_SERVER_CONFIG['poacher_home_region_probability'] && !character.home_location.nil?
       # place poacher in home region
       location = character.home_location.region.random_location
     else
       # place poacher in none home region
       regions = character.settled_regions
-      location = regions[(Random.rand(regions.count))].random_location
+      location = regions[(Random.rand(regions.count))].random_location unless regions.nil? || regions.count < 1
     end
 
     # calculate army size
