@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.3.12
+# Version: 2.3.13
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -125,7 +125,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 3,
-                    :build => 12,
+                    :build => 13,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -191,7 +191,7 @@ class GameRules::Rules
   
         :outpost => {
 1 => {
-            :id          => 24,
+            :id          => 27,
             :level       => 6,
           },
 2 => {
@@ -207,7 +207,7 @@ class GameRules::Rules
             :level       => 4,
           },
 7 => {
-            :id          => 26,
+            :id          => 29,
             :level       => 1,
           },
 
@@ -1164,7 +1164,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 28,
+              :id => 31,
               :type => 'building',
 
               :min_level => 0,
@@ -1186,7 +1186,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_barracks_2',
-              :id => 31,
+              :id => 16,
               :type => 'building',
 
               :min_level => 0,
@@ -1271,7 +1271,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 28,
+              :id => 31,
               :type => 'building',
 
               :min_level => 1,
@@ -1297,7 +1297,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_barracks_2',
-              :id => 31,
+              :id => 16,
               :type => 'building',
 
               :min_level => 1,
@@ -1380,7 +1380,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 28,
+              :id => 31,
               :type => 'building',
 
               :min_level => 5,
@@ -1389,7 +1389,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 4,
@@ -1415,7 +1415,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_barracks_2',
-              :id => 31,
+              :id => 16,
               :type => 'building',
 
               :min_level => 1,
@@ -1498,7 +1498,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_infantry_tower',
-              :id => 28,
+              :id => 31,
               :type => 'building',
 
               :min_level => 10,
@@ -1507,7 +1507,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 9,
@@ -1520,7 +1520,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_barracks_2',
-              :id => 31,
+              :id => 16,
               :type => 'building',
 
               :min_level => 5,
@@ -1603,7 +1603,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_barracks_2',
-              :id => 31,
+              :id => 16,
               :type => 'building',
 
               :min_level => 10,
@@ -1621,7 +1621,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 0,
@@ -1706,7 +1706,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 29,
+              :id => 32,
               :type => 'building',
 
               :min_level => 1,
@@ -1732,7 +1732,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_firing_range_2',
-              :id => 32,
+              :id => 23,
               :type => 'building',
 
               :min_level => 1,
@@ -1815,7 +1815,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 29,
+              :id => 32,
               :type => 'building',
 
               :min_level => 5,
@@ -1824,7 +1824,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 4,
@@ -1850,7 +1850,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_firing_range_2',
-              :id => 32,
+              :id => 23,
               :type => 'building',
 
               :min_level => 1,
@@ -1933,7 +1933,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_artillery_tower',
-              :id => 29,
+              :id => 32,
               :type => 'building',
 
               :min_level => 10,
@@ -1942,7 +1942,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 9,
@@ -1955,7 +1955,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_firing_range_2',
-              :id => 32,
+              :id => 23,
               :type => 'building',
 
               :min_level => 5,
@@ -2038,7 +2038,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_firing_range_2',
-              :id => 32,
+              :id => 23,
               :type => 'building',
 
               :min_level => 10,
@@ -2056,7 +2056,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 0,
@@ -2141,7 +2141,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 30,
+              :id => 33,
               :type => 'building',
 
               :min_level => 1,
@@ -2154,7 +2154,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 20,
+              :id => 22,
               :type => 'building',
 
               :min_level => 1,
@@ -2167,7 +2167,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud_2',
-              :id => 33,
+              :id => 26,
               :type => 'building',
 
               :min_level => 1,
@@ -2250,7 +2250,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 30,
+              :id => 33,
               :type => 'building',
 
               :min_level => 5,
@@ -2259,7 +2259,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 4,
@@ -2272,7 +2272,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 20,
+              :id => 22,
               :type => 'building',
 
               :min_level => 10,
@@ -2285,7 +2285,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud_2',
-              :id => 33,
+              :id => 26,
               :type => 'building',
 
               :min_level => 1,
@@ -2368,7 +2368,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_cavalry_tower',
-              :id => 30,
+              :id => 33,
               :type => 'building',
 
               :min_level => 10,
@@ -2377,7 +2377,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 9,
@@ -2390,7 +2390,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud_2',
-              :id => 33,
+              :id => 26,
               :type => 'building',
 
               :min_level => 5,
@@ -2473,7 +2473,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud_2',
-              :id => 33,
+              :id => 26,
               :type => 'building',
 
               :min_level => 10,
@@ -2491,7 +2491,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 0,
@@ -2576,7 +2576,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 20,
+              :id => 22,
               :type => 'building',
 
               :min_level => 100,
@@ -2747,7 +2747,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_stud',
-              :id => 20,
+              :id => 22,
               :type => 'building',
 
               :min_level => 100,
@@ -2986,7 +2986,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 0,
@@ -3136,7 +3136,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 0,
@@ -3151,7 +3151,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 1,
@@ -3171,7 +3171,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 0,
@@ -3281,7 +3281,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 0,
@@ -3303,7 +3303,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 0,
@@ -3414,7 +3414,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 2,
@@ -3531,7 +3531,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 5,
@@ -3644,7 +3644,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 0,
@@ -3738,7 +3738,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 4,
@@ -3865,7 +3865,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 0,
@@ -3970,7 +3970,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 3,
@@ -4076,7 +4076,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 3,
@@ -4123,221 +4123,8 @@ class GameRules::Rules
           },
 
         },              #   END OF Holzfäller
-        {               #   Trainingshöhle
-          :id          => 10, 
-          :symbolic_id => :building_training_cave,
-					:category    => 6,
-          :db_field    => :building_training_cave,
-          :name        => {
-            
-            :de_DE => "Trainingshöhle",
-  
-            :en_US => "Training Cave",
-                
-          },
-          :advisor     => "chef",
-          :flavour     => {
-            
-            :de_DE => "<p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p>",
-  
-            :en_US => "<p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Dient als passive Quelle von Erfahrung.</p><p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth, Spiegel, in denen man sich herrlich erschrecken kann, und natürlich die ein oder andere Ratte, die eingefangen werden will.</p>",
-  
-            :en_US => "<p>The Training Cave offers multiple training possibilities to would-be Demigods. Huge stones to lift, an almost endless labyrinth, mirrors that can scare you witless, and of course, a few rats to catch.</p><p>This building can not be torn down.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "LESS(LEVEL,11)*FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5))",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 8,
-
-          :experience_production => '(CEIL((((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))/12.5)*1.5)))+EQUAL(LEVEL,10)',
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 7,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 24,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_training_cave',
-              :id => 10,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'EQUAL(LEVEL,1)*60+EQUAL(LEVEL,2)*90+EQUAL(LEVEL,3)*165+EQUAL(LEVEL,4)*280+EQUAL(LEVEL,5)*465+EQUAL(LEVEL,6)*780+EQUAL(LEVEL,7)*1340+EQUAL(LEVEL,8)*2300+EQUAL(LEVEL,9)*3800+EQUAL(LEVEL,10)*6000',
-            1 => 'EQUAL(LEVEL,1)*60+EQUAL(LEVEL,2)*90+EQUAL(LEVEL,3)*165+EQUAL(LEVEL,4)*280+EQUAL(LEVEL,5)*465+EQUAL(LEVEL,6)*780+EQUAL(LEVEL,7)*1340+EQUAL(LEVEL,8)*2300+EQUAL(LEVEL,9)*3800+EQUAL(LEVEL,10)*6000',
-            2 => 'EQUAL(LEVEL,4)*400+EQUAL(LEVEL,5)*750+EQUAL(LEVEL,6)*1400+EQUAL(LEVEL,7)*2500+EQUAL(LEVEL,8)*4200+EQUAL(LEVEL,9)*7000+EQUAL(LEVEL,10)*10000',
-            
-          },
-
-          :production_time => '(EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3))',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-          },
-
-        },              #   END OF Trainingshöhle
-        {               #   Tüftler-Werkstatt
-          :id          => 11, 
-          :symbolic_id => :building_artifact_stand,
-					:category    => 6,
-          :db_field    => :building_artifact_stand,
-          :name        => {
-            
-            :de_DE => "Tüftler-Werkstatt",
-  
-            :en_US => "Workshop",
-                
-          },
-          :advisor     => "chef",
-          :flavour     => {
-            
-            :de_DE => "<p>Die Tüftler warten bereits auf die Artefakte. Hol Dir eins!</p>",
-  
-            :en_US => "<p>Those Tinkers are insane! Enter at your own risk.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Benötigt um Artefakte zu nutzen.</p><p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
-  
-            :en_US => "<p>Thinkers and Tinkers get together at the workshop. They examine whatever unknown materials there are - artifacts, as the simple-minded call them - and attempt to bring about a technological revolution.</p><p>This building can not be torn down.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> false,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 12,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_chief_cottage',
-              :id => 0,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
-              :symbolic_id => 'building_artifact_stand',
-              :id => 11,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            {
-              :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => '(FLOOR(7500*POW(LEVEL,0.4)))',
-            1 => '(FLOOR(10000*POW(LEVEL,0.4)))',
-            2 => '(FLOOR(12500*POW(LEVEL,0.4)))',
-            
-          },
-
-          :production_time => '(36000+(7200*LEVEL))',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-            :unlock_artifact_initiation => "LEVEL",
-
-          },
-
-        },              #   END OF Tüftler-Werkstatt
         {               #   Kürschner
-          :id          => 12, 
+          :id          => 10, 
           :symbolic_id => :building_furrier,
 					:category    => 5,
           :db_field    => :building_furrier,
@@ -4395,7 +4182,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 7,
@@ -4443,6 +4230,219 @@ class GameRules::Rules
           },
 
         },              #   END OF Kürschner
+        {               #   Trainingshöhle
+          :id          => 11, 
+          :symbolic_id => :building_training_cave,
+					:category    => 6,
+          :db_field    => :building_training_cave,
+          :name        => {
+            
+            :de_DE => "Trainingshöhle",
+  
+            :en_US => "Training Cave",
+                
+          },
+          :advisor     => "chef",
+          :flavour     => {
+            
+            :de_DE => "<p>Ruhig, kühl, feucht - ein perfekter Platz für jeden Halbgott, um sich auszuruhen und weiterzubilden.</p>",
+  
+            :en_US => "<p>Quiet, cool, humid - a perfect place for every demigod to relax and educate himself.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Dient als passive Quelle von Erfahrung.</p><p>In der Trainingshöhle gibt es verschiedene Trainingsmöglichkeiten für angehende Halbgötter. Große Steine zum Heben, ein fast endloses Labyrinth, Spiegel, in denen man sich herrlich erschrecken kann, und natürlich die ein oder andere Ratte, die eingefangen werden will.</p>",
+  
+            :en_US => "<p>The Training Cave offers multiple training possibilities to would-be Demigods. Huge stones to lift, an almost endless labyrinth, mirrors that can scare you witless, and of course, a few rats to catch.</p><p>This building can not be torn down.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "LESS(LEVEL,11)*FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5))",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 8,
+
+          :experience_production => '(CEIL((((EQUAL(LEVEL,1)*8+EQUAL(LEVEL,2)*11+EQUAL(LEVEL,3)*17+EQUAL(LEVEL,4)*26+EQUAL(LEVEL,5)*39+EQUAL(LEVEL,6)*55+EQUAL(LEVEL,7)*74+GREATER(LEVEL,7)*FLOOR((0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)+0.5)*(5.0/6)*(97.5/100))/12.5)*1.5)))+EQUAL(LEVEL,10)',
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 7,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_training_cave',
+              :id => 11,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'EQUAL(LEVEL,1)*60+EQUAL(LEVEL,2)*90+EQUAL(LEVEL,3)*165+EQUAL(LEVEL,4)*280+EQUAL(LEVEL,5)*465+EQUAL(LEVEL,6)*780+EQUAL(LEVEL,7)*1340+EQUAL(LEVEL,8)*2300+EQUAL(LEVEL,9)*3800+EQUAL(LEVEL,10)*6000',
+            1 => 'EQUAL(LEVEL,1)*60+EQUAL(LEVEL,2)*90+EQUAL(LEVEL,3)*165+EQUAL(LEVEL,4)*280+EQUAL(LEVEL,5)*465+EQUAL(LEVEL,6)*780+EQUAL(LEVEL,7)*1340+EQUAL(LEVEL,8)*2300+EQUAL(LEVEL,9)*3800+EQUAL(LEVEL,10)*6000',
+            2 => 'EQUAL(LEVEL,4)*400+EQUAL(LEVEL,5)*750+EQUAL(LEVEL,6)*1400+EQUAL(LEVEL,7)*2500+EQUAL(LEVEL,8)*4200+EQUAL(LEVEL,9)*7000+EQUAL(LEVEL,10)*10000',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*FLOOR(5*3)+EQUAL(LEVEL,2)*FLOOR(15*3)+EQUAL(LEVEL,3)*FLOOR(60*3)+EQUAL(LEVEL,4)*FLOOR(180*3)+EQUAL(LEVEL,5)*FLOOR(900*3)+EQUAL(LEVEL,6)*FLOOR(3600*3)+GREATER(LEVEL,6)*FLOOR((3600+(LEVEL-6)*5400)*3))',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+          },
+
+        },              #   END OF Trainingshöhle
+        {               #   Tüftler-Werkstatt
+          :id          => 12, 
+          :symbolic_id => :building_artifact_stand,
+					:category    => 6,
+          :db_field    => :building_artifact_stand,
+          :name        => {
+            
+            :de_DE => "Tüftler-Werkstatt",
+  
+            :en_US => "Workshop",
+                
+          },
+          :advisor     => "chef",
+          :flavour     => {
+            
+            :de_DE => "<p>Die Tüftler warten bereits auf die Artefakte. Hol Dir eins!</p>",
+  
+            :en_US => "<p>Those Tinkers are insane! Enter at your own risk.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Benötigt um Artefakte zu nutzen.</p><p>In der Werkstatt vereinen die Tüftler Einfallsreichtum mit blindem Aktionismus. Hier werden alle unbekannten Materialien -oder Artefakte wie die einfältigen Krieger sagen- eingehend untersucht und unglaubliche technische Revolutionen gestartet. </p><p>Dieses Gebäude kann nicht abgerissen werden.</p>",
+  
+            :en_US => "<p>Thinkers and Tinkers get together at the workshop. They examine whatever unknown materials there are - artifacts, as the simple-minded call them - and attempt to bring about a technological revolution.</p><p>This building can not be torn down.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> false,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 12,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_chief_cottage',
+              :id => 0,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_artifact_stand',
+              :id => 12,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            {
+              :symbolic_id => 'building_fortress_fortification',
+              :id => 30,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => '(FLOOR(7500*POW(LEVEL,0.4)))',
+            1 => '(FLOOR(10000*POW(LEVEL,0.4)))',
+            2 => '(FLOOR(12500*POW(LEVEL,0.4)))',
+            
+          },
+
+          :production_time => '(36000+(7200*LEVEL))',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :unlock_artifact_initiation => "LEVEL",
+
+          },
+
+        },              #   END OF Tüftler-Werkstatt
         {               #   Kupferschmelze
           :id          => 13, 
           :symbolic_id => :building_copper_smelter,
@@ -4509,7 +4509,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 0,
@@ -4601,7 +4601,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 9,
@@ -4743,7 +4743,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 0,
@@ -4778,8 +4778,119 @@ class GameRules::Rules
           },
 
         },              #   END OF Stammeshalle
-        {               #   Winddichte Hütte
+        {               #   Fortschrittliches Ausbildungsgelände
           :id          => 16, 
+          :symbolic_id => :building_barracks_2,
+					:category    => 5,
+          :db_field    => :building_barracks_2,
+          :name        => {
+            
+            :de_DE => "Fortschrittliches Ausbildungsgelände",
+  
+            :en_US => "Advanced Training Grounds",
+                
+          },
+          :advisor     => "warrior",
+          :flavour     => {
+            
+            :en_US => "<p></p>",
+  
+            :de_DE => "<p></p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Im Fortschrittlichen Ausbildungsgelände werden in der Heimatsiedlung und in Lagerstätten Nahkämpfer mit modernen Waffen ausgebildet.</p>",
+  
+            :en_US => "<p>At the Advanced Training Grounds your infantry units are instructed in the  use of state of the art weaponry.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 6.5,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 1,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => '(EQUAL(LEVEL,1)*50+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))*1.5',
+            1 => '(EQUAL(LEVEL,1)*25+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5))*1.5',
+            2 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            3 => '2*MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3*1.75
+',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.33*1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 2,
+                :queue_type_id_sym => :queue_infantry,
+                :level             => 1,
+              },
+
+            ],
+
+          },
+
+        },              #   END OF Fortschrittliches Ausbildungsgelände
+        {               #   Winddichte Hütte
+          :id          => 17, 
           :symbolic_id => :building_cottage_2,
 					:category    => 5,
           :db_field    => :building_cottage_2,
@@ -4837,7 +4948,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 13,
@@ -4880,7 +4991,7 @@ class GameRules::Rules
 
         },              #   END OF Winddichte Hütte
         {               #   Großes Rohstofflager
-          :id          => 17, 
+          :id          => 18, 
           :symbolic_id => :building_storage_2,
 					:category    => 5,
           :db_field    => :building_storage_2,
@@ -4938,7 +5049,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 13,
@@ -4996,7 +5107,7 @@ class GameRules::Rules
 
         },              #   END OF Großes Rohstofflager
         {               #   Altehrwürdiger Steinbruch
-          :id          => 18, 
+          :id          => 19, 
           :symbolic_id => :building_quarry_2,
 					:category    => 5,
           :db_field    => :building_quarry_2,
@@ -5054,7 +5165,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 11,
@@ -5097,7 +5208,7 @@ class GameRules::Rules
 
         },              #   END OF Altehrwürdiger Steinbruch
         {               #   Holzfäller mit Kupferaxt
-          :id          => 19, 
+          :id          => 20, 
           :symbolic_id => :building_logger_2,
 					:category    => 5,
           :db_field    => :building_logger_2,
@@ -5155,7 +5266,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 11,
@@ -5197,8 +5308,110 @@ class GameRules::Rules
           },
 
         },              #   END OF Holzfäller mit Kupferaxt
+        {               #   Verrückter Kürschner
+          :id          => 21, 
+          :symbolic_id => :building_furrier_2,
+					:category    => 5,
+          :db_field    => :building_furrier_2,
+          :name        => {
+            
+            :de_DE => "Verrückter Kürschner",
+  
+            :en_US => "Crazy Furrier",
+                
+          },
+          :advisor     => "girl",
+          :flavour     => {
+            
+            :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
+  
+            :de_DE => "<p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Ermöglicht eine schnellere Fellproduktion.</p><p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
+  
+            :en_US => "<p>The copper knife was a gift from the gods. At least, that's what the furriers who use their copper knives to create gorgeous clothes like to believe. Sadly, members of this group suffer from the usual side effects of a life in haute couture - vigorous fanning, a high-pitched and nasal voice, and generally crazy conduct - all in the name of art, of course. They may be mad, but they set a great example for other furriers.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 3.3,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 6,
+
+            },
+
+            ],
+
+            [
+              
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 16,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            1 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            0 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            2 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75*1.5',
+          :production  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "EQUAL(LEVEL,1)*12+EQUAL(LEVEL,2)*16+EQUAL(LEVEL,3)*24+EQUAL(LEVEL,4)*36+EQUAL(LEVEL,5)*55+EQUAL(LEVEL,6)*75+EQUAL(LEVEL,7)*105+EQUAL(LEVEL,8)*135+EQUAL(LEVEL,9)*175+EQUAL(LEVEL,10)*225+(GREATER(LEVEL,10)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100)*2+0.5)",
+              },
+            
+          ],
+          :production_bonus  => [
+            
+              {
+                :id                 => 2,
+                :symbolic_id        => :resource_fur,
+                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
+              },
+            
+          ],
+
+          :abilities   => {
+
+          },
+
+        },              #   END OF Verrückter Kürschner
         {               #   Stinkender Stall
-          :id          => 20, 
+          :id          => 22, 
           :symbolic_id => :building_stud,
 					:category    => 5,
           :db_field    => :building_stud,
@@ -5256,7 +5469,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 15,
@@ -5314,8 +5527,119 @@ class GameRules::Rules
           },
 
         },              #   END OF Stinkender Stall
+        {               #   Schießanlage
+          :id          => 23, 
+          :symbolic_id => :building_firing_range_2,
+					:category    => 5,
+          :db_field    => :building_firing_range_2,
+          :name        => {
+            
+            :de_DE => "Schießanlage",
+  
+            :en_US => "Advanced Firing Range",
+                
+          },
+          :advisor     => "warrior",
+          :flavour     => {
+            
+            :en_US => "<p></p>",
+  
+            :de_DE => "<p></p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>In der Schießanlage werden in der Heimatsiedlung und in Lagerstätten Fernkämpfer an modernen Waffen ausgebildet.</p>",
+  
+            :en_US => "<p>At the Advanced Firing Range modern weapons are employed to produce the best ranged combatants.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 6.5,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 7,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)*1.5)',
+            1 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)*1.5)',
+            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))*1.5',
+            3 => '2*MAX(LEVEL-19,0)',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3*1.75
+',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.33*1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 3,
+                :queue_type_id_sym => :queue_artillery,
+                :level             => 1,
+              },
+
+            ],
+
+          },
+
+        },              #   END OF Schießanlage
         {               #   Kommandozentrale
-          :id          => 21, 
+          :id          => 24, 
           :symbolic_id => :building_command_post,
 					:category    => 6,
           :db_field    => :building_command_post,
@@ -5369,7 +5693,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_command_post',
-              :id => 21,
+              :id => 24,
               :type => 'building',
 
               :min_level => 0,
@@ -5380,7 +5704,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 0,
@@ -5395,7 +5719,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 3,
@@ -5454,110 +5778,8 @@ class GameRules::Rules
           },
 
         },              #   END OF Kommandozentrale
-        {               #   Verrückter Kürschner
-          :id          => 22, 
-          :symbolic_id => :building_furrier_2,
-					:category    => 5,
-          :db_field    => :building_furrier_2,
-          :name        => {
-            
-            :de_DE => "Verrückter Kürschner",
-  
-            :en_US => "Crazy Furrier",
-                
-          },
-          :advisor     => "girl",
-          :flavour     => {
-            
-            :en_US => "<p>It is not a good idea to get too close to a crazy furrier armed with a copper knife. No fighter can handle a weapon as well as a crazy furrier.</p>",
-  
-            :de_DE => "<p>Einem Kürschner mit Kupfermesser sollte man besser nicht zu nahe kommen. Kein Krieger kann so gut mit einer Waffe umgehen wie ein verrückter Kürschner.</p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Ermöglicht eine schnellere Fellproduktion.</p><p>Die Kupfermesser waren aus Sicht der Kürschner ein Geschenk der Götter. Es  macht aus einfachen Kürschnern wahre Künstler. Leider mit den bekannten Nebeneffekten: Fächer wedeln, nasale Stimme und sonstigem Irrsinn.</p>",
-  
-            :en_US => "<p>The copper knife was a gift from the gods. At least, that's what the furriers who use their copper knives to create gorgeous clothes like to believe. Sadly, members of this group suffer from the usual side effects of a life in haute couture - vigorous fanning, a high-pitched and nasal voice, and generally crazy conduct - all in the name of art, of course. They may be mad, but they set a great example for other furriers.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR(((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*1.5)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 3.3,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 6,
-
-            },
-
-            ],
-
-            [
-              
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 24,
-              :type => 'building',
-
-              :min_level => 16,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            1 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            0 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            2 => 'FLOOR((LESS(LEVEL,9)*(FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.75*1.5+0.5))+EQUAL(LEVEL,9)*8000+GREATER(LEVEL,9)*(20000+(LEVEL-10)*2000))*0.5+0.5)',
-            
-          },
-
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*1.75*1.5',
-          :production  => [
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "EQUAL(LEVEL,1)*12+EQUAL(LEVEL,2)*16+EQUAL(LEVEL,3)*24+EQUAL(LEVEL,4)*36+EQUAL(LEVEL,5)*55+EQUAL(LEVEL,6)*75+EQUAL(LEVEL,7)*105+EQUAL(LEVEL,8)*135+EQUAL(LEVEL,9)*175+EQUAL(LEVEL,10)*225+(GREATER(LEVEL,10)*(0.007*POW(LEVEL+1.76,3.52)+0.11*POW(LEVEL+1.66,3)-1.11*POW(LEVEL+1.66,2)+13*LEVEL-2.3333)*(5.0/6)*(97.5/100)*2+0.5)",
-              },
-            
-          ],
-          :production_bonus  => [
-            
-              {
-                :id                 => 2,
-                :symbolic_id        => :resource_fur,
-                :formula            => "MAX(LEVEL-10,0)*0.01+MAX(0,LEVEL-19)*0.05",
-              },
-            
-          ],
-
-          :abilities   => {
-
-          },
-
-        },              #   END OF Verrückter Kürschner
         {               #   Garnisonsgebäude
-          :id          => 23, 
+          :id          => 25, 
           :symbolic_id => :building_garrison,
 					:category    => 6,
           :db_field    => :building_garrison,
@@ -5611,7 +5833,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_garrison',
-              :id => 23,
+              :id => 25,
               :type => 'building',
 
               :min_level => 0,
@@ -5622,7 +5844,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 0,
@@ -5637,7 +5859,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 3,
@@ -5672,8 +5894,118 @@ class GameRules::Rules
           },
 
         },              #   END OF Garnisonsgebäude
+        {               #   Sauberer Stall
+          :id          => 26, 
+          :symbolic_id => :building_stud_2,
+					:category    => 5,
+          :db_field    => :building_stud_2,
+          :name        => {
+            
+            :de_DE => "Sauberer Stall",
+  
+            :en_US => "Clean Barn",
+                
+          },
+          :advisor     => "warrior",
+          :flavour     => {
+            
+            :en_US => "<p></p>",
+  
+            :de_DE => "<p></p>",
+                
+          },
+          :description => {
+            
+            :de_DE => "<p>Im Sauberen Stall können größere Berittene Einheiten gezüchtet und ausgebildet werden.</p>",
+  
+            :en_US => "<p>Now that the Barn has been cleaned it can house larger animals.</p>",
+                
+          },
+
+          :hidden      => 0,
+
+	        :population  => "FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)",
+  
+          :buyable     => true,
+          :divine_supporters_only => false,
+          :demolishable=> true,
+          :destructable=> true,
+          :takeover_downgrade_by_levels=> 1,
+          :takeover_destroy  => false,
+          :experience_factor => 6.5,
+
+          :requirementGroups=> [
+
+            [
+              
+            {
+              :symbolic_id => 'building_copper_smelter',
+              :id => 13,
+              :type => 'building',
+
+              :min_level => 10,
+
+            },
+
+            {
+              :symbolic_id => 'building_haunt',
+              :id => 27,
+              :type => 'building',
+
+              :min_level => 0,
+
+              :max_level => 0,
+
+            },
+
+            ],
+
+          ],          
+
+          :costs      => {
+            0 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)*1.5)',
+            1 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)*1.5)',
+            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))*1.5',
+            
+          },
+
+          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3*1.75
+',
+          :production  => [
+            
+          ],
+          :production_bonus  => [
+            
+          ],
+
+          :abilities   => {
+
+            :speedup_queue => [
+
+              {
+                :queue_type_id     => 4,
+                :queue_type_id_sym => :queue_cavalry,
+                :domain            => :settlement,
+                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.33*1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
+              },
+
+            ],
+
+            :unlock_queue => [
+
+              {
+                :queue_type_id     => 4,
+                :queue_type_id_sym => :queue_cavalry,
+                :level             => 1,
+              },
+
+            ],
+
+          },
+
+        },              #   END OF Sauberer Stall
         {               #   Versammlungsplatz
-          :id          => 24, 
+          :id          => 27, 
           :symbolic_id => :building_haunt,
 					:category    => 4,
           :db_field    => :building_haunt,
@@ -5718,7 +6050,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 0,
@@ -5785,7 +6117,7 @@ class GameRules::Rules
 
         },              #   END OF Versammlungsplatz
         {               #   Feldlager
-          :id          => 25, 
+          :id          => 28, 
           :symbolic_id => :building_field_camp,
 					:category    => 7,
           :db_field    => :building_field_camp,
@@ -5830,7 +6162,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 6,
@@ -5850,7 +6182,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_altar',
-              :id => 26,
+              :id => 29,
               :type => 'building',
 
               :min_level => 0,
@@ -5861,7 +6193,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_field_camp',
-              :id => 25,
+              :id => 28,
               :type => 'building',
 
               :min_level => 0,
@@ -5901,7 +6233,7 @@ class GameRules::Rules
 
         },              #   END OF Feldlager
         {               #   Ritualstein
-          :id          => 26, 
+          :id          => 29, 
           :symbolic_id => :building_altar,
 					:category    => 7,
           :db_field    => :building_altar,
@@ -5946,7 +6278,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 6,
@@ -5966,7 +6298,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_altar',
-              :id => 26,
+              :id => 29,
               :type => 'building',
 
               :min_level => 0,
@@ -5977,7 +6309,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_field_camp',
-              :id => 25,
+              :id => 28,
               :type => 'building',
 
               :min_level => 0,
@@ -6013,7 +6345,7 @@ class GameRules::Rules
 
         },              #   END OF Ritualstein
         {               #   Festungsanlagen
-          :id          => 27, 
+          :id          => 30, 
           :symbolic_id => :building_fortress_fortification,
 					:category    => 0,
           :db_field    => :building_fortress_fortification,
@@ -6106,7 +6438,7 @@ class GameRules::Rules
 
         },              #   END OF Festungsanlagen
         {               #   Knüppler Gelände
-          :id          => 28, 
+          :id          => 31, 
           :symbolic_id => :building_infantry_tower,
 					:category    => 1,
           :db_field    => :building_infantry_tower,
@@ -6151,7 +6483,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 1,
@@ -6204,7 +6536,7 @@ class GameRules::Rules
 
         },              #   END OF Knüppler Gelände
         {               #   Werfer Gelände
-          :id          => 29, 
+          :id          => 32, 
           :symbolic_id => :building_artillery_tower,
 					:category    => 1,
           :db_field    => :building_artillery_tower,
@@ -6249,7 +6581,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 5,
@@ -6302,7 +6634,7 @@ class GameRules::Rules
 
         },              #   END OF Werfer Gelände
         {               #   Reiteranlage
-          :id          => 30, 
+          :id          => 33, 
           :symbolic_id => :building_cavalry_tower,
 					:category    => 1,
           :db_field    => :building_cavalry_tower,
@@ -6347,7 +6679,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_fortress_fortification',
-              :id => 27,
+              :id => 30,
               :type => 'building',
 
               :min_level => 7,
@@ -6399,338 +6731,6 @@ class GameRules::Rules
           },
 
         },              #   END OF Reiteranlage
-        {               #   Fortschrittliches Ausbildungsgelände
-          :id          => 31, 
-          :symbolic_id => :building_barracks_2,
-					:category    => 5,
-          :db_field    => :building_barracks_2,
-          :name        => {
-            
-            :de_DE => "Fortschrittliches Ausbildungsgelände",
-  
-            :en_US => "Advanced Training Grounds",
-                
-          },
-          :advisor     => "warrior",
-          :flavour     => {
-            
-            :en_US => "<p></p>",
-  
-            :de_DE => "<p></p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Im Fortschrittlichen Ausbildungsgelände werden in der Heimatsiedlung und in Lagerstätten Nahkämpfer mit modernen Waffen ausgebildet.</p>",
-  
-            :en_US => "<p>At the Advanced Training Grounds your infantry units are instructed in the  use of state of the art weaponry.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 6.5,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 1,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 24,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => '(EQUAL(LEVEL,1)*50+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*3*1.5+0.5))*1.5',
-            1 => '(EQUAL(LEVEL,1)*25+GREATER(LEVEL,1)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1.5*1.5+0.5))*1.5',
-            2 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
-            3 => '2*MAX(LEVEL-19,0)',
-            
-          },
-
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3*1.75
-',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-            :speedup_queue => [
-
-              {
-                :queue_type_id     => 2,
-                :queue_type_id_sym => :queue_infantry,
-                :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.33*1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
-              },
-
-            ],
-
-            :unlock_queue => [
-
-              {
-                :queue_type_id     => 2,
-                :queue_type_id_sym => :queue_infantry,
-                :level             => 1,
-              },
-
-            ],
-
-          },
-
-        },              #   END OF Fortschrittliches Ausbildungsgelände
-        {               #   Schießanlage
-          :id          => 32, 
-          :symbolic_id => :building_firing_range_2,
-					:category    => 5,
-          :db_field    => :building_firing_range_2,
-          :name        => {
-            
-            :de_DE => "Schießanlage",
-  
-            :en_US => "Advanced Firing Range",
-                
-          },
-          :advisor     => "warrior",
-          :flavour     => {
-            
-            :en_US => "<p></p>",
-  
-            :de_DE => "<p></p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>In der Schießanlage werden in der Heimatsiedlung und in Lagerstätten Fernkämpfer an modernen Waffen ausgebildet.</p>",
-  
-            :en_US => "<p>At the Advanced Firing Range modern weapons are employed to produce the best ranged combatants.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 6.5,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 7,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 24,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)*1.5)',
-            1 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)*1.5)',
-            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))*1.5',
-            3 => '2*MAX(LEVEL-19,0)',
-            
-          },
-
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3*1.75
-',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-            :speedup_queue => [
-
-              {
-                :queue_type_id     => 3,
-                :queue_type_id_sym => :queue_artillery,
-                :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.33*1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
-              },
-
-            ],
-
-            :unlock_queue => [
-
-              {
-                :queue_type_id     => 3,
-                :queue_type_id_sym => :queue_artillery,
-                :level             => 1,
-              },
-
-            ],
-
-          },
-
-        },              #   END OF Schießanlage
-        {               #   Sauberer Stall
-          :id          => 33, 
-          :symbolic_id => :building_stud_2,
-					:category    => 5,
-          :db_field    => :building_stud_2,
-          :name        => {
-            
-            :de_DE => "Sauberer Stall",
-  
-            :en_US => "Clean Barn",
-                
-          },
-          :advisor     => "warrior",
-          :flavour     => {
-            
-            :en_US => "<p></p>",
-  
-            :de_DE => "<p></p>",
-                
-          },
-          :description => {
-            
-            :de_DE => "<p>Im Sauberen Stall können größere Berittene Einheiten gezüchtet und ausgebildet werden.</p>",
-  
-            :en_US => "<p>Now that the Barn has been cleaned it can house larger animals.</p>",
-                
-          },
-
-          :hidden      => 0,
-
-	        :population  => "FLOOR((((MIN(LEVEL+1,7)-MIN(LEVEL,7))*(1.7*POW(LEVEL,1.65))+(MIN(LEVEL,7)-MIN(LEVEL,6))*(3.75*POW((LEVEL-6),2)+14.75*(LEVEL-6)+31.25)+(MIN(LEVEL,11)-MIN(LEVEL,10))*25+EQUAL(LEVEL,20)*2+0.5)*2)*1.75)",
-  
-          :buyable     => true,
-          :divine_supporters_only => false,
-          :demolishable=> true,
-          :destructable=> true,
-          :takeover_downgrade_by_levels=> 1,
-          :takeover_destroy  => false,
-          :experience_factor => 6.5,
-
-          :requirementGroups=> [
-
-            [
-              
-            {
-              :symbolic_id => 'building_copper_smelter',
-              :id => 13,
-              :type => 'building',
-
-              :min_level => 10,
-
-            },
-
-            {
-              :symbolic_id => 'building_haunt',
-              :id => 24,
-              :type => 'building',
-
-              :min_level => 0,
-
-              :max_level => 0,
-
-            },
-
-            ],
-
-          ],          
-
-          :costs      => {
-            0 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*3*1.5)*1.5)',
-            1 => 'FLOOR((((3535*(0.063*POW(MIN(LEVEL,10),3)+0.87*POW(MIN(LEVEL,10),2)-3*MIN(LEVEL,10)+104.55+0.5)*0.01*0.5)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*(-2.43)+(0.06*(MAX(LEVEL-10,0))+0.98)*3.5))*1.5*1.5)*1.5)',
-            2 => '((EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5))*1.5',
-            
-          },
-
-          :production_time => '(EQUAL(LEVEL,1)*5+EQUAL(LEVEL,2)*15+EQUAL(LEVEL,3)*60+EQUAL(LEVEL,4)*180+EQUAL(LEVEL,5)*900+EQUAL(LEVEL,6)*3600+GREATER(LEVEL,6)*FLOOR(3600+(LEVEL-6)*5400)-GREATER(LEVEL,10)*FLOOR((LEVEL-10)*3600))*3*1.75
-',
-          :production  => [
-            
-          ],
-          :production_bonus  => [
-            
-          ],
-
-          :abilities   => {
-
-            :speedup_queue => [
-
-              {
-                :queue_type_id     => 4,
-                :queue_type_id_sym => :queue_cavalry,
-                :domain            => :settlement,
-                :speedup_formula   => "LESS(LEVEL,11)*FLOOR(1.33*1.25*POW(LEVEL,1.3)+0.5)/100.0+GREATER(LEVEL,10)*FLOOR(0.3*POW(LEVEL,1.94)+0.5)/100.0",
-              },
-
-            ],
-
-            :unlock_queue => [
-
-              {
-                :queue_type_id     => 4,
-                :queue_type_id_sym => :queue_cavalry,
-                :level             => 1,
-              },
-
-            ],
-
-          },
-
-        },              #   END OF Sauberer Stall
         {               #   Handelsplatz
           :id          => 34, 
           :symbolic_id => :building_trade_center,
@@ -6777,7 +6777,7 @@ class GameRules::Rules
               
             {
               :symbolic_id => 'building_haunt',
-              :id => 24,
+              :id => 27,
               :type => 'building',
 
               :min_level => 6,
@@ -6797,7 +6797,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_altar',
-              :id => 26,
+              :id => 29,
               :type => 'building',
 
               :min_level => 0,
@@ -6808,7 +6808,7 @@ class GameRules::Rules
 
             {
               :symbolic_id => 'building_field_camp',
-              :id => 25,
+              :id => 28,
               :type => 'building',
 
               :min_level => 0,
@@ -6974,7 +6974,7 @@ class GameRules::Rules
             3 => {
               :max_level => 10,
               
-              :building  => 27,
+              :building  => 30,
               
               :level  => 1,
               
@@ -7560,7 +7560,7 @@ class GameRules::Rules
             1 => {
               :max_level => 20,
               
-              :building  => 24,
+              :building  => 27,
               
               :level  => 1,
               
