@@ -18,9 +18,13 @@ user.partner = true
 user.deleted = false
 user.save
 
-NUM_FULL_LEVELS   =  4
+NUM_FULL_LEVELS   =  2
 NUM_SPARSE_LEVELS =  2
-MAX_LEVEL         =  8
+MAX_LEVEL         =  4
+
+# NUM_FULL_LEVELS   =  4
+# NUM_SPARSE_LEVELS =  2
+# MAX_LEVEL         =  8
 
 ROUND_NAME   = "Runde 9 (tbd)"
 ROUND_NUMBER =  9
