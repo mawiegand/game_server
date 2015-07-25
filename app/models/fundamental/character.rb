@@ -1014,6 +1014,7 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def update_spawn_poacher_event
+    return if self.last_poacher_cycle_update.nil?
     next_update_cycle_execution = self.last_poacher_cycle_update + GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours
 
     # find existing spawn poacher event which would update cycle variables
