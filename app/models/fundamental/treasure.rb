@@ -33,4 +33,50 @@ class Fundamental::Treasure < ActiveRecord::Base
 
     treasure if treasure.save
   end
+
+  def redeem_rewards
+    raise BadRequestError('specific character is not allowed to be empty!') if self.specific_character.nil?
+
+    resource_pool = self.specific_character.resource_pool
+
+    raise BadRequestError("specific character with id #{self.specific_character.id} has no resource_pool!") if resource_pool.nil?
+
+    rewards = { :resource_rewards => [ {:amount => self.resource_stone_reward, :resource => 'resource_stone'},
+                                       {:amount => self.resource_wood_reward, :resource => 'resource_wood'},
+                                       {:amount => self.resource_fur_reward, :resource => 'resource_fur'},
+                                       {:amount => self.resource_cash_reward, :resource => 'resource_cash'},
+    ]}
+    raise BadRequestError.new('no rewards found in for retention bonus') if rewards.nil?
+    resource_rewards = rewards[:resource_rewards]
+
+    # calc resources
+    resources = {}
+    unless resource_rewards.nil?
+      resource_rewards.each do |resource_reward|
+        raise BadRequestError.new('no resource_reward given') if resource_reward.nil?
+
+        amount = resource_reward[:amount]
+        raise BadRequestError.new('no amount given') if amount.nil?
+        raise BadRequestError.new('amount is negative') if amount < 0
+
+        resource_symbolic_id = resource_reward[:resource]
+        raise BadRequestError.new('no resource id given') if resource_symbolic_id.nil?
+
+        resource_type = nil
+        GameRules::Rules.the_rules().resource_types.each do |type|
+          logger.debug "grant_resources: #{type[:symbolic_id]} #{resource_symbolic_id}"
+          if type[:symbolic_id].to_s == resource_symbolic_id.to_s
+            resource_type = type
+            break
+          end
+        end
+        raise BadRequestError.new("no resource type found for resource symbolic id #{resource_symbolic_id}") if resource_type.nil?
+
+        resources[resource_type[:id]] = (resources[resource_type[:id]] || 0) + amount
+      end
+    end
+
+    # reward resources
+    resource_pool.add_resources_transaction(resources)
+  end
 end
