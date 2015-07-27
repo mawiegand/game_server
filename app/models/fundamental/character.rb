@@ -976,19 +976,32 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def update_poachers
+    create_treasure = false
+
     # update poacher cycle variables
     if self.last_poacher_cycle_update.nil? || self.last_poacher_cycle_update <= GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours.ago
       self.last_poacher_cycle_update = Time.now
       self.max_poachers_count = self.settlement_points_total * 2 # TODO: Maybe define formula in rules?
       self.spawned_poachers_count = 0
+
+      # if poachers already exists, add a treasure
+      if self.poachers.count > 0
+        Fundamental::Treasure.create_for_poacher(self.poachers.offset(Random.rand(self.poachers.count)).first)
+      else
+        create_treasure = true
+      end
+
       self.save
     end
 
     # place a new poacher if needed
     if self.new_poacher_spawn_possible?
-      Military::Army.place_poacher_for(self)
-      self.spawned_poachers_count += 1
-      self.save
+      poacher = Military::Army.place_poacher_for(self)
+      if !poacher.nil?
+        self.spawned_poachers_count += 1
+        Fundamental::Treasure.create_for_poacher(poacher) if create_treasure
+        self.save
+      end
     end
 
     self.create_spawn_poacher_event
