@@ -7,4 +7,30 @@ class Fundamental::Treasure < ActiveRecord::Base
 
   belongs_to :army,               :class_name => "Military::Army",         :foreign_key => "army_id",                  :inverse_of => :treasure
 
+
+  def self.create_for_poacher(poacher)
+    return if poacher.nil? || !poacher.is_poacher?
+
+    resource_pool = poacher.specific_character.resource_pool
+
+    return if resource_pool.nil?
+
+    resource_fur_reward = Random.rand(0.05..0.15) * resource_pool.resource_fur_capacity
+    resource_stone_reward = resource_fur_reward / 2
+    resource_wood_reward = resource_fur_reward / 2
+    resource_cash_reward = (Random.rand(1.0) <= 0.05)? 1 : 0
+
+    treasure = Fundamental::Treasure.new({
+      specific_character: poacher.specific_character,
+      location: poacher.location,
+      region: poacher.region,
+      army: poacher,
+      resource_stone_reward: resource_stone_reward,
+      resource_wood_reward: resource_wood_reward,
+      resource_fur_reward: resource_fur_reward,
+      resource_cash_reward: resource_cash_reward,
+    })
+
+    treasure if treasure.save
+  end
 end
