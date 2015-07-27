@@ -11,6 +11,8 @@ class Map::Location < ActiveRecord::Base
 
   has_one    :artifact,   :class_name => "Fundamental::Artifact",  :foreign_key => "location_id", :inverse_of => :location
 
+  has_many   :treasures,   :class_name => "Fundamental::Treasure",  :foreign_key => "location_id", :inverse_of => :location
+
   before_save :move_artifact_if_necessary
   after_save  :recount_settlements
 

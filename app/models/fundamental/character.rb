@@ -64,6 +64,7 @@ class Fundamental::Character < ActiveRecord::Base
   has_one  :alliance_leader_vote, :class_name => "Fundamental::AllianceLeaderVote", :foreign_key => "voter_id", :inverse_of => :voter
 
   has_one  :spawn_poacher_event,  :class_name => "Event::Event",            :foreign_key => "local_event_id",  :dependent => :destroy, :conditions => "event_type = 'spawn_poacher'"
+  has_many :treasures,            :class_name => "Fundamental::Treasure",   :foreign_key => "specific_character_id", :inverse_of => :specific_character
 
   attr_readable :id, :identifier, :name, :lvel, :exp, :att, :def, :wins, :losses, :health_max, :health_present, :health_updated_at, :alliance_id, :alliance_tag, :alliance_color, :base_location_id, :base_region_id, :created_at, :updated_at, :base_node_id, :score, :npc, :fortress_count, :mundane_rank, :sacred_rank, :gender, :banned, :received_likes_count, :received_dislikes_count, :victories, :defeats, :avatar_string, :description, :tutorial_finished_at, :can_redeem_retention_bonus_at, :can_redeem_retention_bonus_start_time, :has_limited_grid,   :as => :default
   attr_readable *readable_attributes(:default), :lang,                                                                         :as => :ally 
