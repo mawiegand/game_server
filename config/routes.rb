@@ -98,6 +98,7 @@ GameServer::Application.routes.draw do
         resources :artifacts
         resources :artifact_initiations
 
+        resources :treasures
 
         resources :guilds do
           resources :characters

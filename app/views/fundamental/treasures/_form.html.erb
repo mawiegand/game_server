@@ -1,0 +1,49 @@
+<%= form_for(@fundamental_treasure) do |f| %>
+  <% if @fundamental_treasure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fundamental_treasure.errors.count, "error") %> prohibited this fundamental_treasure from being saved:</h2>
+
+      <ul>
+      <% @fundamental_treasure.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :location_id %><br />
+    <%= f.number_field :location_id %>
+  </div>
+  <div class="field">
+    <%= f.label :army_id %><br />
+    <%= f.number_field :army_id %>
+  </div>
+  <div class="field">
+    <%= f.label :region_id %><br />
+    <%= f.number_field :region_id %>
+  </div>
+  <div class="field">
+    <%= f.label :specific_character_id %><br />
+    <%= f.number_field :specific_character_id %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_stone_reward %><br />
+    <%= f.text_field :resource_stone_reward %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_wood_reward %><br />
+    <%= f.text_field :resource_wood_reward %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_fur_reward %><br />
+    <%= f.text_field :resource_fur_reward %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_cash_reward %><br />
+    <%= f.text_field :resource_cash_reward %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

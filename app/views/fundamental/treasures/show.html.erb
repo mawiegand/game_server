@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Location:</b>
+  <%= @fundamental_treasure.location_id %>
+</p>
+
+<p>
+  <b>Army:</b>
+  <%= @fundamental_treasure.army_id %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%= @fundamental_treasure.region_id %>
+</p>
+
+<p>
+  <b>Specific character:</b>
+  <%= @fundamental_treasure.specific_character_id %>
+</p>
+
+<p>
+  <b>Resource stone reward:</b>
+  <%= @fundamental_treasure.resource_stone_reward %>
+</p>
+
+<p>
+  <b>Resource wood reward:</b>
+  <%= @fundamental_treasure.resource_wood_reward %>
+</p>
+
+<p>
+  <b>Resource fur reward:</b>
+  <%= @fundamental_treasure.resource_fur_reward %>
+</p>
+
+<p>
+  <b>Resource cash reward:</b>
+  <%= @fundamental_treasure.resource_cash_reward %>
+</p>
+
+
+<%= link_to 'Edit', edit_fundamental_treasure_path(@fundamental_treasure) %> |
+<%= link_to 'Back', fundamental_treasures_path %>

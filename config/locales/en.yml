@@ -50,6 +50,7 @@ en:
         settings: Settings
         retention_mails: Retention Mails
         gossip: Gossip
+        treasures: Treasures
       messaging:
         category: Messaging
         inboxes: Inboxes
