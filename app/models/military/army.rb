@@ -20,6 +20,7 @@ class Military::Army < ActiveRecord::Base
   has_one    :battle_participant, :class_name => "Military::BattleParticipant",      :foreign_key => "army_id",                :inverse_of => :army
   has_one    :ranking,            :class_name => "Ranking::CharacterRanking",        :foreign_key => "max_experience_army_id", :inverse_of => :most_experienced_army
   has_one    :artifact,           :class_name => "Fundamental::Artifact",            :foreign_key => "army_id",                :inverse_of => :army
+  has_one    :treasure,           :class_name => "Fundamental::Treasure",            :foreign_key => "army_id",                :inverse_of => :army
 
   validates  :ap_present, :numericality => { :greater_than_or_equal_to => 0 }
     
