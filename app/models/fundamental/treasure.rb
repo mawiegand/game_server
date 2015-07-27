@@ -15,10 +15,10 @@ class Fundamental::Treasure < ActiveRecord::Base
 
     return if resource_pool.nil?
 
-    resource_fur_reward = Random.rand(0.05..0.15) * resource_pool.resource_fur_capacity
+    resource_fur_reward = Random.rand((GAME_SERVER_CONFIG['poacher_treasure_min_fur_reward'] || 0.05)..(GAME_SERVER_CONFIG['poacher_treasure_max_fur_reward'] || 0.15)) * resource_pool.resource_fur_capacity
     resource_stone_reward = resource_fur_reward / 2
     resource_wood_reward = resource_fur_reward / 2
-    resource_cash_reward = (Random.rand(1.0) <= 0.05)? 1 : 0
+    resource_cash_reward = (Random.rand(1.0) <= (GAME_SERVER_CONFIG['poacher_treasure_cash_probability'] || 0.05))? 1 : 0
 
     treasure = Fundamental::Treasure.new({
       specific_character: poacher.specific_character,
