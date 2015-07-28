@@ -90,6 +90,9 @@ defaults: &defaults
 
   slot_bubbles_enabled: false # enable creating and updating slot bubbles (also enables redeem action)
 
+  alliance_switch_allowed_after_registration: 20 # allows alliance switching after registration for X days
+  alliance_switch_blocking_time: 14 # max days of blocking alliance switching
+
 development:
   <<: *defaults
 

@@ -196,6 +196,13 @@ class Fundamental::Alliance < ActiveRecord::Base
   def is_at_war?
     (self.diplomacy_source_relations.war + self.diplomacy_target_relations.war).any?
   end
+
+  def fulfills_any_victory_type?
+    self.victory_progresses.each do |victory_progress|
+      return true if victory_progress.fulfilled?
+    end
+    false
+  end
   
   def add_unique_invitation_code
     begin

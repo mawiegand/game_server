@@ -1360,13 +1360,20 @@ class Fundamental::Character < ActiveRecord::Base
   end
   
   def set_cannot_join_alliance_until
-    if self.created_at > 20.days.ago
+    round_started_at = Fundamental::RoundInfo.first.started_at
+
+    if self.created_at > (GAME_SERVER_CONFIG['alliance_switch_allowed_after_registration'] || 20).days.ago
       self.cannot_join_alliance_until = Time.now
-    elsif self.created_at <= 20.days.ago && !self.alliance.is_at_war?
-      self.cannot_join_alliance_until = 12.hours.from_now
-    elsif self.created_at <= 20.days.ago && self.alliance.is_at_war?
-      self.cannot_join_alliance_until = 24.hours.from_now
-    end        
+    else
+      blocking_time = [(Time.now.to_date - round_started_at.to_date).to_i, (GAME_SERVER_CONFIG['alliance_switch_blocking_time'] || 14)].min
+      self.set_cannot_join_alliance_until = blocking_time.days.from_now
+    end
+
+    # elsif self.created_at <= 20.days.ago && !self.alliance.is_at_war?
+    #  self.cannot_join_alliance_until = 12.hours.from_now
+    # elsif self.created_at <= 20.days.ago && self.alliance.is_at_war?
+    #  self.cannot_join_alliance_until = 24.hours.from_now
+    # end
   end
 
   def join_alliance_check
