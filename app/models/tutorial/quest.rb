@@ -291,7 +291,7 @@ class Tutorial::Quest < ActiveRecord::Base
   
   def check_finished_subquests(subquest_id)
     self.tutorial_state.finished_quests.each do |finished_quest|
-      if subquest_id == finished_quest.quest[:id]
+      if !finished_quest.quest.nil? && subquest_id == finished_quest.quest[:id]
         return true
       end
     end
