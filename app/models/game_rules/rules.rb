@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.3.16
+# Version: 2.3.17
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -125,7 +125,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 3,
-                    :build => 16,
+                    :build => 17,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -3330,13 +3330,13 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "(FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40)*2",
+                :formula            => "(FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40)*2)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "(FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40)*2",
+                :formula            => "(FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40)*2)",
               },
             
               {
