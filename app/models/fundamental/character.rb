@@ -592,6 +592,9 @@ class Fundamental::Character < ActiveRecord::Base
       end
 
       character.update_poachers
+
+      # HACK for tutorial battle quest (place poacher at home_location)
+      Military::Army.create_npc(self.home_location, 1, self) unless self.home_location.nil?
     end
     
     character 
