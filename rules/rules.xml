@@ -73,7 +73,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="2" minor="3" build="14" />
+    <Version major="2" minor="3" build="16" />
     <AppControl debugTracking="1" startscreen="settlement">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="19" />
       <Facebook userStoriesEnabled="0" />
@@ -236,8 +236,8 @@
       <Outpost>
         <Slot slotNum="1" id="building_haunt" level="6"/>
         <Slot slotNum="2" id="building_gatherer" level="7"/>
-        <Slot slotNum="3" id="building_logger" level="4"/>
         <Slot slotNum="4" id="building_quarry" level="4"/>
+        <Slot slotNum="5" id="building_logger" level="4"/>
         <Slot slotNum="7" id="building_altar" level="1"/>
       </Outpost>
       <StartResource id="resource_cash">300</StartResource>
