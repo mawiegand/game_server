@@ -265,6 +265,9 @@ end
             <xsl:apply-templates select="RewardTests" />
           },          
 </xsl:if>
+<xsl:if test="@type = 'epic' and @tutorial = 'true' and RewardTests/KillTest">
+          :tutorial_fight => true,
+</xsl:if>
 <xsl:if test="UIMarker">
           :uimarker => [<xsl:for-each select="UIMarker">'<xsl:value-of select="." />', </xsl:for-each>],
 </xsl:if>
