@@ -226,7 +226,7 @@ class Military::Battle < ActiveRecord::Base
   def self.create_battle_between(attacker, defender)
     rules = GameRules::Rules.the_rules
 
-    round_duration = attacker.owner.completed_tutorial? ? rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor'] : 20
+    round_duration = (!attacker.owner.tutorial_state.nil? && attacker.owner.tutorial_state.tutorial_battle_quest_is_open?) ? GAME_SERVER_CONFIG['tutorial_battle_duration'] : rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor']
     
     battle = Military::Battle.create(
       :started_at => DateTime.now,
@@ -268,8 +268,8 @@ class Military::Battle < ActiveRecord::Base
   #advanced the next_round_at field
   def schedule_next_round
     rules = GameRules::Rules.the_rules
-    if !Fundamental::Character.find(self.initiator_id).completed_tutorial?
-      self.next_round_at = self.next_round_at.advance(:seconds => 20)
+    if !self.initiator.nil? && !self.initiator.tutorial_state.nil? && self.initiator.tutorial_state.tutorial_battle_quest_is_open?
+      self.next_round_at = self.next_round_at.advance(:seconds => GAME_SERVER_CONFIG['tutorial_battle_duration'])
     else
       self.next_round_at = self.next_round_at.advance(:seconds => rules.battle[:calculation][:round_time] * GAME_SERVER_CONFIG['base_time_factor'])
     end

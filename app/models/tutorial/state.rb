@@ -112,6 +112,14 @@ class Tutorial::State < ActiveRecord::Base
     false
   end
 
+  def tutorial_battle_quest_is_open?
+    self.open_quests.each do |open_quest|
+      next if open_quest.nil? || open_quest.quest.nil?
+      return true if !open_quest.quest[:tutorial_fight].nil? && open_quest.quest[:tutorial_fight]
+    end
+    false
+  end
+
   private
 
   def validate_quest_triggers(quest_id)
