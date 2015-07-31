@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.3.14
+# Version: 2.3.21
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -125,7 +125,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 3,
-                    :build => 14,
+                    :build => 21,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -198,12 +198,12 @@ class GameRules::Rules
             :id          => 1,
             :level       => 7,
           },
-3 => {
-            :id          => 9,
-            :level       => 4,
-          },
 4 => {
             :id          => 8,
+            :level       => 4,
+          },
+5 => {
+            :id          => 9,
             :level       => 4,
           },
 7 => {
@@ -3060,7 +3060,7 @@ class GameRules::Rules
 
             :command_points => "GREATER(LEVEL,2)+GREATER(LEVEL,5)+GREATER(LEVEL,15)+EQUAL(LEVEL,20)",
 
-            :unlock_building_slots => "MIN((2+GREATER(LEVEL,1)+GREATER(LEVEL,2)+GREATER(LEVEL,3)*4+GREATER(LEVEL,4)*4+GREATER(LEVEL,5)*4+GREATER(LEVEL,5)*4+GREATER(LEVEL,7)*LEVEL*3),29)+MIN(GREATER(LEVEL,10)*(LEVEL-10),10)
+            :unlock_building_slots => "MIN((2+GREATER(LEVEL,1)+GREATER(LEVEL,2)+GREATER(LEVEL,3)*4+GREATER(LEVEL,4)*4+GREATER(LEVEL,5)*4+GREATER(LEVEL,6)*6+GREATER(LEVEL,7)*6+GREATER(LEVEL,8)*4+GREATER(LEVEL,9)*4+GREATER(LEVEL,10)*4),39)
   ",
 
             :garrison_size_bonus => "1000",
@@ -3330,13 +3330,13 @@ class GameRules::Rules
               {
                 :id                 => 0,
                 :symbolic_id        => :resource_stone,
-                :formula            => "(FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40)*2",
+                :formula            => "(FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40)*2)",
               },
             
               {
                 :id                 => 1,
                 :symbolic_id        => :resource_wood,
-                :formula            => "(FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40)*2",
+                :formula            => "(FLOOR(EQUAL(LEVEL,1)*2+EQUAL(LEVEL,2)*3+EQUAL(LEVEL,3)*5+EQUAL(LEVEL,4)*7+EQUAL(LEVEL,5)*10+EQUAL(LEVEL,6)*14+EQUAL(LEVEL,7)*19+EQUAL(LEVEL,8)*25+EQUAL(LEVEL,9)*32+EQUAL(LEVEL,10)*40)*2)",
               },
             
               {
@@ -3982,8 +3982,8 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
-            1 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            0 => 'EQUAL(LEVEL,1)*25*0.14+EQUAL(LEVEL,2)*40*0.14+EQUAL(LEVEL,3)*75*0.14+EQUAL(LEVEL,4)*125*0.14+EQUAL(LEVEL,5)*210*0.14+EQUAL(LEVEL,6)*350*0.14+EQUAL(LEVEL,7)*600*0.14+EQUAL(LEVEL,8)*1025*0.14+EQUAL(LEVEL,9)*1700*0.14+EQUAL(LEVEL,10)*2700*0.14+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            1 => '(EQUAL(LEVEL,1)*25*0.14+EQUAL(LEVEL,2)*40*0.14+EQUAL(LEVEL,3)*75*0.14+EQUAL(LEVEL,4)*125*0.14+EQUAL(LEVEL,5)*210*0.14+EQUAL(LEVEL,6)*350*0.14+EQUAL(LEVEL,7)*600*0.14+EQUAL(LEVEL,8)*1025*0.14+EQUAL(LEVEL,9)*1700*0.14+EQUAL(LEVEL,10)*2700*0.14)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
             
           },
 
@@ -4088,8 +4088,8 @@ class GameRules::Rules
           ],          
 
           :costs      => {
-            0 => '(EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
-            1 => 'EQUAL(LEVEL,1)*25+EQUAL(LEVEL,2)*40+EQUAL(LEVEL,3)*75+EQUAL(LEVEL,4)*125+EQUAL(LEVEL,5)*210+EQUAL(LEVEL,6)*350+EQUAL(LEVEL,7)*600+EQUAL(LEVEL,8)*1025+EQUAL(LEVEL,9)*1700+EQUAL(LEVEL,10)*2700+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
+            0 => '(EQUAL(LEVEL,1)*25*0.14+EQUAL(LEVEL,2)*40*0.14+EQUAL(LEVEL,3)*75*0.14+EQUAL(LEVEL,4)*125*0.14+EQUAL(LEVEL,5)*210*0.14+EQUAL(LEVEL,6)*350*0.14+EQUAL(LEVEL,7)*600*0.14+EQUAL(LEVEL,8)*1025*0.14+EQUAL(LEVEL,9)*1700*0.14+EQUAL(LEVEL,10)*2700*0.14)*2+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*1*1.5+0.5)',
+            1 => 'EQUAL(LEVEL,1)*25*0.14+EQUAL(LEVEL,2)*40*0.14+EQUAL(LEVEL,3)*75*0.14+EQUAL(LEVEL,4)*125*0.14+EQUAL(LEVEL,5)*210*0.14+EQUAL(LEVEL,6)*350*0.14+EQUAL(LEVEL,7)*600*0.14+EQUAL(LEVEL,8)*1025*0.14+EQUAL(LEVEL,9)*1700*0.14+EQUAL(LEVEL,10)*2700*0.14+GREATER(LEVEL,10)*FLOOR(((0.9*POW(MIN(LEVEL,10),4)-9.7*POW(MIN(LEVEL,10),3)+49.25*POW(MIN(LEVEL,10),2)-76*MIN(LEVEL,10)+70)*((MIN(LEVEL+1,11)-MIN(LEVEL,11))*0.02+(0.06*(MAX(LEVEL-10,0))+0.98)))*0.5*1.5+0.5)',
             
           },
 
@@ -10467,9 +10467,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'a',
-          :url          => 'https://gs08.wack-a-doo.de/game_server/en/facebook/object_types/0',
-          :image_url    => 'https://gs08.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
-          :see_also_url => 'https://gs08.wack-a-doo.de',
+          :url          => 'https://gs09.wack-a-doo.de/game_server/en/facebook/object_types/0',
+          :image_url    => 'https://gs09.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
+          :see_also_url => 'https://gs09.wack-a-doo.de',
         },              #   END OF battle
         {              #   next_rank
           :id          => 1,
@@ -10491,9 +10491,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'the',
-          :url          => 'https://gs08.wack-a-doo.de/game_server/en/facebook/object_types/1',
-          :image_url    => 'https://gs08.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
-          :see_also_url => 'https://gs08.wack-a-doo.de',
+          :url          => 'https://gs09.wack-a-doo.de/game_server/en/facebook/object_types/1',
+          :image_url    => 'https://gs09.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
+          :see_also_url => 'https://gs09.wack-a-doo.de',
         },              #   END OF next_rank
       ],                # END OF FACEBOOK USER STORIES
 

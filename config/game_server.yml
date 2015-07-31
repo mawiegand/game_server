@@ -84,6 +84,8 @@ defaults: &defaults
   battle_xp_winner_bonus_factor:         3.0
   alliance_fight_xp_penalty:             0.25
 
+  tutorial_battle_duration:              20 # duration of battles while tutorial fight quest is active
+
   max_home_bases_in_region_for_geo:                     3
   max_home_bases_in_region_for_alliance_invitation:     3
 
@@ -92,6 +94,9 @@ defaults: &defaults
   settler_start_quest_id: 135
 
   slot_bubbles_enabled: false # enable creating and updating slot bubbles (also enables redeem action)
+
+  alliance_switch_allowed_after_registration: 20 # allows alliance switching after registration for X days
+  alliance_switch_blocking_time: 14 # max days of blocking alliance switching
 
 development:
   <<: *defaults
@@ -161,17 +166,17 @@ production:
   jabber:
     debug:     true
     server:    jabber.wack-a-doo.com
-    domain:    jabber8.wack-a-doo.com
-    muc:       conference.jabber8.wack-a-doo.com
-    bot_jid:   service@jabber8.wack-a-doo.com
+    domain:    jabber9.wack-a-doo.com
+    muc:       conference.jabber9.wack-a-doo.com
+    bot_jid:   service@jabber9.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
-  scope: 'wackadoo-round8'
+  scope: 'wackadoo-round9'
 
   default_character_name: 'WackyUser'
   identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
-  game_server_base_url:       'https://gs08.wack-a-doo.de/game_server'
-  geo_server_base_url:        'https://gs08.wack-a-doo.de/geo_server'
+  game_server_base_url:       'https://gs09.wack-a-doo.de/game_server'
+  geo_server_base_url:        'https://gs09.wack-a-doo.de/geo_server'
 
   settlement_recalc_probability:    0.2
   resource_pool_recalc_probability: 0.05

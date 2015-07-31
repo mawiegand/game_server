@@ -394,7 +394,10 @@ class Military::Army < ActiveRecord::Base
 
     consume_ap
     consume_one_settlement_founder!(2)
-    
+
+    # HACK for tutorial battle quest (place poacher at home_location)
+    Military::Army.create_npc(owner.home_location, 1, owner) unless owner.home_location.nil?
+
     settlement
   end
   

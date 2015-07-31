@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="0" build="9" />
+    <Version major="1" minor="0" build="12" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -152,6 +152,7 @@
       <RewardTests>
         <StandardAssignmentTest></StandardAssignmentTest>
       </RewardTests>
+      <UIMarker>mark_home_settlement</UIMarker>
       <UIMarker>mark_first_standard_assignment</UIMarker>
     </Quest>
 
@@ -283,6 +284,8 @@
   <UIMarker>mark_home_settlement</UIMarker>
   <UIMarker>mark_units_button</UIMarker>
   <UIMarker>mark_training_dialog_flow</UIMarker>
+  <!-- place npc for quest "quest_npc_battle" !-->
+  <PlaceNpcs>1</PlaceNpcs>
 </Quest>
 
 <!-- 7 --> <!-- Tutorial 8 -->
@@ -344,7 +347,6 @@
   <UIMarker>mark_select_own_home_settlement</UIMarker>
   <UIMarker>mark_create_army</UIMarker>
   <UIMarker>mark_create_army_dialog_flow</UIMarker>
-  <PlaceNpcs>1</PlaceNpcs>
 </Quest>
 
 <!-- 9--> <!-- Tutorial 10 -->
