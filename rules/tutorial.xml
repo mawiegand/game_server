@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="0" build="12" />
+    <Version major="1" minor="0" build="13" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -1774,11 +1774,11 @@
     </FinishQuestTriggers>
   </Triggers>
   <Rewards>
-    <UnitReward unit="unit_clubber">30</UnitReward>
+    <UnitReward unit="unit_clubbers">30</UnitReward>
     <ExperienceReward>300</ExperienceReward>
   </Rewards>
   <RewardTests>
-    <TrainingQueueTest unit="unit_clubber" min_count="1" />
+    <TrainingQueueTest unit="unit_clubbers" min_count="1" />
   </RewardTests>
   <UIMarker>mark_home_settlement</UIMarker>
   <UIMarker>mark_units_button</UIMarker>
