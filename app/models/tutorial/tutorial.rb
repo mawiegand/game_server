@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.0.11
+# Version: 1.0.12
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 1, 
         :minor => 0, 
-        :build => 11, 
+        :build => 12, 
       },
       
       :production_test_weights => {
@@ -513,7 +513,7 @@ class Tutorial::Tutorial
 
           },          
 
-          :uimarker => ['mark_first_standard_assignment', ],
+          :uimarker => ['mark_home_settlement', 'mark_first_standard_assignment', ],
 
         },              #   END OF quest_assignment
         {               #   quest_build_chiefcottagelvl3
