@@ -93,9 +93,13 @@ class Military::ArmiesController < ApplicationController
       respond_to do |format|
         format.html do
           if @military_armies.nil?
-            @military_armies = Military::Army.search(params[:search]).paginate(:page => params[:page], :per_page => 50)
-            @paginate = true   
-          end 
+            @paginate = true
+            if params[:npc] == "true"
+              @military_armies = Military::Army.search(params[:search]).paginate(:page => params[:page], :per_page => 50)
+            else
+              @military_armies = Military::Army.search(params[:search]).non_npc.paginate(:page => params[:page], :per_page => 50)
+            end
+          end
         end
         format.json do
           raise ForbiddenError.new('Access Forbidden')   if @asked_for_index     
