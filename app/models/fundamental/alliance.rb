@@ -216,6 +216,9 @@ class Fundamental::Alliance < ActiveRecord::Base
   end
   
   def check_consistency
+
+    create_ranking({ alliance_tag: tag }) if self.ranking.nil?
+
     check_and_apply_ranking_fortress_count
     check_and_apply_member_count
     check_and_apply_victory_progresses
