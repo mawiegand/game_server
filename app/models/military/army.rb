@@ -26,6 +26,7 @@ class Military::Army < ActiveRecord::Base
   before_save    :update_mode  
   before_save    :update_rank
   before_save    :update_units
+  before_save    :make_poacher_fight_visible
 
   after_save     :update_experience_ranking
   after_save     :update_experience_and_kills_character
@@ -1072,6 +1073,16 @@ class Military::Army < ActiveRecord::Base
       if !self.size_present.blank? && !self.size_max.blank? && self.size_present > self.size_max
         self.details.reduce_units_to_size_max
       end
+    end
+
+    def make_poacher_fight_visible
+      if self.is_poacher?
+        mode_change = self.changes[:mode]
+        if !mode_change.nil? && !mode_change[1].nil?
+          self.invisible = mode_change[1] != MODE_FIGHTING
+        end
+      end
+      true
     end
     
     # before destroy handler that removes this army from the experience ranking

@@ -72,7 +72,7 @@ class Military::Battle < ActiveRecord::Base
     artifact.make_visible if !artifact.nil? && !artifact.visible?
 
     # make attacked poacher visible for all characters
-    defender.make_visible if !defender.visible? && defender.is_poacher_of?(attacker.owner)
+    # defender.make_visible if !defender.visible? && defender.is_poacher_of?(attacker.owner)
 
     return battle
   end
