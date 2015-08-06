@@ -74,9 +74,9 @@ class Construction::Queue < ActiveRecord::Base
   end
   
   def max_position
-    if self.jobs.empty?
+    if self.jobs.empty? || self.jobs.last.nil?
       return 0
-    else
+    else      
       self.jobs.last.position
     end
   end
