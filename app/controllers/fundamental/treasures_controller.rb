@@ -7,11 +7,33 @@ class Fundamental::TreasuresController < ApplicationController
   # GET /fundamental/treasures
   # GET /fundamental/treasures.json
   def index
-    @fundamental_treasures = Fundamental::Treasure.all
+    last_modified = nil
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @fundamental_treasures }
+    if params.has_key?(:region_id)
+      @map_region = Map::Region.find(params[:region_id])
+      raise NotFoundError.new('Region Not Found') if @map_region.nil?
+      @fundamental_treasures = @map_region.treasures.visible_to_character(current_character)
+      #last_modified =  @map_region.treasures_changed_at
+    elsif params.has_key?(:location_id)
+      @map_location = Map::Location.find(params[:location_id])
+      raise NotFoundError.new('Location Not Found') if @map_location.nil?
+      @fundamental_treasures = @map_location.treasures.visible_to_character(current_character)
+      #last_modified =  @map_location.treasures_changed_at
+    else
+      @asked_for_index = true
+      @fundamental_treasures = Fundamental::Treasure.visible_to_character(current_character).order('id asc')
+    end
+
+    render_not_modified_or(last_modified) do
+      respond_to do |format|
+        format.html do
+          @fundamental_treasures = Fundamental::Treasure.order('id asc')
+        end
+        format.json do
+          @fundamental_treasures = [] if @fundamental_treasures.nil?
+          render(json: @fundamental_treasures)
+        end
+      end
     end
   end
 
@@ -19,6 +41,7 @@ class Fundamental::TreasuresController < ApplicationController
   # GET /fundamental/treasures/1.json
   def show
     @fundamental_treasure = Fundamental::Treasure.find(params[:id])
+    raise NotFoundError.new('Treasure Not Found') if !@fundamental_treasure.is_poacher_treasure_of?(current_character) && api_request?
 
     respond_to do |format|
       format.html # show.html.erb

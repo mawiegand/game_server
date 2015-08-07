@@ -7,6 +7,7 @@ class Fundamental::Treasure < ActiveRecord::Base
 
   belongs_to :army,               :class_name => "Military::Army",         :foreign_key => "army_id",                  :inverse_of => :treasure
 
+  scope :visible_to_character, lambda { |character| where('specific_character_id = ?', character.id) }
 
   def self.create_for_poacher(poacher)
     return if poacher.nil? || !poacher.is_poacher?
@@ -32,6 +33,10 @@ class Fundamental::Treasure < ActiveRecord::Base
     })
 
     treasure if treasure.save
+  end
+
+  def is_poacher_treasure_of?(character)
+    self.specific_character_id == character.id
   end
 
   def redeem_rewards
