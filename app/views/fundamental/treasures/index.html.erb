@@ -1,0 +1,37 @@
+<h1>Listing fundamental_treasures</h1>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Army</th>
+    <th>Region</th>
+    <th>Specific character</th>
+    <th>Resource stone reward</th>
+    <th>Resource wood reward</th>
+    <th>Resource fur reward</th>
+    <th>Resource cash reward</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fundamental_treasures.each do |fundamental_treasure| %>
+  <tr>
+    <td><%= fundamental_treasure.location_id %></td>
+    <td><%= fundamental_treasure.army_id %></td>
+    <td><%= fundamental_treasure.region_id %></td>
+    <td><%= fundamental_treasure.specific_character_id %></td>
+    <td><%= fundamental_treasure.resource_stone_reward %></td>
+    <td><%= fundamental_treasure.resource_wood_reward %></td>
+    <td><%= fundamental_treasure.resource_fur_reward %></td>
+    <td><%= fundamental_treasure.resource_cash_reward %></td>
+    <td><%= link_to 'Show', fundamental_treasure %></td>
+    <td><%= link_to 'Edit', edit_fundamental_treasure_path(fundamental_treasure) %></td>
+    <td><%= link_to 'Destroy', fundamental_treasure, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Treasure', new_fundamental_treasure_path %>
