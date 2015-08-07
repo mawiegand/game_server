@@ -1,0 +1,2 @@
+module Fundamental::TreasuresHelper
+end

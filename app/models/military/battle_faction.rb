@@ -149,6 +149,13 @@ class Military::BattleFaction < ActiveRecord::Base
     end
     false
   end
+
+  def holds_poacher_treasure
+    participants.each do |participant|
+      return participant.army.treasure if !participant.army.nil? && participant.army.is_poacher? && !participant.army.treasure.nil?
+    end
+    nil
+  end
   
   def contains_army_of(character)
     participants.each do |participant|

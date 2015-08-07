@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  location_id: 1
+  army_id: 1
+  region_id: 1
+  specific_character_id: 1
+  resource_stone_reward: 9.99
+  resource_wood_reward: 9.99
+  resource_fur_reward: 9.99
+  resource_cash_reward: 9.99
+
+two:
+  location_id: 1
+  army_id: 1
+  region_id: 1
+  specific_character_id: 1
+  resource_stone_reward: 9.99
+  resource_wood_reward: 9.99
+  resource_fur_reward: 9.99
+  resource_cash_reward: 9.99

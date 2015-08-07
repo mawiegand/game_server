@@ -176,6 +176,15 @@ class Ticker::BattleHandler
             end
           end
 
+          runloop.say "Check for poacher treasures"
+          poacher_treasure = loser_faction.holds_poacher_treasure
+          if poacher_treasure.nil?
+            runloop.say "No poacher treasure available"
+          else
+            runloop.say "Poacher treasure available: redeem poacher treasure with id #{poacher_treasure.id}"
+            poacher_treasure.destroy if poacher_treasure.redeem_rewards
+          end
+
           runloop.say "Calculate XP for both factions"
           battle.calculate_character_results
 

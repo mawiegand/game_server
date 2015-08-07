@@ -67,6 +67,7 @@ GameServer::Application.routes.draw do
           resource  :account,         :module => "shop",       :only => [ :show ]
           resource  :resource_pool,                            :only => [ :show ]
           resource  :artifact,                                 :only => [ :show ]
+          resource  :treasures,                                :only => [ :index ]
           resource  :setting
           resources :history_events,                           :only => [ :index ]
         
@@ -98,6 +99,7 @@ GameServer::Application.routes.draw do
         resources :artifacts
         resources :artifact_initiations
 
+        resources :treasures
 
         resources :guilds do
           resources :characters
@@ -121,6 +123,9 @@ GameServer::Application.routes.draw do
 
       resources :artifacts,       :path => "/map/regions/:region_id/artifacts",                     :module => 'fundamental'
       resources :artifacts,       :path => "/map/locations/:location_id/artifacts",                 :module => 'fundamental'
+
+      resources :treasures,       :path => "/map/regions/:region_id/treasures",                     :module => 'fundamental'
+      resources :treasures,       :path => "/map/locations/:location_id/treasures",                 :module => 'fundamental'
 
       resources :resource_effects, :path => "/fundamental/resource_pools/:resource_pool_id/resource_effects", :module => 'effect',   :only => [:index]
       resources :alliance_resource_effects, :path => "/fundamental/alliances/:alliance_id/alliance_resource_effects", :module => 'effect',   :only => [:index]
