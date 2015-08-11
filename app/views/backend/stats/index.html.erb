@@ -213,7 +213,7 @@
 
         "Date, Monthly, Weekly, Daily\n" +        
 <% @backend_stats.each do |backend_stat| %>
-        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mgross / (backend_stat.mu || 1)%>, <%= backend_stat.wgross / (backend_stat.wu || 1) %>, <%= backend_stat.dgross/ (backend_stat.du || 1) %>\n" +
+        "<%= backend_stat.created_at.strftime('%Y-%m-%d') %>,<%= backend_stat.mgross / [(backend_stat.mu || 1), 1].max%>, <%= backend_stat.wgross / [(backend_stat.wu || 1), 1].max %>, <%= backend_stat.dgross/ [(backend_stat.du || 1), 1].max %>\n" +
 <%end%>         
         "",
         {
