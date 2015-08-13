@@ -989,7 +989,8 @@ class Fundamental::Character < ActiveRecord::Base
 
       # if poachers already exists, add a treasure
       if self.poachers.count > 0
-        Fundamental::Treasure.create_for_poacher(self.poachers.offset(Random.rand(self.poachers.count)).first)
+        poachers_without_treasures = self.poachers.without_treasure
+        Fundamental::Treasure.create_for_poacher(poachers_without_treasures.offset(Random.rand(poachers_without_treasures.count)).first) if !poachers_without_treasures.empty?
       else
         create_treasure = true
       end

@@ -63,6 +63,7 @@ class Military::Army < ActiveRecord::Base
   scope :at_least_ap,          lambda { |ap| where(["ap_present >= ?", ap]) }
   scope :at_least_units,       lambda { |num| where(["size_present >= ?", num]) }
   scope :without_artifact,     joins('LEFT OUTER JOIN fundamental_artifacts ON fundamental_artifacts.army_id = military_armies.id').where("fundamental_artifacts.id IS NULL")
+  scope :without_treasure,     joins('LEFT OUTER JOIN fundamental_treasures ON fundamental_treasures.army_id = military_armies.id').where("fundamental_treasures.id IS NULL")
 
 
   def self.search(search)
