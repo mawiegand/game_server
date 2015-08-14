@@ -592,7 +592,7 @@ class Fundamental::Character < ActiveRecord::Base
         cmd.save
       end
 
-      character.update_poachers
+      character.create_spawn_poacher_event
 
       # HACK for tutorial battle quest (place poacher at home_location)
       Military::Army.create_npc(character.home_location, 1, character) unless character.home_location.nil?
@@ -677,7 +677,7 @@ class Fundamental::Character < ActiveRecord::Base
       cmd.character_id = character.id
       cmd.save
 
-      character.update_poachers
+      character.create_spawn_poacher_event
     end
     
     character 
@@ -1012,10 +1012,13 @@ class Fundamental::Character < ActiveRecord::Base
   end
 
   def create_spawn_poacher_event
+    # ensure max_poachers_count is not nil and != 0
+    self.max_poachers_count = self.settlement_points_total * 2 if self.max_poachers_count.nil? || self.max_poachers_count == 0 # TODO: Maybe define formula in rules?
+
     # check if next event should spawn new poacher or only update poacher cycle variables
     if self.new_poacher_spawn_possible?
       # create new event for new spawn
-      event_time = Time.now + (GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours / self.max_poachers_count)
+      event_time = Time.now + (GAME_SERVER_CONFIG['poacher_cycle_update_interval'].minutes / self.max_poachers_count)
     else
       # create new event for update cycle
       event_time = self.last_poacher_cycle_update + GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours
