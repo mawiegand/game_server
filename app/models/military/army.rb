@@ -56,6 +56,7 @@ class Military::Army < ActiveRecord::Base
   scope :non_npc,              where('(npc is null OR npc = ?)', false)
   scope :garrison,             where('(garrison = ?)', true)
   scope :non_garrison,         where('(garrison is null OR garrison = ?)', false)
+  scope :non_poacher,          where('(specific_character_id IS NULL)')
   scope :visible,              where('invisible = ?', false)
   scope :visible_to_character, lambda { |character| where('specific_character_id = ? OR owner_id = ? OR invisible = ?', character.id, character.id, false) }
   scope :idle,                 where(mode: MODE_IDLE)

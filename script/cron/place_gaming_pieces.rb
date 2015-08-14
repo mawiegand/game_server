@@ -21,8 +21,8 @@ avg_size_armies   = Military::Army.non_npc.non_garrison.average(:size_present)  
 max_size_armies   = Military::Army.non_npc.non_garrison.maximum(:size_present)  || 1
 
 round_age         = Fundamental::RoundInfo.the_round_info.age || 1
-num_npcs          = Military::Army.npc.non_garrison.at_least_units(round_age).count
-avg_size_npcs     = Military::Army.npc.non_garrison.at_least_units(round_age).average(:size_present)  || 0.0
+num_npcs          = Military::Army.npc.non_garrison.non_poacher.at_least_units(round_age).count
+avg_size_npcs     = Military::Army.npc.non_garrison.non_poacher.at_least_units(round_age).average(:size_present)  || 0.0
 
 num_characters    = Fundamental::Character.count || 1
 num_regions       = Map::Region.count || 1
