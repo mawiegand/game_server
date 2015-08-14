@@ -1018,7 +1018,7 @@ class Fundamental::Character < ActiveRecord::Base
     # check if next event should spawn new poacher or only update poacher cycle variables
     if self.new_poacher_spawn_possible?
       # create new event for new spawn
-      event_time = Time.now + (GAME_SERVER_CONFIG['poacher_cycle_update_interval'].minutes / self.max_poachers_count)
+      event_time = Time.now + (GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours / self.max_poachers_count)
     else
       # create new event for update cycle
       event_time = self.last_poacher_cycle_update + GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours
