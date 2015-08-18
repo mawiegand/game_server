@@ -592,7 +592,7 @@ class Fundamental::Character < ActiveRecord::Base
         cmd.save
       end
 
-      character.create_spawn_poacher_event
+      character.create_spawn_poacher_event((GAME_SERVER_CONFIG['poacher_delayed_first_spawn'] || 5).minutes)
 
       # HACK for tutorial battle quest (place poacher at home_location)
       Military::Army.create_npc(character.home_location, 1, character) unless character.home_location.nil?
@@ -677,7 +677,7 @@ class Fundamental::Character < ActiveRecord::Base
       cmd.character_id = character.id
       cmd.save
 
-      character.create_spawn_poacher_event
+      character.create_spawn_poacher_event((GAME_SERVER_CONFIG['poacher_delayed_first_spawn'] || 5).minutes)
     end
     
     character 
@@ -1011,14 +1011,14 @@ class Fundamental::Character < ActiveRecord::Base
     self.create_spawn_poacher_event
   end
 
-  def create_spawn_poacher_event
+  def create_spawn_poacher_event(time = nil)
     # ensure max_poachers_count is not nil and != 0
     self.max_poachers_count = self.settlement_points_total * 2 if self.max_poachers_count.nil? || self.max_poachers_count == 0 # TODO: Maybe define formula in rules?
 
     # check if next event should spawn new poacher or only update poacher cycle variables
     if self.new_poacher_spawn_possible?
-      # create new event for new spawn
-      event_time = Time.now + (GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours / self.max_poachers_count)
+      # create new event for new spawn; if time is nil use config time
+      event_time = (time.nil?) ? Time.now + (GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours / self.max_poachers_count) : Time.now + time
     else
       # create new event for update cycle
       event_time = self.last_poacher_cycle_update + GAME_SERVER_CONFIG['poacher_cycle_update_interval'].hours
