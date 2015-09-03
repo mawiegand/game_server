@@ -1387,7 +1387,7 @@ class Fundamental::Character < ActiveRecord::Base
       self.cannot_join_alliance_until = Time.now
     else
       blocking_time = [(Time.now.to_date - round_started_at.to_date).to_i, (GAME_SERVER_CONFIG['alliance_switch_blocking_time'] || 14)].min
-      self.set_cannot_join_alliance_until = blocking_time.days.from_now
+      self.cannot_join_alliance_until = blocking_time.days.from_now
     end
 
     # elsif self.created_at <= 20.days.ago && !self.alliance.is_at_war?
