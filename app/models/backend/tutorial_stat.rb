@@ -77,10 +77,12 @@ class Backend::TutorialStat < ActiveRecord::Base
     end
   end
 
+
+
   def self.download_tutorial_stats_csv(backend_tutorial_stats)
 
     row = []
-    csv_file = CSV.generate do |csv|
+    csv_file = CSV.generate({:col_sep => ";"}) do |csv|
 
       row.push("Created At")
       row.push("Cohort Size")
@@ -92,7 +94,7 @@ class Backend::TutorialStat < ActiveRecord::Base
 
       csv << row
 
-
+     
       # appending the rows
       backend_tutorial_stats.each do |backend_tutorial_stat|
     
