@@ -11,6 +11,7 @@ class Backend::TutorialStatsController < ApplicationController
   def index
     @backend_tutorial_stats = Backend::TutorialStat.order('created_at ASC')
 
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @backend_tutorial_stats }
@@ -90,4 +91,18 @@ class Backend::TutorialStatsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def download_csv
+    backend_tutorial_stats = Backend::TutorialStat.order('created_at ASC')
+    data = Backend::TutorialStat.download_tutorial_stats_csv(backend_tutorial_stats)
+
+    filename = "tutorial_stats#{Time.now.strftime("%Y%m%d%H%M%S")}.csv"
+
+    send_data(data, :type => "text/csv; charset=utf-8; header=present", :filename => filename)
+
+  end
+
+
+
+
 end

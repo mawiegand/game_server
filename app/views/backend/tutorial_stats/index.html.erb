@@ -122,9 +122,6 @@
                     document.getElementById("retention_last_week"),
 
                     "Quest, retained\n" +
-              <%quests.each do |quest|  %>
-                    "<%= quest[:id] %>, <%= ((@backend_tutorial_stats.last["quest_#{quest[:id]}_retention_rate_week_1".to_sym] || 0) * 100).floor %>\n" +
-              <%end%>         
                     "",
                     {
                       legend: 'always',
@@ -251,3 +248,4 @@
 <br />
 
 <%= link_to 'New Tutorial stat', new_backend_tutorial_stat_path %>
+<%= link_to 'Downlaod stats', 'download_csv' %>

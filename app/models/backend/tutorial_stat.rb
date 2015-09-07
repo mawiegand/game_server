@@ -19,6 +19,7 @@ class Backend::TutorialStat < ActiveRecord::Base
     nil
   end  
   
+
   def recalc_stats
     self.reset_stats
     characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', self.created_at, self.created_at - 1.days ])
@@ -74,5 +75,52 @@ class Backend::TutorialStat < ActiveRecord::Base
       
       self["quest_#{quest[:id]}_retention_rate_week_1".to_s] = 0.0      
     end
-  end  
+  end
+
+  def self.download_tutorial_stats_csv(backend_tutorial_stats)
+
+    row = []
+    csv_file = CSV.generate do |csv|
+
+      row.push("Created At")
+      row.push("Cohort Size")
+
+      #appending the header text     
+      Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
+        row.push(quest[:id])
+      end
+
+      csv << row
+
+
+      # appending the rows
+      backend_tutorial_stats.each do |backend_tutorial_stat|
+    
+        row = []
+
+        row.push(backend_tutorial_stat.created_at)
+        row.push(backend_tutorial_stat.cohort_size)
+
+        Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
+          prev_quest = required_quest(quest)
+            
+          row.push(backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s])
+          row.push(backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s])
+
+          row.push((backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0).floor)
+
+          if !prev_quest.nil? && (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 0) > 0
+            row.push("#{((backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s] || 0).to_f / (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 1) * 100).floor}%")
+          else 
+            row.push(nil)
+          end 
+        end
+    
+        csv << row
+      end
+
+    end # csv end
+  
+    return csv_file
+  end
 end

@@ -32,7 +32,7 @@ end
 
 group :development do
   gem 'rails-erd'
-#  gem 'rails-dev-tweaks', '~> 0.6.1'
+  gem 'rails-dev-tweaks', '~> 0.6.1'
 end
 
 gem 'therubyracer', '>= 0.11.0'          # missing javascript runtime
@@ -49,7 +49,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'pry', :group => :development
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
