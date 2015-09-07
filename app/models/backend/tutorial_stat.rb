@@ -81,44 +81,74 @@ class Backend::TutorialStat < ActiveRecord::Base
 
   def self.download_tutorial_stats_csv(backend_tutorial_stats)
 
-    row = []
+
+    header = []
+
     csv_file = CSV.generate({:col_sep => ";"}) do |csv|
 
-      row.push("Created At")
-      row.push("Cohort Size")
+      header.push("Created At")
+      header.push("Cohort Size")
+      header.push("Description")
 
       #appending the header text     
       Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
-        row.push(quest[:id])
+        header.push(quest[:name][:en_US].to_s + "\n" + quest[:id].to_s)
+        header.push("")
       end
 
-      csv << row
+      csv << header
 
      
       # appending the rows
       backend_tutorial_stats.each do |backend_tutorial_stat|
-    
-        row = []
+      
+        cell_row1 = []
+        cell_row2 = []
+        cell_row3 = []
 
-        row.push(backend_tutorial_stat.created_at)
-        row.push(backend_tutorial_stat.cohort_size)
+        cohort_size = backend_tutorial_stat.cohort_size
+
+        cell_row1.push(backend_tutorial_stat.created_at)
+        cell_row1.push(backend_tutorial_stat.cohort_size)
+
+        # to leave empty cells and keep the data organized according to file.
+        cell_row2.push("")
+        cell_row2.push("")
+
+        cell_row3.push("")
+        cell_row3.push("")
+
+        cell_row1.push("Quest Finished ( Day 1 )")
+        cell_row2.push("Quest Finished")
+        cell_row3.push("Time")
 
         Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
           prev_quest = required_quest(quest)
-            
-          row.push(backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s])
-          row.push(backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s])
 
-          row.push((backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0).floor)
+
+          exported_value = backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s]
+
+          cell_row1.push(exported_value)
+          cell_row1.push(((cohort_size*exported_value)/100).to_s + "%")
+          exported_value = backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s]
+
+          cell_row2.push(backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s])
+          cell_row2.push(((cohort_size*exported_value)/100).to_s + "%")
+
+          cell_row3.push(((backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0).floor).to_s + "s")
+          cell_row3.push("")
+
 
           if !prev_quest.nil? && (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 0) > 0
-            row.push("#{((backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s] || 0).to_f / (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 1) * 100).floor}%")
+            cell_row3[1] =  ("#{((backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s] || 0).to_f / (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 1) * 100).floor}%").to_s + "s" 
           else 
-            row.push(nil)
           end 
+
+          #row.push(quest_value[0].to_s+"\n"+quest_value[1].to_s+"\n"+quest_value[2].to_s)
         end
-    
-        csv << row
+        csv << cell_row1
+        csv << cell_row2
+        csv << cell_row3
       end
 
     end # csv end
