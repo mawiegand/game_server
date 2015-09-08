@@ -106,7 +106,7 @@ class Backend::TutorialStat < ActiveRecord::Base
         cell_row2 = []
         cell_row3 = []
 
-        cohort_size = backend_tutorial_stat.cohort_size
+        cohort_size = backend_tutorial_stat.cohort_size.to_f
 
         cell_row1.push(backend_tutorial_stat.created_at)
         cell_row1.push(backend_tutorial_stat.cohort_size)
@@ -125,13 +125,14 @@ class Backend::TutorialStat < ActiveRecord::Base
         Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
           prev_quest = required_quest(quest)
 
-
-          exported_value1 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s]
-          exported_value2 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s]
+          
+          exported_value1 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s].to_f
+          exported_value2 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s].to_f
 
 
           cell_row1.push(exported_value1)
           cell_row2.push(exported_value2)
+          binding.pry
 
           if cohort_size > 0
             cell_row1.push(((exported_value1/cohort_size)*100).to_s + "%")
