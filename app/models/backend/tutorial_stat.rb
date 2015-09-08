@@ -120,7 +120,7 @@ class Backend::TutorialStat < ActiveRecord::Base
 
         cell_row1.push("Quest Finished ( Day 1 )")
         cell_row2.push("Quest Finished")
-        cell_row3.push("Time")
+        cell_row3.push("Play Time")
 
         Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
           prev_quest = required_quest(quest)
@@ -128,14 +128,20 @@ class Backend::TutorialStat < ActiveRecord::Base
 
           exported_value = backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s]
 
+          binding.pry
           cell_row1.push(exported_value)
-          cell_row1.push(((cohort_size*exported_value)/100).to_s + "%")
+          cell_row1.push(((exported_value/cohort_size)*100).to_s + "%")
+
+
           exported_value = backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s]
 
           cell_row2.push(backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s])
-          cell_row2.push(((cohort_size*exported_value)/100).to_s + "%")
+          cell_row2.push(((exported_value/cohort_size)*100).to_s + "%")
 
-          cell_row3.push(((backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0).floor).to_s + "s")
+          time = ((backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0).floor)
+          time = time/1000
+
+          cell_row3.push(time.to_s + "s")
           cell_row3.push("")
 
 
