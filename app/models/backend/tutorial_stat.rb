@@ -126,17 +126,21 @@ class Backend::TutorialStat < ActiveRecord::Base
           prev_quest = required_quest(quest)
 
 
-          exported_value = backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s]
-
-          binding.pry
-          cell_row1.push(exported_value)
-          cell_row1.push(((exported_value/cohort_size)*100).to_s + "%")
+          exported_value1 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s]
+          exported_value2 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s]
 
 
-          exported_value = backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s]
+          cell_row1.push(exported_value1)
+          cell_row2.push(exported_value2)
 
-          cell_row2.push(backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s])
-          cell_row2.push(((exported_value/cohort_size)*100).to_s + "%")
+          if cohort_size > 0
+            cell_row1.push(((exported_value1/cohort_size)*100).to_s + "%")
+            cell_row2.push(((exported_value2/cohort_size)*100).to_s + "%")
+          else
+            cell_row1.push("0%")
+            cell_row2.push("0%")
+          end
+
 
           time = ((backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0).floor)
           time = time/1000
