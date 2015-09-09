@@ -97,8 +97,11 @@ class Backend::TutorialStat < ActiveRecord::Base
       end
 
       csv << header
-
-     
+      
+      cohort_size_sum = 0
+      quest_stats_sums = {}
+      count = backend_tutorial_stats.count
+           
       # appending the rows
       backend_tutorial_stats.each do |backend_tutorial_stat|
       
@@ -107,6 +110,8 @@ class Backend::TutorialStat < ActiveRecord::Base
         cell_row3 = []
 
         cohort_size = backend_tutorial_stat.cohort_size.to_f
+        
+        cohort_size_sum += cohort_size
 
         cell_row1.push(backend_tutorial_stat.created_at)
         cell_row1.push(backend_tutorial_stat.cohort_size)
@@ -124,26 +129,43 @@ class Backend::TutorialStat < ActiveRecord::Base
 
         Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
           prev_quest = required_quest(quest)
-
           
-          exported_value1 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s].to_f
-          exported_value2 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s].to_f
-
+          key = "quest_#{quest[:id]}"
+          unless quest_stats_sums.has_key?(key)
+            quest_stats_sums[key] = []
+            quest_stats_sums[key].push 0
+            quest_stats_sums[key].push 0
+            quest_stats_sums[key].push 0
+            quest_stats_sums[key].push 0
+            quest_stats_sums[key].push 0
+          end
+          
+          exported_value1 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s].to_i
+          exported_value2 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s].to_i
+          
+          quest_stats_sums[key][0] += exported_value1
+          quest_stats_sums[key][1] += exported_value2
 
           cell_row1.push(exported_value1)
           cell_row2.push(exported_value2)
 
           if cohort_size > 0
-            cell_row1.push(((exported_value1/cohort_size)*100).to_s + "%")
-            cell_row2.push(((exported_value2/cohort_size)*100).to_s + "%")
+            percent1 = (exported_value1/cohort_size)*100
+            percent2 = (exported_value2/cohort_size)*100
+            cell_row1.push(percent1.to_s + "%")
+            cell_row2.push(percent2.to_s + "%")
+            quest_stats_sums[key][2] += percent1 
+            quest_stats_sums[key][3] += percent2
           else
             cell_row1.push("0%")
             cell_row2.push("0%")
           end
 
 
-          time = ((backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0).floor)
-          time = time/1000
+          time = (backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0)
+          time = (time/1000.0).round(2)
+          
+          quest_stats_sums[key][4] += time
 
           cell_row3.push(time.to_s + "s")
           cell_row3.push("")
@@ -151,15 +173,52 @@ class Backend::TutorialStat < ActiveRecord::Base
 
           if !prev_quest.nil? && (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 0) > 0
             cell_row3[1] =  ("#{((backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s] || 0).to_f / (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 1) * 100).floor}%").to_s + "s" 
-          else 
           end 
 
           #row.push(quest_value[0].to_s+"\n"+quest_value[1].to_s+"\n"+quest_value[2].to_s)
+          
         end
         csv << cell_row1
         csv << cell_row2
         csv << cell_row3
       end
+      
+      # add sums rows
+      
+      cell_row1 = []
+      cell_row2 = []
+      cell_row3 = []
+
+      cell_row1.push("SUM")
+      cell_row1.push((cohort_size_sum / count).to_s)
+      cell_row2.push("")
+      cell_row2.push("")
+      cell_row3.push("")
+      cell_row3.push("")
+
+      cell_row1.push("Quest Finished ( Day 1 )")
+      cell_row2.push("Quest Finished")
+      cell_row3.push("Play Time")
+      
+      quest_stats_sums.each do |key, value|
+        num1 = (value[0] / count).round(2)
+        num2 = (value[1] / count).round(2)
+        cell_row1.push(num1.to_s)
+        cell_row2.push(num2.to_s)
+        
+        percent1 = (value[2] / count).round(2)
+        percent2 = (value[3] / count).round(2)
+        cell_row1.push(percent1.to_s + "%")
+        cell_row2.push(percent2.to_s + "%")
+        
+        time = (value[4] / count).round(2)
+        cell_row3.push(time.to_s + "s")
+        cell_row3.push("")
+      end
+      
+      csv << cell_row1
+      csv << cell_row2
+      csv << cell_row3
 
     end # csv end
   
