@@ -201,7 +201,10 @@ class Backend::TutorialStat < ActiveRecord::Base
       cell_row2.push("Quest Finished")
       cell_row3.push("Play Time")
       
-      quest_stats_sums.sort.map do |key, value|
+      Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
+        key = "quest_#{quest[:id]}"
+        value = quest_stats_sums[key]
+        
         count = value[5]
         
         num1 = value[0].to_i
