@@ -100,7 +100,6 @@ class Backend::TutorialStat < ActiveRecord::Base
       
       cohort_size_sum = 0
       quest_stats_sums = {}
-      count = backend_tutorial_stats.count
            
       # appending the rows
       backend_tutorial_stats.each do |backend_tutorial_stat|
@@ -138,6 +137,7 @@ class Backend::TutorialStat < ActiveRecord::Base
             quest_stats_sums[key].push 0
             quest_stats_sums[key].push 0
             quest_stats_sums[key].push 0
+            quest_stats_sums[key].push 0
           end
           
           exported_value1 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s].to_i
@@ -156,6 +156,7 @@ class Backend::TutorialStat < ActiveRecord::Base
             cell_row2.push(percent2.to_s + "%")
             quest_stats_sums[key][2] += percent1 
             quest_stats_sums[key][3] += percent2
+            quest_stats_sums[key][5] += 1
           else
             cell_row1.push("0%")
             cell_row2.push("0%")
@@ -163,7 +164,7 @@ class Backend::TutorialStat < ActiveRecord::Base
 
 
           time = (backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0)
-          time = (time/1000.0).round(2)
+          time = time/1000.0
           
           quest_stats_sums[key][4] += time
 
@@ -189,8 +190,8 @@ class Backend::TutorialStat < ActiveRecord::Base
       cell_row2 = []
       cell_row3 = []
 
-      cell_row1.push("SUM")
-      cell_row1.push((cohort_size_sum / count).to_s)
+      cell_row1.push("SUM / AVG")
+      cell_row1.push(cohort_size_sum.to_s)
       cell_row2.push("")
       cell_row2.push("")
       cell_row3.push("")
@@ -201,17 +202,19 @@ class Backend::TutorialStat < ActiveRecord::Base
       cell_row3.push("Play Time")
       
       quest_stats_sums.each do |key, value|
-        num1 = (value[0] / count).round(2)
-        num2 = (value[1] / count).round(2)
+        count = value[5]
+        
+        num1 = (value[0] / count)
+        num2 = (value[1] / count)
         cell_row1.push(num1.to_s)
         cell_row2.push(num2.to_s)
         
-        percent1 = (value[2] / count).round(2)
-        percent2 = (value[3] / count).round(2)
+        percent1 = (value[2] / count)
+        percent2 = (value[3] / count)
         cell_row1.push(percent1.to_s + "%")
         cell_row2.push(percent2.to_s + "%")
         
-        time = (value[4] / count).round(2)
+        time = (value[4] / count)
         cell_row3.push(time.to_s + "s")
         cell_row3.push("")
       end
