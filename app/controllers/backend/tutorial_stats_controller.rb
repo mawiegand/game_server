@@ -43,6 +43,7 @@ class Backend::TutorialStatsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @backend_tutorial_stat }
+      format.csv
     end
   end
 
