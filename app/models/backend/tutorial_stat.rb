@@ -212,8 +212,9 @@ class Backend::TutorialStat < ActiveRecord::Base
         cell_row1.push(num1.to_s)
         cell_row2.push(num2.to_s)
         
-        percent1 = (value[2] / count).round(2)
-        percent2 = (value[3] / count).round(2)
+        percent1 = ((num1 / cohort_size_sum.to_f) * 100.0).round(2)
+        percent2 = ((num2 / cohort_size_sum.to_f) * 100.0).round(2)
+            
         cell_row1.push(percent1.to_s + "%")
         cell_row2.push(percent2.to_s + "%")
         
