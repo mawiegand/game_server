@@ -132,7 +132,6 @@ class Backend::TutorialStat < ActiveRecord::Base
 
           cell_row1.push(exported_value1)
           cell_row2.push(exported_value2)
-          binding.pry
 
           if cohort_size > 0
             cell_row1.push(((exported_value1/cohort_size)*100).to_s + "%")
