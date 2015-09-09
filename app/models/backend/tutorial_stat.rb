@@ -19,6 +19,7 @@ class Backend::TutorialStat < ActiveRecord::Base
     nil
   end  
   
+
   def recalc_stats
     self.reset_stats
     characters = Fundamental::Character.non_npc.where([ 'created_at <= ? AND created_at > ?', self.created_at, self.created_at - 1.days ])
@@ -74,5 +75,160 @@ class Backend::TutorialStat < ActiveRecord::Base
       
       self["quest_#{quest[:id]}_retention_rate_week_1".to_s] = 0.0      
     end
-  end  
+  end
+
+
+
+  def self.download_tutorial_stats_csv(backend_tutorial_stats)
+
+
+    header = []
+
+    csv_file = CSV.generate({:col_sep => ";"}) do |csv|
+
+      header.push("Created At")
+      header.push("Cohort Size")
+      header.push("Description")
+
+      #appending the header text     
+      Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
+        header.push(quest[:name][:en_US].to_s + "\n" + quest[:id].to_s)
+        header.push("")
+      end
+
+      csv << header
+      
+      cohort_size_sum = 0
+      quest_stats_sums = {}
+           
+      # appending the rows
+      backend_tutorial_stats.each do |backend_tutorial_stat|
+      
+        cell_row1 = []
+        cell_row2 = []
+        cell_row3 = []
+
+        cohort_size = backend_tutorial_stat.cohort_size.to_i
+        
+        cohort_size_sum += cohort_size
+
+        cell_row1.push(backend_tutorial_stat.created_at)
+        cell_row1.push(backend_tutorial_stat.cohort_size)
+
+        # to leave empty cells and keep the data organized according to file.
+        cell_row2.push("")
+        cell_row2.push("")
+
+        cell_row3.push("")
+        cell_row3.push("")
+
+        cell_row1.push("Quest Finished ( Day 1 )")
+        cell_row2.push("Quest Finished")
+        cell_row3.push("Play Time")
+
+        Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
+          prev_quest = required_quest(quest)
+          
+          key = "quest_#{quest[:id]}"
+          unless quest_stats_sums.has_key?(key)
+            quest_stats_sums[key] = []
+            quest_stats_sums[key].push 0
+            quest_stats_sums[key].push 0
+            quest_stats_sums[key].push 0
+            quest_stats_sums[key].push 0
+            quest_stats_sums[key].push 0
+            quest_stats_sums[key].push 0
+          end
+          
+          exported_value1 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s].to_i
+          exported_value2 = backend_tutorial_stat["quest_#{quest[:id]}_num_finished".to_s].to_i
+          
+          quest_stats_sums[key][0] += exported_value1
+          quest_stats_sums[key][1] += exported_value2
+
+          cell_row1.push(exported_value1)
+          cell_row2.push(exported_value2)
+
+          if cohort_size > 0
+            percent1 = ((exported_value1/cohort_size.to_f)*100.0).round(2)
+            percent2 = ((exported_value2/cohort_size.to_f)*100.0).round(2)
+            cell_row1.push(percent1.to_s + "%")
+            cell_row2.push(percent2.to_s + "%")
+            quest_stats_sums[key][2] += percent1 
+            quest_stats_sums[key][3] += percent2
+            quest_stats_sums[key][5] += 1
+          else
+            cell_row1.push("")
+            cell_row2.push("")
+          end
+
+
+          time = (backend_tutorial_stat["quest_#{quest[:id]}_playtime_finished".to_s] || 0)
+          time = (time/1000.0).round(2)
+          
+          quest_stats_sums[key][4] += time
+
+          cell_row3.push(time.to_s + "s")
+          cell_row3.push("")
+
+
+          if !prev_quest.nil? && (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 0) > 0
+            cell_row3[1] =  ("#{((backend_tutorial_stat["quest_#{quest[:id]}_num_finished_day_1".to_s] || 0).to_f / (backend_tutorial_stat["quest_#{prev_quest[:id]}_num_finished_day_1".to_s] || 1) * 100).floor}%").to_s + "s" 
+          end 
+
+          #row.push(quest_value[0].to_s+"\n"+quest_value[1].to_s+"\n"+quest_value[2].to_s)
+          
+        end
+        csv << cell_row1
+        csv << cell_row2
+        csv << cell_row3
+      end
+      
+      # add sums rows
+      
+      cell_row1 = []
+      cell_row2 = []
+      cell_row3 = []
+
+      cell_row1.push("SUM / AVG")
+      cell_row1.push(cohort_size_sum.to_i.to_s)
+      cell_row2.push("")
+      cell_row2.push("")
+      cell_row3.push("")
+      cell_row3.push("")
+
+      cell_row1.push("Quest Finished ( Day 1 )")
+      cell_row2.push("Quest Finished")
+      cell_row3.push("Play Time")
+      
+      Tutorial::Tutorial.the_tutorial.quests.each do |quest| 
+        key = "quest_#{quest[:id]}"
+        value = quest_stats_sums[key]
+        
+        count = value[5]
+        
+        num1 = value[0].to_i
+        num2 = value[1].to_i
+        cell_row1.push(num1.to_s)
+        cell_row2.push(num2.to_s)
+        
+        percent1 = ((num1 / cohort_size_sum.to_f) * 100.0).round(2)
+        percent2 = ((num2 / cohort_size_sum.to_f) * 100.0).round(2)
+            
+        cell_row1.push(percent1.to_s + "%")
+        cell_row2.push(percent2.to_s + "%")
+        
+        time = (value[4] / count).round(2)
+        cell_row3.push(time.to_s + "s")
+        cell_row3.push("")
+      end
+      
+      csv << cell_row1
+      csv << cell_row2
+      csv << cell_row3
+
+    end # csv end
+  
+    return csv_file
+  end
 end
