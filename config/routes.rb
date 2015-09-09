@@ -29,17 +29,12 @@ GameServer::Application.routes.draw do
         resources :users 
         resources :partner_sites
         resources :stats
-
-        match '/tutorial_stats/download_csv',      :module => 'backend', :controller => 'tutorial_stats', :action => 'download_csv'
-
         resources :tutorial_stats
         resources :sign_in_log_entries
         resources :browser_stats
         resources :system_messages
         resources :trade_log_entries, :only => [ :index ]
         resources :user_content_reports
-
-
 
         get '/log_inspector/:log/:regex',  :module => 'backend', :controller => 'log_inspector', :action => :show, :as => 'log_inspector'
         get '/log_inspector/:log',         :module => 'backend', :controller => 'log_inspector', :action => :show
