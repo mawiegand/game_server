@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+#
+# Helper script to exports all frog purchases
+#
+
+require 'csv'
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+STDOUT.sync = true
+
+puts
+puts "This script exports frog purchases"
+puts
+
+time = Time.new
+filename = "wado-" << time.year.to_s << "_" << time.month.to_s << "_" << time.day.to_s << "-" << time.hour.to_s << "_" << time.min.to_s << "_" << time.sec.to_s
+
+
+CSV.open(filename << ".purchased_frogs", "w") do |csv|
+  
+  header_fields = []
+
+  header_fields << "character_id" << "purchased_frogs"
+
+  csv << header_fields
+
+  Fundamental::Character.all.each do |character|
+    data_fields = []
+    character_total_frog_amount = 0
+
+    character.shop_transactions.closed.each do |transaction|
+      begin
+        offer = JSON(transaction.offer)
+      rescue JSON::ParserError
+        next
+      end
+
+      if !offer.nil? && offer['resource_id'] == 3
+        character_total_frog_amount += offer['amount'] if !offer['amount'].nil? && offer['amount'] > 0
+      end
+    end
+
+    if character_total_frog_amount > 0
+      data_fields << character.id << character_total_frog_amount
+      csv << data_fields
+    end
+  end
+end
