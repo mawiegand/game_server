@@ -809,7 +809,7 @@
 <Quest id="epic_storage" type="epic" advisor="chef">
   <Name>Storage and trading</Name>
   <Name locale="de_DE">Lager und Handel</Name>
-  <Task>Improve your storage and send ressources to annouther chief.</Task>
+  <Task>Improve your storage and send ressources to another chief.</Task>
   <Task locale="de_DE">Erhöhe die Lagerkapazität und sende Rohstoffe an einen anderen Häuptling.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>

@@ -2510,7 +2510,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your storage and send ressources to annouther chief.",
+            :en_US => "Improve your storage and send ressources to another chief.",
   
             :de_DE => "Erhöhe die Lagerkapazität und sende Rohstoffe an einen anderen Häuptling.",
                 
