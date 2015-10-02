@@ -13,6 +13,7 @@ end %>
     <th>Level before</th>
     <th>Level after</th>
     <th>Job type</th>
+    <th>User name</th>
     <th></th>
     <th></th>
     <th></th>
@@ -27,6 +28,7 @@ end %>
     <td><%= construction_job.level_before %></td>
     <td><%= construction_job.level_after %></td>
     <td><%= construction_job.job_type %></td>
+    <td><%= link_to("#{construction_job.queue.settlement.owner.name}",construction_job.queue.settlement.owner ) %></td>
     <td><%= link_to 'Show', construction_job %></td>
     <td><%= link_to 'Edit', edit_construction_job_path(construction_job) %></td>
     <td><%= link_to 'Destroy', construction_job, confirm: 'Are you sure?', method: :delete %></td>
