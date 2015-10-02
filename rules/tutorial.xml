@@ -480,9 +480,9 @@
 
 <!-- EPIC Ressources -->
 <Quest id="epic_ressources" type="epic" advisor="girl">
-  <Name>Ressources</Name>
+  <Name>Resources</Name>
   <Name locale="de_DE">Stein und Holz</Name>
-  <Task>Build a quarry and a logger for improved ressource production.</Task>
+  <Task>Build a quarry and a logger for improved resource production.</Task>
   <Task locale="de_DE">Errichte Steinbruch und Holzfäller für eine verbesserte Rohstoffproduktion</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
@@ -515,11 +515,11 @@
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Je mehr Rohstoffe desto mehr von allem.</Flavor>
-  <Flavor locale="en_US">The more ressources the more of everything.</Flavor>
+  <Flavor locale="en_US">The more resources the more of everything.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Du solltest deine Rohstoffproduktion regelmäßig ausbauen.</RewardFlavor>
-  <RewardFlavor locale="en_US">You should upgrade your ressource production continuously.</RewardFlavor>
+  <RewardFlavor locale="en_US">You should upgrade your resource production continuously.</RewardFlavor>
   <Rewards>
   </Rewards>
   <RewardTests>
@@ -579,18 +579,18 @@
 
 <!-- EPIC More Ressources -->
 <Quest id="epic__more_ressources" type="epic" advisor="girl">
-  <Name>More Ressources</Name>
+  <Name>More Resources</Name>
   <Name locale="de_DE">Die Industrie ankurbeln</Name>
-  <Task>Improve your ressource production by upgrading your quarry and logger.</Task>
+  <Task>Improve your resource production by upgrading your quarry and logger.</Task>
   <Task locale="de_DE">Verbessere Deine Rohstoffproduktion durch den Ausbau von Steinbruch und Holzfäller.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Je mehr Rohstoffe desto mehr von allem.</Flavor>
-  <Flavor locale="en_US">The more ressources the more of everything.</Flavor>
+  <Flavor locale="en_US">The more resources the more of everything.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Du solltest deine Rohstoffproduktion regelmäßig ausbauen.</RewardFlavor>
-  <RewardFlavor locale="en_US">You should upgrade your ressource production continuously.</RewardFlavor>
+  <RewardFlavor locale="en_US">You should upgrade your resource production continuously.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>epic_ressources</FinishQuestTrigger>
@@ -809,7 +809,7 @@
 <Quest id="epic_storage" type="epic" advisor="chef">
   <Name>Storage and trading</Name>
   <Name locale="de_DE">Lager und Handel</Name>
-  <Task>Improve your storage and send ressources to another chief.</Task>
+  <Task>Improve your storage and send resources to another chief.</Task>
   <Task locale="de_DE">Erhöhe die Lagerkapazität und sende Rohstoffe an einen anderen Häuptling.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
@@ -2055,11 +2055,11 @@
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Der Handelsplatz verbessert die Rohstoffproduktion der Lagerstätte.</Flavor>
-  <Flavor locale="en_US">The trading center increases the encampment’s ressource production.</Flavor>
+  <Flavor locale="en_US">The trading center increases the encampment’s resource production.</Flavor>
   <RewardText locale="de_DE"></RewardText>
   <RewardText locale="en_US"></RewardText>
   <RewardFlavor locale="de_DE">Der Handelsplatz verbessert Deine Rohstoffproduktion, lässt Deine Lagerstätte aber fast wehrlos.</RewardFlavor>
-  <RewardFlavor locale="en_US">The trading center increases your ressource production but leaves your encampment nearly unprotected.</RewardFlavor>
+  <RewardFlavor locale="en_US">The trading center increases your resource production but leaves your encampment nearly unprotected.</RewardFlavor>
   <Triggers>
     <FinishQuestTriggers>
       <FinishQuestTrigger>quest_haunt_lvl6</FinishQuestTrigger>

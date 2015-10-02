@@ -3250,7 +3250,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Der Gottesgläubige Sammler folgt nur den Halbgöttern, die ihren Glauben und ihre Unterstützung bewiesen haben.</p><p>Eine deutlich erhöhte Produktion wie auch seine Fähigkeit ständig Goldkröten zu finden heben den Gottesfürchtigen Sammler von seinen Kollegen ab.</p>",
   
-            :en_US => "<p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p><p>Through his devotion he can find ressources and even golden frogs at a much higher rate than their peers.</p>",
+            :en_US => "<p>The god-fearing gatherer is only devout towards demigods that have proven their dedication and support.</p><p>Through his devotion he can find resources and even golden frogs at a much higher rate than their peers.</p>",
                 
           },
 
@@ -8774,7 +8774,7 @@ class GameRules::Rules
             
             :de_DE => "<p>Von den Mauern Deiner Festung erblicken Deine Späher eine Gruppe von wilden Menschen. Es scheint sich allerdings nicht um einen Schlachtzug, sondern einer Gruppe von Auswanderern zu handeln. Vielleicht kannst Du sie mit ein paar Rohstoffen überzeugen bei Dir zu bleiben und zukünftig für Dich zu kämpfen.</p>",
   
-            :en_US => "<p>The lookouts in your fortress spot a huge group of people marching through your lands. But rather than an army they apear to be a band of wanderers, looking for greener pastures. Maybe you can support them with a few ressources. You may convince a few of them to stay here that way.</p>",
+            :en_US => "<p>The lookouts in your fortress spot a huge group of people marching through your lands. But rather than an army they apear to be a band of wanderers, looking for greener pastures. Maybe you can support them with a few resources. You may convince a few of them to stay here that way.</p>",
   
           },
 

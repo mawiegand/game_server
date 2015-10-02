@@ -1414,14 +1414,14 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "Ressources",
+            :en_US => "Resources",
   
             :de_DE => "Stein und Holz",
                 
           },
           :task => {
             
-            :en_US => "Build a quarry and a logger for improved ressource production.",
+            :en_US => "Build a quarry and a logger for improved resource production.",
   
             :de_DE => "Errichte Steinbruch und Holzfäller für eine verbesserte Rohstoffproduktion",
                 
@@ -1532,7 +1532,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Je mehr Rohstoffe desto mehr von allem.",
   
-            :en_US => "The more ressources the more of everything.",
+            :en_US => "The more resources the more of everything.",
                 
           },
           :description => {
@@ -1546,7 +1546,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Du solltest deine Rohstoffproduktion regelmäßig ausbauen.",
   
-            :en_US => "You should upgrade your ressource production continuously.",
+            :en_US => "You should upgrade your resource production continuously.",
                 
           },
           :reward_text => {
@@ -1762,14 +1762,14 @@ class Tutorial::Tutorial
 
           :name => {
             
-            :en_US => "More Ressources",
+            :en_US => "More Resources",
   
             :de_DE => "Die Industrie ankurbeln",
                 
           },
           :task => {
             
-            :en_US => "Improve your ressource production by upgrading your quarry and logger.",
+            :en_US => "Improve your resource production by upgrading your quarry and logger.",
   
             :de_DE => "Verbessere Deine Rohstoffproduktion durch den Ausbau von Steinbruch und Holzfäller.",
                 
@@ -1778,7 +1778,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Je mehr Rohstoffe desto mehr von allem.",
   
-            :en_US => "The more ressources the more of everything.",
+            :en_US => "The more resources the more of everything.",
                 
           },
           :description => {
@@ -1792,7 +1792,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Du solltest deine Rohstoffproduktion regelmäßig ausbauen.",
   
-            :en_US => "You should upgrade your ressource production continuously.",
+            :en_US => "You should upgrade your resource production continuously.",
                 
           },
           :reward_text => {
@@ -2510,7 +2510,7 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your storage and send ressources to another chief.",
+            :en_US => "Improve your storage and send resources to another chief.",
   
             :de_DE => "Erhöhe die Lagerkapazität und sende Rohstoffe an einen anderen Häuptling.",
                 
@@ -6960,7 +6960,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Der Handelsplatz verbessert die Rohstoffproduktion der Lagerstätte.",
   
-            :en_US => "The trading center increases the encampment’s ressource production.",
+            :en_US => "The trading center increases the encampment’s resource production.",
                 
           },
           :description => {
@@ -6974,7 +6974,7 @@ class Tutorial::Tutorial
             
             :de_DE => "Der Handelsplatz verbessert Deine Rohstoffproduktion, lässt Deine Lagerstätte aber fast wehrlos.",
   
-            :en_US => "The trading center increases your ressource production but leaves your encampment nearly unprotected.",
+            :en_US => "The trading center increases your resource production but leaves your encampment nearly unprotected.",
                 
           },
           :reward_text => {
