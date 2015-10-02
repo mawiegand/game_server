@@ -474,7 +474,7 @@ class Military::Battle < ActiveRecord::Base
     # -- bonus experience for a victory cannot be larger than minimum of 1000 and 
     #    max_bonus_factor * experience gained from losses.
     #
-    max_k            = 4.0
+    max_k            = 1.0
     safe_bonus       = 1000
     max_bonus_factor = 5.0
     
