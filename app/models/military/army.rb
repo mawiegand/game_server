@@ -1114,7 +1114,7 @@ class Military::Army < ActiveRecord::Base
     end
 
     def check_if_poacher_spawn_event_needs_update
-      if self.is_poacher? && self.specific_character.new_poacher_spawn_possible? # && new spawn possible
+      if self.is_poacher? && !self.specific_character.spawn_poacher_event.nil? && self.specific_character.new_poacher_spawn_possible? # && new spawn possible
         self.specific_character.update_spawn_poacher_event
       end
       true
