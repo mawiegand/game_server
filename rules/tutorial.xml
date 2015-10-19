@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="0" build="13" />
+    <Version major="1" minor="0" build="14" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -285,7 +285,7 @@
   <UIMarker>mark_units_button</UIMarker>
   <UIMarker>mark_training_dialog_flow</UIMarker>
   <!-- place npc for quest "quest_npc_battle" !-->
-  <PlaceNpcs>1</PlaceNpcs>
+  <!--<PlaceNpcs>1</PlaceNpcs>-->
 </Quest>
 
 <!-- 7 --> <!-- Tutorial 8 -->
@@ -504,7 +504,7 @@
   </Rewards>
   <RewardTests>
   </RewardTests>
-    <PlaceNpcs>10</PlaceNpcs>
+  <PlaceNpcs>10</PlaceNpcs>
 </Quest>
 
 <Subquest id="quest_build_chiefcottagelvl4" epic="epic_ressources" advisor="chef" tutorial="false">
