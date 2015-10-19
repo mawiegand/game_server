@@ -129,7 +129,7 @@
   duration CDATA #REQUIRED
 >
 
-<!ELEMENT RewardTests ((FinishQuestTest*, ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, TradingCartTest*, MovementTest?, AllianceTest?, AllianceMembersTest?, StandardAssignmentTest?, KillTest?, BattleTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?, BuildingSpeedTest?, CrossPlatformTest?) | TextboxTest | CustomTest)>
+<!ELEMENT RewardTests ((FinishQuestTest*, ResourceProductionTest*, BuildingTest*, SettlementTest*, ArmyTest*, ConstructionQueueTest*, TrainingQueueTest*, TradingCartTest*, TradeResourcesTest*, MovementTest?, AllianceTest?, AllianceMembersTest?, StandardAssignmentTest?, KillTest?, BattleTest?, ArmyExperienceTest?, ScoreTest?, SettlementProductionTest?, BuildingSpeedTest?, CrossPlatformTest?) | TextboxTest | CustomTest)>
 
 <!ELEMENT FinishQuestTest EMPTY>
 <!ATTLIST FinishQuestTest
@@ -178,6 +178,11 @@
 <!ATTLIST TradingCartTest
   direction       CDATA "both"
   min_carts_count CDATA "1"
+>
+
+<!ELEMENT TradeResourcesTest EMPTY>
+<!ATTLIST TradeResourcesTest
+  min_trades_count CDATA "1"
 >
 
 <!ELEMENT MovementTest EMPTY>

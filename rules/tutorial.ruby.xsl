@@ -427,6 +427,11 @@ end
 <xsl:apply-templates select="TradingCartTest" />
             ],
 </xsl:if>
+<xsl:if test="TradeResourcesTest">
+            :trade_resources_tests => [
+<xsl:apply-templates select="TradeResourcesTest" />
+            ],
+</xsl:if>
 <xsl:if test="AllianceTest">
             :alliance_test => {},
 </xsl:if>
@@ -542,6 +547,12 @@ end
               {
                 :direction => '<xsl:value-of select="@direction" />',
                 :min_carts_count => <xsl:value-of select="@min_carts_count" />,
+              },
+</xsl:template>
+
+<xsl:template match="TradeResourcesTest">
+              {
+                :min_trades_count => <xsl:value-of select="@min_trades_count" />,
               },
 </xsl:template>
 
