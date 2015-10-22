@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="0" build="13" />
+    <Version major="1" minor="1" build="0" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -874,7 +874,8 @@
   <Rewards>
   </Rewards>
   <RewardTests>
-    <TradingCartTest direction="outgoing" min_carts_count="1"></TradingCartTest>
+    <!--<TradingCartTest direction="outgoing" min_carts_count="1"></TradingCartTest>-->
+    <TradeResourcesTest min_trades_count="1"/>
   </RewardTests>
 </Subquest>
 
