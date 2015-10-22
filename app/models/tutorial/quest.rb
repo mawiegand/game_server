@@ -818,6 +818,7 @@ class Tutorial::Quest < ActiveRecord::Base
         self.tutorial_state.tutorial_finished = true
         self.tutorial_state.save
         self.owner.tutorial_finished_at = Time.now
+        self.owner.create_spawn_poacher_event((GAME_SERVER_CONFIG['poacher_delayed_first_spawn'] || 5).minutes)
         self.owner.save
       end
   

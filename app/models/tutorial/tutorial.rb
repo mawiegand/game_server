@@ -871,8 +871,6 @@ class Tutorial::Tutorial
 
           :uimarker => ['mark_home_settlement', 'mark_units_button', 'mark_training_dialog_flow', ],
 
-          :place_npcs => 1,         
-
         },              #   END OF quest_recruit_warrior
         {               #   quest_settlement_button1
           :id                => 7,

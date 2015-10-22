@@ -592,8 +592,6 @@ class Fundamental::Character < ActiveRecord::Base
         cmd.save
       end
 
-      character.create_spawn_poacher_event((GAME_SERVER_CONFIG['poacher_delayed_first_spawn'] || 5).minutes)
-
       # HACK for tutorial battle quest (place poacher at home_location)
       Military::Army.create_npc(character.home_location, 1, character) unless character.home_location.nil?
     end
@@ -676,8 +674,6 @@ class Fundamental::Character < ActiveRecord::Base
       cmd = Messaging::JabberCommand.grant_access(character, 'beginner')
       cmd.character_id = character.id
       cmd.save
-
-      character.create_spawn_poacher_event((GAME_SERVER_CONFIG['poacher_delayed_first_spawn'] || 5).minutes)
     end
     
     character 
