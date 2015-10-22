@@ -44,6 +44,10 @@ class Map::Region < ActiveRecord::Base
     self.locations.empty.offset(Random.rand(self.locations.empty.count)).first
   end
   
+  def random_location_not_owned_by(character)
+    self.locations.not_owned_by(character).offset(Random.rand(self.locations.not_owned_by(character).count)).first
+  end
+
   def random_location
     self.locations.offset(Random.rand(self.locations.count)).first
   end

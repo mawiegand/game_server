@@ -737,12 +737,13 @@ class Military::Army < ActiveRecord::Base
     location = nil
     placement_probability = Random.rand(0..1.0)
     if placement_probability <= GAME_SERVER_CONFIG['poacher_home_region_probability'] && !character.home_location.nil?
-      # place poacher in home region
-      location = character.home_location.region.random_location
+      # place poacher in home region and choose random location which is not owned by character
+      location = character.home_location.region.random_location_not_owned_by(character)
     else
       # place poacher in none home region
       regions = character.settled_regions
-      location = regions[(Random.rand(regions.count))].random_location unless regions.nil? || regions.count < 1
+      # choose random location which is not owned by character
+      location = regions[(Random.rand(regions.count))].random_location_not_owned_by(character) unless regions.nil? || regions.count < 1
     end
 
     # calculate army size
