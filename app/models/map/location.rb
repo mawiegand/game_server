@@ -18,6 +18,7 @@ class Map::Location < ActiveRecord::Base
 
   scope :excluding_fortress_slots,  where(['slot <> ?', 0])
   scope :owned_by,                  lambda { |character| where(:owner_id => character.id) }
+  scope :not_owned_by,              lambda { |character| where("owner_id IS NULL OR owner_id != ?", character.id) }
   scope :non_settled,               where("settlement_type_id = ?", Settlement::Settlement::TYPE_NONE)
   scope :settled,                   where("settlement_type_id != ?", Settlement::Settlement::TYPE_NONE)
   scope :empty,                     where("settlement_type_id = ? AND claimed_by IS NULL", Settlement::Settlement::TYPE_NONE)

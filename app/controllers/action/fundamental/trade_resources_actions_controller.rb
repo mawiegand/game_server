@@ -73,6 +73,9 @@ class Action::Fundamental::TradeResourcesActionsController < ApplicationControll
         pool.save
       end
 
+      #Increment trade_resources_count of character model!
+      current_character.increment!(:trade_resources_count)
+
       # unless job_id is -1 check for new jobs
       unless params[:job_id] == nil
         job = Construction::Job.lock.find_by_id(params[:job_id].to_i)

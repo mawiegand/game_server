@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.0.13
+# Version: 1.1.0
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,8 +78,8 @@ class Tutorial::Tutorial
   
       :version => {
         :major => 1, 
-        :minor => 0, 
-        :build => 13, 
+        :minor => 1, 
+        :build => 0, 
       },
       
       :production_test_weights => {
@@ -870,8 +870,6 @@ class Tutorial::Tutorial
           },          
 
           :uimarker => ['mark_home_settlement', 'mark_units_button', 'mark_training_dialog_flow', ],
-
-          :place_npcs => 1,         
 
         },              #   END OF quest_recruit_warrior
         {               #   quest_settlement_button1
@@ -2732,11 +2730,10 @@ class Tutorial::Tutorial
 
           :reward_tests => {
             
-            :trading_carts_tests => [
+            :trade_resources_tests => [
 
               {
-                :direction => 'outgoing',
-                :min_carts_count => 1,
+                :min_trades_count => 1,
               },
 
             ],

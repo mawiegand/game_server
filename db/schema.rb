@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150727111525) do
+ActiveRecord::Schema.define(:version => 20151019114758) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -1930,6 +1930,7 @@ ActiveRecord::Schema.define(:version => 20150727111525) do
     t.integer  "max_poachers_count"
     t.integer  "spawned_poachers_count",                   :default => 0
     t.datetime "last_poacher_cycle_update"
+    t.integer  "trade_resources_count",                    :default => 0,     :null => false
   end
 
   create_table "fundamental_diplomacy_relations", :force => true do |t|
