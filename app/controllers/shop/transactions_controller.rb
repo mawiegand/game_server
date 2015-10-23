@@ -53,11 +53,6 @@ class Shop::TransactionsController < ApplicationController
     offer_type = params[:shop_transaction][:offer_type]
     if offer_type === 'resource'
       offer = Shop::ResourceOffer.find(params[:shop_transaction][:offer_id])
-      #
-      # XP Exploit
-      #
-      offer.amount *= 2
-      #
     elsif offer_type === 'bonus'
       offer = Shop::BonusOffer.find(params[:shop_transaction][:offer_id])
     elsif offer_type === 'platinum'
