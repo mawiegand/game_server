@@ -43,6 +43,10 @@ class Tutorial::Quest < ActiveRecord::Base
   def has_reward_been_displayed?
     !self.reward_displayed_at.nil?
   end
+
+  def has_cave_painting_been_displayed?
+    !self.displayed_cave_painting_at.nil?
+  end
   
   def belongs_to_tutorial?
     !quest.nil? && quest[:tutorial]
@@ -50,6 +54,10 @@ class Tutorial::Quest < ActiveRecord::Base
   
   def tutorial_end_quest?
     !quest.nil? && !quest[:tutorial_end_quest].nil? && quest[:tutorial_end_quest] == true
+  end
+
+  def is_cave_painting_enabled?
+    !quest.nil? && !quest[:enable_cave_painting].nil? && quest[:enable_cave_painting] == true
   end
   
   def rewards
@@ -76,8 +84,12 @@ class Tutorial::Quest < ActiveRecord::Base
   
   def mark_reward_displayed
     self.reward_displayed_at = Time.now if self.reward_displayed_at.nil?
-  end  
-  
+  end
+
+  def mark_cave_painting_displayed
+    self.displayed_cave_painting_at = Time.now if self.displayed_cave_painting_at.nil?
+  end
+
   # quest auf beendet setzen
   def set_finished
     self.send_message
