@@ -97,6 +97,10 @@ class Ticker::BattleHandler
                                                                                                    # or simply check against newly introduced character of participant :-)   
                 takeover = false
               end
+
+              if !participant.owner.alliance.nil? && !target_settlement.alliance.nil? && participant.owner.alliance != target_settlement.alliance
+                takeover = false
+              end
             end
 
             #if  do the takeover
