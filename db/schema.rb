@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151019114758) do
+ActiveRecord::Schema.define(:version => 20151104135018) do
 
   create_table "action_military_attack_army_actions", :force => true do |t|
     t.integer  "attacker_id"
@@ -2986,13 +2986,14 @@ ActiveRecord::Schema.define(:version => 20151019114758) do
     t.datetime "finished_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",              :default => 0
+    t.integer  "status",                     :default => 0
     t.datetime "closed_at"
     t.decimal  "playtime_finished"
     t.decimal  "playtime_started"
     t.datetime "reward_displayed_at"
     t.integer  "character_id"
-    t.boolean  "message_sent",        :default => false, :null => false
+    t.boolean  "message_sent",               :default => false, :null => false
+    t.datetime "displayed_cave_painting_at"
   end
 
   add_index "tutorial_quests", ["state_id"], :name => "index_tutorial_quests_on_state_id"
