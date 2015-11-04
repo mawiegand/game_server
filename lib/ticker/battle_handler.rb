@@ -98,7 +98,7 @@ class Ticker::BattleHandler
                 takeover = false
               end
 
-              if !participant.owner.alliance.nil? && !target_settlement.alliance.nil? && participant.owner.alliance != target_settlement.alliance
+              if !participant.owner.alliance.nil? && !target_settlement.alliance.nil? && participant.owner.alliance != target_settlement.alliance && !participant.owner.alliance.is_at_war_with?(target_settlement.alliance)
                 takeover = false
               end
             end
