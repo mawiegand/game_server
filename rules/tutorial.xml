@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="1" build="0" />
+    <Version major="1" minor="2" build="0" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -32,7 +32,7 @@
   
   <!-- 0 --> <!-- Tutorial 1-->
   <Quests>
-    <Quest id="quest_queue_1gathererlvl1" type="epic" advisor="girl" hide_start_dialog="false" tutorial="true" >
+    <Quest id="quest_queue_1gathererlvl1" type="epic" advisor="girl" hide_start_dialog="false" tutorial="true" enable_cave_painting="true">
       <Name>The first building</Name>
       <Name locale="de_DE">Der Sammler</Name>
       <Task>Build a Gatherer. He will prepare the great settlement building.</Task>
@@ -94,7 +94,7 @@
           </Quest>
     
     <!-- 2 --> <!-- Tutorial 3 -->
-    <Quest id="quest_build_tavern" type="epic" advisor="warrior" hide_start_dialog="true" tutorial="true">
+    <Quest id="quest_build_tavern" type="epic" advisor="warrior" hide_start_dialog="true" tutorial="true" enable_cave_painting="true">
       <Name>The Tavern</Name>
       <Name locale="de_DE">Die Taverne</Name>
       <Task>The warriors need a drink! Build a tavern.</Task>
@@ -224,7 +224,7 @@
     </Quest>
 
 <!-- 5 -->  <!-- Tutorial 6 -->
-<Quest id="quest_build_barracks" type="epic" advisor="chef" hide_start_dialog="true" tutorial="true">
+<Quest id="quest_build_barracks" type="epic" advisor="chef" hide_start_dialog="true" tutorial="true" enable_cave_painting="true">
   <Name>Training Grounds</Name>
   <Name locale="de_DE">Ausbildungsgelände</Name>
   <Task>Build training grounds.</Task>
@@ -256,7 +256,7 @@
 </Quest>
 
 <!-- 6 --> <!-- Tutorial 7 -->
-<Quest id="quest_recruit_warrior" type="epic" advisor="warrior" hide_start_dialog="true" tutorial="true">
+<Quest id="quest_recruit_warrior" type="epic" advisor="warrior" hide_start_dialog="true" tutorial="true" enable_cave_painting="true">
   <Name>Your first unit</Name>
   <Name locale="de_DE">Deine erste Einheit</Name>
   <Task>Train a warrior.</Task>
@@ -289,7 +289,7 @@
 </Quest>
 
 <!-- 7 --> <!-- Tutorial 8 -->
-<Quest id="quest_settlement_button1" type="epic" advisor="chef" hide_start_dialog="true" tutorial="true">
+<Quest id="quest_settlement_button1" type="epic" advisor="chef" hide_start_dialog="true" tutorial="true" enable_cave_painting="true">
   <Name>On the map</Name>
   <Name locale="de_DE">Auf die Karte</Name>
   <Task>Go to the world map.</Task>
@@ -350,7 +350,7 @@
 </Quest>
 
 <!-- 9--> <!-- Tutorial 10 -->
-<Quest id="quest_npc_battle" type="epic" advisor="warrior" hide_start_dialog="false" tutorial="true" >
+<Quest id="quest_npc_battle" type="epic" advisor="warrior" hide_start_dialog="false" tutorial="true" enable_cave_painting="true">
   <Name>First battle</Name>
   <Name locale="de_DE">Der erste Kampf</Name>
   <Task>Beat a pack of Neanderthals in your region.</Task>
@@ -479,7 +479,7 @@
 <!-- EPICs -->
 
 <!-- EPIC Ressources -->
-<Quest id="epic_ressources" type="epic" advisor="girl">
+<Quest id="epic_ressources" type="epic" advisor="girl" enable_cave_painting="true">
   <Name>Ressources</Name>
   <Name locale="de_DE">Stein und Holz</Name>
   <Task>Build a quarry and a logger for improved ressource production.</Task>
@@ -675,7 +675,7 @@
 
 
 <!-- EPIC ALLIANZ -->
-<Quest id="epic_alliance" type="epic" advisor="chef">
+<Quest id="epic_alliance" type="epic" advisor="chef" enable_cave_painting="true">
   <Name>Alliance</Name>
   <Name locale="de_DE">Mitglied einer Allianz</Name>
   <Task>Join an alliance. Together you will be much stronger.</Task>
@@ -806,7 +806,7 @@
 
 
 <!-- EPIC STORAGE -->
-<Quest id="epic_storage" type="epic" advisor="chef">
+<Quest id="epic_storage" type="epic" advisor="chef" enable_cave_painting="true">
   <Name>Storage and trading</Name>
   <Name locale="de_DE">Lager und Handel</Name>
   <Task>Improve your storage and send ressources to annouther chief.</Task>
@@ -881,7 +881,7 @@
 
 
 <!-- EPIC COTTAGE -->
-<Quest id="epic_cottage" type="epic" advisor="chef">
+<Quest id="epic_cottage" type="epic" advisor="chef" enable_cave_painting="true">
   <Name>Increase the building speed</Name>
   <Name locale="de_DE">Erhöhe die Baugeschwindigkeit</Name>
   <Task>Reduce the construction time for every building through building a small hut.</Task>
@@ -976,7 +976,7 @@
 
 
 <!-- EPIC XP -->
-<Quest id="epic_xp" type="epic" advisor="chef">
+<Quest id="epic_xp" type="epic" advisor="chef" enable_cave_painting="true">
   <Name>Experience</Name>
   <Name locale="de_DE">Erfahrung</Name>
   <Task>Collect valuable experience. The Training Cave is the first step.</Task>
@@ -1049,7 +1049,7 @@
 
 
 <!-- EPIC FUR -->
-<Quest id="epic_fur" type="epic" advisor="warrior">
+<Quest id="epic_fur" type="epic" advisor="warrior" enable_cave_painting="true">
   <Name>Fur</Name>
   <Name locale="de_DE">Fell</Name>
   <Task>Build a furrier to produce the worthwhile fur.</Task>
@@ -1121,7 +1121,7 @@
 
 
 <!-- EPIC FIRING RANGE -->
-<Quest id="epic_firing_range" type="epic" advisor="warrior">
+<Quest id="epic_firing_range" type="epic" advisor="warrior" enable_cave_painting="true">
   <Name>Artillery</Name>
   <Name locale="de_DE">Die Fernkämpfer</Name>
   <Task>Use your knowledge to train long-range-units.</Task>
@@ -1212,7 +1212,7 @@
 
 
 <!-- EPIC COPPERSMELTER -->
-<Quest id="epic_coppersmelter" type="epic" advisor="warrior">
+<Quest id="epic_coppersmelter" type="epic" advisor="warrior" enable_cave_painting="true">
   <Name>Copper age</Name>
   <Name locale="de_DE">Kupferzeit</Name>
   <Task>The production of copper means a great leap forward in development.</Task>
@@ -1373,7 +1373,7 @@
 
 
 <!-- EPIC ENCAMPMENT -->
-<Quest id="epic_encampment" type="epic" advisor="chef">
+<Quest id="epic_encampment" type="epic" advisor="chef" enable_cave_painting="true">
   <Name>Encampment</Name>
   <Name locale="de_DE">Lagerstätte gründen</Name>
   <Task>Found an Encampment as a further settlement to accelerate your progression.</Task>

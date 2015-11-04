@@ -225,6 +225,7 @@ end
   </xsl:choose>
           :priority          => <xsl:value-of select="@priority"/>,
           :blocking          => <xsl:value-of select="@blocking"/>,
+          :enable_cave_painting => <xsl:value-of select="@enable_cave_painting"/>,
 
           :name => {
             <xsl:apply-templates select="Name" />              

@@ -59,27 +59,29 @@
 
 <!ELEMENT Quest (Name*, Task*, Description*, Flavor*, RewardText*, RewardFlavor*, Triggers, Rewards?, RewardTests?, UIMarker*, Message*, PlaceNpcs?)>
 <!ATTLIST Quest
-  id                 ID #REQUIRED
-  type               CDATA #REQUIRED
-  advisor            IDREF "warrior"
-  hide_start_dialog  CDATA "false"
-  tutorial           CDATA "false"
-  tutorial_end_quest CDATA "false"
-  priority           CDATA "0"
-  blocking           CDATA "false"
+  id                   ID #REQUIRED
+  type                 CDATA #REQUIRED
+  advisor              IDREF "warrior"
+  hide_start_dialog    CDATA "false"
+  tutorial             CDATA "false"
+  tutorial_end_quest   CDATA "false"
+  priority             CDATA "0"
+  blocking             CDATA "false"
+  enable_cave_painting CDATA "false"
 >
 
 <!ELEMENT Subquest (Name*, Task*, Description*, Flavor*, RewardText*, RewardFlavor*, Rewards?, RewardTests?, UIMarker*, Message*, PlaceNpcs?)>
 <!ATTLIST Subquest
-  id                 ID #REQUIRED
-  type               CDATA "sub"
-  epic               IDREF #REQUIRED
-  advisor            IDREF "warrior"
-  hide_start_dialog  CDATA "false"
-  tutorial           CDATA "false"
-  tutorial_end_quest CDATA "false"
-  priority           CDATA "0"
-  blocking           CDATA "false"
+  id                   ID #REQUIRED
+  type                 CDATA "sub"
+  epic                 IDREF #REQUIRED
+  advisor              IDREF "warrior"
+  hide_start_dialog    CDATA "false"
+  tutorial             CDATA "false"
+  tutorial_end_quest   CDATA "false"
+  priority             CDATA "0"
+  blocking             CDATA "false"
+  enable_cave_painting CDATA "false"
 >
 
 <!ELEMENT Triggers (PlayTimeTrigger?, LoggedInOnSecondDayTrigger?, FinishQuestTriggers*, MundaneRankTrigger?, VictoriesCountTrigger?, LikesCountTrigger?)>

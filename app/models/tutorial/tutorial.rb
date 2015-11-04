@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.1.0
+# Version: 1.2.0
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,7 +78,7 @@ class Tutorial::Tutorial
   
       :version => {
         :major => 1, 
-        :minor => 1, 
+        :minor => 2, 
         :build => 0, 
       },
       
@@ -117,6 +117,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -217,6 +218,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -325,6 +327,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -433,6 +436,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -530,6 +534,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -679,6 +684,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -787,6 +793,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -886,6 +893,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -980,6 +988,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -1079,6 +1088,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -1177,6 +1187,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -1308,6 +1319,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -1409,6 +1421,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -1511,6 +1524,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -1593,6 +1607,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -1675,6 +1690,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -1757,6 +1773,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -1870,6 +1887,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -1950,6 +1968,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -2032,6 +2051,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -2114,6 +2134,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -2225,6 +2246,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -2307,6 +2329,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -2429,6 +2452,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -2498,6 +2522,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -2598,6 +2623,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -2680,6 +2706,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -2755,6 +2782,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -2859,6 +2887,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -2938,6 +2967,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -3018,6 +3048,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -3100,6 +3131,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -3206,6 +3238,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -3288,6 +3321,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -3368,6 +3402,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -3470,6 +3505,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -3552,6 +3588,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -3632,6 +3669,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -3743,6 +3781,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -3823,6 +3862,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -3903,6 +3943,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -3979,6 +4020,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -4086,6 +4128,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -4166,6 +4209,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -4246,6 +4290,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -4357,6 +4402,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -4437,6 +4483,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -4517,6 +4564,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -4593,6 +4641,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => true,
 
           :name => {
             
@@ -4694,6 +4743,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -4775,6 +4825,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -4851,6 +4902,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -4927,6 +4979,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -5021,6 +5074,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -5127,6 +5181,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -5233,6 +5288,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -5336,6 +5392,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -5439,6 +5496,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -5542,6 +5600,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -5645,6 +5704,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -5749,6 +5809,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -5862,6 +5923,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -5963,6 +6025,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -6064,6 +6127,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -6167,6 +6231,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -6280,6 +6345,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -6383,6 +6449,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -6496,6 +6563,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -6599,6 +6667,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -6712,6 +6781,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -6825,6 +6895,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -6938,6 +7009,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -7051,6 +7123,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -7150,6 +7223,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -7256,6 +7330,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -7362,6 +7437,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -7468,6 +7544,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -7574,6 +7651,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -7680,6 +7758,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -7786,6 +7865,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -7892,6 +7972,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -7998,6 +8079,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -8104,6 +8186,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -8210,6 +8293,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -8316,6 +8400,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -8422,6 +8507,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -8528,6 +8614,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -8634,6 +8721,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -8740,6 +8828,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -8846,6 +8935,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -8952,6 +9042,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -9055,6 +9146,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -9158,6 +9250,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -9261,6 +9354,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -9364,6 +9458,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -9467,6 +9562,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -9570,6 +9666,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -9674,6 +9771,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -9778,6 +9876,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -9882,6 +9981,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -9986,6 +10086,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -10090,6 +10191,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -10194,6 +10296,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -10298,6 +10401,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -10402,6 +10506,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -10506,6 +10611,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -10610,6 +10716,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -10714,6 +10821,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
@@ -10818,6 +10926,7 @@ class Tutorial::Tutorial
     
           :priority          => 0,
           :blocking          => false,
+          :enable_cave_painting => false,
 
           :name => {
             
