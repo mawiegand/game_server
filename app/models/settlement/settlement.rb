@@ -498,8 +498,9 @@ class Settlement::Settlement < ActiveRecord::Base
       character.can_takeover_settlement? &&
       (self.owner.nil? ||
         self.owner.npc? ||
-        (self.alliance.nil? && character.alliance.nil? && self.alliance == character.alliance) ||
-        (self.alliance.nil? && self.alliance.is_at_war_with?(character.alliance)) ||
+        self.alliance.nil? ||
+        (character.alliance.nil? && self.alliance == character.alliance) ||
+        self.alliance.is_at_war_with?(character.alliance) ||
         self.alliance.fulfills_any_victory_type?)
   end
   
