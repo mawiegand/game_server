@@ -7,8 +7,8 @@ require "capistrano/ext/multistage"
 
 `ssh-add`
 
-default_run_options[:pty] = true                  # problem with ubuntu
-set :ssh_options, :forward_agent => true          # ssh forwarding
+default_run_options[:pty] = true                                   # problem with ubuntu
+set :ssh_options, :forward_agent => true, keepalive: true          # ssh forwarding
 set :port, 5775
 
 set :application, "game server"
