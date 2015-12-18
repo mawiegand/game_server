@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.3.21
+# Version: 2.3.22
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -125,7 +125,7 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 3,
-                    :build => 21,
+                    :build => 22,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -9770,7 +9770,7 @@ class GameRules::Rules
 
           :condition   => {
 
-            :required_regions_ratio => 'LESS(DAYS,91)*(1-(0.01*((70.0/90.0)*DAYS)))+GREATER(DAYS,90)*(0.3-(0.01*((29.0/60.0)*(DAYS-90))))',
+            :required_regions_ratio => 'LESS(DAYS,63)*(1-(0.0078*DAYS))+GREATER(DAYS,62)*0.5086',
 
             :duration => 5,
           },
