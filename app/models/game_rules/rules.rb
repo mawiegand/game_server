@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.3.22
+# Version: 2.4.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,8 +124,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 2,
-                    :minor => 3,
-                    :build => 22,
+                    :minor => 4,
+                    :build => 0,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -9660,12 +9660,18 @@ class GameRules::Rules
             :en_US => "Neutral",
   
           },
+          
           :duration => 60*60*24*3,
           :min => false,
           :decrease_duration_for_victim => false,
           :victim_duration => 0,
           :next_relations => [ 
-          1,
+          
+            {
+              :id => 5,
+              :manual => false,
+              
+            },
           
           ],
         },              #   END OF Neutral
@@ -9679,12 +9685,18 @@ class GameRules::Rules
             :en_US => "Ultimatum",
   
           },
+          
           :duration => 60*60*24*1,
           :min => false,
           :decrease_duration_for_victim => false,
           :victim_duration => 0,
           :next_relations => [ 
-          2,
+          
+            {
+              :id => 2,
+              :manual => false,
+              
+            },
           
           ],
         },              #   END OF Ultimatum
@@ -9698,13 +9710,19 @@ class GameRules::Rules
             :en_US => "War",
   
           },
+          
           :duration => 60*60*24*6,
           :min => true,
           :decrease_duration_for_victim => true,
           :victim_duration => 60*60*24*3,
           :next_relations => [ 
-          3,
-          4,
+          
+            {
+              :id => 3,
+              :manual => true,
+              
+              :opposite => 4
+            },
           
           ],
         },              #   END OF Krieg
@@ -9718,6 +9736,7 @@ class GameRules::Rules
             :en_US => "Surrender",
   
           },
+          
           :duration => 60*60*24*3,
           :min => false,
           :decrease_duration_for_victim => false,
@@ -9736,6 +9755,7 @@ class GameRules::Rules
             :en_US => "Occupation",
   
           },
+          
           :duration => 60*60*24*3,
           :min => false,
           :decrease_duration_for_victim => false,
@@ -9744,6 +9764,77 @@ class GameRules::Rules
           
           ],
         },              #   END OF Besatzung
+        {               #   Bündnis Anfrage
+          :id          => 5, 
+          :symbolic_id => :diplomacy_relation_5,
+          :name        => {
+            
+            :de_DE => "Bündnis Anfrage",
+  
+            :en_US => "Alliance Request",
+  
+          },
+          
+          :manual_change => "victim",
+          
+          :duration => 60*60*24*7,
+          :min => false,
+          :decrease_duration_for_victim => false,
+          :victim_duration => 0,
+          :next_relations => [ 
+          
+            {
+              :id => 6,
+              :manual => true,
+              
+            },
+          
+          ],
+        },              #   END OF Bündnis Anfrage
+        {               #   Bündnis
+          :id          => 6, 
+          :symbolic_id => :diplomacy_relation_6,
+          :name        => {
+            
+            :de_DE => "Bündnis",
+  
+            :en_US => "Alliance",
+  
+          },
+          
+          :duration => 1,
+          :min => true,
+          :decrease_duration_for_victim => false,
+          :victim_duration => 0,
+          :next_relations => [ 
+          
+            {
+              :id => 7,
+              :manual => true,
+              
+            },
+          
+          ],
+        },              #   END OF Bündnis
+        {               #   Bündnis Ausklang
+          :id          => 7, 
+          :symbolic_id => :diplomacy_relation_7,
+          :name        => {
+            
+            :de_DE => "Bündnis Ausklang",
+  
+            :en_US => "Alliance Conclusion",
+  
+          },
+          
+          :duration => 60*60*24*7,
+          :min => false,
+          :decrease_duration_for_victim => false,
+          :victim_duration => 0,
+          :next_relations => [ 
+          
+          ],
+        },              #   END OF Bündnis Ausklang
       ],                # END OF DIPLOMACY RELATION TYPES
 
 # ## VICTORY TYPES ########################################################

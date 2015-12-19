@@ -498,13 +498,16 @@ class Settlement::Settlement < ActiveRecord::Base
   # a fortress can be taken over if at least one of the following is true:
   # - the present owner is nobody (bug), a npc or character without alliance
   # - the present owner is in the same alliance as character (this is to easily allow for correcting a wrong player taking over a fortress in a war)
-  # - the present owner is in an alliance that is at war with the character's alliance
+  # - the present owner is not in an alliance that is allied with the character's alliance
+  # - _CURRENTLY DISABLED!_ the present owner is in an alliance that is at war with the character's alliance
+  # - the present owner is in an alliance that fullfills any victory type
   def can_be_taken_over_by?(character)
     can_be_taken_over? &&
       character.can_takeover_settlement? &&
       (self.owned_by_npc_or_character_without_alliance? ||
         self.owned_by_alliance?(character.alliance) ||
-        self.alliance.is_at_war_with?(character.alliance) ||
+        (!self.alliance.nil? && !character.alliance.nil? && !self.alliance.is_allied_with?(character.alliance)) ||
+        # self.alliance.is_at_war_with?(character.alliance) ||
         self.alliance.fulfills_any_victory_type?)
   end
   

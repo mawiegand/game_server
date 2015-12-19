@@ -1333,13 +1333,22 @@ end
           :name        => {
             <xsl:apply-templates select="Name" />
           },
+          <xsl:if test="@manualChange">
+          :manual_change => "<xsl:value-of select="@manualChange" />",
+          </xsl:if>
           :duration => <xsl:apply-templates select="DiplomacyDuration" />,
           :min => <xsl:apply-templates select="DiplomacyDuration/@min" />,
           :decrease_duration_for_victim => <xsl:apply-templates select="DiplomacyDuration/@decreaseDurationForVictim" />,
           :victim_duration => <xsl:apply-templates select="DiplomacyDuration/@victimDuration" />,
           :next_relations => [ 
           <xsl:for-each select="NextRelationTypes/NextRelation">
-            <xsl:apply-templates />,
+            {
+              :id => <xsl:value-of select="@id"/>,
+              :manual => <xsl:value-of select="@manual"/>,
+              <xsl:if test="@opposite">
+              :opposite => <xsl:value-of select="@opposite"/>
+              </xsl:if>
+            },
           </xsl:for-each>
           ],
         },              #   END OF <xsl:value-of select="Name"/>

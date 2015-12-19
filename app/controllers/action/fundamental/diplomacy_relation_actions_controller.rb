@@ -26,14 +26,14 @@ class Action::Fundamental::DiplomacyRelationActionsController < ApplicationContr
         raise ConflictError.new('relation between alliance already exists') if (params[:diplomacy_relation_action][:new_relation] == "1")
         
         if diplomacy_relations.first.is_manual_status_change_allowed?
-          diplomacy_relations.first.next_status
+          diplomacy_relations.first.next_status(true)
         else
           raise ForbiddenError.new('manual status change of diplomacy relation is not allowed')
         end
       else
         relation = Fundamental::DiplomacyRelation.new(source_alliance_id: current_character.alliance_id,
                                              target_alliance_id: target_alliance.id,
-                                             diplomacy_status: 1,
+                                             diplomacy_status: 5,
                                              initiator: true
                                              )
         raise BadRequestError.new('creating diplomacy relation failed') unless relation.save
