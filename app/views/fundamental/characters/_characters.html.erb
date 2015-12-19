@@ -37,11 +37,12 @@
     <th>V/D</th>
     <th>Deleted</th>
     <th>Same IP Users</th>
+    <th>Created At</th>
     <th></th>
     <th></th>
     <th></th>
     <th></th>
-    <th></th>
+    <th></th>    
   </tr>
 
 
@@ -115,6 +116,7 @@
     <td><%= fundamental_character.victories %>/<%= fundamental_character.defeats %></td>
     <td style="text-align: center; color: red;"><b><%= fundamental_character.deleted_from_game? ? 'X' : '' %></b></td>
     <td><%= fundamental_character.same_ip %></td>
+    <td><%= fundamental_character.created_at %></td>
     <td><%= link_to 'Show', fundamental_character %></td>
     <td><%= link_to 'Properties', fundamental_persistent_character_property_path(fundamental_character.id) %></td>
     <td><%= link_to 'History', fundamental_character_history_events_path(fundamental_character.id) %></td>
