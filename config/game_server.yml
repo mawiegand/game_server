@@ -167,12 +167,12 @@ production:
   jabber:
     debug:     true
     server:    jabber.wack-a-doo.com
-    domain:    jabber9.wack-a-doo.com
-    muc:       conference.jabber9.wack-a-doo.com
-    bot_jid:   service@jabber9.wack-a-doo.com
+    domain:    jabber10.wack-a-doo.com
+    muc:       conference.jabber10.wack-a-doo.com
+    bot_jid:   service@jabber10.wack-a-doo.com
     password:  P5Dda5eZmvCLFTw2
     name:      service
-  scope: 'wackadoo-round9'
+  scope: 'wackadoo-round10'
 
   default_character_name: 'WackyUser'
   identity_provider_base_url: 'https://wack-a-doo.de/identity_provider'
