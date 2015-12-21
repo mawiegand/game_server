@@ -107,9 +107,9 @@ class Fundamental::CharactersController < ApplicationController
         start_location = Map::Location.location_for_player_invitation(params[:player_invitation])
       elsif params.has_key?(:alliance_invitation)
         start_location = Map::Location.location_for_alliance_invitation(params[:alliance_invitation])
-      else
-        geo_coords = GeoServer::GeoIp.fetch_coords_for_ip(request.remote_ip)
-        start_location = Map::Location.location_with_geo_coords(geo_coords) unless geo_coords.nil?
+      # else
+      #   geo_coords = GeoServer::GeoIp.fetch_coords_for_ip(request.remote_ip)
+      #   start_location = Map::Location.location_with_geo_coords(geo_coords) unless geo_coords.nil?
       end
       
       character = nil
