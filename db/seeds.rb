@@ -19,8 +19,8 @@ user.deleted = false
 user.save
 
 NUM_FULL_LEVELS   =  4
-NUM_SPARSE_LEVELS =  5
-MAX_LEVEL         =  7
+NUM_SPARSE_LEVELS =  2
+MAX_LEVEL         =  8
 
 ROUND_NAME   = "Hirschgulasch"
 ROUND_NUMBER =  10
@@ -243,61 +243,61 @@ end
 
 puts "INFO: now splitting germany"
 
-def split_to_path(path)
-
-  node = Map::Node.root
-
-  while !node.leaf? && path.length > 0
-    c = path[0].to_i
-    node = node.children[c]
-    path = path[1..-1]
-  end
-
-  while path.length > 0 && node.leaf?
-    split_all_nodes([ node ])
-    c = path[0].to_i
-    node = node.children[c]
-    path = path[1..-1]
-  end
-end
-
-paths = [
-#    "120221013233333"
-]
-
-paths.each do |path|
-  split_to_path(path)
-end
+# def split_to_path(path)
+#
+#   node = Map::Node.root
+#
+#   while !node.leaf? && path.length > 0
+#     c = path[0].to_i
+#     node = node.children[c]
+#     path = path[1..-1]
+#   end
+#
+#   while path.length > 0 && node.leaf?
+#     split_all_nodes([ node ])
+#     c = path[0].to_i
+#     node = node.children[c]
+#     path = path[1..-1]
+#   end
+# end
+#
+# paths = [
+# #    "120221013233333"
+# ]
+#
+# paths.each do |path|
+#   split_to_path(path)
+# end
 
 max_occupation = 0
 
-(NUM_FULL_LEVELS..MAX_LEVEL).each do |level|
-  max_occupation = 0
-  non_leaf = false
-  nodes = Map::Node.find_all_by_level level
-  puts "INFO: geo-splitting on level #{level}."
-  
-  nodes.each do |node|
-    if node.leaf?
-      count = 0
-      geo_coords.each do |coord|
-        count += 1 if node.contains?(coord[:lat], coord[:long])
-      end
-      if (count > max_occupation) 
-        max_occupation = count
-      end
-      if (count > 4)
-        split_all_nodes([ node ])
-        non_leaf = true
-      end
-    else
-      non_leaf = true
-    end
-  end
-  
-  puts "Maximum occupation before last split on level #{level} was #{ max_occupation}."  
-  break if !non_leaf
-end
+# (NUM_FULL_LEVELS..MAX_LEVEL).each do |level|
+#   max_occupation = 0
+#   non_leaf = false
+#   nodes = Map::Node.find_all_by_level level
+#   puts "INFO: geo-splitting on level #{level}."
+#
+#   nodes.each do |node|
+#     if node.leaf?
+#       count = 0
+#       geo_coords.each do |coord|
+#         count += 1 if node.contains?(coord[:lat], coord[:long])
+#       end
+#       if (count > max_occupation)
+#         max_occupation = count
+#       end
+#       if (count > 4)
+#         split_all_nodes([ node ])
+#         non_leaf = true
+#       end
+#     else
+#       non_leaf = true
+#     end
+#   end
+#
+#   puts "Maximum occupation before last split on level #{level} was #{ max_occupation}."
+#   break if !non_leaf
+# end
 
 
 
