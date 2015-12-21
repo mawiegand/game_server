@@ -19,7 +19,7 @@ user.deleted = false
 user.save
 
 NUM_FULL_LEVELS   =  3
-NUM_SPARSE_LEVELS =  3
+NUM_SPARSE_LEVELS =  4
 MAX_LEVEL         =  8
 
 ROUND_NAME   = "Runde 10 (Hirschgulasch)"
