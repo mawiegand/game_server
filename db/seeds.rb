@@ -19,10 +19,10 @@ user.deleted = false
 user.save
 
 NUM_FULL_LEVELS   =  3
-NUM_SPARSE_LEVELS =  2
+NUM_SPARSE_LEVELS =  4
 MAX_LEVEL         =  8
 
-ROUND_NAME   = "Runde 10 (Hirschgulasch)"
+ROUND_NAME   = "Hirschgulasch"
 ROUND_NUMBER =  10
 
 NPC_MIN_UNITS = 12
