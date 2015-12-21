@@ -221,7 +221,7 @@
       <TimeFactor>0.3</TimeFactor>
     </BuildingConversion>  
     <BuildingExperienceFormula>2*LEVEL</BuildingExperienceFormula>
-    <AllianceMaxMembers>13</AllianceMaxMembers>
+    <AllianceMaxMembers>15</AllianceMaxMembers>
     <SpecialAssignments>
       <SpecialAssignmentIdleProbability>0.2</SpecialAssignmentIdleProbability>
       <SpecialAssignmentIdleTime>3600</SpecialAssignmentIdleTime>
