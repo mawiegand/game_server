@@ -21,7 +21,7 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
   scope :surrender,           where(diplomacy_status: RELATION_TYPE_SURRENDER)
   scope :occupation,          where(diplomacy_status: RELATION_TYPE_OCCUPATION)
   scope :alliance_request,    where(diplomacy_status: RELATION_TYPE_ALLIANCE_REQUEST)
-  scope :alliance,            where(diplomacy_status: RELATION_TYPE_ALLIANCE_REQUEST)
+  scope :alliance,            where(diplomacy_status: RELATION_TYPE_ALLIANCE)
   scope :alliance_conclusion, where(diplomacy_status: RELATION_TYPE_ALLIANCE_CONCLUSION)
   
   def relation_status

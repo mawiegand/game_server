@@ -500,7 +500,7 @@ class Settlement::Settlement < ActiveRecord::Base
   # - the present owner is in the same alliance as character (this is to easily allow for correcting a wrong player taking over a fortress in a war)
   # - the present owner is not in an alliance that is allied with the character's alliance
   # - _CURRENTLY DISABLED!_ the present owner is in an alliance that is at war with the character's alliance
-  # - the present owner is in an alliance that fullfills any victory type
+  # - the present owner is in an alliance that fulfills any victory type
   def can_be_taken_over_by?(character)
     can_be_taken_over? &&
       character.can_takeover_settlement? &&
