@@ -33,7 +33,7 @@
     <Cost id="resource_fur" round="true">20000*POW(LEVEL,1.25)</Cost>
   <ProductionTime shortenable="true">(36000+(7200*LEVEL))*3</ProductionTime>
   <Abilities> <!-- just for grouping -->
-      <AllianceExtension>1+GREATER(LEVEL,3)+GREATER(LEVEL,6)+EQUAL(LEVEL,10)</AllianceExtension>
+      <AllianceExtension>2+GREATER(LEVEL,3)+GREATER(LEVEL,6)+2*EQUAL(LEVEL,10)</AllianceExtension>
   </Abilities>
 </Building>
 

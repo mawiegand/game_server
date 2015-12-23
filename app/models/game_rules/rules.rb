@@ -174,7 +174,7 @@ class GameRules::Rules
         :time_factor => 0.3,
       },
       :building_experience_formula => '2*LEVEL',
-      :alliance_max_members => 13,
+      :alliance_max_members => 15,
       :special_assignments  => {
         :idle_probability => 0.2,
         :idle_time => 3600,
@@ -4773,7 +4773,7 @@ class GameRules::Rules
 
           :abilities   => {
 
-            :alliance_size_bonus => "1+GREATER(LEVEL,3)+GREATER(LEVEL,6)+EQUAL(LEVEL,10)",
+            :alliance_size_bonus => "2+GREATER(LEVEL,3)+GREATER(LEVEL,6)+2*EQUAL(LEVEL,10)",
 
           },
 
@@ -10558,9 +10558,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'a',
-          :url          => 'https://gs09.wack-a-doo.de/game_server/en/facebook/object_types/0',
-          :image_url    => 'https://gs09.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
-          :see_also_url => 'https://gs09.wack-a-doo.de',
+          :url          => 'https://gs10.wack-a-doo.de/game_server/en/facebook/object_types/0',
+          :image_url    => 'https://gs10.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
+          :see_also_url => 'https://gs10.wack-a-doo.de',
         },              #   END OF battle
         {              #   next_rank
           :id          => 1,
@@ -10582,9 +10582,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'the',
-          :url          => 'https://gs09.wack-a-doo.de/game_server/en/facebook/object_types/1',
-          :image_url    => 'https://gs09.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
-          :see_also_url => 'https://gs09.wack-a-doo.de',
+          :url          => 'https://gs10.wack-a-doo.de/game_server/en/facebook/object_types/1',
+          :image_url    => 'https://gs10.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
+          :see_also_url => 'https://gs10.wack-a-doo.de',
         },              #   END OF next_rank
       ],                # END OF FACEBOOK USER STORIES
 
