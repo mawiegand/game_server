@@ -54,10 +54,12 @@ class Fundamental::DiplomacyRelation < ActiveRecord::Base
     if self.relation_status[:next_relations].present?
       next_diplomacy_status = nil
       self.relation_status[:next_relations].each do |next_relation|
-        if manual && next_relation[:manual]
-          next_diplomacy_status = next_relation
-          break
-        elsif !manual && !next_relation[:manual]
+        if manual && next_relation[:manual].present?
+          if (self.initiator && next_relation[:manual] == 'initiator') || (!self.initiator && next_relation[:manual] == 'victim') || next_relation[:manual] == 'both'
+            next_diplomacy_status = next_relation
+            break
+          end
+        elsif !manual && !next_relation[:manual].present?
           next_diplomacy_status = next_relation
           break
         end

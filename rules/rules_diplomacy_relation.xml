@@ -27,7 +27,7 @@
     <Name lang="en_US">War</Name>
     <DiplomacyDuration min="true" decreaseDurationForVictim="true" victimDuration="60*60*24*3">60*60*24*6</DiplomacyDuration>
     <NextRelationTypes>
-      <NextRelation id="3" manual="true" opposite="4" />
+      <NextRelation id="3" manual="both" opposite="4" />
     </NextRelationTypes>
   </DiplomacyRelation>
   <DiplomacyRelation id="diplomacy_relation_3">
@@ -46,20 +46,20 @@
       <!--<NextRelation id="1" />-->
     </NextRelationTypes>
   </DiplomacyRelation>
-  <DiplomacyRelation id="diplomacy_relation_5" manualChange="victim">
+  <DiplomacyRelation id="diplomacy_relation_5" manualChange="both">
     <Name lang="de_DE">Bündnis Anfrage</Name>
     <Name lang="en_US">Alliance Request</Name>
     <DiplomacyDuration>60*3</DiplomacyDuration>
     <NextRelationTypes>
-      <NextRelation id="6" manual="true" />
+      <NextRelation id="6" manual="victim" />
     </NextRelationTypes>
   </DiplomacyRelation>
-  <DiplomacyRelation id="diplomacy_relation_6">
+  <DiplomacyRelation id="diplomacy_relation_6" manualChange="both">
     <Name lang="de_DE">Bündnis</Name>
     <Name lang="en_US">Alliance</Name>
     <DiplomacyDuration min="true">1</DiplomacyDuration>
     <NextRelationTypes>
-      <NextRelation id="7" manual="true" />
+      <NextRelation id="7" manual="both" />
     </NextRelationTypes>
   </DiplomacyRelation>
   <DiplomacyRelation id="diplomacy_relation_7">

@@ -263,7 +263,7 @@
 <!ELEMENT NextRelation (#PCDATA)>
 <!ATTLIST NextRelation
   id CDATA #REQUIRED
-  manual (true | false) "false"
+  manual CDATA #IMPLIED
   opposite CDATA #IMPLIED
 >
 

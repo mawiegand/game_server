@@ -1344,7 +1344,9 @@ end
           <xsl:for-each select="NextRelationTypes/NextRelation">
             {
               :id => <xsl:value-of select="@id"/>,
-              :manual => <xsl:value-of select="@manual"/>,
+              <xsl:if test="@manual">
+              :manual => "<xsl:value-of select="@manual"/>",
+              </xsl:if>
               <xsl:if test="@opposite">
               :opposite => <xsl:value-of select="@opposite"/>
               </xsl:if>

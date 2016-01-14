@@ -9669,7 +9669,6 @@ class GameRules::Rules
           
             {
               :id => 5,
-              :manual => false,
               
             },
           
@@ -9694,7 +9693,6 @@ class GameRules::Rules
           
             {
               :id => 2,
-              :manual => false,
               
             },
           
@@ -9719,7 +9717,8 @@ class GameRules::Rules
           
             {
               :id => 3,
-              :manual => true,
+              
+              :manual => "both",
               
               :opposite => 4
             },
@@ -9775,7 +9774,7 @@ class GameRules::Rules
   
           },
           
-          :manual_change => "victim",
+          :manual_change => "both",
           
           :duration => 60*3,
           :min => false,
@@ -9785,7 +9784,8 @@ class GameRules::Rules
           
             {
               :id => 6,
-              :manual => true,
+              
+              :manual => "victim",
               
             },
           
@@ -9802,6 +9802,8 @@ class GameRules::Rules
   
           },
           
+          :manual_change => "both",
+          
           :duration => 1,
           :min => true,
           :decrease_duration_for_victim => false,
@@ -9810,7 +9812,8 @@ class GameRules::Rules
           
             {
               :id => 7,
-              :manual => true,
+              
+              :manual => "both",
               
             },
           
