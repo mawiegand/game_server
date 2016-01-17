@@ -36,7 +36,7 @@ Fundamental::Character.non_npc.deletable_inactive(now).each do |c|
     @report[:deleted_inactive_players] << c
     
     # call delete method of character
-    # c.delete_from_game
+    c.delete_from_game
     
     deleted_count += 1
     print "." 
