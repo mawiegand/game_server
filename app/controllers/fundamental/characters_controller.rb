@@ -34,7 +34,7 @@ class Fundamental::CharactersController < ApplicationController
         format.html do
           raise ForbiddenError.new('Access forbidden.') unless (admin? || staff? || developer?) 
           if @fundamental_characters.nil?
-            @fundamental_characters =  Fundamental::Character.search(params[:search]).paginate(:order => 'name', :page => params[:page], :per_page => 50)
+            @fundamental_characters =  Fundamental::Character.search(params[:search]).paginate(:order => 'id', :page => params[:page], :per_page => 50)
             @paginate = true   
           end 
         end
@@ -107,9 +107,9 @@ class Fundamental::CharactersController < ApplicationController
         start_location = Map::Location.location_for_player_invitation(params[:player_invitation])
       elsif params.has_key?(:alliance_invitation)
         start_location = Map::Location.location_for_alliance_invitation(params[:alliance_invitation])
-      else
-        geo_coords = GeoServer::GeoIp.fetch_coords_for_ip(request.remote_ip)
-        start_location = Map::Location.location_with_geo_coords(geo_coords) unless geo_coords.nil?
+      # else
+      #   geo_coords = GeoServer::GeoIp.fetch_coords_for_ip(request.remote_ip)
+      #   start_location = Map::Location.location_with_geo_coords(geo_coords) unless geo_coords.nil?
       end
       
       character = nil

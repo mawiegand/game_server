@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.3.21
+# Version: 2.5.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,8 +124,8 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 2,
-                    :minor => 3,
-                    :build => 21,
+                    :minor => 5,
+                    :build => 0,
       },
       :app_control => {
         :debug_tracking                         => 1,
@@ -174,7 +174,7 @@ class GameRules::Rules
         :time_factor => 0.3,
       },
       :building_experience_formula => '2*LEVEL',
-      :alliance_max_members => 13,
+      :alliance_max_members => 15,
       :special_assignments  => {
         :idle_probability => 0.2,
         :idle_time => 3600,
@@ -4773,7 +4773,7 @@ class GameRules::Rules
 
           :abilities   => {
 
-            :alliance_size_bonus => "1+GREATER(LEVEL,3)+GREATER(LEVEL,6)+EQUAL(LEVEL,10)",
+            :alliance_size_bonus => "2+GREATER(LEVEL,3)+GREATER(LEVEL,6)+2*EQUAL(LEVEL,10)",
 
           },
 
@@ -9660,12 +9660,17 @@ class GameRules::Rules
             :en_US => "Neutral",
   
           },
+          
           :duration => 60*60*24*3,
           :min => false,
           :decrease_duration_for_victim => false,
           :victim_duration => 0,
           :next_relations => [ 
-          1,
+          
+            {
+              :id => 5,
+              
+            },
           
           ],
         },              #   END OF Neutral
@@ -9679,12 +9684,17 @@ class GameRules::Rules
             :en_US => "Ultimatum",
   
           },
+          
           :duration => 60*60*24*1,
           :min => false,
           :decrease_duration_for_victim => false,
           :victim_duration => 0,
           :next_relations => [ 
-          2,
+          
+            {
+              :id => 2,
+              
+            },
           
           ],
         },              #   END OF Ultimatum
@@ -9698,13 +9708,20 @@ class GameRules::Rules
             :en_US => "War",
   
           },
+          
           :duration => 60*60*24*6,
           :min => true,
           :decrease_duration_for_victim => true,
           :victim_duration => 60*60*24*3,
           :next_relations => [ 
-          3,
-          4,
+          
+            {
+              :id => 3,
+              
+              :manual => "both",
+              
+              :opposite => 4
+            },
           
           ],
         },              #   END OF Krieg
@@ -9718,6 +9735,7 @@ class GameRules::Rules
             :en_US => "Surrender",
   
           },
+          
           :duration => 60*60*24*3,
           :min => false,
           :decrease_duration_for_victim => false,
@@ -9736,6 +9754,7 @@ class GameRules::Rules
             :en_US => "Occupation",
   
           },
+          
           :duration => 60*60*24*3,
           :min => false,
           :decrease_duration_for_victim => false,
@@ -9744,6 +9763,81 @@ class GameRules::Rules
           
           ],
         },              #   END OF Besatzung
+        {               #   Bündnis Anfrage
+          :id          => 5, 
+          :symbolic_id => :diplomacy_relation_5,
+          :name        => {
+            
+            :de_DE => "Bündnis Anfrage",
+  
+            :en_US => "Alliance Request",
+  
+          },
+          
+          :manual_change => "both",
+          
+          :duration => 60*3,
+          :min => false,
+          :decrease_duration_for_victim => false,
+          :victim_duration => 0,
+          :next_relations => [ 
+          
+            {
+              :id => 6,
+              
+              :manual => "victim",
+              
+            },
+          
+          ],
+        },              #   END OF Bündnis Anfrage
+        {               #   Bündnis
+          :id          => 6, 
+          :symbolic_id => :diplomacy_relation_6,
+          :name        => {
+            
+            :de_DE => "Bündnis",
+  
+            :en_US => "Alliance",
+  
+          },
+          
+          :manual_change => "both",
+          
+          :duration => 1,
+          :min => true,
+          :decrease_duration_for_victim => false,
+          :victim_duration => 0,
+          :next_relations => [ 
+          
+            {
+              :id => 7,
+              
+              :manual => "both",
+              
+            },
+          
+          ],
+        },              #   END OF Bündnis
+        {               #   Bündnis Ausklang
+          :id          => 7, 
+          :symbolic_id => :diplomacy_relation_7,
+          :name        => {
+            
+            :de_DE => "Bündnis Ausklang",
+  
+            :en_US => "Alliance Conclusion",
+  
+          },
+          
+          :duration => 60*3,
+          :min => false,
+          :decrease_duration_for_victim => false,
+          :victim_duration => 0,
+          :next_relations => [ 
+          
+          ],
+        },              #   END OF Bündnis Ausklang
       ],                # END OF DIPLOMACY RELATION TYPES
 
 # ## VICTORY TYPES ########################################################
@@ -9770,7 +9864,7 @@ class GameRules::Rules
 
           :condition   => {
 
-            :required_regions_ratio => 'LESS(DAYS,91)*(1-(0.01*((70.0/90.0)*DAYS)))+GREATER(DAYS,90)*(0.3-(0.01*((29.0/60.0)*(DAYS-90))))',
+            :required_regions_ratio => 'LESS(DAYS,63)*(1-(0.0078*DAYS))+GREATER(DAYS,62)*0.5086',
 
             :duration => 5,
           },
@@ -10467,9 +10561,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'a',
-          :url          => 'https://gs09.wack-a-doo.de/game_server/en/facebook/object_types/0',
-          :image_url    => 'https://gs09.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
-          :see_also_url => 'https://gs09.wack-a-doo.de',
+          :url          => 'https://gs10.wack-a-doo.de/game_server/en/facebook/object_types/0',
+          :image_url    => 'https://gs10.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
+          :see_also_url => 'https://gs10.wack-a-doo.de',
         },              #   END OF battle
         {              #   next_rank
           :id          => 1,
@@ -10491,9 +10585,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'the',
-          :url          => 'https://gs09.wack-a-doo.de/game_server/en/facebook/object_types/1',
-          :image_url    => 'https://gs09.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
-          :see_also_url => 'https://gs09.wack-a-doo.de',
+          :url          => 'https://gs10.wack-a-doo.de/game_server/en/facebook/object_types/1',
+          :image_url    => 'https://gs10.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
+          :see_also_url => 'https://gs10.wack-a-doo.de',
         },              #   END OF next_rank
       ],                # END OF FACEBOOK USER STORIES
 

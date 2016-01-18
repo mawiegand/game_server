@@ -73,7 +73,7 @@
 <Rules xmlns:xi="http://www.w3.org/2001/XInclude">
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="2" minor="3" build="21" />
+    <Version major="2" minor="5" build="0" />
     <AppControl debugTracking="1" startscreen="settlement">
       <SpecialOfferDialog enabled="1" requiredFinishedQuests="19" />
       <Facebook userStoriesEnabled="0" />
@@ -221,7 +221,7 @@
       <TimeFactor>0.3</TimeFactor>
     </BuildingConversion>  
     <BuildingExperienceFormula>2*LEVEL</BuildingExperienceFormula>
-    <AllianceMaxMembers>13</AllianceMaxMembers>
+    <AllianceMaxMembers>15</AllianceMaxMembers>
     <SpecialAssignments>
       <SpecialAssignmentIdleProbability>0.2</SpecialAssignmentIdleProbability>
       <SpecialAssignmentIdleTime>3600</SpecialAssignmentIdleTime>
