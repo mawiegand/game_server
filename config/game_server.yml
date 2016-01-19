@@ -85,7 +85,7 @@ defaults: &defaults
   battle_xp_winner_bonus_factor:         3.0
   alliance_fight_xp_penalty:             0.25
 
-  tutorial_battle_duration:              0.5 # duration of battles while tutorial fight quest is active
+  tutorial_battle_duration:              5 # duration of battles while tutorial fight quest is active
 
   max_home_bases_in_region_for_geo:                     3
   max_home_bases_in_region_for_alliance_invitation:     3
