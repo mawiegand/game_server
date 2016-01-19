@@ -364,8 +364,13 @@ class Fundamental::CharactersController < ApplicationController
   def update
     @fundamental_character = Fundamental::Character.find(params[:id])
 
+    @fundamental_character.assign_attributes(params[:fundamental_character])
+    if params[:fundamental_character][:platinum_lifetime] && params[:fundamental_character][:platinum_lifetime].to_i == 1
+      @fundamental_character.set_platinum_lifetime
+    end
+
     respond_to do |format|
-      if @fundamental_character.update_attributes(params[:fundamental_character])
+      if @fundamental_character.save
         format.html { redirect_to @fundamental_character, notice: 'Character was successfully updated.' }
         format.json { head :ok }
       else
