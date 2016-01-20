@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="1" build="0" />
+    <Version major="1" minor="1" build="1" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -902,7 +902,7 @@
   <Rewards>
     <ResourceReward resource="resource_stone">750</ResourceReward>
     <ResourceReward resource="resource_wood">750</ResourceReward>
-    <ConstructionBonusReward duration="266400">0.25</ConstructionBonusReward>
+    <ConstructionBonusReward duration="74">0.25</ConstructionBonusReward>
   </Rewards>
   <RewardTests>
   </RewardTests>
