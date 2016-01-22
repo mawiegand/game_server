@@ -16,10 +16,11 @@ class Action::Fundamental::KickAllianceMemberActionsController < ApplicationCont
     raise ForbiddenError.new('leader cannot kick himself')  if     character             == current_character
     raise ForbiddenError.new('tried to kick a non-member')  unless character.alliance_id == current_character.alliance_id
     raise ForbiddenError.new('leaders cannot be kicked')    if     character.alliance_leader?
-    
+        
     if !current_character.alliance.kick_character(character, current_character)
       raise InternalServerError.new('kicking failed for unknown reasons.')
     end
+    character.set_cannot_join_alliance_until
     
     respond_to do |format|
       format.json { render json: {}, status: :ok }
