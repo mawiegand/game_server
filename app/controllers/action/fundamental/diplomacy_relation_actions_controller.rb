@@ -21,9 +21,12 @@ class Action::Fundamental::DiplomacyRelationActionsController < ApplicationContr
     raise ForbiddenError.new('tried to create diplomacy relation with own alliance') if current_character.alliance_id == target_alliance.id
 
     if params[:diplomacy_relation_action][:new_relation] != "1" # if requested for status change
-      raise ForbiddenError.new('missing relation id for manual status change') if params[:diplomacy_relation_action][:id].blank?
+      raise ForbiddenError.new('missing relation id for manual status change') if params[:diplomacy_relation_action][:id].blank? && params[:diplomacy_relation_action][:relation_action_id].blank?
 
-      diplomacy_relation = Fundamental::DiplomacyRelation.find(params[:diplomacy_relation_action][:id])
+      if !params[:diplomacy_relation_action][:relation_action_id].blank?
+        diplomacy_relation = Fundamental::DiplomacyRelation.find(params[:diplomacy_relation_action][:relation_action_id])
+      else
+        diplomacy_relation = Fundamental::DiplomacyRelation.find(params[:diplomacy_relation_action][:id])
 
       raise NotFoundError.new("relation with id #{params[:diplomacy_relation_action][:id]} not found") if diplomacy_relation.nil?
       raise ConflictError.new('tried to change foreign relation') if current_character.alliance_id != params[:diplomacy_relation_action][:source_alliance_id].to_i
