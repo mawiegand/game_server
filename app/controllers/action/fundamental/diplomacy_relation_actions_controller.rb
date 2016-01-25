@@ -27,7 +27,8 @@ class Action::Fundamental::DiplomacyRelationActionsController < ApplicationContr
         diplomacy_relation = Fundamental::DiplomacyRelation.find(params[:diplomacy_relation_action][:relation_action_id])
       else
         diplomacy_relation = Fundamental::DiplomacyRelation.find(params[:diplomacy_relation_action][:id])
-
+      end
+      
       raise NotFoundError.new("relation with id #{params[:diplomacy_relation_action][:id]} not found") if diplomacy_relation.nil?
       raise ConflictError.new('tried to change foreign relation') if current_character.alliance_id != params[:diplomacy_relation_action][:source_alliance_id].to_i
 
