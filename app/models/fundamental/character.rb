@@ -1395,6 +1395,8 @@ class Fundamental::Character < ActiveRecord::Base
     # elsif self.created_at <= 20.days.ago && self.alliance.is_at_war?
     #  self.cannot_join_alliance_until = 24.hours.from_now
     # end
+
+    self.save
   end
 
   def join_alliance_check
