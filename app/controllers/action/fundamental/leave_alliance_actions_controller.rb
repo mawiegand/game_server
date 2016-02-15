@@ -20,9 +20,9 @@ class Action::Fundamental::LeaveAllianceActionsController < ApplicationControlle
     raise BadRequestError.new('no current character') if current_character.nil?
     raise ForbiddenError.new('tried to leave an alliance although character is in no alliance') if current_character.alliance_id.blank?
     raise ForbiddenError.new('tried to leave an alliance the character is not a member of')  unless current_character.alliance_id == alliance.id
-    
+
+    alliance.remove_character(current_character)
     current_character.set_cannot_join_alliance_until
-    alliance.remove_character(current_character)    
     
     respond_to do |format|
       format.json { render json: {}, status: :ok }
