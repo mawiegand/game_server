@@ -1,5 +1,5 @@
 ---
-pid: /var/run/game_server.pid
+pid: /var/run/game_server/game_server.pid
 timeout: 30
 wait: 30
 log: log/thin/game_server.log
@@ -11,4 +11,4 @@ max_persistent_conns: 512
 servers: 6
 daemonize: true
 chdir: /var/www/game_server/current
-socket: /var/run/game_server.sock
+socket: /var/run/game_server/game_server.sock
