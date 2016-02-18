@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="1" build="1" />
+    <Version major="1" minor="1" build="2" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -809,8 +809,8 @@
 <Quest id="epic_storage" type="epic" advisor="chef">
   <Name>Storage and trading</Name>
   <Name locale="de_DE">Lager und Handel</Name>
-  <Task>Improve your storage and send ressources to annouther chief.</Task>
-  <Task locale="de_DE">Erhöhe die Lagerkapazität und sende Rohstoffe an einen anderen Häuptling.</Task>
+  <Task>Improve your storage and use the trade function to even up your ressources.</Task>
+  <Task locale="de_DE">Erhöhe die Lagerkapazität und nutze die Handels Funktion um deine Ressourcen auszugleichen.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Den Handel sollten wir nicht nur der Amazone überlassen.</Flavor>

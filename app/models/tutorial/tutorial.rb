@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.1.1
+# Version: 1.1.2
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -79,7 +79,7 @@ class Tutorial::Tutorial
       :version => {
         :major => 1, 
         :minor => 1, 
-        :build => 1, 
+        :build => 2, 
       },
       
       :production_test_weights => {
@@ -2508,9 +2508,9 @@ class Tutorial::Tutorial
           },
           :task => {
             
-            :en_US => "Improve your storage and send ressources to annouther chief.",
+            :en_US => "Improve your storage and use the trade function to even up your ressources.",
   
-            :de_DE => "Erhöhe die Lagerkapazität und sende Rohstoffe an einen anderen Häuptling.",
+            :de_DE => "Erhöhe die Lagerkapazität und nutze die Handels Funktion um deine Ressourcen auszugleichen.",
                 
           },
           :flavour => {
