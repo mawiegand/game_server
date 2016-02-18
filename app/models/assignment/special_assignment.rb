@@ -249,12 +249,7 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
   end
 
   def is_outdated?
-    return false if self.finished
-    if !self.end_time.nil?
-      self.end_time < Time.now
-    else
-      false
-    end
+    self.displayed_until < Time.now && !self.ongoing?
   end
 
   # returns the assignment type from the rules that corresponds to this assignment
