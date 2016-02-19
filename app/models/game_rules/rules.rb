@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.5.0
+# Version: 2.6.0
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -124,7 +124,7 @@ class GameRules::Rules
     @the_rules ||= GameRules::Rules.new(
   
       :version => { :major => 2,
-                    :minor => 5,
+                    :minor => 6,
                     :build => 0,
       },
       :app_control => {
@@ -9776,7 +9776,7 @@ class GameRules::Rules
           
           :manual_change => "both",
           
-          :duration => 60*3,
+          :duration => 60*60*24*7,
           :min => false,
           :decrease_duration_for_victim => false,
           :victim_duration => 0,
@@ -9830,7 +9830,7 @@ class GameRules::Rules
   
           },
           
-          :duration => 60*3,
+          :duration => 60*60*24*7,
           :min => false,
           :decrease_duration_for_victim => false,
           :victim_duration => 0,
