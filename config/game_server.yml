@@ -99,6 +99,8 @@ defaults: &defaults
   alliance_switch_allowed_after_registration: 20 # allows alliance switching after registration for X days
   alliance_switch_blocking_time: 14 # max days of blocking alliance switching
 
+  special_assignment_idle_while_assignment_level_is_null: 300 # seconds for special assignment idle time before assignment is build
+
 development:
   <<: *defaults
 

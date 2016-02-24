@@ -67,10 +67,10 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
         self.create({
           character_id:     character.id,
           type_id:          -1,
-          displayed_until:  self.new_end_date(start_at, GameRules::Rules.the_rules.special_assignments[:idle_time]),
+          displayed_until:  self.new_end_date(start_at, character.assignment_level > 0 ? GameRules::Rules.the_rules.special_assignments[:idle_time] : (GAME_SERVER_CONFIG['special_assignment_idle_while_assignment_level_is_null'] || 60)),
           seen_at:          Time.now
         })
-        self.raise_fail_counters(character, -1)
+        self.raise_fail_counters(character, -1) if character.assignment_level > 0
         nil
       end
     else
@@ -78,10 +78,10 @@ class Assignment::SpecialAssignment < ActiveRecord::Base
       self.create({
         character_id:     character.id,
         type_id:          -1,
-        displayed_until:  self.new_end_date(start_at, GameRules::Rules.the_rules.special_assignments[:idle_time]),
+        displayed_until:  self.new_end_date(start_at, character.assignment_level > 0 ? GameRules::Rules.the_rules.special_assignments[:idle_time] : (GAME_SERVER_CONFIG['special_assignment_idle_while_assignment_level_is_null'] || 60)),
         seen_at:          Time.now
       })
-      self.raise_fail_counters(character, -1)
+      self.raise_fail_counters(character, -1) if character.assignment_level > 0
       nil
     end
   end
