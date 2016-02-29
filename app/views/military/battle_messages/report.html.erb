@@ -80,7 +80,7 @@ Parsing from key word WACK_A_DOO_DIALOG_DAT...A each line
 <% dialog_winner = (!my_faction_summary.nil? && my_faction_summary.faction.winner) ? true : false %>
 <% dialog_info_winner = (dialog_winner) ? "WINNER" : "LOOSER" %>
 
-<% dialog_title = I18n.translate('application.messaging.battle_report.subject') %>
+<% dialog_title = render(I18n.translate('application.messaging.battle_report.subject')) %>
 
 <% dialog_text = (dialog_winner) ? I18n.translate('application.messaging.battle_report.winner_message') : I18n.translate('application.messaging.battle_report.loser_message') %>
 
