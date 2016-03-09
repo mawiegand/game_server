@@ -8,7 +8,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 1.1.2
+# Version: 1.2.0
 #
 # ATTENTION: this file is auto-generated from rules/tutorial.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -78,8 +78,8 @@ class Tutorial::Tutorial
   
       :version => {
         :major => 1, 
-        :minor => 1, 
-        :build => 2, 
+        :minor => 2, 
+        :build => 0, 
       },
       
       :production_test_weights => {
@@ -4973,14 +4973,6 @@ class Tutorial::Tutorial
 
           :triggers => {
             
-            :finish_quest_triggers => [
-              
-              {
-                :finish_quest_trigger => 'epic__more_ressources',
-              },
-
-            ],
-  
           },
 
           :rewards => {

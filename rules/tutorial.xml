@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="1" build="2" />
+    <Version major="1" minor="2" build="0" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -1480,9 +1480,9 @@
   <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spaß miteinander haben.</RewardFlavor>
   <RewardFlavor locale="en_US">Thanks. I think we're going to have lot of fun together!</RewardFlavor>
   <Triggers>
-    <FinishQuestTriggers>
+    <!--<FinishQuestTriggers>
       <FinishQuestTrigger>epic__more_ressources</FinishQuestTrigger>
-    </FinishQuestTriggers>
+    </FinishQuestTriggers>-->
   </Triggers>
   <Rewards>
     <ResourceReward resource="resource_cash">2</ResourceReward>
