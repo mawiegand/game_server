@@ -22,6 +22,7 @@ class Action::Military::AttackArmyActionsController < ApplicationController
       raise ForbiddenError.new('defender is currently under attack protection') if defender.protected?
 
       raise ConflictError.new('tried to start or intervene a foreign poacher fight') if defender.is_foreign_poacher_of?(attacker.owner) || defender.is_fighting_against_poacher?
+      raise ConflictError.new('tried to start poacher fight while attacker is already fighting') if attacker.fighting? && defender.is_poacher?
 
       attacker.consume_ap         unless attacker.garrison?                                    # raises a BadAccessError if no aps are available
       Military::Battle.start_fight_between(attacker, defender)     # creates and returns battle, or returns nil, if army was overrun
