@@ -21,6 +21,7 @@ class Action::Military::AttackArmyActionsController < ApplicationController
       raise ForbiddenError.new('attacker is currently suspended')               if attacker.suspended?
       raise ForbiddenError.new('defender is currently under attack protection') if defender.protected?
 
+      raise ConflictError.new('garrison is not allowed to attack poacher')     if attacker.garrison? && defender.is_poacher?
       raise ConflictError.new('tried to start or intervene a foreign poacher fight') if defender.is_foreign_poacher_of?(attacker.owner) || defender.is_fighting_against_poacher?
       raise ConflictError.new('tried to start poacher fight while attacker is already fighting') if attacker.fighting? && defender.is_poacher?
 
