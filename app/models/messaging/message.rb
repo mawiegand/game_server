@@ -36,6 +36,7 @@ class Messaging::Message < ActiveRecord::Base
   INDIVIDUAL_ANNOUNCEMENT_TYPE_ID = 17
   ALLIANCE_APPLICATION_ID         = 18
   ALLIANCE_CHARACTER_INVITE_ID    = 19
+  ALLIANCE_CHARACTER_KICKED_ID    = 20
 
   scope :system, where(type_id: ANNOUNCEMENT_TYPE_ID)
 
@@ -299,8 +300,10 @@ class Messaging::Message < ActiveRecord::Base
   def self.generate_kicked_from_alliance_message(character, kicking_character)
     message = Messaging::Message.new({
       recipient: character,
-      type_id:   ALLIANCE_TYPE_ID,
+      type_id:   ALLIANCE_CHARACTER_KICKED_ID,
       send_at:   DateTime.now,
+      reported:  false,
+      flag:      0,
     })
     message.subject = I18n.translate('application.messaging.kicked_from_alliance.subject', locale: character.lang)
     message.body    = I18n.translate('application.messaging.kicked_from_alliance.body', locale: character.lang, name: kicking_character.name, alliance_name: kicking_character.alliance.name)
