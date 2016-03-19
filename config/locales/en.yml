@@ -245,7 +245,7 @@ en:
         body2: <p>Your garrison stationed in <b>%{region_name}</b> has lost the battle for the settlement <b>%{settlement_name}</b>. <b>%{new_owner_name}</b> now owns this settlement.</p>
       gained_fortress_message:
         subject: Settlement conquered in %{region_name}
-        body1: <h2>You have conquered a settlement in %{region_name}.</h2>\n
+        body1: <h2>You have conquered a settlement in %{region_name}.</h2>
         body2: <p>Your armies have won the battle for <b>%{settlement_name}</b> in the region <b>%{region_name}</b>. Congratulations - you are now that settlements rightfull owner.</p>
       artifact_captured_message:
         subject: You have captured an artifact!
