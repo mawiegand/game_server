@@ -188,7 +188,7 @@ en:
         no_units: "no units" 
       alliance_character_invite_message:
         subject: "Alliance Invitation"
-        body: "The Leader of the alliance %{alliance_name} invited you to you his alliance. Please contact him to discuss details or to reject his invitation."
+        body: "The Leader of the alliance %{alliance_name} invited you to join his alliance. Please contact him to discuss details or to reject his invitation."
       alliance_application_message:
         subject: "Alliance Application"
         body: "The player %{name} has just applied for a membership in your alliance. Please contact him to discuss details or to reject his application."
