@@ -327,8 +327,8 @@ class Messaging::Message < ActiveRecord::Base
   end
 
   def add_gained_fortress_message_body(settlement, old_owner, new_owner)
-    text = I18n.translate('application.messaging.gained_fortress_message.body1', locale: old_owner.lang, region_name: settlement.region.name.to_s)
-    text += I18n.translate('application.messaging.gained_fortress_message.body2', locale: old_owner.lang, region_name: settlement.region.name.to_s, settlement_name: settlement.name.to_s, new_owner_name: new_owner.name_and_ally_tag)
+    text = I18n.translate('application.messaging.gained_fortress_message.body1', locale: new_owner.lang, region_name: settlement.region.name.to_s)
+    text += I18n.translate('application.messaging.gained_fortress_message.body2', locale: new_owner.lang, region_name: settlement.region.name.to_s, settlement_name: settlement.name.to_s, new_owner_name: new_owner.name_and_ally_tag)
     self.body = text
   end
 
