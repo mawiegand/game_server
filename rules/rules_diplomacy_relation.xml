@@ -10,7 +10,8 @@
     <Name lang="en_US">Neutral</Name>
     <DiplomacyDuration>60*60*24*3</DiplomacyDuration>
     <NextRelationTypes>
-      <NextRelation>1</NextRelation>
+      <!--<NextRelation id="1" />-->
+      <NextRelation id="5" />
     </NextRelationTypes>
   </DiplomacyRelation>
   <DiplomacyRelation id="diplomacy_relation_1">
@@ -18,7 +19,7 @@
     <Name lang="en_US">Ultimatum</Name>
     <DiplomacyDuration>60*60*24*1</DiplomacyDuration>
     <NextRelationTypes>
-      <NextRelation>2</NextRelation>
+      <NextRelation id="2" />
     </NextRelationTypes>
   </DiplomacyRelation>
   <DiplomacyRelation id="diplomacy_relation_2">
@@ -26,8 +27,7 @@
     <Name lang="en_US">War</Name>
     <DiplomacyDuration min="true" decreaseDurationForVictim="true" victimDuration="60*60*24*3">60*60*24*6</DiplomacyDuration>
     <NextRelationTypes>
-      <NextRelation>3</NextRelation>
-      <NextRelation>4</NextRelation>
+      <NextRelation id="3" manual="both" opposite="4" />
     </NextRelationTypes>
   </DiplomacyRelation>
   <DiplomacyRelation id="diplomacy_relation_3">
@@ -35,7 +35,7 @@
     <Name lang="en_US">Surrender</Name>
     <DiplomacyDuration>60*60*24*3</DiplomacyDuration>
     <NextRelationTypes>
-      <!--<NextRelation>1</NextRelation>-->
+      <!--<NextRelation id="1" />-->
     </NextRelationTypes>
   </DiplomacyRelation>
   <DiplomacyRelation id="diplomacy_relation_4">
@@ -43,7 +43,31 @@
     <Name lang="en_US">Occupation</Name>
     <DiplomacyDuration>60*60*24*3</DiplomacyDuration>
     <NextRelationTypes>
-      <!--<NextRelation>1</NextRelation>-->
+      <!--<NextRelation id="1" />-->
+    </NextRelationTypes>
+  </DiplomacyRelation>
+  <DiplomacyRelation id="diplomacy_relation_5" manualChange="both">
+    <Name lang="de_DE">Bündnis Anfrage</Name>
+    <Name lang="en_US">Alliance Request</Name>
+    <DiplomacyDuration>60*60*24*7</DiplomacyDuration>
+    <NextRelationTypes>
+      <NextRelation id="6" manual="victim" />
+    </NextRelationTypes>
+  </DiplomacyRelation>
+  <DiplomacyRelation id="diplomacy_relation_6" manualChange="both">
+    <Name lang="de_DE">Bündnis</Name>
+    <Name lang="en_US">Alliance</Name>
+    <DiplomacyDuration min="true">1</DiplomacyDuration>
+    <NextRelationTypes>
+      <NextRelation id="7" manual="both" />
+    </NextRelationTypes>
+  </DiplomacyRelation>
+  <DiplomacyRelation id="diplomacy_relation_7">
+    <Name lang="de_DE">Bündnis Ausklang</Name>
+    <Name lang="en_US">Alliance Conclusion</Name>
+    <DiplomacyDuration>60*60*24*7</DiplomacyDuration>
+    <NextRelationTypes>
+      <!--<NextRelation id="1" />-->
     </NextRelationTypes>
   </DiplomacyRelation>
 </DiplomacyRelationTypes>

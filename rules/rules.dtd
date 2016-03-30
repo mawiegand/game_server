@@ -249,6 +249,7 @@
 
 <!ATTLIST DiplomacyRelation
   id ID #REQUIRED
+  manualChange CDATA #IMPLIED
 >
 
 <!ELEMENT DiplomacyDuration (#PCDATA)>
@@ -260,6 +261,11 @@
 
 <!ELEMENT NextRelationTypes (NextRelation*)>
 <!ELEMENT NextRelation (#PCDATA)>
+<!ATTLIST NextRelation
+  id CDATA #REQUIRED
+  manual CDATA #IMPLIED
+  opposite CDATA #IMPLIED
+>
 
 <!--Abilities of Buildings, Sciences-->
 <!ELEMENT Abilities (UnlockGarrison*, GarrisonSizeBonus*, ArmySizeBonus*, CommandPoints*, UnlockQueue*, SpeedupQueue*, UnlockDiplomacy*, DefenseBonus?, TradingCarts?, UnlockP2PTrade?, PreventTakeover?, UnlockBuildingSlots?, UnlockArtifactInitiation?, AllianceExtension?, AssignmentLevel?)>

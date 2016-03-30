@@ -4,7 +4,7 @@
   
   <General>
     <Game branch="development" tag="alpha">Wack-A-Doo</Game>
-    <Version major="1" minor="0" build="13" />
+    <Version major="1" minor="2" build="0" />
     <Languages>
       <Language lang="en">English</Language>
       <Language lang="de">Deutsch</Language>
@@ -285,7 +285,7 @@
   <UIMarker>mark_units_button</UIMarker>
   <UIMarker>mark_training_dialog_flow</UIMarker>
   <!-- place npc for quest "quest_npc_battle" !-->
-  <PlaceNpcs>1</PlaceNpcs>
+  <!--<PlaceNpcs>1</PlaceNpcs>-->
 </Quest>
 
 <!-- 7 --> <!-- Tutorial 8 -->
@@ -504,7 +504,7 @@
   </Rewards>
   <RewardTests>
   </RewardTests>
-    <PlaceNpcs>10</PlaceNpcs>
+  <PlaceNpcs>10</PlaceNpcs>
 </Quest>
 
 <Subquest id="quest_build_chiefcottagelvl4" epic="epic_ressources" advisor="chef" tutorial="false">
@@ -809,8 +809,8 @@
 <Quest id="epic_storage" type="epic" advisor="chef">
   <Name>Storage and trading</Name>
   <Name locale="de_DE">Lager und Handel</Name>
-  <Task>Improve your storage and send ressources to annouther chief.</Task>
-  <Task locale="de_DE">Erhöhe die Lagerkapazität und sende Rohstoffe an einen anderen Häuptling.</Task>
+  <Task>Improve your storage and use the trade function to even up your ressources.</Task>
+  <Task locale="de_DE">Erhöhe die Lagerkapazität und nutze die Handels Funktion um deine Ressourcen auszugleichen.</Task>
   <Description locale="de_DE"><p></p></Description>
   <Description locale="en_US"><p></p></Description>
   <Flavor locale="de_DE">Den Handel sollten wir nicht nur der Amazone überlassen.</Flavor>
@@ -874,7 +874,8 @@
   <Rewards>
   </Rewards>
   <RewardTests>
-    <TradingCartTest direction="outgoing" min_carts_count="1"></TradingCartTest>
+    <!--<TradingCartTest direction="outgoing" min_carts_count="1"></TradingCartTest>-->
+    <TradeResourcesTest min_trades_count="1"/>
   </RewardTests>
 </Subquest>
 
@@ -901,7 +902,7 @@
   <Rewards>
     <ResourceReward resource="resource_stone">750</ResourceReward>
     <ResourceReward resource="resource_wood">750</ResourceReward>
-    <ConstructionBonusReward duration="266400">0.25</ConstructionBonusReward>
+    <ConstructionBonusReward duration="74">0.25</ConstructionBonusReward>
   </Rewards>
   <RewardTests>
   </RewardTests>
@@ -1479,9 +1480,9 @@
   <RewardFlavor locale="de_DE">Danke. Wir werden noch viel Spaß miteinander haben.</RewardFlavor>
   <RewardFlavor locale="en_US">Thanks. I think we're going to have lot of fun together!</RewardFlavor>
   <Triggers>
-    <FinishQuestTriggers>
+    <!--<FinishQuestTriggers>
       <FinishQuestTrigger>epic__more_ressources</FinishQuestTrigger>
-    </FinishQuestTriggers>
+    </FinishQuestTriggers>-->
   </Triggers>
   <Rewards>
     <ResourceReward resource="resource_cash">2</ResourceReward>

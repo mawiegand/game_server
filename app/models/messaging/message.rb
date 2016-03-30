@@ -234,7 +234,7 @@ class Messaging::Message < ActiveRecord::Base
       text += I18n.translate('application.messaging.trade_return_message.body3', locale: action.sender.lang, name: action.target_settlement.name, owner_name: action.target_settlement.owner.name)
       text += Messaging::Message.resource_amounts_to_html(action, false)
     end
-    message.subject = I18n.translate('application.messaging.trade_return_message.subject', locale: action.recipient.lang, num_carts: action.num_carts)
+    message.subject = I18n.translate('application.messaging.trade_return_message.subject', locale: action.sender.lang, num_carts: action.num_carts)
     message.body = text
     
     message

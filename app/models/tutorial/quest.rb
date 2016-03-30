@@ -187,6 +187,16 @@ class Tutorial::Quest < ActiveRecord::Base
           end
         end
       end
+
+      unless reward_tests[:trade_resources_tests].nil?
+        reward_tests[:trade_resources_tests].each do |trade_resources_test|
+          unless trade_resources_test.nil?
+            unless check_trade_resources(trade_resources_test)
+              return false
+            end
+          end
+        end
+      end
       
       unless reward_tests[:movement_test].nil?
         movement_test = reward_tests[:movement_test]
@@ -521,6 +531,15 @@ class Tutorial::Quest < ActiveRecord::Base
     (check_outgoing_count + check_incoming_count) >= trading_carts_test[:min_carts_count]
   end
 
+  def check_trade_resources(trade_resources_test)
+    # check for min trades count
+    return false if trade_resources_test[:min_trades_count].nil?
+
+    logger.debug "check_trade_resources check if character traded at least #{trade_resources_test[:min_trades_count]} times."
+
+    return self.tutorial_state.owner.trade_resources_count >= trade_resources_test[:min_trades_count]
+  end
+
   def check_movements
     armies = self.tutorial_state.owner.armies    
     if armies.nil?
@@ -799,6 +818,7 @@ class Tutorial::Quest < ActiveRecord::Base
         self.tutorial_state.tutorial_finished = true
         self.tutorial_state.save
         self.owner.tutorial_finished_at = Time.now
+        self.owner.create_spawn_poacher_event((GAME_SERVER_CONFIG['poacher_delayed_first_spawn'] || 5).minutes)
         self.owner.save
       end
   

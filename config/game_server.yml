@@ -75,7 +75,7 @@ defaults: &defaults
   poacher_home_region_probability:     0.5  # probability of placing poacher in home region
   poacher_max_size:                    1500 # maximum poacher size
   poacher_character_units_count_limit: 6000 # if character has more units than this limit, only poacher with max size will spawn
-  poacher_delayed_first_spawn:         5    # delay for spawning first poacher after character creation in minutes
+  poacher_delayed_first_spawn:         0    # delay for spawning first poacher after character creation in minutes
   poacher_treasure_min_fur_reward:     0.05 # minimum amount of fur reward for poacher treasures in percentage of capacity
   poacher_treasure_max_fur_reward:     0.15 # maximum amount of fur reward for poacher treasures in percentage of capacity
   poacher_treasure_cash_probability:   0.05 # probability factor for containing 1 frog in poacher treasures
@@ -85,7 +85,7 @@ defaults: &defaults
   battle_xp_winner_bonus_factor:         3.0
   alliance_fight_xp_penalty:             0.25
 
-  tutorial_battle_duration:              0.5 # duration of battles while tutorial fight quest is active
+  tutorial_battle_duration:              5 # duration of battles while tutorial fight quest is active
 
   max_home_bases_in_region_for_geo:                     3
   max_home_bases_in_region_for_alliance_invitation:     3

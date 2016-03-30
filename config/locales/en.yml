@@ -204,7 +204,7 @@ en:
         body1: <h2>Return of %{num_carts} trading carts to %{name}.</h2>
         body2: <p>Your empty trading carts have returned from %{name} (%{owner_name}).</p>
         body3: <p>Your trading carts have returned from %{name} (%{owner_name}), carrying the following goods:</p>
-        subject: Return of %{num_carts} Handelskarren
+        subject: Return of %{num_carts} trading carts
       overrun_winner_message:
         subject: Victory in Region %{name}
         body: "<h2>Your army has overrun the enemy near the settlement %{settlement_name}</h2>\n

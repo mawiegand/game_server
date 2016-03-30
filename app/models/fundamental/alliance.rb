@@ -189,12 +189,18 @@ class Fundamental::Alliance < ActiveRecord::Base
   end
   
   def is_at_war_with?(alliance)
-    return false    if alliance.nil?
+    return false    if alliance.nil? || self.id == alliance.id
     self.diplomacy_source_relations.where(target_alliance_id: alliance.id).war.present?
   end
 
   def is_at_war?
     (self.diplomacy_source_relations.war + self.diplomacy_target_relations.war).any?
+  end
+
+  def is_allied_with?(alliance)
+    return false    if alliance.nil? || self.id == alliance.id
+    return self.diplomacy_source_relations.where(target_alliance_id: alliance.id).alliance.present? ||
+           self.diplomacy_source_relations.where(target_alliance_id: alliance.id).alliance_conclusion.present?
   end
 
   def fulfills_any_victory_type?

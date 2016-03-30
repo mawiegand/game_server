@@ -73,3 +73,24 @@
   <br/>
 </div>
 <!-- end message -->
+
+<!-- 
+Parsing from key word WACK_A_DOO_DIALOG_DAT...A each line
+
+<% dialog_winner = (!my_faction_summary.nil? && my_faction_summary.faction.winner) ? true : false %>
+<% dialog_info_winner = (dialog_winner) ? "WINNER" : "LOOSER" %>
+
+<% dialog_title = render(I18n.translate('application.messaging.battle_report.subject')) %>
+
+<% dialog_text = (dialog_winner) ? I18n.translate('application.messaging.battle_report.winner_message') : I18n.translate('application.messaging.battle_report.loser_message') %>
+
+<% xp = @battle.xp_for_character_and_faction(character, my_faction_summary.faction).to_i %>
+<% xp_bonus = ((xp * (character.exp_bonus_total || 0)).floor).to_i %>
+<% dialog_xp = (xp + xp_bonus).to_s %>
+
+WACK_A_DOO_DIALOG_DATA 
+<%= dialog_info_winner %>
+<%= dialog_title %>
+<%= dialog_text %>
+<%= dialog_xp %>
+-->
