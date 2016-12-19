@@ -24,6 +24,7 @@ gem 'jabber-bot'
 
 gem 'sampl', '~> 0.0.2'     # PSIORI event tracking
 
+gem 'net-ssh', '2.9.2'
 
 group :production, :ticker_development do
   gem 'pg'

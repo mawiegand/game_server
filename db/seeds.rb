@@ -22,7 +22,7 @@ NUM_FULL_LEVELS   =  4
 NUM_SPARSE_LEVELS =  2
 MAX_LEVEL         =  8
 
-ROUND_NAME   = "Nudelpizza"
+ROUND_NAME   = "Rehrücken"
 ROUND_NUMBER =  11
 
 NPC_MIN_UNITS = 12
