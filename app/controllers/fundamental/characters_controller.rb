@@ -140,9 +140,9 @@ class Fundamental::CharactersController < ApplicationController
       })
       
 
-      if !identity['platinum_lifetime_since'].nil? && Time.parse(identity['platinum_lifetime_since']) < Time.now
+      # if !identity['platinum_lifetime_since'].nil? && Time.parse(identity['platinum_lifetime_since']) < Time.now
         character.set_platinum_lifetime
-      end
+      # end
 
       if !identity['divine_supporter_since'].nil? && Time.parse(identity['divine_supporter_since']) < Time.now
         character.divine_supporter = true
