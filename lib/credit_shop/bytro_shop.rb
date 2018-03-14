@@ -25,8 +25,8 @@ module CreditShop
       }
       
       query = add_hash(query)
-      http_response = HTTParty.post(URL_BASE, :query => query)
-      
+      http_response = HTTParty.post(URL_BASE, :query => query, :headers => { 'Content-length' => '0' })
+
       if http_response.code === 200
         api_response = http_response.parsed_response
         api_response = JSON.parse(api_response) if api_response.is_a?(String)
@@ -75,7 +75,7 @@ module CreditShop
       }
       
       query = add_hash(query)
-      http_response = HTTParty.post(URL_BASE, :query => query)
+      http_response = HTTParty.post(URL_BASE, :query => query, :headers => { 'Content-length' => '0' })
       
       if http_response.code === 200
         api_response = http_response.parsed_response
@@ -109,7 +109,7 @@ module CreditShop
       }
       
       query = add_hash(query)
-      http_response = HTTParty.post(URL_BASE, :query => query)
+      http_response = HTTParty.post(URL_BASE, :query => query, :headers => { 'Content-length' => '0' })
       
       if http_response.code === 200
         api_response = http_response.parsed_response
@@ -209,7 +209,7 @@ module CreditShop
       }
       
       query = add_hash(query)
-      http_response = HTTParty.post(URL_BASE, :query => query)
+      http_response = HTTParty.post(URL_BASE, :query => query, :headers => { 'Content-length' => '0' })
       
       if http_response.code === 200
         api_response = http_response.parsed_response

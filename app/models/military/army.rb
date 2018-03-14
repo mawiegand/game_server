@@ -852,7 +852,7 @@ class Military::Army < ActiveRecord::Base
       garrison = self.location.garrison_army
       
       if !garrison.nil? && garrison.ai_valid_attack_target?
-        prob = garrison.figthing? ? 0.9 : attack_prob
+        prob = garrison.fighting? ? 0.9 : attack_prob
         if rand(1.0) < prob               # join a battle or start a new one
           ai_attack_army(garrison)
         else

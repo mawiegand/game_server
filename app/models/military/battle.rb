@@ -344,7 +344,11 @@ class Military::Battle < ActiveRecord::Base
   end
   
   def loser_faction_or_faction_B
-    other_faction(winner_faction_or_faction_A.id)
+    if winner_faction_or_faction_A.present?
+      other_faction(winner_faction_or_faction_A.id)
+    else
+      nil
+    end
   end
 
   def xp_for_character_and_faction(character, faction)
@@ -530,11 +534,11 @@ class Military::Battle < ActiveRecord::Base
 
   def count_victory_and_defeat
     if winner_faction.nil?
-      winner_faction_or_faction_A.count_defeat
-      loser_faction_or_faction_B.count_defeat
+      winner_faction_or_faction_A.count_defeat unless winner_faction_or_faction_A.nil?
+      loser_faction_or_faction_B.count_defeat unless loser_faction_or_faction_B.nil?
     else
-      winner_faction.count_victory
-      loser_faction.count_defeat
+      winner_faction.count_victory unless winner_faction.nil?
+      loser_faction.count_defeat unless loser_faction.nil?
     end
   end
 

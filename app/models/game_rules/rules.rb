@@ -9,7 +9,7 @@ require 'active_model'
 # This particular file does hold the following set of rules:
 # Game:    Wack-A-Doo
 # Branch:  development (alpha)
-# Version: 2.6.0
+# Version: 2.6.2
 #
 # ATTENTION: this file is auto-generated from rules/rules.xml . DO NOT EDIT 
 # THIS FILE, as all your edits will be overwritten.
@@ -125,12 +125,12 @@ class GameRules::Rules
   
       :version => { :major => 2,
                     :minor => 6,
-                    :build => 0,
+                    :build => 2,
       },
       :app_control => {
         :debug_tracking                         => 1,
         :startscreen                            => 'settlement',
-        :special_offer_dialog                   => 1,
+        :special_offer_dialog                   => 0,
         :special_offer_required_finished_quests => 19,
         :facebook_user_stories                  => 0,
       },
@@ -10561,9 +10561,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'a',
-          :url          => 'https://gs10.wack-a-doo.de/game_server/en/facebook/object_types/0',
-          :image_url    => 'https://gs10.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
-          :see_also_url => 'https://gs10.wack-a-doo.de',
+          :url          => 'https://gs11.wack-a-doo.de/game_server/en/facebook/object_types/0',
+          :image_url    => 'https://gs11.wack-a-doo.de/game_server/assets/fb_user_stories/victory.png',
+          :see_also_url => 'https://gs11.wack-a-doo.de',
         },              #   END OF battle
         {              #   next_rank
           :id          => 1,
@@ -10585,9 +10585,9 @@ class GameRules::Rules
   
           },
           :determiner   => 'the',
-          :url          => 'https://gs10.wack-a-doo.de/game_server/en/facebook/object_types/1',
-          :image_url    => 'https://gs10.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
-          :see_also_url => 'https://gs10.wack-a-doo.de',
+          :url          => 'https://gs11.wack-a-doo.de/game_server/en/facebook/object_types/1',
+          :image_url    => 'https://gs11.wack-a-doo.de/game_server/assets/fb_user_stories/levelup.png',
+          :see_also_url => 'https://gs11.wack-a-doo.de',
         },              #   END OF next_rank
       ],                # END OF FACEBOOK USER STORIES
 
