@@ -17,7 +17,7 @@ set :branch,      "staging"
 
 set :scm, :git
 
-set :user, "deploy-gs"
+set :user, "deploy-po"
 set :use_sudo, false
 
 set :deploy_to, "/var/www/game_server"
